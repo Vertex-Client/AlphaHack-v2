@@ -370,7 +370,7 @@ run: function(){
 
 function modTick(){
 	if(antivoid){
-		if(PlayerGetY()=="0"){
+		if(getPlayerY()=="0"){
 			clientMessage("You were at void!");
 			Server.sendChat("/spawn");
 			setPosition(Player.getEntity(), getPlayerX()+2, 60, getPlayerZ());
