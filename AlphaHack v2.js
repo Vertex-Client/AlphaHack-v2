@@ -257,12 +257,12 @@ Block.setRenderLayer(3,1);
 Block.setRenderLayer(12,1);
 Block.setRenderLayer(24,1);
 Block.setRenderLayer(78,1);
-Block.setShape(1, 0, 0, 0, 0, 0.6, 0);
-Block.setShape(2, 0, 0, 0, 0, 0.6, 0);
-Block.setShape(3, 0, 0, 0, 0, 0.6, 0);
-Block.setShape(12, 0, 0, 0, 0, 0.6, 0);
-Block.setShape(24, 0, 0, 0, 0, 0.6, 0);
-Block.setShape(78, 0, 0, 0, 0, 0.6, 0);
+Block.setShape(1, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(2, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(3, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(12, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(24, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(78, 0, 0, 0, 0.0001, 0.6, 0.0001);
 xray = true;
 }
 if(xray == false){
