@@ -35,6 +35,8 @@ var liquidwalk = false;
 var xray = false;
 var ttot = false;
 var antivoid = false;
+var armor = false;
+var coords = false;
 
 var getVer = ModPE.getMinecraftVersion();
 
@@ -346,6 +348,57 @@ antivoid = false;
             line3.addView(button3);
             
              menuLayout.addView(line3);
+             
+             var line4 = new android.widget.LinearLayout(ctx);
+	    line4.setOrientation(0);
+	    
+	    var button4 = new Button(MainActivity);
+button4.setText("Armor status");
+button4.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+button4.setTextColor(Color.RED);
+if(armor==true)button4.setTextColor(Color.GREEN);
+            button4.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             armor?armor=false:armor=true;
+button4.setText("Armor status");
+if(armor == true){
+button4.setTextColor(Color.GREEN);
+
+armor = true;
+}
+if(armor == false){
+button4.setTextColor(Color.RED);
+
+armor = false;
+}
+                }
+            }));
+            line3.addView(button4);
+            
+            var button5 = new Button(MainActivity);
+button5.setText("Coordinates");
+button5.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+button5.setTextColor(Color.RED);
+if(coords==true)button5.setTextColor(Color.GREEN);
+            button5.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             coords?coords=false:coords=true;
+button5.setText("Coordinates");
+if(coords == true){
+button5.setTextColor(Color.GREEN);
+
+coords = true;
+}
+if(coords == false){
+button5.setTextColor(Color.RED);
+
+coords = false;
+}
+                }
+            }));
+            line3.addView(button5);
+            
+             menuLayout.addView(line4);
             
             menu = new PopupWindow(menuLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
            menu.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -376,6 +429,8 @@ function modTick(){
 			setPosition(Player.getEntity(), getPlayerX()+2, 60, getPlayerZ());
 		}
 	}
+if(coords)ModPE.showTipMessage("x"+Math.round(getPlayerX())+", y"+Math.round(getPlayerY())+", z"+Math.round(getPlayerZ()));
+	if(armor)ModPE.showTipMessage("\nHead: " + Entity.getArmorDamage(getPlayerEnt(), 0) + " Chest: " + Entity.getArmorDamage(getPlayerEnt(), 1) + " Legs: " + Entity.getArmorDamage(getPlayerEnt(), 2) + " Feet: " + Entity.getArmorDamage(getPlayerEnt(), 3));
 }
 
 function devpardon() {
