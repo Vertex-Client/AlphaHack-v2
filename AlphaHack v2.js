@@ -292,7 +292,7 @@ xray = false;
             svr.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 clientMessage("§lIP:§r " + Server.getAddress() + " §lPort:§r " + Server.getPort());
-if(Server.getAddress()=="null")clientMessage("You are not on a server!");
+if(Server.getAddress()=="null" || Server.getPort()=="0")clientMessage("You are not on a server!");
                 }
             }));
             line3.addView(svr);
