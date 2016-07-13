@@ -307,6 +307,7 @@ if(Server.getAddress()=="null" || Server.getPort()=="0")clientMessage("You are n
 clientMessage("Item ID: " + Player.getCarriedItem());
 clientMessage("Data / damage: " + Player.getCarriedItemData());
 clientMessage("Amount in hand: " + Player.getCarriedItemCount());
+clientMessage("item enchantment: " + Player.getEnchantments(Player.getSelectedSlotId()));
                 }
             }));
             line3.addView(itemInfo);
@@ -373,7 +374,7 @@ armor = false;
 }
                 }
             }));
-            line3.addView(button4);
+            line4.addView(button4);
             
             var button5 = new Button(MainActivity);
 button5.setText("Coordinates");
@@ -396,7 +397,7 @@ coords = false;
 }
                 }
             }));
-            line3.addView(button5);
+            line4.addView(button5);
             
              menuLayout.addView(line4);
             
