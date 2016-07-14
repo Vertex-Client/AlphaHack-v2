@@ -204,8 +204,9 @@ Toast.makeText(MainActivity, "Closed successfully", 1).show();
                 onClick: function(viewarg){ 
                 Level.getRainLevel();	
 clientMessage("World name: "+Level.getWorldName()+" World: "+Player.getDimension()+" Biome: "+Level.getBiomeName());
-if(Level.getRainLevel()=="0")clientMessage("Weather: clear"+" Time: "+Level.getTime());
-if(Level.getRainLevel()=="1")clientMessage("Weather: rain/snow "+" Time: "+Level.getTime());
+Math.round(Level.getRainLevel());
+if(Math.round(Level.getRainLevel())=="0")clientMessage("Weather: clear"+" Time: "+Level.getTime());
+if(Math.round(Level.getRainLevel())=="1")clientMessage("Weather: rain/snow "+" Time: "+Level.getTime());
                 }
             }));
             line2.addView(worldInfo);
@@ -371,7 +372,7 @@ if(Server.getAddress()=="null" || Server.getPort()=="0")clientMessage("You are n
 clientMessage("Item ID: " + Player.getCarriedItem());
 clientMessage("Data / damage: " + Player.getCarriedItemData());
 clientMessage("Amount in hand: " + Player.getCarriedItemCount());
-clientMessage("item enchantment: " + Player.getEnchantments(Player.getSelectedSlotId()));
+clientMessage("Item enchantment: " + Player.getEnchantments(Player.getSelectedSlotId()));
                 }
             }));
             line3.addView(itemInfo);
@@ -534,14 +535,15 @@ run: function(){
 
 function modTick(){
 	if(antivoid){
-		if(getPlayerY()=="0"){
+		Math.round(getPlayerY());
+		if(Math.round(getPlayerY())=="-3"){
 			clientMessage("You were at void!");
 			Server.sendChat("/spawn");
-			setPosition(Player.getEntity(), getPlayerX()+2, 60, getPlayerZ());
+			setPosition(Player.getEntity(), getPlayerX(), 65, getPlayerZ()+5);
 		}
 	}
 if(coords)ModPE.showTipMessage("x"+Math.round(getPlayerX())+", y"+Math.round(getPlayerY())+", z"+Math.round(getPlayerZ()));
-if(armor)ModPE.showTipMessage("\nHead: " + Entity.getArmorDamage(getPlayerEnt(), 0) + " Chest: " + Entity.getArmorDamage(getPlayerEnt(), 1) + " Legs: " + Entity.getArmorDamage(getPlayerEnt(), 2) + " Feet: " + Entity.getArmorDamage(getPlayerEnt(), 3));
+if(armor)ModPE.showTipMessage("\n\nHead: " + Entity.getArmorDamage(getPlayerEnt(), 0) + " Chest: " + Entity.getArmorDamage(getPlayerEnt(), 1) + " Legs: " + Entity.getArmorDamage(getPlayerEnt(), 2) + " Feet: " + Entity.getArmorDamage(getPlayerEnt(), 3));
 if(glide){
 if(Entity.getVelY(Player.getEntity()) <= 0){
 setVelY(Player.getEntity(), -0.05)
