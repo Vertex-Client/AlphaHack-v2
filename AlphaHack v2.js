@@ -37,10 +37,55 @@ var ttot = false;
 var antivoid = false;
 var armor = false;
 var coords = false;
+var glide = false;
 
 var getVer = ModPE.getMinecraftVersion();
 
 ModPE.langEdit("menu.copyright", "AlphαHαck v2 @ArceusMatt");
+
+ModPE.langEdit("deathScreen.message","§c§lWasted");
+ModPE.langEdit("commands.op.success","§l" + ModPE.getI18n("commands.op.success"));
+ModPE.langEdit("commands.banip.success","§l" + ModPE.getI18n("commands.banip.success"));
+ModPE.langEdit("commands.banip.success.players","§l" + ModPE.getI18n("commands.banip.success.players"));
+
+ModPE.langEdit("menu.play",viddd + ModPE.getI18n("menu.play"));
+ModPE.langEdit("menu.options",viddd + ModPE.getI18n("menu.options"));
+ModPE.langEdit("menu.skins",viddd + ModPE.getI18n("menu.skins"));
+ModPE.langEdit("menu.store",viddd + ModPE.getI18n("menu.store"));
+ModPE.langEdit("menu.achievements",viddd + ModPE.getI18n("menu.achievements"));
+ModPE.langEdit("menu.options",viddd + ModPE.getI18n("menu.options"));
+ModPE.langEdit("menu.settings",viddd + ModPE.getI18n("menu.settings"));
+ModPE.langEdit("menu.playdemo",viddd + ModPE.getI18n("menu.playdemo"));
+ModPE.langEdit("menu.resetdemo",viddd + ModPE.getI18n("menu.resetdemo"));
+ModPE.langEdit("menu.resourcepacks",viddd + ModPE.getI18n("menu.resourcepacks"));
+ModPE.langEdit("menu.shareToLan",viddd + ModPE.getI18n("menu.shareToLan"));
+ModPE.langEdit("menu.online",viddd + ModPE.getI18n("menu.online"));
+ModPE.langEdit("menu.realms",viddd + ModPE.getI18n("menu.realms"));
+ModPE.langEdit("skins.restore.button",viddd + ModPE.getI18n("skins.restore.button"));
+ModPE.langEdit("playscreen.new",viddd + ModPE.getI18n("playscreen.new"));
+ModPE.langEdit("createWorldScreen.advanced",viddd + ModPE.getI18n("createWorldScreen.advanced"));
+ModPE.langEdit("externalServerScreen.addServer",viddd + ModPE.getI18n("externalServerScreen.addServer"));
+ModPE.langEdit("deathScreen.message",viddd + ModPE.getI18n("deathScreen.message"));
+ModPE.langEdit("playscreen.quit",viddd + ModPE.getI18n("playscreen.quit"));
+ModPE.langEdit("deathScreen.quit",viddd + ModPE.getI18n("deathScreen.quit"));
+ModPE.langEdit("deathScreen.respawn",viddd + ModPE.getI18n("deathScreen.respawn"));
+ModPE.langEdit("pauseScreen.quit",viddd + ModPE.getI18n("pauseScreen.quit"));
+ModPE.langEdit("pauseScreen.options",viddd + ModPE.getI18n("pauseScreen.options"));
+ModPE.langEdit("pauseScreen.back",viddd + ModPE.getI18n("pauseScreen.back"));
+ModPE.langEdit("menu.returnToGame",viddd + ModPE.getI18n("menu.returnToGame"));
+ModPE.langEdit("chatScreen.hide",viddd + ModPE.getI18n("chatScreen.hide"));
+ModPE.langEdit("menu.playOnRealms",viddd + ModPE.getI18n("menu.playOnRealms"));
+ModPE.langEdit("menu.multiplayer",viddd + ModPE.getI18n("menu.multiplayer"));
+ModPE.langEdit("menu.online",viddd + ModPE.getI18n("menu.online"));
+ModPE.langEdit("menu.achievements",viddd + ModPE.getI18n("menu.achievements"));
+ModPE.langEdit("action.interact.createMap",viddd + ModPE.getI18n("action.interact.createMap"));
+ModPE.langEdit("createWorldScreen.action.editLocal",viddd + ModPE.getI18n("createWorldScreen.action.editLocal"));
+ModPE.langEdit("createWorldScreen.action.local",viddd + ModPE.getI18n("createWorldScreen.action.local"));
+ModPE.langEdit("createWorldScreen.alwaysDay",viddd + ModPE.getI18n("createWorldScreen.alwaysDay"));
+ModPE.langEdit("createWorldScreen.delete",ModPE.getI18n("createWorldScreen.delete"));
+ModPE.langEdit("createWorldScreen.game.settings",viddd + ModPE.getI18n("createWorldScreen.game.settings"));
+ModPE.langEdit("createWorldScreen.gameMode.creative",viddd + ModPE.getI18n("createWorldScreen.gameMode.creative"));
+ModPE.langEdit("createWorldScreen.gameMode.survival",viddd + ModPE.getI18n("createWorldScreen.gameMode.survival"));
 
 function dip2px(dips){
     return Math.ceil(dips * ctx.getResources().getDisplayMetrics().density);
@@ -399,6 +444,52 @@ coords = false;
             }));
             line4.addView(button5);
             
+            var button6 = new Button(MainActivity);
+button6.setText("Glide");
+button6.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+button6.setTextColor(Color.RED);
+if(glide==true)button6.setTextColor(Color.GREEN);
+            button6.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             glide?glide=false:glide=true;
+button6.setText("Glide");
+if(glide == true){
+button6.setTextColor(Color.GREEN);
+Toast.makeText(MainActivity, "Credit: Apric0cks from maximus mod!", 1).show();
+glide = true;
+}
+if(glide == false){
+button6.setTextColor(Color.RED);
+
+glide = false;
+}
+                }
+            }));
+            line4.addView(button6);
+            
+            var button7 = new Button(MainActivity);
+button7.setText("Text to toast");
+button7.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+button7.setTextColor(Color.RED);
+if(ttot==true)button7.setTextColor(Color.GREEN);
+            button7.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             ttot?ttot=false:ttot=true;
+button7.setText("Text to toast");
+if(ttot == true){
+button7.setTextColor(Color.GREEN);
+
+ttot = true;
+}
+if(ttot == false){
+button7.setTextColor(Color.RED);
+
+ttot = false;
+}
+                }
+            }));
+            line4.addView(button7);
+            
              menuLayout.addView(line4);
             
             menu = new PopupWindow(menuLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
@@ -431,8 +522,13 @@ function modTick(){
 		}
 	}
 if(coords)ModPE.showTipMessage("x"+Math.round(getPlayerX())+", y"+Math.round(getPlayerY())+", z"+Math.round(getPlayerZ()));
-	if(armor)ModPE.showTipMessage("\nHead: " + Entity.getArmorDamage(getPlayerEnt(), 0) + " Chest: " + Entity.getArmorDamage(getPlayerEnt(), 1) + " Legs: " + Entity.getArmorDamage(getPlayerEnt(), 2) + " Feet: " + Entity.getArmorDamage(getPlayerEnt(), 3));
+if(armor)ModPE.showTipMessage("\nHead: " + Entity.getArmorDamage(getPlayerEnt(), 0) + " Chest: " + Entity.getArmorDamage(getPlayerEnt(), 1) + " Legs: " + Entity.getArmorDamage(getPlayerEnt(), 2) + " Feet: " + Entity.getArmorDamage(getPlayerEnt(), 3));
+if(glide){
+if(Entity.getVelY(Player.getEntity()) <= 0){
+setVelY(Player.getEntity(), -0.05)
 }
+}
+	}
 
 function devpardon() {
 var file = new java.io.File( android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/games/com.mojang/minecraftpe/clientId.txt/");
