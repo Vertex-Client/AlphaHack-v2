@@ -166,6 +166,7 @@ function mainMenu(){
             
             var exit = new Button(MainActivity);
             exit.setText("Exit AlphαHαck");
+            exit.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
             exit.setTextColor(Color.RED);
             exit.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -175,6 +176,23 @@ Toast.makeText(MainActivity, "Closed successfully", 1).show();
                 }
             }));
             menuLayout.addView(exit);
+            
+            var line1 = new android.widget.LinearLayout(ctx);
+	    line1.setOrientation(0);
+	    
+	    var active = new TextView(MainActivity);
+            active.setTextSize(10);
+            active.setText("Active mods: ");
+            active.setTextColor(Color.WHITE);
+            line1.addView(active);
+            
+            var active2 = new TextView(MainActivity);
+            active2.setTextSize(10);
+            if(liquidwalk==true)active2.setText("Liquid walk");
+            active2.setTextColor(Color.WHITE);
+            line1.addView(active2);
+            
+            menuLayout.addView(line1);
             
             var line2 = new android.widget.LinearLayout(ctx);
 	    line2.setOrientation(0);
