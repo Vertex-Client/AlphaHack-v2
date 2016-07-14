@@ -192,6 +192,42 @@ Toast.makeText(MainActivity, "Closed successfully", 1).show();
             active2.setTextColor(Color.WHITE);
             line1.addView(active2);
             
+            var active3 = new TextView(MainActivity);
+            active3.setTextSize(10);
+            if(xray==true)active3.setText("Xray");
+            active3.setTextColor(Color.WHITE);
+            line1.addView(active3);
+            
+            var active4 = new TextView(MainActivity);
+            active4.setTextSize(10);
+            if(armor==true)active4.setText("Armor status");
+            active4.setTextColor(Color.WHITE);
+            line1.addView(active4);
+            
+            var active5 = new TextView(MainActivity);
+            active5.setTextSize(10);
+            if(coords==true)active5.setText("Coordinates");
+            active5.setTextColor(Color.WHITE);
+            line1.addView(active5);
+            
+            var active6 = new TextView(MainActivity);
+            active6.setTextSize(10);
+            if(antivoid==true)active6.setText("Anti void");
+            active6.setTextColor(Color.WHITE);
+            line1.addView(active6);
+            
+            var active7 = new TextView(MainActivity);
+            active7.setTextSize(10);
+            if(glide==true)active7.setText("Glide");
+            active7.setTextColor(Color.WHITE);
+            line1.addView(active7);
+            
+            var active8 = new TextView(MainActivity);
+            active8.setTextSize(10);
+            if(ttot==true)active8.setText("TextToToast");
+            active8.setTextColor(Color.WHITE);
+            line1.addView(active8);
+            
             menuLayout.addView(line1);
             
             var line2 = new android.widget.LinearLayout(ctx);
@@ -307,7 +343,7 @@ clientMessage("§7Your gamemode was updated to spectator mode!");
 	    
 	    //this is a test xray
 	    	    var button2 = new Button(MainActivity);
-button2.setText("Ore ESP(xray)");
+button2.setText("Ore viewer(xray)");
 button2.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 button2.setTextColor(Color.RED);
 if(xray==true)button2.setTextColor(Color.GREEN);
