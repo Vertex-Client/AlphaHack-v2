@@ -30,6 +30,7 @@ var Alert = android.app.AlertDialog.Builder
 var GUI;
 var menu;
 var num0 = 0;
+var viddd = "§3";
 
 var liquidwalk = false;
 var xray = false;
