@@ -39,47 +39,43 @@ var antivoid = false;
 var armor = false;
 var coords = false;
 var glide = false;
+var tapspam = false;
+var tapdestroy = false;
+var spam = false;
+var destroy = false;
+var block = false;
 
 var getVer = ModPE.getMinecraftVersion();
 
+//main menu
 ModPE.langEdit("menu.copyright", "AlphαHαck v2 @ArceusMatt");
-
-ModPE.langEdit("deathScreen.message","§c§lWasted");
-ModPE.langEdit("commands.op.success","§l" + ModPE.getI18n("commands.op.success"));
-ModPE.langEdit("commands.banip.success","§l" + ModPE.getI18n("commands.banip.success"));
-ModPE.langEdit("commands.banip.success.players","§l" + ModPE.getI18n("commands.banip.success.players"));
-
 ModPE.langEdit("menu.play",viddd + ModPE.getI18n("menu.play"));
 ModPE.langEdit("menu.options",viddd + ModPE.getI18n("menu.options"));
 ModPE.langEdit("menu.skins",viddd + ModPE.getI18n("menu.skins"));
 ModPE.langEdit("menu.store",viddd + ModPE.getI18n("menu.store"));
 ModPE.langEdit("menu.achievements",viddd + ModPE.getI18n("menu.achievements"));
-ModPE.langEdit("menu.options",viddd + ModPE.getI18n("menu.options"));
 ModPE.langEdit("menu.settings",viddd + ModPE.getI18n("menu.settings"));
 ModPE.langEdit("menu.playdemo",viddd + ModPE.getI18n("menu.playdemo"));
 ModPE.langEdit("menu.resetdemo",viddd + ModPE.getI18n("menu.resetdemo"));
+ModPE.langEdit("menu.returnToGame",viddd + ModPE.getI18n("menu.returnToGame"));
 ModPE.langEdit("menu.resourcepacks",viddd + ModPE.getI18n("menu.resourcepacks"));
 ModPE.langEdit("menu.shareToLan",viddd + ModPE.getI18n("menu.shareToLan"));
 ModPE.langEdit("menu.online",viddd + ModPE.getI18n("menu.online"));
 ModPE.langEdit("menu.realms",viddd + ModPE.getI18n("menu.realms"));
-ModPE.langEdit("skins.restore.button",viddd + ModPE.getI18n("skins.restore.button"));
-ModPE.langEdit("playscreen.new",viddd + ModPE.getI18n("playscreen.new"));
-ModPE.langEdit("createWorldScreen.advanced",viddd + ModPE.getI18n("createWorldScreen.advanced"));
-ModPE.langEdit("externalServerScreen.addServer",viddd + ModPE.getI18n("externalServerScreen.addServer"));
-ModPE.langEdit("deathScreen.message",viddd + ModPE.getI18n("deathScreen.message"));
-ModPE.langEdit("playscreen.quit",viddd + ModPE.getI18n("playscreen.quit"));
-ModPE.langEdit("deathScreen.quit",viddd + ModPE.getI18n("deathScreen.quit"));
-ModPE.langEdit("deathScreen.respawn",viddd + ModPE.getI18n("deathScreen.respawn"));
-ModPE.langEdit("pauseScreen.quit",viddd + ModPE.getI18n("pauseScreen.quit"));
-ModPE.langEdit("pauseScreen.options",viddd + ModPE.getI18n("pauseScreen.options"));
-ModPE.langEdit("pauseScreen.back",viddd + ModPE.getI18n("pauseScreen.back"));
-ModPE.langEdit("menu.returnToGame",viddd + ModPE.getI18n("menu.returnToGame"));
-ModPE.langEdit("chatScreen.hide",viddd + ModPE.getI18n("chatScreen.hide"));
 ModPE.langEdit("menu.playOnRealms",viddd + ModPE.getI18n("menu.playOnRealms"));
 ModPE.langEdit("menu.multiplayer",viddd + ModPE.getI18n("menu.multiplayer"));
 ModPE.langEdit("menu.online",viddd + ModPE.getI18n("menu.online"));
-ModPE.langEdit("menu.achievements",viddd + ModPE.getI18n("menu.achievements"));
-ModPE.langEdit("action.interact.createMap",viddd + ModPE.getI18n("action.interact.createMap"));
+
+//pause screen & death screen
+ModPE.langEdit("pauseScreen.quit",viddd + ModPE.getI18n("pauseScreen.quit"));
+ModPE.langEdit("pauseScreen.options",viddd + ModPE.getI18n("pauseScreen.options"));
+ModPE.langEdit("pauseScreen.back",viddd + ModPE.getI18n("pauseScreen.back"));
+ModPE.langEdit("deathScreen.quit",viddd + ModPE.getI18n("deathScreen.quit"));
+ModPE.langEdit("deathScreen.respawn",viddd + ModPE.getI18n("deathScreen.respawn"));
+ModPE.langEdit("deathScreen.message",viddd + ModPE.getI18n("deathScreen.message"));
+ModPE.langEdit("chatScreen.hide",viddd + ModPE.getI18n("chatScreen.hide"));
+
+//create screen
 ModPE.langEdit("createWorldScreen.action.editLocal",viddd + ModPE.getI18n("createWorldScreen.action.editLocal"));
 ModPE.langEdit("createWorldScreen.action.local",viddd + ModPE.getI18n("createWorldScreen.action.local"));
 ModPE.langEdit("createWorldScreen.alwaysDay",viddd + ModPE.getI18n("createWorldScreen.alwaysDay"));
@@ -87,6 +83,20 @@ ModPE.langEdit("createWorldScreen.delete",ModPE.getI18n("createWorldScreen.delet
 ModPE.langEdit("createWorldScreen.game.settings",viddd + ModPE.getI18n("createWorldScreen.game.settings"));
 ModPE.langEdit("createWorldScreen.gameMode.creative",viddd + ModPE.getI18n("createWorldScreen.gameMode.creative"));
 ModPE.langEdit("createWorldScreen.gameMode.survival",viddd + ModPE.getI18n("createWorldScreen.gameMode.survival"));
+ModPE.langEdit("createWorldScreen.advanced",viddd + ModPE.getI18n("createWorldScreen.advanced"));
+
+ModPE.langEdit("deathScreen.message","§c§lWasted");
+ModPE.langEdit("commands.op.success","§l" + ModPE.getI18n("commands.op.success"));
+ModPE.langEdit("commands.banip.success","§l" + ModPE.getI18n("commands.banip.success"));
+ModPE.langEdit("commands.banip.success.players","§l" + ModPE.getI18n("commands.banip.success.players"));
+
+
+ModPE.langEdit("playscreen.new",viddd + ModPE.getI18n("playscreen.new"));
+ModPE.langEdit("skins.restore.button",viddd + ModPE.getI18n("skins.restore.button"));
+ModPE.langEdit("externalServerScreen.addServer",viddd + ModPE.getI18n("externalServerScreen.addServer"));
+ModPE.langEdit("playscreen.quit",viddd + ModPE.getI18n("playscreen.quit"));
+ModPE.langEdit("chatScreen.hide",viddd + ModPE.getI18n("chatScreen.hide"));
+ModPE.langEdit("action.interact.createMap",viddd + ModPE.getI18n("action.interact.createMap"));
 
 function dip2px(dips){
     return Math.ceil(dips * ctx.getResources().getDisplayMetrics().density);
@@ -188,43 +198,43 @@ Toast.makeText(MainActivity, "Closed successfully", 1).show();
             
             var active2 = new TextView(MainActivity);
             active2.setTextSize(10);
-            if(liquidwalk==true)active2.setText("Liquid walk");
+            if(liquidwalk==true)active2.setText("Liquid walk, ");
             active2.setTextColor(Color.WHITE);
             line1.addView(active2);
             
             var active3 = new TextView(MainActivity);
             active3.setTextSize(10);
-            if(xray==true)active3.setText("Xray");
+            if(xray==true)active3.setText("Xray, ");
             active3.setTextColor(Color.WHITE);
             line1.addView(active3);
             
             var active4 = new TextView(MainActivity);
             active4.setTextSize(10);
-            if(armor==true)active4.setText("Armor status");
+            if(armor==true)active4.setText("Armor status, ");
             active4.setTextColor(Color.WHITE);
             line1.addView(active4);
             
             var active5 = new TextView(MainActivity);
             active5.setTextSize(10);
-            if(coords==true)active5.setText("Coordinates");
+            if(coords==true)active5.setText("Coordinates, ");
             active5.setTextColor(Color.WHITE);
             line1.addView(active5);
             
             var active6 = new TextView(MainActivity);
             active6.setTextSize(10);
-            if(antivoid==true)active6.setText("Anti void");
+            if(antivoid==true)active6.setText("Anti void, ");
             active6.setTextColor(Color.WHITE);
             line1.addView(active6);
             
             var active7 = new TextView(MainActivity);
             active7.setTextSize(10);
-            if(glide==true)active7.setText("Glide");
+            if(glide==true)active7.setText("Glide, ");
             active7.setTextColor(Color.WHITE);
             line1.addView(active7);
             
             var active8 = new TextView(MainActivity);
             active8.setTextSize(10);
-            if(ttot==true)active8.setText("TextToToast");
+            if(ttot==true)active8.setText("TextToToast, ");
             active8.setTextColor(Color.WHITE);
             line1.addView(active8);
             
@@ -343,14 +353,14 @@ clientMessage("§7Your gamemode was updated to spectator mode!");
 	    
 	    //this is a test xray
 	    	    var button2 = new Button(MainActivity);
-button2.setText("Ore viewer(xray)");
+button2.setText("Ground X-Ray");
 button2.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 button2.setTextColor(Color.RED);
 if(xray==true)button2.setTextColor(Color.GREEN);
             button2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              xray?xray=false:xray=true;
-button2.setText("Ore ESP(xray)");
+button2.setText("Ore view(xray)");
 if(xray == true){
 button2.setTextColor(Color.GREEN);
 clientMessage("You may crash!\nchange on/off fancy graphics for better view.");
@@ -546,7 +556,97 @@ ttot = false;
             }));
             line4.addView(button7);
             
+            var button8 = new Button(MainActivity);
+button8.setText("Anti break");
+button8.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+button8.setTextColor(Color.RED);
+if(block==true)button8.setTextColor(Color.GREEN);
+            button8.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             block?block=false:block=true;
+button8.setText("Anti break");
+if(block == true){
+button8.setTextColor(Color.GREEN);
+
+block = true;
+}
+if(block == false){
+button8.setTextColor(Color.RED);
+
+block = false;
+}
+                }
+            }));
+            line4.addView(button8);
+            
              menuLayout.addView(line4);
+             
+             var line5 = new android.widget.LinearLayout(ctx);
+	    line5.setOrientation(0);
+	    
+	    var button9 = new Button(MainActivity);
+button9.setText("Tap spam");
+button9.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+button9.setTextColor(Color.RED);
+if(tapspam==true)button9.setTextColor(Color.GREEN);
+            button9.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             tapspam?tapspam=false:tapspam=true;
+button9.setText("Tap spam");
+if(tapspam == true){
+button9.setTextColor(Color.GREEN);
+
+tapspam = true;
+}
+if(tapspam == false){
+button8.setTextColor(Color.RED);
+
+tapspam = false;
+}
+                }
+            }));
+            line5.addView(button9);
+            
+            var button10 = new Button(MainActivity);
+button10.setText("Tap destroy");
+button10.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+button10.setTextColor(Color.RED);
+if(tapdestroy==true)button10.setTextColor(Color.GREEN);
+            button10.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             tapdestroy?tapdestroy=false:tapdestroy=true;
+button10.setText("Tap destroy");
+if(tapdestroy == true){
+button10.setTextColor(Color.GREEN);
+
+tapdestroy = true;
+}
+if(tapdestroy == false){
+button10.setTextColor(Color.RED);
+
+tapdestroy = false;
+}
+                }
+            }));
+            line5.addView(button10);
+            
+            menuLayout.addView(line5);
+            
+            var line6 = new android.widget.LinearLayout(ctx);
+	    line6.setOrientation(0);
+            
+var mods = new android.widget.Button(ctx);
+mods.setText("Offline mods");
+mods.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+mods.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             mod_menu();
+             menu.dismiss();
+			}
+		});
+		menuLayout.addView(mods);
+            
+            menuLayout.addView(line6);
             
             menu = new PopupWindow(menuLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
            menu.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -567,6 +667,58 @@ function serverMessageReceiveHook(str) {
 run: function(){
 	if(ttot)Toast.makeText(ctx, str, 1).show();
 	}});
+}
+
+function destroyBlock(x, y, z, side)
+{
+if(block == true)preventDefault();
+}
+
+function startDestroyBlock(x, y, z, side)
+{
+if(block == true)preventDefault()
+}
+
+function useItem(x, y, z, itemId, blockId, side){
+if(sign)if(blockId == 63 || blockId == 68)signEditor(); 
+
+	if(lightning) {
+		 Level.spawnMob(x, y, z, EntityType.LIGHTNING_BOLT);
+	}
+	if(primedtnt) {
+Level.spawnMob(x, y +2, z, EntityType.PRIMED_TNT);
+	}
+	if(arrow) {
+Level.spawnMob(x, y +1, z, EntityType.ARROW);
+	}
+	if(exporb) {
+Level.spawnMob(x, y +1, z, EntityType.EXPERIENCE_ORB);
+	}
+
+if(tapspam)net.zhuoweizhang.mcpelauncher.ScriptManager.nativeSendChat(text);
+
+if(block == true)preventDefault();
+
+if(tapdestroy){
+	Level.destroyBlock(x +1, y, z +1, vidd);
+	Level.destroyBlock(x +2, y, z +2, vidd);
+	Level.destroyBlock(x +3, y, z +3, vidd);
+	Level.destroyBlock(x +4, y, z +4, vidd);
+	
+    Level.destroyBlock(x, y, z, vidd);
+
+	Level.destroyBlock(x -1, y, z -1, vidd);
+	Level.destroyBlock(x -2, y, z -2, vidd);
+	Level.destroyBlock(x -3, y, z -3, vidd);
+	Level.destroyBlock(x -4, y, z -4, vidd);
+}
+
+if(taptp){
+	setPosition(Player.getEntity(), px, py, pz);
+net.zhuoweizhang.mcpelauncher.ScriptManager.nativeSendChat("/tp " + Player.getName(Player.getEntity()) + space + px + space + py + space + pz);
+
+}
+
 }
 
 function modTick(){
