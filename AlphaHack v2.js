@@ -30,7 +30,7 @@ var Alert = android.app.AlertDialog.Builder
 var GUI;
 var menu;
 var num0 = 0;
-var viddd = "§3";
+var viddd = "§9";
 
 var liquidwalk = false;
 var xray = false;
@@ -48,7 +48,7 @@ var block = false;
 var getVer = ModPE.getMinecraftVersion();
 
 //main menu
-ModPE.langEdit("menu.copyright", "AlphαHαck v2 @ArceusMatt");
+ModPE.langEdit("menu.copyright", "https://arceusmatt.github.io");
 ModPE.langEdit("menu.play",viddd + ModPE.getI18n("menu.play"));
 ModPE.langEdit("menu.options",viddd + ModPE.getI18n("menu.options"));
 ModPE.langEdit("menu.skins",viddd + ModPE.getI18n("menu.skins"));
@@ -695,7 +695,10 @@ Level.spawnMob(x, y +1, z, EntityType.ARROW);
 Level.spawnMob(x, y +1, z, EntityType.EXPERIENCE_ORB);
 	}
 
-if(tapspam)net.zhuoweizhang.mcpelauncher.ScriptManager.nativeSendChat(text);
+if(tapspam){
+(ctx.getPackageName() == "net.zhuoweizhang.mcpelauncher" || ctx.getPackageName() == "net.zhuoweizhang.mcpelauncher.pro")net.zhuoweizhang.mcpelauncher.ScriptManager.nativeSendChat(text);
+Server.sendChat(text);
+}
 
 if(block == true)preventDefault();
 
@@ -715,7 +718,7 @@ if(tapdestroy){
 
 if(taptp){
 	setPosition(Player.getEntity(), px, py, pz);
-net.zhuoweizhang.mcpelauncher.ScriptManager.nativeSendChat("/tp " + Player.getName(Player.getEntity()) + space + px + space + py + space + pz);
+If(ctx.getPackageName() == "net.zhuoweizhang.mcpelauncher" || ctx.getPackageName() == "net.zhuoweizhang.mcpelauncher.pro")net.zhuoweizhang.mcpelauncher.ScriptManager.nativeSendChat("/tp " + Player.getName(Player.getEntity()) + space + px + space + py + space + pz);
 
 }
 
@@ -755,12 +758,14 @@ function rptask() {
         run: function () {
             new android.os.Handler().postDelayed(new java.lang.Runnable({
                 run: function () {
+If(ctx.getPackageName() == "net.zhuoweizhang.mcpelauncher" || ctx.getPackageName() == "net.zhuoweizhang.mcpelauncher.pro"){
                 	if (Debug == null || Debug.isShowing() == false) {
                         net.zhuoweizhang.mcpelauncher.ScriptManager.isRemote = true;
                         net.zhuoweizhang.mcpelauncher.ScriptManager.setLevelFakeCallback(true, false);
                         enableMod();
                         showMenuBtn();
                     }
+}
                     nx = getPlayerX();
                     ny = getPlayerY();
                     nz = getPlayerZ();
