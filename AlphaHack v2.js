@@ -65,6 +65,7 @@ ModPE.langEdit("menu.realms",viddd + ModPE.getI18n("menu.realms"));
 ModPE.langEdit("menu.playOnRealms",viddd + ModPE.getI18n("menu.playOnRealms"));
 ModPE.langEdit("menu.multiplayer",viddd + ModPE.getI18n("menu.multiplayer"));
 ModPE.langEdit("menu.online",viddd + ModPE.getI18n("menu.online"));
+ModPE.langEdit("menu.online",viddd + ModPE.getI18n("menu.online"));
 
 //pause screen & death screen
 ModPE.langEdit("pauseScreen.quit",viddd + ModPE.getI18n("pauseScreen.quit"));
@@ -74,6 +75,7 @@ ModPE.langEdit("deathScreen.quit",viddd + ModPE.getI18n("deathScreen.quit"));
 ModPE.langEdit("deathScreen.respawn",viddd + ModPE.getI18n("deathScreen.respawn"));
 ModPE.langEdit("deathScreen.message",viddd + ModPE.getI18n("deathScreen.message"));
 ModPE.langEdit("chatScreen.hide",viddd + ModPE.getI18n("chatScreen.hide"));
+ModPE.langEdit("pauseScreen.invite",viddd + ModPE.getI18n("pauseScreen.invite"));
 
 //create screen
 ModPE.langEdit("createWorldScreen.action.editLocal",viddd + ModPE.getI18n("createWorldScreen.action.editLocal"));
@@ -91,12 +93,15 @@ ModPE.langEdit("commands.banip.success","§l" + ModPE.getI18n("commands.banip.su
 ModPE.langEdit("commands.banip.success.players","§l" + ModPE.getI18n("commands.banip.success.players"));
 
 
+ModPE.langEdit("options.allowCellularData",viddd + ModPE.getI18n("options.allowCellularData"));
 ModPE.langEdit("playscreen.new",viddd + ModPE.getI18n("playscreen.new"));
 ModPE.langEdit("skins.restore.button",viddd + ModPE.getI18n("skins.restore.button"));
 ModPE.langEdit("externalServerScreen.addServer",viddd + ModPE.getI18n("externalServerScreen.addServer"));
 ModPE.langEdit("playscreen.quit",viddd + ModPE.getI18n("playscreen.quit"));
 ModPE.langEdit("chatScreen.hide",viddd + ModPE.getI18n("chatScreen.hide"));
 ModPE.langEdit("action.interact.createMap",viddd + ModPE.getI18n("action.interact.createMap"));
+ModPE.langEdit("xbox.signin",viddd + ModPE.getI18n("xbox.signin"));
+ModPE.langEdit("xbox.signout",viddd + ModPE.getI18n("xbox.signout"));
 
 function dip2px(dips){
     return Math.ceil(dips * ctx.getResources().getDisplayMetrics().density);
@@ -117,7 +122,7 @@ menuNo.setTextSize(10);
 		menuNo.setTextColor(Color.GREEN);
         layout.addView(menuNo);
  
-        Debug = new PopupWindow(layout, dip2px(1), dip2px(1)); 
+        Debug = new PopupWindow(layout, dip2px(0), dip2px(0)); 
 
         Debug.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         Debug.showAtLocation(ctx.getWindow().getDecorView(), Gravity.RIGHT | Gravity.TOP, 0, 1500);
@@ -237,6 +242,24 @@ Toast.makeText(MainActivity, "Closed successfully", 1).show();
             if(ttot==true)active8.setText("TextToToast, ");
             active8.setTextColor(Color.WHITE);
             line1.addView(active8);
+            
+            var active9 = new TextView(MainActivity);
+            active9.setTextSize(10);
+            if(block==true)active9.setText("Anti break, ");
+            active9.setTextColor(Color.WHITE);
+            line1.addView(active9);
+            
+            var active10 = new TextView(MainActivity);
+            active10.setTextSize(10);
+            if(tapspam==true)active8.setText("TapSpam, ");
+            active10.setTextColor(Color.WHITE);
+            line1.addView(active10);
+            
+            var active11 = new TextView(MainActivity);
+            active11.setTextSize(10);
+            if(tapdestroy==true)active8.setText("TapDestroy, ");
+            active11.setTextColor(Color.WHITE);
+            line1.addView(active11);
             
             menuLayout.addView(line1);
             
@@ -640,7 +663,7 @@ mods.setText("Offline mods");
 mods.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 mods.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-             mod_menu();
+             //mod_menu();
              menu.dismiss();
 			}
 		});
@@ -697,6 +720,7 @@ Level.spawnMob(x, y +1, z, EntityType.EXPERIENCE_ORB);
 
 if(tapspam){
 (ctx.getPackageName() == "net.zhuoweizhang.mcpelauncher" || ctx.getPackageName() == "net.zhuoweizhang.mcpelauncher.pro")net.zhuoweizhang.mcpelauncher.ScriptManager.nativeSendChat(text);
+
 Server.sendChat(text);
 }
 
@@ -730,6 +754,7 @@ function modTick(){
 		if(Math.round(getPlayerY())=="-3"){
 			clientMessage("You were at void!");
 			Server.sendChat("/spawn");
+			If(ctx.getPackageName() == "net.zhuoweizhang.mcpelauncher" || ctx.getPackageName() == "net.zhuoweizhang.mcpelauncher.pro")net.zhuoweizhang.mcpelauncher.ScriptManager.nativeSendChat("/spawn");
 			setPosition(Player.getEntity(), getPlayerX(), 65, getPlayerZ()+5);
 		}
 	}
