@@ -498,7 +498,7 @@ if(armor==true)button4.setTextColor(Color.GREEN);
 button4.setText("Armor status");
 if(armor == true){
 button4.setTextColor(Color.GREEN);
-
+if(coords==true)coords==false;
 armor = true;
 }
 if(armor == false){
@@ -521,7 +521,7 @@ if(coords==true)button5.setTextColor(Color.GREEN);
 button5.setText("Coordinates");
 if(coords == true){
 button5.setTextColor(Color.GREEN);
-
+if(armor==true)armor==false;
 coords = true;
 }
 if(coords == false){
@@ -657,6 +657,8 @@ tapdestroy = false;
             
             var line6 = new android.widget.LinearLayout(ctx);
 	    line6.setOrientation(0);
+	    
+	    menuLayout.addView(line6);
             
 var mods = new android.widget.Button(ctx);
 mods.setText("Offline mods");
@@ -679,8 +681,116 @@ misc.setOnClickListener(new android.view.View.OnClickListener() {
 			}
 		});
 		menuLayout.addView(misc);
-            
-            menuLayout.addView(line6);
+		
+var enchant = new android.widget.Button(ctx);
+enchant.setText("Enchant menu");
+enchant.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+enchant.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             //enchant_menu();
+             menu.dismiss();
+			}
+		});
+		menuLayout.addView(enchant);
+		
+var give = new android.widget.Button(ctx);
+give.setText("Give menu");
+give.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+give.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             //give_menu();
+             menu.dismiss();
+			}
+		});
+		menuLayout.addView(give);
+		
+var morph = new android.widget.Button(ctx);
+morph.setText("Morph menu");
+morph.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+morph.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             //morph_menu();
+             menu.dismiss();
+			}
+		});
+		menuLayout.addView(morph);
+		
+var nuke = new android.widget.Button(ctx);
+nuke.setText("Nuke menu");
+nuke.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+nuke.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             //nuke_menu();
+             menu.dismiss();
+			}
+		});
+		menuLayout.addView(nuke);
+		
+var particle = new android.widget.Button(ctx);
+particle.setText("Particle menu");
+particle.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+particle.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             //particle_menu();
+             menu.dismiss();
+			}
+		});
+		menuLayout.addView(particle);
+		
+var spawn = new android.widget.Button(ctx);
+spawn.setText("Spawn menu");
+spawn.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+spawn.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             //spawn_menu();
+             menu.dismiss();
+			}
+		});
+		menuLayout.addView(spawn);
+		
+var speed = new android.widget.Button(ctx);
+speed.setText("Speed menu");
+speed.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+speed.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             //speed_menu();
+             menu.dismiss();
+			}
+		});
+		menuLayout.addView(speed);
+		
+var teleport = new android.widget.Button(ctx);
+teleport.setText("Teleport menu");
+teleport.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+teleport.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             //teleport_menu();
+             menu.dismiss();
+			}
+		});
+		menuLayout.addView(teleport);
+		
+var time = new android.widget.Button(ctx);
+time.setText("Time menu");
+time.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+time.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             //time_menu();
+             menu.dismiss();
+			}
+		});
+		menuLayout.addView(time);
+		
+var weather = new android.widget.Button(ctx);
+weather.setText("Weather menu");
+weather.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+weather.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             //weather_menu();
+             menu.dismiss();
+			}
+		});
+		menuLayout.addView(weather);
             
             menu = new PopupWindow(menuLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
            menu.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
