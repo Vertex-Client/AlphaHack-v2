@@ -668,6 +668,17 @@ mods.setOnClickListener(new android.view.View.OnClickListener() {
 			}
 		});
 		menuLayout.addView(mods);
+		
+var misc = new android.widget.Button(ctx);
+misc.setText("Misc");
+misc.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+misc.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             //misc_menu();
+             menu.dismiss();
+			}
+		});
+		menuLayout.addView(misc);
             
             menuLayout.addView(line6);
             
