@@ -1,6 +1,5 @@
 var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
 var MainActivity = ctx;
-null
 
 //Get language of client side minecraft
 var getLanguage = ModPE.getLanguage();
@@ -28,7 +27,7 @@ var WebView = android.webkit.WebView;
 var Alert = android.app.AlertDialog.Builder
 
 //Defines
-var GUI = null;
+var GUI;
 var menu;
 var num0 = 0;
 var viddd = "§9";
