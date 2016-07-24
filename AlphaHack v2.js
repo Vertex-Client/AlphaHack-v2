@@ -1,6 +1,6 @@
 var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
 var MainActivity = ctx;
-Null
+null
 
 //Get language of client side minecraft
 var getLanguage = ModPE.getLanguage();
@@ -28,7 +28,7 @@ var WebView = android.webkit.WebView;
 var Alert = android.app.AlertDialog.Builder
 
 //Defines
-var GUI;
+var GUI = null;
 var menu;
 var num0 = 0;
 var viddd = "§9";
@@ -45,6 +45,7 @@ var tapdestroy = false;
 var spam = false;
 var destroy = false;
 var block = false;
+var taptp = false;
 
 var getVer = ModPE.getMinecraftVersion();
 
@@ -828,7 +829,7 @@ function useItem(x, y, z, itemId, blockId, side){
 if(sign)if(blockId == 63 || blockId == 68)signEditor(); 
 
 	if(lightning) {
-		 Level.spawnMob(x, y, z, EntityType.LIGHTNING_BOLT);
+Level.spawnMob(x, y, z, EntityType.LIGHTNING_BOLT);
 	}
 	if(primedtnt) {
 Level.spawnMob(x, y +2, z, EntityType.PRIMED_TNT);
@@ -859,8 +860,8 @@ if(tapdestroy){
 }
 
 if(taptp){
-	setPosition(Player.getEntity(), px, py, pz);
-Server.sendChat("/tp " + Player.getName(Player.getEntity()) + space + px + space + py + space + pz);
+	setPosition(Player.getEntity(), x, y, z);
+Server.sendChat("/tp " + Player.getName(Player.getEntity()) + space + x + space + y + space + z);
 
 }
 
