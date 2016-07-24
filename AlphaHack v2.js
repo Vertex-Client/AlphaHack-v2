@@ -1,5 +1,6 @@
 var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
 var MainActivity = ctx;
+Null
 
 //Get language of client side minecraft
 var getLanguage = ModPE.getLanguage();
@@ -839,11 +840,7 @@ Level.spawnMob(x, y +1, z, EntityType.ARROW);
 Level.spawnMob(x, y +1, z, EntityType.EXPERIENCE_ORB);
 	}
 
-if(tapspam){
-(ctx.getPackageName() == "net.zhuoweizhang.mcpelauncher" || ctx.getPackageName() == "net.zhuoweizhang.mcpelauncher.pro")net.zhuoweizhang.mcpelauncher.ScriptManager.nativeSendChat(text);
-
-Server.sendChat(text);
-}
+if(tapspam)Server.sendChat(text);
 
 if(block == true)preventDefault();
 
@@ -863,7 +860,7 @@ if(tapdestroy){
 
 if(taptp){
 	setPosition(Player.getEntity(), px, py, pz);
-If(ctx.getPackageName() == "net.zhuoweizhang.mcpelauncher" || ctx.getPackageName() == "net.zhuoweizhang.mcpelauncher.pro")net.zhuoweizhang.mcpelauncher.ScriptManager.nativeSendChat("/tp " + Player.getName(Player.getEntity()) + space + px + space + py + space + pz);
+Server.sendChat("/tp " + Player.getName(Player.getEntity()) + space + px + space + py + space + pz);
 
 }
 
@@ -875,7 +872,6 @@ function modTick(){
 		if(Math.round(getPlayerY())=="-3"){
 			clientMessage("You were at void!");
 			Server.sendChat("/spawn");
-			If(ctx.getPackageName() == "net.zhuoweizhang.mcpelauncher" || ctx.getPackageName() == "net.zhuoweizhang.mcpelauncher.pro")net.zhuoweizhang.mcpelauncher.ScriptManager.nativeSendChat("/spawn");
 			setPosition(Player.getEntity(), getPlayerX(), 65, getPlayerZ()+5);
 		}
 	}
@@ -904,14 +900,12 @@ function rptask() {
         run: function () {
             new android.os.Handler().postDelayed(new java.lang.Runnable({
                 run: function () {
-If(ctx.getPackageName() == "net.zhuoweizhang.mcpelauncher" || ctx.getPackageName() == "net.zhuoweizhang.mcpelauncher.pro"){
-                	if (Debug == null || Debug.isShowing() == false) {
+                        if (Debug == null || Debug.isShowing() == false) {
                         net.zhuoweizhang.mcpelauncher.ScriptManager.isRemote = true;
                         net.zhuoweizhang.mcpelauncher.ScriptManager.setLevelFakeCallback(true, false);
                         enableMod();
                         showMenuBtn();
                     }
-}
                     nx = getPlayerX();
                     ny = getPlayerY();
                     nz = getPlayerZ();
