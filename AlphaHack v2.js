@@ -46,6 +46,8 @@ var destroy = false;
 var block = false;
 var taptp = false;
 var sign = false;
+var autodestroy = false;
+var autospam = false;
 
 var getVer = ModPE.getMinecraftVersion();
 
@@ -890,7 +892,11 @@ Level.spawnMob(x, y +1, z, EntityType.ARROW);
 Level.spawnMob(x, y +1, z, EntityType.EXPERIENCE_ORB);
 	}
 
-if(tapspam)Server.sendChat(text);
+if(tapspam){
+	Server.sendChat(text);
+	Server.getPort();
+	if(Server.getPort()=="0")clientMessage(text);
+}
 
 if(block == true)preventDefault();
 
