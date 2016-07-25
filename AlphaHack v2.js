@@ -45,6 +45,7 @@ var spam = false;
 var destroy = false;
 var block = false;
 var taptp = false;
+var sign = false;
 
 var getVer = ModPE.getMinecraftVersion();
 
