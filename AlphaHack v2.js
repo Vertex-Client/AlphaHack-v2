@@ -175,10 +175,24 @@ function mainMenu(){
 
             var title = new TextView(MainActivity);
             title.setTextSize(20);
-            title.setText("AlphαHαck v2");
+            title.setText("AlphαHαck v2 beta");
             title.setGravity(Gravity.CENTER);
             title.setTextColor(Color.WHITE);
             menuLayout.addView(title);
+            
+            var title2 = new TextView(MainActivity);
+            title2.setTextSize(20);
+            title2.setText("Made by: ArceusMαtt");
+            title2.setGravity(Gravity.LEFT);
+            title2.setTextColor(Color.WHITE);
+            menuLayout.addView(title2);
+            
+            var title3 = new TextView(MainActivity);
+            title3.setTextSize(20);
+            title3.setText("Scroll down!");
+            title3.setGravity(Gravity.RIGHT);
+            title3.setTextColor(Color.WHITE);
+            menuLayout.addView(title3);
             
             var exit = new Button(MainActivity);
             exit.setText("Exit AlphαHαck");
@@ -683,6 +697,41 @@ misc.setOnClickListener(new android.view.View.OnClickListener() {
 		});
 		menuLayout.addView(misc);
 		
+		function misc_menu(){
+ctx.runOnUiThread(new Runnable({ run: function(){
+        try{
+            var miscLayout = new LinearLayout(ctx);
+            var miscScroll = new ScrollView(ctx);
+            var miscLayout1 = new LinearLayout(ctx);
+            miscLayout.setOrientation(1);
+            miscLayout1.setOrientation(1);
+            miscScroll.addView(miscLayout);
+            miscLayout1.addView(miscScroll);
+            
+            var exit = new android.widget.Button(ctx);
+		exit.setText("Exit");
+		exit.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             misc.dismiss();
+             showMenuBtn();
+			}
+		});
+		miscLayout.addView(exit);
+
+            misc = new PopupWindow(miscLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1, ctx.getWindowManager().getDefaultDisplay().getHeight());
+            misc.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+      var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(Color.TRANSPARENT);
+      bg.setStroke(10,Color.BLACK);
+miscLayout1.setBackgroundDrawable(bg);
+miscLayout1.setPadding(20,0,20,0);
+            misc.showAtLocation(ctx.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
+            }catch(error){
+                Toast.makeText(ctx, "An error occured: " + error, 1).show();
+            }
+    }}));
+}
+		
 var enchant = new android.widget.Button(ctx);
 enchant.setText("Enchant menu");
 enchant.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
@@ -800,7 +849,7 @@ weather.setOnClickListener(new android.view.View.OnClickListener() {
       bg.setStroke(10,Color.BLACK);
 menuLayout1.setBackgroundDrawable(bg);
 menuLayout1.setPadding(20,0,20,0);
-            menu.showAtLocation(MainActivity.getWindow().getDecorView(), Gravity.LEFT | Gravity.TOP, 0, 0);
+            menu.showAtLocation(MainActivity.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
             }catch(error){
                 Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
             }
