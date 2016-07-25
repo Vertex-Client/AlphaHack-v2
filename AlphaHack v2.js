@@ -142,7 +142,7 @@ function spam() {
 ctx.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
-spa = new android.widget.PopupWindow();
+spam = new android.widget.PopupWindow();
 var Layer1 = new android.widget.LinearLayout(ctx);
 var s = new android.widget.EditText(ctx);
 var Dialog = new android.app.Dialog(ctx);
