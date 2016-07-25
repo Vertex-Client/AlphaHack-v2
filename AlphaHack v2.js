@@ -31,6 +31,7 @@ var GUI;
 var menu;
 var num0 = 0;
 var viddd = "§9";
+var text = "";
 
 var liquidwalk = false;
 var xray = false;
@@ -136,6 +137,45 @@ menuNo.setTextSize(10);
     }}));
 }
 enableMod();
+
+function spam() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+spa = new android.widget.PopupWindow();
+var Layer1 = new android.widget.LinearLayout(ctx);
+var s = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter text");
+Dialog.setContentView(Layer1);
+
+Layer1.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer1.addView(s);
+Layer1.addView(Exit);
+
+S.setText("AlphaHack!");
+Exit.setText("Spam");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+text =s.getText();
+Dialog.dismiss();
+
+showMenuBtn();
+}
+});
+
+spam.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+spam.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+spam.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Spam Dialog Is Malfunctioning:"+e);
+}
+}});
+}
 
 function showMenuBtn(){
 MainActivity.runOnUiThread(new Runnable({ run: function(){
@@ -636,7 +676,7 @@ if(tapspam==true)button9.setTextColor(Color.GREEN);
 button9.setText("Tap spam");
 if(tapspam == true){
 button9.setTextColor(Color.GREEN);
-
+spam();
 tapspam = true;
 }
 if(tapspam == false){
