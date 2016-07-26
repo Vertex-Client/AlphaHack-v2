@@ -30,6 +30,7 @@ var Alert = android.app.AlertDialog.Builder
 var GUI;
 var menu;
 var num0 = 0;
+var vidd = true;
 var viddd = "§9";
 var text = "";
 
@@ -49,6 +50,11 @@ var taptp = false;
 var sign = false;
 var autodestroy = false;
 var autospam = false;
+
+var lightning = false;
+var primedtnt = false;
+var arrow = false;
+var exporb = false;
 
 var getVer = ModPE.getMinecraftVersion();
 
@@ -216,26 +222,31 @@ function mainMenu(){
             menuScroll.addView(menuLayout);
             menuLayout1.addView(menuScroll);
 
+var line0 = new android.widget.LinearLayout(ctx);
+	    line0.setOrientation(0);
+
             var title = new TextView(MainActivity);
             title.setTextSize(20);
             title.setText("AlphαHαck v2 beta");
             title.setGravity(Gravity.CENTER);
             title.setTextColor(Color.WHITE);
-            menuLayout.addView(title);
+            line0.addView(title);
             
             var title2 = new TextView(MainActivity);
             title2.setTextSize(20);
             title2.setText("Made by: ArceusMαtt");
             title2.setGravity(Gravity.LEFT);
             title2.setTextColor(Color.WHITE);
-            menuLayout.addView(title2);
+            line0.addView(title2);
             
             var title3 = new TextView(MainActivity);
             title3.setTextSize(20);
             title3.setText("Scroll down!");
             title3.setGravity(Gravity.RIGHT);
             title3.setTextColor(Color.WHITE);
-            menuLayout.addView(title3);
+            line0.addView(title3);
+
+menuLayout.addView(line0);
             
             var exit = new Button(MainActivity);
             exit.setText("Exit AlphαHαck");
