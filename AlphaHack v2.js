@@ -734,18 +734,53 @@ mods.setText("Offline mods");
 mods.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 mods.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-             //mod_menu();
+             mod_menu();
              menu.dismiss();
 			}
 		});
 		menuLayout.addView(mods);
+		
+		function mod_menu(){
+ctx.runOnUiThread(new Runnable({ run: function(){
+        try{
+            var modLayout = new LinearLayout(ctx);
+            var modScroll = new ScrollView(ctx);
+            var modLayout1 = new LinearLayout(ctx);
+            modLayout.setOrientation(1);
+            modLayout1.setOrientation(1);
+            modScroll.addView(modLayout);
+            modLayout1.addView(modScroll);
+            
+            var exit = new android.widget.Button(ctx);
+		exit.setText("Exit");
+		exit.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             mod.dismiss();
+             showMenuBtn();
+			}
+		});
+		modLayout.addView(exit);
+
+            mod = new PopupWindow(modLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1, ctx.getWindowManager().getDefaultDisplay().getHeight());
+            mod.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+      var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(Color.TRANSPARENT);
+      bg.setStroke(10,Color.BLACK);
+modLayout1.setBackgroundDrawable(bg);
+modLayout1.setPadding(20,0,20,0);
+            mod.showAtLocation(ctx.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
+            }catch(error){
+                Toast.makeText(ctx, "An error occured: " + error, 1).show();
+            }
+    }}));
+}
 		
 var misc = new android.widget.Button(ctx);
 misc.setText("Misc");
 misc.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 misc.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-             //misc_menu();
+             misc_menu();
              menu.dismiss();
 			}
 		});
@@ -791,110 +826,460 @@ enchant.setText("Enchant menu");
 enchant.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 enchant.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-             //enchant_menu();
+             enchant_menu();
              menu.dismiss();
 			}
 		});
 		menuLayout.addView(enchant);
+		
+		function enchant_menu(){
+ctx.runOnUiThread(new Runnable({ run: function(){
+        try{
+            var enchantLayout = new LinearLayout(ctx);
+            var enchantScroll = new ScrollView(ctx);
+            var enchantLayout1 = new LinearLayout(ctx);
+            enchantLayout.setOrientation(1);
+            enchantLayout1.setOrientation(1);
+            enchantScroll.addView(enchantLayout);
+            enchantLayout1.addView(enchantScroll);
+            
+            var exit = new android.widget.Button(ctx);
+		exit.setText("Exit");
+		exit.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             enchant.dismiss();
+             showMenuBtn();
+			}
+		});
+		enchantLayout.addView(exit);
+
+            enchant = new PopupWindow(enchantLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1, ctx.getWindowManager().getDefaultDisplay().getHeight());
+            enchant.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+      var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(Color.TRANSPARENT);
+      bg.setStroke(10,Color.BLACK);
+enchantLayout1.setBackgroundDrawable(bg);
+enchantLayout1.setPadding(20,0,20,0);
+            enchant.showAtLocation(ctx.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
+            }catch(error){
+                Toast.makeText(ctx, "An error occured: " + error, 1).show();
+            }
+    }}));
+}
 		
 var give = new android.widget.Button(ctx);
 give.setText("Give menu");
 give.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 give.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-             //give_menu();
+             give_menu();
              menu.dismiss();
 			}
 		});
 		menuLayout.addView(give);
+		
+		function give_menu(){
+ctx.runOnUiThread(new Runnable({ run: function(){
+        try{
+            var giveLayout = new LinearLayout(ctx);
+            var giveScroll = new ScrollView(ctx);
+            var giveLayout1 = new LinearLayout(ctx);
+            giveLayout.setOrientation(1);
+            giveLayout1.setOrientation(1);
+            giveScroll.addView(giveLayout);
+            giveLayout1.addView(giveScroll);
+            
+            var exit = new android.widget.Button(ctx);
+		exit.setText("Exit");
+		exit.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             give.dismiss();
+             showMenuBtn();
+			}
+		});
+		giveLayout.addView(exit);
+
+            give = new PopupWindow(giveLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1, ctx.getWindowManager().getDefaultDisplay().getHeight());
+            give.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+      var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(Color.TRANSPARENT);
+      bg.setStroke(10,Color.BLACK);
+giveLayout1.setBackgroundDrawable(bg);
+giveLayout1.setPadding(20,0,20,0);
+            give.showAtLocation(ctx.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
+            }catch(error){
+                Toast.makeText(ctx, "An error occured: " + error, 1).show();
+            }
+    }}));
+}
 		
 var morph = new android.widget.Button(ctx);
 morph.setText("Morph menu");
 morph.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 morph.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-             //morph_menu();
+             morph_menu();
              menu.dismiss();
 			}
 		});
 		menuLayout.addView(morph);
+		
+		function morph_menu(){
+ctx.runOnUiThread(new Runnable({ run: function(){
+        try{
+            var morphLayout = new LinearLayout(ctx);
+            var morphScroll = new ScrollView(ctx);
+            var morphLayout1 = new LinearLayout(ctx);
+            morphLayout.setOrientation(1);
+            morphLayout1.setOrientation(1);
+            morphScroll.addView(morphLayout);
+            morphLayout1.addView(morphScroll);
+            
+            var exit = new android.widget.Button(ctx);
+		exit.setText("Exit");
+		exit.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             morph.dismiss();
+             showMenuBtn();
+			}
+		});
+		morphLayout.addView(exit);
+
+            morph = new PopupWindow(morphLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1, ctx.getWindowManager().getDefaultDisplay().getHeight());
+            morph.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+      var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(Color.TRANSPARENT);
+      bg.setStroke(10,Color.BLACK);
+morphLayout1.setBackgroundDrawable(bg);
+morphLayout1.setPadding(20,0,20,0);
+            morph.showAtLocation(ctx.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
+            }catch(error){
+                Toast.makeText(ctx, "An error occured: " + error, 1).show();
+            }
+    }}));
+}
 		
 var nuke = new android.widget.Button(ctx);
 nuke.setText("Nuke menu");
 nuke.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 nuke.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-             //nuke_menu();
+             nuke_menu();
              menu.dismiss();
 			}
 		});
 		menuLayout.addView(nuke);
+		
+		function nuke_menu(){
+ctx.runOnUiThread(new Runnable({ run: function(){
+        try{
+            var nukeLayout = new LinearLayout(ctx);
+            var nukeScroll = new ScrollView(ctx);
+            var nukeLayout1 = new LinearLayout(ctx);
+            nukeLayout.setOrientation(1);
+            nukeLayout1.setOrientation(1);
+            nukeScroll.addView(nukeLayout);
+            nukeLayout1.addView(nukeScroll);
+            
+            var exit = new android.widget.Button(ctx);
+		exit.setText("Exit");
+		exit.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             nuke.dismiss();
+             showMenuBtn();
+			}
+		});
+		nukeLayout.addView(exit);
+
+            nuke = new PopupWindow(nukeLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1, ctx.getWindowManager().getDefaultDisplay().getHeight());
+            nuke.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+      var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(Color.TRANSPARENT);
+      bg.setStroke(10,Color.BLACK);
+nukeLayout1.setBackgroundDrawable(bg);
+nukeLayout1.setPadding(20,0,20,0);
+            nuke.showAtLocation(ctx.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
+            }catch(error){
+                Toast.makeText(ctx, "An error occured: " + error, 1).show();
+            }
+    }}));
+}
 		
 var particle = new android.widget.Button(ctx);
 particle.setText("Particle menu");
 particle.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 particle.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-             //particle_menu();
+             particle_menu();
              menu.dismiss();
 			}
 		});
 		menuLayout.addView(particle);
+		
+		function particle_menu(){
+ctx.runOnUiThread(new Runnable({ run: function(){
+        try{
+            var particleLayout = new LinearLayout(ctx);
+            var particleScroll = new ScrollView(ctx);
+            var particleLayout1 = new LinearLayout(ctx);
+            particleLayout.setOrientation(1);
+            particleLayout1.setOrientation(1);
+            particleScroll.addView(particleLayout);
+            particleLayout1.addView(particleScroll);
+            
+            var exit = new android.widget.Button(ctx);
+		exit.setText("Exit");
+		exit.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             particle.dismiss();
+             showMenuBtn();
+			}
+		});
+		particleLayout.addView(exit);
+
+            particle = new PopupWindow(particleLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1, ctx.getWindowManager().getDefaultDisplay().getHeight());
+            particle.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+      var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(Color.TRANSPARENT);
+      bg.setStroke(10,Color.BLACK);
+particleLayout1.setBackgroundDrawable(bg);
+particleLayout1.setPadding(20,0,20,0);
+            particle.showAtLocation(ctx.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
+            }catch(error){
+                Toast.makeText(ctx, "An error occured: " + error, 1).show();
+            }
+    }}));
+}
 		
 var spawn = new android.widget.Button(ctx);
 spawn.setText("Spawn menu");
 spawn.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 spawn.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-             //spawn_menu();
+             spawn_menu();
              menu.dismiss();
 			}
 		});
 		menuLayout.addView(spawn);
+		
+		function spawn_menu(){
+ctx.runOnUiThread(new Runnable({ run: function(){
+        try{
+            var spawnLayout = new LinearLayout(ctx);
+            var spawnScroll = new ScrollView(ctx);
+            var spawnLayout1 = new LinearLayout(ctx);
+            spawnLayout.setOrientation(1);
+            spawnLayout1.setOrientation(1);
+            spawnScroll.addView(spawnLayout);
+            spawnLayout1.addView(spawnScroll);
+            
+            var exit = new android.widget.Button(ctx);
+		exit.setText("Exit");
+		exit.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             spawn.dismiss();
+             showMenuBtn();
+			}
+		});
+		spawnLayout.addView(exit);
+
+            spawn = new PopupWindow(spawnLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1, ctx.getWindowManager().getDefaultDisplay().getHeight());
+            spawn.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+      var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(Color.TRANSPARENT);
+      bg.setStroke(10,Color.BLACK);
+spawnLayout1.setBackgroundDrawable(bg);
+spawnLayout1.setPadding(20,0,20,0);
+            spawn.showAtLocation(ctx.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
+            }catch(error){
+                Toast.makeText(ctx, "An error occured: " + error, 1).show();
+            }
+    }}));
+}
 		
 var speed = new android.widget.Button(ctx);
 speed.setText("Speed menu");
 speed.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 speed.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-             //speed_menu();
+             speed_menu();
              menu.dismiss();
 			}
 		});
 		menuLayout.addView(speed);
+		
+		function speed_menu(){
+ctx.runOnUiThread(new Runnable({ run: function(){
+        try{
+            var speedLayout = new LinearLayout(ctx);
+            var speedScroll = new ScrollView(ctx);
+            var speedLayout1 = new LinearLayout(ctx);
+            speedLayout.setOrientation(1);
+            speedLayout1.setOrientation(1);
+            speedScroll.addView(speedLayout);
+            speedLayout1.addView(speedScroll);
+            
+            var exit = new android.widget.Button(ctx);
+		exit.setText("Exit");
+		exit.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             speed.dismiss();
+             showMenuBtn();
+			}
+		});
+		speedLayout.addView(exit);
+
+            speed = new PopupWindow(speedLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1, ctx.getWindowManager().getDefaultDisplay().getHeight());
+            speed.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+      var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(Color.TRANSPARENT);
+      bg.setStroke(10,Color.BLACK);
+speedLayout1.setBackgroundDrawable(bg);
+speedLayout1.setPadding(20,0,20,0);
+            speed.showAtLocation(ctx.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
+            }catch(error){
+                Toast.makeText(ctx, "An error occured: " + error, 1).show();
+            }
+    }}));
+}
 		
 var teleport = new android.widget.Button(ctx);
 teleport.setText("Teleport menu");
 teleport.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 teleport.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-             //teleport_menu();
+             teleport_menu();
              menu.dismiss();
 			}
 		});
 		menuLayout.addView(teleport);
+		
+		function teleport_menu(){
+ctx.runOnUiThread(new Runnable({ run: function(){
+        try{
+            var teleportLayout = new LinearLayout(ctx);
+            var teleportScroll = new ScrollView(ctx);
+            var teleportLayout1 = new LinearLayout(ctx);
+            teleportLayout.setOrientation(1);
+            teleportLayout1.setOrientation(1);
+            teleportScroll.addView(teleportLayout);
+            teleportLayout1.addView(teleportScroll);
+            
+            var exit = new android.widget.Button(ctx);
+		exit.setText("Exit");
+		exit.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             teleport.dismiss();
+             showMenuBtn();
+			}
+		});
+		teleportLayout.addView(exit);
+
+            teleport = new PopupWindow(teleportLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1, ctx.getWindowManager().getDefaultDisplay().getHeight());
+            teleport.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+      var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(Color.TRANSPARENT);
+      bg.setStroke(10,Color.BLACK);
+teleportLayout1.setBackgroundDrawable(bg);
+teleportLayout1.setPadding(20,0,20,0);
+            teleport.showAtLocation(ctx.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
+            }catch(error){
+                Toast.makeText(ctx, "An error occured: " + error, 1).show();
+            }
+    }}));
+}
 		
 var time = new android.widget.Button(ctx);
 time.setText("Time menu");
 time.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 time.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-             //time_menu();
+             time_menu();
              menu.dismiss();
 			}
 		});
 		menuLayout.addView(time);
+		
+		function time_menu(){
+ctx.runOnUiThread(new Runnable({ run: function(){
+        try{
+            var timeLayout = new LinearLayout(ctx);
+            var timeScroll = new ScrollView(ctx);
+            var timeLayout1 = new LinearLayout(ctx);
+            timeLayout.setOrientation(1);
+            timeLayout1.setOrientation(1);
+            timeScroll.addView(timeLayout);
+            timeLayout1.addView(timeScroll);
+            
+            var exit = new android.widget.Button(ctx);
+		exit.setText("Exit");
+		exit.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             time.dismiss();
+             showMenuBtn();
+			}
+		});
+		timeLayout.addView(exit);
+
+            time = new PopupWindow(timeLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1, ctx.getWindowManager().getDefaultDisplay().getHeight());
+            time.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+      var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(Color.TRANSPARENT);
+      bg.setStroke(10,Color.BLACK);
+timeLayout1.setBackgroundDrawable(bg);
+timeLayout1.setPadding(20,0,20,0);
+            time.showAtLocation(ctx.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
+            }catch(error){
+                Toast.makeText(ctx, "An error occured: " + error, 1).show();
+            }
+    }}));
+}
 		
 var weather = new android.widget.Button(ctx);
 weather.setText("Weather menu");
 weather.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 weather.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-             //weather_menu();
+             weather_menu();
              menu.dismiss();
 			}
 		});
 		menuLayout.addView(weather);
+		
+		function weather_menu(){
+ctx.runOnUiThread(new Runnable({ run: function(){
+        try{
+            var weatherLayout = new LinearLayout(ctx);
+            var weatherScroll = new ScrollView(ctx);
+            var weatherLayout1 = new LinearLayout(ctx);
+            weatherLayout.setOrientation(1);
+            weatherLayout1.setOrientation(1);
+            weatherScroll.addView(weatherLayout);
+            weatherLayout1.addView(weatherScroll);
+            
+            var exit = new android.widget.Button(ctx);
+		exit.setText("Exit");
+		exit.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             weatherdismiss();
+             showMenuBtn();
+			}
+		});
+		weatherLayout.addView(exit);
+
+            weather = new PopupWindow(weatherLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1, ctx.getWindowManager().getDefaultDisplay().getHeight());
+            weather.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+      var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(Color.TRANSPARENT);
+      bg.setStroke(10,Color.BLACK);
+weatherLayout1.setBackgroundDrawable(bg);
+weatherLayout1.setPadding(20,0,20,0);
+            weather.showAtLocation(ctx.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
+            }catch(error){
+                Toast.makeText(ctx, "An error occured: " + error, 1).show();
+            }
+    }}));
+}
             
             menu = new PopupWindow(menuLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
            menu.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
