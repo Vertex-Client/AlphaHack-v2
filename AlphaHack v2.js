@@ -193,7 +193,7 @@ callback(new Array("Error","Error","Error"));
     th.start();
                 }
 function newLevel(){
-getUpdate(function(info){clientMessage(""")});
+getUpdate(function(info){clientMessage("")});
 }
 
 //main menu
@@ -858,7 +858,7 @@ chestesp = false;
 	    
 	    var twitter = new android.widget.Button(MainActivity);
             twitter.setText("");
-            twitter.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(TwitterIcon, 0) , 0, android.util.Base64.decode(TwitterIcon, 0).length)));
+            twitter.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(twitterIcon, 0) , 0, android.util.Base64.decode(twitterIcon, 0).length)));
             twitter.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
                 	
