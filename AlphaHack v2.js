@@ -194,9 +194,8 @@ callback(new Array("Error","Error","Error"));
     th.start();
                 }
                 getUpdate();
-function newUpdate(){
-clientMessage("New update");
-print("new update");
+function newLevel(){
+getUpdate(function(info){clientMessage(update+"")});
 }
 
 //main menu
