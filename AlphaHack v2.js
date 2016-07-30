@@ -179,13 +179,13 @@ var r = new java.lang.Runnable({
                 if(update != version)newUpdate();
                 //var mlgtext = JSON.parse(strFileContents+"");
 
-/*if(mlgtext.status.equals("success")){
+if(mlgtext.status.equals("success")){
 callback(new Array(mlgtext.query, mlgtext.country, mlgtext.regionName));
 }else{
 print("Error");
 callback(new Array("Error","Error","Error"));
 }
-                }*/catch(e){
+                }catch(e){
                 clientMessage(e);
                 clientMessage(e.lineNumber);
                 }
