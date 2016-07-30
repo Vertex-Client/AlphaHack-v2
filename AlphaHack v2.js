@@ -203,6 +203,7 @@ ModPE.langEdit("menu.options",viddd + ModPE.getI18n("menu.options"));
 ModPE.langEdit("menu.skins",viddd + ModPE.getI18n("menu.skins"));
 ModPE.langEdit("menu.store",viddd + ModPE.getI18n("menu.store"));
 ModPE.langEdit("menu.achievements",viddd + ModPE.getI18n("menu.achievements"));
+ModPE.langEdit("menu.launcherOptions",viddd + ModPE.getI18n("menu.launcherOptions"));
 ModPE.langEdit("menu.settings",viddd + ModPE.getI18n("menu.settings"));
 ModPE.langEdit("menu.playdemo",viddd + ModPE.getI18n("menu.playdemo"));
 ModPE.langEdit("menu.resetdemo",viddd + ModPE.getI18n("menu.resetdemo"));
@@ -220,6 +221,7 @@ ModPE.langEdit("menu.online",viddd + ModPE.getI18n("menu.online"));
 ModPE.langEdit("pauseScreen.quit",viddd + ModPE.getI18n("pauseScreen.quit"));
 ModPE.langEdit("pauseScreen.options",viddd + ModPE.getI18n("pauseScreen.options"));
 ModPE.langEdit("pauseScreen.back",viddd + ModPE.getI18n("pauseScreen.back"));
+ModPE.langEdit("pauseScreen.achievements",viddd + ModPE.getI18n("pauseScreen.achievements"));
 ModPE.langEdit("deathScreen.quit",viddd + ModPE.getI18n("deathScreen.quit"));
 ModPE.langEdit("deathScreen.respawn",viddd + ModPE.getI18n("deathScreen.respawn"));
 ModPE.langEdit("deathScreen.message",viddd + ModPE.getI18n("deathScreen.message"));
@@ -856,7 +858,7 @@ chestesp = false;
             var line6 = new android.widget.LinearLayout(ctx);
 	    line6.setOrientation(0);
 	    
-	    var twitter = new android.widget.Button(MainActivity);
+	    /*var twitter = new android.widget.Button(MainActivity);
             twitter.setText("");
             twitter.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(twitterIcon, 0) , 0, android.util.Base64.decode(twitterIcon, 0).length)));
             twitter.setOnClickListener(new android.view.View.OnClickListener({
@@ -874,7 +876,7 @@ chestesp = false;
                 	
                 }
             }));
-            line6.addView(google);
+            line6.addView(google);*/
 	    
 	    menuLayout.addView(line6);
 	    
