@@ -881,19 +881,23 @@ autospam = false;
             line5.addView(button12);
             
 var button13 = new Button(MainActivity);
-button13.setText("Farm test");
+button13.setText("Auto farm");
 button13.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
-            button12.setOnClickListener(new View.OnClickListener({
+            button13.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-             Level.setTile(getPlayerX(), getPlayerY(), getPlayerZ(), 8, 0);
-             Level.setTile(getPlayerX() -1, getPlayerY(), getPlayerZ(), 12, 0);
-             Level.setTile(getPlayerX() +1, getPlayerY(), getPlayerZ(), 12, 0);
-             Level.setTile(getPlayerX(), getPlayerY(), getPlayerZ() +1, 12, 0);
-             Level.setTile(getPlayerX(), getPlayerY(), getPlayerZ() -1, 12, 0);
+             Level.setTile(getPlayerX(), getPlayerY() -1, getPlayerZ(), 8, 0);
+             Level.setTile(getPlayerX() -1, getPlayerY() -1, getPlayerZ(), 12, 0);
+             Level.setTile(getPlayerX() +1, getPlayerY() -1, getPlayerZ(), 12, 0);
+             Level.setTile(getPlayerX(), getPlayerY() -1, getPlayerZ() +1, 12, 0);
+             Level.setTile(getPlayerX(), getPlayerY() -1, getPlayerZ() -1, 12, 0);
              Level.setTile(getPlayerX() -1, getPlayerY() +1, getPlayerZ(), 83, 0);
              Level.setTile(getPlayerX() +1, getPlayerY() +1, getPlayerZ(), 83, 0);
              Level.setTile(getPlayerX(), getPlayerY() +1, getPlayerZ() +1, 83, 0);
              Level.setTile(getPlayerX(), getPlayerY() +1, getPlayerZ() -1, 83, 0);
+             Level.setTile(getPlayerX() -1, getPlayerY() +2, getPlayerZ(), 83, 0);
+             Level.setTile(getPlayerX() +1, getPlayerY() +2, getPlayerZ(), 83, 0);
+             Level.setTile(getPlayerX(), getPlayerY() +2, getPlayerZ() +1, 83, 0);
+             Level.setTile(getPlayerX(), getPlayerY() +2, getPlayerZ() -1, 83, 0);
                 }
             }));
             line5.addView(button13);
