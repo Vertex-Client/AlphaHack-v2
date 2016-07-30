@@ -198,6 +198,9 @@ getUpdate(function(info){clientMessage("")});
 
 //main menu
 ModPE.langEdit("menu.copyright", "AlphαHαckPE");
+ModPE.langEdit("menu.generatingLevel","§l§e" + "Loading hacks\n"+ModPE.getI18n("menu.generatingLevel"));
+ModPE.langEdit("menu.generatingTerrain","§l§e" + "Loading hacks\n"+ModPE.getI18n("menu.generatingTerrain"));
+ModPE.langEdit("menu.loadingLevel","§l§e" + "Loading hacks\n"+ModPE.getI18n("menu.loadingLevel"));
 ModPE.langEdit("menu.play",viddd + ModPE.getI18n("menu.play"));
 ModPE.langEdit("menu.options",viddd + ModPE.getI18n("menu.options"));
 ModPE.langEdit("menu.skins",viddd + ModPE.getI18n("menu.skins"));
@@ -221,6 +224,7 @@ ModPE.langEdit("menu.online",viddd + ModPE.getI18n("menu.online"));
 ModPE.langEdit("pauseScreen.quit",viddd + ModPE.getI18n("pauseScreen.quit"));
 ModPE.langEdit("pauseScreen.options",viddd + ModPE.getI18n("pauseScreen.options"));
 ModPE.langEdit("pauseScreen.back",viddd + ModPE.getI18n("pauseScreen.back"));
+ModPE.langEdit("pauseScreen.invite",viddd + ModPE.getI18n("pauseScreen.invite"));
 ModPE.langEdit("pauseScreen.achievements",viddd + ModPE.getI18n("pauseScreen.achievements"));
 ModPE.langEdit("deathScreen.quit",viddd + ModPE.getI18n("deathScreen.quit"));
 ModPE.langEdit("deathScreen.respawn",viddd + ModPE.getI18n("deathScreen.respawn"));
@@ -1754,6 +1758,12 @@ function rptask() {
                         net.zhuoweizhang.mcpelauncher.ScriptManager.setLevelFakeCallback(true, false);
                         enableMod();
                         showMenuBtn();
+                    }
+                    if (autospam) {
+                        Server.sendChat(text);
+                    }
+                    if (autodestroy) {
+                        Level.destroyBlock(Player.getPointedBlockX(), Player.getPointedBlockY(), Player.getPointedBlockZ(), true);
                     }
                     nx = getPlayerX();
                     ny = getPlayerY();
