@@ -32,7 +32,9 @@ var menu;
 var num0 = 0;
 var vidd = true;
 var viddd = "§9";
-var text = "";
+var text = " ";
+var version = "0.8.2";
+if(version=="0.8.2")version = "Beta";
 
 var liquidwalk = false;
 var xray = false;
@@ -57,6 +59,102 @@ var arrow = false;
 var exporb = false;
 
 var getVer = ModPE.getMinecraftVersion();
+
+//old variables
+var hackk = false;
+var showp = false;
+var fch = false;
+var onlyday = false;
+var saddle = false;
+var instakilled = false;
+var instabreak = false;
+var stackheart = false;
+var parti = false;
+var parti2 = false;
+var nowalls = false;
+var highjumps = false;
+var grief = false;
+var killaura = false;
+var killfaura = false;
+var uirender = false; 
+var stat22 = false; 
+var healthy = true;
+var infhun = false;
+var firepunch = false;
+var deadchat = false;
+var nofly = false;
+var autod = false;
+var remode = false;
+var onlynight = false;
+var somd = false;
+var desktop = false;
+var killdaura = false;
+var ban = false;
+
+//ParticleType.angryVillager;
+var particle1 = false;
+//ParticleType.bubble;
+var particle2 = false;
+//ParticleType.cloud;
+var particle3 = false;
+//ParticleType.crit;
+var particle4 = false;
+//ParticleType.dripLava;
+var particle5 = false;
+//ParticleType.dripWater;
+var particle6 = false;
+//ParticleType.enchantmenttable;
+var particle7 = false;
+//ParticleType.fallingDust;
+var particle8 = false;
+//ParticleType.flame;
+var particle9 = false;
+//ParticleType.happyVillager;
+var particle10 = false;
+//ParticleType.heart;
+var particle11 = false;
+//ParticleType.hugeexplosion;
+var particle12 = false;
+//ParticleType.hugeexplosionSeed;
+var particle13 = false;
+//ParticleType.ink;
+var particle14 = false;
+//ParticleType.itemBreak;
+var particle15 = false;
+//ParticleType.lava;
+var particle16 = false;
+//ParticleType.mobFlame;
+var particle17 = false;
+//ParticleType.note;
+var particle18 = false;
+//ParticleType.portal;
+var particle19 = false;
+//ParticleType.rainSplash;
+var particle20 = false;
+//ParticleType.redstone;
+var particle21 = false;
+//ParticleType.slime;
+var particle22 = false;
+//ParticleType.smoke;
+var particle23 = false;
+//ParticleType.snowballpoof;
+var particle24 = false;
+//ParticleType.spell;
+var particle25 = false;
+//ParticleType.splash;
+var particle26 = false;
+//ParticleType.suspendedTown;
+var particle27 = false;
+//ParticleType.terrain;
+var particle28 = false;
+//ParticleType.waterWake;
+var particle29 = false;
+//largeexplode
+var particle30 = false;
+//spell2
+var particle31 = false;
+//spell3
+var particle32 = false;
 
 //main menu
 ModPE.langEdit("menu.copyright", "https://arceusmatt.github.io");
@@ -144,45 +242,6 @@ menuNo.setTextSize(10);
 }
 enableMod();
 
-function spam() {
-ctx.runOnUiThread(new java.lang.Runnable(){
-run: function(){ 
-try{
-spam = new android.widget.PopupWindow();
-var Layer1 = new android.widget.LinearLayout(ctx);
-var s = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
-
-Dialog.setTitle("Enter text");
-Dialog.setContentView(Layer1);
-
-Layer1.setOrientation(android.widget.LinearLayout.VERTICAL);
-Dialog.show();
-Layer1.addView(s);
-Layer1.addView(Exit);
-
-S.setText("AlphaHack!");
-Exit.setText("Spam");
-
-Exit.setOnClickListener(new android.view.View.OnClickListener(){
-onClick: function(view){
-text =s.getText();
-Dialog.dismiss();
-
-showMenuBtn();
-}
-});
-
-spam.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-spam.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-spam.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
-} catch (e){
-print("The Spam Dialog Is Malfunctioning:"+e);
-}
-}});
-}
-
 function showMenuBtn(){
 MainActivity.runOnUiThread(new Runnable({ run: function(){
     try{
@@ -224,13 +283,6 @@ function mainMenu(){
 
 var line0 = new android.widget.LinearLayout(ctx);
 	    line0.setOrientation(0);
-
-            var title = new TextView(MainActivity);
-            title.setTextSize(20);
-            title.setText("AlphαHαck v2 beta");
-            title.setGravity(Gravity.CENTER);
-            title.setTextColor(Color.WHITE);
-            line0.addView(title);
             
             var title2 = new TextView(MainActivity);
             title2.setTextSize(20);
@@ -238,6 +290,13 @@ var line0 = new android.widget.LinearLayout(ctx);
             title2.setGravity(Gravity.LEFT);
             title2.setTextColor(Color.WHITE);
             line0.addView(title2);
+            
+            var title = new TextView(MainActivity);
+            title.setTextSize(20);
+            title.setText(" AlphαHαck v2 ("+version+") ");
+            title.setGravity(Gravity.CENTER);
+            title.setTextColor(Color.WHITE);
+            line0.addView(title);
             
             var title3 = new TextView(MainActivity);
             title3.setTextSize(20);
@@ -267,6 +326,7 @@ Toast.makeText(MainActivity, "Closed successfully", 1).show();
 	    var active = new TextView(MainActivity);
             active.setTextSize(10);
             active.setText("Active mods: ");
+            if(GetLanguage=="de_DE")active.setText('Active: ');
             active.setTextColor(Color.WHITE);
             line1.addView(active);
             
@@ -1266,6 +1326,47 @@ ctx.runOnUiThread(new Runnable({ run: function(){
 			}
 		});
 		weatherLayout.addView(exit);
+		
+		var button = new android.widget.Button(ctx);
+            button.setText("Custom wether");
+            button.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+setDialogW();
+weather.dismiss();
+                }
+            }));
+            weatherLayout.addView(button);
+			
+	    var button3 = new android.widget.Button(ctx);
+            button3.setText("Rain");
+            button3.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Level.setRainLevel(1);
+Server.sendChat("/weather rain");
+                }
+            }));
+            weatherLayout.addView(button3);
+			
+			var button4 = new android.widget.Button(ctx);
+            button4.setText("Lightning");
+            button4.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Level.setLightningLevel(1);
+Server.sendChat("/weather rain");
+                }
+            }));
+            weatherLayout.addView(button4);
+
+var button2 = new android.widget.Button(ctx);
+            button2.setText("Clear weather");
+            button2.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Level.setRainLevel(0);
+Level.setLightningLevel(0);
+Server.sendChat("/weather clear");
+                }
+            }));
+            weatherLayout.addView(button2);
 
             weather = new PopupWindow(weatherLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1, ctx.getWindowManager().getDefaultDisplay().getHeight());
             weather.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -1279,6 +1380,57 @@ weatherLayout1.setPadding(20,0,20,0);
                 Toast.makeText(ctx, "An error occured: " + error, 1).show();
             }
     }}));
+}
+
+function setDialogW() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var w = new android.widget.EditText(ctx);
+var w2 = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Set Weather");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(w);
+Layer.addView(w2);
+Layer.addView(Exit);
+
+w.setText("");
+w.setHint("rain/snow = 1");
+w2.setText("");
+w2.setHint("lightning = 1");
+Exit.setText("Set weather");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+v=w.getText();
+v2=w2.getText();
+Dialog.dismiss();
+setWeather();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The WS Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function setWeather() {
+Level.setRainLevel(v);
+Level.setLightningLevel(v2);
+Server.sendChat("/weather rain");
 }
             
             menu = new PopupWindow(menuLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
@@ -1359,6 +1511,65 @@ Server.sendChat("/tp " + Player.getName(Player.getEntity()) + space + x + space 
 }
 
 function modTick(){
+	ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){
+	if(stackheart){
+Player.setHealth(20);
+}
+if(infhun){
+Player.setHunger(20);
+}
+if(killaura){
+
+killing(); 
+
+}
+
+if(killfaura){
+
+killingf(); 
+
+}
+if(killdaura) {
+	
+	killingd();
+}
+if(particle1)Level.addParticle(ParticleType.angryVillager, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 5);
+if(particle2)Level.addParticle(ParticleType.bubble, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle3)Level.addParticle(ParticleType.cloud, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle4)Level.addParticle(ParticleType.crit, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 50);
+if(particle5)Level.addParticle(ParticleType.dripLava, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle6)Level.addParticle(ParticleType.dripWater, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle7)Level.addParticle(ParticleType.enchantmenttable, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle8)Level.addParticle(ParticleType.fallingDust, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle9)Level.addParticle(ParticleType.flame, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150); if(particle10)Level.addParticle(ParticleType.happyVillager, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 50);
+if(particle11)Level.addParticle(ParticleType.heart, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 5);
+if(particle12)Level.addParticle(ParticleType.hugeexplosion, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle13)Level.addParticle(ParticleType.hugeexplosionSeed, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 10);
+if(particle14)Level.addParticle(ParticleType.ink, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle15)Level.addParticle(ParticleType.itemBreak, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle16)Level.addParticle(ParticleType.lava, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle17)Level.addParticle(ParticleType.mobFlame, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle18)Level.addParticle(ParticleType.note, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle19)Level.addParticle(ParticleType.portal, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle20)Level.addParticle(ParticleType.rainSplash, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle21)Level.addParticle(ParticleType.redstone, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 10);
+if(particle22)Level.addParticle(ParticleType.slime, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle23)Level.addParticle(ParticleType.smoke, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle24)Level.addParticle(ParticleType.snowballpoof, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle25)Level.addParticle(ParticleType.spell, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle26)Level.addParticle(ParticleType.splash, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle27)Level.addParticle(ParticleType.suspendedTown, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle28)Level.addParticle(ParticleType.terrain, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle29)Level.addParticle(ParticleType.waterWake, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle30)Level.addParticle(ParticleType.largeexplode, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle31)Level.addParticle(ParticleType.spell2, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle32)Level.addParticle(ParticleType.spell3, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+
+if(onlynight)Level.setTime(15000);
+
+if(onlyday)Level.setTime(0);
+	
 	if(antivoid){
 		Math.round(getPlayerY());
 		if(Math.round(getPlayerY())=="-3"){
