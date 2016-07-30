@@ -257,6 +257,8 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             onClick: function(viewarg){
 mainMenu();
 GUI.dismiss();
+Toast.makeText(MainActivity, "Scroll down", 1).show();
+ if(getLanguage=="de_DE")Toast.makeText(MainActivity, "Scroll nach unten", 1).show();
             }
         }));
         layout.addView(menuBtn);
@@ -318,6 +320,7 @@ menuLayout.addView(line0);
 menu.dismiss(); 
 showMenuBtn(); 
 Toast.makeText(MainActivity, "Closed successfully", 1).show();
+ if(getLanguage=="de_DE")Toast.makeText(MainActivity, "Erfolgreich geschlossen", 1).show();
                 }
             }));
             menuLayout.addView(exit);
@@ -954,6 +957,7 @@ miscLayout1.setPadding(20,0,20,0);
 		
 var enchant = new android.widget.Button(ctx);
 enchant.setText("Enchant menu");
+if(getLanguage=="de_DE")enchant.setText("Verzauberungs menu");
 enchant.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 enchant.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -1000,6 +1004,7 @@ enchantLayout1.setPadding(20,0,20,0);
 		
 var give = new android.widget.Button(ctx);
 give.setText("Give menu");
+if(getLanguage=="de_DE")give.setText("Geben menu");
 give.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 give.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -1046,6 +1051,7 @@ giveLayout1.setPadding(20,0,20,0);
 		
 var morph = new android.widget.Button(ctx);
 morph.setText("Morph menu");
+if(getLanguage=="de_DE")morph.setText("Verwandelungs menu");
 morph.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 morph.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -1092,6 +1098,7 @@ morphLayout1.setPadding(20,0,20,0);
 		
 var nuke = new android.widget.Button(ctx);
 nuke.setText("Nuke menu");
+if(getLanguage=="de_DE")nuke.setText("Vernichtungs menu");
 nuke.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 nuke.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -1138,6 +1145,7 @@ nukeLayout1.setPadding(20,0,20,0);
 		
 var particle = new android.widget.Button(ctx);
 particle.setText("Particle menu");
+if(getLanguage=="de_DE")particle.setText("Partikel menu");
 particle.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 particle.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -1184,6 +1192,7 @@ particleLayout1.setPadding(20,0,20,0);
 		
 var spawn = new android.widget.Button(ctx);
 spawn.setText("Spawn menu");
+if(getLanguage=="de_DE")spawn.setText("Erschaffungs menu");
 spawn.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 spawn.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -1230,6 +1239,7 @@ spawnLayout1.setPadding(20,0,20,0);
 		
 var speed = new android.widget.Button(ctx);
 speed.setText("Speed menu");
+if(getLanguage=="de_DE")speed.setText("Schnelligkeits menu");
 speed.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 speed.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -1276,6 +1286,7 @@ speedLayout1.setPadding(20,0,20,0);
 		
 var teleport = new android.widget.Button(ctx);
 teleport.setText("Teleport menu");
+if(getLanguage=="de_DE")teleport.setText("Teleportierungs menu");
 teleport.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 teleport.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -1322,6 +1333,7 @@ teleportLayout1.setPadding(20,0,20,0);
 		
 var time = new android.widget.Button(ctx);
 time.setText("Time menu");
+if(getLanguage=="de_DE")time.setText("Zeit menu");
 time.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 time.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -1368,6 +1380,7 @@ timeLayout1.setPadding(20,0,20,0);
 		
 var weather = new android.widget.Button(ctx);
 weather.setText("Weather menu");
+if(getLanguage=="de_DE")weather.setText("Wetter menu");
 weather.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 weather.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
