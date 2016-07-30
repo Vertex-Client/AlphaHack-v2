@@ -158,6 +158,47 @@ var particle31 = false;
 //spell3
 var particle32 = false;
 
+function getUpdate(callback){
+var r = new java.lang.Runnable({
+        run: function() {
+            try {
+                var u = new java.net.URL("https://arceusmatt.github.io/update.html");
+                var c = u.openConnection();
+                c.setRequestMethod("GET");
+                c.setDoOutput(true);
+                c.connect();
+                c.getContentLength();
+                var input = c.getInputStream();
+                var contents = java.lang.reflect.Array.newInstance(java.lang.Byte.TYPE, 1024);
+                var bytesRead = 0;
+                var strFileContents;
+                while((bytesRead = input.read(contents)) != -1) {
+                    strFileContents = new java.lang.String(contents, 0, bytesRead);
+                }
+                var update = strFileContents;
+                if(update != version)newUpdate();
+                //var mlgtext = JSON.parse(strFileContents+"");
+
+/*if(mlgtext.status.equals("success")){
+callback(new Array(mlgtext.query, mlgtext.country, mlgtext.regionName));
+}else{
+print("Error");
+callback(new Array("Error","Error","Error"));
+}
+                }*/catch(e){
+                clientMessage(e);
+                clientMessage(e.lineNumber);
+                }
+                }});
+                var th = new java.lang.Thread(r);
+    th.start();
+                }
+                getUpdate();
+function newUpdate(){
+clientMessage("New update");
+print("new update");
+}
+
 //main menu
 ModPE.langEdit("menu.copyright", "AlphαHαckPE");
 ModPE.langEdit("menu.play",viddd + ModPE.getI18n("menu.play"));
