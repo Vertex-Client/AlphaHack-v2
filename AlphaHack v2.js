@@ -1585,7 +1585,8 @@ if(Entity.getVelY(Player.getEntity()) <= 0){
 setVelY(Player.getEntity(), -0.05)
 }
 }
-	}
+}});
+}
 
 function devpardon() {
 var file = new java.io.File( android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/games/com.mojang/minecraftpe/clientId.txt/");
