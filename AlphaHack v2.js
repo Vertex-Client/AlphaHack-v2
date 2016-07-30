@@ -52,6 +52,10 @@ var taptp = false;
 var sign = false;
 var autodestroy = false;
 var autospam = false;
+var onlyday = false;
+var onlynight = false;
+var chestesp = false;
+
 
 var lightning = false;
 var primedtnt = false;
@@ -64,7 +68,6 @@ var getVer = ModPE.getMinecraftVersion();
 var hackk = false;
 var showp = false;
 var fch = false;
-var onlyday = false;
 var saddle = false;
 var instakilled = false;
 var instabreak = false;
@@ -85,7 +88,6 @@ var deadchat = false;
 var nofly = false;
 var autod = false;
 var remode = false;
-var onlynight = false;
 var somd = false;
 var desktop = false;
 var killdaura = false;
@@ -157,7 +159,7 @@ var particle31 = false;
 var particle32 = false;
 
 //main menu
-ModPE.langEdit("menu.copyright", "https://arceusmatt.github.io");
+ModPE.langEdit("menu.copyright", "AlphαHαckPE");
 ModPE.langEdit("menu.play",viddd + ModPE.getI18n("menu.play"));
 ModPE.langEdit("menu.options",viddd + ModPE.getI18n("menu.options"));
 ModPE.langEdit("menu.skins",viddd + ModPE.getI18n("menu.skins"));
@@ -286,7 +288,7 @@ var line0 = new android.widget.LinearLayout(ctx);
             
             var title2 = new TextView(MainActivity);
             title2.setTextSize(20);
-            title2.setText("Made by: ArceusMαtt");
+            title2.setText("Made by: ArceusMαtt    ");
             title2.setGravity(Gravity.LEFT);
             title2.setTextColor(Color.WHITE);
             line0.addView(title2);
@@ -300,7 +302,7 @@ var line0 = new android.widget.LinearLayout(ctx);
             
             var title3 = new TextView(MainActivity);
             title3.setTextSize(20);
-            title3.setText("Scroll down!");
+            title3.setText("     Scroll down!");
             title3.setGravity(Gravity.RIGHT);
             title3.setTextColor(Color.WHITE);
             line0.addView(title3);
@@ -326,7 +328,7 @@ Toast.makeText(MainActivity, "Closed successfully", 1).show();
 	    var active = new TextView(MainActivity);
             active.setTextSize(10);
             active.setText("Active mods: ");
-            if(GetLanguage=="de_DE")active.setText('Active: ');
+            if(getLanguage=="de_DE")active.setText('Active: ');
             active.setTextColor(Color.WHITE);
             line1.addView(active);
             
@@ -782,12 +784,81 @@ tapdestroy = false;
             }));
             line5.addView(button10);
             
+            var button11 = new Button(MainActivity);
+button11.setText("Chest ESP");
+button11.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+button11.setTextColor(Color.RED);
+if(chestesp==true)button11.setTextColor(Color.GREEN);
+            button11.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             chestesp?chestesp=false:chestesp=true;
+button11.setText("Chest ESP");
+if(chestesp == true){
+button11.setTextColor(Color.GREEN);
+
+chestesp = true;
+}
+if(chestesp == false){
+button11.setTextColor(Color.RED);
+
+chestesp = false;
+}
+                }
+            }));
+            line5.addView(button11);
+            
             menuLayout.addView(line5);
             
             var line6 = new android.widget.LinearLayout(ctx);
 	    line6.setOrientation(0);
 	    
 	    menuLayout.addView(line6);
+	    
+var cheats = new android.widget.Button(ctx);
+cheats.setText("Online mods");
+cheats.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+cheats.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             cheat_menu();
+             menu.dismiss();
+			}
+		});
+		menuLayout.addView(cheats);
+		
+		function cheat_menu(){
+ctx.runOnUiThread(new Runnable({ run: function(){
+        try{
+            var cheatLayout = new LinearLayout(ctx);
+            var cheatScroll = new ScrollView(ctx);
+            var cheatLayout1 = new LinearLayout(ctx);
+            cheatLayout.setOrientation(1);
+            cheatLayout1.setOrientation(1);
+            cheatScroll.addView(cheatLayout);
+            cheatLayout1.addView(cheatScroll);
+            
+            var exit = new android.widget.Button(ctx);
+		exit.setText("Exit");
+		exit.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             cheat.dismiss();
+             showMenuBtn();
+			}
+		});
+		cheatLayout.addView(exit);
+
+            cheat = new PopupWindow(cheatLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1, ctx.getWindowManager().getDefaultDisplay().getHeight());
+            cheat.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+      var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(Color.TRANSPARENT);
+      bg.setStroke(10,Color.BLACK);
+cheatLayout1.setBackgroundDrawable(bg);
+cheatLayout1.setPadding(20,0,20,0);
+            cheat.showAtLocation(ctx.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
+            }catch(error){
+                Toast.makeText(ctx, "An error occured: " + error, 1).show();
+            }
+    }}));
+}
             
 var mods = new android.widget.Button(ctx);
 mods.setText("Offline mods");
