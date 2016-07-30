@@ -162,7 +162,7 @@ function getUpdate(callback){
 var r = new java.lang.Runnable({
         run: function() {
             try {
-                var u = new java.net.URL("https://arceusmatt.github.io/update.html");
+                var u = new java.net.URL("https://raw.githubusercontent.com/ArceusMatt/ALPHAHack/master/Version.txt");
                 var c = u.openConnection();
                 c.setRequestMethod("GET");
                 c.setDoOutput(true);
@@ -176,7 +176,6 @@ var r = new java.lang.Runnable({
                     strFileContents = new java.lang.String(contents, 0, bytesRead);
                 }
                 var update = strFileContents;
-                if(update != version)newUpdate();
                 //var mlgtext = JSON.parse(strFileContents+"");
 
 if(mlgtext.status.equals("success")){
@@ -193,7 +192,6 @@ callback(new Array("Error","Error","Error"));
                 var th = new java.lang.Thread(r);
     th.start();
                 }
-                getUpdate();
 function newLevel(){
 getUpdate(function(info){clientMessage(update+"")});
 }
