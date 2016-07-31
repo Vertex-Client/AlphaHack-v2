@@ -45,8 +45,6 @@ var coords = false;
 var glide = false;
 var tapspam = false;
 var tapdestroy = false;
-var spam = false;
-var destroy = false;
 var block = false;
 var taptp = false;
 var sign = false;
@@ -880,24 +878,25 @@ autospam = false;
             }));
             line5.addView(button12);
             
-var button13 = new Button(MainActivity);
-button13.setText("Auto farm");
+            var button13 = new Button(MainActivity);
+button13.setText("Auto destroy");
 button13.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+button13.setTextColor(Color.RED);
+if(autodestroy==true)button12.setTextColor(Color.GREEN);
             button13.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-             Level.setTile(getPlayerX(), getPlayerY() -1, getPlayerZ(), 8, 0);
-             Level.setTile(getPlayerX() -1, getPlayerY() -1, getPlayerZ(), 12, 0);
-             Level.setTile(getPlayerX() +1, getPlayerY() -1, getPlayerZ(), 12, 0);
-             Level.setTile(getPlayerX(), getPlayerY() -1, getPlayerZ() +1, 12, 0);
-             Level.setTile(getPlayerX(), getPlayerY() -1, getPlayerZ() -1, 12, 0);
-             Level.setTile(getPlayerX() -1, getPlayerY() +1, getPlayerZ(), 83, 0);
-             Level.setTile(getPlayerX() +1, getPlayerY() +1, getPlayerZ(), 83, 0);
-             Level.setTile(getPlayerX(), getPlayerY() +1, getPlayerZ() +1, 83, 0);
-             Level.setTile(getPlayerX(), getPlayerY() +1, getPlayerZ() -1, 83, 0);
-             Level.setTile(getPlayerX() -1, getPlayerY() +2, getPlayerZ(), 83, 0);
-             Level.setTile(getPlayerX() +1, getPlayerY() +2, getPlayerZ(), 83, 0);
-             Level.setTile(getPlayerX(), getPlayerY() +2, getPlayerZ() +1, 83, 0);
-             Level.setTile(getPlayerX(), getPlayerY() +2, getPlayerZ() -1, 83, 0);
+             autodestroy?autodestroy=false:autodestroy=true;
+button13.setText("Auto destroy");
+if(autodestroy == true){
+button13.setTextColor(Color.GREEN);
+
+autodestroy = true;
+}
+if(autodestroy == false){
+button13.setTextColor(Color.RED);
+
+autodestroy = false;
+}
                 }
             }));
             line5.addView(button13);
@@ -1006,6 +1005,28 @@ ctx.runOnUiThread(new Runnable({ run: function(){
 			}
 		});
 		modLayout.addView(exit);
+		
+		var button13 = new Button(MainActivity);
+button13.setText("Auto sugar");
+button13.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+            button13.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             Level.setTile(getPlayerX(), getPlayerY() -1, getPlayerZ(), 8, 0);
+             Level.setTile(getPlayerX() -1, getPlayerY() -1, getPlayerZ(), 12, 0);
+             Level.setTile(getPlayerX() +1, getPlayerY() -1, getPlayerZ(), 12, 0);
+             Level.setTile(getPlayerX(), getPlayerY() -1, getPlayerZ() +1, 12, 0);
+             Level.setTile(getPlayerX(), getPlayerY() -1, getPlayerZ() -1, 12, 0);
+             Level.setTile(getPlayerX() -1, getPlayerY() +1, getPlayerZ(), 83, 0);
+             Level.setTile(getPlayerX() +1, getPlayerY() +1, getPlayerZ(), 83, 0);
+             Level.setTile(getPlayerX(), getPlayerY() +1, getPlayerZ() +1, 83, 0);
+             Level.setTile(getPlayerX(), getPlayerY() +1, getPlayerZ() -1, 83, 0);
+             Level.setTile(getPlayerX() -1, getPlayerY() +2, getPlayerZ(), 83, 0);
+             Level.setTile(getPlayerX() +1, getPlayerY() +2, getPlayerZ(), 83, 0);
+             Level.setTile(getPlayerX(), getPlayerY() +2, getPlayerZ() +1, 83, 0);
+             Level.setTile(getPlayerX(), getPlayerY() +2, getPlayerZ() -1, 83, 0);
+                }
+            }));
+            modLayout.addView(button13);
 
             mod = new PopupWindow(modLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1, ctx.getWindowManager().getDefaultDisplay().getHeight());
             mod.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -1146,6 +1167,153 @@ ctx.runOnUiThread(new Runnable({ run: function(){
 			}
 		});
 		giveLayout.addView(exit);
+		
+		var button = new android.widget.Button(ctx);
+            button.setText("Custom Give");
+            button.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Give();
+gmenu.dismiss();
+                }
+            }));
+            giveLayout.addView(button);
+
+var button90 = new android.widget.Button(ctx);
+            button90.setText("Item ID list");
+            button90.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+idList(); 
+                }
+            }));
+            giveLayout.addView(button90);
+
+function idList()
+      {
+      ctx.runOnUiThread(new java.lang.Runnable({run: function(){
+      var webs = new android.webkit.WebView(ctx);
+      var webset = webs.getSettings();
+      webset.setJavaScriptEnabled(true);
+      webs.setWebChromeClient(new android.webkit.WebChromeClient());
+      webs.setWebViewClient(new android.webkit.WebViewClient());
+      webs.loadUrl('http://www.minecraftinfo.com/idlist.html');
+/*Site URL*/
+      new android.app.AlertDialog.Builder(ctx).setView(webs).show();
+      }}));
+      }
+
+var butto = new android.widget.Button(ctx);
+            butto.setText("Special creative inventory");
+            butto.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+ clientMessage(client + "§7Adding all items to creative inventory");
+for(var j = 0; j < 900; j++) {
+Player.addItemCreativeInv(j, 5, 0);
+}
+if(j==900)clientMessage(client + "§7Done, all items added.");
+                }
+            }));
+            giveLayout.addView(butto);
+
+var clear = new Button(ctx);
+            clear.setText("Clear inventory");        
+            clear.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){ 
+clientMessage(client + "§7Inventory cleared.");
+for(var k = 0; k < 50; k++)
+       Player.clearInventorySlot(k);
+                }
+            }));
+            giveLayout.addView(clear);
+
+var k1 = new android.widget.Button(ctx);
+            k1.setText("Leather kit");
+            k1.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Player.setArmorSlot(0, 298, 0);
+Player.setArmorSlot(1, 299, 0);
+Player.setArmorSlot(2, 300, 0);
+Player.setArmorSlot(3, 301, 0);
+clientMessage("§6Leather §fkit equipped check inventory!");
+addItemInventory(268, 1, 0);
+addItemInventory(269, 1, 0);
+addItemInventory(270, 1, 0);
+addItemInventory(271, 1, 0);
+addItemInventory(290, 1, 0);
+                }
+            }));
+            giveLayout.addView(k1);
+
+var k2 = new android.widget.Button(ctx);
+            k2.setText("Chain kit");
+            k2.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Player.setArmorSlot(0, 302, 0);
+Player.setArmorSlot(1, 303, 0);
+Player.setArmorSlot(2, 304, 0);
+Player.setArmorSlot(3, 305, 0);
+clientMessage("§7Chain §fkit equipped check inventory!");
+addItemInventory(272, 1, 0);
+addItemInventory(273, 1, 0);
+addItemInventory(274, 1, 0);
+addItemInventory(275, 1, 0);
+addItemInventory(291, 1, 0);
+                }
+            }));
+            giveLayout.addView(k2);
+
+var k3 = new android.widget.Button(ctx);
+            k3.setText("Iron kit");
+            k3.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Player.setArmorSlot(0, 306, 0);
+Player.setArmorSlot(1, 307, 0);
+Player.setArmorSlot(2, 308, 0);
+Player.setArmorSlot(3, 309, 0);
+clientMessage("§fIron §fkit equipped check inventory!");
+addItemInventory(267, 1, 0);
+addItemInventory(256, 1, 0);
+addItemInventory(257, 1, 0);
+addItemInventory(258, 1, 0);
+addItemInventory(292, 1, 0);
+                }
+            }));
+            giveLayout.addView(k3);
+
+var k4 = new android.widget.Button(ctx);
+            k4.setText("Gold kit");
+            k4.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Player.setArmorSlot(0, 314, 0);
+Player.setArmorSlot(1, 315, 0);
+Player.setArmorSlot(2, 316, 0);
+Player.setArmorSlot(3, 317, 0);
+clientMessage("§eGold §fkit equipped check inventory!");
+addItemInventory(283, 1, 0);
+addItemInventory(284, 1, 0);
+addItemInventory(285, 1, 0);
+addItemInventory(286, 1, 0);
+addItemInventory(294, 1, 0);
+                }
+            }));
+            giveLayout.addView(k4);
+
+var k5 = new android.widget.Button(ctx);
+            k5.setText("Diamond kit");
+            k5.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Player.setArmorSlot(0, 310, 0);
+Player.setArmorSlot(1, 311, 0);
+Player.setArmorSlot(2, 312, 0);
+Player.setArmorSlot(3, 313, 0);
+clientMessage("§bDiamond §fkit equipped check inventory!");
+addItemInventory(276, 1, 0);
+addItemInventory(277, 1, 0);
+addItemInventory(278, 1, 0);
+addItemInventory(279, 1, 0);
+addItemInventory(293, 1, 0);
+                }
+            }));
+            giveLayout.addView(k5);
 
             give = new PopupWindow(giveLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1, ctx.getWindowManager().getDefaultDisplay().getHeight());
             give.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -1159,6 +1327,61 @@ giveLayout1.setPadding(20,0,20,0);
                 Toast.makeText(ctx, "An error occured: " + error, 1).show();
             }
     }}));
+}
+
+function Give() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var ID = new android.widget.EditText(ctx);
+var Amount = new android.widget.EditText(ctx);
+var Damage = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter ID,Amt,Dmg");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(ID);
+Layer.addView(Amount);
+Layer.addView(Damage);
+Layer.addView(Exit);
+
+ID.setText("");
+ID.setHint("Item ID");
+Amount.setText("");
+Amount.setHint("Item Amount");
+Damage.setText("");
+Damage.setHint("Item Damage");
+Exit.setText("Give items");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+I=ID.getText();
+A=Amount.getText();
+D=Damage.getText();
+Dialog.dismiss();
+give2();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Give Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function give2() {
+Player.addItemInventory(I,A,D);
+Server.sendChat("/give " + Player.getName(Player.getEntity()) + space + I + ":" + D + space + A);
 }
 		
 var morph = new android.widget.Button(ctx);
@@ -1193,6 +1416,288 @@ ctx.runOnUiThread(new Runnable({ run: function(){
 			}
 		});
 		morphLayout.addView(exit);
+		
+		var mm1 = new android.widget.Button(ctx);
+            mm1.setText("Player");
+            mm1.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);
+Entity.setRenderType(Player.getEntity(), EntityRenderType.player);
+			Entity.setMobSkin(Player.getEntity(),"mob/char.png");
+                }
+            }));
+            morphLayout.addView(mm1);
+
+var mm = new android.widget.Button(ctx);
+            mm.setText("Bat");
+            mm.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Entity.setCollisionSize(Player.getEntity(), 0.2, 0.2, 0.2);
+
+Entity.setRenderType(Player.getEntity(), EntityRenderType.bat);
+			Entity.setMobSkin(Player.getEntity(),"mob/bat.png");
+                }
+            }));
+            morphLayout.addView(mm);
+
+var mm0 = new android.widget.Button(ctx);
+            mm0.setText("Blaze");
+            mm0.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);
+Entity.setRenderType(Player.getEntity(), EntityRenderType.blaze);
+			Entity.setMobSkin(Player.getEntity(),"mob/blaze.png");
+                }
+            }));
+            morphLayout.addView(mm0);
+
+var mm2 = new android.widget.Button(ctx);
+            mm2.setText("Chicken");
+            mm2.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Entity.setCollisionSize(Player.getEntity(), 0.4, 0.4, 0.4);
+
+Entity.setRenderType(Player.getEntity(), EntityRenderType.chicken);
+			Entity.setMobSkin(Player.getEntity(),"mob/chicken.png");
+                }
+            }));
+            morphLayout.addView(mm2);
+
+var mm3 = new android.widget.Button(ctx);
+            mm3.setText("Cow");
+            mm3.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Entity.setCollisionSize(Player.getEntity(), 0.8, 1.7, 0.8);
+
+Entity.setRenderType(Player.getEntity(), EntityRenderType.cow);
+			Entity.setMobSkin(Player.getEntity(),"mob/cow.png");
+                }
+            }));
+            morphLayout.addView(mm3);
+
+var mm4 = new android.widget.Button(ctx);
+            mm4.setText("Creeper");
+            mm4.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);
+
+Entity.setRenderType(Player.getEntity(), EntityRenderType.creeper);
+			Entity.setMobSkin(Player.getEntity(),"mob/creeper.png");
+                }
+            }));
+            morphLayout.addView(mm4);
+
+var mm5 = new android.widget.Button(ctx);
+            mm5.setText("Enderman");
+            mm5.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Entity.setCollisionSize(Player.getEntity(), 0.7, 3, 0.7);
+Entity.setRenderType(Player.getEntity(), EntityRenderType.enderman);
+			Entity.setMobSkin(Player.getEntity(),"mob/enderman.tga");
+                }
+            }));
+            morphLayout.addView(mm5);
+
+var mm6 = new android.widget.Button(ctx);
+            mm6.setText("Ghast");
+            mm6.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Entity.setCollisionSize(Player.getEntity(), 4, 4, 4);
+
+Entity.setRenderType(Player.getEntity(), EntityRenderType.ghast);
+			Entity.setMobSkin(Player.getEntity(),"mob/ghast.png");
+                }
+            }));
+            morphLayout.addView(mm6);
+
+var mm7 = new android.widget.Button(ctx);
+            mm7.setText("Iron golem");
+            mm7.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Entity.setCollisionSize(Player.getEntity(), 1, 3, 1);
+Entity.setRenderType(Player.getEntity(), EntityRenderType.ironGolem);
+			Entity.setMobSkin(Player.getEntity(),"mob/iron_golem.png");
+                }
+            }));
+            morphLayout.addView(mm7);
+
+var mm8 = new android.widget.Button(ctx);
+            mm8.setText("Lava slime");
+            mm8.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Entity.setCollisionSize(Player.getEntity(), 2, 2, 2);
+
+Entity.setRenderType(Player.getEntity(), EntityRenderType.lavaSlime);
+			Entity.setMobSkin(Player.getEntity(),"mob/magmacube.png");
+                }
+            }));
+            morphLayout.addView(mm8);
+
+var mm9 = new android.widget.Button(ctx);
+            mm9.setText("Ocelot");
+            mm9.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Entity.setCollisionSize(Player.getEntity(), 0.5, 0.5, 0.5);
+Entity.setRenderType(Player.getEntity(), EntityRenderType.ocelot);
+			Entity.setMobSkin(Player.getEntity(),"mob/cat/ocelot.png");
+                }
+            }));
+            morphLayout.addView(mm9);
+
+var mm10 = new android.widget.Button(ctx);
+            mm10.setText("Pig");
+            mm10.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Entity.setCollisionSize(Player.getEntity(), 0.8, 1, 0.8);
+
+POTION()
+Entity.setRenderType(Player.getEntity(), EntityRenderType.pig);
+			Entity.setMobSkin(Player.getEntity(),"mob/pig.png");
+                }
+            }));
+            morphLayout.addView(mm10);
+
+var mm11 = new android.widget.Button(ctx);
+            mm11.setText("Sheep");
+            mm11.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Entity.setCollisionSize(Player.getEntity(), 0.8, 1.7, 0.8);
+
+Entity.setRenderType(Player.getEntity(), EntityRenderType.sheep);
+			Entity.setMobSkin(Player.getEntity(),"mob/sheep.tga");
+                }
+            }));
+            morphLayout.addView(mm11);
+
+var mm12 = new android.widget.Button(ctx);
+            mm12.setText("Silverfish");
+            mm12.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Entity.setCollisionSize(Player.getEntity(), 0.3, 0.4, 0.3);
+
+Entity.setRenderType(Player.getEntity(), EntityRenderType.silverfish);
+			Entity.setMobSkin(Player.getEntity(),"mob/silverfish.png");
+                }
+            }));
+            morphLayout.addView(mm12);
+
+var mm13 = new android.widget.Button(ctx);
+            mm13.setText("Skeleton");
+            mm13.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);
+
+Entity.setRenderType(Player.getEntity(), EntityRenderType.skeleton);
+			Entity.setMobSkin(Player.getEntity(),"mob/skeleton.png");
+                }
+            }));
+            morphLayout.addView(mm13);
+
+var mm14 = new android.widget.Button(ctx);
+            mm14.setText("Slime");
+            mm14.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Entity.setCollisionSize(Player.getEntity(), 2, 2, 2);
+
+Entity.setRenderType(Player.getEntity(), EntityRenderType.slime);
+			Entity.setMobSkin(Player.getEntity(),"mob/slime.png");
+                }
+            }));
+            morphLayout.addView(mm14);
+
+var mm15 = new android.widget.Button(ctx);
+            mm15.setText("Snow golem");
+            mm15.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Entity.setCollisionSize(Player.getEntity(), 0.7, 2, 0.7);
+Entity.setRenderType(Player.getEntity(), EntityRenderType.snowGolem);
+			Entity.setMobSkin(Player.getEntity(),"mob/snow_golem.png");
+                }
+            }));
+            morphLayout.addView(mm15);
+
+var mm16 = new android.widget.Button(ctx);
+            mm16.setText("Spider");
+            mm16.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Entity.setCollisionSize(Player.getEntity(), 1, 0.4, 1);
+
+Entity.setRenderType(Player.getEntity(), EntityRenderType.spider);
+			Entity.setMobSkin(Player.getEntity(),"mob/spider.tga");
+                }
+            }));
+            morphLayout.addView(mm16);
+
+var mm17 = new android.widget.Button(ctx);
+            mm17.setText("Squid");
+            mm17.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Entity.setCollisionSize(Player.getEntity(), 0.5, 0.5, 0.5);
+
+Entity.setRenderType(Player.getEntity(), EntityRenderType.squid);
+			Entity.setMobSkin(Player.getEntity(),"mob/squid.png");
+                }
+            }));
+            morphLayout.addView(mm17);
+
+var mm18 = new android.widget.Button(ctx);
+            mm18.setText("Villager");
+            mm18.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);
+                Entity.setRenderType(Player.getEntity(), EntityRenderType.villager);
+			Entity.setMobSkin(Player.getEntity(),"mob/villager/villager.png");
+                }
+            }));
+            morphLayout.addView(mm18);
+
+var mm19 = new android.widget.Button(ctx);
+            mm19.setText("Villager zombie");
+            mm19.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);
+
+Entity.setRenderType(Player.getEntity(), EntityRenderType.zombieVillager);
+			Entity.setMobSkin(Player.getEntity(),"mob/zombieVillager.png");
+                }
+            }));
+            morphLayout.addView(mm19);
+
+var mm20 = new android.widget.Button(ctx);
+            mm20.setText("Wolf");
+            mm20.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Entity.setCollisionSize(Player.getEntity(), 0.8, 0.7, 0.8);
+
+Entity.setRenderType(Player.getEntity(), EntityRenderType.wolf);
+			Entity.setMobSkin(Player.getEntity(),"mob/wolf.png");
+                }
+            }));
+            morphLayout.addView(mm20);
+
+var mm21 = new android.widget.Button(ctx);
+            mm21.setText("Zombie");
+            mm21.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);
+
+Entity.setRenderType(Player.getEntity(), EntityRenderType.zombie);
+			Entity.setMobSkin(Player.getEntity(),"mob/zombie.png");
+                }
+            }));
+            morphLayout.addView(mm21);
+
+var mm22 = new android.widget.Button(ctx);
+            mm22.setText("Zombie pigman");
+            mm22.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);
+
+Entity.setRenderType(Player.getEntity(), EntityRenderType.zombie);
+			Entity.setMobSkin(Player.getEntity(),"mob/pigzombie.png");
+                }
+            }));
+            morphLayout.addView(mm22);
 
             morph = new PopupWindow(morphLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1, ctx.getWindowManager().getDefaultDisplay().getHeight());
             morph.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -1240,6 +1745,8 @@ ctx.runOnUiThread(new Runnable({ run: function(){
 			}
 		});
 		nukeLayout.addView(exit);
+		
+		
 
             nuke = new PopupWindow(nukeLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1, ctx.getWindowManager().getDefaultDisplay().getHeight());
             nuke.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -1287,6 +1794,518 @@ ctx.runOnUiThread(new Runnable({ run: function(){
 			}
 		});
 		particleLayout.addView(exit);
+		
+var p1 = new android.widget.Button(ctx);
+            p1.setText("Angry villager: "+(particle1?"on":"off"));
+            p1.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+particle1?particle1=false:particle1=true;
+p1.setText("Angry villager: "+(particle1?"on":"off"));
+if(particle1 == true){
+clientMessage(client + "§7Particle 1 is true");
+}
+if(particle1 == false){
+clientMessage(client + "§7Particle 1 is false");
+                }
+}
+            }));
+            particleLayout.addView(p1);
+
+var p2 = new android.widget.Button(ctx);
+            p2.setText("bubble: "+(particle2?"on":"off"));
+            p2.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+particle2?particle2=false:particle2=true;
+p2.setText("bubble: "+(particle2?"on":"off"));
+if(particle2 == true){
+clientMessage(client + "§7Particle 2 is true");
+}
+if(particle2 == false){
+clientMessage(client + "§7Particle 2 is false");
+                }
+}
+            }));
+            particleLayout.addView(p2);
+
+var p3 = new android.widget.Button(ctx);
+            p3.setText("cloud: "+(particle3?"on":"off"));
+            p3.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+particle3?particle3=false:particle3=true;
+p3.setText("cloud: "+(particle3?"on":"off"));
+if(particle3 == true){
+clientMessage(client + "§7Particle 3 is true");
+}
+if(particle3 == false){
+clientMessage(client + "§7Particle 3 is false");
+                }
+}
+            }));
+            particleLayout.addView(p3);
+
+var p4 = new android.widget.Button(ctx);
+            p4.setText("crit: "+(particle4?"on":"off"));
+            p4.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+particle4?particle4=false:particle4=true;
+p4.setText("crit: "+(particle4?"on":"off"));
+if(particle4 == true){
+clientMessage(client + "§7Particle 4 is true");
+}
+if(particle4 == false){
+clientMessage(client + "§7Particle 4 is false");
+                }
+}
+            }));
+            particleLayout.addView(p4);
+
+var p5 = new android.widget.Button(ctx);
+            p5.setText("drip lava: "+(particle5?"on":"off"));
+            p5.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+particle5?particle5=false:particle5=true;
+p5.setText("drip lava: "+(particle5?"on":"off"));
+if(particle5 == true){
+clientMessage(client + "§7Particle 5 is true");
+}
+if(particle5 == false){
+clientMessage(client + "§7Particle 5 is false");
+                }
+}
+            }));
+            particleLayout.addView(p5);
+
+var p6 = new android.widget.Button(ctx);
+            p6.setText("drip water: "+(particle6?"on":"off"));
+            p6.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+particle6?particle6=false:particle6=true;
+p6.setText("drip water: "+(particle6?"on":"off"));
+if(particle6 == true){
+clientMessage(client + "§7Particle 6 is true");
+}
+if(particle6 == false){
+clientMessage(client + "§7Particle 6 is false");
+                }
+}
+            }));
+            particleLayout.addView(p6);
+
+var p7 = new android.widget.Button(ctx);
+            p7.setText("enchanting table: "+(particle7?"on":"off"));
+            p7.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+particle7?particle7=false:particle7=true;
+p7.setText("enchanting table: "+(particle7?"on":"off"));
+if(particle7 == true){
+clientMessage(client + "§7Particle 7 is true");
+}
+if(particle7 == false){
+clientMessage(client + "§7Particle 7 is false");
+                }
+}
+            }));
+            particleLayout.addView(p7);
+
+var p8 = new android.widget.Button(ctx);
+            p8.setText("falling dust: "+(particle8?"on":"off"));
+            p8.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+particle8?particle8=false:particle8=true;
+p8.setText("falling dust: "+(particle8?"on":"off"));
+if(particle8 == true){
+clientMessage(client + "§7Particle 8 is true");
+}
+if(particle8 == false){
+clientMessage(client + "§7Particle 8 is false");
+                }
+}
+            }));
+            particleLayout.addView(p8);
+
+var p9 = new android.widget.Button(ctx);
+            p9.setText("flame: "+(particle9?"on":"off"));
+            p9.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+particle9?particle9=false:particle9=true;
+p9.setText("flame: "+(particle9?"on":"off"));
+if(particle9 == true){
+clientMessage(client + "§7Particle 9 is true");
+}
+if(particle9 == false){
+clientMessage(client + "§7Particle 9 is false");
+                }
+}
+            }));
+            particleLayout.addView(p9);
+
+var p10 = new android.widget.Button(ctx);
+            p10.setText("Happy villager: "+(particle10?"on":"off"));
+            p10.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+particle10?particle10=false:particle10=true;
+p10.setText("Happy villager: "+(particle10?"on":"off"));
+if(particle10 == true){
+clientMessage(client + "§7Particle 10 is true");
+}
+if(particle10 == false){
+clientMessage(client + "§7Particle 10 is false");
+                }
+}
+            }));
+            particleLayout.addView(p10);
+
+var p11 = new android.widget.Button(ctx);
+            p11.setText("heart: "+(particle11?"on":"off"));
+            p11.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+particle11?particle11=false:particle11=true;
+p11.setText("heart: "+(particle11?"on":"off"));
+if(particle11 == true){
+clientMessage(client + "§7Particle 11 is true");
+}
+if(particle11 == false){
+clientMessage(client + "§7Particle 11 is false");
+                }
+}
+            }));
+            particleLayout.addView(p11);
+
+var p12 = new android.widget.Button(ctx);
+            p12.setText("Huge explosion: "+(particle12?"on":"off"));
+            p12.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+particle12?particle12=false:particle12=true;
+p12.setText("Huge explosion: "+(particle12?"on":"off"));
+if(particle12 == true){
+clientMessage(client + "§7Particle 12 is true");
+}
+if(particle12 == false){
+clientMessage(client + "§7Particle 12 is false");
+                }
+}
+            }));
+            particleLayout.addView(p12);
+
+var p13 = new android.widget.Button(ctx);
+            p13.setText("Explosion seed: "+(particle13?"on":"off"));
+            p13.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+particle13?particle13=false:particle13=true;
+p13.setText("Explosion seed: "+(particle13?"on":"off"));
+if(particle13 == true){
+clientMessage(client + "§7Particle 13 is true");
+}
+if(particle13 == false){
+clientMessage(client + "§7Particle 13 is false");
+                }
+}
+            }));
+            particleLayout.addView(p13);
+
+var p14 = new android.widget.Button(ctx);
+            p14.setText("ink: "+(particle14?"on":"off"));
+            p14.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+particle14?particle14=false:particle14=true;
+p14.setText("ink: "+(particle14?"on":"off"));
+if(particle14 == true){
+clientMessage(client + "§7Particle 14 is true");
+}
+if(particle14 == false){
+clientMessage(client + "§7Particle 14 is false");
+                }
+}
+            }));
+            particleLayout.addView(p14);
+
+var p15 = new android.widget.Button(ctx);
+            p15.setText("Item break: "+(particle15?"on":"off"));
+            p15.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+particle15?particle15=false:particle15=true;
+p15.setText("Item break: "+(particle15?"on":"off"));
+if(particle15 == true){
+clientMessage(client + "§7Particle 15 is true");
+}
+if(particle15 == false){
+clientMessage(client + "§7Particle 15 is false");
+                }
+}
+            }));
+            particleLayout.addView(p15);
+
+var p16 = new android.widget.Button(ctx);
+            p16.setText("Lava: "+(particle16?"on":"off"));
+            p16.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+particle16?particle16=false:particle16=true;
+p16.setText("Lava: "+(particle16?"on":"off"));
+if(particle16 == true){
+clientMessage(client + "§7Particle 16 is true");
+}
+if(particle16 == false){
+clientMessage(client + "§7Particle 16 is false");
+                }
+}
+            }));
+            particleLayout.addView(p16);
+
+var p17 = new android.widget.Button(ctx);
+            p17.setText("Mob flame: "+(particle17?"on":"off"));
+            p17.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+particle17?particle17=false:particle17=true;
+p17.setText("Mob flame: "+(particle17?"on":"off"));
+if(particle17 == true){
+clientMessage(client + "§7Particle 17 is true");
+}
+if(particle17 == false){
+clientMessage(client + "§7Particle 17 is false");
+                }
+}
+            }));
+            particleLayout.addView(p17);
+
+var p18 = new android.widget.Button(ctx);
+            p18.setText("Note: "+(particle18?"on":"off"));
+            p18.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+particle18?particle18=false:particle18=true;
+p18.setText("Note: "+(particle18?"on":"off"));
+if(particle18 == true){
+clientMessage(client + "§7Particle 18 is true");
+}
+if(particle18 == false){
+clientMessage(client + "§7Particle 18 is false");
+                }
+}
+            }));
+            particleLayout.addView(p18);
+
+var p19 = new android.widget.Button(ctx);
+            p19.setText("Portal: "+(particle19?"on":"off"));
+            p19.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+particle19?particle19=false:particle19=true;
+p19.setText("Portal: "+(particle19?"on":"off"));
+if(particle19 == true){
+clientMessage(client + "§7Particle 19 is true");
+}
+if(particle19 == false){
+clientMessage(client + "§7Particle 19 is false");
+                }
+}
+            }));
+            particleLayout.addView(p19);
+
+var p20 = new android.widget.Button(ctx);
+            p20.setText("Rain splash: "+(particle20?"on":"off"));
+            p20.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+particle20?particle20=false:particle20=true;
+p20.setText("Rain splash: "+(particle20?"on":"off"));
+if(particle20 == true){
+clientMessage(client + "§7Particle 20 is true");
+}
+if(particle20 == false){
+clientMessage(client + "§7Particle 20 is false");
+                }
+}
+            }));
+            particleLayout.addView(p20);
+
+var p21 = new android.widget.Button(ctx);
+            p21.setText("Redstone: "+(particle21?"on":"off"));
+            p21.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+particle21?particle21=false:particle21=true;
+p21.setText("Redstone: "+(particle21?"on":"off"));
+if(particle21 == true){
+clientMessage(client + "§7Particle 21 is true");
+}
+if(particle21 == false){
+clientMessage(client + "§7Particle 21 is false");
+                }
+}
+            }));
+            particleLayout.addView(p21);
+
+var p22 = new android.widget.Button(ctx);
+            p22.setText("Slime: "+(particle22?"on":"off"));
+            p22.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+particle22?particle22=false:particle22=true;
+p22.setText("Slime: "+(particle22?"on":"off"));
+if(particle22 == true){
+clientMessage(client + "§7Particle 22 is true");
+}
+if(particle22 == false){
+clientMessage(client + "§7Particle 22 is false");
+                }
+}
+            }));
+            particleLayout.addView(p22);
+
+var p23 = new android.widget.Button(ctx);
+            p23.setText("Smoke: "+(particle23?"on":"off"));
+            p23.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+particle23?particle23=false:particle23=true;
+p23.setText("Smoke: "+(particle23?"on":"off"));
+if(particle23 == true){
+clientMessage(client + "§7Particle 23 is true");
+}
+if(particle23 == false){
+clientMessage(client + "§7Particle 23 is false");
+                }
+}
+            }));
+            particleLayout.addView(p23);
+
+var p24 = new android.widget.Button(ctx);
+            p24.setText("Snow ball poof: "+(particle24?"on":"off"));
+            p24.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+particle24?particle24=false:particle24=true;
+p24.setText("Snow ball poof: "+(particle24?"on":"off"));
+if(particle24 == true){
+clientMessage(client + "§7Particle 24 is true");
+}
+if(particle24 == false){
+clientMessage(client + "§7Particle 24 is false");
+                }
+}
+            }));
+            particleLayout.addView(p24);
+
+var p25 = new android.widget.Button(ctx);
+            p25.setText("Spell: "+(particle25?"on":"off"));
+            p25.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+particle25?particle25=false:particle25=true;
+p25.setText("Spell: "+(particle25?"on":"off"));
+if(particle25 == true){
+clientMessage(client + "§7Particle 25 is true");
+}
+if(particle25 == false){
+clientMessage(client + "§7Particle 25 is false");
+                }
+}
+            }));
+            particleLayout.addView(p25);
+
+var p26 = new android.widget.Button(ctx);
+            p26.setText("Splash: "+(particle26?"on":"off"));
+            p26.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+particle26?particle26=false:particle26=true;
+p26.setText("Splash: "+(particle26?"on":"off"));
+if(particle26 == true){
+clientMessage(client + "§7Particle 26 is true");
+}
+if(particle26 == false){
+clientMessage(client + "§7Particle 26 is false");
+                }
+}
+            }));
+            particleLayout.addView(p26);
+
+var p27 = new android.widget.Button(ctx);
+            p27.setText("Suspended town: "+(particle27?"on":"off"));
+            p27.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+particle27?particle27=false:particle27=true;
+p27.setText("Suspended town: "+(particle27?"on":"off"));
+if(particle27 == true){
+clientMessage(client + "§7Particle 27 is true");
+}
+if(particle27 == false){
+clientMessage(client + "§7Particle 27 is false");
+                }
+}
+            }));
+            particleLayout.addView(p27);
+
+var p28 = new android.widget.Button(ctx);
+            p28.setText("Terrain: "+(particle28?"on":"off"));
+            p28.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+particle28?particle28=false:particle28=true;
+p28.setText("Terrain: "+(particle28?"on":"off"));
+if(particle28 == true){
+clientMessage(client + "§7Particle 28 is true");
+}
+if(particle28 == false){
+clientMessage(client + "§7Particle 28 is false");
+                }
+}
+            }));
+            particleLayout.addView(p28);
+
+var p29 = new android.widget.Button(ctx);
+            p29.setText("Water wake: "+(particle29?"on":"off"));
+            p29.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+particle29?particle29=false:particle29=true;
+p29.setText("Water wake: "+(particle29?"on":"off"));
+if(particle29 == true){
+clientMessage(client + "§7Particle 29 is true");
+}
+if(particle29 == false){
+clientMessage(client + "§7Particle 29 is false");
+                }
+}
+            }));
+            particleLayout.addView(p29);
+
+var p30 = new android.widget.Button(ctx);
+            p30.setText("Large explosion: "+(particle30?"on":"off"));
+            p30.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+particle30?particle30=false:particle30=true;
+p30.setText("Large explosion: "+(particle30?"on":"off"));
+if(particle30 == true){
+clientMessage(client + "§7Particle 30 is true");
+}
+if(particle30 == false){
+clientMessage(client + "§7Particle 30 is false");
+                }
+}
+            }));
+            particleLayout.addView(p30);
+
+var p31 = new android.widget.Button(ctx);
+            p31.setText("Spell 2: "+(particle31?"on":"off"));
+            p31.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+particle31?particle31=false:particle31=true;
+p31.setText("Spell 2: "+(particle31?"on":"off"));
+if(particle31 == true){
+clientMessage(client + "§7Particle 31 is true");
+}
+if(particle31 == false){
+clientMessage(client + "§7Particle 31 is false");
+                }
+}
+            }));
+            particleLayout.addView(p31);
+
+var p32 = new android.widget.Button(ctx);
+            p32.setText("Spell 3: "+(particle32?"on":"off"));
+            p32.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+particle32?particle32=false:particle32=true;
+p32.setText("Spell 3: "+(particle32?"on":"off"));
+if(particle32 == true){
+clientMessage(client + "§7Particle 32 is true");
+}
+if(particle32 == false){
+clientMessage(client + "§7Particle 32 is false");
+                }
+}
+            }));
+            particleLayout.addView(p32);
 
             particle = new PopupWindow(particleLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1, ctx.getWindowManager().getDefaultDisplay().getHeight());
             particle.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -1334,6 +2353,348 @@ ctx.runOnUiThread(new Runnable({ run: function(){
 			}
 		});
 		spawnLayout.addView(exit);
+		
+		var spawn10 = new Button(ctx);
+            spawn10.setText("Spawn Chicken");      
+            spawn10.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 10);
+                }
+            }));
+            spawnLayout.addView(spawn10);
+
+var spawn11 = new Button(ctx);
+            spawn11.setText("Spawn Cow");
+            spawn11.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 11);
+                }
+            }));
+            spawnLayout.addView(spawn11);
+            
+            var spawn12 = new Button(ctx);
+            spawn12.setText("Spawn Pig");
+            spawn12.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 12);
+                }
+            }));
+            spawnLayout.addView(spawn12);
+            
+            var spawn13 = new Button(ctx);
+            spawn13.setText("Spawn Sheep");
+            spawn13.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 13);
+                }
+            }));
+            spawnLayout.addView(spawn13);
+            
+            var spawn14 = new Button(ctx);
+            spawn14.setText("Spawn Wolf");
+            spawn14.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 14);
+                }
+            }));
+            spawnLayout.addView(spawn14);
+            
+            var spawn15 = new Button(ctx);
+            spawn15.setText("Spawn Villager");
+            spawn15.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 15);
+                }
+            }));
+            spawnLayout.addView(spawn15);
+            
+            var spawn16 = new Button(ctx);
+            spawn16.setText("Spawn Mushrom cow");
+            spawn16.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 16);
+                }
+            }));
+            spawnLayout.addView(spawn16);
+            
+            var spawn17 = new Button(ctx);
+            spawn17.setText("Spawn Squid");
+            spawn17.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 17);
+                }
+            }));
+            spawnLayout.addView(spawn17);
+            
+            var spawn18 = new Button(ctx);
+            spawn18.setText("Spawn Rabbit");
+            spawn18.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 18);
+                }
+            }));
+            spawnLayout.addView(spawn18);
+            
+            var spawn19 = new Button(ctx);
+            spawn19.setText("Spawn Bat");
+            spawn19.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 19);
+                }
+            }));
+            spawnLayout.addView(spawn19);
+            
+            var spawn20 = new Button(ctx);
+            spawn20.setText("Spawn Iron golem");
+            spawn20.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 20);
+                }
+            }));
+            spawnLayout.addView(spawn20);
+            
+            var spawn21 = new Button(ctx);
+            spawn21.setText("Spawn Snow golem");
+            spawn21.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 21);
+                }
+            }));
+            spawnLayout.addView(spawn21);
+            
+            var spawn22 = new Button(ctx);
+            spawn22.setText("Spawn Ocelot");
+            spawn22.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 22);
+                }
+            }));
+            spawnLayout.addView(spawn22);
+
+var spawn32 = new Button(ctx);
+            spawn32.setText("Spawn Zombie");
+            spawn32.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 32);
+                }
+            }));
+            spawnLayout.addView(spawn32);
+
+var spawn33 = new Button(ctx);
+            spawn33.setText("Spawn Creeper");
+            spawn33.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 33);
+                }
+            }));
+            spawnLayout.addView(spawn33);
+
+var spawn34 = new Button(ctx);
+            spawn34.setText("Spawn Skeleton");
+            spawn34.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 34);
+                }
+            }));
+            spawnLayout.addView(spawn34);
+            
+            var spawn35 = new Button(ctx);
+            spawn35.setText("Spawn Spider");
+            spawn35.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 35);
+                }
+            }));
+            spawnLayout.addView(spawn35);
+            
+            var spawn36 = new Button(ctx);
+            spawn36.setText("Spawn Zombie pigman");
+            spawn36.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 36);
+                }
+            }));
+            spawnLayout.addView(spawn36);
+            
+            var spawn37 = new Button(ctx);
+            spawn37.setText("Spawn Slime");
+            spawn37.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 37);
+                }
+            }));
+            spawnLayout.addView(spawn37);
+            
+            var spawn38 = new Button(ctx);
+            spawn38.setText("Spawn Enderman");     
+            spawn38.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 38);
+                }
+            }));
+            spawnLayout.addView(spawn38);
+            
+            var spawn39 = new Button(ctx);
+            spawn39.setText("Spawn Silverfish");
+            spawn39.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 39);
+                }
+            }));
+            spawnLayout.addView(spawn39);
+
+var spawn40 = new Button(ctx);
+            spawn40.setText("Spawn Cave spider"); 
+            spawn40.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 40);
+                }
+            }));
+            spawnLayout.addView(spawn40);
+
+var spawn41 = new Button(ctx);
+            spawn41.setText("Spawn Ghast");      
+            spawn41.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 41);
+                }
+            }));
+            spawnLayout.addView(spawn41);
+
+var spawn42 = new Button(ctx);
+            spawn42.setText("Spawn Magma cube");
+            spawn42.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 42);
+                }
+            }));
+            spawnLayout.addView(spawn42);
+
+var spawn43 = new Button(ctx);
+            spawn43.setText("Spawn Blaze");       
+            spawn43.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 43);
+                }
+            }));
+            spawnLayout.addView(spawn43);
+
+var spawn44 = new Button(ctx);
+            spawn44.setText("Spawn Zombie villager");
+            spawn44.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 44);
+                }
+            }));
+            spawnLayout.addView(spawn44);
+
+var spawn66 = new Button(ctx);
+            spawn66.setText("Spawn Witch");            
+            spawn66.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 45);
+                }
+            }));
+            spawnLayout.addView(spawn66);
+
+			var spawn67 = new Button(ctx);
+            spawn67.setText("Spawn Endermite");            
+            spawn67.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 67);
+                }
+            }));
+            spawnLayout.addView(spawn67);
+			
+			var spawn68 = new Button(ctx);
+            spawn68.setText("Spawn Guardian");            
+            spawn68.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 68);
+                }
+            }));
+            spawnLayout.addView(spawn68);
+			
+			var spawn69 = new Button(ctx);
+            spawn69.setText("Spawn Shulker");            
+            spawn69.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 69);
+                }
+            }));
+            spawnLayout.addView(spawn69);
+			
+var spawn70 = new Button(ctx);
+            spawn70.setText("Spawn Horse");            
+            spawn70.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 100);
+                }
+            }));
+            spawnLayout.addView(spawn70);
+			
+			var spawn71 = new Button(ctx);
+            spawn71.setText("Spawn Donkey");            
+            spawn71.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 48);
+                }
+            }));
+            spawnLayout.addView(spawn71);
+			
+			var spawn72 = new Button(ctx);
+            spawn72.setText("Spawn Mule");            
+            spawn72.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 25);
+                }
+            }));
+            spawnLayout.addView(spawn72);
+			
+			var spawn73 = new Button(ctx);
+            spawn73.setText("Spawn Skeleton Horse");            
+            spawn73.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 26);
+                }
+            }));
+            spawnLayout.addView(spawn73);
+			
+			var spawn74 = new Button(ctx);
+            spawn74.setText("Spawn Zombie Horse");            
+            spawn74.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 27);
+                }
+            }));
+            spawnLayout.addView(spawn74);
+			
+			var spawn75 = new Button(ctx);
+            spawn75.setText("Spawn Wither skeleton");            
+            spawn75.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 24);
+                }
+            }));
+            spawnLayout.addView(spawn75);
+			
+			var spawn76 = new Button(ctx);
+            spawn76.setText("Spawn Stray");            
+            spawn76.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 46);
+                }
+            }));
+            spawnLayout.addView(spawn76);
+			
+			var spawn77 = new Button(ctx);
+            spawn77.setText("Spawn Husk");            
+            spawn77.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 47);
+                }
+            }));
+            spawnLayout.addView(spawn77);
 
             spawn = new PopupWindow(spawnLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1, ctx.getWindowManager().getDefaultDisplay().getHeight());
             spawn.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -1381,6 +2742,258 @@ ctx.runOnUiThread(new Runnable({ run: function(){
 			}
 		});
 		speedLayout.addView(exit);
+		
+		var d1 = new Button(ctx);
+            d1.setText("Normal speed");       
+            d1.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+                	ModPE.setGameSpeed(20);
+                }
+            }));
+            speedLayout.addView(d1);
+			
+			var d0 = new Button(ctx);
+            d0.setText("Speed 0%");       
+            d0.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+                	ModPE.setGameSpeed(0);
+                }
+            }));
+            speedLayout.addView(d0);
+            
+            var d2 = new Button(ctx);
+            d2.setText("Speed 5%");       
+            d2.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+                	ModPE.setGameSpeed(5);
+                }
+            }));
+            speedLayout.addView(d2);
+            
+            var d3 = new Button(ctx);
+            d3.setText("Speed 10%");       
+            d3.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+                	ModPE.setGameSpeed(10);
+                }
+            }));
+            speedLayout.addView(d3);
+            
+            var d4 = new Button(ctx);
+            d4.setText("Speed 15%");       
+            d4.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+                	ModPE.setGameSpeed(15);
+                }
+            }));
+            speedLayout.addView(d4);
+            
+            var d5 = new Button(ctx);
+            d5.setText("Speed 20%");       
+            d5.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+                	ModPE.setGameSpeed(20);
+                }
+            }));
+            speedLayout.addView(d5);
+            
+            var d6 = new Button(ctx);
+            d6.setText("Speed 25%");       
+            d6.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+                	ModPE.setGameSpeed(25);
+                }
+            }));
+            speedLayout.addView(d6);
+            
+            var d7 = new Button(ctx);
+            d7.setText("Speed 30%");       
+            d7.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+                	ModPE.setGameSpeed(30);
+                }
+            }));
+            speedLayout.addView(d7);
+            
+            var d8 = new Button(ctx);
+            d8.setText("Speed 35%");       
+            d8.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+                	ModPE.setGameSpeed(35);
+                }
+            }));
+            speedLayout.addView(d8);
+            
+            var d9 = new Button(ctx);
+            d9.setText("Speed 40%");       
+            d9.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+                	ModPE.setGameSpeed(40);
+                }
+            }));
+            speedLayout.addView(d9);
+
+var d10 = new Button(ctx);
+            d10.setText("Speed 45%");       
+            d10.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+                	ModPE.setGameSpeed(45);
+                }
+            }));
+            speedLayout.addView(d10);
+
+var d11 = new Button(ctx);
+            d11.setText("Speed 50%");       
+            d11.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+                	ModPE.setGameSpeed(50);
+                }
+            }));
+            speedLayout.addView(d11);
+
+var d12 = new Button(ctx);
+            d12.setText("Speed 55%");       
+            d12.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+                	ModPE.setGameSpeed(55);
+                }
+            }));
+            speedLayout.addView(d12);
+
+var d13 = new Button(ctx);
+            d13.setText("Speed 60%");       
+            d13.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+                	ModPE.setGameSpeed(60);
+                }
+            }));
+            speedLayout.addView(d13);
+
+var d14 = new Button(ctx);
+            d14.setText("Speed 65%");       
+            d14.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+                	ModPE.setGameSpeed(65);
+                }
+            }));
+            speedLayout.addView(d14);
+
+var d15 = new Button(ctx);
+            d15.setText("Speed 70%");       
+            d15.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+                	ModPE.setGameSpeed(70);
+                }
+            }));
+            speedLayout.addView(d15);
+
+var d16 = new Button(ctx);
+            d16.setText("Speed 75%");       
+            d16.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+                	ModPE.setGameSpeed(75);
+                }
+            }));
+            speedLayout.addView(d16);
+
+var d17 = new Button(ctx);
+            d17.setText("Speed 80%");       
+            d17.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+                	ModPE.setGameSpeed(80);
+                }
+            }));
+            speedLayout.addView(d17);
+
+var d18 = new Button(ctx);
+            d18.setText("Speed 85%");       
+            d18.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+                	ModPE.setGameSpeed(85);
+                }
+            }));
+            speedLayout.addView(d18);
+
+var d19 = new Button(ctx);
+            d19.setText("Speed 90%");       
+            d19.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+                	ModPE.setGameSpeed(90);
+                }
+            }));
+            speedLayout.addView(d19);
+
+var d20 = new Button(ctx);
+            d20.setText("Speed 95%");       
+            d20.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+                	ModPE.setGameSpeed(95);
+                }
+            }));
+            speedLayout.addView(d20);
+
+var d21 = new Button(ctx);
+            d21.setText("Speed 100%");       
+            d21.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+                	ModPE.setGameSpeed(100);
+                }
+            }));
+            speedLayout.addView(d21);
+			
+			var d22 = new Button(ctx);
+            d22.setText("Custom speed");        
+            d22.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){ 
+newspeed(); 
+
+                }
+            }));
+            speedLayout.addView(d22);
+
+function newspeed() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer8 = new android.widget.LinearLayout(ctx);
+var vspee = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter custom speed");
+Dialog.setContentView(Layer8);
+
+Layer8.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer8.addView(vspee);
+Layer8.addView(Exit);
+
+vspee.setText("");
+vspee.setHint("numbers here");
+Exit.setText("done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+nspee =vspee.getText();
+Dialog.dismiss();
+setspeed();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The set speed Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function setspeed(){
+ModPE.setGameSpeed(nspee);
+}
 
             speed = new PopupWindow(speedLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1, ctx.getWindowManager().getDefaultDisplay().getHeight());
             speed.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -1475,6 +3088,289 @@ ctx.runOnUiThread(new Runnable({ run: function(){
 			}
 		});
 		timeLayout.addView(exit);
+		
+		var aa = new android.widget.Button(ctx);
+            aa.setText("Only day: "+(onlyday?"on":"off"));
+            aa.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+                onlyday?onlyday=false:onlyday=true;
+aa.setText("Only day: "+(onlyday?"on":"off"));
+if(onlyday == true){
+clientMessage("§7Only day is on");
+Server.sendChat("/time set 0");
+Server.sendChat("/time stop");
+onlyday = true;
+}
+if(onlyday == false){
+clientMessage("§7Only day is off");
+Server.sendChat("/time start");
+onlyday = false;
+                }
+                }
+            }));
+            timeLayout.addView(aa);
+
+var aa2 = new android.widget.Button(ctx);
+            aa2.setText("Only night: "+(onlynight?"on":"off"));
+            aa2.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+onlynight?onlynight=false:onlynight=true;
+aa2.setText("Only night: "+(onlynight?"on":"off"));
+if(onlynight == true){
+clientMessage("§7Only night is on");
+Server.sendChat("/time set 15000");
+Server.sendChat("/time stop");
+onlynight = true;
+}
+if(onlynight == false){
+clientMessage("§7Only night is off");
+Server.sendChat("/time start");
+onlynight = false;
+                }
+                }
+            }));
+            timeLayout.addView(aa2);
+
+var a1 = new Button(ctx);
+            a1.setText("Time: 6:00am");
+            a1.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Level.setTime(0);
+Server.sendChat("/time set 0");
+                }
+            }));
+            timeLayout.addView(a1);
+
+var a2 = new Button(ctx);
+            a2.setText("Time: 7:00am");
+            a2.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Level.setTime(1000);
+Server.sendChat("/time set 1000");
+                }
+            }));
+            timeLayout.addView(a2);
+
+var a3 = new Button(ctx);
+            a3.setText("Time: 8:00am");
+            a3.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Level.setTime(2000);
+Server.sendChat("/time set 2000");
+                }
+            }));
+            timeLayout.addView(a3);
+
+var a4 = new Button(ctx);
+            a4.setText("Time: 9:00am");
+            a4.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Level.setTime(3000);
+Server.sendChat("/time set 3000");
+                }
+            }));
+            timeLayout.addView(a4);
+
+var a5 = new Button(ctx);
+            a5.setText("Time: 10:00am");
+            a5.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Level.setTime(4000);
+Server.sendChat("/time set 4000");
+                }
+            }));
+            timeLayout.addView(a5);
+
+var a6 = new Button(ctx);
+            a6.setText("Time: 11:00am");
+            a6.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Level.setTime(5000);
+Server.sendChat("/time set 5000");
+                }
+            }));
+            timeLayout.addView(a6);
+
+var a7 = new Button(ctx);
+            a7.setText("Time: 12:00pm");
+            a7.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Level.setTime(6000);
+Server.sendChat("/time set 6000");
+                }
+            }));
+            timeLayout.addView(a7);
+
+var a8 = new Button(ctx);
+            a8.setText("Time: 1:00pm");
+            a8.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Level.setTime(7000);
+Server.sendChat("/time set 7000");
+                }
+            }));
+            timeLayout.addView(a8);
+
+var a9 = new Button(ctx);
+            a9.setText("Time: 2:00pm");
+            a9.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Level.setTime(8000);
+Server.sendChat("/time set 8000");
+                }
+            }));
+            timeLayout.addView(a9);
+
+var a10 = new Button(ctx);
+            a10.setText("Time: 3:00pm");
+            a10.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Level.setTime(9000);
+Server.sendChat("/time set 9000");
+                }
+            }));
+            timeLayout.addView(a10);
+
+var a11 = new Button(ctx);
+            a11.setText("Time: 4:00pm");
+            a11.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Level.setTime(10000);
+Server.sendChat("/time set 10000");
+                }
+            }));
+            timeLayout.addView(a11);
+
+var a12 = new Button(ctx);
+            a12.setText("Time: 5:00pm");
+            a12.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Level.setTime(11000);
+Server.sendChat("/time set 11000");
+                }
+            }));
+            timeLayout.addView(a12);
+
+var a13 = new Button(ctx);
+            a13.setText("Time: 6:00pm");
+            a13.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Level.setTime(12000);
+Server.sendChat("/time set 12000");
+                }
+            }));
+            timeLayout.addView(a13);
+
+var a14 = new Button(ctx);
+            a14.setText("Time: 7:00pm");
+            a14.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Level.setTime(13000);
+Server.sendChat("/time set 13000");
+                }
+            }));
+            timeLayout.addView(a14);
+
+var a15 = new Button(ctx);
+            a15.setText("Time: 8:00pm");
+            a15.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Level.setTime(14000);
+Server.sendChat("/time set 14000");
+                }
+            }));
+            timeLayout.addView(a15);
+
+var a16 = new Button(ctx);
+            a16.setText("Time: 9:00pm");
+            a16.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Level.setTime(15000);
+Server.sendChat("/time set 15000");
+                }
+            }));
+            timeLayout.addView(a16);
+
+var a17 = new Button(ctx);
+            a17.setText("Time: 10:00pm");
+            a17.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Level.setTime(16000);
+Server.sendChat("/time set 16000");
+                }
+            }));
+            timeLayout.addView(a17);
+
+var a18 = new Button(ctx);
+            a18.setText("Time: 11:00pm");
+            a18.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Level.setTime(17000);
+Server.sendChat("/time set 17000");
+                }
+            }));
+            timeLayout.addView(a18);
+
+var a19 = new Button(ctx);
+            a19.setText("Time: 12:00am");
+            
+            a19.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Level.setTime(18000);
+Server.sendChat("/time set 18000");
+                }
+            }));
+            timeLayout.addView(a19);
+
+var a20 = new Button(ctx);
+            a20.setText("Time: 1:00am");
+            a20.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Level.setTime(19000);
+Server.sendChat("/time set 19000");
+                }
+            }));
+            timeLayout.addView(a20);
+
+var a21 = new Button(ctx);
+            a21.setText("Time: 2:00am");
+            a21.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Level.setTime(20000);
+Server.sendChat("/time set 20000");
+                }
+            }));
+            timeLayout.addView(a21);
+
+var a22 = new Button(ctx);
+            a22.setText("Time: 3:00am");
+            a22.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Level.setTime(21000);
+Server.sendChat("/time set 21000");
+                }
+            }));
+            timeLayout.addView(a22);
+
+var a23 = new Button(ctx);
+            a23.setText("Time: 4:00am");
+            a23.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Level.setTime(22000);
+Server.sendChat("/time set 22000");
+                }
+            }));
+            timeLayout.addView(a23);
+
+var a24 = new Button(ctx);
+            a24.setText("Time: 5:00am");          
+            a24.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Level.setTime(23000);
+Server.sendChat("/time set 23000");
+                }
+            }));
+            timeLayout.addView(a24);
 
             time = new PopupWindow(timeLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1, ctx.getWindowManager().getDefaultDisplay().getHeight());
             time.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
