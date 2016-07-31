@@ -959,6 +959,446 @@ ctx.runOnUiThread(new Runnable({ run: function(){
 			}
 		});
 		cheatLayout.addView(exit);
+		
+		var worldInfo = new Button(MainActivity);
+            worldInfo.setText("World info");
+            worldInfo.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+            worldInfo.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){ 
+                Level.getRainLevel();	
+clientMessage("World name: "+Level.getWorldName()+" World: "+Player.getDimension()+" Biome: "+Level.getBiomeName());
+Math.round(Level.getRainLevel());
+if(Math.round(Level.getRainLevel())=="0")clientMessage("Weather: clear"+" Time: "+Level.getTime());
+if(Math.round(Level.getRainLevel())=="1")clientMessage("Weather: rain/snow "+" Time: "+Level.getTime());
+                }
+            }));
+            cheatLayout.addView(worldInfo);
+	    
+	    var button1 = new Button(MainActivity);
+button1.setText("Walk on liquid");
+button1.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+button1.setTextColor(Color.RED);
+if(liquidwalk==true)button1.setTextColor(Color.GREEN);
+            button1.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             liquidwalk?liquidwalk=false:liquidwalk=true;
+button1.setText("Walk on liquid");
+if(liquidwalk == true){
+button1.setTextColor(Color.GREEN);
+Block.setShape(8, 0, 0, 0, 1, 0.6, 1);
+Block.setShape(9, 0, 0, 0, 1, 0.6, 1);
+Block.setShape(10, 0, 0, 0, 1, 0.6, 1);
+Block.setShape(11, 0, 0, 0, 1, 0.6, 1);
+Block.defineBlock(8, "Water", [["still_water", 0]], 8, false, 4);
+Block.defineBlock(9, "Stationary Water", [["still_water", 0]], 9, false, 4);
+Block.defineBlock(10, "Lava", [["still_lava", 0]], 10, false, 4);
+Block.defineBlock(11, "Stationary Lava", [["still_lava", 0]], 11, false, 4);
+liquidwalk = true;
+}
+if(liquidwalk == false){
+button1.setTextColor(Color.RED);
+Block.setShape(8, null, null, null, null, null, null);
+Block.setShape(9, null, null, null, null, null, null);
+Block.setShape(10, null, null, null, null, null, null);
+Block.setShape(11, null, null, null, null, null, null);
+liquidwalk = false;
+}
+                }
+            }));
+            cheatLayout.addView(button1);
+            
+            var creative = new Button(MainActivity);
+            creative.setText("Creative");        
+            creative.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+            creative.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.setGameMode(1);
+                    Player.setCanFly(true);
+Server.sendChat("/gamemode 1");
+Server.sendChat("/gamemode creative");
+clientMessage("§7Your gamemode was updated to creative mode!");
+                }
+            }));
+            cheatLayout.addView(creative);
+            
+            var survival = new Button(MainActivity);
+            survival.setText("Survival");
+            survival.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+            survival.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.setGameMode(0);
+                    if(Player.setCanFly(true))Player.setCanFly(false);
+Server.sendChat("/gamemode 0");
+Server.sendChat("/gamemode survival");
+clientMessage("§7Your gamemode was updated to survival mode!");
+                }
+            }));
+            cheatLayout.addView(survival);
+            
+            var adventure = new Button(MainActivity);
+            adventure.setText("Adventure");       
+            adventure.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+            adventure.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.setGameMode(2);
+                    if(Player.setCanFly(true))Player.setCanFly(false);
+Server.sendChat("/gamemode 2");
+Server.sendChat("/gamemode adventure");
+clientMessage("§7Your gamemode was updated to adventure mode!");
+                }
+            }));
+            cheatLayout.addView(adventure);
+            
+            var spectator = new Button(MainActivity);
+            spectator.setText("Spectator");     
+            spectator.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+            spectator.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.setGameMode(3);
+                    Player.setCanFly(true);
+Server.sendChat("/gamemode 3");
+Server.sendChat("/gamemode spectator");
+clientMessage("§7Your gamemode was updated to spectator mode!");
+                }
+            }));
+            cheatLayout.addView(spectator);
+	    
+	    	    var button2 = new Button(MainActivity);
+button2.setText("Ground X-Ray");
+button2.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+button2.setTextColor(Color.RED);
+if(xray==true)button2.setTextColor(Color.GREEN);
+            button2.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             xray?xray=false:xray=true;
+button2.setText("Ore view(xray)");
+if(xray == true){
+button2.setTextColor(Color.GREEN);
+clientMessage("You may crash!\nchange on/off fancy graphics for better view.");
+Block.setRenderLayer(1,1);
+Block.setRenderLayer(2,1);
+Block.setRenderLayer(3,1);
+Block.setRenderLayer(12,1);
+Block.setRenderLayer(24,1);
+Block.setRenderLayer(78,1);
+Block.setShape(1, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(2, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(3, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(12, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(24, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(78, 0, 0, 0, 0.0001, 0.6, 0.0001);
+xray = true;
+}
+if(xray == false){
+button2.setTextColor(Color.RED);
+num0++
+Block.setRenderLayer(1,num0);
+Block.setRenderLayer(2,num0);
+Block.setRenderLayer(3,num0);
+Block.setRenderLayer(12,num0);
+Block.setRenderLayer(24,num0);
+Block.setRenderLayer(78,num0);
+Block.setShape(1, null, null, null, 1, 1, 1);
+Block.setShape(2, null, null, null, 1, 1, 1);
+Block.setShape(3, null, null, null, 1, 1, 1);
+Block.setShape(12, null, null, null, 1, 1, 1);
+Block.setShape(24, null, null, null, 1, 1, 1);
+Block.setShape(78, null, null, null, 1, 1, 1);
+xray = false;
+}
+                }
+            }));
+            cheatLayout.addView(button2);
+            
+            var svr = new android.widget.Button(MainActivity);
+            svr.setText("Server IP:Port");
+            svr.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+            svr.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+clientMessage("§lIP:§r " + Server.getAddress() + " §lPort:§r " + Server.getPort());
+if(Server.getAddress()=="null" || Server.getPort()=="0")clientMessage("You are not on a server!");
+                }
+            }));
+            cheatLayout.addView(svr);
+            
+            var itemInfo = new Button(MainActivity);
+            itemInfo.setText("Item info"); 
+            itemInfo.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+            itemInfo.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+clientMessage("Item ID: " + Player.getCarriedItem());
+clientMessage("Data / damage: " + Player.getCarriedItemData());
+clientMessage("Amount in hand: " + Player.getCarriedItemCount());
+clientMessage("Item enchantment: " + Player.getEnchantments(Player.getSelectedSlotId()));
+                }
+            }));
+            cheatLayout.addView(itemInfo);
+            
+            var cidban = new Button(MainActivity);
+            cidban.setText("CID/dev pardon"); 
+            cidban.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+            cidban.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                	devpardon();
+                	
+Toast.makeText(ctx, "You will crash & be unbanned!", 1).show();
+
+                }
+            }));
+            cheatLayout.addView(cidban);
+            
+            var button3 = new Button(MainActivity);
+button3.setText("Anti void");
+button3.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+button3.setTextColor(Color.RED);
+if(antivoid==true)button3.setTextColor(Color.GREEN);
+            button3.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             antivoid?antivoid=false:antivoid=true;
+button3.setText("Anti void");
+if(antivoid == true){
+button3.setTextColor(Color.GREEN);
+
+antivoid = true;
+}
+if(antivoid == false){
+button3.setTextColor(Color.RED);
+
+antivoid = false;
+}
+                }
+            }));
+            cheatLayout.addView(button3);
+	    
+	    var button4 = new Button(MainActivity);
+button4.setText("Armor status");
+button4.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+button4.setTextColor(Color.RED);
+if(armor==true)button4.setTextColor(Color.GREEN);
+            button4.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             armor?armor=false:armor=true;
+button4.setText("Armor status");
+if(armor == true){
+button4.setTextColor(Color.GREEN);
+if(coords==true)coords==false;
+armor = true;
+}
+if(armor == false){
+button4.setTextColor(Color.RED);
+
+armor = false;
+}
+                }
+            }));
+            cheatLayout.addView(button4);
+            
+            var button5 = new Button(MainActivity);
+button5.setText("Coordinates");
+button5.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+button5.setTextColor(Color.RED);
+if(coords==true)button5.setTextColor(Color.GREEN);
+            button5.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             coords?coords=false:coords=true;
+button5.setText("Coordinates");
+if(coords == true){
+button5.setTextColor(Color.GREEN);
+if(armor==true)armor==false;
+coords = true;
+}
+if(coords == false){
+button5.setTextColor(Color.RED);
+
+coords = false;
+}
+                }
+            }));
+            cheatLayout.addView(button5);
+            
+            var button6 = new Button(MainActivity);
+button6.setText("Glide");
+button6.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+button6.setTextColor(Color.RED);
+if(glide==true)button6.setTextColor(Color.GREEN);
+            button6.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             glide?glide=false:glide=true;
+button6.setText("Glide");
+if(glide == true){
+button6.setTextColor(Color.GREEN);
+Toast.makeText(MainActivity, "Credit: Apric0cks from maximus mod!", 1).show();
+glide = true;
+}
+if(glide == false){
+button6.setTextColor(Color.RED);
+
+glide = false;
+}
+                }
+            }));
+            cheatLayout.addView(button6);
+            
+            var button7 = new Button(MainActivity);
+button7.setText("Text to toast");
+button7.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+button7.setTextColor(Color.RED);
+if(ttot==true)button7.setTextColor(Color.GREEN);
+            button7.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             ttot?ttot=false:ttot=true;
+button7.setText("Text to toast");
+if(ttot == true){
+button7.setTextColor(Color.GREEN);
+
+ttot = true;
+}
+if(ttot == false){
+button7.setTextColor(Color.RED);
+
+ttot = false;
+}
+                }
+            }));
+            cheatLayout.addView(button7);
+            
+            var button8 = new Button(MainActivity);
+button8.setText("Anti break");
+button8.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+button8.setTextColor(Color.RED);
+if(block==true)button8.setTextColor(Color.GREEN);
+            button8.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             block?block=false:block=true;
+button8.setText("Anti break");
+if(block == true){
+button8.setTextColor(Color.GREEN);
+
+block = true;
+}
+if(block == false){
+button8.setTextColor(Color.RED);
+
+block = false;
+}
+                }
+            }));
+            cheatLayout.addView(button8);
+	    
+	    var button9 = new Button(MainActivity);
+button9.setText("Tap spam");
+button9.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+button9.setTextColor(Color.RED);
+if(tapspam==true)button9.setTextColor(Color.GREEN);
+            button9.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             tapspam?tapspam=false:tapspam=true;
+button9.setText("Tap spam");
+if(tapspam == true){
+button9.setTextColor(Color.GREEN);
+spam();
+tapspam = true;
+}
+if(tapspam == false){
+button8.setTextColor(Color.RED);
+
+tapspam = false;
+}
+                }
+            }));
+            cheatLayout.addView(button9);
+            
+            var button10 = new Button(MainActivity);
+button10.setText("Tap destroy");
+button10.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+button10.setTextColor(Color.RED);
+if(tapdestroy==true)button10.setTextColor(Color.GREEN);
+            button10.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             tapdestroy?tapdestroy=false:tapdestroy=true;
+button10.setText("Tap destroy");
+if(tapdestroy == true){
+button10.setTextColor(Color.GREEN);
+
+tapdestroy = true;
+}
+if(tapdestroy == false){
+button10.setTextColor(Color.RED);
+
+tapdestroy = false;
+}
+                }
+            }));
+            cheatLayout.addView(button10);
+            
+            var button11 = new Button(MainActivity);
+button11.setText("Chest ESP");
+button11.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+button11.setTextColor(Color.RED);
+if(chestesp==true)button11.setTextColor(Color.GREEN);
+            button11.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             chestesp?chestesp=false:chestesp=true;
+button11.setText("Chest ESP");
+if(chestesp == true){
+button11.setTextColor(Color.GREEN);
+
+chestesp = true;
+}
+if(chestesp == false){
+button11.setTextColor(Color.RED);
+
+chestesp = false;
+}
+                }
+            }));
+            cheatLayout.addView(button11);
+            
+var button12 = new Button(MainActivity);
+button12.setText("Auto spam");
+button12.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+button12.setTextColor(Color.RED);
+if(autospam==true)button12.setTextColor(Color.GREEN);
+            button12.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             autospam?autospam=false:autospam=true;
+button12.setText("Auto spam");
+if(autospam == true){
+button12.setTextColor(Color.GREEN);
+
+autospam = true;
+}
+if(autospam == false){
+button12.setTextColor(Color.RED);
+
+autospam = false;
+}
+                }
+            }));
+            cheatLayout.addView(button12);
+            
+            var button13 = new Button(MainActivity);
+button13.setText("Auto destroy");
+button13.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+button13.setTextColor(Color.RED);
+if(autodestroy==true)button12.setTextColor(Color.GREEN);
+            button13.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             autodestroy?autodestroy=false:autodestroy=true;
+button13.setText("Auto destroy");
+if(autodestroy == true){
+button13.setTextColor(Color.GREEN);
+
+autodestroy = true;
+}
+if(autodestroy == false){
+button13.setTextColor(Color.RED);
+
+autodestroy = false;
+}
+                }
+            }));
+            cheatLayout.addView(button13);
 
             cheat = new PopupWindow(cheatLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1, ctx.getWindowManager().getDefaultDisplay().getHeight());
             cheat.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -1007,7 +1447,7 @@ ctx.runOnUiThread(new Runnable({ run: function(){
 		modLayout.addView(exit);
 		
 		var button13 = new Button(MainActivity);
-button13.setText("Auto sugar");
+button13.setText("Sugar farm");
 button13.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
             button13.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -1027,6 +1467,24 @@ button13.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(andr
                 }
             }));
             modLayout.addView(button13);
+            
+            var button14 = new Button(MainActivity);
+button14.setText("Wheat farm");
+button14.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+            button14.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             Level.setTile(getPlayerX(), getPlayerY() -1, getPlayerZ(), 8, 0);
+             Level.setTile(getPlayerX() -1, getPlayerY() -1, getPlayerZ(), 60, 0);
+             Level.setTile(getPlayerX() +1, getPlayerY() -1, getPlayerZ(), 60, 0);
+             Level.setTile(getPlayerX(), getPlayerY() -1, getPlayerZ() +1, 60, 0);
+             Level.setTile(getPlayerX(), getPlayerY() -1, getPlayerZ() -1, 60, 0);
+             Level.setTile(getPlayerX() -1, getPlayerY() +1, getPlayerZ(), 59, 0);
+             Level.setTile(getPlayerX() +1, getPlayerY() +1, getPlayerZ(), 59, 0);
+             Level.setTile(getPlayerX(), getPlayerY() +1, getPlayerZ() +1, 59, 0);
+             Level.setTile(getPlayerX(), getPlayerY() +1, getPlayerZ() -1, 59, 0);
+                }
+            }));
+            modLayout.addView(button14);
             
             var status = new android.widget.Button(ctx);
       status.setText("MC Status: "+(stat22?"on":"off"));
@@ -1185,7 +1643,7 @@ var cc = new Button(ctx);
             cc.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
 
-                    clientMessage(" " + "\n ");
+clientMessage(" " + "\n" + " ");
 
 clientMessage(" " + "\n" + " ");
 
@@ -1281,69 +1739,6 @@ remode = false
 }
 }));
 modLayout.addView(rr);
-
-var mf = new Button(ctx);
-            mf.setText("Make food item");
-            mf.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-enterFood();
-                }
-            }));
-            modLayout.addView(mf);
-
-function enterFood() {
-ctx.runOnUiThread(new java.lang.Runnable(){
-run: function(){ 
-try{
-GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var ID = new android.widget.EditText(ctx);
-var Name = new android.widget.EditText(ctx);
-var Health = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
-
-Dialog.setTitle("Make food items");
-Dialog.setContentView(Layer);
-
-Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
-Dialog.show();
-Layer.addView(ID);
-Layer.addView(Name);
-Layer.addView(Health);
-Layer.addView(Exit);
-
-ID.setText("");
-ID.setHint("id of item: 276");
-Name.setText("");
-Name.setHint('icon name: "diamond_sword"');
-Health.setText("");
-Health.setHint("half hearts: 20");
-Exit.setText("Done");
-
-Exit.setOnClickListener(new android.view.View.OnClickListener(){
-onClick: function(view){
-id =ID.getText();
-iconName =Name.getText();
-halfhearts =Health.getText();
-Dialog.dismiss();
-addFood();
-showMenuBtn();
-}
-});
-
-GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
-} catch (e){
-print("The food Dialog Is Malfunctioning:"+e);
-}
-}});
-}
-
-function addFood() {
-ModPE.setFoodItem(id, iconName, 0, halfhearts, "§eFood item", 64);
-}
 
 var cs = new android.widget.Button(ctx);
       cs.setText("Sign Editor: "+(deadchat?"on":"off"));
@@ -1922,21 +2317,6 @@ Server.sendChat("§§");
             }));
             modLayout.addView(bmsg);
 
-var ahb = new android.widget.Button(ctx);
-           ahb.setText("AlphaHack bow");
-            ahb.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
-Item.setCategory(1003,ItemCategory.TOOL);
-ModPE.setItem(1003,"bow_pulling",2,"AlphaHack bow");
-clientMessage(client + "AlphaHack bow added to inventory");
-
-addItemInventory(1003, 2, 0);
-addItemInventory(262, 1000, 0);
-Player.addItemCreativeInv(1003,1,0);
-}
-            }));
-            modLayout.addView(ahb);
-
 var saysome = new android.widget.Button(ctx);
             saysome.setText("BurnAura: "+(killdaura?"on":"off"));
             saysome.setOnClickListener(new android.view.View.OnClickListener({
@@ -2010,7 +2390,7 @@ Entity.setMaxHealth(getPlayerEnt(), newheart);
 }
 
 var spider = new Button(ctx);
-spider.setText("Spider wall glider");
+spider.setText("useless spider hack");
 spider.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
 				Level.setTile(getPlayerX(), getPlayerY(), getPlayerZ(), 65, 0);
@@ -2083,6 +2463,1350 @@ miscLayout1.setPadding(20,0,20,0);
             }
     }}));
 }
+
+var effect = new android.widget.Button(ctx);
+effect.setText("effect menu");
+effect.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+effect.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             effect_menu();
+             menu.dismiss();
+			}
+		});
+		menuLayout.addView(effect);
+		
+		function effect_menu(){
+ctx.runOnUiThread(new Runnable({ run: function(){
+        try{
+            var effectLayout = new LinearLayout(ctx);
+            var effectScroll = new ScrollView(ctx);
+            var effectLayout1 = new LinearLayout(ctx);
+            effectLayout.setOrientation(1);
+            effectLayout1.setOrientation(1);
+            effectScroll.addView(effectLayout);
+            effectLayout1.addView(effectScroll);
+            
+            var exit = new android.widget.Button(ctx);
+		exit.setText("Exit");
+		exit.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             effect.dismiss();
+             showMenuBtn();
+			}
+		});
+		effectLayout.addView(exit);
+		
+		var mov = new Button(ctx);
+            mov.setText("Remove all effect");
+            mov.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                 //Entity.removeAllEffects(player);
+Entity.removeAllEffects(getPlayerEnt());
+                }
+            }));
+            effectLayout.addView(mov);
+
+var e1 = new Button(ctx);
+            e1.setText("saturation");
+            e1.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+ea();
+                }
+            }));
+            effectLayout.addView(e1);
+
+function ea() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var sec = new android.widget.EditText(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Time & Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(sec);
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+sec.setText("Seconds");
+lvl.setText("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+s =sec.getText();
+l =lvl.getText();
+Dialog.dismiss();
+inn1();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Effect Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function inn1() {
+Entity.addEffect(getPlayerEnt(), MobEffect.saturation, s*l, 0, false, true);
+}
+            
+            var e2 = new Button(ctx);
+            e2.setText("Absorption");
+            e2.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+eb();
+                }
+            }));
+            effectLayout.addView(e2);
+
+function eb() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var sec = new android.widget.EditText(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Time & Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(sec);
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+sec.setText("Seconds");
+lvl.setText("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+s =sec.getText();
+l =lvl.getText();
+Dialog.dismiss();
+inn2();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Effect Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function inn2() {
+Entity.addEffect(getPlayerEnt(), MobEffect.absorption, s*l, 0, false, true);
+}
+
+var e3 = new Button(ctx);
+            e3.setText("Health boost");
+            e3.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+  ec();
+                }
+            }));
+            effectLayout.addView(e3);
+
+function ec() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var sec = new android.widget.EditText(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Time & Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(sec);
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+sec.setText("Seconds");
+lvl.setText("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+s =sec.getText();
+l =lvl.getText();
+Dialog.dismiss();
+inn3();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Effect Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function inn3() {
+Entity.addEffect(getPlayerEnt(), MobEffect.healthBoost, s*l, 0, false, true);
+}
+
+var e4 = new Button(ctx);
+            e4.setText("Wither");
+            e4.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+ed();
+                }
+            }));
+            effectLayout.addView(e4);
+
+function ed() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var sec = new android.widget.EditText(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Time & Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(sec);
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+sec.setText("Seconds");
+lvl.setText("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+s =sec.getText();
+l =lvl.getText();
+Dialog.dismiss();
+inn4();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Effect Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function inn4() {
+Entity.addEffect(getPlayerEnt(), MobEffect.wither, s*l, 0, false, true);
+}
+            
+            var e5 = new Button(ctx);
+            e5.setText("Poison");
+            e5.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+ee();
+                }
+            }));
+            effectLayout.addView(e5);
+
+function ee() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var sec = new android.widget.EditText(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Time & Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(sec);
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+sec.setText("Seconds");
+lvl.setText("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+s =sec.getText();
+l =lvl.getText();
+Dialog.dismiss();
+inn5();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Effect Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function inn5() {
+Entity.addEffect(getPlayerEnt(), MobEffect.poison, s*l, 0, false, true);
+}
+
+var e6 = new Button(ctx);
+            e6.setText("Weakness");
+            e6.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    ef();
+                }
+            }));
+            effectLayout.addView(e6);
+
+function ef() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var sec = new android.widget.EditText(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Time & Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(sec);
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+sec.setText("Seconds");
+lvl.setText("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+s =sec.getText();
+l =lvl.getText();
+Dialog.dismiss();
+inn6();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Effect Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function inn6() {
+Entity.addEffect(getPlayerEnt(), MobEffect.weakness, s*l, 0, false, true);
+}
+
+var e7 = new Button(ctx);
+            e7.setText("Hunger");
+            e7.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+eg()
+                }
+            }));
+            effectLayout.addView(e7);
+
+function eg() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var sec = new android.widget.EditText(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Time & Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(sec);
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+sec.setText("Seconds");
+lvl.setText("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+s =sec.getText();
+l =lvl.getText();
+Dialog.dismiss();
+inn7();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Effect Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function inn7() {
+Entity.addEffect(getPlayerEnt(), MobEffect.hunger, s*l, 0, false, true);
+}
+
+var e8 = new Button(ctx);
+            e8.setText("Night vision");
+            e8.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+eh();
+                }
+            }));
+            effectLayout.addView(e8);
+
+function eh() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var sec = new android.widget.EditText(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Time & Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(sec);
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+sec.setText("Seconds");
+lvl.setText("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+s =sec.getText();
+l =lvl.getText();
+Dialog.dismiss();
+inn8();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Effect Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function inn8() {
+Entity.addEffect(getPlayerEnt(), MobEffect.nightVision, s*l, 0, false, true);
+}
+
+var e9 = new Button(ctx);
+            e9.setText("Blindness");
+            e9.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+ei();
+                }
+            }));
+            effectLayout.addView(e9);
+
+function ei() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var sec = new android.widget.EditText(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Time & Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(sec);
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+sec.setText("Seconds");
+lvl.setText("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+s =sec.getText();
+l =lvl.getText();
+Dialog.dismiss();
+inn9();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Effect Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function inn9() {
+Entity.addEffect(getPlayerEnt(), MobEffect.blindness, s*l, 0, false, true);
+}
+
+var e10 = new Button(ctx);
+            e10.setText("Invisibility");
+            e10.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+ ej();
+                }
+            }));
+            effectLayout.addView(e10);
+
+function ej() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var sec = new android.widget.EditText(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Time & Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(sec);
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+sec.setText("Seconds");
+lvl.setText("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+s =sec.getText();
+l =lvl.getText();
+Dialog.dismiss();
+inn10();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Effect Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function inn10() {
+Entity.addEffect(getPlayerEnt(), MobEffect.invisibility, s*l, 0, false, true);
+}
+
+var e11 = new Button(ctx);
+            e11.setText("Water breathing");
+            e11.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+ek();
+                }
+            }));
+            effectLayout.addView(e11);
+
+function ek() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var sec = new android.widget.EditText(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Time & Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(sec);
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+sec.setText("Seconds");
+lvl.setText("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+s =sec.getText();
+l =lvl.getText();
+Dialog.dismiss();
+inn11();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Effect Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function inn11() {
+Entity.addEffect(getPlayerEnt(), MobEffect.waterBreathing, s*l, 0, false, true);
+}
+
+var e12 = new Button(ctx);
+            e12.setText("Fire resistance");
+            e12.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+el();
+                }
+            }));
+            effectLayout.addView(e12);
+
+function el() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var sec = new android.widget.EditText(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Time & Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(sec);
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+sec.setText("Seconds");
+lvl.setText("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+s =sec.getText();
+l =lvl.getText();
+Dialog.dismiss();
+inn12();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Effect Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function inn12() {
+Entity.addEffect(getPlayerEnt(), MobEffect.fireResistance, s*l, 0, false, true);
+}
+
+var e13 = new Button(ctx);
+            e13.setText("Resistance");
+            e13.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+em();
+                }
+            }));
+            effectLayout.addView(e13);
+
+function em() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var sec = new android.widget.EditText(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Time & Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(sec);
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+sec.setText("Seconds");
+lvl.setText("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+s =sec.getText();
+l =lvl.getText();
+Dialog.dismiss();
+inn13();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Effect Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function inn13() {
+Entity.addEffect(getPlayerEnt(), MobEffect.damageResistance, s*l, 0, false, true);
+}
+
+var e14 = new Button(ctx);
+            e14.setText("Regeneration");
+            e14.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+en();
+                }
+            }));
+            effectLayout.addView(e14);
+
+function en() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var sec = new android.widget.EditText(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Time & Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(sec);
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+sec.setText("Seconds");
+lvl.setText("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+s =sec.getText();
+l =lvl.getText();
+Dialog.dismiss();
+inn14();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Effect Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function inn14() {
+Entity.addEffect(getPlayerEnt(), MobEffect.regeneration, s*l, 0, false, true);
+}
+
+var e15 = new Button(ctx);
+            e15.setText("Nausea");
+            e15.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+ eo();
+                }
+            }));
+            effectLayout.addView(e15);
+
+function eo() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var sec = new android.widget.EditText(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Time & Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(sec);
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+sec.setText("Seconds");
+lvl.setText("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+s =sec.getText();
+l =lvl.getText();
+Dialog.dismiss();
+inn15();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Effect Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function inn15() {
+Entity.addEffect(getPlayerEnt(), MobEffect.confusion, s*l, 0, false, true);
+}
+
+var e16 = new Button(ctx);
+            e16.setText("Jump boost");
+            e16.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+ ep();
+                }
+            }));
+            effectLayout.addView(e16);
+
+function ep() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var sec = new android.widget.EditText(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Time & Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(sec);
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+sec.setText("Seconds");
+lvl.setText("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+s =sec.getText();
+l =lvl.getText();
+Dialog.dismiss();
+inn16();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Effect Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function inn16() {
+Entity.addEffect(getPlayerEnt(), MobEffect.jump, s*l, 0, false, true);
+}
+
+var e17 = new Button(ctx);
+            e17.setText("harm");
+            e17.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+eq();
+                }
+            }));
+            effectLayout.addView(e17);
+
+function eq() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var sec = new android.widget.EditText(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Time & Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(sec);
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+sec.setText("Seconds");
+lvl.setText("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+s =sec.getText();
+l =lvl.getText();
+Dialog.dismiss();
+inn17();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Effect Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function inn17() {
+Entity.addEffect(getPlayerEnt(), MobEffect.harm, s*l, 0, false, true);
+}
+
+var e18 = new Button(ctx);
+            e18.setText("heal");
+            e18.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+er();
+                }
+            }));
+            effectLayout.addView(e18);
+
+function er() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var sec = new android.widget.EditText(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Time & Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(sec);
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+sec.setText("Seconds");
+lvl.setText("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+s =sec.getText();
+l =lvl.getText();
+Dialog.dismiss();
+inn18();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Effect Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function inn18() {
+Entity.addEffect(getPlayerEnt(), MobEffect.heal, s*l, 0, false, true);
+}
+
+var e19 = new Button(ctx);
+            e19.setText("Strength");
+            e19.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+es();
+                }
+            }));
+            effectLayout.addView(e19);
+
+function es() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var sec = new android.widget.EditText(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Time & Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(sec);
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+sec.setText("Seconds");
+lvl.setText("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+s =sec.getText();
+l =lvl.getText();
+Dialog.dismiss();
+inn19();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Effect Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function inn19() {
+Entity.addEffect(getPlayerEnt(), MobEffect.damageBoost, s*l, 0, false, true);
+}
+
+var e20 = new Button(ctx);
+            e20.setText("Mining fatigue");
+            e20.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+et();
+                }
+            }));
+            effectLayout.addView(e20);
+
+function et() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var sec = new android.widget.EditText(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Time & Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(sec);
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+sec.setText("Seconds");
+lvl.setText("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+s =sec.getText();
+l =lvl.getText();
+Dialog.dismiss();
+inn20();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Effect Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function inn20() {
+Entity.addEffect(getPlayerEnt(), MobEffect.digSlowdown, s*l, 0, false, true);
+}
+
+var e21 = new Button(ctx);
+            e21.setText("Haste");
+            e21.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+eu();
+                }
+            }));
+            effectLayout.addView(e21);
+
+function eu() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var sec = new android.widget.EditText(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Time & Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(sec);
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+sec.setText("Seconds");
+lvl.setText("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+s =sec.getText();
+l =lvl.getText();
+Dialog.dismiss();
+inn21();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Effect Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function inn21() {
+Entity.addEffect(getPlayerEnt(), MobEffect.digSpeed, s*l, 0, false, true);
+}
+
+var e22 = new Button(ctx);
+            e22.setText("Slowness");
+            e22.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+ev();
+                }
+            }));
+            effectLayout.addView(e22);
+
+function ev() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var sec = new android.widget.EditText(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Time & Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(sec);
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+sec.setText("Seconds");
+lvl.setText("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+s =sec.getText();
+l =lvl.getText();
+Dialog.dismiss();
+inn22();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Effect Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function inn22() {
+Entity.addEffect(getPlayerEnt(), MobEffect.movementSlowdown, s*l, 0, false, true);
+}
+
+var e23 = new Button(ctx);
+            e23.setText("Speed boost");
+            e23.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+ew();
+                }
+            }));
+            effectLayout.addView(e23);
+
+function ew() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var sec = new android.widget.EditText(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Time & Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(sec);
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+sec.setText("Seconds");
+lvl.setText("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+s =sec.getText();
+l =lvl.getText();
+Dialog.dismiss();
+inn23();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Effect Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function inn23() {
+Entity.addEffect(getPlayerEnt(), MobEffect.movementSpeed, s*l, 0, false, true);
+}
+
+            effect = new PopupWindow(effectLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1, ctx.getWindowManager().getDefaultDisplay().getHeight());
+            effect.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+      var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(Color.TRANSPARENT);
+      bg.setStroke(10,Color.BLACK);
+effectLayout1.setBackgroundDrawable(bg);
+effectLayout1.setPadding(20,0,20,0);
+            effect.showAtLocation(ctx.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
+            }catch(error){
+                Toast.makeText(ctx, "An error occured: " + error, 1).show();
+            }
+    }}));
+}
 		
 var enchant = new android.widget.Button(ctx);
 enchant.setText("Enchant menu");
@@ -2116,6 +3840,1367 @@ ctx.runOnUiThread(new Runnable({ run: function(){
 			}
 		});
 		enchantLayout.addView(exit);
+		
+		var button = new android.widget.Button(ctx);
+            button.setText("Add experience");
+            button.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+XGive();
+xmenu.dismiss();
+                }
+            }));
+            enchantLayout.addView(button);
+
+var ena = new Button(ctx);
+            ena.setText("Aqua Affinity");
+            ena.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+en1();
+                }
+            }));
+            enchantLayout.addView(ena);
+
+function en1() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+lvl.setText("");
+lvl.setHint("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ll =lvl.getText();
+Dialog.dismiss();
+add1();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Enchant Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function add1() {
+Player.enchant(Player.getSelectedSlotId(), Enchantment.AQUA_AFFINITY,ll);
+}
+
+var enb = new Button(ctx);
+            enb.setText("Bane Of Athropods");
+            enb.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+en2();
+                }
+            }));
+            enchantLayout.addView(enb);
+
+function en2() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+lvl.setText("");
+lvl.setHint("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ll =lvl.getText();
+Dialog.dismiss();
+add2();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Enchant Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function add2() {
+Player.enchant(Player.getSelectedSlotId(), Enchantment.BANE_OF_ARTHROPODS,ll);
+}
+
+var enc = new Button(ctx);
+            enc.setText("Blast Protection");
+            enc.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+en3();
+                }
+            }));
+            enchantLayout.addView(enc);
+
+function en3() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+lvl.setText("");
+lvl.setHint("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ll =lvl.getText();
+Dialog.dismiss();
+add3();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Enchant Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function add3() {
+Player.enchant(Player.getSelectedSlotId(), Enchantment.BLAST_PROTECTION,ll);
+}
+
+var enf = new Button(ctx);
+            enf.setText("Depth Strider");
+            enf.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+en5();
+                }
+            }));
+            enchantLayout.addView(enf);
+
+function en5() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+lvl.setText("");
+lvl.setHint("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ll =lvl.getText();
+Dialog.dismiss();
+add5();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Enchant Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function add5() {
+Player.enchant(Player.getSelectedSlotId(), Enchantment.DEPTH_STRIDER,ll);
+}
+
+var ene = new Button(ctx);
+            ene.setText("Efficiency");
+            ene.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+en6();
+                }
+            }));
+            enchantLayout.addView(ene);
+
+function en6() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+lvl.setText("");
+lvl.setHint("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ll =lvl.getText();
+Dialog.dismiss();
+add6();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Enchant Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function add6() {
+Player.enchant(Player.getSelectedSlotId(), Enchantment.EFFICIENCY,ll);
+}
+
+var eng = new Button(ctx);
+            eng.setText("Feather Falling");
+            eng.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+en7();
+                }
+            }));
+            enchantLayout.addView(eng);
+
+function en7() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+lvl.setText("");
+lvl.setHint("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ll =lvl.getText();
+Dialog.dismiss();
+add7();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Enchant Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function add7() {
+Player.enchant(Player.getSelectedSlotId(), Enchantment.FEATHER_FALLING,ll);
+}
+
+var enh = new Button(ctx);
+            enh.setText("Fire Aspect");
+            enh.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+en8();
+                }
+            }));
+            enchantLayout.addView(enh);
+
+function en8() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+lvl.setText("");
+lvl.setHint("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ll =lvl.getText();
+Dialog.dismiss();
+add8();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Enchant Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function add8() {
+Player.enchant(Player.getSelectedSlotId(), Enchantment.FIRE_ASPECT,ll);
+}
+
+var eni = new Button(ctx);
+            eni.setText("Fire Protection");
+            eni.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+en9();
+                }
+            }));
+            enchantLayout.addView(eni);
+
+function en9() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+lvl.setText("");
+lvl.setHint("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ll =lvl.getText();
+Dialog.dismiss();
+add9();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Enchant Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function add9() {
+Player.enchant(Player.getSelectedSlotId(), Enchantment.FIRE_PROTECTION,ll);
+}
+
+var enj = new Button(ctx);
+            enj.setText("Flame");
+            enj.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+en10();
+                }
+            }));
+            enchantLayout.addView(enj);
+
+function en10() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+lvl.setText("");
+lvl.setHint("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ll =lvl.getText();
+Dialog.dismiss();
+add10();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Enchant Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function add10() {
+Player.enchant(Player.getSelectedSlotId(), Enchantment.FLAME,ll);
+}
+
+var enk = new Button(ctx);
+            enk.setText("Fortune");
+            enk.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+en11();
+                }
+            }));
+            enchantLayout.addView(enk);
+
+function en11() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+lvl.setText("");
+lvl.setHint("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ll =lvl.getText();
+Dialog.dismiss();
+add11();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Enchant Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function add11() {
+Player.enchant(Player.getSelectedSlotId(), Enchantment.FORTUNE,ll);
+}
+
+var enl = new Button(ctx);
+            enl.setText("Infinity");
+            enl.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+en12();
+                }
+            }));
+            enchantLayout.addView(enl);
+
+function en12() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+lvl.setText("");
+lvl.setHint("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ll =lvl.getText();
+Dialog.dismiss();
+add12();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Enchant Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function add12() {
+Player.enchant(Player.getSelectedSlotId(), Enchantment.INFINITY,ll);
+}
+
+var enm = new Button(ctx);
+            enm.setText("Knockback");
+            enm.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+en13();
+                }
+            }));
+            enchantLayout.addView(enm);
+
+function en13() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+lvl.setText("");
+lvl.setHint("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ll =lvl.getText();
+Dialog.dismiss();
+add13();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Enchant Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function add13() {
+Player.enchant(Player.getSelectedSlotId(), Enchantment.KNOCKBACK,ll);
+}
+
+var enn = new Button(ctx);
+            enn.setText("Looting");
+            enn.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+en14();
+                }
+            }));
+            enchantLayout.addView(enn);
+
+function en14() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+lvl.setText("");
+lvl.setHint("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ll =lvl.getText();
+Dialog.dismiss();
+add14();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Enchant Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function add14() {
+Player.enchant(Player.getSelectedSlotId(), Enchantment.LOOTING,ll);
+}
+
+var eno = new Button(ctx);
+            eno.setText("Luck of the sea");
+            eno.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+en15();
+                }
+            }));
+            enchantLayout.addView(eno);
+
+function en15() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+lvl.setText("");
+lvl.setHint("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ll =lvl.getText();
+Dialog.dismiss();
+add15();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Enchant Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function add15() {
+Player.enchant(Player.getSelectedSlotId(), Enchantment.LUCK_OF_THE_SEA,ll);
+}
+
+var enp = new Button(ctx);
+            enp.setText("Lure");
+            enp.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+en16();
+                }
+            }));
+            enchantLayout.addView(enp);
+
+function en16() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+lvl.setText("");
+lvl.setHint("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ll =lvl.getText();
+Dialog.dismiss();
+add16();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Enchant Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function add16() {
+Player.enchant(Player.getSelectedSlotId(), Enchantment.LURE,ll);
+}
+
+var enq = new Button(ctx);
+            enq.setText("Power");
+            enq.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+en17();
+                }
+            }));
+            enchantLayout.addView(enq);
+
+function en17() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+lvl.setText("");
+lvl.setHint("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ll =lvl.getText();
+Dialog.dismiss();
+add17();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Enchant Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function add17() {
+Player.enchant(Player.getSelectedSlotId(), Enchantment.POWER,ll);
+}
+
+var enr = new Button(ctx);
+            enr.setText("Projectile protection");
+            enr.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+en18();
+                }
+            }));
+            enchantLayout.addView(enr);
+
+function en18() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+lvl.setText("");
+lvl.setHint("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ll =lvl.getText();
+Dialog.dismiss();
+add18();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Enchant Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function add18() {
+Player.enchant(Player.getSelectedSlotId(), Enchantment.PROJECTILE_PROTECTION,ll);
+}
+
+var ens = new Button(ctx);
+            ens.setText("Protection");
+            ens.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+en19();
+                }
+            }));
+            enchantLayout.addView(ens);
+
+function en19() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+lvl.setText("");
+lvl.setHint("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ll =lvl.getText();
+Dialog.dismiss();
+add19();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Enchant Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function add19() {
+Player.enchant(Player.getSelectedSlotId(), Enchantment.PROTECTION,ll);
+}
+
+var ent = new Button(ctx);
+            ent.setText("Punch");
+            ent.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+en20();
+                }
+            }));
+            enchantLayout.addView(ent);
+
+function en20() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+lvl.setText("");
+lvl.setHint("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ll =lvl.getText();
+Dialog.dismiss();
+add20();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Enchant Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function add20() {
+Player.enchant(Player.getSelectedSlotId(), Enchantment.PUNCH,ll);
+}
+
+var enu = new Button(ctx);
+            enu.setText("Respiration");
+            enu.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+en21();
+                }
+            }));
+            enchantLayout.addView(enu);
+
+function en21() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+lvl.setText("");
+lvl.setHint("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ll =lvl.getText();
+Dialog.dismiss();
+add21();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Enchant Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function add21() {
+Player.enchant(Player.getSelectedSlotId(), Enchantment.RESPIRATION,ll);
+}
+
+var env = new Button(ctx);
+            env.setText("Sharpness");
+            env.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+en22();
+                }
+            }));
+            enchantLayout.addView(env);
+
+function en22() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+lvl.setText("");
+lvl.setHint("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ll =lvl.getText();
+Dialog.dismiss();
+add22();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Enchant Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function add22() {
+Player.enchant(Player.getSelectedSlotId(), Enchantment.SHARPNESS,ll);
+}
+
+var enw = new Button(ctx);
+            enw.setText("Silk touch");
+            enw.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+en23();
+                }
+            }));
+            enchantLayout.addView(enw);
+
+function en23() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+lvl.setText("");
+lvl.setHint("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ll =lvl.getText();
+Dialog.dismiss();
+add23();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Enchant Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function add23() {
+Player.enchant(Player.getSelectedSlotId(), Enchantment.SILK_TOUCH,ll);
+}
+
+var enx = new Button(ctx);
+            enx.setText("Smite");
+            enx.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+en24();
+                }
+            }));
+            enchantLayout.addView(enx);
+
+function en24() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+lvl.setText("");
+lvl.setHint("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ll =lvl.getText();
+Dialog.dismiss();
+add24();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Enchant Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function add24() {
+Player.enchant(Player.getSelectedSlotId(), Enchantment.SMITE,ll);
+}
+
+var eny = new Button(ctx);
+            eny.setText("Thorns");
+            eny.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+en25();
+                }
+            }));
+            enchantLayout.addView(eny);
+
+function en25() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+lvl.setText("");
+lvl.setHint("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ll =lvl.getText();
+Dialog.dismiss();
+add25();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Enchant Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function add25() {
+Player.enchant(Player.getSelectedSlotId(), Enchantment.THORNS,ll);
+}
+
+var enz = new Button(ctx);
+            enz.setText("Unbreaking");
+            enz.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+en26();
+                }
+            }));
+            enchantLayout.addView(enz);
+
+function en26() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var lvl = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+lvl.setText("");
+lvl.setHint("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ll =lvl.getText();
+Dialog.dismiss();
+add26();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Enchant Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function add26() {
+Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,ll);
+}
+
+//Enchantment.AQUA_AFFINITY;
+//Enchantment.BANE_OF_ARTHROPODS;
+//Enchantment.BLAST_PROTECTION;
+//Enchantment.DEPTH_STRIDER;
+//Enchantment.EFFICIENCY;
+//Enchantment.FEATHER_FALLING;
+//Enchantment.FIRE_ASPECT;
+//Enchantment.FIRE_PROTECTION;
+//Enchantment.FLAME;
+//Enchantment.FORTUNE;
+//Enchantment.INFINITY;
+//Enchantment.KNOCKBACK;
+//Enchantment.LOOTING;
+//Enchantment.LUCK_OF_THE_SEA;
+//Enchantment.LURE;
+//Enchantment.POWER;
+//Enchantment.PROJECTILE_PROTECTION;
+//Enchantment.PROTECTION;
+//Enchantment.PUNCH;
+//Enchantment.RESPIRATION;
+//Enchantment.SHARPNESS;
+//Enchantment.SILK_TOUCH;
+//Enchantment.SMITE;
+//Enchantment.THORNS;
+//Enchantment.UNBREAKING;
 
             enchant = new PopupWindow(enchantLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1, ctx.getWindowManager().getDefaultDisplay().getHeight());
             enchant.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -2191,7 +5276,7 @@ function idList()
       webset.setJavaScriptEnabled(true);
       webs.setWebChromeClient(new android.webkit.WebChromeClient());
       webs.setWebViewClient(new android.webkit.WebViewClient());
-      webs.loadUrl('http://www.minecraftinfo.com/idlist.html');
+      webs.loadUrl('https://arceusmatt.github.io/minecraftid.html');
 /*Site URL*/
       new android.app.AlertDialog.Builder(ctx).setView(webs).show();
       }}));
@@ -2742,7 +5827,104 @@ ctx.runOnUiThread(new Runnable({ run: function(){
 		});
 		nukeLayout.addView(exit);
 		
-		
+		var n1 = new Button(ctx);
+            n1.setText("Nuke 1%");  
+            n1.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+                	explode(getPlayerX(),getPlayerY(),getPlayerZ(),1);
+                }
+            }));
+            nukeLayout.addView(n1);
+
+     var n2 = new Button(ctx);
+            n2.setText("Nuke 5%");
+            n2.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+                	explode(getPlayerX(),getPlayerY(),getPlayerZ(),5);
+                }
+            }));
+            nukeLayout.addView(n2);
+
+var n3 = new Button(ctx);
+            n3.setText("Nuke 10%");
+            n3.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+                	explode(getPlayerX(),getPlayerY(),getPlayerZ(),10);
+                }
+            }));
+            nukeLayout.addView(n3);
+
+var n4 = new Button(ctx);
+            n4.setText("Nuke 15%");
+            n4.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+                	explode(getPlayerX(),getPlayerY(),getPlayerZ(),15);
+                }
+            }));
+            nukeLayout.addView(n4);
+
+var n5 = new Button(ctx);
+            n5.setText("Nuke 20%");
+            n5.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+                	explode(getPlayerX(),getPlayerY(),getPlayerZ(),20);
+                }
+            }));
+            nukeLayout.addView(n5);
+
+var n6 = new Button(ctx);
+            n6.setText("Nuke 25%");
+            n6.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+                	explode(getPlayerX(),getPlayerY(),getPlayerZ(),25);
+                }
+            }));
+            nukeLayout.addView(n6);
+
+var n7 = new Button(ctx);
+            n7.setText("Nuke 30%");
+            n7.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+                	explode(getPlayerX(),getPlayerY(),getPlayerZ(),30);
+                }
+            }));
+            nukeLayout.addView(n7);
+
+var n8 = new Button(ctx);
+            n8.setText("Nuke 35%");
+            n8.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+                	explode(getPlayerX(),getPlayerY(),getPlayerZ(),35);
+                }
+            }));
+            nukeLayout.addView(n8);
+
+var n9 = new Button(ctx);
+            n9.setText("Nuke 40%");
+            n9.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+                	explode(getPlayerX(),getPlayerY(),getPlayerZ(),40);
+                }
+            }));
+            nukeLayout.addView(n9);
+
+var n10 = new Button(ctx);
+            n10.setText("Nuke 45%");
+            n10.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+                	explode(getPlayerX(),getPlayerY(),getPlayerZ(),45);
+                }
+            }));
+            nukeLayout.addView(n10);
+
+var n11 = new Button(ctx);
+            n11.setText("Nuke 50%");
+            n11.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+                	explode(getPlayerX(),getPlayerY(),getPlayerZ(),50);
+                }
+            }));
+            nukeLayout.addView(n11);
 
             nuke = new PopupWindow(nukeLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1, ctx.getWindowManager().getDefaultDisplay().getHeight());
             nuke.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -4542,7 +7724,7 @@ ctx.runOnUiThread(new Runnable({ run: function(){
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-             weatherdismiss();
+             weather.dismiss();
              showMenuBtn();
 			}
 		});
