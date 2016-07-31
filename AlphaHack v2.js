@@ -1027,6 +1027,1002 @@ button13.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(andr
                 }
             }));
             modLayout.addView(button13);
+            
+            var status = new android.widget.Button(ctx);
+      status.setText("MC Status: "+(stat22?"on":"off"));
+		status.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+				stat22?stat22=false:stat22=true;
+status.setText("MC Status: "+(stat22?"on":"off"));
+if(stat22 == true){
+clientMessage("§7Status on");
+Server.sendChat("/hud off");
+clientMessage(client + "§7T = time, W = weather, B = biome, ID = item id, G = gamemode.");
+
+stat22 = true;
+}
+if(stat22 == false){
+clientMessage("§7Status off");
+
+stat22 = false;
+ }
+			}
+		});
+		modLayout.addView(status);
+
+var df = new android.widget.Button(ctx);
+      df.setText("Disable up/down fly: "+(nofly?"on":"off"));
+		df.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+				nofly?nofly=false:nofly=true;
+df.setText("Disable up/down fly: "+(nofly?"on":"off"));
+if(nofly == true){
+clientMessage(client + "§7No up/down fly is on");
+Player.setCanFly(false);
+
+nofly = true;
+}
+if(nofly == false){
+clientMessage(client + "§7No up/down fly is off");
+Player.setCanFly(true);
+
+nofly = false;
+ }
+			}
+		});
+		modLayout.addView(df);
+
+var es = new Button(ctx);
+            es.setText("Entity spawner");        
+            es.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    new3(); 
+                }
+            }));
+            modLayout.addView(es);
+ 
+function new3() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+fov = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var select1 = new android.widget.Button(ctx);
+var select2 = new android.widget.Button(ctx);
+var select3 = new android.widget.Button(ctx);
+var select4 = new android.widget.Button(ctx);
+var Dialog = new android.app.Dialog(ctx);
+//var Exit = new android.widget.Button(ctx);
+ 
+Dialog.setTitle("Select");
+Dialog.setContentView(Layer);
+ 
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+ 
+Layer.addView(select1);
+
+Layer.addView(select2);
+
+Layer.addView(select3);
+
+Layer.addView(select4);
+
+//Layer.addView(Exit);
+ 
+            select1.setText("Lightning");
+            select1.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+ lightning = true;
+if(primedtnt==true)primedtnt = false;
+if(arrow==true)arrow = false;
+if(exporb==true)exporb = false;
+Dialog.dismiss();
+showMenuBtn();
+                }
+            }));
+             
+            select2.setText("Primed tnt");
+            select2.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+ primedtnt = true;
+if(lightning==true)lightning = false;
+if(arrow==true)arrow = false;
+if(exporb==true)exporb = false;
+Dialog.dismiss();
+showMenuBtn();
+                }
+            }));
+			
+			select3.setText("Arrow");
+            select3.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+ arrow = true;
+if(lightning==true)lightning = false;
+if(primedtnt==true)primedtnt = false;
+if(exporb==true)exporb = false;
+Dialog.dismiss();
+showMenuBtn();
+                }
+            }));
+			
+			select4.setText("Exp orb");
+            select4.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+ exporb = true;
+if(lightning==true)lightning = false;
+if(primedtnt==true)primedtnt = false;
+if(arrow==true)arrow = false;
+Dialog.dismiss();
+showMenuBtn();
+                }
+            }));
+Exit.setText("Off");
+ 
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ 
+ exporb = false;
+ lightning = false;
+ arrow = false;
+ primedtnt = false;
+Dialog.dismiss();
+showMenuBtn();
+}
+});
+ 
+new3.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+new3.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+new3.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The new Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+var cc = new Button(ctx);
+            cc.setText("Clear your chat");        
+            cc.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+
+                    clientMessage(" " + "\n ");
+
+clientMessage(" " + "\n" + " ");
+
+clientMessage(" " + "\n" + " ");
+
+clientMessage(" " + "\n" + " ");
+
+clientMessage(" " + "\n" + " ");
+
+clientMessage(" " + "\n" + " ");
+
+clientMessage(" " + "\n" + " ");
+
+clientMessage(" " + "\n" + " ");
+                }
+            }));
+            modLayout.addView(cc);
+
+var me = new Button(ctx);
+            me.setText("My username / nametag");
+            me.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){ 
+clientMessage(client + "Username is: " + Player.getName(Player.getEntity()))
+                }
+            }));
+            modLayout.addView(me);
+
+var di = new Button(ctx);
+            di.setText("Held item info");        
+            di.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+clientMessage("Item ID: " + Player.getCarriedItem());
+clientMessage("Data / damage: " + Player.getCarriedItemData());
+clientMessage("Amount in hand: " + Player.getCarriedItemCount());
+                }
+            }));
+            modLayout.addView(di);
+
+var d = new Button(ctx);
+            d.setText("Difficulty");        
+            d.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+  clientMessage(client + "Difficulty: " + Level.getDifficulty());
+                }
+            }));
+            modLayout.addView(d);
+
+var de = new Button(ctx);
+            de.setText("Items enchantment");        
+            de.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                     clientMessage(client + "Held item enchantment: " + Player.getEnchantments(Player.getSelectedSlotId()));
+                }
+            }));
+            modLayout.addView(de);
+
+var da = new Button(ctx);
+            da.setText("Armor damage");        
+            da.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                     clientMessage("Head armor dam: " + Entity.getArmorDamage(getPlayerEnt(), 0) + "\nChest armor dam: " + Entity.getArmorDamage(getPlayerEnt(), 1) + "\nLegs armor dam: " + Entity.getArmorDamage(getPlayerEnt(), 2) + "\nFeet armor dam: " + Entity.getArmorDamage(getPlayerEnt(), 3));
+                }
+            }));
+            modLayout.addView(da);
+
+var dh = new Button(ctx);
+            dh.setText("Max player health");        
+            dh.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                     clientMessage(client + "Max health: " + Entity.getMaxHealth(getPlayerEnt()));
+                }
+            }));
+            modLayout.addView(dh);
+
+var rr = new android.widget.Button(ctx);
+rr.setText("Reactor time mode: "+(remode?"on":"off"));
+rr.setOnClickListener(new android.view.View.OnClickListener({
+onClick: function(viewarg){
+remode?remode=false:remode=true;
+rr.setText("Reactor time mode: "+(remode?"on":"off"));
+if(remode == true){
+clientMessage(client + "§7Nether reactor time on");
+ setNightMode(true);
+
+remode = true
+}
+if(remode == false){
+clientMessage(client + "§7Nether reactor time off");
+setNightMode(false);
+
+remode = false
+}
+}
+}));
+modLayout.addView(rr);
+
+var mf = new Button(ctx);
+            mf.setText("Make food item");
+            mf.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+enterFood();
+                }
+            }));
+            modLayout.addView(mf);
+
+function enterFood() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var ID = new android.widget.EditText(ctx);
+var Name = new android.widget.EditText(ctx);
+var Health = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Make food items");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(ID);
+Layer.addView(Name);
+Layer.addView(Health);
+Layer.addView(Exit);
+
+ID.setText("");
+ID.setHint("id of item: 276");
+Name.setText("");
+Name.setHint('icon name: "diamond_sword"');
+Health.setText("");
+Health.setHint("half hearts: 20");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+id =ID.getText();
+iconName =Name.getText();
+halfhearts =Health.getText();
+Dialog.dismiss();
+addFood();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The food Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function addFood() {
+ModPE.setFoodItem(id, iconName, 0, halfhearts, "§eFood item", 64);
+}
+
+var cs = new android.widget.Button(ctx);
+      cs.setText("Sign Editor: "+(deadchat?"on":"off"));
+		cs.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){         deadchat?deadchat=false:deadchat=true;
+cs.setText("Sign Editor: "+(deadchat?"on":"off"));
+if(deadchat == true){
+clientMessage(client + "§7Sign editor is on");
+
+deadchat = true;
+}
+if(deadchat == false){
+clientMessage(client + "§7Sign editor is off");
+
+deadchat = false;
+}
+			}
+		});
+		modLayout.addView(cs);
+
+var killme = new Button(ctx);
+            killme.setText("Kill yourself");        
+            killme.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){ 
+Player.setHealth(0);
+Player.setHealth(0);
+                }
+            }));
+            modLayout.addView(killme);
+
+var hea = new android.widget.Button(ctx);
+      hea.setText("Heal hearts");
+		hea.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             Player.setHealth(20);
+             clientMessage(client + "§7Health healed");
+			}
+		});
+		modLayout.addView(hea);
+
+var hun = new android.widget.Button(ctx);
+      hun.setText("Heal hunger");
+		hun.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             Player.setHunger(25);
+             clientMessage(client + "§7Hunger healed");
+			}
+		});
+		modLayout.addView(hun);
+
+var mm = new android.widget.Button(ctx);
+      mm.setText("Infinite health: "+(stackheart?"on":"off"));
+		mm.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){         stackheart?stackheart=false:stackheart=true;
+mm.setText("Infinite health: "+(stackheart?"on":"off"));
+if(stackheart == true){
+stackheart = true;
+clientMessage(client + "§7infinite health is on");
+}
+if(stackheart == false){
+clientMessage(client + "§7infinite health is off");
+Player.setHealth(20);
+stackheart = false;
+ }
+			}
+		});
+		modLayout.addView(mm);
+
+var mm2 = new android.widget.Button(ctx);
+mm2.setText("Infinite hunger: "+(infhun?"on":"off"));
+mm2.setOnClickListener(new android.view.View.OnClickListener({
+onClick: function(viewarg){
+infhun?infhun=false:infhun=true;
+mm2.setText("Infinite hunger: "+(infhun?"on":"off"));
+if(infhun == true){
+clientMessage(client + "§7infinite hunger is on");
+}
+if(infhun == false){
+clientMessage(client + "§7infinite hunger is off");
+Player.setHunger(20);
+                }
+}
+            }));
+            modLayout.addView(mm2);
+
+var zm = new android.widget.Button(ctx);
+      zm.setText("1 hit kill: "+(instakilled?"on":"off"));
+		zm.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){         instakilled?instakilled=false:instakilled=true;
+zm.setText("1 hit kill: "+(instakilled?"on":"off"));
+if(instakilled == true){
+instakilled = true;
+clientMessage(client + "§7Insta kill is on");
+}
+if(instakilled == false){
+clientMessage(client + "§7Insta kill is off");
+instakilled = false;
+                }
+			}
+		});
+		modLayout.addView(zm);
+
+var zmm = new android.widget.Button(ctx);
+      zmm.setText("Ride mobs: "+(saddle?"on":"off"));
+		zmm.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             saddle?saddle=false:saddle=true;
+zmm.setText("Ride mobs: "+(saddle?"on":"off"));
+if(saddle == true){
+clientMessage("§7Ride mobs is on");
+clientMessage(client + "§cTap mob to ride,\n§cJump to get off mob.");
+saddle = true;
+}
+if(saddle == false){
+clientMessage(client + "§7Ride mobs is off");
+saddle = false;
+                }
+			}
+		});
+		modLayout.addView(zmm);
+
+var zmmm = new android.widget.Button(ctx);
+      zmmm.setText("Instant break: "+(instabreak?"on":"off"));
+		zmmm.setOnClickListener(new android.view.View.OnClickListener() {
+		 onClick: function(v){
+ instabreak?instabreak=false:instabreak=true;
+zmmm.setText("Instant break: "+(instabreak?"on":"off"));
+if(instabreak == true){
+instaDestroy();
+clientMessage(client + "§7Instant break is on");
+}
+if(instabreak == false){
+clientMessage(client + "§7Instant break is off");
+defaultDestroy();
+                }
+			}
+		});
+		modLayout.addView(zmmm);
+
+var f = new android.widget.Button(ctx);
+            f.setText("Fly in survival: "+(fch?"on":"off"));
+            f.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+fch?fch=false:fch=true;
+f.setText("Fly in survival: "+(fch?"on":"off"));
+if(fch == true){
+Player.setCanFly(1);
+clientMessage(client + "§7Fly in survival is on");
+}
+if(fch == false){
+clientMessage(client + "§7Fly in survival is off");
+Player.setCanFly(0);
+                }
+}
+            }));
+            modLayout.addView(f);
+
+var g = new android.widget.Button(ctx);
+            g.setText("Grief run: "+(grief?"on":"off"));
+            g.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+grief?grief=false:grief=true;
+g.setText("Grief run: "+(grief?"on":"off"));
+if(grief == true){
+new2();
+}
+if(grief == false){
+clientMessage(client + "§7You stopped griefing!");
+grief = false;
+                }
+}
+            }));
+            modLayout.addView(g);
+
+function new2() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+fov = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var select1 = new android.widget.Button(ctx);
+var select2 = new android.widget.Button(ctx);
+var select3 = new android.widget.Button(ctx);
+var ddf = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+ 
+Dialog.setTitle("Select");
+Dialog.setContentView(Layer);
+ 
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+ 
+Layer.addView(select1);
+Layer.addView(select2);
+//Layer.addView(select3);
+Layer.addView(ddf);
+Layer.addView(Exit);
+ 
+            select1.setText("Use lava?");
+            select1.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+ clientMessage(client + "§7Your now griefing! hurry run around!");
+ vid = 11;
+grief = true;
+                }
+            }));
+             
+            select2.setText("Use water?");
+            select2.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+ clientMessage(client + "§7Your now griefing! hurry run around!");
+ vid = 8;
+grief = true;
+                }
+            }));
+			
+			ddf.setText("");
+ddf.setHint("Pick item ID");
+			
+			
+Exit.setText("done");
+ 
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ 
+ vid =ddf.getText();
+ grief = true;
+Dialog.dismiss();
+showMenuBtn();
+}
+});
+ 
+new2.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+new2.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+new2.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The new Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+var kl = new android.widget.Button(ctx);
+            kl.setText("KillAura: "+(killaura?"on":"off"));
+            kl.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+killaura?killaura=false:killaura=true;
+kl.setText("KillAura: "+(killaura?"on":"off"));
+if(killaura == true){
+clientMessage(client + "§7KillAura on");
+killaura = true;
+}
+if(killaura == false){
+clientMessage(client + "§7KillAura off");
+killaura = false;
+                }
+}
+            }));
+            modLayout.addView(kl);
+
+var kl2 = new android.widget.Button(ctx);
+            kl2.setText("FreezeAura: "+(killfaura?"on":"off"));
+            kl2.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+killfaura?killfaura=false:killfaura=true;
+kl2.setText("FreezeAura: "+(killfaura?"on":"off"));
+if(killfaura == true){
+clientMessage(client + "§7FreezeAura on");
+killfaura = true;
+}
+if(killfaura == false){
+clientMessage(client + "§7FreezeAura off");
+killfaura = false;
+                }
+}
+            }));
+            modLayout.addView(kl2);
+
+var ui = new android.widget.Button(ctx);
+            ui.setText("Ui Layout Viewer: "+(uirender?"on":"off"));
+            ui.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+uirender?uirender=false:uirender=true;
+ui.setText("Ui Layout Viewer: "+(uirender?"on":"off"));
+if(uirender == true){
+ModPE.setUiRenderDebug(true);
+}
+if(uirender == false){
+ModPE.setUiRenderDebug(false);
+                }
+}
+            }));
+            modLayout.addView(ui);
+
+var attd = new Button(ctx);
+            attd.setText("Set difficulty");        
+            attd.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){ 
+named(); 
+
+                }
+            }));
+            modLayout.addView(attd);
+
+function named() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer8 = new android.widget.LinearLayout(ctx);
+var ntd = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter difficulty");
+Dialog.setContentView(Layer8);
+
+Layer8.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer8.addView(ntd);
+Layer8.addView(Exit);
+
+ntd.setText("");
+ntd.setHint("0 = peaceful, 1 = normal, 2 = medium, 3 = hard");
+Exit.setText("done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+nametd =ntd.getText();
+Dialog.dismiss();
+setdiff();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The setdiff Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function setdiff(){
+Level.setDifficulty(nametd);
+}
+
+var fovy = new Button(ctx);
+            fovy.setText("Fov editor");        
+            fovy.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){ 
+
+fov(); 
+
+zmenu.dismiss();
+                }
+            }));
+            modLayout.addView(fovy);
+
+var att = new Button(ctx);
+            att.setText("Set nametag");        
+            att.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){ 
+nameMe(); 
+
+                }
+            }));
+            modLayout.addView(att);
+
+function nameMe() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer8 = new android.widget.LinearLayout(ctx);
+var nt = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter nickname");
+Dialog.setContentView(Layer8);
+
+Layer8.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer8.addView(nt);
+Layer8.addView(Exit);
+
+nt.setText("");
+nt.setHint("New nickname");
+Exit.setText("done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+nametgg =nt.getText();
+Dialog.dismiss();
+setName();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The setName Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function setName(){
+Entity.setNameTag(Player.getEntity(), nametgg);
+Server.sendChat("/nick set " + nametgg);
+}
+
+var fp = new android.widget.Button(ctx);
+            fp.setText("Fire punch: "+(firepunch?"on":"off"));
+            fp.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+firepunch?firepunch=false:firepunch=true;
+fp.setText("Fire punch: "+(firepunch?"on":"off"));
+if(firepunch == true){
+clientMessage(client + "§7Falcon punch! on");
+}
+if(firepunch == false){
+clientMessage(client + "§7Falcon punch! off");
+                }
+}
+            }));
+            modLayout.addView(fp);
+
+var sbn = new Button(ctx);
+            sbn.setText("Set block brightness");        
+            sbn.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){ 
+block1(); 
+
+                }
+            }));
+            modLayout.addView(sbn);
+
+function block1() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer8 = new android.widget.LinearLayout(ctx);
+var bd = new android.widget.EditText(ctx);
+var bn = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Set block light");
+Dialog.setContentView(Layer8);
+
+Layer8.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer8.addView(bn);
+Layer8.addView(bd);
+Layer8.addView(Exit);
+
+bd.setText("");
+bd.setHint("Block ID");
+bn.setText("");
+bn.setHint("New light level");
+Exit.setText("done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+idm =bd.getText();
+levelm =bn.getText();
+Dialog.dismiss();
+setLight();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The block L Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function setLight(){
+Block.setLightLevel(idm, levelm);
+}
+
+var sbr = new Button(ctx);
+            sbr.setText("Set block Resistance");        
+            sbr.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){ 
+block2(); 
+
+                }
+            }));
+            modLayout.addView(sbr);
+
+function block2() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer8 = new android.widget.LinearLayout(ctx);
+var bi = new android.widget.EditText(ctx);
+var br = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Set block resistance");
+Dialog.setContentView(Layer8);
+
+Layer8.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer8.addView(bi);
+Layer8.addView(br);
+Layer8.addView(Exit);
+
+bi.setText("");
+bi.setHint("Block ID");
+br.setText("");
+br.setHint("Explosion resistance");
+Exit.setText("done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+idb =bi.getText();
+resis =br.getText();
+Dialog.dismiss();
+setResis();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The block R Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function setResis(){
+Block.setExplosionResistance(idb, resis);
+}
+
+/*var hst = new android.widget.Button(ctx);
+           hst.setText("Health status: "+(somd?"on":"off"));
+            hst.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+somd?somd=false:somd=true;
+hst.setText("Health status: "+(somed?"on":"off"));
+if(somd == true){
+clientMessage(client + "§7Health status is showing"); 
+
+somd = true
+}
+if(somd == false){
+clientMessage(client + "§7Health status off");
+
+somd = false
+                }
+}
+            }));
+            modLayout.addView(hst);*/
+
+var bmsg = new android.widget.Button(ctx);
+           bmsg.setText("Blank message");
+            bmsg.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Server.sendChat("§§");
+}
+            }));
+            modLayout.addView(bmsg);
+
+var ahb = new android.widget.Button(ctx);
+           ahb.setText("AlphaHack bow");
+            ahb.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Item.setCategory(1003,ItemCategory.TOOL);
+ModPE.setItem(1003,"bow_pulling",2,"AlphaHack bow");
+clientMessage(client + "AlphaHack bow added to inventory");
+
+addItemInventory(1003, 2, 0);
+addItemInventory(262, 1000, 0);
+Player.addItemCreativeInv(1003,1,0);
+}
+            }));
+            modLayout.addView(ahb);
+
+var saysome = new android.widget.Button(ctx);
+            saysome.setText("BurnAura: "+(killdaura?"on":"off"));
+            saysome.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+killdaura?killdaura=false:killdaura=true;
+saysome.setText("BurnAura: "+(killdaura?"on":"off"));
+if(killdaura == true){
+clientMessage(client + "§7BurnAura on, Thanks to the vertex team for coming up with the idea");
+killdaura = true;
+}
+if(killdaura == false){
+clientMessage(client + "§7BurnAura off");
+killdaura = false;
+                }
+}
+            }));
+            modLayout.addView(saysome);
+
+var nh = new Button(ctx);
+            nh.setText("Add more hearts");        
+            nh.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){ 
+newhealth(); 
+
+                }
+            }));
+            modLayout.addView(nh);
+
+function newhealth() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer8 = new android.widget.LinearLayout(ctx);
+var enh = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter new hearts");
+Dialog.setContentView(Layer8);
+
+Layer8.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer8.addView(enh);
+Layer8.addView(Exit);
+
+enh.setText("");
+enh.setHint("Half heart number here");
+Exit.setText("done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+newheart =enh.getText();
+Dialog.dismiss();
+sethealth();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The set health Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function sethealth(){
+Entity.setMaxHealth(getPlayerEnt(), newheart);
+}
+
+var spider = new Button(ctx);
+spider.setText("Spider wall glider");
+spider.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				Level.setTile(getPlayerX(), getPlayerY(), getPlayerZ(), 65, 0);
+				Level.setTile(getPlayerX(), getPlayerY() +1, getPlayerZ(), 65, 0);
+				Level.setTile(getPlayerX(), getPlayerY() +2, getPlayerZ(), 65, 0);
+				Level.setTile(getPlayerX(), getPlayerY() +3, getPlayerZ(), 65, 0);
+				Level.setTile(getPlayerX(), getPlayerY() +4, getPlayerZ(), 65, 0);
+				Level.setTile(getPlayerX(), getPlayerY() +6, getPlayerZ(), 65, 0);
+				Level.setTile(getPlayerX(), getPlayerY() +7, getPlayerZ(), 65, 0);
+                }
+            }));
+            modLayout.addView(spider);
 
             mod = new PopupWindow(modLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1, ctx.getWindowManager().getDefaultDisplay().getHeight());
             mod.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -3041,6 +4037,84 @@ ctx.runOnUiThread(new Runnable({ run: function(){
 			}
 		});
 		teleportLayout.addView(exit);
+		
+		var button = new android.widget.Button(ctx);
+            button.setText("Select coords");
+            button.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Tsele();
+tmenu.dismiss();
+                }
+            }));
+            teleportLayout.addView(button);
+
+var Uspawn = new Button(ctx);
+            Uspawn.setText("Set home");       
+            Uspawn.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+        xhome=Player.getX();
+        yhome=Player.getY()+1;
+        zhome=Player.getZ(); 
+        save();
+clientMessage("§7Home set to: " + Math.round(xhome) + ", " + Math.round(yhome) + ", " + Math.round(zhome) + ".");
+                }
+            }));
+            teleportLayout.addView(Uspawn);
+
+var Rspawn = new Button(ctx);
+            Rspawn.setText("Return to home");       
+            Rspawn.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+        load();
+clientMessage("§7Returning to your saved home");
+                }
+            }));
+            teleportLayout.addView(Rspawn);
+
+var sspawn = new Button(ctx);
+            sspawn.setText("Set spawn");       
+            sspawn.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+        Level.setSpawn(getPlayerX(), getPlayerY(), getPlayerZ())
+clientMessage("§7Spawn set to " + Math.round(getPlayerX()) + ", " + Math.round(getPlayerY()) + ", " + Math.round(getPlayerZ()) + ".");
+                }
+            }));
+            teleportLayout.addView(sspawn);
+			
+			var randomtp = new Button(ctx);
+            randomtp.setText("Random TP");       
+            randomtp.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+ setPosition(Player.getEntity(), (Math.floor(Math.random() * (5000 - 100 + 1)) + 100), 60, (Math.floor(Math.random() * (5000 - 100 + 1)) + 100));
+				clientMessage(client + "Woah!");
+                }
+            }));
+            teleportLayout.addView(randomtp);
+			
+			var at = new android.widget.Button(ctx);
+      at.setText("Tap teleport: "+(taptp?"on":"off"));
+		at.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+				taptp?taptp=false:taptp=true;
+at.setText("Tap teleport: "+(taptp?"on":"off"));
+if(taptp == true){
+clientMessage(client + "Tap telelport enabled.")
+}
+if(taptp == false){
+clientMessage(client + "Tap teleport disabled.");
+
+taptp = false;
+                }
+			}
+		});
+		teleportLayout.addView(at);
+			
+			var et = new android.widget.TextView(ctx);
+			et.setGravity(android.view.Gravity.CENTER);
+		et.setText("You may crash while tping because blocks do not load correctly.");
+       et.setTextColor(Color.RED);
+		et.setTextSize(20);
+		teleportLayout.addView(et);
 
             teleport = new PopupWindow(teleportLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1, ctx.getWindowManager().getDefaultDisplay().getHeight());
             teleport.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -3054,6 +4128,61 @@ teleportLayout1.setPadding(20,0,20,0);
                 Toast.makeText(ctx, "An error occured: " + error, 1).show();
             }
     }}));
+}
+
+function Tsele() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var X = new android.widget.EditText(ctx);
+var Y = new android.widget.EditText(ctx);
+var Z = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Type coords to teleport");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(X);
+Layer.addView(Y);
+Layer.addView(Z);
+Layer.addView(Exit);
+
+X.setText("");
+X.setHint("X");
+Y.setText("");
+Y.setHint("Y");
+Z.setText("");
+Z.setHint("Z");
+Exit.setText("Teleport");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+px=X.getText();
+py=Y.getText();
+pz=Z.getText();
+Dialog.dismiss();
+set();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Teleport Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function set() {
+setPosition(Player.getEntity(), px, py, pz);
+Server.sendChat("/tp " + Player.getName(Player.getEntity()) + space + px + space + py + space + pz);
 }
 		
 var time = new android.widget.Button(ctx);
