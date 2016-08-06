@@ -33,6 +33,7 @@ var num0 = 0;
 var vidd = true;
 var viddd = "§9";
 var text = "AlphaHack!";
+var check = false;
 var version = "0.8.2";
 if(version=="0.8.2")version = "Beta";
 
@@ -8107,6 +8108,125 @@ function load(){
     zhome= parseInt(string.split(",")[2]);
     Entity.setPosition(Player.getEntity(),xhome,yhome,zhome);       
     }
+}
+
+function leaveGame() {
+	ModPE.setGameSpeed(20);
+	check = true;
+	if(check==true){
+var liquidwalk = false;
+var xray = false;
+var ttot = false;
+var antivoid = false;
+var armor = false;
+var coords = false;
+var glide = false;
+var tapspam = false;
+var tapdestroy = false;
+var block = false;
+var taptp = false;
+var sign = false;
+var autodestroy = false;
+var autospam = false;
+var onlyday = false;
+var onlynight = false;
+var chestesp = false;
+var lightning = false;
+var primedtnt = false;
+var arrow = false;
+var exporb = false;
+var hackk = false;
+var showp = false;
+var fch = false;
+var saddle = false;
+var instakilled = false;
+var instabreak = false;
+var stackheart = false;
+var parti = false;
+var parti2 = false;
+var nowalls = false;
+var highjumps = false;
+var grief = false;
+var killaura = false;
+var killfaura = false;
+var uirender = false; 
+var stat22 = false; 
+var healthy = true;
+var infhun = false;
+var firepunch = false;
+var deadchat = false;
+var nofly = false;
+var autod = false;
+var remode = false;
+var somd = false;
+var desktop = false;
+var killdaura = false;
+var ban = false;
+//ParticleType.angryVillager;
+var particle1 = false;
+//ParticleType.bubble;
+var particle2 = false;
+//ParticleType.cloud;
+var particle3 = false;
+//ParticleType.crit;
+var particle4 = false;
+//ParticleType.dripLava;
+var particle5 = false;
+//ParticleType.dripWater;
+var particle6 = false;
+//ParticleType.enchantmenttable;
+var particle7 = false;
+//ParticleType.fallingDust;
+var particle8 = false;
+//ParticleType.flame;
+var particle9 = false;
+//ParticleType.happyVillager;
+var particle10 = false;
+//ParticleType.heart;
+var particle11 = false;
+//ParticleType.hugeexplosion;
+var particle12 = false;
+//ParticleType.hugeexplosionSeed;
+var particle13 = false;
+//ParticleType.ink;
+var particle14 = false;
+//ParticleType.itemBreak;
+var particle15 = false;
+//ParticleType.lava;
+var particle16 = false;
+//ParticleType.mobFlame;
+var particle17 = false;
+//ParticleType.note;
+var particle18 = false;
+//ParticleType.portal;
+var particle19 = false;
+//ParticleType.rainSplash;
+var particle20 = false;
+//ParticleType.redstone;
+var particle21 = false;
+//ParticleType.slime;
+var particle22 = false;
+//ParticleType.smoke;
+var particle23 = false;
+//ParticleType.snowballpoof;
+var particle24 = false;
+//ParticleType.spell;
+var particle25 = false;
+//ParticleType.splash;
+var particle26 = false;
+//ParticleType.suspendedTown;
+var particle27 = false;
+//ParticleType.terrain;
+var particle28 = false;
+//ParticleType.waterWake;
+var particle29 = false;
+//largeexplode
+var particle30 = false;
+//spell2
+var particle31 = false;
+//spell3
+var particle32 = false;
+	}
 }
 
 function rptask() {
