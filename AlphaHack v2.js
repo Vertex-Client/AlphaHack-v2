@@ -797,7 +797,7 @@ if(tapspam==true)button9.setTextColor(Color.GREEN);
 button9.setText("Tap spam");
 if(tapspam == true){
 button9.setTextColor(Color.GREEN);
-spam();
+spa();
 tapspam = true;
 }
 if(tapspam == false){
@@ -866,7 +866,7 @@ if(autospam==true)button12.setTextColor(Color.GREEN);
 button12.setText("Auto spam");
 if(autospam == true){
 button12.setTextColor(Color.GREEN);
-
+spa();
 autospam = true;
 }
 if(autospam == false){
@@ -901,7 +901,7 @@ autodestroy = false;
             }));
             line5.addView(button13);
             
-            function spa() {
+function spa() {
 ctx.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
@@ -8111,9 +8111,7 @@ function load(){
 }
 
 function leaveGame() {
-	ModPE.setGameSpeed(20);
-	check = true;
-	if(check==true){
+ModPE.setGameSpeed(20);
 var liquidwalk = false;
 var xray = false;
 var ttot = false;
@@ -8226,7 +8224,6 @@ var particle30 = false;
 var particle31 = false;
 //spell3
 var particle32 = false;
-	}
 }
 
 function rptask() {
