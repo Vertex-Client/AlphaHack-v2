@@ -32,7 +32,7 @@ var menu;
 var num0 = 0;
 var vidd = true;
 var viddd = "§9";
-var text = " ";
+var text = "AlphaHack!";
 var version = "0.8.2";
 if(version=="0.8.2")version = "Beta";
 
@@ -899,6 +899,43 @@ autodestroy = false;
                 }
             }));
             line5.addView(button13);
+            
+            function spa() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+spa = new android.widget.PopupWindow();
+var Layer6 = new android.widget.LinearLayout(ctx);
+var mm = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter text for spam");
+Dialog.setContentView(Layer6);
+
+Layer6.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer6.addView(mm);
+Layer6.addView(Exit);
+
+mm.setText("AlphaHack!");
+Exit.setText("done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+text =mm.getText();
+Dialog.dismiss();
+}
+});
+
+spa.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+spa.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+spa.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("Spam dialog error:"+e);
+}
+}});
+}
 
             menuLayout.addView(line5);
             
