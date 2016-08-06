@@ -54,7 +54,6 @@ var onlyday = false;
 var onlynight = false;
 var chestesp = false;
 
-
 var lightning = false;
 var primedtnt = false;
 var arrow = false;
@@ -1296,7 +1295,7 @@ if(tapspam==true)button9.setTextColor(Color.GREEN);
 button9.setText("Tap spam");
 if(tapspam == true){
 button9.setTextColor(Color.GREEN);
-spam();
+spa();
 tapspam = true;
 }
 if(tapspam == false){
@@ -1307,6 +1306,43 @@ tapspam = false;
                 }
             }));
             cheatLayout.addView(button9);
+            
+            function spa() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+spa = new android.widget.PopupWindow();
+var Layer6 = new android.widget.LinearLayout(ctx);
+var mm = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter text for spam");
+Dialog.setContentView(Layer6);
+
+Layer6.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer6.addView(mm);
+Layer6.addView(Exit);
+
+mm.setText("AlphaHack!");
+Exit.setText("done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+text =mm.getText();
+Dialog.dismiss();
+}
+});
+
+spa.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+spa.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+spa.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("Spam dialog error:"+e);
+}
+}});
+}
             
             var button10 = new Button(MainActivity);
 button10.setText("Tap destroy");
@@ -1365,7 +1401,7 @@ if(autospam==true)button12.setTextColor(Color.GREEN);
 button12.setText("Auto spam");
 if(autospam == true){
 button12.setTextColor(Color.GREEN);
-
+spa();
 autospam = true;
 }
 if(autospam == false){
@@ -1448,7 +1484,6 @@ ctx.runOnUiThread(new Runnable({ run: function(){
 		
 		var button13 = new Button(MainActivity);
 button13.setText("Sugar farm");
-button13.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
             button13.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              Level.setTile(getPlayerX(), getPlayerY() -1, getPlayerZ(), 8, 0);
@@ -1470,7 +1505,6 @@ button13.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(andr
             
             var button14 = new Button(MainActivity);
 button14.setText("Wheat farm");
-button14.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
             button14.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              Level.setTile(getPlayerX(), getPlayerY() -1, getPlayerZ(), 8, 0);
@@ -8000,6 +8034,44 @@ var file = new java.io.File( android.os.Environment.getExternalStorageDirectory(
         write.close();
 }
 
+function save() {
+        var file = new java.io.File( android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/homes/", "home " + Level.getWorldDir() + ".txt/");
+        var path=android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/homes/" ; 
+        java.io.File(path).mkdirs(); 
+        file.createNewFile();
+        var write = new java.io.OutputStreamWriter(new java.io.FileOutputStream(file));
+        var string="";
+        write.append(xhome.toString());
+        write.append(","+ yhome.toString());
+        write.append(","+ zhome.toString()); 
+        write.close();
+         
+    } 
+ 
+function load(){
+ var line, string = "";
+    var file = new java.io.File( android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/homes/", "home " + Level.getWorldDir() + ".txt/");
+    var path=android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/homes/"; 
+    if(!file.exists()){
+    clientMessage("The home doesn't exist"); 
+  java.io.File(path).mkdirs(); 
+    }
+    else {
+    var readfile = new java.io.BufferedReader(new java.io.FileReader(file));
+    while((line = readfile.readLine()) != null) {
+        var t1 = line + java.lang.System.getProperty("line.seperator");
+        string += t1.substring(0, t1.length - 4);
+        var t2 = line;
+        if((line = readfile.readLine()) != null) string += "\n";
+        line = t2;
+    } 
+    xhome=parseInt(string.split(",")[0]);    
+    yhome= parseInt(string.split(",")[1]);
+    zhome= parseInt(string.split(",")[2]);
+    Entity.setPosition(Player.getEntity(),xhome,yhome,zhome);       
+    }
+}
+
 function rptask() {
     ctx.runOnUiThread(new java.lang.Runnable({
         run: function () {
@@ -8013,6 +8085,8 @@ function rptask() {
                     }
                     if (autospam) {
                         Server.sendChat(text);
+                        Server.getPort();
+                	if(Server.getPort()=="0")clientMessage(text);
                     }
                     if (autodestroy) {
                         Level.destroyBlock(Player.getPointedBlockX(), Player.getPointedBlockY(), Player.getPointedBlockZ(), true);
