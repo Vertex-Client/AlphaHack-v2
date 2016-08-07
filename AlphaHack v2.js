@@ -33,7 +33,7 @@ var num0 = 0;
 var vidd = true;
 var viddd = "§9";
 var text = "AlphaHack!";
-var check = false;
+var space = " ";
 var version = "0.8.2";
 if(version=="0.8.2")version = "Beta";
 
@@ -7340,7 +7340,7 @@ clientMessage("§7Spawn set to " + Math.round(getPlayerX()) + ", " + Math.round(
             randomtp.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
  setPosition(Player.getEntity(), (Math.floor(Math.random() * (5000 - 100 + 1)) + 100), 60, (Math.floor(Math.random() * (5000 - 100 + 1)) + 100));
-				clientMessage(client + "Woah!");
+clientMessage(client + "Woah!");
                 }
             }));
             teleportLayout.addView(randomtp);
@@ -7435,7 +7435,8 @@ print("The Teleport Dialog Is Malfunctioning:"+e);
 }
 
 function set() {
-setPosition(Player.getEntity(), px, py, pz);
+Server.getPort();
+if(Server.getPort()=="0")setPosition(Player.getEntity(), px, py, pz);
 Server.sendChat("/tp " + Player.getName(Player.getEntity()) + space + px + space + py + space + pz);
 }
 		
@@ -7978,7 +7979,8 @@ if(tapdestroy){
 }
 
 if(taptp){
-	setPosition(Player.getEntity(), x, y, z);
+	Server.getPort();
+        if(Server.getPort()=="0")setPosition(Player.getEntity(), x, y, z);
 Server.sendChat("/tp " + Player.getName(Player.getEntity()) + space + x + space + y + space + z);
 
 }
@@ -8049,7 +8051,8 @@ if(onlyday)Level.setTime(0);
 		if(Math.round(getPlayerY())=="-3"){
 			clientMessage("You were at void!");
 			Server.sendChat("/spawn");
-			setPosition(Player.getEntity(), getPlayerX(), 65, getPlayerZ()+5);
+			Server.getPort();
+                	if(Server.getPort()=="0")setPosition(Player.getEntity(), getPlayerX(), 65, getPlayerZ()+5);
 		}
 	}
 	if(glide){
