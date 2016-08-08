@@ -6887,7 +6887,7 @@ var spawn70 = new Button(ctx);
             spawn71.setText("Spawn Donkey");            
             spawn71.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 48);
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 24);
                 }
             }));
             spawnLayout.addView(spawn71);
@@ -6923,7 +6923,7 @@ var spawn70 = new Button(ctx);
             spawn75.setText("Spawn Wither skeleton");            
             spawn75.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 24);
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 48);
                 }
             }));
             spawnLayout.addView(spawn75);
