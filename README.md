@@ -5,7 +5,7 @@ ALPHAHack v2 is a remake of AlphaHack 0.8.1
 ![Download](https://arceusmatt.github.io/AlphaHack)
 
 
-# issues:
+# issues/Features:
 - [ ] 0.8.1 Misc / settings incomplete (A bunch of useful stuff)
 - [ ] 0.8.2 Online mods incomplete (mods for servers, some crashes)
 - [ ] 0.8.2 Offline mods incomplete (mods for everything else, some crashes)
