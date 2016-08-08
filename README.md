@@ -2,7 +2,7 @@
 ALPHAHack v2 is a remake of AlphaHack 0.8.1
 
 
-![Download](https://arceusmatt.github.io/AlphaHack)
+[Download](https://arceusmatt.github.io/AlphaHack)
 
 
 # issues/Features:
