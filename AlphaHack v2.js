@@ -162,6 +162,13 @@ var particle31 = false;
 //spell3
 var particle32 = false;
 
+var AlphaHack = {};
+AlphaHack.drawTracer = function(x, y, z, groundMode, particleName) {
+	for(var count = 0; count <= 25; count++) {
+		Level.addParticle(particle, x, y, z, (getPlayerX() - x) / count, groundMode?0:((getPlayerY() - y) / count), (getPlayerZ() - z) / count, 2);
+	}
+}
+
 function getUpdate(callback){
 var r = new java.lang.Runnable({
         run: function() {
@@ -870,10 +877,6 @@ if(chestesp==true)button11.setTextColor(Color.GREEN);
 button11.setText("Chest ESP");
 if(chestesp == true){
 button11.setTextColor(Color.GREEN);
-for(var count = 0; count <= 25; count++) {
-		Level.addParticle(ParticleType.smoke, x, y, z, (getPlayerX() - x) / count, (getPlayerY() - y) / count, (getPlayerZ() - z) / count, 200);
-		Level.addParticle(ParticleType.smoke, x, y, z, (getPlayerX() - x) / count, groundMode?0:((getPlayerY() - y) / count), (getPlayerZ() - z) / count, 2);
-  	}
   	print("Credit to the Vertex team.");
 chestesp = true;
 }
@@ -8490,7 +8493,7 @@ function rptask() {
   					newY = y + blockY;
   					newZ = z + blockZ;
   					if(getTile(newX, newY, newZ) == 54) {
-						VertexClientPE.drawTracer(newX, newY, newZ, chestTracersGroundMode=="on"?true:false, chestTracersParticle);
+						AlphaHack.drawTracer(newX, newY, newZ, chestTracersGroundMode=="on"?true:false, chestTracersParticle);
   					}
   				}
   			}
