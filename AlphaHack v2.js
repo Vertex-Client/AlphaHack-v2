@@ -8460,26 +8460,12 @@ var particle31 = false;
 var particle32 = false;
 }
 
-function rptask() {
+function rptask2() {
     ctx.runOnUiThread(new java.lang.Runnable({
         run: function () {
             new android.os.Handler().postDelayed(new java.lang.Runnable({
                 run: function () {
-                        if (Debug == null || Debug.isShowing() == false) {
-                        net.zhuoweizhang.mcpelauncher.ScriptManager.isRemote = true;
-                        net.zhuoweizhang.mcpelauncher.ScriptManager.setLevelFakeCallback(true, false);
-                        enableMod();
-                        showMenuBtn();
-                    }
-                    if (autospam) {
-                        Server.sendChat(text);
-                        Server.getPort();
-                	if(Server.getPort()=="0")clientMessage(text);
-                    }
-                    if (autodestroy) {
-                        Level.destroyBlock(Player.getPointedBlockX(), Player.getPointedBlockY(), Player.getPointedBlockZ(), true);
-                    }
-                    if(chestesp){
+                	                    if(chestesp){
                 var x = getPlayerX();
  		var y = getPlayerY();
  		var z = getPlayerZ();
@@ -8498,6 +8484,38 @@ function rptask() {
   				}
   			}
  		}
+                    }
+                    nx = getPlayerX();
+                    ny = getPlayerY();
+                    nz = getPlayerZ();
+                    eval(rptask())
+                }
+            }), 1000)
+        }
+    }))
+}
+rptask2()
+
+                	
+
+function rptask() {
+    ctx.runOnUiThread(new java.lang.Runnable({
+        run: function () {
+            new android.os.Handler().postDelayed(new java.lang.Runnable({
+                run: function () {
+                        if (Debug == null || Debug.isShowing() == false) {
+                        net.zhuoweizhang.mcpelauncher.ScriptManager.isRemote = true;
+                        net.zhuoweizhang.mcpelauncher.ScriptManager.setLevelFakeCallback(true, false);
+                        enableMod();
+                        showMenuBtn();
+                    }
+                    if (autospam) {
+                        Server.sendChat(text);
+                        Server.getPort();
+                	if(Server.getPort()=="0")clientMessage(text);
+                    }
+                    if (autodestroy) {
+                        Level.destroyBlock(Player.getPointedBlockX(), Player.getPointedBlockY(), Player.getPointedBlockZ(), true);
                     }
                     nx = getPlayerX();
                     ny = getPlayerY();
