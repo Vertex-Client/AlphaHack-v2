@@ -39,7 +39,7 @@ var version = "0.8.2";
 if(version=="0.8.2")version = "Beta";
 var chestTracersRange = 10;
 var chestTracersGroundMode = "on";
-var chestTracersParticle = "on";
+var chestTracersParticle = "flame";
 
 var liquidwalk = false;
 var xray = false;
@@ -164,8 +164,14 @@ var particle32 = false;
 
 var AlphaHack = {};
 AlphaHack.drawTracer = function(x, y, z, groundMode, particleName) {
+	var particleType = ParticleType.flame;
+	if(particleName == "redstone") {
+		particleType = ParticleType.redstone;
+	} else if(particleName == "critical") {
+		particleType = ParticleType.crit;
+	}
 	for(var count = 0; count <= 25; count++) {
-		Level.addParticle(ParticleType.flame, x, y, z, (getPlayerX() - x) / count, groundMode?0:((getPlayerY() - y) / count), (getPlayerZ() - z) / count, 2);
+		Level.addParticle(particleType, x, y, z, (getPlayerX() - x) / count, groundMode?0:((getPlayerY() - y) / count), (getPlayerZ() - z) / count, 2);
 	}
 }
 
