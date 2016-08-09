@@ -29,6 +29,7 @@ var Alert = android.app.AlertDialog.Builder
 //Defines
 var GUI;
 var menu;
+var update;
 var num0 = 0;
 var vidd = true;
 var viddd = "§9";
@@ -173,8 +174,8 @@ var r = new java.lang.Runnable({
                 while((bytesRead = input.read(contents)) != -1) {
                     strFileContents = new java.lang.String(contents, 0, bytesRead);
                 }
+                var update;
                 var update = strFileContents;
-                var mlgtext;
                 var update = JSON.parse(strFileContents+"");
 
 if(update != version){
@@ -185,9 +186,9 @@ callback(new Array("Error","Error","Error"));
 }
                 }catch(e){
                 	
-                clientMessage(e+" "+update);
-                
-                clientMessage(e.lineNumber+" "+update);
+                clientMessage(e);
+                clientMessage(update);
+                clientMessage("Line: #"+e.lineNumber);
                 
                 }
                 }});
