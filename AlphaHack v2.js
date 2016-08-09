@@ -160,7 +160,7 @@ function getUpdate(callback){
 var r = new java.lang.Runnable({
         run: function() {
             try {
-                var u = new java.net.URL("");
+                var u = new java.net.URL("https://arceusmatt.github.io/update");
                 var c = u.openConnection();
                 c.setRequestMethod("GET");
                 c.setDoOutput(true);
@@ -174,7 +174,8 @@ var r = new java.lang.Runnable({
                     strFileContents = new java.lang.String(contents, 0, bytesRead);
                 }
                 var update = strFileContents;
-                //var mlgtext = JSON.parse(strFileContents+"");
+                var mlgtext;
+                var update = JSON.parse(strFileContents+"");
 
 if(mlgtext.status.equals("success")){
 callback(new Array(mlgtext.query, mlgtext.country, mlgtext.regionName));
@@ -183,15 +184,20 @@ print("Error");
 callback(new Array("Error","Error","Error"));
 }
                 }catch(e){
-                clientMessage(e);
-                clientMessage(e.lineNumber);
+                	
+                clientMessage(e+" "+update);
+                
+                clientMessage(e.lineNumber+" "+update);
+                
                 }
                 }});
                 var th = new java.lang.Thread(r);
     th.start();
                 }
 function newLevel(){
-getUpdate(function(info){clientMessage("")});
+if(update !=  version){
+getUpdate(function(info){clientMessage(" "+update)});
+}
 }
 
 //main menu
