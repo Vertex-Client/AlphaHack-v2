@@ -37,6 +37,9 @@ var text = "AlphaHack!";
 var space = " ";
 var version = "0.8.2";
 if(version=="0.8.2")version = "Beta";
+var chestTracersRange = 10;
+var chestTracersGroundMode = "on";
+var chestTracersParticle = "on";
 
 var liquidwalk = false;
 var xray = false;
@@ -867,7 +870,11 @@ if(chestesp==true)button11.setTextColor(Color.GREEN);
 button11.setText("Chest ESP");
 if(chestesp == true){
 button11.setTextColor(Color.GREEN);
-
+for(var count = 0; count <= 25; count++) {
+		Level.addParticle(ParticleType.smoke, x, y, z, (getPlayerX() - x) / count, (getPlayerY() - y) / count, (getPlayerZ() - z) / count, 200);
+		Level.addParticle(ParticleType.smoke, x, y, z, (getPlayerX() - x) / count, groundMode?0:((getPlayerY() - y) / count), (getPlayerZ() - z) / count, 2);
+  	}
+  	print("Credit to the Vertex team.");
 chestesp = true;
 }
 if(chestesp == false){
@@ -8468,6 +8475,27 @@ function rptask() {
                     }
                     if (autodestroy) {
                         Level.destroyBlock(Player.getPointedBlockX(), Player.getPointedBlockY(), Player.getPointedBlockZ(), true);
+                    }
+                    if(chestesp){
+                var x = getPlayerX();
+ 		var y = getPlayerY();
+ 		var z = getPlayerZ();
+ 		var newX;
+ 		var newY;
+ 		var newZ;
+ 		for(var blockX = - chestTracersRange; blockX <= chestTracersRange; blockX++) {
+ 			for(var blockY = - chestTracersRange; blockY <= chestTracersRange; blockY++) {
+ 				for(var blockZ = - chestTracersRange; blockZ <= chestTracersRange; blockZ++) {
+ 					newX = x + blockX;
+  					newY = y + blockY;
+  					newZ = z + blockZ;
+  					if(getTile(newX, newY, newZ) == 54) {
+ -						VertexClientPE.drawTracer(newX, newY, newZ);
+ +						VertexClientPE.drawTracer(newX, newY, newZ, chestTracersGroundMode=="on"?true:false, chestTracersParticle);
+  					}
+  				}
+  			}
+ 		}
                     }
                     nx = getPlayerX();
                     ny = getPlayerY();
