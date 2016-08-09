@@ -8490,8 +8490,7 @@ function rptask() {
   					newY = y + blockY;
   					newZ = z + blockZ;
   					if(getTile(newX, newY, newZ) == 54) {
- -						VertexClientPE.drawTracer(newX, newY, newZ);
- +						VertexClientPE.drawTracer(newX, newY, newZ, chestTracersGroundMode=="on"?true:false, chestTracersParticle);
+						VertexClientPE.drawTracer(newX, newY, newZ, chestTracersGroundMode=="on"?true:false, chestTracersParticle);
   					}
   				}
   			}
