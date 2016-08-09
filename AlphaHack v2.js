@@ -479,20 +479,6 @@ Toast.makeText(MainActivity, "Closed successfully", 1).show();
             var line2 = new android.widget.LinearLayout(ctx);
 	    line2.setOrientation(0);
 	    
-	    var worldInfo = new Button(MainActivity);
-            worldInfo.setText("World info");
-            worldInfo.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
-            worldInfo.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){ 
-                Level.getRainLevel();	
-clientMessage("World name: "+Level.getWorldName()+" World: "+Player.getDimension()+" Biome: "+Level.getBiomeName());
-Math.round(Level.getRainLevel());
-if(Math.round(Level.getRainLevel())=="0")clientMessage("Weather: clear"+" Time: "+Level.getTime());
-if(Math.round(Level.getRainLevel())=="1")clientMessage("Weather: rain/snow "+" Time: "+Level.getTime());
-                }
-            }));
-            line2.addView(worldInfo);
-	    
 	    var button1 = new Button(MainActivity);
 button1.setText("Walk on liquid");
 button1.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
@@ -977,25 +963,21 @@ print("Spam dialog error:"+e);
             var line6 = new android.widget.LinearLayout(ctx);
 	    line6.setOrientation(0);
 	    
-	    /*var twitter = new android.widget.Button(MainActivity);
-            twitter.setText("");
-            twitter.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(twitterIcon, 0) , 0, android.util.Base64.decode(twitterIcon, 0).length)));
-            twitter.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
-                	
+var worldInfo = new Button(MainActivity);
+            worldInfo.setText("World info");
+            worldInfo.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+            worldInfo.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){ 
+                Level.getRainLevel();	
+clientMessage("World name: "+Level.getWorldName()+" World: "+Player.getDimension()+" Biome: "+Level.getBiomeName());
+Math.round(Level.getRainLevel());
+if(Math.round(Level.getRainLevel())=="0")clientMessage("Weather: clear"+" Time: "+Level.getTime());
+if(Math.round(Level.getRainLevel())=="1")clientMessage("Weather: rain/snow "+" Time: "+Level.getTime());
                 }
             }));
-            line6.addView(twitter);
+            line6.addView(worldInfo);
             
-            var google = new android.widget.Button(MainActivity);
-            google.setText("");
-            google.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(googleIcon, 0) , 0, android.util.Base64.decode(googleIcon, 0).length)));
-            google.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
-                	
-                }
-            }));
-            line6.addView(google);*/
+            
 	    
 	    menuLayout.addView(line6);
 	    
@@ -8478,7 +8460,7 @@ function rptask2() {
  					newX = x + blockX;
   					newY = y + blockY;
   					newZ = z + blockZ;
-  					if(getTile(newX, newY, newZ) == 54) {
+  					if(getTile(newX, newY, newZ) == 54 || 23) {
 						AlphaHack.drawTracer(newX, newY, newZ, chestTracersGroundMode=="on"?true:false, chestTracersParticle);
   					}
   				}
