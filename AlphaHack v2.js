@@ -640,7 +640,7 @@ if(Server.getAddress()=="null" || Server.getPort()=="0")clientMessage("You are n
 clientMessage("Item ID: " + Player.getCarriedItem());
 clientMessage("Data / damage: " + Player.getCarriedItemData());
 clientMessage("Amount in hand: " + Player.getCarriedItemCount());
-clientMessage("Item enchantment: " + Player.getEnchantments(Player.getSelectedSlotId()));
+/*clientMessage("Item enchantment: " + Player.getEnchantments(Player.getSelectedSlotId()));*/
                 }
             }));
             line3.addView(itemInfo);
@@ -8447,7 +8447,7 @@ function rptask2() {
         run: function () {
             new android.os.Handler().postDelayed(new java.lang.Runnable({
                 run: function () {
-                	                    if(chestesp){
+                if(chestesp){
                 var x = getPlayerX();
  		var y = getPlayerY();
  		var z = getPlayerZ();
@@ -8460,7 +8460,7 @@ function rptask2() {
  					newX = x + blockX;
   					newY = y + blockY;
   					newZ = z + blockZ;
-  					if(getTile(newX, newY, newZ) == 54 || 23) {
+  					if(getTile(newX, newY, newZ) == 54 || getTile(newX, newY, newZ) == 23) {
 						AlphaHack.drawTracer(newX, newY, newZ, chestTracersGroundMode=="on"?true:false, chestTracersParticle);
   					}
   				}
