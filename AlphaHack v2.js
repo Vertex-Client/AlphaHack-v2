@@ -165,7 +165,7 @@ var particle32 = false;
 var AlphaHack = {};
 AlphaHack.drawTracer = function(x, y, z, groundMode, particleName) {
 	for(var count = 0; count <= 25; count++) {
-		Level.addParticle(particle, x, y, z, (getPlayerX() - x) / count, groundMode?0:((getPlayerY() - y) / count), (getPlayerZ() - z) / count, 2);
+		Level.addParticle(ParticleType.flame;, x, y, z, (getPlayerX() - x) / count, groundMode?0:((getPlayerY() - y) / count), (getPlayerZ() - z) / count, 2);
 	}
 }
 
