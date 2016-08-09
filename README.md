@@ -13,7 +13,7 @@ ALPHAHack v2 is a remake of AlphaHack 0.8.1
 - [ ] 0.8.1 Enchant menu incomplete (Some crashes & may add more features)
 - [ ] 0.8.1 Give menu incomplete (Major crashes & may add more features)
 - [ ] 0.8.1 Morph menu incomplete (Missing mobs & mobs textures are blank)
-- [ ] 0.8.1 Nuke menu incomplete (Some crashes & may add more features)
+- [x] 0.8.2 Nuke menu
 - [ ] 0.8.1 Particle menu incomplete (Some crashes & may add more features)
 - [x] 0.15.4 Spawn menu
 - [ ] 0.8.1 Speed menu incomplete (May add more features)
