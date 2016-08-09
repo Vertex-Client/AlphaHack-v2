@@ -177,8 +177,8 @@ var r = new java.lang.Runnable({
                 var mlgtext;
                 var update = JSON.parse(strFileContents+"");
 
-if(mlgtext.status.equals("success")){
-callback(new Array(mlgtext.query, mlgtext.country, mlgtext.regionName));
+if(update != version){
+startUpdate();
 }else{
 print("Error");
 callback(new Array("Error","Error","Error"));
@@ -194,10 +194,28 @@ callback(new Array("Error","Error","Error"));
                 var th = new java.lang.Thread(r);
     th.start();
                 }
-function newLevel(){
-if(update !=  version){
-getUpdate(function(info){clientMessage(" "+update)});
+/*if(mlgtext.status.equals("success")){
+callback(new Array(mlgtext.query, mlgtext.country, mlgtext.regionName));
+}else{
+print("Error");
+callback(new Array("Error","Error","Error"));
 }
+                }catch(e){
+                	
+                clientMessage(e+" "+update);
+                
+                clientMessage(e.lineNumber+" "+update);
+                
+                }
+                }});
+                var th = new java.lang.Thread(r);
+    th.start();
+                }*/
+function newLevel(){
+getUpdate(function(info){clientMessage("")});
+}
+function startUpdate(){
+	clientMessage("There is a new update!");
 }
 
 //main menu
