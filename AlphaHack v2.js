@@ -7986,6 +7986,32 @@ run: function(){
 	}});
 }
 
+function attackHook(attacker, victim) {
+	if(instakilled) {
+		Entity.setHealth(victim, 1);
+	}
+	if(firepunch) {
+Entity.setFireTicks(victim, 5);
+	}
+if(saddle){
+rideAnimal(attacker, victim);
+}
+}
+
+function instaDestroy(){
+if(instabreak==true)
+	for(i = 0; i < 256; i++){
+		Block.setDestroyTime(i, 0.1);
+	}
+}
+ 
+function defaultDestroy(){
+if(instabreak==false)
+	for(i = 0; i < 256; i++){
+		Block.setDestroyTime(i, defaultDestroyTime[i]);
+	}
+}
+
 function destroyBlock(x, y, z, side)
 {
 if(block == true)preventDefault();
@@ -8130,6 +8156,144 @@ var file = new java.io.File( android.os.Environment.getExternalStorageDirectory(
         var string="";
         write.append((Math.floor(Math.random() * (500000 - 100000 + 1)) + 100000));
         write.close();
+}
+
+function fov() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+fov = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var xy = new android.widget.EditText(ctx);
+var fovs = new android.widget.SeekBar(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Slide to edit fov");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+
+Layer.addView(fovs);
+Layer.addView(Exit);
+
+var fovsProgress = 0;
+      fovs.setMax(10);
+      fovs.setProgress(fovsProgress);
+      fovs.setOnSeekBarChangeListener(new android.widget.SeekBar.OnSeekBarChangeListener()
+      {
+      onStopTrackingTouch: function(view)
+      {
+      fovsProgress=fovs.getProgress();
+      if(fovsProgress==0)
+      {
+      ModPE.resetFov(); fovsProgress=0; (0/10)
+      }
+      if(fovsProgress==1)
+      {
+      ModPE.setFov(10); fovsProgress=1; (1/10)
+      }
+      if(fovsProgress==2)
+      {
+      ModPE.setFov(20); fovsProgress=2; (2/10)
+      }
+      if(fovsProgress==3)
+      {
+      ModPE.setFov(30); fovsProgress=3; (3/10)
+      }
+if(fovsProgress==4)
+{
+ModPE.setFov(40); fovsProgress=4; (4/10)
+}
+if(fovsProgress==5)
+{
+ModPE.setFov(50); fovsProgress=5; (5/10)
+}
+if(fovsProgress==6)
+{
+ModPE.setFov(60); fovsProgress=6; (6/10)
+}
+if(fovsProgress==7)
+{
+ModPE.setFov(70); fovsProgress=7; (7/10)
+}
+if(fovsProgress==8)
+{
+ModPE.setFov(80); fovsProgress=8; (8/10)
+}
+if(fovsProgress==9)
+{
+ModPE.setFov(90); fovsProgress=9; (9/10)
+}
+if(fovsProgress==3)
+{
+ModPE.setFov(100); fovsProgress=10; (10/10)
+}
+      }
+      });
+Exit.setText("done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+
+Dialog.dismiss();
+showMenuBtn();
+}
+});
+
+fov.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+fov.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+fov.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The fov Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function signEditor() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var xy = new android.widget.EditText(ctx);
+var xy2 = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter sign line & text");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(xy);
+Layer.addView(xy2);
+Layer.addView(Exit);
+
+xy.setText("");
+xy.setHint("Sign line: (0-3)");
+xy2.setText("");
+xy2.setHint("New sign text");
+Exit.setText("done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+text4 =xy.getText();
+line4 =xy2.getText();
+Level.setSignText(notex, notey, notez, text4, line4);
+Dialog.dismiss();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The signer Dialog Is Malfunctioning:"+e);
+}
+}});
 }
 
 function save() {
