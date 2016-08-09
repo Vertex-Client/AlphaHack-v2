@@ -8488,9 +8488,9 @@ function rptask2() {
                     nx = getPlayerX();
                     ny = getPlayerY();
                     nz = getPlayerZ();
-                    eval(rptask())
+                    eval(rptask2())
                 }
-            }), 1000)
+            }), 2000)
         }
     }))
 }
