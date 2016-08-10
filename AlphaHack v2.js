@@ -2028,14 +2028,24 @@ function sethealth(){
 Entity.setMaxHealth(getPlayerEnt(), newheart);
 }
 
-var horse = new Button(ctx);
-horse.setText("Set mob max health");
-horse.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
+var horse = new android.widget.Button(ctx);
+      horse.setText("Set mob health: "+(horsehealth?"on":"off"));
+		horse.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+			horsehealth?horsehealth=false:horsehealth=true;
+horse.setText("Set mob health: "+(horsehealth?"on":"off"));
+if(horsehealth == true){
 horsehealth1();
-                }
-            }));
-            modLayout.addView(horse);
+horsehealth = true;
+}
+if(horsehealth == false){
+clientMessage("§7Set health is off");
+
+horsehealth = false;
+ }
+			}
+		});
+		modLayout.addView(horse);
             
 function horsehealth1() {
 ctx.runOnUiThread(new java.lang.Runnable(){
@@ -2061,10 +2071,8 @@ Exit.setText("done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
-horseheart1 =eha.getText();
+horseheart =eha.getText();
 Dialog.dismiss();
-horsehealth = true
-horseheart1 = horseheart;
 clientMessage("Tap mob to change health.");
 showMenuBtn();
 }
@@ -2137,19 +2145,23 @@ Dialog.show();
  
 Layer.addView(select1);
 Layer.addView(select2);
-Layer.addView(Exit);
+//Layer.addView(Exit);
  
             select1.setText("Child");
             select1.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
- newage = "0";
+ newage = "-2000";
+ Dialog.dismiss();
+showMenuBtn();
                 }
             }));
              
             select2.setText("Adult");
             select2.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
- newage = "1";
+ newage = "0";
+ Dialog.dismiss();
+showMenuBtn();
                 }
             }));
 			
@@ -7826,11 +7838,11 @@ function killing() {
 }
 
 function killingf() {
-    var mobs = Entity.getall();
-	var uuid=mobs[b];
+    var mobs = Entity.getAll();
 	var immobile = true;
 	if(killfaura==false)immobile=false;
     for (var b = 0; b < mobs.length; b++) {
+    	var uuid=mobs[b];
         var mobX = Entity.getX(mobs[b]) - getPlayerX();
         var mobY = Entity.getY(mobs[b]) - getPlayerY();
         var mobZ = Entity.getZ(mobs[b]) - getPlayerZ();
@@ -7945,125 +7957,123 @@ function killingf() {
 }
 
 function killingd() {
-    var mobs = Entity.getall();
-	var uuid=mobs[c];
+    var mobs = Entity.getAll();
     for (var c = 0; c < mobs.length; c++) {
         var mobX = Entity.getX(mobs[c]) - getPlayerX();
         var mobY = Entity.getY(mobs[c]) - getPlayerY();
         var mobZ = Entity.getZ(mobs[c]) - getPlayerZ();
         if (mobX * mobX + mobY * mobY + mobZ * mobZ <= 20 * 20 && mobs[c] != getPlayerEnt()) {
             if (Entity.getEntityTypeId(mobs[c]) == 10) {
-                Entity.setFireTicks(uuid,5)
+                Entity.setFireTicks(mobs[c],5)
             }
             if (Entity.getEntityTypeId(mobs[c]) == 11) {
-                Entity.setFireTicks(uuid,5)
+                Entity.setFireTicks(mobs[c],5)
             }
             if (Entity.getEntityTypeId(mobs[c]) == 12) {
-                Entity.setFireTicks(uuid,5)
+                Entity.setFireTicks(mobs[c],5)
             }
             if (Entity.getEntityTypeId(mobs[c]) == 13) {
-                Entity.setFireTicks(uuid,5)
+                Entity.setFireTicks(mobs[c],5)
             }
             if (Entity.getEntityTypeId(mobs[c]) == 14) {
-                Entity.setFireTicks(uuid,5)
+                Entity.setFireTicks(mobs[c],5)
             }
             if (Entity.getEntityTypeId(mobs[c]) == 15) {
-                Entity.setFireTicks(uuid,5)
+                Entity.setFireTicks(mobs[c],5)
             }
             if (Entity.getEntityTypeId(mobs[c]) == 16) {
-                Entity.setFireTicks(uuid,5)
+                Entity.setFireTicks(mobs[c],5)
             }
             if (Entity.getEntityTypeId(mobs[c]) == 17) {
-                Entity.setFireTicks(uuid,5)
+                Entity.setFireTicks(mobs[c],5)
             }
             if (Entity.getEntityTypeId(mobs[c]) == 18) {
-                Entity.setFireTicks(uuid,5)
+                Entity.setFireTicks(mobs[c],5)
             }
             if (Entity.getEntityTypeId(mobs[c]) == 19) {
-                Entity.setFireTicks(uuid,5)
+                Entity.setFireTicks(mobs[c],5)
             }
             if (Entity.getEntityTypeId(mobs[c]) == 20) {
-                Entity.setFireTicks(uuid,5)
+                Entity.setFireTicks(mobs[c],5)
             }
             if (Entity.getEntityTypeId(mobs[c]) == 21) {
-                Entity.setFireTicks(uuid,5)
+                Entity.setFireTicks(mobs[c],5)
             }
             if (Entity.getEntityTypeId(mobs[c]) == 22) {
-                Entity.setFireTicks(uuid,5)
+                Entity.setFireTicks(mobs[c],5)
             }
 			if (Entity.getEntityTypeId(mobs[c]) == 24) {
-                Entity.setFireTicks(uuid,5)
+                Entity.setFireTicks(mobs[c],5)
             }
 			if (Entity.getEntityTypeId(mobs[c]) == 25) {
-                Entity.setFireTicks(uuid,5)
+                Entity.setFireTicks(mobs[c],5)
             }
 			if (Entity.getEntityTypeId(mobs[c]) == 26) {
-                Entity.setFireTicks(uuid,5)
+                Entity.setFireTicks(mobs[c],5)
             }
 			if (Entity.getEntityTypeId(mobs[c]) == 27) {
-                Entity.setFireTicks(uuid,5)
+                Entity.setFireTicks(mobs[c],5)
             }
             if (Entity.getEntityTypeId(mobs[c]) == 32) {
-                Entity.setFireTicks(uuid,5)
+                Entity.setFireTicks(mobs[c],5)
             }
             if (Entity.getEntityTypeId(mobs[c]) == 33) {
-                Entity.setFireTicks(uuid,5)
+                Entity.setFireTicks(mobs[c],5)
             }
             if (Entity.getEntityTypeId(mobs[c]) == 34) {
-                Entity.setFireTicks(uuid,5)
+                Entity.setFireTicks(mobs[c],5)
             }
             if (Entity.getEntityTypeId(mobs[c]) == 35) {
-                Entity.setFireTicks(uuid,5)
+                Entity.setFireTicks(mobs[c],5)
             }
             if (Entity.getEntityTypeId(mobs[c]) == 36) {
-                Entity.setFireTicks(uuid,5)
+                Entity.setFireTicks(mobs[c],5)
             }
             if (Entity.getEntityTypeId(mobs[c]) == 37) {
-                Entity.setFireTicks(uuid,5)
+                Entity.setFireTicks(mobs[c],5)
             }
             if (Entity.getEntityTypeId(mobs[c]) == 38) {
-                Entity.setFireTicks(uuid,5)
+                Entity.setFireTicks(mobs[c],5)
             }
             if (Entity.getEntityTypeId(mobs[c]) == 39) {
-                Entity.setFireTicks(uuid,5)
+                Entity.setFireTicks(mobs[c],5)
             }
             if (Entity.getEntityTypeId(mobs[c]) == 40) {
-                Entity.setFireTicks(uuid,5)
+                Entity.setFireTicks(mobs[c],5)
             }
             if (Entity.getEntityTypeId(mobs[c]) == 41) {
-                Entity.setFireTicks(uuid,5)
+                Entity.setFireTicks(mobs[c],5)
             }
             if (Entity.getEntityTypeId(mobs[c]) == 42) {
-                Entity.setFireTicks(uuid,5)
+                Entity.setFireTicks(mobs[c],5)
             }
             if (Entity.getEntityTypeId(mobs[c]) == 43) {
-                Entity.setFireTicks(uuid,5)
+                Entity.setFireTicks(mobs[c],5)
             }
             if (Entity.getEntityTypeId(mobs[c]) == 44) {
-                Entity.setFireTicks(uuid,5)
+                Entity.setFireTicks(mobs[c],5)
             }
             if (Entity.getEntityTypeId(mobs[c]) == 45) {
-                Entity.setFireTicks(uuid,5)
+                Entity.setFireTicks(mobs[c],5)
             }
 			if (Entity.getEntityTypeId(mobs[c]) == 46) {
-                Entity.setFireTicks(uuid,5)
+                Entity.setFireTicks(mobs[c],5)
             }
 			if (Entity.getEntityTypeId(mobs[c]) == 47) {
-                Entity.setFireTicks(uuid,5)
+                Entity.setFireTicks(mobs[c],5)
             }
 			if (Entity.getEntityTypeId(mobs[c]) == 48) {
-                Entity.setFireTicks(uuid,5)
+                Entity.setFireTicks(mobs[c],5)
             }
 			if (Entity.getEntityTypeId(mobs[c]) == 100) {
-                Entity.setFireTicks(uuid,5)
+                Entity.setFireTicks(mobs[c],5)
             }
         }
     }
 }
 
 function killingl() {
-    var mobs = Entity.getall();
-	var uuid=mobs[d];
+    var mobs = Entity.getAll();
     for (var d = 0; d < mobs.length; d++) {
         var mobX = Entity.getX(mobs[d]) - getPlayerX();
         var mobY = Entity.getY(mobs[d]) - getPlayerY();
