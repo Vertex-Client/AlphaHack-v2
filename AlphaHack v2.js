@@ -2072,7 +2072,7 @@ miscLayout1.setPadding(20,0,20,0);
 }
 
 var effect = new android.widget.Button(ctx);
-effect.setText("effect menu");
+effect.setText("Effect menu");
 effect.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 effect.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
