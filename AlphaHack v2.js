@@ -1065,11 +1065,8 @@ clientMessage("§7No clip / walk through walls on");
 
 Block.setShape(4, 0, 0, 0, 0.0001, 0.6, 0.0001);
 Block.setShape(5, 0, 0, 0, 0.0001, 0.6, 0.0001);
-Block.setShape(5:1, 0, 0, 0, 0.0001, 0.6, 0.0001);
-Block.setShape(5:2, 0, 0, 0, 0.0001, 0.6, 0.0001);
-Block.setShape(5:3, 0, 0, 0, 0.0001, 0.6, 0.0001);
-Block.setShape(5:4, 0, 0, 0, 0.0001, 0.6, 0.0001);
-Block.setShape(5:5, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(17, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(2, 0, 0, 0, 0.0001, 0.6, 0.0001);
 
 Block.setShape(24, 0, 0, 0, 0.0001, 0.6, 0.0001);
 Block.setShape(20, 0, 0, 0, 0.0001, 0.6, 0.0001);
