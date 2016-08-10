@@ -41,6 +41,9 @@ var chestTracersRange = 10;
 var chestTracersGroundMode = "on";
 var chestTracersParticle = "on";
 var offtime = 0;
+var horseheart = "";
+var newage = "";
+var vid = "11";
 
 var GUISize = "2";
 
@@ -66,6 +69,11 @@ var autonuke = false;
 var antispam = false;
 var playeresp = false;
 var lightningaura = false;
+var tapid = false;
+var horsehealth = false;
+var getage = false;
+var setage = false;
+var noclip = false;
 
 var lightning = false;
 var primedtnt = false;
@@ -531,7 +539,7 @@ Toast.makeText(MainActivity, "Closed successfully", 1).show();
 	    menuLayout.addView(line6);
 	    
 var cheats = new android.widget.Button(ctx);
-cheats.setText("Online mods");
+cheats.setText("Online & offline mods");
 cheats.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 cheats.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -1017,6 +1025,28 @@ autodestroy = false;
                 }
             }));
             cheatLayout.addView(button13);
+            
+            var taptoid = new Button(MainActivity);
+taptoid.setText("Tap block for ID");
+taptoid.setTextColor(Color.RED);
+if(tapid==true)taptoid.setTextColor(Color.GREEN);
+            taptoid.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             tapid?tapid=false:tapid=true;
+taptoid.setText("Tap block for ID");
+if(tapid == true){
+taptoid.setTextColor(Color.GREEN);
+
+tapid = true;
+}
+if(tapid == false){
+taptoid.setTextColor(Color.RED);
+
+taptoid = false;
+}
+                }
+            }));
+            cheatLayout.addView(taptoid);
 
             cheat = new PopupWindow(cheatLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
             cheat.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -1033,7 +1063,7 @@ cheatLayout1.setPadding(20,0,20,0);
 }
             
 var mods = new android.widget.Button(ctx);
-mods.setText("Offline mods");
+mods.setText("Single player mods");
 mods.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 mods.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -1506,7 +1536,7 @@ Player.setCanFly(0);
             modLayout.addView(f);
 
 var g = new android.widget.Button(ctx);
-            g.setText("Grief run: "+(grief?"on":"off"));
+            g.setText("Grief: "+(grief?"on":"off"));
             g.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 grief?grief=false:grief=true;
@@ -1550,7 +1580,7 @@ Layer.addView(Exit);
             select1.setText("Use lava?");
             select1.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
- clientMessage("§7Your now griefing! hurry run around!");
+ clientMessage("§7Face a block to see!");
  vid = 11;
 grief = true;
                 }
@@ -1559,7 +1589,7 @@ grief = true;
             select2.setText("Use water?");
             select2.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
- clientMessage("§7Your now griefing! hurry run around!");
+ clientMessage("§7Face a block to see!");
  vid = 8;
 grief = true;
                 }
@@ -1918,7 +1948,7 @@ somd = false
             modLayout.addView(hst);*/
 
 var bmsg = new android.widget.Button(ctx);
-           bmsg.setText("Blank message");
+          bmsg.setText("Blank message");
             bmsg.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 Server.sendChat("§§");
@@ -1998,20 +2028,169 @@ function sethealth(){
 Entity.setMaxHealth(getPlayerEnt(), newheart);
 }
 
-var spider = new Button(ctx);
-spider.setText("useless spider hack");
-spider.setOnClickListener(new View.OnClickListener({
+var horse = new Button(ctx);
+horse.setText("Set mob max health");
+horse.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-				Level.setTile(getPlayerX(), getPlayerY(), getPlayerZ(), 65, 0);
-				Level.setTile(getPlayerX(), getPlayerY() +1, getPlayerZ(), 65, 0);
-				Level.setTile(getPlayerX(), getPlayerY() +2, getPlayerZ(), 65, 0);
-				Level.setTile(getPlayerX(), getPlayerY() +3, getPlayerZ(), 65, 0);
-				Level.setTile(getPlayerX(), getPlayerY() +4, getPlayerZ(), 65, 0);
-				Level.setTile(getPlayerX(), getPlayerY() +6, getPlayerZ(), 65, 0);
-				Level.setTile(getPlayerX(), getPlayerY() +7, getPlayerZ(), 65, 0);
+horsehealth1();
                 }
             }));
-            modLayout.addView(spider);
+            modLayout.addView(horse);
+            
+function horsehealth1() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer10 = new android.widget.LinearLayout(ctx);
+var eha = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter new hearts");
+Dialog.setContentView(Layer10);
+
+Layer10.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer10.addView(eha);
+Layer10.addView(Exit);
+
+eha.setText("");
+eha.setHint("Hearts number here");
+Exit.setText("done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+horseheart1 =eha.getText();
+Dialog.dismiss();
+horsehealth = true
+horseheart1 = horseheart;
+clientMessage("Tap mob to change health.");
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The set health Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+var gage = new android.widget.Button(ctx);
+      gage.setText("Get mob age: "+(getage?"on":"off"));
+		gage.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+			getage?getage=false:getage=true;
+gage.setText("Get mob age: "+(getage?"on":"off"));
+if(getage == true){
+clientMessage("§7Tap mob to get age");
+
+getage = true;
+}
+if(getage == false){
+clientMessage("§7Get age is off");
+
+getage = false;
+ }
+			}
+		});
+		modLayout.addView(gage);
+		
+		var sage = new android.widget.Button(ctx);
+      sage.setText("Set mob age: "+(setage?"on":"off"));
+		sage.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+			setage?setage=false:setage=true;
+sage.setText("Set mob age: "+(setage?"on":"off"));
+if(setage == true){
+new4();
+setage = true;
+}
+if(setage == false){
+clientMessage("§7Set age is off");
+
+setage = false;
+ }
+			}
+		});
+		modLayout.addView(sage);
+		
+		function new4() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+fov = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var select1 = new android.widget.Button(ctx);
+var select2 = new android.widget.Button(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+ 
+Dialog.setTitle("Select");
+Dialog.setContentView(Layer);
+ 
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+ 
+Layer.addView(select1);
+Layer.addView(select2);
+Layer.addView(Exit);
+ 
+            select1.setText("Child");
+            select1.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+ newage = "0";
+                }
+            }));
+             
+            select2.setText("Adult");
+            select2.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+ newage = "1";
+                }
+            }));
+			
+Exit.setText("done");
+ 
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ 
+Dialog.dismiss();
+showMenuBtn();
+}
+});
+ 
+new3.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+new3.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+new3.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The new Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+var laura = new android.widget.Button(ctx);
+      laura.setText("LightningAura: "+(lightningaura?"on":"off"));
+		laura.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+			lightningaura?lightningaura=false:lightningaura=true;
+laura.setText("LightningAura: "+(lightningaura?"on":"off"));
+if(lightningaura == true){
+clientMessage("§7LightningAura is on");
+
+lightningaura = true;
+}
+if(lightningaura == false){
+clientMessage("§7LightningAura is off");
+
+lightningaura = false;
+ }
+			}
+		});
+		modLayout.addView(laura);
 
             mod = new PopupWindow(modLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
             mod.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -7511,6 +7690,9 @@ Entity.setFireTicks(victim, 5);
 if(saddle){
 rideAnimal(attacker, victim);
 }
+if(horsehealth)Entity.setMaxHealth(victim, horseheart);
+if(getage)clientMessage("age: "+Entity.getAnimalAge(victim));
+if(setage)Entity.setAnimalAge(victim, newage);
 }
 
 function instaDestroy(){
@@ -8051,6 +8233,7 @@ Server.sendChat("/tp " + Player.getName(Player.getEntity()) + space + x + space 
 
 }
 if(tapnuke)explode(x,y,z,5);
+if(tapid)clientMessage("Block ID: "+blockId+"Item ID: "+itemId+"\n"+"X; "+x" Y; "+y+" Z; "+z);
 }
 
 function modTick(){
@@ -8133,7 +8316,7 @@ setVelY(Player.getEntity(), -0.05)
 if(coords)ModPE.showTipMessage("x"+Math.round(getPlayerX())+", y"+Math.round(getPlayerY())+", z"+Math.round(getPlayerZ()));
 if(armor)ModPE.showTipMessage("\n\nHead: " + Entity.getArmorDamage(getPlayerEnt(), 0) + " Chest: " + Entity.getArmorDamage(getPlayerEnt(), 1) + " Legs: " + Entity.getArmorDamage(getPlayerEnt(), 2) + " Feet: " + Entity.getArmorDamage(getPlayerEnt(), 3));
 if(autonuke)explode(getPlayerX(),getPlayerY(),getPlayerZ(),5);
-if(grief)Level.setTile(getPlayerX(), getPlayerY(), getPlayerZ(), 11, 0)
+if(grief)Level.setTile(getPointedBlockX(), getPointedBlockY(), getPointedBlockZ(), vid, 0);
 }
 
 function devpardon() {
