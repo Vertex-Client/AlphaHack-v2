@@ -40,6 +40,7 @@ if(version=="0.8.2")version = "Beta";
 var chestTracersRange = 10;
 var chestTracersGroundMode = "on";
 var chestTracersParticle = "on";
+var offtime = 0;
 
 var GUISize = "2";
 
@@ -62,6 +63,7 @@ var onlynight = false;
 var chestesp = false;
 var tapnuke = false;
 var autonuke = false;
+var antispam = false;
 
 var lightning = false;
 var primedtnt = false;
@@ -405,7 +407,7 @@ menuLayout.addView(line0);
             var title2 = new TextView(MainActivity);
             title2.setTextSize(20);
             title2.setText("Made by: ArceusMαtt");
-            title2.setGravity(Gravity.LEFT);
+            title2.setGravity(Gravity.CENTER);
             title2.setTextColor(Color.WHITE);
             menuLayout.addView(title2);
             
@@ -557,6 +559,28 @@ ctx.runOnUiThread(new Runnable({ run: function(){
 			}
 		});
 		cheatLayout.addView(exit);
+		
+		var bypass1 = new Button(MainActivity);
+bypass1.setText("Anti-spam bypass");
+bypass1.setTextColor(Color.RED);
+if(antispam==true)bypass1.setTextColor(Color.GREEN);
+            bypass1.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             antispam?antispam=false:antispam=true;
+bypass1.setText("Anti-spam bypass");
+if(antispam == true){
+bypass1.setTextColor(Color.GREEN);
+spa();
+antispam = true;
+}
+if(antispam == false){
+bypass1.setTextColor(Color.RED);
+
+antispam = false;
+}
+                }
+            }));
+            cheatLayout.addView(bypass1);
 		
 		var worldInfo = new Button(MainActivity);
             worldInfo.setText("World info");
@@ -6852,7 +6876,8 @@ var Uspawn = new Button(ctx);
         xhome=Player.getX();
         yhome=Player.getY()+1;
         zhome=Player.getZ(); 
-        save();
+        Server.getPort();
+        if(Server.getPort()=="0")save();
 clientMessage("§7Home set to: " + Math.round(xhome) + ", " + Math.round(yhome) + ", " + Math.round(zhome) + ".");
                 }
             }));
@@ -6862,7 +6887,8 @@ var Rspawn = new Button(ctx);
             Rspawn.setText("Return to home");       
             Rspawn.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-        load();
+        Server.getPort();
+        if(Server.getPort()=="0")load();
 clientMessage("§7Returning to your saved home");
                 }
             }));
@@ -7936,6 +7962,28 @@ var particle31 = false;
 //spell3
 var particle32 = false;
 }
+
+function rptask3() {
+    ctx.runOnUiThread(new java.lang.Runnable({
+        run: function () {
+            new android.os.Handler().postDelayed(new java.lang.Runnable({
+                run: function () {
+                if(antispam){
+                	offtime++
+                        Server.sendChat(offtime+" "+text+" "+offtime);
+                        Server.getPort();
+                	if(Server.getPort()=="0")clientMessage(offtime+" "+text+" "+offtime);
+                    }
+                    nx = getPlayerX();
+                    ny = getPlayerY();
+                    nz = getPlayerZ();
+                    eval(rptask3())
+                }
+            }), 2000)
+        }
+    }))
+}
+rptask3()
 
 function rptask2() {
     ctx.runOnUiThread(new java.lang.Runnable({
