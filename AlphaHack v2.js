@@ -2203,6 +2203,24 @@ lightningaura = false;
 			}
 		});
 		modLayout.addView(laura);
+		
+		var kjump = new android.widget.Button(ctx);
+            kjump.setText("Higher jumps: "+(jump?"on":"off"));
+            kjump.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+jump?jump=false:jump=true;
+kjump.setText("Higher jumps: "+(jump?"on":"off"));
+if(jump == true){
+clientMessage("§7");
+jump = true;
+}
+if(jump == false){
+clientMessage("§7");
+jump = false;
+                }
+}
+            }));
+            modLayout.addView(kjump);
 
             mod = new PopupWindow(modLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
             mod.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -8075,9 +8093,9 @@ function killingd() {
 function killingl() {
     var mobs = Entity.getAll();
     for (var d = 0; d < mobs.length; d++) {
-        var mobX = Entity.getX(mobs[d]) - getPlayerX();
-        var mobY = Entity.getY(mobs[d]) - getPlayerY();
-        var mobZ = Entity.getZ(mobs[d]) - getPlayerZ();
+        var mobX = Entity.getX(mobs[d]);
+        var mobY = Entity.getY(mobs[d]);
+        var mobZ = Entity.getZ(mobs[d]);
         if (mobX * mobX + mobY * mobY + mobZ * mobZ <= 20 * 20 && mobs[d] != getPlayerEnt()) {
             if (Entity.getEntityTypeId(mobs[d]) == 10) {
                 Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
@@ -8326,7 +8344,12 @@ setVelY(Player.getEntity(), -0.05)
 if(coords)ModPE.showTipMessage("x"+Math.round(getPlayerX())+", y"+Math.round(getPlayerY())+", z"+Math.round(getPlayerZ()));
 if(armor)ModPE.showTipMessage("\n\nHead: " + Entity.getArmorDamage(getPlayerEnt(), 0) + " Chest: " + Entity.getArmorDamage(getPlayerEnt(), 1) + " Legs: " + Entity.getArmorDamage(getPlayerEnt(), 2) + " Feet: " + Entity.getArmorDamage(getPlayerEnt(), 3));
 if(autonuke)explode(getPlayerX(),getPlayerY(),getPlayerZ(),5);
-if(grief)Level.setTile(getPointedBlockX(), getPointedBlockY(), getPointedBlockZ(), vid, 0);
+if(grief)Level.setTile(Player.getPointedBlockX(), Player.getPointedBlockY(), Player.getPointedBlockZ(), vid, 0);
+if(jump){
+	if(Entity.getVelY(getPlayerEnt())< -0.1){
+		setVelY(getPlayerEnt(),-0.5);
+	}
+}
 }
 
 function devpardon() {
