@@ -707,12 +707,6 @@ Block.setRenderLayer(3,1);
 Block.setRenderLayer(12,1);
 Block.setRenderLayer(24,1);
 Block.setRenderLayer(78,1);
-Block.setShape(1, 0, 0, 0, 0.0001, 0.6, 0.0001);
-Block.setShape(2, 0, 0, 0, 0.0001, 0.6, 0.0001);
-Block.setShape(3, 0, 0, 0, 0.0001, 0.6, 0.0001);
-Block.setShape(12, 0, 0, 0, 0.0001, 0.6, 0.0001);
-Block.setShape(24, 0, 0, 0, 0.0001, 0.6, 0.0001);
-Block.setShape(78, 0, 0, 0, 0.0001, 0.6, 0.0001);
 xray = true;
 }
 if(xray == false){
@@ -724,12 +718,6 @@ Block.setRenderLayer(3,num0);
 Block.setRenderLayer(12,num0);
 Block.setRenderLayer(24,num0);
 Block.setRenderLayer(78,num0);
-Block.setShape(1, null, null, null, 1, 1, 1);
-Block.setShape(2, null, null, null, 1, 1, 1);
-Block.setShape(3, null, null, null, 1, 1, 1);
-Block.setShape(12, null, null, null, 1, 1, 1);
-Block.setShape(24, null, null, null, 1, 1, 1);
-Block.setShape(78, null, null, null, 1, 1, 1);
 xray = false;
 }
                 }
@@ -1047,6 +1035,76 @@ taptoid = false;
                 }
             }));
             cheatLayout.addView(taptoid);
+            
+            var kjump = new android.widget.Button(ctx);
+            kjump.setText("Higher jumps: "+(jump?"on":"off"));
+            kjump.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+jump?jump=false:jump=true;
+kjump.setText("Higher jumps: "+(jump?"on":"off"));
+if(jump == true){
+clientMessage("§7");
+jump = true;
+}
+if(jump == false){
+clientMessage("§7");
+jump = false;
+                }
+}
+            }));
+            cheatLayout.addView(kjump);
+            
+            var nowall = new android.widget.Button(ctx);
+            nowall.setText("No clip: "+(noclip?"on":"off"));
+            nowall.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+noclip?noclip=false:noclip=true;
+nowall.setText("No clip: "+(noclip?"on":"off"));
+if(noclip == true){
+clientMessage("§7No clip / walk through walls on");
+
+Block.setShape(4, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(5, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(5:1, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(5:2, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(5:3, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(5:4, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(5:5, 0, 0, 0, 0.0001, 0.6, 0.0001);
+
+Block.setShape(24, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(20, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(41, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(42, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(45, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(49, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(48, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(47, 0, 0, 0, 0.0001, 0.6, 0.0001);
+
+Block.setShape(57, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(80, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(98, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(101, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(112, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(133, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(7, 0, 0, 0, 0.0001, 0.6, 0.0001);
+
+Block.setShape(155, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(179, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(188, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(189, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(190, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(191, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(192, 0, 0, 0, 0.0001, 0.6, 0.0001);
+
+noclip = true;
+}
+if(noclip == false){
+clientMessage("§7No clip / walk through walls off");
+noclip = false;
+                }
+}
+            }));
+            cheatLayout.addView(nowall);
 
             cheat = new PopupWindow(cheatLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
             cheat.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -2203,24 +2261,6 @@ lightningaura = false;
 			}
 		});
 		modLayout.addView(laura);
-		
-		var kjump = new android.widget.Button(ctx);
-            kjump.setText("Higher jumps: "+(jump?"on":"off"));
-            kjump.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
-jump?jump=false:jump=true;
-kjump.setText("Higher jumps: "+(jump?"on":"off"));
-if(jump == true){
-clientMessage("§7");
-jump = true;
-}
-if(jump == false){
-clientMessage("§7");
-jump = false;
-                }
-}
-            }));
-            modLayout.addView(kjump);
 
             mod = new PopupWindow(modLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
             mod.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -8347,7 +8387,7 @@ if(autonuke)explode(getPlayerX(),getPlayerY(),getPlayerZ(),5);
 if(grief)Level.setTile(Player.getPointedBlockX(), Player.getPointedBlockY(), Player.getPointedBlockZ(), vid, 0);
 if(jump){
 	if(Entity.getVelY(getPlayerEnt())< -0.1){
-		setVelY(getPlayerEnt(),-0.5);
+		setVelY(getPlayerEnt(),0.8);
 	}
 }
 }
