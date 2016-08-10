@@ -65,6 +65,7 @@ var tapnuke = false;
 var autonuke = false;
 var antispam = false;
 var playeresp = false;
+var lightningaura = false;
 
 var lightning = false;
 var primedtnt = false;
@@ -7878,6 +7879,123 @@ function killingd() {
     }
 }
 
+function killingl() {
+    var mobs = Entity.getall();
+	var uuid=mobs[d];
+    for (var d = 0; d < mobs.length; d++) {
+        var mobX = Entity.getX(mobs[d]) - getPlayerX();
+        var mobY = Entity.getY(mobs[d]) - getPlayerY();
+        var mobZ = Entity.getZ(mobs[d]) - getPlayerZ();
+        if (mobX * mobX + mobY * mobY + mobZ * mobZ <= 20 * 20 && mobs[d] != getPlayerEnt()) {
+            if (Entity.getEntityTypeId(mobs[d]) == 10) {
+                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+            }
+            if (Entity.getEntityTypeId(mobs[d]) == 11) {
+                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+            }
+            if (Entity.getEntityTypeId(mobs[d]) == 12) {
+                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+            }
+            if (Entity.getEntityTypeId(mobs[d]) == 13) {
+                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+            }
+            if (Entity.getEntityTypeId(mobs[d]) == 14) {
+                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+            }
+            if (Entity.getEntityTypeId(mobs[d]) == 15) {
+                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+            }
+            if (Entity.getEntityTypeId(mobs[d]) == 16) {
+                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+            }
+            if (Entity.getEntityTypeId(mobs[d]) == 17) {
+                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+            }
+            if (Entity.getEntityTypeId(mobs[d]) == 18) {
+                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+            }
+            if (Entity.getEntityTypeId(mobs[d]) == 19) {
+                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+            }
+            if (Entity.getEntityTypeId(mobs[d]) == 20) {
+                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+            }
+            if (Entity.getEntityTypeId(mobs[d]) == 21) {
+                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+            }
+            if (Entity.getEntityTypeId(mobs[d]) == 22) {
+                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+            }
+			if (Entity.getEntityTypeId(mobs[d]) == 24) {
+                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+            }
+			if (Entity.getEntityTypeId(mobs[d]) == 25) {
+                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+            }
+			if (Entity.getEntityTypeId(mobs[d]) == 26) {
+                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+            }
+			if (Entity.getEntityTypeId(mobs[d]) == 27) {
+                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+            }
+            if (Entity.getEntityTypeId(mobs[d]) == 32) {
+                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+            }
+            if (Entity.getEntityTypeId(mobs[d]) == 33) {
+                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+            }
+            if (Entity.getEntityTypeId(mobs[d]) == 34) {
+                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+            }
+            if (Entity.getEntityTypeId(mobs[d]) == 35) {
+                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+            }
+            if (Entity.getEntityTypeId(mobs[d]) == 36) {
+                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+            }
+            if (Entity.getEntityTypeId(mobs[d]) == 37) {
+                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+            }
+            if (Entity.getEntityTypeId(mobs[d]) == 38) {
+                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+            }
+            if (Entity.getEntityTypeId(mobs[d]) == 39) {
+                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+            }
+            if (Entity.getEntityTypeId(mobs[d]) == 40) {
+                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+            }
+            if (Entity.getEntityTypeId(mobs[d]) == 41) {
+                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+            }
+            if (Entity.getEntityTypeId(mobs[d]) == 42) {
+                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+            }
+            if (Entity.getEntityTypeId(mobs[d]) == 43) {
+                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+            }
+            if (Entity.getEntityTypeId(mobs[d]) == 44) {
+                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+            }
+            if (Entity.getEntityTypeId(mobs[d]) == 45) {
+                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+            }
+			if (Entity.getEntityTypeId(mobs[d]) == 46) {
+                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+            }
+			if (Entity.getEntityTypeId(mobs[d]) == 47) {
+                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+            }
+			if (Entity.getEntityTypeId(mobs[d]) == 48) {
+                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+            }
+			if (Entity.getEntityTypeId(mobs[d]) == 100) {
+                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+            }
+        }
+    }
+}
+
 function destroyBlock(x, y, z, side)
 {
 if(block == true)preventDefault();
@@ -7956,6 +8074,10 @@ killingf();
 if(killdaura) {
 	
 	killingd();
+}
+if(lightningaura) {
+	
+	killingl();
 }
 if(particle1)Level.addParticle(ParticleType.angryVillager, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 5);
 if(particle2)Level.addParticle(ParticleType.bubble, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
