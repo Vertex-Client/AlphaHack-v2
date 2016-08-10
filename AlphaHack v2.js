@@ -8233,7 +8233,7 @@ Server.sendChat("/tp " + Player.getName(Player.getEntity()) + space + x + space 
 
 }
 if(tapnuke)explode(x,y,z,5);
-if(tapid)clientMessage("Block ID: "+blockId+"Item ID: "+itemId+"\n"+"X; "+x" Y; "+y+" Z; "+z);
+if(tapid)clientMessage("Block ID: "+blockId+"Item ID: "+itemId+"\n"+"X: "+x+" Y: "+y+" Z: "+z);
 }
 
 function modTick(){
