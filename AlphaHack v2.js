@@ -1149,6 +1149,44 @@ ctx.runOnUiThread(new Runnable({ run: function(){
 		});
 		modLayout.addView(exit);
 		
+		var portal = new Button(MainActivity);
+portal.setText("Nnether portal");
+            portal.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                Level.setTile(getPlayerX(), getPlayerY() -1, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() +1, getPlayerY() -1, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() -1, getPlayerY() -1, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() +2, getPlayerY() -1, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() -2, getPlayerY() -1, getPlayerZ() -3, 49, 0);
+              
+                Level.setTile(getPlayerX() +2, getPlayerY() +1, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() -2, getPlayerY() +1, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() +2, getPlayerY() +2, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() -2, getPlayerY() +2, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() +2, getPlayerY() +3, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() -2, getPlayerY() +3, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() +2, getPlayerY() +4, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() -2, getPlayerY() +4, getPlayerZ() -3, 49, 0);
+                
+                Level.setTile(getPlayerX(), getPlayerY() +4, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() +1, getPlayerY() +4, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() -1, getPlayerY() +4, getPlayerZ() -3, 49, 0);
+                
+                Level.setTile(getPlayerX(), getPlayerY() +1, getPlayerZ() -3, 90, 0);
+                Level.setTile(getPlayerX() +1, getPlayerY() +1, getPlayerZ() -3, 90, 0);
+                Level.setTile(getPlayerX() -1, getPlayerY() +1, getPlayerZ() -3, 90, 0);
+                
+                Level.setTile(getPlayerX(), getPlayerY() +2, getPlayerZ() -3, 90, 0);
+                Level.setTile(getPlayerX() +1, getPlayerY() +2, getPlayerZ() -3, 90, 0);
+                Level.setTile(getPlayerX() -1, getPlayerY() +2, getPlayerZ() -3, 90, 0);
+                
+                Level.setTile(getPlayerX(), getPlayerY() +3, getPlayerZ() -3, 90, 0);
+                Level.setTile(getPlayerX() +1, getPlayerY() +3, getPlayerZ() -3, 90, 0);
+                Level.setTile(getPlayerX() -1, getPlayerY() +3, getPlayerZ() -3, 90, 0);
+                }
+            }));
+            modLayout.addView(portal);
+		
 		var button13 = new Button(MainActivity);
 button13.setText("Sugar farm");
             button13.setOnClickListener(new View.OnClickListener({
@@ -2001,15 +2039,6 @@ somd = false
 }
             }));
             modLayout.addView(hst);*/
-
-var bmsg = new android.widget.Button(ctx);
-          bmsg.setText("Blank message");
-            bmsg.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
-Server.sendChat("§§");
-}
-            }));
-            modLayout.addView(bmsg);
 
 var saysome = new android.widget.Button(ctx);
             saysome.setText("BurnAura: "+(killdaura?"on":"off"));
@@ -6693,7 +6722,7 @@ var spawn70 = new Button(ctx);
             spawn70.setText("Spawn Horse");            
             spawn70.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 100);
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 23);
                 }
             }));
             spawnLayout.addView(spawn70);
