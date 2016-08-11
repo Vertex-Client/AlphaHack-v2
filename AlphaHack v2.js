@@ -1171,8 +1171,8 @@ portal.setText("Nether portal");
                 Level.setTile(getPlayerX(), getPlayerY() +4, getPlayerZ() -3, 49, 0);
                 Level.setTile(getPlayerX() +1, getPlayerY() +4, getPlayerZ() -3, 49, 0);
                 Level.setTile(getPlayerX() -1, getPlayerY() +4, getPlayerZ() -3, 49, 0);
-                Level.setTile(getPlayerX() +1, getPlayerY(), getPlayerZ() -3, 49, 0);
-                Level.setTile(getPlayerX() -1, getPlayerY(), getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() +2, getPlayerY(), getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() -2, getPlayerY(), getPlayerZ() -3, 49, 0);
                 
                 Level.setTile(getPlayerX(), getPlayerY() +1, getPlayerZ() -3, 90, 0);
                 Level.setTile(getPlayerX() +1, getPlayerY() +1, getPlayerZ() -3, 90, 0);
