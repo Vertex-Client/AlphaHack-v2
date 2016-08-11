@@ -16,7 +16,7 @@ ALPHAHack v2 is a remake of AlphaHack 0.8.1
 - [x] 0.8.2 Nuke menu
 - [ ] 0.8.1 Particle menu incomplete (Some crashes & may add more features)
 - [x] 0.15.6 Spawn menu
-- [ ] 0.8.1 Speed menu incomplete (May add more features)
+- [x] 0.8.1 Speed menu
 - [ ] 0.8.1 Teleport menu incomplete (Some crashes & may add more features)
 - [ ] 0.8.1 Time menu incomplete (May add more features)
 - [ ] 0.8.1 Weather menu incomplete (Some crashes & may add more features)
