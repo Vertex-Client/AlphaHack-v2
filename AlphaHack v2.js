@@ -1102,6 +1102,18 @@ noclip = false;
 }
             }));
             cheatLayout.addView(nowall);
+            
+            var online = new Button(MainActivity);
+online.setText("Players online");
+            online.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+var b_x023489a = Server.getAllPlayerNames();
+for (var i = 0; i < b_x023489a.length; i++) {
+  clientMessage("Players online: \n"+b_x023489a[i]);
+}
+                }
+            }));
+            cheatLayout.addView(online);
 
             cheat = new PopupWindow(cheatLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
             cheat.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
