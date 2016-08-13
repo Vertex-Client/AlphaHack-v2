@@ -602,31 +602,31 @@ ctx.runOnUiThread(new Runnable({ run: function(){
             credit1.setTextSize(20);
             credit1.setText("Godsoft029 for providing JS support & some of his scripts.");
             credit1.setTextColor(Color.GREEN);
-            credit.addView(credit1);
+            creditLayout.addView(credit1);
             
             var credit2 = new TextView(MainActivity);
             credit2.setTextSize(20);
             credit2.setText("Peacestorm / vertex for some of their scripts & ideas.");
             credit2.setTextColor(Color.BLUE);
-            credit.addView(credit2);
+            creditLayout.addView(credit2);
             
             var credit3 = new TextView(MainActivity);
             credit3.setTextSize(20);
             credit3.setText("AJ170 for ideas & adding 'clear inventory'.");
             credit3.setTextColor(Color.YELLOW);
-            credit.addView(credit3);
+            creditLayout.addView(credit3);
             
             var credit4 = new TextView(MainActivity);
             credit4.setTextSize(20);
             credit4.setText("APRIC0CKS for ideas & adding 'glide'.");
             credit4.setTextColor(Color.WHITE);
-            credit.addView(credit4);
+            creditLayout.addView(credit4);
             
             var credit5 = new TextView(MainActivity);
             credit5.setTextSize(20);
             credit5.setText("Johnmacrocraft for korean translate & adding 'block protect'.");
             credit5.setTextColor(Color.RED);
-            credit.addView(credit5);
+            creditLayout.addView(credit5);
 			
 credit = new PopupWindow(creditLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1, ctx.getWindowManager().getDefaultDisplay().getHeight());
             credit.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#000000")));
