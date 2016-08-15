@@ -110,6 +110,8 @@ var somd = false;
 var desktop = false;
 var killdaura = false;
 var ban = false;
+var useFire = false;
+var useNether = false;
 
 //ParticleType.angryVillager;
 var particle1 = false;
@@ -1333,6 +1335,39 @@ ctx.runOnUiThread(new Runnable({ run: function(){
 portal.setText("Nether portal");
             portal.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
+                new9();
+                }
+            }));
+            modLayout.addView(portal);
+            
+            function new9() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+fov = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var select1 = new android.widget.Button(ctx);
+var select2 = new android.widget.Button(ctx);
+var Dialog = new android.app.Dialog(ctx);
+//var Exit = new android.widget.Button(ctx);
+ 
+Dialog.setTitle("Select");
+Dialog.setContentView(Layer);
+ 
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+ 
+Layer.addView(select1);
+
+Layer.addView(select2);
+
+//Layer.addView(Exit);
+ 
+            select1.setText("Use nether block");
+            select1.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+useNether = true;
+if(useNether){
                 Level.setTile(getPlayerX(), getPlayerY() -1, getPlayerZ() -3, 49, 0);
                 Level.setTile(getPlayerX() +1, getPlayerY() -1, getPlayerZ() -3, 49, 0);
                 Level.setTile(getPlayerX() -1, getPlayerY() -1, getPlayerZ() -3, 49, 0);
@@ -1370,8 +1405,65 @@ portal.setText("Nether portal");
                 Level.setTile(getPlayerX() +1, getPlayerY() +3, getPlayerZ() -3, 90, 0);
                 Level.setTile(getPlayerX() -1, getPlayerY() +3, getPlayerZ() -3, 90, 0);
                 }
+Dialog.dismiss();
+showMenuBtn();
+                }
             }));
-            modLayout.addView(portal);
+             
+            select2.setText("Use fire block");
+            select2.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+useFire = true;
+if(useFire){
+                Level.setTile(getPlayerX(), getPlayerY() -1, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() +1, getPlayerY() -1, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() -1, getPlayerY() -1, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() +2, getPlayerY() -1, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() -2, getPlayerY() -1, getPlayerZ() -3, 49, 0);
+              
+                Level.setTile(getPlayerX() +2, getPlayerY() +1, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() -2, getPlayerY() +1, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() +2, getPlayerY() +2, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() -2, getPlayerY() +2, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() +2, getPlayerY() +3, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() -2, getPlayerY() +3, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() +2, getPlayerY() +4, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() -2, getPlayerY() +4, getPlayerZ() -3, 49, 0);
+                
+                Level.setTile(getPlayerX(), getPlayerY() +4, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() +1, getPlayerY() +4, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() -1, getPlayerY() +4, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() +2, getPlayerY(), getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() -2, getPlayerY(), getPlayerZ() -3, 49, 0);
+                
+                Level.setTile(getPlayerX(), getPlayerY() +1, getPlayerZ() -3, 51, 0);
+                }
+Dialog.dismiss();
+showMenuBtn();
+                }
+            }));
+Exit.setText("Off");
+ 
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ 
+ exporb = false;
+ lightning = false;
+ arrow = false;
+ primedtnt = false;
+Dialog.dismiss();
+showMenuBtn();
+}
+});
+ 
+new9.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+new9.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+new9.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The new Dialog Is Malfunctioning:"+e);
+}
+}});
+}
 		
 		var button13 = new Button(MainActivity);
 button13.setText("Sugar farm");
@@ -3870,10 +3962,56 @@ ctx.runOnUiThread(new Runnable({ run: function(){
             button.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 XGive();
-xmenu.dismiss();
+enchant.dismiss();
                 }
             }));
             enchantLayout.addView(button);
+            
+            function XGive() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var XP = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter XP Amount");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(XP);
+Layer.addView(Exit);
+
+XP.setText("");
+XP.setHint("EXP");
+Exit.setText("GET exp");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+L=XP.getText();
+Dialog.dismiss();
+XG();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The XP Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function XG() {
+Server.getPort()
+Player.setLevel(Math.round(L));
+if(Server.getPort()!="0")Server.sendChat("/xp " + L + Player.getName(Player.getEntity()));
+}
 
 var ena = new Button(ctx);
             ena.setText("Aqua Affinity");
