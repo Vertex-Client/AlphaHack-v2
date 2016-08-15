@@ -8759,7 +8759,7 @@ if(grief)Level.setTile(Player.getPointedBlockX(), Player.getPointedBlockY(), Pla
 if(jump){
 	if(Entity.getVelY(getPlayerEnt())< -0.1){
 		setVelY(getPlayerEnt(),0.8);
-		if(Entity.getVelY(getPlayerEnt()))=="0.19")setVelY(getPlayerEnt(),0);
+		if(Entity.getVelY(getPlayerEnt())=="0.19")setVelY(getPlayerEnt(),0);
 	}
 }
 }
