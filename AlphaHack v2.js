@@ -44,6 +44,7 @@ var offtime = 0;
 var horseheart = "";
 var newage = "";
 var vid = "11";
+var seconds = "1000";
 
 var GUISize = "2";
 
@@ -750,7 +751,7 @@ if(antispam==true)bypass1.setTextColor(Color.GREEN);
 bypass1.setText("Anti-spam bypass");
 if(antispam == true){
 bypass1.setTextColor(Color.GREEN);
-spa();
+spa2();
 antispam = true;
 }
 if(antispam == false){
@@ -761,6 +762,72 @@ antispam = false;
                 }
             }));
             cheatLayout.addView(bypass1);
+            
+            function spa2() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+abc = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var m1 = new android.widget.EditText(ctx);
+var select1 = new android.widget.Button(ctx);
+var select2 = new android.widget.Button(ctx);
+var select3 = new android.widget.Button(ctx);
+var Dialog = new android.app.Dialog(ctx);
+ 
+Dialog.setTitle("Enter text & select");
+Dialog.setContentView(Layer);
+ 
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+
+Layer.addView(m1);
+m1.setText("AlphaHack!");
+ 
+Layer.addView(select1);
+
+Layer.addView(select2);
+
+Layer.addView(select3);
+ 
+            select1.setText("LBSG Bypass");
+            select1.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+text =m1.getText();
+seconds = "2000";
+Dialog.dismiss();
+showMenuBtn();
+                }
+            }));
+             
+            select2.setText("Mineplex Bypass");
+            select2.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+text =m1.getText();
+seconds = "3000";
+Dialog.dismiss();
+showMenuBtn();
+                }
+            }));
+            
+            select3.setText("Simple Bypass");
+            select3.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+text =m1.getText();
+var seconds = "1000";
+Dialog.dismiss();
+showMenuBtn();
+                }
+            }));
+ 
+new10.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+new10.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+new10.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The bypass Dialog Is Malfunctioning:"+e);
+}
+}});
+}
 		
 		var worldInfo = new Button(MainActivity);
             worldInfo.setText("World info");
@@ -8692,6 +8759,7 @@ if(grief)Level.setTile(Player.getPointedBlockX(), Player.getPointedBlockY(), Pla
 if(jump){
 	if(Entity.getVelY(getPlayerEnt())< -0.1){
 		setVelY(getPlayerEnt(),0.8);
+		if(Entity.getVelY(getPlayerEnt()))=="0.19")setVelY(getPlayerEnt(),0);
 	}
 }
 }
@@ -9015,7 +9083,7 @@ function rptask3() {
                     nz = getPlayerZ();
                     eval(rptask3())
                 }
-            }), 2000)
+            }), seconds)
         }
     }))
 }
