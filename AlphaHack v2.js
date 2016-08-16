@@ -1509,20 +1509,7 @@ Dialog.dismiss();
 showMenuBtn();
                 }
             }));
-Exit.setText("Off");
- 
-Exit.setOnClickListener(new android.view.View.OnClickListener(){
-onClick: function(view){
- 
- exporb = false;
- lightning = false;
- arrow = false;
- primedtnt = false;
-Dialog.dismiss();
-showMenuBtn();
-}
-});
- 
+
 new9.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 new9.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 new9.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
@@ -8759,7 +8746,12 @@ if(grief)Level.setTile(Player.getPointedBlockX(), Player.getPointedBlockY(), Pla
 if(jump){
 	if(Entity.getVelY(getPlayerEnt())< -0.1){
 		setVelY(getPlayerEnt(),0.8);
-		if(Entity.getVelY(getPlayerEnt())=="0.19")setVelY(getPlayerEnt(),0);
+		for (var m = 0; m < 5; m++){
+			if(m==3){
+		if(Entity.getVelY(getPlayerEnt())=="0.8")setVelY(getPlayerEnt(),0);
+		setVelY(getPlayerEnt(),0);
+			}
+		}
 	}
 }
 }
