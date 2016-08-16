@@ -8746,14 +8746,8 @@ if(grief)Level.setTile(Player.getPointedBlockX(), Player.getPointedBlockY(), Pla
 if(jump){
 	if(Entity.getVelY(getPlayerEnt())< -0.1){
 		setVelY(getPlayerEnt(),0.8);
-		for (var m = 0; m < 5; m++){
-			if(m==3){
-		if(Entity.getVelY(getPlayerEnt())=="0.8")setVelY(getPlayerEnt(),0);
-		setVelY(getPlayerEnt(),0);
-			}
 		}
 	}
-}
 }
 
 function devpardon() {
