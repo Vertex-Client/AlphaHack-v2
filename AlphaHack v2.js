@@ -848,7 +848,7 @@ new10.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 new10.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 new10.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
-print("The bypass Dialog Is Malfunctioning:"+e);
+print("Bypass error: "+e);
 }
 }});
 }
@@ -1538,7 +1538,7 @@ new9.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 new9.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 new9.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
-print("The new Dialog Is Malfunctioning:"+e);
+print("error: "+e);
 }
 }});
 }
@@ -2064,7 +2064,7 @@ new2.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 new2.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 new2.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
-print("The new Dialog Is Malfunctioning:"+e);
+print("Error :"+e);
 }
 }});
 }
