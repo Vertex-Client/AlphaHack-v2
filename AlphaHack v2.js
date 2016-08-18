@@ -267,7 +267,7 @@ callback(new Array("Error"));
                 }
 function newLevel(){ 
 clientMessage("§2≡≡=======»§a>§9 α §a<§2«======≡≡§f§r");
-clientMessage(client + "§7Server §emc31069.imagical.host - 31069" + "\n" + "§aKik§f: ArceusMatt" + "\n" + "§bTwitter§f: @ArceusMatt" + "\n" + "§cGoogle+§f: Arceus matt" + "\n" + "§fYou§4tube§f: Arceus Matt");
+clientMessage(client + "\n§aKik§f: ArceusMatt" + "\n" + "§bTwitter§f: @ArceusMatt" + "\n" + "§cGoogle+§f: Arceus matt" + "\n" + "§fYou§4tube§f: Arceus Matt");
 clientMessage("§2≡≡=======»§a>§9 α §a<§2«======≡≡§f§r\n\n");
 getUpdate(function(info){clientMessage("")});
 }
