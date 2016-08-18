@@ -689,6 +689,230 @@ hackk = false;
 			}
 		});
 		miscLayout.addView(pass);
+		
+		var ht1 = new android.widget.Button(ctx);
+		ht1.setText("How to bypass ban");
+		ht1.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+var alert = new android.app.AlertDialog.Builder(ctx); 
+/*alert.setTitle(""); */
+
+var scroll = new android.widget.ScrollView(ctx); 
+var layout = new android.widget.LinearLayout(ctx); 
+layout.setOrientation(1);
+
+alert.setTitle("How to bypass a /ban");
+ alert.setMessage("OP ban you with /ban\nTo get unbanned:\n#1 let an OP unban you\n#2 Server reset can unban all players\n#3 Change your username\n/ban only bans your username");
+
+alert.setPositiveButton("Exit all", new android.content.DialogInterface.OnClickListener(){ 
+  onClick: function(viewarg){
+    
+dialog.dismiss();
+misc.dismiss();
+      }});
+
+alert.setNegativeButton("Back to menu", new android.content.DialogInterface.OnClickListener(){ 
+   onClick: function(viewarg){
+
+dialog.dismiss();
+      }});
+var dialog = alert.create();
+dialog.show();
+			}
+		});
+		miscLayout.addView(ht1);
+
+var ht2 = new android.widget.Button(ctx);
+		ht2.setText("How to bypass ip ban");
+		ht2.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+var alert = new android.app.AlertDialog.Builder(ctx); 
+/*alert.setTitle(""); */
+
+var scroll = new android.widget.ScrollView(ctx); 
+var layout = new android.widget.LinearLayout(ctx); 
+layout.setOrientation(1);
+
+alert.setTitle("How to bypass a /ban-ip");
+ alert.setMessage("OP ip ban you with /ban-ip\nTo get unbanned:\n#1 let an OP unban you\n#2 Server reset can unban all players\n#3 Change IP with a VPN\n/ban-ip only bans your public ip address");
+
+alert.setPositiveButton("Exit all", new android.content.DialogInterface.OnClickListener(){ 
+  onClick: function(viewarg){
+    
+dialog.dismiss();
+misc.dismiss();
+      }});
+
+alert.setNegativeButton("Back to menu", new android.content.DialogInterface.OnClickListener(){ 
+   onClick: function(viewarg){
+
+dialog.dismiss();
+      }});
+var dialog = alert.create();
+dialog.show();
+			}
+		});
+		miscLayout.addView(ht2);
+
+var ht3 = new android.widget.Button(ctx);
+		ht3.setText("How to bypass CID/devban");
+		ht3.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+var alert = new android.app.AlertDialog.Builder(ctx); 
+/*alert.setTitle(""); */
+
+var scroll = new android.widget.ScrollView(ctx); 
+var layout = new android.widget.LinearLayout(ctx); 
+layout.setOrientation(1);
+
+alert.setTitle("How to bypass a /devban");
+ alert.setMessage("You can get out of a cid ban in 3 ways.\n#1 get Unbanned\n#2 server resets\n#3 Go in your file storage and go to Games > com.mojang > minecraftpe > clientId.txt and change the id to any number\nWhen an OP uses /devban on you it bans your device(MCPE Client ID) in the server and puts your ID in a type of saving system that doesn't allow you to join, /devban is a command the server has if they download a plugin\n-Arceus_matt");
+
+alert.setPositiveButton("Exit all", new android.content.DialogInterface.OnClickListener(){ 
+  onClick: function(viewarg){
+    
+dialog.dismiss();
+misc.dismiss();
+      }});
+
+alert.setNegativeButton("Back to menu", new android.content.DialogInterface.OnClickListener(){ 
+   onClick: function(viewarg){
+
+dialog.dismiss();
+      }});
+var dialog = alert.create();
+dialog.show();
+			}
+		});
+		miscLayout.addView(ht3);
+		
+		var ht4 = new android.widget.Button(ctx);
+		ht4.setText("How to bypass Alias");
+		ht4.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+var alert = new android.app.AlertDialog.Builder(ctx); 
+/*alert.setTitle(""); */
+
+var scroll = new android.widget.ScrollView(ctx); 
+var layout = new android.widget.LinearLayout(ctx); 
+layout.setOrientation(1);
+
+alert.setTitle("How to bypass /alias");
+ alert.setMessage("Eventually you'll get banned by username,\nYou can hide your username from alias\n#1 Change IP\n#2 server resets\n#3 no longer targeted\nWhen an OP uses /alias on you it shows your usernames by IP in the server, /alias is a command the server has if they download a plugin\n-Arceus_matt");
+
+alert.setPositiveButton("Exit all", new android.content.DialogInterface.OnClickListener(){ 
+  onClick: function(viewarg){
+    
+dialog.dismiss();
+misc.dismiss();
+      }});
+
+alert.setNegativeButton("Back to menu", new android.content.DialogInterface.OnClickListener(){ 
+   onClick: function(viewarg){
+
+dialog.dismiss();
+      }});
+var dialog = alert.create();
+dialog.show();
+			}
+		});
+		miscLayout.addView(ht4);
+		
+		var opp = new Button(ctx);
+            opp.setText("OP perm (Not hack)");        
+            opp.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){ 
+Server.sendChat("/setuperm " + Player.getName(Player.getEntity()) + space + operm);
+Server.sendChat("/setuperm " + Player.getName(Player.getEntity()) + space + operm2);
+clientMessage(client + "§7(gives you permanent op if you were op before, if server closes you can op yourself instead of losing it after server closes.)");
+                }
+            }));
+            miscLayout.addView(opp);
+            
+            var sit = new android.widget.Button(ctx);
+		sit.setText("Image lookup");
+		sit.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+web3(); 
+//print("Loading web page");
+			}
+		});
+		miscLayout.addView(sit);
+
+      function web3()
+      {
+      var urls2 = new Intent(ctx);
+	  urls2.setAction(Intent.ACTION_VIEW);
+                    urls2.setData(Uri.parse("http://www.tineye.com"));
+                    ctx.startActivity(urls2);
+      }
+
+var sid = new android.widget.Button(ctx);
+		sid.setText("View website code");
+		sid.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+cmenu.dismiss();
+             scc();
+			}
+		});
+		miscLayout.addView(sid);
+
+function scc() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+scc = new android.widget.PopupWindow();
+var Layer5 = new android.widget.LinearLayout(ctx);
+var sc1 = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter website");
+Dialog.setContentView(Layer5);
+
+Layer5.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer5.addView(sc1);
+Layer5.addView(Exit);
+
+sc1.setText("");
+sc1.setHint("www.example.com");
+Exit.setText("View code");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+sc2 =sc1.getText();
+Dialog.dismiss();
+sc3();
+print("Loading web page");
+showMenuBtn();
+}
+});
+
+scc.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+scc.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+scc.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The scc Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+      function sc3()
+      {
+      ctx.runOnUiThread(new java.lang.Runnable({run: function(){
+      var webs = new android.webkit.WebView(ctx);
+      var webset = webs.getSettings();
+      webset.setJavaScriptEnabled(true);
+      webs.setWebChromeClient(new android.webkit.WebChromeClient());
+      webs.setWebViewClient(new android.webkit.WebViewClient());
+      webs.loadUrl('http://www.iwebtool.com/code_viewer?domain=' + sc2);
+/*Site URL*/
+      new android.app.AlertDialog.Builder(ctx).setView(webs).show();
+      }}));
+      }
+      
+      
 
             misc = new PopupWindow(miscLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
             misc.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -735,6 +959,75 @@ var exit = new android.widget.Button(ctx);
 			}
 		});
 		settingsLayout.addView(exit);
+		
+		var g1 = new Button(ctx);
+            g1.setText("Menu center");       
+            g1.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIPos = Gravity.CENTER;
+GUIPos2 = Gravity.CENTER;
+GUIPos3 = Gravity.CENTER;
+                }
+            }));
+            settingsLayout.addView(g1);
+
+var g2 = new Button(ctx);
+            g2.setText("Menu right");       
+            g2.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIPos = Gravity.RIGHT;
+GUIPos2 = Gravity.RIGHT;
+GUIPos3 = Gravity.RIGHT;
+                }
+            }));
+            settingsLayout.addView(g2);
+
+var g3 = new Button(ctx);
+            g3.setText("Menu left");       
+            g3.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIPos = Gravity.LEFT;
+GUIPos2 = Gravity.LEFT;
+GUIPos3 = Gravity.LEFT;
+                }
+            }));
+            settingsLayout.addView(g3);
+			
+			var gs0 = new Button(ctx);
+            gs0.setText("Menu Size 1");       
+            gs0.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUISize = 4;
+                }
+            }));
+            settingsLayout.addView(gs0);
+
+var gs1 = new Button(ctx);
+            gs1.setText("Menu Size 2");       
+            gs1.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUISize = 3;
+                }
+            }));
+            settingsLayout.addView(gs1);
+
+var gs2 = new Button(ctx);
+            gs2.setText("Menu Size normal");       
+            gs2.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUISize = 2;
+                }
+            }));
+            settingsLayout.addView(gs2);
+
+var gs3 = new Button(ctx);
+            gs3.setText("Menu Size 3");       
+            gs3.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUISize = 1;
+                }
+            }));
+            settingsLayout.addView(gs3);
 
             settings = new PopupWindow(settingsLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
             settings.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
