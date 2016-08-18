@@ -9551,7 +9551,7 @@ function rptask() {
                         Level.destroyBlock(Player.getPointedBlockX(), Player.getPointedBlockY(), Player.getPointedBlockZ(), true);
                     }
                     if (extraj){
-                    	Level.destroyBlock(x +1, y, z +1, vidd);
+                    	Level.destroyBlock(Player.getPointedBlockX() +1, Player.getPointedBlockY(), Player.getPointedBlockZ() +1, vidd);
 	Level.destroyBlock(Player.getPointedBlockX() +2, Player.getPointedBlockY(), Player.getPointedBlockZ() +2, vidd);
 	Level.destroyBlock(Player.getPointedBlockX() +3, Player.getPointedBlockY(), Player.getPointedBlockZ() +3, vidd);
 	Level.destroyBlock(Player.getPointedBlockX() +4, Player.getPointedBlockY(), Player.getPointedBlockZ() +4, vidd);
