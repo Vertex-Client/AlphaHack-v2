@@ -1989,7 +1989,7 @@ var g = new android.widget.Button(ctx);
             g.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 grief?grief=false:grief=true;
-g.setText("Grief run: "+(grief?"on":"off"));
+g.setText("Grief: "+(grief?"on":"off"));
 if(grief == true){
 new2();
 }
@@ -2005,7 +2005,7 @@ function new2() {
 ctx.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
-fov = new android.widget.PopupWindow();
+new2 = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(ctx);
 var select1 = new android.widget.Button(ctx);
 var select2 = new android.widget.Button(ctx);
@@ -9085,6 +9085,8 @@ function rptask3() {
                 if(antispam){
                 	offtime++
                         Server.sendChat(offtime+" "+text+" "+offtime);
+                        Server.getPort();
+                	if(Server.getPort()=="0")clientMessage(offtime+" "+text+" "+offtime);
                     }
                     nx = getPlayerX();
                     ny = getPlayerY();
