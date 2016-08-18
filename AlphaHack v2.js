@@ -33,18 +33,28 @@ var update;
 var num0 = 0;
 var vidd = true;
 var viddd = "§9";
-var text = "AlphaHack!";
+var text = "AlphαHαck!";
 var space = " ";
 var version = "0.8.2";
 if(version=="0.8.2")version = "Beta";
 var chestTracersRange = 10;
 var chestTracersGroundMode = "on";
 var chestTracersParticle = "on";
+var playerTracersRange = 10;
+var playerTracersGroundMode = "on";
+var playerTracersParticle = "on";
 var offtime = 0;
 var horseheart = "";
 var newage = "";
 var vid = "11";
 var seconds = "1000";
+var numhack = 0;
+var client = "§f<§9AlphαHαck§f> ";
+var copyright = "©";
+var trademark = "AlphaHackPE ™";
+var modpeFolder = ctx.getDir("ModPE", 0);
+var modpeFile = new java.io.File(modpeFolder, "AlphaHack v2.js");
+var perm = "*";
 
 var GUISize = "2";
 
@@ -179,6 +189,37 @@ var particle31 = false;
 //spell3
 var particle32 = false;
 
+var GUIColor1 = Color.TRANSPARENT;
+var GUIColor2 = Color.BLACK;
+var GUIColor3 = Color.WHITE;
+var GUIColor4 = Color.RED;
+var GUIColor5 = Color.BLUE;
+var GUIColor6 = Color.GRAY;
+var GUIColor7 = Color.LTGRAY;
+var GUIColor8 = Color.YELLOW;
+var GUIColor9 = Color.CYAN;
+var GUIColor10 = Color.DKGRAY;
+var GUIColor11 = Color.GREEN;
+var GUIColor12 = Color.MAGENTA;
+
+var GUIName = Color.WHITE;
+
+var GUIPos = Gravity.CENTER;
+
+var GUIBtns = Color.BLACK;
+
+var GUIBtns2 = Color.BLACK;
+var GUIBtns3 = Color.WHITE;
+var GUIBtns4 = Color.RED;
+var GUIBtns5 = Color.BLUE;
+var GUIBtns6 = Color.GRAY;
+var GUIBtns7 = Color.LTGRAY;
+var GUIBtns8 = Color.YELLOW;
+var GUIBtns9 = Color.CYAN;
+var GUIBtns10 = Color.DKGRAY;
+var GUIBtns11 = Color.GREEN;
+var GUIBtns12 = Color.MAGENTA;
+
 var AlphaHack = {};
 AlphaHack.drawTracer = function(x, y, z, groundMode, particleName) {
 	for(var count = 0; count <= 25; count++) {
@@ -207,28 +248,11 @@ var r = new java.lang.Runnable({
                 var update = strFileContents;
                 var update = JSON.parse(strFileContents+"");
 
-if(update != version){
-startUpdate();
+if(update.status.equals("success")){
+callback(new Array(update.version));
 }else{
 print("Error");
-callback(new Array("Error","Error","Error"));
-}
-                }catch(e){
-                	
-                clientMessage(e);
-                clientMessage(update);
-                clientMessage("Line: #"+e.lineNumber);
-                
-                }
-                }});
-                var th = new java.lang.Thread(r);
-    th.start();
-                }
-/*if(mlgtext.status.equals("success")){
-callback(new Array(mlgtext.query, mlgtext.country, mlgtext.regionName));
-}else{
-print("Error");
-callback(new Array("Error","Error","Error"));
+callback(new Array("Error"));
 }
                 }catch(e){
                 	
@@ -240,12 +264,12 @@ callback(new Array("Error","Error","Error"));
                 }});
                 var th = new java.lang.Thread(r);
     th.start();
-                }*/
-function newLevel(){
+                }
+function newLevel(){ 
+clientMessage("§2≡≡=======»§a>§9 α §a<§2«======≡≡§f§r");
+clientMessage(client + "§7Server §emc31069.imagical.host - 31069" + "\n" + "§aKik§f: ArceusMatt" + "\n" + "§bTwitter§f: @ArceusMatt" + "\n" + "§cGoogle+§f: Arceus matt" + "\n" + "§fYou§4tube§f: Arceus Matt");
+clientMessage("§2≡≡=======»§a>§9 α §a<§2«======≡≡§f§r\n\n");
 getUpdate(function(info){clientMessage("")});
-}
-function startUpdate(){
-	clientMessage("There is a new update!");
 }
 
 //main menu
@@ -638,7 +662,7 @@ credit = new PopupWindow(creditLayout1, ctx.getWindowManager().getDefaultDisplay
       bg.setStroke(10,Color.BLACK);
 creditLayout1.setBackgroundDrawable(bg);
 creditLayout1.setPadding(20,0,20,0);
-            credit.showAtLocation(ctx.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
+            credit.showAtLocation(ctx.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
                 Toast.makeText(ctx, "An error occured: " + error, 1).show();
             }
@@ -654,7 +678,7 @@ creditLayout1.setPadding(20,0,20,0);
       bg.setStroke(10,Color.BLACK);
 miscLayout1.setBackgroundDrawable(bg);
 miscLayout1.setPadding(20,0,20,0);
-            misc.showAtLocation(ctx.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
+            misc.showAtLocation(ctx.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
                 Toast.makeText(ctx, "An error occured: " + error, 1).show();
             }
@@ -700,7 +724,7 @@ var exit = new android.widget.Button(ctx);
       bg.setStroke(10,Color.BLACK);
 settingsLayout1.setBackgroundDrawable(bg);
 settingsLayout1.setPadding(20,0,20,0);
-            settings.showAtLocation(ctx.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
+            settings.showAtLocation(ctx.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
                 Toast.makeText(ctx, "An error occured: " + error, 1).show();
             }
@@ -1359,7 +1383,7 @@ for (var i = 0; i < b_x023489a.length; i++) {
       bg.setStroke(10,Color.BLACK);
 cheatLayout1.setBackgroundDrawable(bg);
 cheatLayout1.setPadding(20,0,20,0);
-            cheat.showAtLocation(ctx.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
+            cheat.showAtLocation(ctx.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
                 Toast.makeText(ctx, "An error occured: " + error, 1).show();
             }
@@ -2627,7 +2651,7 @@ lightningaura = false;
       bg.setStroke(10,Color.BLACK);
 modLayout1.setBackgroundDrawable(bg);
 modLayout1.setPadding(20,0,20,0);
-            mod.showAtLocation(ctx.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
+            mod.showAtLocation(ctx.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
                 Toast.makeText(ctx, "An error occured: " + error, 1).show();
             }
@@ -3971,7 +3995,7 @@ Entity.addEffect(getPlayerEnt(), MobEffect.movementSpeed, s*l, 0, false, true);
       bg.setStroke(10,Color.BLACK);
 effectLayout1.setBackgroundDrawable(bg);
 effectLayout1.setPadding(20,0,20,0);
-            effect.showAtLocation(ctx.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
+            effect.showAtLocation(ctx.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
                 Toast.makeText(ctx, "An error occured: " + error, 1).show();
             }
@@ -5425,7 +5449,7 @@ Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,ll);
       bg.setStroke(10,Color.BLACK);
 enchantLayout1.setBackgroundDrawable(bg);
 enchantLayout1.setPadding(20,0,20,0);
-            enchant.showAtLocation(ctx.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
+            enchant.showAtLocation(ctx.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
                 Toast.makeText(ctx, "An error occured: " + error, 1).show();
             }
@@ -5619,7 +5643,7 @@ addItemInventory(293, 1, 0);
       bg.setStroke(10,Color.BLACK);
 giveLayout1.setBackgroundDrawable(bg);
 giveLayout1.setPadding(20,0,20,0);
-            give.showAtLocation(ctx.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
+            give.showAtLocation(ctx.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
                 Toast.makeText(ctx, "An error occured: " + error, 1).show();
             }
@@ -6003,7 +6027,7 @@ Entity.setRenderType(Player.getEntity(), EntityRenderType.zombie);
       bg.setStroke(10,Color.BLACK);
 morphLayout1.setBackgroundDrawable(bg);
 morphLayout1.setPadding(20,0,20,0);
-            morph.showAtLocation(ctx.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
+            morph.showAtLocation(ctx.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
                 Toast.makeText(ctx, "An error occured: " + error, 1).show();
             }
@@ -6181,7 +6205,7 @@ var n11 = new Button(ctx);
       bg.setStroke(10,Color.BLACK);
 nukeLayout1.setBackgroundDrawable(bg);
 nukeLayout1.setPadding(20,0,20,0);
-            nuke.showAtLocation(ctx.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
+            nuke.showAtLocation(ctx.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
                 Toast.makeText(ctx, "An error occured: " + error, 1).show();
             }
@@ -6740,7 +6764,7 @@ clientMessage("§7Particle 32 is false");
       bg.setStroke(10,Color.BLACK);
 particleLayout1.setBackgroundDrawable(bg);
 particleLayout1.setPadding(20,0,20,0);
-            particle.showAtLocation(ctx.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
+            particle.showAtLocation(ctx.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
                 Toast.makeText(ctx, "An error occured: " + error, 1).show();
             }
@@ -7129,7 +7153,7 @@ var spawn70 = new Button(ctx);
       bg.setStroke(10,Color.BLACK);
 spawnLayout1.setBackgroundDrawable(bg);
 spawnLayout1.setPadding(20,0,20,0);
-            spawn.showAtLocation(ctx.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
+            spawn.showAtLocation(ctx.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
                 Toast.makeText(ctx, "An error occured: " + error, 1).show();
             }
@@ -7428,7 +7452,7 @@ ModPE.setGameSpeed(nspee);
       bg.setStroke(10,Color.BLACK);
 speedLayout1.setBackgroundDrawable(bg);
 speedLayout1.setPadding(20,0,20,0);
-            speed.showAtLocation(ctx.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
+            speed.showAtLocation(ctx.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
                 Toast.makeText(ctx, "An error occured: " + error, 1).show();
             }
@@ -7555,7 +7579,7 @@ taptp = false;
       bg.setStroke(10,Color.BLACK);
 teleportLayout1.setBackgroundDrawable(bg);
 teleportLayout1.setPadding(20,0,20,0);
-            teleport.showAtLocation(ctx.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
+            teleport.showAtLocation(ctx.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
                 Toast.makeText(ctx, "An error occured: " + error, 1).show();
             }
@@ -7941,7 +7965,7 @@ Server.sendChat("/time set 23000");
       bg.setStroke(10,Color.BLACK);
 timeLayout1.setBackgroundDrawable(bg);
 timeLayout1.setPadding(20,0,20,0);
-            time.showAtLocation(ctx.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
+            time.showAtLocation(ctx.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
                 Toast.makeText(ctx, "An error occured: " + error, 1).show();
             }
@@ -8029,7 +8053,7 @@ Server.sendChat("/weather clear");
       bg.setStroke(10,Color.BLACK);
 weatherLayout1.setBackgroundDrawable(bg);
 weatherLayout1.setPadding(20,0,20,0);
-            weather.showAtLocation(ctx.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
+            weather.showAtLocation(ctx.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
                 Toast.makeText(ctx, "An error occured: " + error, 1).show();
             }
@@ -8094,7 +8118,7 @@ Server.sendChat("/weather rain");
       bg.setStroke(10,Color.BLACK);
 menuLayout1.setBackgroundDrawable(bg);
 menuLayout1.setPadding(20,0,20,0);
-            menu.showAtLocation(MainActivity.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
+            menu.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
                 Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
             }
@@ -9131,6 +9155,11 @@ function rptask() {
                         Server.sendChat(text);
                         Server.getPort();
                 	if(Server.getPort()=="0")clientMessage(text);
+                    }
+                    if(hackk){
+                    	numhack++
+                    	Server.sendChat("/login "+numhack);
+                    	clientMessage("Trying: "+numhack);
                     }
                     if (autodestroy) {
                         Level.destroyBlock(Player.getPointedBlockX(), Player.getPointedBlockY(), Player.getPointedBlockZ(), true);
