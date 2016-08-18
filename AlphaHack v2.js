@@ -256,7 +256,7 @@ callback(new Array("Error"));
 }
                 }catch(e){
                 	
-                clientMessage(e+" "+update);
+                clientMessage(e+"");
                 
                 clientMessage(e.lineNumber);
                 
@@ -669,7 +669,26 @@ creditLayout1.setPadding(20,0,20,0);
     }}));
 }
 
+var pass = new android.widget.Button(ctx);
+		pass.setText("Brute force (Numbers)");
+		pass.setTextColor(Color.RED);
+if(hackk==true)pass.setTextColor(Color.GREEN);
+		pass.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             hackk?hackk=false:hackk=true;
+pass.setText("Brute force (Numbers)");
+if(hackk == true){
+pass.setTextColor(Color.GREEN);
+hackk = true;
+}
+if(hackk == false){
+pass.setTextColor(Color.RED);
 
+hackk = false;
+}
+			}
+		});
+		miscLayout.addView(pass);
 
             misc = new PopupWindow(miscLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
             misc.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -686,7 +705,7 @@ miscLayout1.setPadding(20,0,20,0);
 }
 
 var settings = new android.widget.Button(ctx);
-settings.setText("Settings ??");
+settings.setText("Settings");
 settings.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 settings.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -907,7 +926,7 @@ liquidwalk = false;
                     Player.setCanFly(true);
 Server.sendChat("/gamemode 1");
 Server.sendChat("/gamemode creative");
-clientMessage("§7Your gamemode was updated to creative mode!");
+clientMessage(client + "§7Your gamemode was updated to creative mode!");
                 }
             }));
             cheatLayout.addView(creative);
@@ -920,7 +939,7 @@ clientMessage("§7Your gamemode was updated to creative mode!");
                     if(Player.setCanFly(true))Player.setCanFly(false);
 Server.sendChat("/gamemode 0");
 Server.sendChat("/gamemode survival");
-clientMessage("§7Your gamemode was updated to survival mode!");
+clientMessage(client + "§7Your gamemode was updated to survival mode!");
                 }
             }));
             cheatLayout.addView(survival);
@@ -933,7 +952,7 @@ clientMessage("§7Your gamemode was updated to survival mode!");
                     if(Player.setCanFly(true))Player.setCanFly(false);
 Server.sendChat("/gamemode 2");
 Server.sendChat("/gamemode adventure");
-clientMessage("§7Your gamemode was updated to adventure mode!");
+clientMessage(client + "§7Your gamemode was updated to adventure mode!");
                 }
             }));
             cheatLayout.addView(adventure);
@@ -946,7 +965,7 @@ clientMessage("§7Your gamemode was updated to adventure mode!");
                     Player.setCanFly(true);
 Server.sendChat("/gamemode 3");
 Server.sendChat("/gamemode spectator");
-clientMessage("§7Your gamemode was updated to spectator mode!");
+clientMessage(client + "§7Your gamemode was updated to spectator mode!");
                 }
             }));
             cheatLayout.addView(spectator);
@@ -961,7 +980,7 @@ if(xray==true)button2.setTextColor(Color.GREEN);
 button2.setText("Ore view(xray)");
 if(xray == true){
 button2.setTextColor(Color.GREEN);
-clientMessage("You may crash!\nchange on/off fancy graphics for better view.");
+clientMessage(client + "You may crash!\nchange on/off fancy graphics for better view.");
 Block.setRenderLayer(1,1);
 Block.setRenderLayer(2,1);
 Block.setRenderLayer(3,1);
@@ -989,8 +1008,8 @@ xray = false;
             svr.setText("Server IP:Port");
             svr.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-clientMessage("§lIP:§r " + Server.getAddress() + " §lPort:§r " + Server.getPort());
-if(Server.getAddress()=="null" || Server.getPort()=="0")clientMessage("You are not on a server!");
+clientMessage(client + "§lIP:§r " + Server.getAddress() + " §lPort:§r " + Server.getPort());
+if(Server.getAddress()=="null" || Server.getPort()=="0")clientMessage(client + "You are not on a server!");
                 }
             }));
             cheatLayout.addView(svr);
@@ -999,9 +1018,9 @@ if(Server.getAddress()=="null" || Server.getPort()=="0")clientMessage("You are n
             itemInfo.setText("Item info"); 
             itemInfo.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-clientMessage("Item ID: " + Player.getCarriedItem());
-clientMessage("Data / damage: " + Player.getCarriedItemData());
-clientMessage("Amount in hand: " + Player.getCarriedItemCount());
+clientMessage(client + "Item ID: " + Player.getCarriedItem());
+clientMessage(client + "Data / damage: " + Player.getCarriedItemData());
+clientMessage(client + "Amount in hand: " + Player.getCarriedItemCount());
                 }
             }));
             cheatLayout.addView(itemInfo);
@@ -1010,10 +1029,10 @@ clientMessage("Amount in hand: " + Player.getCarriedItemCount());
             cidban.setText("CID/dev pardon"); 
             cidban.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-                	devpardon();
-                	
+                	for(var hk = 0; hk < 4; hk++){
+                		if(hk==3)devpardon();
+                	}
 Toast.makeText(ctx, "You will crash & be unbanned!", 1).show();
-
                 }
             }));
             cheatLayout.addView(cidban);
@@ -1304,11 +1323,11 @@ taptoid = false;
 jump?jump=false:jump=true;
 kjump.setText("Higher jumps: "+(jump?"on":"off"));
 if(jump == true){
-clientMessage("§7");
+clientMessage(client + "§7");
 jump = true;
 }
 if(jump == false){
-clientMessage("§7");
+clientMessage(client + "§7");
 jump = false;
                 }
 }
@@ -1322,7 +1341,7 @@ jump = false;
 noclip?noclip=false:noclip=true;
 nowall.setText("No clip: "+(noclip?"on":"off"));
 if(noclip == true){
-clientMessage("§7No clip / walk through walls on");
+clientMessage(client + "§7No clip / walk through walls on");
 
 Block.setShape(4, 0, 0, 0, 0.0001, 0.6, 0.0001);
 Block.setShape(5, 0, 0, 0, 0.0001, 0.6, 0.0001);
@@ -1357,7 +1376,7 @@ Block.setShape(192, 0, 0, 0, 0.0001, 0.6, 0.0001);
 noclip = true;
 }
 if(noclip == false){
-clientMessage("§7No clip / walk through walls off");
+clientMessage(client + "§7No clip / walk through walls off");
 noclip = false;
                 }
 }
@@ -1370,7 +1389,7 @@ online.setText("Players online");
                 onClick: function(viewarg){
 var b_x023489a = Server.getAllPlayerNames();
 for (var i = 0; i < b_x023489a.length; i++) {
-  clientMessage("Players online: \n"+b_x023489a[i]);
+  clientMessage(client + "Players online: \n"+b_x023489a[i]);
 }
                 }
             }));
@@ -1610,14 +1629,14 @@ antivoid = false;
 				stat22?stat22=false:stat22=true;
 status.setText("MC Status: "+(stat22?"on":"off"));
 if(stat22 == true){
-clientMessage("§7Status on");
+clientMessage(client + "§7Status on");
 Server.sendChat("/hud off");
-clientMessage("§7T = time, W = weather, B = biome, ID = item id, G = gamemode.");
+clientMessage(client + "§7T = time, W = weather, B = biome, ID = item id, G = gamemode.");
 
 stat22 = true;
 }
 if(stat22 == false){
-clientMessage("§7Status off");
+clientMessage(client + "§7Status off");
 
 stat22 = false;
  }
@@ -1632,13 +1651,13 @@ var df = new android.widget.Button(ctx);
 				nofly?nofly=false:nofly=true;
 df.setText("Disable up/down fly: "+(nofly?"on":"off"));
 if(nofly == true){
-clientMessage("§7No up/down fly is on");
+clientMessage(client + "§7No up/down fly is on");
 Player.setCanFly(false);
 
 nofly = true;
 }
 if(nofly == false){
-clientMessage("§7No up/down fly is off");
+clientMessage(client + "§7No up/down fly is off");
 Player.setCanFly(true);
 
 nofly = false;
@@ -1760,21 +1779,21 @@ var cc = new Button(ctx);
             cc.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
 
-clientMessage(" " + "\n" + " ");
+clientMessage(client + " " + "\n" + " ");
 
-clientMessage(" " + "\n" + " ");
+clientMessage(client + " " + "\n" + " ");
 
-clientMessage(" " + "\n" + " ");
+clientMessage(client + " " + "\n" + " ");
 
-clientMessage(" " + "\n" + " ");
+clientMessage(client + " " + "\n" + " ");
 
-clientMessage(" " + "\n" + " ");
+clientMessage(client + " " + "\n" + " ");
 
-clientMessage(" " + "\n" + " ");
+clientMessage(client + " " + "\n" + " ");
 
-clientMessage(" " + "\n" + " ");
+clientMessage(client + " " + "\n" + " ");
 
-clientMessage(" " + "\n" + " ");
+clientMessage(client + " " + "\n" + " ");
                 }
             }));
             modLayout.addView(cc);
@@ -1783,7 +1802,7 @@ var me = new Button(ctx);
             me.setText("My username / nametag");
             me.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){ 
-clientMessage("Username is: " + Player.getName(Player.getEntity()))
+clientMessage(client + "Username is: " + Player.getName(Player.getEntity()))
                 }
             }));
             modLayout.addView(me);
@@ -1792,7 +1811,7 @@ var d = new Button(ctx);
             d.setText("Difficulty");        
             d.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-  clientMessage("Difficulty: " + Level.getDifficulty());
+  clientMessage(client + "Difficulty: " + Level.getDifficulty());
                 }
             }));
             modLayout.addView(d);
@@ -1801,7 +1820,7 @@ var dh = new Button(ctx);
             dh.setText("Max player health");        
             dh.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-                     clientMessage("Max health: " + Entity.getMaxHealth(getPlayerEnt()));
+                     clientMessage(client + "Max health: " + Entity.getMaxHealth(getPlayerEnt()));
                 }
             }));
             modLayout.addView(dh);
@@ -1813,13 +1832,13 @@ onClick: function(viewarg){
 remode?remode=false:remode=true;
 rr.setText("Reactor time mode: "+(remode?"on":"off"));
 if(remode == true){
-clientMessage("§7Nether reactor time on");
+clientMessage(client + "§7Nether reactor time on");
  setNightMode(true);
 
 remode = true
 }
 if(remode == false){
-clientMessage("§7Nether reactor time off");
+clientMessage(client + "§7Nether reactor time off");
 setNightMode(false);
 
 remode = false
@@ -1834,12 +1853,12 @@ var cs = new android.widget.Button(ctx);
 			onClick: function(v){         deadchat?deadchat=false:deadchat=true;
 cs.setText("Sign Editor: "+(deadchat?"on":"off"));
 if(deadchat == true){
-clientMessage("§7Sign editor is on");
+clientMessage(client + "§7Sign editor is on");
 
 deadchat = true;
 }
 if(deadchat == false){
-clientMessage("§7Sign editor is off");
+clientMessage(client + "§7Sign editor is off");
 
 deadchat = false;
 }
@@ -1862,7 +1881,7 @@ var hea = new android.widget.Button(ctx);
 		hea.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              Player.setHealth(20);
-             clientMessage("§7Health healed");
+             clientMessage(client + "§7Health healed");
 			}
 		});
 		modLayout.addView(hea);
@@ -1872,7 +1891,7 @@ var hun = new android.widget.Button(ctx);
 		hun.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              Player.setHunger(25);
-             clientMessage("§7Hunger healed");
+             clientMessage(client + "§7Hunger healed");
 			}
 		});
 		modLayout.addView(hun);
@@ -1884,10 +1903,10 @@ var mm = new android.widget.Button(ctx);
 mm.setText("Infinite health: "+(stackheart?"on":"off"));
 if(stackheart == true){
 stackheart = true;
-clientMessage("§7infinite health is on");
+clientMessage(client + "§7infinite health is on");
 }
 if(stackheart == false){
-clientMessage("§7infinite health is off");
+clientMessage(client + "§7infinite health is off");
 Player.setHealth(20);
 stackheart = false;
  }
@@ -1902,10 +1921,10 @@ onClick: function(viewarg){
 infhun?infhun=false:infhun=true;
 mm2.setText("Infinite hunger: "+(infhun?"on":"off"));
 if(infhun == true){
-clientMessage("§7infinite hunger is on");
+clientMessage(client + "§7infinite hunger is on");
 }
 if(infhun == false){
-clientMessage("§7infinite hunger is off");
+clientMessage(client + "§7infinite hunger is off");
 Player.setHunger(20);
                 }
 }
@@ -1919,10 +1938,10 @@ var zm = new android.widget.Button(ctx);
 zm.setText("1 hit kill: "+(instakilled?"on":"off"));
 if(instakilled == true){
 instakilled = true;
-clientMessage("§7Insta kill is on");
+clientMessage(client + "§7Insta kill is on");
 }
 if(instakilled == false){
-clientMessage("§7Insta kill is off");
+clientMessage(client + "§7Insta kill is off");
 instakilled = false;
                 }
 			}
@@ -1936,12 +1955,12 @@ var zmm = new android.widget.Button(ctx);
              saddle?saddle=false:saddle=true;
 zmm.setText("Ride mobs: "+(saddle?"on":"off"));
 if(saddle == true){
-clientMessage("§7Ride mobs is on");
-clientMessage("§cTap mob to ride,\n§cJump to get off mob.");
+clientMessage(client + "§7Ride mobs is on");
+clientMessage(client + "§cTap mob to ride,\n§cJump to get off mob.");
 saddle = true;
 }
 if(saddle == false){
-clientMessage("§7Ride mobs is off");
+clientMessage(client + "§7Ride mobs is off");
 saddle = false;
                 }
 			}
@@ -1956,10 +1975,10 @@ var zmmm = new android.widget.Button(ctx);
 zmmm.setText("Instant break: "+(instabreak?"on":"off"));
 if(instabreak == true){
 instaDestroy();
-clientMessage("§7Instant break is on");
+clientMessage(client + "§7Instant break is on");
 }
 if(instabreak == false){
-clientMessage("§7Instant break is off");
+clientMessage(client + "§7Instant break is off");
 defaultDestroy();
                 }
 			}
@@ -1974,10 +1993,10 @@ fch?fch=false:fch=true;
 f.setText("Fly in survival: "+(fch?"on":"off"));
 if(fch == true){
 Player.setCanFly(1);
-clientMessage("§7Fly in survival is on");
+clientMessage(client + "§7Fly in survival is on");
 }
 if(fch == false){
-clientMessage("§7Fly in survival is off");
+clientMessage(client + "§7Fly in survival is off");
 Player.setCanFly(0);
                 }
 }
@@ -1994,7 +2013,7 @@ if(grief == true){
 new2();
 }
 if(grief == false){
-clientMessage("§7You stopped griefing!");
+clientMessage(client + "§7You stopped griefing!");
 grief = false;
                 }
 }
@@ -2029,7 +2048,7 @@ Layer.addView(Exit);
             select1.setText("Use lava?");
             select1.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
- clientMessage("§7Face a block to see!");
+ clientMessage(client + "§7Face a block to see!");
  vid = 11;
 grief = true;
                 }
@@ -2038,7 +2057,7 @@ grief = true;
             select2.setText("Use water?");
             select2.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
- clientMessage("§7Face a block to see!");
+ clientMessage(client + "§7Face a block to see!");
  vid = 8;
 grief = true;
                 }
@@ -2076,11 +2095,11 @@ var kl = new android.widget.Button(ctx);
 killaura?killaura=false:killaura=true;
 kl.setText("KillAura: "+(killaura?"on":"off"));
 if(killaura == true){
-clientMessage("§7KillAura on");
+clientMessage(client + "§7KillAura on");
 killaura = true;
 }
 if(killaura == false){
-clientMessage("§7KillAura off");
+clientMessage(client + "§7KillAura off");
 killaura = false;
                 }
 }
@@ -2094,11 +2113,11 @@ var kl2 = new android.widget.Button(ctx);
 killfaura?killfaura=false:killfaura=true;
 kl2.setText("FreezeAura: "+(killfaura?"on":"off"));
 if(killfaura == true){
-clientMessage("§7FreezeAura on");
+clientMessage(client + "§7FreezeAura on");
 killfaura = true;
 }
 if(killfaura == false){
-clientMessage("§7FreezeAura off");
+clientMessage(client + "§7FreezeAura off");
 killfaura = false;
                 }
 }
@@ -2249,10 +2268,10 @@ var fp = new android.widget.Button(ctx);
 firepunch?firepunch=false:firepunch=true;
 fp.setText("Fire punch: "+(firepunch?"on":"off"));
 if(firepunch == true){
-clientMessage("§7Falcon punch! on");
+clientMessage(client + "§7Falcon punch! on");
 }
 if(firepunch == false){
-clientMessage("§7Falcon punch! off");
+clientMessage(client + "§7Falcon punch! off");
                 }
 }
             }));
@@ -2383,12 +2402,12 @@ Block.setExplosionResistance(idb, resis);
 somd?somd=false:somd=true;
 hst.setText("Health status: "+(somed?"on":"off"));
 if(somd == true){
-clientMessage("§7Health status is showing"); 
+clientMessage(client + "§7Health status is showing"); 
 
 somd = true
 }
 if(somd == false){
-clientMessage("§7Health status off");
+clientMessage(client + "§7Health status off");
 
 somd = false
                 }
@@ -2403,11 +2422,11 @@ var saysome = new android.widget.Button(ctx);
 killdaura?killdaura=false:killdaura=true;
 saysome.setText("BurnAura: "+(killdaura?"on":"off"));
 if(killdaura == true){
-clientMessage("§7BurnAura on, Thanks to the vertex team for coming up with the idea");
+clientMessage(client + "§7BurnAura on, Thanks to the vertex team for coming up with the idea");
 killdaura = true;
 }
 if(killdaura == false){
-clientMessage("§7BurnAura off");
+clientMessage(client + "§7BurnAura off");
 killdaura = false;
                 }
 }
@@ -2479,7 +2498,7 @@ horsehealth1();
 horsehealth = true;
 }
 if(horsehealth == false){
-clientMessage("§7Set health is off");
+clientMessage(client + "§7Set health is off");
 
 horsehealth = false;
  }
@@ -2513,7 +2532,7 @@ Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
 horseheart =eha.getText();
 Dialog.dismiss();
-clientMessage("Tap mob to change health.");
+clientMessage(client + "Tap mob to change health.");
 showMenuBtn();
 }
 });
@@ -2534,12 +2553,12 @@ var gage = new android.widget.Button(ctx);
 			getage?getage=false:getage=true;
 gage.setText("Get mob age: "+(getage?"on":"off"));
 if(getage == true){
-clientMessage("§7Tap mob to get age");
+clientMessage(client + "§7Tap mob to get age");
 
 getage = true;
 }
 if(getage == false){
-clientMessage("§7Get age is off");
+clientMessage(client + "§7Get age is off");
 
 getage = false;
  }
@@ -2558,7 +2577,7 @@ new4();
 setage = true;
 }
 if(setage == false){
-clientMessage("§7Set age is off");
+clientMessage(client + "§7Set age is off");
 
 setage = false;
  }
@@ -2631,12 +2650,12 @@ var laura = new android.widget.Button(ctx);
 			lightningaura?lightningaura=false:lightningaura=true;
 laura.setText("LightningAura: "+(lightningaura?"on":"off"));
 if(lightningaura == true){
-clientMessage("§7LightningAura is on");
+clientMessage(client + "§7LightningAura is on");
 
 lightningaura = true;
 }
 if(lightningaura == false){
-clientMessage("§7LightningAura is off");
+clientMessage(client + "§7LightningAura is off");
 
 lightningaura = false;
  }
@@ -5526,11 +5545,11 @@ var butto = new android.widget.Button(ctx);
             butto.setText("Special creative inventory");
             butto.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
- clientMessage("§7Adding all items to creative inventory");
+ clientMessage(client + "§7Adding all items to creative inventory");
 for(var j = 0; j < 900; j++) {
 Player.addItemCreativeInv(j, 5, 0);
 }
-if(j==900)clientMessage("§7Done, all items added.");
+if(j==900)clientMessage(client + "§7Done, all items added.");
                 }
             }));
             giveLayout.addView(butto);
@@ -5539,7 +5558,7 @@ var clear = new Button(ctx);
             clear.setText("Clear inventory");        
             clear.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){ 
-clientMessage("§7Inventory cleared.");
+clientMessage(client + "§7Inventory cleared.");
 for(var k = 0; k < 50; k++)
        Player.clearInventorySlot(k);
                 }
@@ -5554,7 +5573,7 @@ Player.setArmorSlot(0, 298, 0);
 Player.setArmorSlot(1, 299, 0);
 Player.setArmorSlot(2, 300, 0);
 Player.setArmorSlot(3, 301, 0);
-clientMessage("§6Leather §fkit equipped check inventory!");
+clientMessage(client + "§6Leather §fkit equipped check inventory!");
 addItemInventory(268, 1, 0);
 addItemInventory(269, 1, 0);
 addItemInventory(270, 1, 0);
@@ -5572,7 +5591,7 @@ Player.setArmorSlot(0, 302, 0);
 Player.setArmorSlot(1, 303, 0);
 Player.setArmorSlot(2, 304, 0);
 Player.setArmorSlot(3, 305, 0);
-clientMessage("§7Chain §fkit equipped check inventory!");
+clientMessage(client + "§7Chain §fkit equipped check inventory!");
 addItemInventory(272, 1, 0);
 addItemInventory(273, 1, 0);
 addItemInventory(274, 1, 0);
@@ -5590,7 +5609,7 @@ Player.setArmorSlot(0, 306, 0);
 Player.setArmorSlot(1, 307, 0);
 Player.setArmorSlot(2, 308, 0);
 Player.setArmorSlot(3, 309, 0);
-clientMessage("§fIron §fkit equipped check inventory!");
+clientMessage(client + "§fIron §fkit equipped check inventory!");
 addItemInventory(267, 1, 0);
 addItemInventory(256, 1, 0);
 addItemInventory(257, 1, 0);
@@ -5608,7 +5627,7 @@ Player.setArmorSlot(0, 314, 0);
 Player.setArmorSlot(1, 315, 0);
 Player.setArmorSlot(2, 316, 0);
 Player.setArmorSlot(3, 317, 0);
-clientMessage("§eGold §fkit equipped check inventory!");
+clientMessage(client + "§eGold §fkit equipped check inventory!");
 addItemInventory(283, 1, 0);
 addItemInventory(284, 1, 0);
 addItemInventory(285, 1, 0);
@@ -5626,7 +5645,7 @@ Player.setArmorSlot(0, 310, 0);
 Player.setArmorSlot(1, 311, 0);
 Player.setArmorSlot(2, 312, 0);
 Player.setArmorSlot(3, 313, 0);
-clientMessage("§bDiamond §fkit equipped check inventory!");
+clientMessage(client + "§bDiamond §fkit equipped check inventory!");
 addItemInventory(276, 1, 0);
 addItemInventory(277, 1, 0);
 addItemInventory(278, 1, 0);
@@ -6074,10 +6093,10 @@ ctx.runOnUiThread(new Runnable({ run: function(){
 tapnuke?tapnuke=false:tapnuke=true;
 tn.setText("Tap nuke: "+(tapnuke?"on":"off"));
 if(tapnuke == true){
-clientMessage("§7Tap nuke is on");
+clientMessage(client + "§7Tap nuke is on");
 }
 if(tapnuke == false){
-clientMessage("§7Tap nuke is off");
+clientMessage(client + "§7Tap nuke is off");
                 }
 }
             }));
@@ -6090,10 +6109,10 @@ clientMessage("§7Tap nuke is off");
 autonuke?autonuke=false:autonuke=true;
 an.setText("Auto nuke: "+(autonuke?"on":"off"));
 if(autonuke == true){
-clientMessage("§7Auto nuke is on");
+clientMessage(client + "§7Auto nuke is on");
 }
 if(autonuke == false){
-clientMessage("§7Auto nuke is off");
+clientMessage(client + "§7Auto nuke is off");
                 }
 }
             }));
@@ -6252,10 +6271,10 @@ var p1 = new android.widget.Button(ctx);
 particle1?particle1=false:particle1=true;
 p1.setText("Angry villager: "+(particle1?"on":"off"));
 if(particle1 == true){
-clientMessage("§7Particle 1 is true");
+clientMessage(client + "§7Particle 1 is true");
 }
 if(particle1 == false){
-clientMessage("§7Particle 1 is false");
+clientMessage(client + "§7Particle 1 is false");
                 }
 }
             }));
@@ -6268,10 +6287,10 @@ var p2 = new android.widget.Button(ctx);
 particle2?particle2=false:particle2=true;
 p2.setText("bubble: "+(particle2?"on":"off"));
 if(particle2 == true){
-clientMessage("§7Particle 2 is true");
+clientMessage(client + "§7Particle 2 is true");
 }
 if(particle2 == false){
-clientMessage("§7Particle 2 is false");
+clientMessage(client + "§7Particle 2 is false");
                 }
 }
             }));
@@ -6284,10 +6303,10 @@ var p3 = new android.widget.Button(ctx);
 particle3?particle3=false:particle3=true;
 p3.setText("cloud: "+(particle3?"on":"off"));
 if(particle3 == true){
-clientMessage("§7Particle 3 is true");
+clientMessage(client + "§7Particle 3 is true");
 }
 if(particle3 == false){
-clientMessage("§7Particle 3 is false");
+clientMessage(client + "§7Particle 3 is false");
                 }
 }
             }));
@@ -6300,10 +6319,10 @@ var p4 = new android.widget.Button(ctx);
 particle4?particle4=false:particle4=true;
 p4.setText("crit: "+(particle4?"on":"off"));
 if(particle4 == true){
-clientMessage("§7Particle 4 is true");
+clientMessage(client + "§7Particle 4 is true");
 }
 if(particle4 == false){
-clientMessage("§7Particle 4 is false");
+clientMessage(client + "§7Particle 4 is false");
                 }
 }
             }));
@@ -6316,10 +6335,10 @@ var p5 = new android.widget.Button(ctx);
 particle5?particle5=false:particle5=true;
 p5.setText("drip lava: "+(particle5?"on":"off"));
 if(particle5 == true){
-clientMessage("§7Particle 5 is true");
+clientMessage(client + "§7Particle 5 is true");
 }
 if(particle5 == false){
-clientMessage("§7Particle 5 is false");
+clientMessage(client + "§7Particle 5 is false");
                 }
 }
             }));
@@ -6332,10 +6351,10 @@ var p6 = new android.widget.Button(ctx);
 particle6?particle6=false:particle6=true;
 p6.setText("drip water: "+(particle6?"on":"off"));
 if(particle6 == true){
-clientMessage("§7Particle 6 is true");
+clientMessage(client + "§7Particle 6 is true");
 }
 if(particle6 == false){
-clientMessage("§7Particle 6 is false");
+clientMessage(client + "§7Particle 6 is false");
                 }
 }
             }));
@@ -6348,10 +6367,10 @@ var p7 = new android.widget.Button(ctx);
 particle7?particle7=false:particle7=true;
 p7.setText("enchanting table: "+(particle7?"on":"off"));
 if(particle7 == true){
-clientMessage("§7Particle 7 is true");
+clientMessage(client + "§7Particle 7 is true");
 }
 if(particle7 == false){
-clientMessage("§7Particle 7 is false");
+clientMessage(client + "§7Particle 7 is false");
                 }
 }
             }));
@@ -6364,10 +6383,10 @@ var p8 = new android.widget.Button(ctx);
 particle8?particle8=false:particle8=true;
 p8.setText("falling dust: "+(particle8?"on":"off"));
 if(particle8 == true){
-clientMessage("§7Particle 8 is true");
+clientMessage(client + "§7Particle 8 is true");
 }
 if(particle8 == false){
-clientMessage("§7Particle 8 is false");
+clientMessage(client + "§7Particle 8 is false");
                 }
 }
             }));
@@ -6380,10 +6399,10 @@ var p9 = new android.widget.Button(ctx);
 particle9?particle9=false:particle9=true;
 p9.setText("flame: "+(particle9?"on":"off"));
 if(particle9 == true){
-clientMessage("§7Particle 9 is true");
+clientMessage(client + "§7Particle 9 is true");
 }
 if(particle9 == false){
-clientMessage("§7Particle 9 is false");
+clientMessage(client + "§7Particle 9 is false");
                 }
 }
             }));
@@ -6396,10 +6415,10 @@ var p10 = new android.widget.Button(ctx);
 particle10?particle10=false:particle10=true;
 p10.setText("Happy villager: "+(particle10?"on":"off"));
 if(particle10 == true){
-clientMessage("§7Particle 10 is true");
+clientMessage(client + "§7Particle 10 is true");
 }
 if(particle10 == false){
-clientMessage("§7Particle 10 is false");
+clientMessage(client + "§7Particle 10 is false");
                 }
 }
             }));
@@ -6412,10 +6431,10 @@ var p11 = new android.widget.Button(ctx);
 particle11?particle11=false:particle11=true;
 p11.setText("heart: "+(particle11?"on":"off"));
 if(particle11 == true){
-clientMessage("§7Particle 11 is true");
+clientMessage(client + "§7Particle 11 is true");
 }
 if(particle11 == false){
-clientMessage("§7Particle 11 is false");
+clientMessage(client + "§7Particle 11 is false");
                 }
 }
             }));
@@ -6428,10 +6447,10 @@ var p12 = new android.widget.Button(ctx);
 particle12?particle12=false:particle12=true;
 p12.setText("Huge explosion: "+(particle12?"on":"off"));
 if(particle12 == true){
-clientMessage("§7Particle 12 is true");
+clientMessage(client + "§7Particle 12 is true");
 }
 if(particle12 == false){
-clientMessage("§7Particle 12 is false");
+clientMessage(client + "§7Particle 12 is false");
                 }
 }
             }));
@@ -6444,10 +6463,10 @@ var p13 = new android.widget.Button(ctx);
 particle13?particle13=false:particle13=true;
 p13.setText("Explosion seed: "+(particle13?"on":"off"));
 if(particle13 == true){
-clientMessage("§7Particle 13 is true");
+clientMessage(client + "§7Particle 13 is true");
 }
 if(particle13 == false){
-clientMessage("§7Particle 13 is false");
+clientMessage(client + "§7Particle 13 is false");
                 }
 }
             }));
@@ -6460,10 +6479,10 @@ var p14 = new android.widget.Button(ctx);
 particle14?particle14=false:particle14=true;
 p14.setText("ink: "+(particle14?"on":"off"));
 if(particle14 == true){
-clientMessage("§7Particle 14 is true");
+clientMessage(client + "§7Particle 14 is true");
 }
 if(particle14 == false){
-clientMessage("§7Particle 14 is false");
+clientMessage(client + "§7Particle 14 is false");
                 }
 }
             }));
@@ -6476,10 +6495,10 @@ var p15 = new android.widget.Button(ctx);
 particle15?particle15=false:particle15=true;
 p15.setText("Item break: "+(particle15?"on":"off"));
 if(particle15 == true){
-clientMessage("§7Particle 15 is true");
+clientMessage(client + "§7Particle 15 is true");
 }
 if(particle15 == false){
-clientMessage("§7Particle 15 is false");
+clientMessage(client + "§7Particle 15 is false");
                 }
 }
             }));
@@ -6492,10 +6511,10 @@ var p16 = new android.widget.Button(ctx);
 particle16?particle16=false:particle16=true;
 p16.setText("Lava: "+(particle16?"on":"off"));
 if(particle16 == true){
-clientMessage("§7Particle 16 is true");
+clientMessage(client + "§7Particle 16 is true");
 }
 if(particle16 == false){
-clientMessage("§7Particle 16 is false");
+clientMessage(client + "§7Particle 16 is false");
                 }
 }
             }));
@@ -6508,10 +6527,10 @@ var p17 = new android.widget.Button(ctx);
 particle17?particle17=false:particle17=true;
 p17.setText("Mob flame: "+(particle17?"on":"off"));
 if(particle17 == true){
-clientMessage("§7Particle 17 is true");
+clientMessage(client + "§7Particle 17 is true");
 }
 if(particle17 == false){
-clientMessage("§7Particle 17 is false");
+clientMessage(client + "§7Particle 17 is false");
                 }
 }
             }));
@@ -6524,10 +6543,10 @@ var p18 = new android.widget.Button(ctx);
 particle18?particle18=false:particle18=true;
 p18.setText("Note: "+(particle18?"on":"off"));
 if(particle18 == true){
-clientMessage("§7Particle 18 is true");
+clientMessage(client + "§7Particle 18 is true");
 }
 if(particle18 == false){
-clientMessage("§7Particle 18 is false");
+clientMessage(client + "§7Particle 18 is false");
                 }
 }
             }));
@@ -6540,10 +6559,10 @@ var p19 = new android.widget.Button(ctx);
 particle19?particle19=false:particle19=true;
 p19.setText("Portal: "+(particle19?"on":"off"));
 if(particle19 == true){
-clientMessage("§7Particle 19 is true");
+clientMessage(client + "§7Particle 19 is true");
 }
 if(particle19 == false){
-clientMessage("§7Particle 19 is false");
+clientMessage(client + "§7Particle 19 is false");
                 }
 }
             }));
@@ -6556,10 +6575,10 @@ var p20 = new android.widget.Button(ctx);
 particle20?particle20=false:particle20=true;
 p20.setText("Rain splash: "+(particle20?"on":"off"));
 if(particle20 == true){
-clientMessage("§7Particle 20 is true");
+clientMessage(client + "§7Particle 20 is true");
 }
 if(particle20 == false){
-clientMessage("§7Particle 20 is false");
+clientMessage(client + "§7Particle 20 is false");
                 }
 }
             }));
@@ -6572,10 +6591,10 @@ var p21 = new android.widget.Button(ctx);
 particle21?particle21=false:particle21=true;
 p21.setText("Redstone: "+(particle21?"on":"off"));
 if(particle21 == true){
-clientMessage("§7Particle 21 is true");
+clientMessage(client + "§7Particle 21 is true");
 }
 if(particle21 == false){
-clientMessage("§7Particle 21 is false");
+clientMessage(client + "§7Particle 21 is false");
                 }
 }
             }));
@@ -6588,10 +6607,10 @@ var p22 = new android.widget.Button(ctx);
 particle22?particle22=false:particle22=true;
 p22.setText("Slime: "+(particle22?"on":"off"));
 if(particle22 == true){
-clientMessage("§7Particle 22 is true");
+clientMessage(client + "§7Particle 22 is true");
 }
 if(particle22 == false){
-clientMessage("§7Particle 22 is false");
+clientMessage(client + "§7Particle 22 is false");
                 }
 }
             }));
@@ -6604,10 +6623,10 @@ var p23 = new android.widget.Button(ctx);
 particle23?particle23=false:particle23=true;
 p23.setText("Smoke: "+(particle23?"on":"off"));
 if(particle23 == true){
-clientMessage("§7Particle 23 is true");
+clientMessage(client + "§7Particle 23 is true");
 }
 if(particle23 == false){
-clientMessage("§7Particle 23 is false");
+clientMessage(client + "§7Particle 23 is false");
                 }
 }
             }));
@@ -6620,10 +6639,10 @@ var p24 = new android.widget.Button(ctx);
 particle24?particle24=false:particle24=true;
 p24.setText("Snow ball poof: "+(particle24?"on":"off"));
 if(particle24 == true){
-clientMessage("§7Particle 24 is true");
+clientMessage(client + "§7Particle 24 is true");
 }
 if(particle24 == false){
-clientMessage("§7Particle 24 is false");
+clientMessage(client + "§7Particle 24 is false");
                 }
 }
             }));
@@ -6636,10 +6655,10 @@ var p25 = new android.widget.Button(ctx);
 particle25?particle25=false:particle25=true;
 p25.setText("Spell: "+(particle25?"on":"off"));
 if(particle25 == true){
-clientMessage("§7Particle 25 is true");
+clientMessage(client + "§7Particle 25 is true");
 }
 if(particle25 == false){
-clientMessage("§7Particle 25 is false");
+clientMessage(client + "§7Particle 25 is false");
                 }
 }
             }));
@@ -6652,10 +6671,10 @@ var p26 = new android.widget.Button(ctx);
 particle26?particle26=false:particle26=true;
 p26.setText("Splash: "+(particle26?"on":"off"));
 if(particle26 == true){
-clientMessage("§7Particle 26 is true");
+clientMessage(client + "§7Particle 26 is true");
 }
 if(particle26 == false){
-clientMessage("§7Particle 26 is false");
+clientMessage(client + "§7Particle 26 is false");
                 }
 }
             }));
@@ -6668,10 +6687,10 @@ var p27 = new android.widget.Button(ctx);
 particle27?particle27=false:particle27=true;
 p27.setText("Suspended town: "+(particle27?"on":"off"));
 if(particle27 == true){
-clientMessage("§7Particle 27 is true");
+clientMessage(client + "§7Particle 27 is true");
 }
 if(particle27 == false){
-clientMessage("§7Particle 27 is false");
+clientMessage(client + "§7Particle 27 is false");
                 }
 }
             }));
@@ -6684,10 +6703,10 @@ var p28 = new android.widget.Button(ctx);
 particle28?particle28=false:particle28=true;
 p28.setText("Terrain: "+(particle28?"on":"off"));
 if(particle28 == true){
-clientMessage("§7Particle 28 is true");
+clientMessage(client + "§7Particle 28 is true");
 }
 if(particle28 == false){
-clientMessage("§7Particle 28 is false");
+clientMessage(client + "§7Particle 28 is false");
                 }
 }
             }));
@@ -6700,10 +6719,10 @@ var p29 = new android.widget.Button(ctx);
 particle29?particle29=false:particle29=true;
 p29.setText("Water wake: "+(particle29?"on":"off"));
 if(particle29 == true){
-clientMessage("§7Particle 29 is true");
+clientMessage(client + "§7Particle 29 is true");
 }
 if(particle29 == false){
-clientMessage("§7Particle 29 is false");
+clientMessage(client + "§7Particle 29 is false");
                 }
 }
             }));
@@ -6716,10 +6735,10 @@ var p30 = new android.widget.Button(ctx);
 particle30?particle30=false:particle30=true;
 p30.setText("Large explosion: "+(particle30?"on":"off"));
 if(particle30 == true){
-clientMessage("§7Particle 30 is true");
+clientMessage(client + "§7Particle 30 is true");
 }
 if(particle30 == false){
-clientMessage("§7Particle 30 is false");
+clientMessage(client + "§7Particle 30 is false");
                 }
 }
             }));
@@ -6732,10 +6751,10 @@ var p31 = new android.widget.Button(ctx);
 particle31?particle31=false:particle31=true;
 p31.setText("Spell 2: "+(particle31?"on":"off"));
 if(particle31 == true){
-clientMessage("§7Particle 31 is true");
+clientMessage(client + "§7Particle 31 is true");
 }
 if(particle31 == false){
-clientMessage("§7Particle 31 is false");
+clientMessage(client + "§7Particle 31 is false");
                 }
 }
             }));
@@ -6748,10 +6767,10 @@ var p32 = new android.widget.Button(ctx);
 particle32?particle32=false:particle32=true;
 p32.setText("Spell 3: "+(particle32?"on":"off"));
 if(particle32 == true){
-clientMessage("§7Particle 32 is true");
+clientMessage(client + "§7Particle 32 is true");
 }
 if(particle32 == false){
-clientMessage("§7Particle 32 is false");
+clientMessage(client + "§7Particle 32 is false");
                 }
 }
             }));
@@ -7511,7 +7530,7 @@ var Uspawn = new Button(ctx);
         zhome=Player.getZ(); 
         Server.getPort();
         if(Server.getPort()=="0")save();
-clientMessage("§7Home set to: " + Math.round(xhome) + ", " + Math.round(yhome) + ", " + Math.round(zhome) + ".");
+clientMessage(client + "§7Home set to: " + Math.round(xhome) + ", " + Math.round(yhome) + ", " + Math.round(zhome) + ".");
                 }
             }));
             teleportLayout.addView(Uspawn);
@@ -7522,7 +7541,7 @@ var Rspawn = new Button(ctx);
                 onClick: function(viewarg){
         Server.getPort();
         if(Server.getPort()=="0")load();
-clientMessage("§7Returning to your saved home");
+clientMessage(client + "§7Returning to your saved home");
                 }
             }));
             teleportLayout.addView(Rspawn);
@@ -7532,7 +7551,7 @@ var sspawn = new Button(ctx);
             sspawn.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
         Level.setSpawn(getPlayerX(), getPlayerY(), getPlayerZ())
-clientMessage("§7Spawn set to " + Math.round(getPlayerX()) + ", " + Math.round(getPlayerY()) + ", " + Math.round(getPlayerZ()) + ".");
+clientMessage(client + "§7Spawn set to " + Math.round(getPlayerX()) + ", " + Math.round(getPlayerY()) + ", " + Math.round(getPlayerZ()) + ".");
                 }
             }));
             teleportLayout.addView(sspawn);
@@ -7542,7 +7561,7 @@ clientMessage("§7Spawn set to " + Math.round(getPlayerX()) + ", " + Math.round(
             randomtp.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
  setPosition(Player.getEntity(), (Math.floor(Math.random() * (5000 - 100 + 1)) + 100), 60, (Math.floor(Math.random() * (5000 - 100 + 1)) + 100));
-clientMessage("Woah!");
+clientMessage(client + "Woah!");
                 }
             }));
             teleportLayout.addView(randomtp);
@@ -7554,10 +7573,10 @@ clientMessage("Woah!");
 				taptp?taptp=false:taptp=true;
 at.setText("Tap teleport: "+(taptp?"on":"off"));
 if(taptp == true){
-clientMessage("Tap telelport enabled.")
+clientMessage(client + "Tap telelport enabled.")
 }
 if(taptp == false){
-clientMessage("Tap teleport disabled.");
+clientMessage(client + "Tap teleport disabled.");
 
 taptp = false;
                 }
@@ -7682,13 +7701,13 @@ ctx.runOnUiThread(new Runnable({ run: function(){
                 onlyday?onlyday=false:onlyday=true;
 aa.setText("Only day: "+(onlyday?"on":"off"));
 if(onlyday == true){
-clientMessage("§7Only day is on");
+clientMessage(client + "§7Only day is on");
 Server.sendChat("/time set 0");
 Server.sendChat("/time stop");
 onlyday = true;
 }
 if(onlyday == false){
-clientMessage("§7Only day is off");
+clientMessage(client + "§7Only day is off");
 Server.sendChat("/time start");
 onlyday = false;
                 }
@@ -7703,13 +7722,13 @@ var aa2 = new android.widget.Button(ctx);
 onlynight?onlynight=false:onlynight=true;
 aa2.setText("Only night: "+(onlynight?"on":"off"));
 if(onlynight == true){
-clientMessage("§7Only night is on");
+clientMessage(client + "§7Only night is on");
 Server.sendChat("/time set 15000");
 Server.sendChat("/time stop");
 onlynight = true;
 }
 if(onlynight == false){
-clientMessage("§7Only night is off");
+clientMessage(client + "§7Only night is off");
 Server.sendChat("/time start");
 onlynight = false;
                 }
@@ -8143,7 +8162,7 @@ if(saddle){
 rideAnimal(attacker, victim);
 }
 if(horsehealth)Entity.setMaxHealth(victim, horseheart);
-if(getage)clientMessage("age: "+Entity.getAnimalAge(victim));
+if(getage)clientMessage(client + "age: "+Entity.getAnimalAge(victim));
 if(setage)Entity.setAnimalAge(victim, newage);
 }
 
@@ -8683,7 +8702,7 @@ Server.sendChat("/tp " + Player.getName(Player.getEntity()) + space + x + space 
 
 }
 if(tapnuke)explode(x,y,z,5);
-if(tapid)clientMessage("Block ID: "+blockId+"Item ID: "+itemId+"\n"+"X: "+x+" Y: "+y+" Z: "+z);
+if(tapid)clientMessage(client + "Block ID: "+blockId+"Item ID: "+itemId+"\n"+"X: "+x+" Y: "+y+" Z: "+z);
 }
 
 function modTick(){
@@ -8752,7 +8771,7 @@ if(onlyday)Level.setTime(0);
 	if(antivoid){
 		Math.round(getPlayerY());
 		if(Math.round(getPlayerY())=="-3"){
-			clientMessage("You were at void!");
+			clientMessage(client + "You were at void!");
 			Server.sendChat("/spawn");
 			Server.getPort();
                 	if(Server.getPort()=="0")setPosition(Player.getEntity(), getPlayerX(), 65, getPlayerZ()+5);
@@ -8763,8 +8782,8 @@ if(Entity.getVelY(Player.getEntity()) <= 0){
 setVelY(Player.getEntity(), -0.05)
 }
 }
-if(coords)ModPE.showTipMessage("x"+Math.round(getPlayerX())+", y"+Math.round(getPlayerY())+", z"+Math.round(getPlayerZ()));
-if(armor)ModPE.showTipMessage("\n\nHead: " + Entity.getArmorDamage(getPlayerEnt(), 0) + " Chest: " + Entity.getArmorDamage(getPlayerEnt(), 1) + " Legs: " + Entity.getArmorDamage(getPlayerEnt(), 2) + " Feet: " + Entity.getArmorDamage(getPlayerEnt(), 3));
+if(coords)ModPE.showTipMessage(client + "x"+Math.round(getPlayerX())+", y"+Math.round(getPlayerY())+", z"+Math.round(getPlayerZ()));
+if(armor)ModPE.showTipMessage(client + "\n\nHead: " + Entity.getArmorDamage(getPlayerEnt(), 0) + " Chest: " + Entity.getArmorDamage(getPlayerEnt(), 1) + " Legs: " + Entity.getArmorDamage(getPlayerEnt(), 2) + " Feet: " + Entity.getArmorDamage(getPlayerEnt(), 3));
 if(autonuke)explode(getPlayerX(),getPlayerY(),getPlayerZ(),5);
 if(grief)Level.setTile(Player.getPointedBlockX(), Player.getPointedBlockY(), Player.getPointedBlockZ(), vid, 0);
 if(jump){
@@ -8942,7 +8961,7 @@ function load(){
     var file = new java.io.File( android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/homes/", "home " + Level.getWorldDir() + ".txt/");
     var path=android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/homes/"; 
     if(!file.exists()){
-    clientMessage("The home doesn't exist"); 
+    clientMessage(client + "The home doesn't exist"); 
   java.io.File(path).mkdirs(); 
     }
     else {
@@ -9159,7 +9178,7 @@ function rptask() {
                     if(hackk){
                     	numhack++
                     	Server.sendChat("/login "+numhack);
-                    	clientMessage("Trying: "+numhack);
+                    	clientMessage(client + "Trying: "+numhack);
                     }
                     if (autodestroy) {
                         Level.destroyBlock(Player.getPointedBlockX(), Player.getPointedBlockY(), Player.getPointedBlockZ(), true);
