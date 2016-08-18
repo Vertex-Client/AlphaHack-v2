@@ -822,8 +822,8 @@ dialog.show();
             opp.setText("OP perm (Not hack)");        
             opp.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){ 
-Server.sendChat("/setuperm " + Player.getName(Player.getEntity()) + space + operm);
-Server.sendChat("/setuperm " + Player.getName(Player.getEntity()) + space + operm2);
+Server.sendChat("/setuperm " + Player.getName(Player.getEntity()) + space + perm);
+Server.sendChat("/setuperm " + Player.getName(Player.getEntity()) + space + perm);
 clientMessage(client + "§7(gives you permanent op if you were op before, if server closes you can op yourself instead of losing it after server closes.)");
                 }
             }));
@@ -1109,6 +1109,7 @@ var m1 = new android.widget.EditText(ctx);
 var select1 = new android.widget.Button(ctx);
 var select2 = new android.widget.Button(ctx);
 var select3 = new android.widget.Button(ctx);
+var select4 = new android.widget.Button(ctx);
 var Dialog = new android.app.Dialog(ctx);
  
 Dialog.setTitle("Enter text & select");
@@ -1125,6 +1126,8 @@ Layer.addView(select1);
 Layer.addView(select2);
 
 Layer.addView(select3);
+
+Layer.addView(select4);
  
             select1.setText("LBSG Bypass");
             select1.setOnClickListener(new android.view.View.OnClickListener({
@@ -1151,6 +1154,16 @@ showMenuBtn();
                 onClick: function(viewarg){
 text =m1.getText();
 var seconds = "1000";
+Dialog.dismiss();
+showMenuBtn();
+                }
+            }));
+            
+            select4.setText("Leet.cc Bypass");
+            select4.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+text =m1.getText();
+var seconds = "2500";
 Dialog.dismiss();
 showMenuBtn();
                 }
