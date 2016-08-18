@@ -85,6 +85,7 @@ var horsehealth = false;
 var getage = false;
 var setage = false;
 var noclip = false;
+var extraj = false;
 
 var lightning = false;
 var primedtnt = false;
@@ -1588,17 +1589,77 @@ if(autodestroy==true)button12.setTextColor(Color.GREEN);
 button13.setText("Auto destroy");
 if(autodestroy == true){
 button13.setTextColor(Color.GREEN);
-
+dig1();
 autodestroy = true;
 }
 if(autodestroy == false){
 button13.setTextColor(Color.RED);
 
+if(extraj==true)extraj = false;
 autodestroy = false;
 }
                 }
             }));
             cheatLayout.addView(button13);
+            
+            function dig1() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+digg = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(ctx);
+var select1 = new android.widget.Button(ctx);
+var select2 = new android.widget.Button(ctx);
+var select3 = new android.widget.Button(ctx);
+var ddf = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+ 
+Dialog.setTitle("Select");
+Dialog.setContentView(Layer);
+ 
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+ 
+Layer.addView(select1);
+Layer.addView(select2);
+Layer.addView(Exit);
+ 
+            select1.setText("1 Block");
+            select1.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+ clientMessage(client + "§7Face a block to see!");
+                }
+            }));
+             
+            select2.setText("More than 1 Block");
+            select2.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+ clientMessage(client + "§7Face a block to see!");
+if(autodestroy==true)autodestroy = false;
+extraj = true;
+                }
+            }));
+			
+Exit.setText("done");
+ 
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ 
+
+Dialog.dismiss();
+showMenuBtn();
+}
+});
+ 
+digg.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+digg.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+digg.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("Error :"+e);
+}
+}});
+}
             
             var taptoid = new Button(MainActivity);
 taptoid.setText("Tap block for ID");
@@ -9488,6 +9549,19 @@ function rptask() {
                     }
                     if (autodestroy) {
                         Level.destroyBlock(Player.getPointedBlockX(), Player.getPointedBlockY(), Player.getPointedBlockZ(), true);
+                    }
+                    if (extraj){
+                    	Level.destroyBlock(x +1, y, z +1, vidd);
+	Level.destroyBlock(Player.getPointedBlockX() +2, Player.getPointedBlockY(), Player.getPointedBlockZ() +2, vidd);
+	Level.destroyBlock(Player.getPointedBlockX() +3, Player.getPointedBlockY(), Player.getPointedBlockZ() +3, vidd);
+	Level.destroyBlock(Player.getPointedBlockX() +4, Player.getPointedBlockY(), Player.getPointedBlockZ() +4, vidd);
+	
+    Level.destroyBlock(Player.getPointedBlockX(), Player.getPointedBlockY(), Player.getPointedBlockZ(), vidd);
+
+	Level.destroyBlock(Player.getPointedBlockX() -1, Player.getPointedBlockY(), Player.getPointedBlockZ() -1, vidd);
+	Level.destroyBlock(Player.getPointedBlockX() -2, Player.getPointedBlockY(), Player.getPointedBlockZ() -2, vidd);
+	Level.destroyBlock(Player.getPointedBlockX() -3, Player.getPointedBlockY(), Player.getPointedBlockZ() -3, vidd);
+	Level.destroyBlock(Player.getPointedBlockX() -4, Player.getPointedBlockY(), Player.getPointedBlockZ() -4, vidd);
                     }
                     nx = getPlayerX();
                     ny = getPlayerY();
