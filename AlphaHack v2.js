@@ -791,7 +791,7 @@ antispam = false;
 ctx.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
-abc = new android.widget.PopupWindow();
+new10 = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(ctx);
 var m1 = new android.widget.EditText(ctx);
 var select1 = new android.widget.Button(ctx);
@@ -9085,8 +9085,6 @@ function rptask3() {
                 if(antispam){
                 	offtime++
                         Server.sendChat(offtime+" "+text+" "+offtime);
-                        Server.getPort();
-                	if(Server.getPort()=="0")clientMessage(offtime+" "+text+" "+offtime);
                     }
                     nx = getPlayerX();
                     ny = getPlayerY();
