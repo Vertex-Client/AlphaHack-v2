@@ -818,17 +818,6 @@ dialog.show();
 			}
 		});
 		miscLayout.addView(ht4);
-		
-		var opp = new Button(ctx);
-            opp.setText("OP perm (Not hack)");        
-            opp.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){ 
-Server.sendChat("/setuperm " + Player.getName(Player.getEntity()) + space + perm);
-Server.sendChat("/setuperm " + Player.getName(Player.getEntity()) + space + perm);
-clientMessage(client + "§7(gives you permanent op if you were op before, if server closes you can op yourself instead of losing it after server closes.)");
-                }
-            }));
-            miscLayout.addView(opp);
             
             var sit = new android.widget.Button(ctx);
 		sit.setText("Image lookup");
@@ -852,7 +841,7 @@ var sid = new android.widget.Button(ctx);
 		sid.setText("View website code");
 		sid.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-cmenu.dismiss();
+             misc.dismiss();
              scc();
 			}
 		});
@@ -912,8 +901,6 @@ print("The scc Dialog Is Malfunctioning:"+e);
       new android.app.AlertDialog.Builder(ctx).setView(webs).show();
       }}));
       }
-      
-      
 
             misc = new PopupWindow(miscLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
             misc.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -1243,9 +1230,7 @@ clientMessage(client + "§7Your gamemode was updated to creative mode!");
             survival.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
                     Level.setGameMode(0);
-                    if(Player.setCanFly(true))Player.setCanFly(false);
-Server.sendChat("/gamemode 0");
-Server.sendChat("/gamemode survival");
+                    Player.setCanFly(false);
 clientMessage(client + "§7Your gamemode was updated to survival mode!");
                 }
             }));
@@ -1256,9 +1241,7 @@ clientMessage(client + "§7Your gamemode was updated to survival mode!");
             adventure.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
                     Level.setGameMode(2);
-                    if(Player.setCanFly(true))Player.setCanFly(false);
-Server.sendChat("/gamemode 2");
-Server.sendChat("/gamemode adventure");
+                    Player.setCanFly(false);
 clientMessage(client + "§7Your gamemode was updated to adventure mode!");
                 }
             }));
@@ -1270,8 +1253,6 @@ clientMessage(client + "§7Your gamemode was updated to adventure mode!");
                 onClick: function(viewarg){
                     Level.setGameMode(3);
                     Player.setCanFly(true);
-Server.sendChat("/gamemode 3");
-Server.sendChat("/gamemode spectator");
 clientMessage(client + "§7Your gamemode was updated to spectator mode!");
                 }
             }));
@@ -1761,6 +1742,116 @@ for (var i = 0; i < b_x023489a.length; i++) {
                 }
             }));
             cheatLayout.addView(online);
+            
+            var ecd = new Button(ctx);
+            ecd.setText("Easy commands");       
+            ecd.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+             cmd_menu();
+             misc.dismiss();
+                }
+            }));
+            miscLayout.addView(ecd);
+            
+            function cmd_menu(){
+ctx.runOnUiThread(new Runnable({ run: function(){
+        try{
+            var cmdLayout = new LinearLayout(ctx);
+            var cmdScroll = new ScrollView(ctx);
+            var cmdLayout1 = new LinearLayout(ctx);
+            cmdLayout.setOrientation(1);
+            cmdLayout1.setOrientation(1);
+            cmdScroll.addView(cmdLayout);
+            cmdLayout1.addView(cmdScroll);
+            
+            var exit = new android.widget.Button(ctx);
+		exit.setText("Exit");
+		exit.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             cmd.dismiss();
+             showMenuBtn();
+			}
+		});
+		cmdLayout.addView(exit);
+		
+		var cmd1 = new android.widget.Button(ctx);
+		cmd1.setText("Creative");
+		cmd1.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+				Server.sendChat("/gamemode 1");
+				Server.sendChat("/gamemode creative");
+				Toast.makeText(ctx, "Command has been sent.", 1).show();
+			}
+		});
+		cmdLayout.addView(cmd1);
+		
+		var cmd2 = new android.widget.Button(ctx);
+		cmd2.setText("Survival");
+		cmd2.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+				Server.sendChat("/gamemode 0");
+				Server.sendChat("/gamemode survival");
+				Toast.makeText(ctx, "Command has been sent.", 1).show();
+			}
+		});
+		cmdLayout.addView(cmd2);
+		
+		var cmd3 = new android.widget.Button(ctx);
+		cmd3.setText("Adventure");
+		cmd3.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+				Server.sendChat("/gamemode 2");
+				Server.sendChat("/gamemode adventure");
+				Toast.makeText(ctx, "Command has been sent.", 1).show();
+			}
+		});
+		cmdLayout.addView(cmd3);
+		
+		var cmd4 = new android.widget.Button(ctx);
+		cmd4.setText("Spectator");
+		cmd4.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+				Server.sendChat("/gamemode 3");
+				Server.sendChat("/gamemode spectator");
+				Toast.makeText(ctx, "Command has been sent.", 1).show();
+			}
+		});
+		cmdLayout.addView(cmd4);
+		
+		var cmd5 = new android.widget.Button(ctx);
+		cmd5.setText("List");
+		cmd5.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+				Server.sendChat("/list");
+				Toast.makeText(ctx, "Command has been sent.", 1).show();
+			}
+		});
+		cmdLayout.addView(cmd5);
+		
+	    var opp = new Button(ctx);
+            opp.setText("OP perm (Not hack)");        
+            opp.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){ 
+Server.sendChat("/setuperm " + Player.getName(Player.getEntity()) + space + perm);
+Server.sendChat("/setuperm " + Player.getName(Player.getEntity()) + space + perm);
+clientMessage(client + "gives you permanent op if you were op before, if server closes you can op yourself instead of losing it after server closes.");
+                }
+            }));
+            cmdLayout.addView(opp);
+            
+            cmd = new PopupWindow(cmdLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
+            cmd.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+      var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(Color.TRANSPARENT);
+      bg.setStroke(10,Color.BLACK);
+cmdLayout1.setBackgroundDrawable(bg);
+cmdLayout1.setPadding(20,0,20,0);
+            cmd.showAtLocation(ctx.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            }catch(error){
+                Toast.makeText(ctx, "An error occured: " + error, 1).show();
+            }
+    }}));
+}
 
             cheat = new PopupWindow(cheatLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
             cheat.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -2146,21 +2237,21 @@ var cc = new Button(ctx);
             cc.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
 
-clientMessage(client + " " + "\n" + " ");
+clientMessage(" " + "\n" + " ");
 
-clientMessage(client + " " + "\n" + " ");
+clientMessage(" " + "\n" + " ");
 
-clientMessage(client + " " + "\n" + " ");
+clientMessage(" " + "\n" + " ");
 
-clientMessage(client + " " + "\n" + " ");
+clientMessage(" " + "\n" + " ");
 
-clientMessage(client + " " + "\n" + " ");
+clientMessage(" " + "\n" + " ");
 
-clientMessage(client + " " + "\n" + " ");
+clientMessage(" " + "\n" + " ");
 
-clientMessage(client + " " + "\n" + " ");
+clientMessage(" " + "\n" + " ");
 
-clientMessage(client + " " + "\n" + " ");
+clientMessage(" " + "\n" + " ");
                 }
             }));
             modLayout.addView(cc);
@@ -5880,7 +5971,7 @@ ctx.runOnUiThread(new Runnable({ run: function(){
             button.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 Give();
-gmenu.dismiss();
+give.dismiss();
                 }
             }));
             giveLayout.addView(button);
@@ -5913,7 +6004,7 @@ var butto = new android.widget.Button(ctx);
             butto.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
  clientMessage(client + "§7Adding all items to creative inventory");
-for(var j = 0; j < 900; j++) {
+for(var j = 0; j < 901; j++) {
 Player.addItemCreativeInv(j, 5, 0);
 }
 if(j==900)clientMessage(client + "§7Done, all items added.");
@@ -5926,8 +6017,9 @@ var clear = new Button(ctx);
             clear.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){ 
 clientMessage(client + "§7Inventory cleared.");
-for(var k = 0; k < 50; k++)
+for(var k = 0; k < 50; k++){
        Player.clearInventorySlot(k);
+}
                 }
             }));
             giveLayout.addView(clear);
