@@ -1748,10 +1748,10 @@ for (var i = 0; i < b_x023489a.length; i++) {
             ecd.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
              cmd_menu();
-             misc.dismiss();
+             cheat.dismiss();
                 }
             }));
-            miscLayout.addView(ecd);
+            cheatLayout.addView(ecd);
             
             function cmd_menu(){
 ctx.runOnUiThread(new Runnable({ run: function(){
