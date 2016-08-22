@@ -1718,7 +1718,7 @@ clientMessage(client + "§7No clip / walk through walls on");
 Block.setShape(4, 0, 0, 0, 0.0001, 0.6, 0.0001);
 Block.setShape(5, 0, 0, 0, 0.0001, 0.6, 0.0001);
 Block.setShape(17, 0, 0, 0, 0.0001, 0.6, 0.0001);
-Block.setShape(2, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(3, 0, 0, 0, 0.0001, 0.6, 0.0001);
 
 Block.setShape(24, 0, 0, 0, 0.0001, 0.6, 0.0001);
 Block.setShape(20, 0, 0, 0, 0.0001, 0.6, 0.0001);
@@ -1749,6 +1749,37 @@ noclip = true;
 }
 if(noclip == false){
 clientMessage(client + "§7No clip / walk through walls off");
+
+Block.setShape(4, null, null, null, null, null, null);
+Block.setShape(5, null, null, null, null, null, null);
+Block.setShape(17, null, null, null, null, null, null);
+Block.setShape(2, null, null, null, null, null, null);
+
+Block.setShape(24, null, null, null, null, null, null);
+Block.setShape(3, null, null, null, null, null, null);
+Block.setShape(41, null, null, null, null, null, null);
+Block.setShape(42, null, null, null, null, null, null);
+Block.setShape(45, null, null, null, null, null, null);
+Block.setShape(49, null, null, null, null, null, null);
+Block.setShape(48, null, null, null, null, null, null);
+Block.setShape(47, null, null, null, null, null, null);
+
+Block.setShape(57, null, null, null, null, null, null);
+Block.setShape(8, null, null, null, null, null, null);
+Block.setShape(98, null, null, null, null, null, null);
+Block.setShape(1, null, null, null, null, null, null);
+Block.setShape(112, null, null, null, null, null, null);
+Block.setShape(133, null, null, null, null, null, null);
+Block.setShape(7, null, null, null, null, null, null);
+
+Block.setShape(155, null, null, null, null, null, null);
+Block.setShape(179, null, null, null, null, null, null);
+Block.setShape(188, null, null, null, null, null, null);
+Block.setShape(189, null, null, null, null, null, null);
+Block.setShape(19, null, null, null, null, null, null);
+Block.setShape(191, null, null, null, null, null, null);
+Block.setShape(192, null, null, null, null, null, null);
+
 noclip = false;
                 }
 }
