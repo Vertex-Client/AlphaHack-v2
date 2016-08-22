@@ -544,7 +544,6 @@ Toast.makeText(MainActivity, "Closed successfully", 1).show();
             
             var line2 = new android.widget.LinearLayout(ctx);
 	    line2.setOrientation(0);
-	    
             
             menuLayout.addView(line2);
             
@@ -562,6 +561,19 @@ Toast.makeText(MainActivity, "Closed successfully", 1).show();
             
             var line6 = new android.widget.LinearLayout(ctx);
 	    line6.setOrientation(0);
+	    
+	    var group = new android.widget.Button(ctx);
+group.setText("Community");
+group.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+group.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             var urls4 = new Intent(ctx);
+	  urls4.setAction(Intent.ACTION_VIEW);
+                    urls4.setData(Uri.parse("https://plus.google.com/communities/103695355587842948163"));
+                    ctx.startActivity(urls4);
+			}
+		});
+		menuLayout.addView(group);
 	    
 var misc = new android.widget.Button(ctx);
 misc.setText("Misc");
@@ -703,7 +715,7 @@ var layout = new android.widget.LinearLayout(ctx);
 layout.setOrientation(1);
 
 alert.setTitle("How to bypass a /ban");
- alert.setMessage("OP ban you with /ban\nTo get unbanned:\n#1 let an OP unban you\n#2 Server reset can unban all players\n#3 Change your username\n/ban only bans your username");
+ alert.setMessage("OP ban you with /ban\nTo get unbanned:\n#1 let an OP unban you\n#2 Server reset can unban all players\n#3 Change your username\n/ban only bans your username.\n-ArceusMatt");
 
 alert.setPositiveButton("Exit all", new android.content.DialogInterface.OnClickListener(){ 
   onClick: function(viewarg){
@@ -947,6 +959,18 @@ var exit = new android.widget.Button(ctx);
 			}
 		});
 		settingsLayout.addView(exit);
+		
+	    var link = new Button(ctx);
+            link.setText("Download link");       
+            link.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+var urls3 = new Intent(ctx);
+	  urls3.setAction(Intent.ACTION_VIEW);
+                    urls3.setData(Uri.parse("https://arceusmatt.github.io/AlphaHack"));
+                    ctx.startActivity(urls3);
+                }
+            }));
+            settingsLayout.addView(link);
 		
 		var g1 = new Button(ctx);
             g1.setText("Menu center");       
