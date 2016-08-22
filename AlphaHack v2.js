@@ -1798,6 +1798,19 @@ for (var i = 0; i < b_x023489a.length; i++) {
             }));
             cheatLayout.addView(online);
             
+            var barrier = new Button(MainActivity);
+barrier.setText("Nullify barriers");
+            barrier.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+Block.setShape(0, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(65, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(95, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(255, 0, 0, 0, 0.0001, 0.6, 0.0001);
+clientMessage(client + "Any barriers have been nullifed.");
+                }
+            }));
+            cheatLayout.addView(barrier);
+            
             var ecd = new Button(ctx);
             ecd.setText("Easy commands");       
             ecd.setOnClickListener(new View.OnClickListener({
