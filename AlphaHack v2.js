@@ -4633,7 +4633,7 @@ print("The XP Dialog Is Malfunctioning:"+e);
 function XG() {
 Server.getPort()
 Player.setLevel(Math.round(L));
-if(Server.getPort()!="0")Server.sendChat("/xp " + L + Player.getName(Player.getEntity()));
+if(Server.getPort()!="0")Server.sendChat("/xp " + L + space + Player.getName(Player.getEntity()));
 }
 
 var ena = new Button(ctx);
