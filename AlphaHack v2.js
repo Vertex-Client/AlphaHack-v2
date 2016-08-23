@@ -1967,6 +1967,46 @@ ctx.runOnUiThread(new Runnable({ run: function(){
 		});
 		modLayout.addView(exit);
 		
+		var endHack = new Button(MainActivity);
+endHack.setText("End portal");
+            endHack.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				/*front*/
+				Level.setTile(getPlayerX(), getPlayerY() -1, getPlayerZ() -4, 120, 4);
+				Level.setTile(getPlayerX() -1, getPlayerY() -1, getPlayerZ() -4, 120, 4);
+				Level.setTile(getPlayerX() +1, getPlayerY() -1, getPlayerZ() -4, 120, 4);
+				Level.setTile(getPlayerX() -2, getPlayerY() -1, getPlayerZ() -4, 0, 0);
+				Level.setTile(getPlayerX() +2, getPlayerY() -1, getPlayerZ() -4, 0, 0);
+				
+				/*middle*/
+				Level.setTile(getPlayerX(), getPlayerY() -1, getPlayerZ() -5, 209, 0);
+				Level.setTile(getPlayerX() -1, getPlayerY() -1, getPlayerZ() -5, 209, 0);
+				Level.setTile(getPlayerX() +1, getPlayerY() -1, getPlayerZ() -5, 209, 0);
+				Level.setTile(getPlayerX(), getPlayerY() -1, getPlayerZ() -6, 209, 0);
+				Level.setTile(getPlayerX() -1, getPlayerY() -1, getPlayerZ() -6, 209, 0);
+				Level.setTile(getPlayerX() +1, getPlayerY() -1, getPlayerZ() -6, 209, 0);
+				Level.setTile(getPlayerX(), getPlayerY() -1, getPlayerZ() -7, 209, 0);
+				Level.setTile(getPlayerX() -1, getPlayerY() -1, getPlayerZ() -7, 209, 0);
+				Level.setTile(getPlayerX() +1, getPlayerY() -1, getPlayerZ() -7, 209, 0);
+				
+				/*back*/
+				Level.setTile(getPlayerX(), getPlayerY() -1, getPlayerZ() -8, 120, 4);
+				Level.setTile(getPlayerX() -1, getPlayerY() -1, getPlayerZ() -8, 120, 4);
+				Level.setTile(getPlayerX() +1, getPlayerY() -1, getPlayerZ() -8, 120, 4);
+				Level.setTile(getPlayerX() -2, getPlayerY() -1, getPlayerZ() -8, 0, 0);
+				Level.setTile(getPlayerX() +2, getPlayerY() -1, getPlayerZ() -8, 0, 0);
+				
+				/*sides*/
+				Level.setTile(getPlayerX() -2, getPlayerY() -1, getPlayerZ() -5, 120, 4);
+				Level.setTile(getPlayerX() +2, getPlayerY() -1, getPlayerZ() -5, 120, 4);
+				Level.setTile(getPlayerX() -2, getPlayerY() -1, getPlayerZ() -6, 120, 4);
+				Level.setTile(getPlayerX() +2, getPlayerY() -1, getPlayerZ() -6, 120, 4);
+				Level.setTile(getPlayerX() -2, getPlayerY() -1, getPlayerZ() -7, 120, 4);
+				Level.setTile(getPlayerX() +2, getPlayerY() -1, getPlayerZ() -7, 120, 4);
+				}
+            }));
+            modLayout.addView(endHack);
+		
 		var portal = new Button(MainActivity);
 portal.setText("Nether portal");
             portal.setOnClickListener(new View.OnClickListener({
