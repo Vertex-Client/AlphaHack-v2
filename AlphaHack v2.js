@@ -1977,8 +1977,7 @@ endHack.setText("End portal");
 				Level.setTile(getPlayerX() +1, getPlayerY() -1, getPlayerZ() -4, 120, 4);
 				Level.setTile(getPlayerX() -2, getPlayerY() -1, getPlayerZ() -4, 0, 0);
 				Level.setTile(getPlayerX() +2, getPlayerY() -1, getPlayerZ() -4, 0, 0);
-				
-				/*middle*/
+				/*middle
 				Level.setTile(getPlayerX(), getPlayerY() -1, getPlayerZ() -5, 209, 0);
 				Level.setTile(getPlayerX() -1, getPlayerY() -1, getPlayerZ() -5, 209, 0);
 				Level.setTile(getPlayerX() +1, getPlayerY() -1, getPlayerZ() -5, 209, 0);
@@ -1987,15 +1986,13 @@ endHack.setText("End portal");
 				Level.setTile(getPlayerX() +1, getPlayerY() -1, getPlayerZ() -6, 209, 0);
 				Level.setTile(getPlayerX(), getPlayerY() -1, getPlayerZ() -7, 209, 0);
 				Level.setTile(getPlayerX() -1, getPlayerY() -1, getPlayerZ() -7, 209, 0);
-				Level.setTile(getPlayerX() +1, getPlayerY() -1, getPlayerZ() -7, 209, 0);
-				
+				Level.setTile(getPlayerX() +1, getPlayerY() -1, getPlayerZ() -7, 209, 0);*/
 				/*back*/
 				Level.setTile(getPlayerX(), getPlayerY() -1, getPlayerZ() -8, 120, 4);
 				Level.setTile(getPlayerX() -1, getPlayerY() -1, getPlayerZ() -8, 120, 4);
 				Level.setTile(getPlayerX() +1, getPlayerY() -1, getPlayerZ() -8, 120, 4);
 				Level.setTile(getPlayerX() -2, getPlayerY() -1, getPlayerZ() -8, 0, 0);
 				Level.setTile(getPlayerX() +2, getPlayerY() -1, getPlayerZ() -8, 0, 0);
-				
 				/*sides*/
 				Level.setTile(getPlayerX() -2, getPlayerY() -1, getPlayerZ() -5, 120, 4);
 				Level.setTile(getPlayerX() +2, getPlayerY() -1, getPlayerZ() -5, 120, 4);
