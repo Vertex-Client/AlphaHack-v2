@@ -55,6 +55,9 @@ var trademark = "AlphaHackPE ™";
 var modpeFolder = ctx.getDir("ModPE", 0);
 var modpeFile = new java.io.File(modpeFolder, "AlphaHack v2.js");
 var perm = "*";
+var notex;
+var notey;
+var notez;
 
 var GUISize = "2";
 
@@ -9247,7 +9250,13 @@ if(block == true)preventDefault()
 }
 
 function useItem(x, y, z, itemId, blockId, side){
-if(deadchat)if(blockId == 63 || blockId == 68)signEditor(); 
+if(deadchat)if(blockId == 63 || blockId == 68){
+	var notex = x;
+	var notey = y;
+	var notez = z;
+	
+	signEditor();
+}
 
 	if(lightning) {
 Level.spawnMob(x, y, z, EntityType.LIGHTNING_BOLT);
