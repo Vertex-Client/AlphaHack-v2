@@ -86,6 +86,8 @@ var getage = false;
 var setage = false;
 var noclip = false;
 var extraj = false;
+var getvel = false;
+var yawpitch = false;
 
 var lightning = false;
 var primedtnt = false;
@@ -189,6 +191,8 @@ var particle30 = false;
 var particle31 = false;
 //spell3
 var particle32 = false;
+
+var GUIColor = Color.TRANSPARENT;
 
 var GUIColor1 = Color.TRANSPARENT;
 var GUIColor2 = Color.BLACK;
@@ -402,7 +406,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             onClick: function(viewarg){
 mainMenu();
 GUI.dismiss();
-Toast.makeText(MainActivity, "Scroll down", 1).show();
+if(getLanguage=="en_US")Toast.makeText(MainActivity, "Scroll down", 1).show();
  if(getLanguage=="de_DE")Toast.makeText(MainActivity, "Scroll nach unten", 1).show();
             }
         }));
@@ -464,7 +468,7 @@ menuLayout.addView(line0);
                 onClick: function(viewarg){
 menu.dismiss(); 
 showMenuBtn(); 
-Toast.makeText(MainActivity, "Closed successfully", 1).show();
+if(getLanguage=="en_US")Toast.makeText(MainActivity, "Closed successfully", 1).show();
  if(getLanguage=="de_DE")Toast.makeText(MainActivity, "Erfolgreich geschlossen", 1).show();
                 }
             }));
@@ -561,6 +565,8 @@ Toast.makeText(MainActivity, "Closed successfully", 1).show();
             
             var line6 = new android.widget.LinearLayout(ctx);
 	    line6.setOrientation(0);
+	    
+	    menuLayout.addView(line6);
 	    
 	    var group = new android.widget.Button(ctx);
 group.setText("Community");
@@ -878,7 +884,7 @@ Layer5.addView(sc1);
 Layer5.addView(Exit);
 
 sc1.setText("");
-sc1.setHint("www.example.com");
+sc1.setHint("https://example.com");
 Exit.setText("View code");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
@@ -908,7 +914,7 @@ print("The scc Dialog Is Malfunctioning:"+e);
       webset.setJavaScriptEnabled(true);
       webs.setWebChromeClient(new android.webkit.WebChromeClient());
       webs.setWebViewClient(new android.webkit.WebViewClient());
-      webs.loadUrl('http://www.iwebtool.com/code_viewer?domain=' + sc2);
+      webs.loadUrl('view-source:' + sc2);
 /*Site URL*/
       new android.app.AlertDialog.Builder(ctx).setView(webs).show();
       }}));
@@ -1054,8 +1060,6 @@ settingsLayout1.setPadding(20,0,20,0);
             }
     }}));
 }
- 
-	    menuLayout.addView(line6);
 	    
 var cheats = new android.widget.Button(ctx);
 cheats.setText("Online & offline mods");
@@ -1242,8 +1246,6 @@ liquidwalk = false;
                 onClick: function(viewarg){
                     Level.setGameMode(1);
                     Player.setCanFly(true);
-Server.sendChat("/gamemode 1");
-Server.sendChat("/gamemode creative");
 clientMessage(client + "§7Your gamemode was updated to creative mode!");
                 }
             }));
@@ -1289,7 +1291,7 @@ if(xray==true)button2.setTextColor(Color.GREEN);
             button2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              xray?xray=false:xray=true;
-button2.setText("Ore view(xray)");
+button2.setText("X-Ray");
 if(xray == true){
 button2.setTextColor(Color.GREEN);
 clientMessage(client + "You may crash!\nchange on/off fancy graphics for better view.");
@@ -1360,6 +1362,8 @@ button4.setText("Armor status");
 if(armor == true){
 button4.setTextColor(Color.GREEN);
 if(coords==true)coords==false;
+if(yawpitch==true)yawpitch==false;
+if(getvel==true)getvel==false;
 armor = true;
 }
 if(armor == false){
@@ -1382,6 +1386,8 @@ button5.setText("Coordinates");
 if(coords == true){
 button5.setTextColor(Color.GREEN);
 if(armor==true)armor==false;
+if(yawpitch==true)yawpitch==false;
+if(getvel==true)getvel==false;
 coords = true;
 }
 if(coords == false){
@@ -1392,6 +1398,54 @@ coords = false;
                 }
             }));
             cheatLayout.addView(button5);
+            
+            var seevel = new Button(MainActivity);
+seevel.setText("Velocity");
+seevel.setTextColor(Color.RED);
+if(getvel==true)seevel.setTextColor(Color.GREEN);
+            seevel.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             getvel?getvel=false:getvel=true;
+seevel.setText("Velocity");
+if(getvel == true){
+seevel.setTextColor(Color.GREEN);
+if(yawpitch==true)yawpitch==false;
+if(armor==true)armor==false;
+if(coords==true)coords==false;
+getvel = true;
+}
+if(getvel == false){
+seevel.setTextColor(Color.RED);
+
+getvel = false;
+}
+                }
+            }));
+            cheatLayout.addView(seevel);
+            
+            var seeyaw = new Button(MainActivity);
+seeyaw.setText("Pitch & yaw");
+seeyaw.setTextColor(Color.RED);
+if(yawpitch==true)seeyaw.setTextColor(Color.GREEN);
+            seeyaw.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             yawpitch?yawpitch=false:yawpitch=true;
+seeyaw.setText("Pitch & yaw");
+if(yawpitch == true){
+seeyaw.setTextColor(Color.GREEN);
+if(getvel==true)getvel==false;
+if(armor==true)armor==false;
+if(coords==true)coords==false;
+yawpitch = true;
+}
+if(yawpitch == false){
+seeyaw.setTextColor(Color.RED);
+
+yawpitch = false;
+}
+                }
+            }));
+            cheatLayout.addView(seeyaw);
             
             var button6 = new Button(MainActivity);
 button6.setText("Glide");
@@ -1634,6 +1688,8 @@ Layer.addView(Exit);
             select1.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
  clientMessage(client + "§7Face a block to see!");
+ Dialog.dismiss();
+showMenuBtn();
                 }
             }));
              
@@ -1641,21 +1697,11 @@ Layer.addView(Exit);
             select2.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
  clientMessage(client + "§7Face a block to see!");
-if(autodestroy==true)autodestroy = false;
 extraj = true;
-                }
-            }));
-			
-Exit.setText("done");
- 
-Exit.setOnClickListener(new android.view.View.OnClickListener(){
-onClick: function(view){
- 
-
 Dialog.dismiss();
 showMenuBtn();
-}
-});
+                }
+            }));
  
 digg.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 digg.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -1753,7 +1799,7 @@ clientMessage(client + "§7No clip / walk through walls off");
 Block.setShape(4, null, null, null, null, null, null);
 Block.setShape(5, null, null, null, null, null, null);
 Block.setShape(17, null, null, null, null, null, null);
-Block.setShape(2, null, null, null, null, null, null);
+Block.setShape(3, null, null, null, null, null, null);
 
 Block.setShape(24, null, null, null, null, null, null);
 Block.setShape(3, null, null, null, null, null, null);
@@ -2184,28 +2230,6 @@ antivoid = false;
                 }
             }));
             modLayout.addView(anti2void);
-            
-            var status = new android.widget.Button(ctx);
-      status.setText("MC Status: "+(stat22?"on":"off"));
-		status.setOnClickListener(new android.view.View.OnClickListener() {
-			onClick: function(v){
-				stat22?stat22=false:stat22=true;
-status.setText("MC Status: "+(stat22?"on":"off"));
-if(stat22 == true){
-clientMessage(client + "§7Status on");
-Server.sendChat("/hud off");
-clientMessage(client + "§7T = time, W = weather, B = biome, ID = item id, G = gamemode.");
-
-stat22 = true;
-}
-if(stat22 == false){
-clientMessage(client + "§7Status off");
-
-stat22 = false;
- }
-			}
-		});
-		modLayout.addView(status);
 
 var df = new android.widget.Button(ctx);
       df.setText("Disable up/down fly: "+(nofly?"on":"off"));
@@ -2249,7 +2273,7 @@ var select2 = new android.widget.Button(ctx);
 var select3 = new android.widget.Button(ctx);
 var select4 = new android.widget.Button(ctx);
 var Dialog = new android.app.Dialog(ctx);
-//var Exit = new android.widget.Button(ctx);
+var Exit = new android.widget.Button(ctx);
  
 Dialog.setTitle("Select");
 Dialog.setContentView(Layer);
@@ -2265,7 +2289,7 @@ Layer.addView(select3);
 
 Layer.addView(select4);
 
-//Layer.addView(Exit);
+Layer.addView(Exit);
  
             select1.setText("Lightning");
             select1.setOnClickListener(new android.view.View.OnClickListener({
@@ -2413,7 +2437,8 @@ modLayout.addView(rr);
 var cs = new android.widget.Button(ctx);
       cs.setText("Sign Editor: "+(deadchat?"on":"off"));
 		cs.setOnClickListener(new android.view.View.OnClickListener() {
-			onClick: function(v){         deadchat?deadchat=false:deadchat=true;
+			onClick: function(v){
+				deadchat?deadchat=false:deadchat=true;
 cs.setText("Sign Editor: "+(deadchat?"on":"off"));
 if(deadchat == true){
 clientMessage(client + "§7Sign editor is on");
@@ -9103,109 +9128,109 @@ function killingl() {
         var mobZ = Entity.getZ(mobs[d]);
         if (mobX * mobX + mobY * mobY + mobZ * mobZ <= 20 * 20 && mobs[d] != getPlayerEnt()) {
             if (Entity.getEntityTypeId(mobs[d]) == 10) {
-                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
             }
             if (Entity.getEntityTypeId(mobs[d]) == 11) {
-                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
             }
             if (Entity.getEntityTypeId(mobs[d]) == 12) {
-                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
             }
             if (Entity.getEntityTypeId(mobs[d]) == 13) {
-                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
             }
             if (Entity.getEntityTypeId(mobs[d]) == 14) {
-                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
             }
             if (Entity.getEntityTypeId(mobs[d]) == 15) {
-                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
             }
             if (Entity.getEntityTypeId(mobs[d]) == 16) {
-                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
             }
             if (Entity.getEntityTypeId(mobs[d]) == 17) {
-                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
             }
             if (Entity.getEntityTypeId(mobs[d]) == 18) {
-                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
             }
             if (Entity.getEntityTypeId(mobs[d]) == 19) {
-                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
             }
             if (Entity.getEntityTypeId(mobs[d]) == 20) {
-                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
             }
             if (Entity.getEntityTypeId(mobs[d]) == 21) {
-                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
             }
             if (Entity.getEntityTypeId(mobs[d]) == 22) {
-                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
             }
 			if (Entity.getEntityTypeId(mobs[d]) == 24) {
-                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
             }
 			if (Entity.getEntityTypeId(mobs[d]) == 25) {
-                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
             }
 			if (Entity.getEntityTypeId(mobs[d]) == 26) {
-                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
             }
 			if (Entity.getEntityTypeId(mobs[d]) == 27) {
-                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
             }
             if (Entity.getEntityTypeId(mobs[d]) == 32) {
-                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
             }
             if (Entity.getEntityTypeId(mobs[d]) == 33) {
-                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
             }
             if (Entity.getEntityTypeId(mobs[d]) == 34) {
-                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
             }
             if (Entity.getEntityTypeId(mobs[d]) == 35) {
-                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
             }
             if (Entity.getEntityTypeId(mobs[d]) == 36) {
-                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
             }
             if (Entity.getEntityTypeId(mobs[d]) == 37) {
-                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
             }
             if (Entity.getEntityTypeId(mobs[d]) == 38) {
-                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
             }
             if (Entity.getEntityTypeId(mobs[d]) == 39) {
-                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
             }
             if (Entity.getEntityTypeId(mobs[d]) == 40) {
-                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
             }
             if (Entity.getEntityTypeId(mobs[d]) == 41) {
-                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
             }
             if (Entity.getEntityTypeId(mobs[d]) == 42) {
-                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
             }
             if (Entity.getEntityTypeId(mobs[d]) == 43) {
-                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
             }
             if (Entity.getEntityTypeId(mobs[d]) == 44) {
-                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
             }
             if (Entity.getEntityTypeId(mobs[d]) == 45) {
-                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
             }
 			if (Entity.getEntityTypeId(mobs[d]) == 46) {
-                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
             }
 			if (Entity.getEntityTypeId(mobs[d]) == 47) {
-                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
             }
 			if (Entity.getEntityTypeId(mobs[d]) == 48) {
-                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
             }
 			if (Entity.getEntityTypeId(mobs[d]) == 100) {
-                Level.spawnMob(mobX, mobY, mobZ, EntityType.LIGHTNING_BOLT);
+                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
             }
         }
     }
@@ -9266,7 +9291,7 @@ Server.sendChat("/tp " + Player.getName(Player.getEntity()) + space + x + space 
 
 }
 if(tapnuke)explode(x,y,z,5);
-if(tapid)clientMessage(client + "Block ID: "+blockId+"Item ID: "+itemId+"\n"+"X: "+x+" Y: "+y+" Z: "+z);
+if(tapid)clientMessage(client + "Block ID: "+blockId+" Item ID: "+itemId+"\n"+" X: "+x+" Y: "+y+" Z: "+z);
 }
 
 function modTick(){
@@ -9355,6 +9380,12 @@ if(jump){
 		setVelY(getPlayerEnt(),0.8);
 		}
 	}
+if(getvel){
+ModPE.showTipMessage("VelX: "+Math.round(Entity.getVelX(getPlayerEnt()))+" VelY "+Math.round(Entity.getVelY(getPlayerEnt()))+" VelZ "+Math.round(Entity.getVelZ(getPlayerEnt())));
+}
+if(yawpitch){
+ModPE.showTipMessage("pitch: "+Math.round(getPitch(getPlayerEnt()))+" \nYaw: "+Math.round(getYaw(getPlayerEnt()))+" ");
+}
 }
 
 function devpardon() {
