@@ -538,15 +538,21 @@ if(getLanguage=="en_US")Toast.makeText(MainActivity, "Closed successfully", 1).s
             
             var active10 = new TextView(MainActivity);
             active10.setTextSize(10);
-            if(tapspam==true)active8.setText("TapSpam, ");
+            if(tapspam==true)active10.setText("TapSpam, ");
             active10.setTextColor(Color.WHITE);
             line1.addView(active10);
             
             var active11 = new TextView(MainActivity);
             active11.setTextSize(10);
-            if(tapdestroy==true)active8.setText("TapDestroy, ");
+            if(tapdestroy==true)active11.setText("TapDestroy, ");
             active11.setTextColor(Color.WHITE);
             line1.addView(active11);
+            
+            var active12 = new TextView(MainActivity);
+            active12.setTextSize(10);
+            if(airwalk==true)active12.setText("AirWalk, ");
+            active12.setTextColor(Color.WHITE);
+            line1.addView(active12);
             
             menuLayout.addView(line1);
             
