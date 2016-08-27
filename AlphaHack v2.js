@@ -91,6 +91,7 @@ var noclip = false;
 var extraj = false;
 var getvel = false;
 var yawpitch = false;
+var airwalk = false;
 
 var lightning = false;
 var primedtnt = false;
@@ -1286,6 +1287,50 @@ clientMessage(client + "§7Your gamemode was updated to spectator mode!");
                 }
             }));
             cheatLayout.addView(spectator);
+            
+            var button6 = new Button(MainActivity);
+button6.setText("Glide");
+button6.setTextColor(Color.RED);
+if(glide==true)button6.setTextColor(Color.GREEN);
+            button6.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             glide?glide=false:glide=true;
+button6.setText("Glide");
+if(glide == true){
+button6.setTextColor(Color.GREEN);
+Toast.makeText(MainActivity, "Credit: Apric0cks from maximus mod!", 1).show();
+glide = true;
+}
+if(glide == false){
+button6.setTextColor(Color.RED);
+
+glide = false;
+}
+                }
+            }));
+            cheatLayout.addView(button6);
+            
+            var walkonair = new Button(MainActivity);
+walkonair.setText("Walk on air");
+walkonair.setTextColor(Color.RED);
+if(airwalk==true)walkonair.setTextColor(Color.GREEN);
+            walkonair.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             airwalk?airwalk=false:airwalk=true;
+walkonair.setText("Walk on air");
+if(airwalk == true){
+walkonair.setTextColor(Color.GREEN);
+clientMessage(client + "You may get detected as flying becareful!")
+airwalk = true;
+}
+if(airwalk == false){
+walkonair.setTextColor(Color.RED);
+clientMessage(client + "Walk on air is off")
+airwalk = false;
+}
+                }
+            }));
+            cheatLayout.addView(walkonair);
 	    
 	    	    var button2 = new Button(MainActivity);
 button2.setText("X-Ray");
@@ -1449,28 +1494,6 @@ yawpitch = false;
                 }
             }));
             cheatLayout.addView(seeyaw);
-            
-            var button6 = new Button(MainActivity);
-button6.setText("Glide");
-button6.setTextColor(Color.RED);
-if(glide==true)button6.setTextColor(Color.GREEN);
-            button6.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             glide?glide=false:glide=true;
-button6.setText("Glide");
-if(glide == true){
-button6.setTextColor(Color.GREEN);
-Toast.makeText(MainActivity, "Credit: Apric0cks from maximus mod!", 1).show();
-glide = true;
-}
-if(glide == false){
-button6.setTextColor(Color.RED);
-
-glide = false;
-}
-                }
-            }));
-            cheatLayout.addView(button6);
             
             var button7 = new Button(MainActivity);
 button7.setText("Text to toast");
@@ -9394,6 +9417,27 @@ ModPE.showTipMessage("VelX: "+Math.round(Entity.getVelX(getPlayerEnt()))+" VelY 
 }
 if(yawpitch){
 ModPE.showTipMessage("pitch: "+Math.round(getPitch(getPlayerEnt()))+" \nYaw: "+Math.round(getYaw(getPlayerEnt()))+" ");
+}
+if(airwalk){
+if(Level.getTile(getPlayerX(), getPlayerY() -2, getPlayerZ())=="0"){
+	Level.setTile(getPlayerX() +1, getPlayerY() -2, getPlayerZ(), 95, 0);
+	 Level.setTile(getPlayerX() +2, getPlayerY() -2, getPlayerZ(), 95, 0);
+	 Level.setTile(getPlayerX() +3, getPlayerY() -2, getPlayerZ(), 95, 0);
+	 Level.setTile(getPlayerX() +4, getPlayerY() -2, getPlayerZ(), 95, 0);
+	 Level.setTile(getPlayerX() -1, getPlayerY() -2, getPlayerZ(), 95, 0);
+	 Level.setTile(getPlayerX() -2, getPlayerY() -2, getPlayerZ(), 95, 0);
+	 Level.setTile(getPlayerX() -3, getPlayerY() -2, getPlayerZ(), 95, 0);
+	 Level.setTile(getPlayerX() -4, getPlayerY() -2, getPlayerZ(), 95, 0);
+	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ(), 95, 0);
+	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() +1, 95, 0);
+	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() +2, 95, 0);
+	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() +3, 95, 0);
+	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() +4, 95, 0);
+	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() -1, 95, 0);
+	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() -2, 95, 0);
+	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() -3, 95, 0);
+	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() -4, 95, 0);
+	}
 }
 }
 
