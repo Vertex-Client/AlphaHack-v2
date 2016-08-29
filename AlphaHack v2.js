@@ -4730,6 +4730,24 @@ Player.setLevel(Math.round(L));
 if(Server.getPort()!="0")Server.sendChat("/xp " + L + space + Player.getName(Player.getEntity()));
 }
 
+var god1 = new Button(ctx);
+            god1.setText("God sword");
+            god1.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                godsword()	
+                }
+            }));
+            enchantLayout.addView(god1);
+            
+            function godsword(){
+            	var tysplvl = "29000";
+Player.enchant(Player.getSelectedSlotId(), Enchantment.FIRE_ASPECT,tysplvl);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.KNOCKBACK,tysplvl);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.LOOTING,tysplvl);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.SHARPNESS,tysplvl);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,tysplvl);
+            }
+
 var ena = new Button(ctx);
             ena.setText("Aqua Affinity");
             ena.setOnClickListener(new View.OnClickListener({
