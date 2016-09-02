@@ -58,6 +58,7 @@ var perm = "*";
 var notex;
 var notey;
 var notez;
+var test2 = false;
 
 var GUISize = "2";
 
@@ -279,6 +280,7 @@ clientMessage("§2≡≡=======»§a>§9 α §a<§2«======≡≡§f§r");
 clientMessage(client + "\n§aKik§f: ArceusMatt" + "\n" + "§bTwitter§f: @ArceusMatt" + "\n" + "§cGoogle+§f: Arceus matt" + "\n" + "§fYou§4tube§f: Arceus Matt");
 clientMessage("§2≡≡=======»§a>§9 α §a<§2«======≡≡§f§r\n\n");
 getUpdate(function(info){clientMessage("")});
+test2 = true;
 }
 
 //main menu
@@ -1793,41 +1795,6 @@ nowall.setText("No clip: "+(noclip?"on":"off"));
 if(noclip == true){
 clientMessage(client + "§7No clip / walk through walls on");
 
-Block.setShape(4, 0, 0, 0, 0.0001, 0.6, 0.0001);
-Block.setShape(5, 0, 0, 0, 0.0001, 0.6, 0.0001);
-Block.setShape(17, 0, 0, 0, 0.0001, 0.6, 0.0001);
-Block.setShape(3, 0, 0, 0, 0.0001, 0.6, 0.0001);
-
-Block.setShape(24, 0, 0, 0, 0.0001, 0.6, 0.0001);
-Block.setShape(20, 0, 0, 0, 0.0001, 0.6, 0.0001);
-Block.setShape(41, 0, 0, 0, 0.0001, 0.6, 0.0001);
-Block.setShape(42, 0, 0, 0, 0.0001, 0.6, 0.0001);
-Block.setShape(45, 0, 0, 0, 0.0001, 0.6, 0.0001);
-Block.setShape(49, 0, 0, 0, 0.0001, 0.6, 0.0001);
-Block.setShape(48, 0, 0, 0, 0.0001, 0.6, 0.0001);
-Block.setShape(47, 0, 0, 0, 0.0001, 0.6, 0.0001);
-
-Block.setShape(57, 0, 0, 0, 0.0001, 0.6, 0.0001);
-Block.setShape(80, 0, 0, 0, 0.0001, 0.6, 0.0001);
-Block.setShape(98, 0, 0, 0, 0.0001, 0.6, 0.0001);
-Block.setShape(101, 0, 0, 0, 0.0001, 0.6, 0.0001);
-Block.setShape(112, 0, 0, 0, 0.0001, 0.6, 0.0001);
-Block.setShape(133, 0, 0, 0, 0.0001, 0.6, 0.0001);
-Block.setShape(7, 0, 0, 0, 0.0001, 0.6, 0.0001);
-
-Block.setShape(155, 0, 0, 0, 0.0001, 0.6, 0.0001);
-Block.setShape(179, 0, 0, 0, 0.0001, 0.6, 0.0001);
-Block.setShape(188, 0, 0, 0, 0.0001, 0.6, 0.0001);
-Block.setShape(189, 0, 0, 0, 0.0001, 0.6, 0.0001);
-Block.setShape(190, 0, 0, 0, 0.0001, 0.6, 0.0001);
-Block.setShape(191, 0, 0, 0, 0.0001, 0.6, 0.0001);
-Block.setShape(192, 0, 0, 0, 0.0001, 0.6, 0.0001);
-
-noclip = true;
-}
-if(noclip == false){
-clientMessage(client + "§7No clip / walk through walls off");
-
 Block.setShape(4, null, null, null, null, null, null);
 Block.setShape(5, null, null, null, null, null, null);
 Block.setShape(17, null, null, null, null, null, null);
@@ -1857,6 +1824,41 @@ Block.setShape(189, null, null, null, null, null, null);
 Block.setShape(19, null, null, null, null, null, null);
 Block.setShape(191, null, null, null, null, null, null);
 Block.setShape(192, null, null, null, null, null, null);
+
+noclip = true;
+}
+if(noclip == false){
+clientMessage(client + "§7No clip / walk through walls off");
+
+Block.setShape(4, 1, 1, 1, 0, 0, 0);
+Block.setShape(5, 1, 1, 1, 0, 0, 0);
+Block.setShape(17, 1, 1, 1, 0, 0, 0);
+Block.setShape(3, 1, 1, 1, 0, 0, 0);
+
+Block.setShape(24, 1, 1, 1, 0, 0, 0);
+Block.setShape(21, 1, 1, 1, 0, 0, 0);
+Block.setShape(41, 1, 1, 1, 0, 0, 0);
+Block.setShape(42, 1, 1, 1, 0, 0, 0);
+Block.setShape(45, 1, 1, 1, 0, 0, 0);
+Block.setShape(49, 1, 1, 1, 0, 0, 0);
+Block.setShape(48, 1, 1, 1, 0, 0, 0);
+Block.setShape(47, 1, 1, 1, 0, 0, 0);
+
+Block.setShape(57, 1, 1, 1, 0, 0, 0);
+Block.setShape(81, 1, 1, 1, 0, 0, 0);
+Block.setShape(98, 1, 1, 1, 0, 0, 0);
+Block.setShape(111, 1, 1, 1, 0, 0, 0);
+Block.setShape(112, 1, 1, 1, 0, 0, 0);
+Block.setShape(133, 1, 1, 1, 0, 0, 0);
+Block.setShape(7, 1, 1, 1, 0, 0, 0);
+
+Block.setShape(155, 1, 1, 1, 0, 0, 0);
+Block.setShape(179, 1, 1, 1, 0, 0, 0);
+Block.setShape(188, 1, 1, 1, 0, 0, 0);
+Block.setShape(189, 1, 1, 1, 0, 0, 0);
+Block.setShape(191, 1, 1, 1, 0, 0, 0);
+Block.setShape(191, 1, 1, 1, 0, 0, 0);
+Block.setShape(192, 1, 1, 1, 0, 0, 0);
 
 noclip = false;
                 }
@@ -9887,6 +9889,13 @@ function rptask() {
                         net.zhuoweizhang.mcpelauncher.ScriptManager.setLevelFakeCallback(true, false);
                         enableMod();
                         showMenuBtn();
+                    }
+                    if(test2){
+                    	ModPE.getMinecraftVersion();
+                    	if(ModPE.getMinecraftVersion()=="0.11.0"){
+                    		ModPE.leaveGame();
+                    		print("OUTDATED MINECRAFT");
+                    	}
                     }
                     if (autospam) {
                         Server.sendChat(text);
