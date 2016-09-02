@@ -3368,8 +3368,10 @@ Layer.addView(sec);
 Layer.addView(lvl);
 Layer.addView(Exit);
 
-sec.setText("Seconds");
-lvl.setText("Level");
+sec.setText("");
+sec.setHint("Level");
+lvl.setText("");
+lvl.setHint("Level");
 Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
@@ -3424,8 +3426,10 @@ Layer.addView(sec);
 Layer.addView(lvl);
 Layer.addView(Exit);
 
-sec.setText("Seconds");
-lvl.setText("Level");
+sec.setText("");
+sec.setHint("Level");
+lvl.setText("");
+lvl.setHint("Level");
 Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
@@ -3480,8 +3484,10 @@ Layer.addView(sec);
 Layer.addView(lvl);
 Layer.addView(Exit);
 
-sec.setText("Seconds");
-lvl.setText("Level");
+sec.setText("");
+sec.setHint("Level");
+lvl.setText("");
+lvl.setHint("Level");
 Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
@@ -3536,8 +3542,10 @@ Layer.addView(sec);
 Layer.addView(lvl);
 Layer.addView(Exit);
 
-sec.setText("Seconds");
-lvl.setText("Level");
+sec.setText("");
+sec.setHint("Level");
+lvl.setText("");
+lvl.setHint("Level");
 Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
@@ -3592,8 +3600,10 @@ Layer.addView(sec);
 Layer.addView(lvl);
 Layer.addView(Exit);
 
-sec.setText("Seconds");
-lvl.setText("Level");
+sec.setText("");
+sec.setHint("Level");
+lvl.setText("");
+lvl.setHint("Level");
 Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
@@ -3648,8 +3658,10 @@ Layer.addView(sec);
 Layer.addView(lvl);
 Layer.addView(Exit);
 
-sec.setText("Seconds");
-lvl.setText("Level");
+sec.setText("");
+sec.setHint("Level");
+lvl.setText("");
+lvl.setHint("Level");
 Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
@@ -3704,8 +3716,10 @@ Layer.addView(sec);
 Layer.addView(lvl);
 Layer.addView(Exit);
 
-sec.setText("Seconds");
-lvl.setText("Level");
+sec.setText("");
+sec.setHint("Level");
+lvl.setText("");
+lvl.setHint("Level");
 Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
@@ -3760,8 +3774,10 @@ Layer.addView(sec);
 Layer.addView(lvl);
 Layer.addView(Exit);
 
-sec.setText("Seconds");
-lvl.setText("Level");
+sec.setText("");
+sec.setHint("Level");
+lvl.setText("");
+lvl.setHint("Level");
 Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
@@ -3816,8 +3832,10 @@ Layer.addView(sec);
 Layer.addView(lvl);
 Layer.addView(Exit);
 
-sec.setText("Seconds");
-lvl.setText("Level");
+sec.setText("");
+sec.setHint("Level");
+lvl.setText("");
+lvl.setHint("Level");
 Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
@@ -3872,8 +3890,10 @@ Layer.addView(sec);
 Layer.addView(lvl);
 Layer.addView(Exit);
 
-sec.setText("Seconds");
-lvl.setText("Level");
+sec.setText("");
+sec.setHint("Level");
+lvl.setText("");
+lvl.setHint("Level");
 Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
@@ -3928,8 +3948,10 @@ Layer.addView(sec);
 Layer.addView(lvl);
 Layer.addView(Exit);
 
-sec.setText("Seconds");
-lvl.setText("Level");
+sec.setText("");
+sec.setHint("Level");
+lvl.setText("");
+lvl.setHint("Level");
 Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
@@ -3984,8 +4006,10 @@ Layer.addView(sec);
 Layer.addView(lvl);
 Layer.addView(Exit);
 
-sec.setText("Seconds");
-lvl.setText("Level");
+sec.setText("");
+sec.setHint("Level");
+lvl.setText("");
+lvl.setHint("Level");
 Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
@@ -4040,8 +4064,10 @@ Layer.addView(sec);
 Layer.addView(lvl);
 Layer.addView(Exit);
 
-sec.setText("Seconds");
-lvl.setText("Level");
+sec.setText("");
+sec.setHint("Level");
+lvl.setText("");
+lvl.setHint("Level");
 Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
@@ -4096,8 +4122,10 @@ Layer.addView(sec);
 Layer.addView(lvl);
 Layer.addView(Exit);
 
-sec.setText("Seconds");
-lvl.setText("Level");
+sec.setText("");
+sec.setHint("Level");
+lvl.setText("");
+lvl.setHint("Level");
 Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
@@ -4152,8 +4180,10 @@ Layer.addView(sec);
 Layer.addView(lvl);
 Layer.addView(Exit);
 
-sec.setText("Seconds");
-lvl.setText("Level");
+sec.setText("");
+sec.setHint("Level");
+lvl.setText("");
+lvl.setHint("Level");
 Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
@@ -4208,8 +4238,10 @@ Layer.addView(sec);
 Layer.addView(lvl);
 Layer.addView(Exit);
 
-sec.setText("Seconds");
-lvl.setText("Level");
+sec.setText("");
+sec.setHint("Level");
+lvl.setText("");
+lvl.setHint("Level");
 Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
@@ -4264,8 +4296,10 @@ Layer.addView(sec);
 Layer.addView(lvl);
 Layer.addView(Exit);
 
-sec.setText("Seconds");
-lvl.setText("Level");
+sec.setText("");
+sec.setHint("Level");
+lvl.setText("");
+lvl.setHint("Level");
 Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
@@ -4320,8 +4354,10 @@ Layer.addView(sec);
 Layer.addView(lvl);
 Layer.addView(Exit);
 
-sec.setText("Seconds");
-lvl.setText("Level");
+sec.setText("");
+sec.setHint("Level");
+lvl.setText("");
+lvl.setHint("Level");
 Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
@@ -4376,8 +4412,10 @@ Layer.addView(sec);
 Layer.addView(lvl);
 Layer.addView(Exit);
 
-sec.setText("Seconds");
-lvl.setText("Level");
+sec.setText("");
+sec.setHint("Level");
+lvl.setText("");
+lvl.setHint("Level");
 Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
@@ -4432,8 +4470,10 @@ Layer.addView(sec);
 Layer.addView(lvl);
 Layer.addView(Exit);
 
-sec.setText("Seconds");
-lvl.setText("Level");
+sec.setText("");
+sec.setHint("Level");
+lvl.setText("");
+lvl.setHint("Level");
 Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
@@ -4488,8 +4528,10 @@ Layer.addView(sec);
 Layer.addView(lvl);
 Layer.addView(Exit);
 
-sec.setText("Seconds");
-lvl.setText("Level");
+sec.setText("");
+sec.setHint("Level");
+lvl.setText("");
+lvl.setHint("Level");
 Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
@@ -4544,8 +4586,10 @@ Layer.addView(sec);
 Layer.addView(lvl);
 Layer.addView(Exit);
 
-sec.setText("Seconds");
-lvl.setText("Level");
+sec.setText("");
+sec.setHint("Level");
+lvl.setText("");
+lvl.setHint("Level");
 Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
@@ -4600,8 +4644,10 @@ Layer.addView(sec);
 Layer.addView(lvl);
 Layer.addView(Exit);
 
-sec.setText("Seconds");
-lvl.setText("Level");
+sec.setText("");
+sec.setHint("Level");
+lvl.setText("");
+lvl.setHint("Level");
 Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
