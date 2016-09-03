@@ -1328,7 +1328,7 @@ if(airwalk==true)walkonair.setTextColor(Color.GREEN);
 walkonair.setText("Walk on air");
 if(airwalk == true){
 walkonair.setTextColor(Color.GREEN);
-Block.setShape(95, 1, 1, 1, 0, 0, 0);
+Block.setShape(95, 0, 0, 0, 1, 1, 1);
 clientMessage(client + "You may get detected as flying becareful!")
 airwalk = true;
 }
@@ -1831,35 +1831,35 @@ noclip = true;
 if(noclip == false){
 clientMessage(client + "§7No clip / walk through walls off");
 
-Block.setShape(4, 1, 1, 1, 0, 0, 0);
-Block.setShape(5, 1, 1, 1, 0, 0, 0);
-Block.setShape(17, 1, 1, 1, 0, 0, 0);
-Block.setShape(3, 1, 1, 1, 0, 0, 0);
+Block.setShape(4, 0, 0, 0, 1, 1, 1);
+Block.setShape(5, 0, 0, 0, 1, 1, 1);
+Block.setShape(17, 0, 0, 0, 1, 1, 1);
+Block.setShape(3, 0, 0, 0, 1, 1, 1);
 
-Block.setShape(24, 1, 1, 1, 0, 0, 0);
-Block.setShape(21, 1, 1, 1, 0, 0, 0);
-Block.setShape(41, 1, 1, 1, 0, 0, 0);
-Block.setShape(42, 1, 1, 1, 0, 0, 0);
-Block.setShape(45, 1, 1, 1, 0, 0, 0);
-Block.setShape(49, 1, 1, 1, 0, 0, 0);
-Block.setShape(48, 1, 1, 1, 0, 0, 0);
-Block.setShape(47, 1, 1, 1, 0, 0, 0);
+Block.setShape(24, 0, 0, 0, 1, 1, 1);
+Block.setShape(21, 0, 0, 0, 1, 1, 1);
+Block.setShape(41, 0, 0, 0, 1, 1, 1);
+Block.setShape(42, 0, 0, 0, 1, 1, 1);
+Block.setShape(45, 0, 0, 0, 1, 1, 1);
+Block.setShape(49, 0, 0, 0, 1, 1, 1);
+Block.setShape(48, 0, 0, 0, 1, 1, 1);
+Block.setShape(47, 0, 0, 0, 1, 1, 1);
 
-Block.setShape(57, 1, 1, 1, 0, 0, 0);
-Block.setShape(81, 1, 1, 1, 0, 0, 0);
-Block.setShape(98, 1, 1, 1, 0, 0, 0);
-Block.setShape(111, 1, 1, 1, 0, 0, 0);
-Block.setShape(112, 1, 1, 1, 0, 0, 0);
-Block.setShape(133, 1, 1, 1, 0, 0, 0);
-Block.setShape(7, 1, 1, 1, 0, 0, 0);
+Block.setShape(57, 0, 0, 0, 1, 1, 1);
+Block.setShape(81, 0, 0, 0, 1, 1, 1);
+Block.setShape(98, 0, 0, 0, 1, 1, 1);
+Block.setShape(111, 0, 0, 0, 1, 1, 1);
+Block.setShape(112, 0, 0, 0, 1, 1, 1);
+Block.setShape(133, 0, 0, 0, 1, 1, 1);
+Block.setShape(7, 0, 0, 0, 1, 1, 1);
 
-Block.setShape(155, 1, 1, 1, 0, 0, 0);
-Block.setShape(179, 1, 1, 1, 0, 0, 0);
-Block.setShape(188, 1, 1, 1, 0, 0, 0);
-Block.setShape(189, 1, 1, 1, 0, 0, 0);
-Block.setShape(191, 1, 1, 1, 0, 0, 0);
-Block.setShape(191, 1, 1, 1, 0, 0, 0);
-Block.setShape(192, 1, 1, 1, 0, 0, 0);
+Block.setShape(155, 0, 0, 0, 1, 1, 1);
+Block.setShape(179, 0, 0, 0, 1, 1, 1);
+Block.setShape(188, 0, 0, 0, 1, 1, 1);
+Block.setShape(189, 0, 0, 0, 1, 1, 1);
+Block.setShape(191, 0, 0, 0, 1, 1, 1);
+Block.setShape(191, 0, 0, 0, 1, 1, 1);
+Block.setShape(192, 0, 0, 0, 1, 1, 1);
 
 noclip = false;
                 }
