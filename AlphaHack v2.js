@@ -1328,6 +1328,7 @@ if(airwalk==true)walkonair.setTextColor(Color.GREEN);
 walkonair.setText("Walk on air");
 if(airwalk == true){
 walkonair.setTextColor(Color.GREEN);
+Block.setShape(95, 1, 1, 1, 0, 0, 0);
 clientMessage(client + "You may get detected as flying becareful!")
 airwalk = true;
 }
@@ -1882,10 +1883,10 @@ for (var i = 0; i < b_x023489a.length; i++) {
 barrier.setText("Nullify barriers");
             barrier.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-Block.setShape(0, 0, 0, 0, 0.0001, 0.6, 0.0001);
-Block.setShape(65, 0, 0, 0, 0.0001, 0.6, 0.0001);
-Block.setShape(95, 0, 0, 0, 0.0001, 0.6, 0.0001);
-Block.setShape(255, 0, 0, 0, 0.0001, 0.6, 0.0001);
+Block.setShape(0, null, null, null, null, null, null);
+Block.setShape(65, null, null, null, null, null, null);
+Block.setShape(95, null, null, null, null, null, null);
+Block.setShape(255, null, null, null, null, null, null);
 clientMessage(client + "Any barriers have been nullifed.");
                 }
             }));
