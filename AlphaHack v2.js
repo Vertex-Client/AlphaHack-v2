@@ -3372,7 +3372,7 @@ Layer.addView(lvl);
 Layer.addView(Exit);
 
 sec.setText("");
-sec.setHint("Level");
+sec.setHint("Seconds");
 lvl.setText("");
 lvl.setHint("Level");
 Exit.setText("Done");
@@ -3430,7 +3430,7 @@ Layer.addView(lvl);
 Layer.addView(Exit);
 
 sec.setText("");
-sec.setHint("Level");
+sec.setHint("Seconds");
 lvl.setText("");
 lvl.setHint("Level");
 Exit.setText("Done");
@@ -3488,7 +3488,7 @@ Layer.addView(lvl);
 Layer.addView(Exit);
 
 sec.setText("");
-sec.setHint("Level");
+sec.setHint("Seconds");
 lvl.setText("");
 lvl.setHint("Level");
 Exit.setText("Done");
@@ -3546,7 +3546,7 @@ Layer.addView(lvl);
 Layer.addView(Exit);
 
 sec.setText("");
-sec.setHint("Level");
+sec.setHint("Seconds");
 lvl.setText("");
 lvl.setHint("Level");
 Exit.setText("Done");
@@ -3604,7 +3604,7 @@ Layer.addView(lvl);
 Layer.addView(Exit);
 
 sec.setText("");
-sec.setHint("Level");
+sec.setHint("Seconds");
 lvl.setText("");
 lvl.setHint("Level");
 Exit.setText("Done");
@@ -3662,7 +3662,7 @@ Layer.addView(lvl);
 Layer.addView(Exit);
 
 sec.setText("");
-sec.setHint("Level");
+sec.setHint("Seconds");
 lvl.setText("");
 lvl.setHint("Level");
 Exit.setText("Done");
@@ -3720,7 +3720,7 @@ Layer.addView(lvl);
 Layer.addView(Exit);
 
 sec.setText("");
-sec.setHint("Level");
+sec.setHint("Seconds");
 lvl.setText("");
 lvl.setHint("Level");
 Exit.setText("Done");
@@ -3778,7 +3778,7 @@ Layer.addView(lvl);
 Layer.addView(Exit);
 
 sec.setText("");
-sec.setHint("Level");
+sec.setHint("Seconds");
 lvl.setText("");
 lvl.setHint("Level");
 Exit.setText("Done");
@@ -3836,7 +3836,7 @@ Layer.addView(lvl);
 Layer.addView(Exit);
 
 sec.setText("");
-sec.setHint("Level");
+sec.setHint("Seconds");
 lvl.setText("");
 lvl.setHint("Level");
 Exit.setText("Done");
@@ -3894,7 +3894,7 @@ Layer.addView(lvl);
 Layer.addView(Exit);
 
 sec.setText("");
-sec.setHint("Level");
+sec.setHint("Seconds");
 lvl.setText("");
 lvl.setHint("Level");
 Exit.setText("Done");
@@ -3952,7 +3952,7 @@ Layer.addView(lvl);
 Layer.addView(Exit);
 
 sec.setText("");
-sec.setHint("Level");
+sec.setHint("Seconds");
 lvl.setText("");
 lvl.setHint("Level");
 Exit.setText("Done");
@@ -4010,7 +4010,7 @@ Layer.addView(lvl);
 Layer.addView(Exit);
 
 sec.setText("");
-sec.setHint("Level");
+sec.setHint("Seconds");
 lvl.setText("");
 lvl.setHint("Level");
 Exit.setText("Done");
@@ -4068,7 +4068,7 @@ Layer.addView(lvl);
 Layer.addView(Exit);
 
 sec.setText("");
-sec.setHint("Level");
+sec.setHint("Seconds");
 lvl.setText("");
 lvl.setHint("Level");
 Exit.setText("Done");
@@ -4126,7 +4126,7 @@ Layer.addView(lvl);
 Layer.addView(Exit);
 
 sec.setText("");
-sec.setHint("Level");
+sec.setHint("Seconds");
 lvl.setText("");
 lvl.setHint("Level");
 Exit.setText("Done");
@@ -4184,7 +4184,7 @@ Layer.addView(lvl);
 Layer.addView(Exit);
 
 sec.setText("");
-sec.setHint("Level");
+sec.setHint("Seconds");
 lvl.setText("");
 lvl.setHint("Level");
 Exit.setText("Done");
@@ -4242,7 +4242,7 @@ Layer.addView(lvl);
 Layer.addView(Exit);
 
 sec.setText("");
-sec.setHint("Level");
+sec.setHint("Seconds");
 lvl.setText("");
 lvl.setHint("Level");
 Exit.setText("Done");
@@ -4300,7 +4300,7 @@ Layer.addView(lvl);
 Layer.addView(Exit);
 
 sec.setText("");
-sec.setHint("Level");
+sec.setHint("Seconds");
 lvl.setText("");
 lvl.setHint("Level");
 Exit.setText("Done");
@@ -4358,7 +4358,7 @@ Layer.addView(lvl);
 Layer.addView(Exit);
 
 sec.setText("");
-sec.setHint("Level");
+sec.setHint("Seconds");
 lvl.setText("");
 lvl.setHint("Level");
 Exit.setText("Done");
@@ -4416,7 +4416,7 @@ Layer.addView(lvl);
 Layer.addView(Exit);
 
 sec.setText("");
-sec.setHint("Level");
+sec.setHint("Seconds");
 lvl.setText("");
 lvl.setHint("Level");
 Exit.setText("Done");
@@ -4474,7 +4474,7 @@ Layer.addView(lvl);
 Layer.addView(Exit);
 
 sec.setText("");
-sec.setHint("Level");
+sec.setHint("Seconds");
 lvl.setText("");
 lvl.setHint("Level");
 Exit.setText("Done");
@@ -4532,7 +4532,7 @@ Layer.addView(lvl);
 Layer.addView(Exit);
 
 sec.setText("");
-sec.setHint("Level");
+sec.setHint("Seconds");
 lvl.setText("");
 lvl.setHint("Level");
 Exit.setText("Done");
@@ -4590,7 +4590,7 @@ Layer.addView(lvl);
 Layer.addView(Exit);
 
 sec.setText("");
-sec.setHint("Level");
+sec.setHint("Seconds");
 lvl.setText("");
 lvl.setHint("Level");
 Exit.setText("Done");
@@ -4648,7 +4648,7 @@ Layer.addView(lvl);
 Layer.addView(Exit);
 
 sec.setText("");
-sec.setHint("Level");
+sec.setHint("Seconds");
 lvl.setText("");
 lvl.setHint("Level");
 Exit.setText("Done");
