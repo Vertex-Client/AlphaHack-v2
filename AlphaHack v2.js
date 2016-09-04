@@ -940,6 +940,72 @@ print("The scc Dialog Is Malfunctioning:"+e);
       new android.app.AlertDialog.Builder(ctx).setView(webs).show();
       }}));
       }
+      
+      var aniview = new android.widget.Button(ctx);
+		aniview.setText("Watch anime on MCPE");
+		aniview.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             misc.dismiss();
+             animeView();
+Toast.makeText(ctx, "Please avoid ads & adjust your zoom", 1).show();
+			}
+		});
+		miscLayout.addView(aniview);
+		
+		function animeView(){
+ctx.runOnUiThread(new Runnable({ run: function(){
+        try{
+            var animeLayout = new LinearLayout(ctx);
+            
+            var animeScroll = new ScrollView(ctx);
+            
+            var animeLayout1 = new LinearLayout(ctx);
+            animeLayout.setOrientation(1);
+            animeLayout1.setOrientation(1);
+            
+            animeScroll.addView(animeLayout);
+            animeLayout1.addView(animeScroll);
+
+var exit = new Button(ctx);
+            exit.setText("Exit");
+exit.setTextColor(Color.RED);
+            exit.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+
+                    anime.dismiss();
+
+showMenuBtn();
+                }
+            }));
+            animeLayout.addView(exit);
+            
+            var webs = new android.webkit.WebView(ctx);
+      var webset = webs.getSettings();
+      webset.setJavaScriptEnabled(true);
+      webs.setWebChromeClient(new android.webkit.WebChromeClient());
+      webs.setWebViewClient(new android.webkit.WebViewClient());
+      /*webset.setUserAgentString(userAgent);*/
+      	webset.setSupportZoom(true);
+      	webset.setBuiltInZoomControls(true);
+      	webset.setDisplayZoomControls(false);
+      webs.loadUrl('https://watch-anime.net');
+      animeLayout.addView(webs);
+
+anime = new PopupWindow(animeLayout1, dip2px(500), dip2px(500));
+
+anime = new PopupWindow(animeLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1.4, ctx.getWindowManager().getDefaultDisplay().getHeight()/1.3);
+	  var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(Color.TRANSPARENT);
+      bg.setStroke(10,Color.BLACK);
+animeLayout1.setBackgroundDrawable(bg);
+animeLayout1.setPadding(20,0,20,0);
+anime.setBackgroundDrawable(new ColorDrawable(Color.BLACK));
+            anime.showAtLocation(ctx.getWindow().getDecorView(), Gravity.CENTER | Gravity.CENTER, 0, 0);
+            }catch(error){
+                Toast.makeText(ctx, "An error occured: " + error, 1).show();
+            }
+    }}));
+}
 
             misc = new PopupWindow(miscLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)misc.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
