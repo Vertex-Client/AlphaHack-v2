@@ -419,7 +419,6 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
         menuBtn.setText("");
         menuBtn.setOnClickListener(new View.OnClickListener({
             onClick: function(viewarg){
-            	setRot(getPlayerEnt(), getYaw(getPlayerEnt()), 0);
 mainMenu();
 GUI.dismiss();
 if(getLanguage=="en_US")Toast.makeText(MainActivity, "Scroll down", 1).show();
