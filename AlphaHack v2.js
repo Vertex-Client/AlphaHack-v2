@@ -1602,7 +1602,7 @@ Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
 text =mm.getText();
 Dialog.dismiss();
-autospam = true;
+if(autospam2==true)autospam = true;
 }
 });
 
@@ -1662,10 +1662,10 @@ chestesp = false;
 var button12 = new Button(MainActivity);
 button12.setText("Auto spam");
 button12.setTextColor(Color.RED);
-if(autospam==true)button12.setTextColor(Color.GREEN);
+if(autospam2==true)button12.setTextColor(Color.GREEN);
             button12.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-             autospam?autospam=false:autospam=true;
+             autospam2?autospam2=false:autospam2=true;
 button12.setText("Auto spam");
 if(autospam2== true){
 button12.setTextColor(Color.GREEN);
