@@ -96,6 +96,10 @@ var extraj = false;
 var getvel = false;
 var yawpitch = false;
 var airwalk = false;
+var aimaura = false;
+var aim;
+var aimbot = false;
+var aimed = false;
 
 var lightning = false;
 var primedtnt = false;
@@ -1347,6 +1351,33 @@ airwalk = false;
                 }
             }));
             cheatLayout.addView(walkonair);
+            
+            var killaura1 = new Button(MainActivity);
+killaura1.setText("Aim aura");
+killaura1.setTextColor(Color.RED);
+if(aimaura==true)killaura1.setTextColor(Color.GREEN);
+            killaura1.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             aimaura?aimaura=false:aimaura=true;
+killaura1.setText("Aim aura");
+if(aimaura == true){
+killaura1.setTextColor(Color.GREEN);
+clientMessage(client + "Aim aura on");
+Toast.makeText(MainActivity, "Credit: Firepro9978 from flame client!", 1).show();
+aimbot = true;
+aimed = true;
+aimaura = true;
+}
+if(aimaura == false){
+killaura1.setTextColor(Color.RED);
+clientMessage(client + "Aim aura off");
+aimbot = false;
+aimed = false;
+aimaura = false;
+}
+                }
+            }));
+            cheatLayout.addView(killaura1);
 	    
 	    	    var button2 = new Button(MainActivity);
 button2.setText("X-Ray");
@@ -9826,6 +9857,62 @@ var particle31 = false;
 var particle32 = false;
 }
 
+function getNearestEntity(maxrange) {
+			var mobs = Entity.getAll();
+			var players = Server.getAllPlayers();
+			var small = maxrange;
+			var ent = null;
+			for (var i = 0; i < mobs.length; i++) {
+				var x = Entity.getX(mobs[i]) - getPlayerX();
+				var y = Entity.getY(mobs[i]) - getPlayerY();
+				var z = Entity.getZ(mobs[i]) - getPlayerZ();
+				var dist = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2));
+				if (dist < small && dist > 0 && Entity.getEntityTypeId(mobs[i]) <= 63 && Entity.getHealth(mobs[i]) >= 1) {
+					small = dist;
+					ent = mobs[i];
+				}
+			}
+			for (var i = 0; i < players.length; i++) {
+				var x = Entity.getX(players[i]) - getPlayerX();
+				var y = Entity.getY(players[i]) - getPlayerY();
+				var z = Entity.getZ(players[i]) - getPlayerZ();
+				var dist = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2));
+				if (dist < small && dist > 0 && Entity.getHealth(players[i]) >= 1) {
+					small = dist;
+					ent = players[i];
+				}
+			}
+			return ent;
+		}
+
+function crosshairAimAt(ent, pos) {
+							if(ent != null) {
+				var x = Entity.getX(ent) - getPlayerX();
+				var y = Entity.getY(ent) - getPlayerY();
+				var z = Entity.getZ(ent) - getPlayerZ();
+				if(pos != null && pos instanceof Array) {
+
+					x = Entity.getX(ent) - pos[0];
+					y = Entity.getY(ent) - pos[1];
+					z = Entity.getZ(ent) - pos[2];
+				}
+				if(Entity.getEntityTypeId(ent) != 63)
+					y += 0.5;
+				var a = 0.5 + Entity.getX(ent);
+				var b = Entity.getY(ent);
+				var c = 0.5 + Entity.getZ(ent);
+				var len = Math.sqrt(x * x + y * y + z * z);
+				var y = y / len;
+				var pitch = Math.asin(y);
+				pitch = pitch * 180.0 / Math.PI;
+				pitch = -pitch;
+				var yaw = -Math.atan2(a - (Player.getX() + 0.5), c - (Player.getZ() + 0.5)) * (180 / Math.PI);
+				if(pitch < 89 && pitch > -89) {
+					Entity.setRot(Player.getEntity(), yaw, pitch);
+				}
+			}
+  }
+
 function rptask3() {
     ctx.runOnUiThread(new java.lang.Runnable({
         run: function () {
@@ -9932,6 +10019,10 @@ function rptask() {
 	Level.destroyBlock(Player.getPointedBlockX() -2, Player.getPointedBlockY(), Player.getPointedBlockZ() -2, vidd);
 	Level.destroyBlock(Player.getPointedBlockX() -3, Player.getPointedBlockY(), Player.getPointedBlockZ() -3, vidd);
 	Level.destroyBlock(Player.getPointedBlockX() -4, Player.getPointedBlockY(), Player.getPointedBlockZ() -4, vidd);
+                    }
+                    if(aimbot) {
+			var ent = getNearestEntity(7);
+			if(ent != null) crosshairAimAt(ent);
                     }
                     nx = getPlayerX();
                     ny = getPlayerY();
