@@ -76,12 +76,15 @@ var taptp = false;
 var sign = false;
 var autodestroy = false;
 var autospam = false;
+var autodestroy2 = false;
+var autospam2 = false;
 var onlyday = false;
 var onlynight = false;
 var chestesp = false;
 var tapnuke = false;
 var autonuke = false;
 var antispam = false;
+var antispam2 = false;
 var playeresp = false;
 var lightningaura = false;
 var tapid = false;
@@ -1108,20 +1111,20 @@ ctx.runOnUiThread(new Runnable({ run: function(){
 		var bypass1 = new Button(MainActivity);
 bypass1.setText("Anti-spam bypass");
 bypass1.setTextColor(Color.RED);
-if(antispam==true)bypass1.setTextColor(Color.GREEN);
+if(antispam2==true)bypass1.setTextColor(Color.GREEN);
             bypass1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-             antispam?antispam=false:antispam=true;
+             antispam2?antispam2=false:antispam2=true;
 bypass1.setText("Anti-spam bypass");
-if(antispam == true){
+if(antispam2 == true){
 bypass1.setTextColor(Color.GREEN);
 spa2();
-antispam = true;
+antispam2 = true;
 }
-if(antispam == false){
+if(antispam2 == false){
 bypass1.setTextColor(Color.RED);
-
 antispam = false;
+antispam2 = false;
 }
                 }
             }));
@@ -1162,6 +1165,7 @@ Layer.addView(select4);
                 onClick: function(viewarg){
 text =m1.getText();
 seconds = "2000";
+antispam = true;
 Dialog.dismiss();
 showMenuBtn();
                 }
@@ -1172,6 +1176,7 @@ showMenuBtn();
                 onClick: function(viewarg){
 text =m1.getText();
 seconds = "3000";
+antispam = true;
 Dialog.dismiss();
 showMenuBtn();
                 }
@@ -1182,6 +1187,7 @@ showMenuBtn();
                 onClick: function(viewarg){
 text =m1.getText();
 var seconds = "1000";
+antispam = true;
 Dialog.dismiss();
 showMenuBtn();
                 }
@@ -1192,6 +1198,7 @@ showMenuBtn();
                 onClick: function(viewarg){
 text =m1.getText();
 var seconds = "2500";
+antispam = true;
 Dialog.dismiss();
 showMenuBtn();
                 }
@@ -1589,12 +1596,13 @@ Layer6.addView(mm);
 Layer6.addView(Exit);
 
 mm.setText("AlphaHack!");
-Exit.setText("done");
+Exit.setText("Spam");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
 text =mm.getText();
 Dialog.dismiss();
+autospam = true;
 }
 });
 
@@ -1659,15 +1667,15 @@ if(autospam==true)button12.setTextColor(Color.GREEN);
                 onClick: function(viewarg){
              autospam?autospam=false:autospam=true;
 button12.setText("Auto spam");
-if(autospam == true){
+if(autospam2== true){
 button12.setTextColor(Color.GREEN);
 spa();
-autospam = true;
+autospam2= true;
 }
-if(autospam == false){
+if(autospam2== false){
 button12.setTextColor(Color.RED);
-
 autospam = false;
+autospam2= false;
 }
                 }
             }));
@@ -1676,21 +1684,21 @@ autospam = false;
             var button13 = new Button(MainActivity);
 button13.setText("Auto destroy");
 button13.setTextColor(Color.RED);
-if(autodestroy==true)button12.setTextColor(Color.GREEN);
+if(autodestroy2==true)button12.setTextColor(Color.GREEN);
             button13.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-             autodestroy?autodestroy=false:autodestroy=true;
+             autodestroy2?autodestroy2=false:autodestroy2=true;
 button13.setText("Auto destroy");
-if(autodestroy == true){
+if(autodestroy2 == true){
 button13.setTextColor(Color.GREEN);
 dig1();
-autodestroy = true;
+autodestroy2 = true;
 }
-if(autodestroy == false){
+if(autodestroy2 == false){
 button13.setTextColor(Color.RED);
-
+if(autodestroy==true)autodestroy = false;
 if(extraj==true)extraj = false;
-autodestroy = false;
+autodestroy2 = false;
 }
                 }
             }));
@@ -1723,6 +1731,7 @@ Layer.addView(Exit);
             select1.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
  clientMessage(client + "§7Face a block to see!");
+ autodestroy = true;
  Dialog.dismiss();
 showMenuBtn();
                 }
@@ -9893,7 +9902,7 @@ function rptask() {
                     }
                     if(test2){
                     	ModPE.getMinecraftVersion();
-                    	if(ModPE.getMinecraftVersion()=="0.11.0"){
+                    	if(ModPE.getMinecraftVersion()=="0.10.0"){
                     		ModPE.leaveGame();
                     		print("OUTDATED MINECRAFT");
                     	}
