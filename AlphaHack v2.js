@@ -205,7 +205,8 @@ var particle31 = false;
 var particle32 = false;
 
 var GUIColor = Color.TRANSPARENT;
-var default = true;
+
+var default1 = true;
 
 var GUIColor1 = Color.TRANSPARENT;
 var GUIColor2 = Color.BLACK;
@@ -942,8 +943,8 @@ print("The scc Dialog Is Malfunctioning:"+e);
       }
 
             misc = new PopupWindow(miscLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
-            if(default==true)misc.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
-      if(default==false)misc.setBackgroundDrawable(new ColorDrawable(GUIColor));
+            if(default1==true)misc.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+      if(default1==false)misc.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
       bg.setStroke(10,Color.BLACK);
@@ -1075,7 +1076,7 @@ var l1 = new Button(ctx);
                 onClick: function(viewarg){         
 GUIColor = GUIColor1
 var GUIName = Color.WHITE;
-default = true;
+default1 = true;
                 }
             }));
             settingsLayout.addView(l1);
@@ -1086,7 +1087,7 @@ default = true;
                 onClick: function(viewarg){         
 GUIColor = GUIColor2
  var GUIName = Color.BLACK;
- if(default==true)default = false;
+ if(default1==true)default1 = false;
                 }
             }));
             settingsLayout.addView(l2);
@@ -1097,7 +1098,7 @@ var l3 = new Button(ctx);
                 onClick: function(viewarg){         
 GUIColor = GUIColor3
 var GUIName = Color.BLACK
-if(default==true)default = false;
+if(default1==true)default1 = false;
                 }
             }));
             settingsLayout.addView(l3);
@@ -1107,7 +1108,7 @@ var l4 = new Button(ctx);
             l4.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIColor = GUIColor4
-if(default==true)default = false;
+if(default1==true)default1 = false;
                 }
             }));
             settingsLayout.addView(l4);
@@ -1117,7 +1118,7 @@ var l5 = new Button(ctx);
             l5.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIColor = GUIColor5
-if(default==true)default = false;
+if(default1==true)default1 = false;
                 }
             }));
             settingsLayout.addView(l5);
@@ -1128,7 +1129,7 @@ var l6 = new Button(ctx);
                 onClick: function(viewarg){         
 GUIColor = GUIColor6
 var GUIName = Color.WHITE;
-if(default==true)default = false;
+if(default1==true)default1 = false;
                 }
             }));
             settingsLayout.addView(l6);
@@ -1139,7 +1140,7 @@ var l7 = new Button(ctx);
                 onClick: function(viewarg){         
 GUIColor = GUIColor7
 var GUIName = Color.BLACK;
-if(default==true)default = false;
+if(default1==true)default1 = false;
                 }
             }));
             settingsLayout.addView(l7);
@@ -1150,7 +1151,7 @@ var l8 = new Button(ctx);
                 onClick: function(viewarg){         
 GUIColor = GUIColor8
 var GUIName = Color.BLACK;
-if(default==true)default = false;
+if(default1==true)default1 = false;
                 }
             }));
             settingsLayout.addView(l8);
@@ -1161,7 +1162,7 @@ var l9 = new Button(ctx);
                 onClick: function(viewarg){         
 GUIColor = GUIColor9
 var GUIName = Color.BLACK;
-if(default==true)default = false;
+if(default1==true)default1 = false;
                 }
             }));
             settingsLayout.addView(l9);
@@ -1172,7 +1173,7 @@ var l10 = new Button(ctx);
                 onClick: function(viewarg){         
 GUIColor = GUIColor10
 var GUIName = Color.WHITE
-if(default==true)default = false;
+if(default1==true)default1 = false;
                 }
             }));
             settingsLayout.addView(l10);
@@ -1182,7 +1183,7 @@ var l11 = new Button(ctx);
             l11.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIColor = GUIColor11
-if(default==true)default = false;
+if(default1==true)default1 = false;
                 }
             }));
             settingsLayout.addView(l11);
@@ -1192,14 +1193,14 @@ var l12 = new Button(ctx);
             l12.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIColor = GUIColor12
-if(default==true)default = false;
+if(default1==true)default1 = false;
                 }
             }));
             settingsLayout.addView(l12);
 
             settings = new PopupWindow(settingsLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
-            if(default==true)settings.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
-      if(default==false)settings.setBackgroundDrawable(new ColorDrawable(GUIColor));
+            if(default1==true)settings.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+      if(default1==false)settings.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
       bg.setStroke(10,Color.BLACK);
@@ -2175,8 +2176,8 @@ cmdLayout1.setPadding(20,0,20,0);
 }
 
             cheat = new PopupWindow(cheatLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
-            if(default==true)cheat.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
-      if(default==false)cheat.setBackgroundDrawable(new ColorDrawable(GUIColor));
+            if(default1==true)cheat.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+      if(default1==false)cheat.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
       bg.setStroke(10,Color.BLACK);
@@ -3460,8 +3461,8 @@ lightningaura = false;
 		modLayout.addView(laura);
 
             mod = new PopupWindow(modLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
-            if(default==true)mod.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
-      if(default==false)mod.setBackgroundDrawable(new ColorDrawable(GUIColor));
+            if(default1==true)mod.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+      if(default1==false)mod.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
       bg.setStroke(10,Color.BLACK);
@@ -4851,8 +4852,8 @@ Entity.addEffect(getPlayerEnt(), MobEffect.movementSpeed, s*l, 0, false, true);
 }
 
             effect = new PopupWindow(effectLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
-            if(default==true)effect.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
-      if(default==false)effect.setBackgroundDrawable(new ColorDrawable(GUIColor));
+            if(default1==true)effect.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+      if(default1==false)effect.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
       bg.setStroke(10,Color.BLACK);
@@ -6324,8 +6325,8 @@ Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,ll);
 //Enchantment.UNBREAKING;
 
             enchant = new PopupWindow(enchantLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
-            if(default==true)enchant.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
-      if(default==false)enchant.setBackgroundDrawable(new ColorDrawable(GUIColor));
+            if(default1==true)enchant.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+      if(default1==false)enchant.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
       bg.setStroke(10,Color.BLACK);
@@ -6520,8 +6521,8 @@ addItemInventory(293, 1, 0);
             giveLayout.addView(k5);
 
             give = new PopupWindow(giveLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
-            if(default==true)give.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
-      if(default==false)give.setBackgroundDrawable(new ColorDrawable(GUIColor));
+            if(default1==true)give.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+      if(default1==false)give.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
       bg.setStroke(10,Color.BLACK);
@@ -6905,8 +6906,8 @@ Entity.setRenderType(Player.getEntity(), EntityRenderType.zombie);
             morphLayout.addView(mm22);
 
             morph = new PopupWindow(morphLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
-            if(default==true)morph.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
-			if(default==false)morph.setBackgroundDrawable(new ColorDrawable(GUIColor));
+            if(default1==true)morph.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+			if(default1==false)morph.setBackgroundDrawable(new ColorDrawable(GUIColor));
       var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
       bg.setStroke(10,Color.BLACK);
@@ -7084,8 +7085,8 @@ var n11 = new Button(ctx);
             nukeLayout.addView(n11);
 
             nuke = new PopupWindow(nukeLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
-            if(default==true)nuke.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
-      if(default==false)nuke.setBackgroundDrawable(new ColorDrawable(GUIColor));
+            if(default1==true)nuke.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+      if(default1==false)nuke.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
       bg.setStroke(10,Color.BLACK);
@@ -7644,8 +7645,8 @@ clientMessage(client + "§7Particle 32 is false");
             particleLayout.addView(p32);
 
             particle = new PopupWindow(particleLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
-            if(default==true)particle.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
-      if(default==false)particle.setBackgroundDrawable(new ColorDrawable(GUIColor));
+            if(default1==true)particle.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+      if(default1==false)particle.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
       bg.setStroke(10,Color.BLACK);
@@ -8034,8 +8035,8 @@ var spawn70 = new Button(ctx);
             spawnLayout.addView(spawn77);
 
             spawn = new PopupWindow(spawnLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
-            if(default==true)spawn.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
-      if(default==false)spawn.setBackgroundDrawable(new ColorDrawable(GUIColor));
+            if(default1==true)spawn.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+      if(default1==false)spawn.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
       bg.setStroke(10,Color.BLACK);
@@ -8334,8 +8335,8 @@ ModPE.setGameSpeed(nspee);
 }
 
             speed = new PopupWindow(speedLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
-            if(default==true)speed.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
-      if(default==false)speed.setBackgroundDrawable(new ColorDrawable(GUIColor));
+            if(default1==true)speed.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+      if(default1==false)speed.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
       bg.setStroke(10,Color.BLACK);
@@ -8462,8 +8463,8 @@ taptp = false;
 		teleportLayout.addView(et);
 
             teleport = new PopupWindow(teleportLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
-            if(default==true)teleport.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
-      if(default==false)teleport.setBackgroundDrawable(new ColorDrawable(GUIColor));
+            if(default1==true)teleport.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+      if(default1==false)teleport.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
       bg.setStroke(10,Color.BLACK);
@@ -8849,8 +8850,8 @@ Server.sendChat("/time set 23000");
             timeLayout.addView(a24);
 
             time = new PopupWindow(timeLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
-            if(default==true)time.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
-      if(default==false)time.setBackgroundDrawable(new ColorDrawable(GUIColor));
+            if(default1==true)time.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+      if(default1==false)time.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
       bg.setStroke(10,Color.BLACK);
@@ -8938,8 +8939,8 @@ Server.sendChat("/weather clear");
             weatherLayout.addView(button2);
 
             weather = new PopupWindow(weatherLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
-            if(default==true)weather.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
-      if(default==false)weather.setBackgroundDrawable(new ColorDrawable(GUIColor));
+            if(default1==true)weather.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+      if(default1==false)weather.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
       bg.setStroke(10,Color.BLACK);
@@ -9004,8 +9005,8 @@ Server.sendChat("/weather rain");
 }
             
             menu = new PopupWindow(menuLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
-           if(default==true)menu.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
-		   if(default==false)menu.setBackgroundDrawable(new ColorDrawable(GUIColor));
+           if(default1==true)menu.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+		   if(default1==false)menu.setBackgroundDrawable(new ColorDrawable(GUIColor));
 		   var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
       bg.setStroke(10,Color.BLACK);
