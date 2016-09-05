@@ -9789,6 +9789,7 @@ if(Level.getTile(getPlayerX(), getPlayerY() -2, getPlayerZ())=="0"){
 	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() -4, 95, 0);
 	}
 }
+if(changeSpeed==true)changeSpeedOnBlock();
 }
 
 function devpardon() {
@@ -10080,7 +10081,7 @@ run: function(){
     var y = getPlayerY();
     var z = getPlayerZ();
     var myArray = ["30", "79", "88", "174"];
-    //increase
+    /*increase*/
     if(getTile(x, y, z)==myArray){
         ModPE.setGameSpeed(100);
         ModPE.showTipMessage("AlphaHack: Speed is increased.");
@@ -10109,10 +10110,6 @@ run: function(){
         ModPE.setGameSpeed(100);
         ModPE.showTipMessage("AlphaHack: Speed is increased.");
     }
-    if(getTile(x, y -1, z)==myArray){
-        ModPE.setGameSpeed(100);
-        ModPE.showTipMessage("AlphaHack: Speed is increased.");
-    }
     if(getTile(x +1, y -1, z)==myArray){
         ModPE.setGameSpeed(100);
         ModPE.showTipMessage("AlphaHack: Speed is increased.");
@@ -10126,10 +10123,6 @@ run: function(){
         ModPE.showTipMessage("AlphaHack: Speed is increased.");
     }
     if(getTile(x, y -1, z -1)==myArray){
-        ModPE.setGameSpeed(100);
-        ModPE.showTipMessage("AlphaHack: Speed is increased.");
-    }
-    if(getTile(x, y -2, z)==myArray){
         ModPE.setGameSpeed(100);
         ModPE.showTipMessage("AlphaHack: Speed is increased.");
     }
@@ -10149,73 +10142,65 @@ run: function(){
         ModPE.setGameSpeed(100);
         ModPE.showTipMessage("AlphaHack: Speed is increased.");
     }
-    //normal
+    /*normal*/
     if(getTile(x, y, z)!=myArray){
-        ModPE.setGameSpeed(100);
+        ModPE.setGameSpeed(20);
         ModPE.showTipMessage("AlphaHack: Speed is normal.");
     }
     if(getTile(x, y -1, z)!=myArray){
-        ModPE.setGameSpeed(100);
+        ModPE.setGameSpeed(20);
         ModPE.showTipMessage("AlphaHack: Speed is normal.");
     }
     if(getTile(x, y -2, z)!=myArray){
-        ModPE.setGameSpeed(100);
+        ModPE.setGameSpeed(20);
         ModPE.showTipMessage("AlphaHack: Speed is normal.");
     }
     if(getTile(x +1, y, z)!=myArray){
-        ModPE.setGameSpeed(100);
+        ModPE.setGameSpeed(20);
         ModPE.showTipMessage("AlphaHack: Speed is normal.");
     }
     if(getTile(x, y, z +1)!=myArray){
-        ModPE.setGameSpeed(100);
+        ModPE.setGameSpeed(20);
         ModPE.showTipMessage("AlphaHack: Speed is normal.");
     }
     if(getTile(x -1, y, z)!=myArray){
-        ModPE.setGameSpeed(100);
+        ModPE.setGameSpeed(20);
         ModPE.showTipMessage("AlphaHack: Speed is normal.");
     }
     if(getTile(x, y, z -1)!=myArray){
-        ModPE.setGameSpeed(100);
-        ModPE.showTipMessage("AlphaHack: Speed is normal.");
-    }
-    if(getTile(x, y -1, z)!=myArray){
-        ModPE.setGameSpeed(100);
+        ModPE.setGameSpeed(20);
         ModPE.showTipMessage("AlphaHack: Speed is normal.");
     }
     if(getTile(x +1, y -1, z)!=myArray){
-        ModPE.setGameSpeed(100);
+        ModPE.setGameSpeed(20);
         ModPE.showTipMessage("AlphaHack: Speed is normal.");
     }
     if(getTile(x, y -1, z +1)!=myArray){
-        ModPE.setGameSpeed(100);
+        ModPE.setGameSpeed(20);
         ModPE.showTipMessage("AlphaHack: Speed is normal.");
     }
     if(getTile(x -1, y -1, z)!=myArray){
-        ModPE.setGameSpeed(100);
+        ModPE.setGameSpeed(20);
         ModPE.showTipMessage("AlphaHack: Speed is normal.");
     }
     if(getTile(x, y -1, z -1)!=myArray){
-        ModPE.setGameSpeed(100);
-        ModPE.showTipMessage("AlphaHack: Speed is normal.");
-    }
-    if(getTile(x, y -2, z)!=myArray){
-        ModPE.setGameSpeed(100);
+        ModPE.setGameSpeed(20);
         ModPE.showTipMessage("AlphaHack: Speed is normal.");
     }
     if(getTile(x +1, y -2, z)!=myArray){
-        ModPE.setGameSpeed(100);
+        ModPE.setGameSpeed(20);
         ModPE.showTipMessage("AlphaHack: Speed is normal.");
     }
     if(getTile(x, y -2, z +1)!=myArray){
-        ModPE.setGameSpeed(100);
+        ModPE.setGameSpeed(20);
         ModPE.showTipMessage("AlphaHack: Speed is normal.");
     }
     if(getTile(x -1, y -2, z)!=myArray){
-        ModPE.setGameSpeed(100);
+        ModPE.setGameSpeed(20);
         ModPE.showTipMessage("AlphaHack: Speed is normal.");
     }
     if(getTile(x, y -2, z -1)!=myArray){
-        ModPE.setGameSpeed(100);
+        ModPE.setGameSpeed(20);
         ModPE.showTipMessage("AlphaHack: Speed is normal.");
     }
 	} catch (e){
@@ -10335,7 +10320,6 @@ function rptask() {
 			var ent = getNearestEntity(7);
 			if(ent != null) crosshairAimAt(ent);
                     }
-                    if(changeSpeed==true)changeSpeedOnBlock();
                     nx = getPlayerX();
                     ny = getPlayerY();
                     nz = getPlayerZ();
