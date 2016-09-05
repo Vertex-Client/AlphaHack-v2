@@ -100,6 +100,7 @@ var aimaura = false;
 var aim;
 var aimbot = false;
 var aimed = false;
+var changeSpeed = false;
 
 var lightning = false;
 var primedtnt = false;
@@ -1610,6 +1611,30 @@ xray = false;
                 }
             }));
             cheatLayout.addView(button2);
+            
+            var speedup = new Button(MainActivity);
+speedup.setText("Block speed up");
+speedup.setTextColor(Color.RED);
+if(changeSpeed==true)speedup.setTextColor(Color.GREEN);
+            speedup.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             changeSpeed?changeSpeed=false:changeSpeed=true;
+speedup.setText("Block speed up");
+if(changeSpeed == true){
+speedup.setTextColor(Color.GREEN);
+clientMessage(client + "Block speed up on,\nThis mod speeds up your game when you are on ice etc.");
+
+changeSpeed = true;
+}
+if(changeSpeed == false){
+speedup.setTextColor(Color.RED);
+clientMessage(client + "Block speed up off");
+
+changeSpeed = false;
+}
+                }
+            }));
+            cheatLayout.addView(speedup);
             
             var svr = new android.widget.Button(MainActivity);
             svr.setText("Server IP:Port");
@@ -9969,104 +9994,26 @@ var taptp = false;
 var sign = false;
 var autodestroy = false;
 var autospam = false;
+var autodestroy2 = false;
+var autospam2 = false;
 var onlyday = false;
 var onlynight = false;
 var chestesp = false;
-var lightning = false;
-var primedtnt = false;
-var arrow = false;
-var exporb = false;
-var hackk = false;
-var showp = false;
-var fch = false;
-var saddle = false;
-var instakilled = false;
-var instabreak = false;
-var stackheart = false;
-var parti = false;
-var parti2 = false;
-var nowalls = false;
-var highjumps = false;
-var grief = false;
-var killaura = false;
-var killfaura = false;
-var uirender = false; 
-var stat22 = false; 
-var healthy = true;
-var infhun = false;
-var firepunch = false;
-var deadchat = false;
-var nofly = false;
-var autod = false;
-var remode = false;
-var somd = false;
-var desktop = false;
-var killdaura = false;
-var ban = false;
-//ParticleType.angryVillager;
-var particle1 = false;
-//ParticleType.bubble;
-var particle2 = false;
-//ParticleType.cloud;
-var particle3 = false;
-//ParticleType.crit;
-var particle4 = false;
-//ParticleType.dripLava;
-var particle5 = false;
-//ParticleType.dripWater;
-var particle6 = false;
-//ParticleType.enchantmenttable;
-var particle7 = false;
-//ParticleType.fallingDust;
-var particle8 = false;
-//ParticleType.flame;
-var particle9 = false;
-//ParticleType.happyVillager;
-var particle10 = false;
-//ParticleType.heart;
-var particle11 = false;
-//ParticleType.hugeexplosion;
-var particle12 = false;
-//ParticleType.hugeexplosionSeed;
-var particle13 = false;
-//ParticleType.ink;
-var particle14 = false;
-//ParticleType.itemBreak;
-var particle15 = false;
-//ParticleType.lava;
-var particle16 = false;
-//ParticleType.mobFlame;
-var particle17 = false;
-//ParticleType.note;
-var particle18 = false;
-//ParticleType.portal;
-var particle19 = false;
-//ParticleType.rainSplash;
-var particle20 = false;
-//ParticleType.redstone;
-var particle21 = false;
-//ParticleType.slime;
-var particle22 = false;
-//ParticleType.smoke;
-var particle23 = false;
-//ParticleType.snowballpoof;
-var particle24 = false;
-//ParticleType.spell;
-var particle25 = false;
-//ParticleType.splash;
-var particle26 = false;
-//ParticleType.suspendedTown;
-var particle27 = false;
-//ParticleType.terrain;
-var particle28 = false;
-//ParticleType.waterWake;
-var particle29 = false;
-//largeexplode
-var particle30 = false;
-//spell2
-var particle31 = false;
-//spell3
-var particle32 = false;
+var tapnuke = false;
+var autonuke = false;
+var antispam = false;
+var antispam2 = false;
+var playeresp = false;
+var tapid = false;
+var noclip = false;
+var extraj = false;
+var getvel = false;
+var yawpitch = false;
+var airwalk = false;
+var aimaura = false;
+var aimbot = false;
+var aimed = false;
+var changeSpeed = false;
 }
 
 function getNearestEntity(maxrange) {
@@ -10124,6 +10071,28 @@ function crosshairAimAt(ent, pos) {
 				}
 			}
   }
+  
+  function changeSpeedOnBlock(){
+    ctx.runOnUiThread(new Runnable(){
+run: function(){
+	try{
+    var x = getPlayerX();
+    var y = getPlayerY();
+    var z = getPlayerZ();
+    var myArray = ["30", "79", "88", "174"];
+    if(getTile(x, y -2, z)==myArray || getTile(x +1, y -2, z)==myArray || getTile(x -1, y -2, z)==myArray || getTile(x, y -2, z +1)==myArray || getTile(x, y -2, z -1)==myArray || getTile(x, y -1, z)=="30"){
+ModPE.setGameSpeed(100);
+ModPE.showTipMessage("AlphaHack: Speed is increasing.");
+    }
+    if(getTile(x, y -2, z)!=myArray || getTile(x +1, y -2, z)!=myArray || getTile(x -1, y -2, z)!=myArray || getTile(x, y -2, z +1)!=myArray || getTile(x, y -2, z -1)!=myArray || getTile(x, y -1, z)!="30"){
+ModPE.setGameSpeed(20);
+ModPE.showTipMessage("AlphaHack: Speed is normal.");
+    }
+	} catch (e){
+Toast.makeText(ctx, "AlphaHack beta: An error: "+e, 1).show();
+}
+    }});
+}
 
 function rptask3() {
     ctx.runOnUiThread(new java.lang.Runnable({
@@ -10236,6 +10205,7 @@ function rptask() {
 			var ent = getNearestEntity(7);
 			if(ent != null) crosshairAimAt(ent);
                     }
+                    if(changeSpeed==true)changeSpeedOnBlock();
                     nx = getPlayerX();
                     ny = getPlayerY();
                     nz = getPlayerZ();
