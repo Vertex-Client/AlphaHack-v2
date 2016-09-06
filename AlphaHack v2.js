@@ -101,6 +101,9 @@ var aim;
 var aimbot = false;
 var aimed = false;
 var changeSpeed = false;
+var brightness = false;
+var lowhealth = false;
+var fasteat = false;
 
 var lightning = false;
 var primedtnt = false;
@@ -2164,6 +2167,72 @@ clientMessage(client + "Any barriers have been nullifed.");
                 }
             }));
             cheatLayout.addView(barrier);
+            
+            var light = new Button(MainActivity);
+light.setText("Brightness");
+light.setTextColor(Color.RED);
+if(brightness==true)light.setTextColor(Color.GREEN);
+            light.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             brightness?brightness=false:brightness=true;
+light.setText("Brightness");
+if(brightness == true){
+light.setTextColor(Color.GREEN);
+
+brightness = true;
+}
+if(brightness == false){
+light.setTextColor(Color.RED);
+
+light = false;
+}
+                }
+            }));
+            cheatLayout.addView(light);
+			
+var fe1 = new Button(MainActivity);
+fe1.setText("Fast eat");
+fe1.setTextColor(Color.RED);
+if(fasteat==true)fe1.setTextColor(Color.GREEN);
+            fe1.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             fasteat?fasteat=false:fasteat=true;
+fe1.setText("Fast eat");
+if(fasteat == true){
+fe1.setTextColor(Color.GREEN);
+
+fasteat = true;
+}
+if(fasteat == false){
+fe1.setTextColor(Color.RED);
+
+fe1 = false;
+}
+                }
+            }));
+            cheatLayout.addView(fe1);
+			
+var afkspawn = new Button(MainActivity);
+afkspawn.setText("Spawn if low health");
+afkspawn.setTextColor(Color.RED);
+if(lowhealth==true)afkspawn.setTextColor(Color.GREEN);
+            afkspawn.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             lowhealth?lowhealth=false:lowhealth=true;
+afkspawn.setText("Spawn if low health");
+if(lowhealth == true){
+afkspawn.setTextColor(Color.GREEN);
+
+lowhealth = true;
+}
+if(lowhealth == false){
+afkspawn.setTextColor(Color.RED);
+
+afkspawn = false;
+}
+                }
+            }));
+            cheatLayout.addView(afkspawn);
             
             var ecd = new Button(ctx);
             ecd.setText("Easy commands");       
@@ -9801,6 +9870,9 @@ if(Level.getTile(getPlayerX(), getPlayerY() -2, getPlayerZ())=="0"){
 	}
 }
 if(changeSpeed==true)changeSpeedOnBlock();
+if(brightness==true)bright();
+if(lowhealth==true)spawnIfLowHealth();
+if(fasteat==true)fastEat();
 }
 
 function devpardon() {
@@ -10084,140 +10156,180 @@ function crosshairAimAt(ent, pos) {
 			}
   }
   
+function fastEat(){
+var foodArray = ["260", "282", "297", "319", "320", "322", "335", "349", "350", "354", "357", "360", "363", "364", "365", "366", "367", "382", "391", "392", "400", "411", "412", "423", "424"];
+Player.getCarriedItem();
+for(var i = 0; i < foodArray.length; i++){
+    if(Player.getCarriedItem()==foodArray[i]){
+        ModPE.setGameSpeed(100);
+    }
+    if(Player.getCarriedItem()!=foodArray[i]){
+        ModPE.setGameSpeed(20);
+    }
+}
+}
+
+function bright(){
+    var i = 0;
+    i++
+    Block.setLightLevel(i, 1000);
+}
+
+function spawnIfLowHealth(){
+    var i = 0;
+    Entity.getHealth(getPlayerEnt());
+if(Entity.getHealth(getPlayerEnt())=="3"){
+    i++
+    if(i=="1"){
+        Server.sendChat("/spawn");
+        Server.sendChat("/afk");
+    }
+}
+}
+
 function changeSpeedOnBlock(){
-    ctx.runOnUiThread(new Runnable(){
-run: function(){
-	try{
     var x = getPlayerX();
     var y = getPlayerY();
     var z = getPlayerZ();
     var myArray = ["30", "79", "88", "174"];
+    getTile(x, y -1, z);
+    getTile(x, y -2, z);
+    getTile(x +1, y, z);
+    getTile(x, y, z +1);
+    getTile(x -1, y, z);
+    getTile(x, y, z -1);
+    getTile(x +1, y -1, z);
+    getTile(x, y -1, z +1);
+    getTile(x -1, y -1, z);
+    getTile(x, y -1, z -1);
+    getTile(x +1, y -2, z);
+    getTile(x, y -2, z +1);
+    getTile(x -1, y -2, z);
+    getTile(x, y -2, z -1);
+    for(var i = 0; i < myArray.length; i++){
     /*increase*/
-    if(getTile(x, y, z)==myArray){
+    if(getTile(x, y, z)==myArray[i]){
         ModPE.setGameSpeed(100);
         ModPE.showTipMessage("AlphaHack: Speed is increased.");
     }
-    if(getTile(x, y -1, z)==myArray){
+    if(getTile(x, y -1, z)==myArray[i]){
         ModPE.setGameSpeed(100);
         ModPE.showTipMessage("AlphaHack: Speed is increased.");
     }
-    if(getTile(x, y -2, z)==myArray){
+    if(getTile(x, y -2, z)==myArray[i]){
         ModPE.setGameSpeed(100);
         ModPE.showTipMessage("AlphaHack: Speed is increased.");
     }
-    if(getTile(x +1, y, z)==myArray){
+    if(getTile(x +1, y, z)==myArray[i]){
         ModPE.setGameSpeed(100);
         ModPE.showTipMessage("AlphaHack: Speed is increased.");
     }
-    if(getTile(x, y, z +1)==myArray){
+    if(getTile(x, y, z +1)==myArray[i]){
         ModPE.setGameSpeed(100);
         ModPE.showTipMessage("AlphaHack: Speed is increased.");
     }
-    if(getTile(x -1, y, z)==myArray){
+    if(getTile(x -1, y, z)==myArray[i]){
         ModPE.setGameSpeed(100);
         ModPE.showTipMessage("AlphaHack: Speed is increased.");
     }
-    if(getTile(x, y, z -1)==myArray){
+    if(getTile(x, y, z -1)==myArray[i]){
         ModPE.setGameSpeed(100);
         ModPE.showTipMessage("AlphaHack: Speed is increased.");
     }
-    if(getTile(x +1, y -1, z)==myArray){
+    if(getTile(x +1, y -1, z)==myArray[i]){
         ModPE.setGameSpeed(100);
         ModPE.showTipMessage("AlphaHack: Speed is increased.");
     }
-    if(getTile(x, y -1, z +1)==myArray){
+    if(getTile(x, y -1, z +1)==myArray[i]){
         ModPE.setGameSpeed(100);
         ModPE.showTipMessage("AlphaHack: Speed is increased.");
     }
-    if(getTile(x -1, y -1, z)==myArray){
+    if(getTile(x -1, y -1, z)==myArray[i]){
         ModPE.setGameSpeed(100);
         ModPE.showTipMessage("AlphaHack: Speed is increased.");
     }
-    if(getTile(x, y -1, z -1)==myArray){
+    if(getTile(x, y -1, z -1)==myArray[i]){
         ModPE.setGameSpeed(100);
         ModPE.showTipMessage("AlphaHack: Speed is increased.");
     }
-    if(getTile(x +1, y -2, z)==myArray){
+    if(getTile(x +1, y -2, z)==myArray[i]){
         ModPE.setGameSpeed(100);
         ModPE.showTipMessage("AlphaHack: Speed is increased.");
     }
-    if(getTile(x, y -2, z +1)==myArray){
+    if(getTile(x, y -2, z +1)==myArray[i]){
         ModPE.setGameSpeed(100);
         ModPE.showTipMessage("AlphaHack: Speed is increased.");
     }
-    if(getTile(x -1, y -2, z)==myArray){
+    if(getTile(x -1, y -2, z)==myArray[i]){
         ModPE.setGameSpeed(100);
         ModPE.showTipMessage("AlphaHack: Speed is increased.");
     }
-    if(getTile(x, y -2, z -1)==myArray){
+    if(getTile(x, y -2, z -1)==myArray[i]){
         ModPE.setGameSpeed(100);
         ModPE.showTipMessage("AlphaHack: Speed is increased.");
     }
     /*normal*/
-    if(getTile(x, y, z)!=myArray){
+    if(getTile(x, y, z)!=myArray[i]){
         ModPE.setGameSpeed(20);
         ModPE.showTipMessage("AlphaHack: Speed is normal.");
     }
-    if(getTile(x, y -1, z)!=myArray){
+    if(getTile(x, y -1, z)!=myArray[i]){
         ModPE.setGameSpeed(20);
         ModPE.showTipMessage("AlphaHack: Speed is normal.");
     }
-    if(getTile(x, y -2, z)!=myArray){
+    if(getTile(x, y -2, z)!=myArray[i]){
         ModPE.setGameSpeed(20);
         ModPE.showTipMessage("AlphaHack: Speed is normal.");
     }
-    if(getTile(x +1, y, z)!=myArray){
+    if(getTile(x +1, y, z)!=myArray[i]){
         ModPE.setGameSpeed(20);
         ModPE.showTipMessage("AlphaHack: Speed is normal.");
     }
-    if(getTile(x, y, z +1)!=myArray){
+    if(getTile(x, y, z +1)!=myArray[i]){
         ModPE.setGameSpeed(20);
         ModPE.showTipMessage("AlphaHack: Speed is normal.");
     }
-    if(getTile(x -1, y, z)!=myArray){
+    if(getTile(x -1, y, z)!=myArray[i]){
         ModPE.setGameSpeed(20);
         ModPE.showTipMessage("AlphaHack: Speed is normal.");
     }
-    if(getTile(x, y, z -1)!=myArray){
+    if(getTile(x, y, z -1)!=myArray[i]){
         ModPE.setGameSpeed(20);
         ModPE.showTipMessage("AlphaHack: Speed is normal.");
     }
-    if(getTile(x +1, y -1, z)!=myArray){
+    if(getTile(x +1, y -1, z)!=myArray[i]){
         ModPE.setGameSpeed(20);
         ModPE.showTipMessage("AlphaHack: Speed is normal.");
     }
-    if(getTile(x, y -1, z +1)!=myArray){
+    if(getTile(x, y -1, z +1)!=myArray[i]){
         ModPE.setGameSpeed(20);
         ModPE.showTipMessage("AlphaHack: Speed is normal.");
     }
-    if(getTile(x -1, y -1, z)!=myArray){
+    if(getTile(x -1, y -1, z)!=myArray[i]){
         ModPE.setGameSpeed(20);
         ModPE.showTipMessage("AlphaHack: Speed is normal.");
     }
-    if(getTile(x, y -1, z -1)!=myArray){
+    if(getTile(x, y -1, z -1)!=myArray[i]){
         ModPE.setGameSpeed(20);
         ModPE.showTipMessage("AlphaHack: Speed is normal.");
     }
-    if(getTile(x +1, y -2, z)!=myArray){
+    if(getTile(x +1, y -2, z)!=myArray[i]){
         ModPE.setGameSpeed(20);
         ModPE.showTipMessage("AlphaHack: Speed is normal.");
     }
-    if(getTile(x, y -2, z +1)!=myArray){
+    if(getTile(x, y -2, z +1)!=myArray[i]){
         ModPE.setGameSpeed(20);
         ModPE.showTipMessage("AlphaHack: Speed is normal.");
     }
-    if(getTile(x -1, y -2, z)!=myArray){
+    if(getTile(x -1, y -2, z)!=myArray[i]){
         ModPE.setGameSpeed(20);
         ModPE.showTipMessage("AlphaHack: Speed is normal.");
     }
-    if(getTile(x, y -2, z -1)!=myArray){
+    if(getTile(x, y -2, z -1)!=myArray[i]){
         ModPE.setGameSpeed(20);
         ModPE.showTipMessage("AlphaHack: Speed is normal.");
     }
-	} catch (e){
-Toast.makeText(ctx, "AlphaHack beta: An error: "+e, 1).show();
-}
-    }});
+    }
 }
 
 function rptask3() {
