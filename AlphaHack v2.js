@@ -208,6 +208,7 @@ var particle32 = false;
 var GUIColor = Color.TRANSPARENT;
 
 var default1 = true;
+var mcpetheme = false;
 
 var GUIColor1 = Color.TRANSPARENT;
 var GUIColor2 = Color.BLACK;
@@ -385,7 +386,7 @@ function dip2px(dips){
 
 var bg64 = "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";
 
-var buttonBg = "iVBORw0KGgoAAAANSUhEUgAAAEYAAAAgCAYAAACvgw7DAAAFB0lEQVR42t1aV47kOgzsQ0zOOWIwwOScw/1P5EVpUUY1pyjZ2PeAxX6wqWiJ5SIV2pP19fVuYWGhm5mZ6WZnZ7u5ubki8/PzvSwuLnZLS0vdyspKt7q6WgT9IBsbG93m5ma3tbVVZHt7u9vZ2ekF+d3d3ZLe29srmnloCvL6DGj2R1rH0GeznoJ2bAvNea6trfVzhx3Ly8vFJtgOe6lhL2yaIHF5edl9f393n5+f3dfXV9GQj4+PIky/v78X/fb2VtKvr68lTU1BHvL8/Ny9vLxMCcpdHv3Ynlqfr/1QzzKWq3bzoeb8qWkbbQYWAGkCpgAUDPb09NQ9Pj4Wub+/L/rh4aEvo6AM9RCkKayD3N3dFdF2TLu+2pZ1Oh7npM9iWZwj87RH27vnUtgezCnAACltpIM7o2Ody9f6R4DUaAecgtYC2809juPGU4AKYxBXFJjIhsxgN7kISG3CLeNc+6y/zjuri3NzfQhMYQx+4GOs5BvJUI8oDwGsxq5amxaoyqKsvvUS1G6O3TOGwMRGNfdoMarmPrE89s+Mq4GZsSa+vJodjItYrQpjsMLQl1UPcYmxcac2yaF1Ll60DI+x0zGGeSzlvStlfl5jiHOBrHwIkK03WwvQ2dgtF412ASDsc8o+Bus7Cm5vb39EfrdCKLpuMhl9nTi3qrnaGEBabeNKR41N4ASBBhsdgOLAgb6+vu7rKWNY5IDSsrgHqQE21Hh9zhBwFCQLjIo2VtCirztwasxxG60I0hDmubnUnp2BE+3GEaK4kgIT2YJyBc3FHGdIZlzWNmNM1j8D0u1LMuZEpvwABmeMm5ubH8hF5mSbOPeGomFuC94CZigDImtb7TLWQIMEg4BxG6l4lsqMqxnpzmBZu1bwHgKMa+eAgeBUPgWMBuC/EZgsJtXc2M3VbQPUXguMiynu1PuvAKPxlNIDgysHAENw6FYakCNj3ApUm9yfxpj/Epgs6NLeKcZcXV31oDjW6P5l7KrUWm3Grkqub2uDGftFxmgYKcBgHwPGABiyxrlVxhgX0Ia+3do+ZghbagfX2qZSw4KyhVJWJQUGO1wFKAZiTUe21M5ANYPGrEity7LWZtKxhaJhpF+ucaUHQAiOY47zxXhcr93WtZba1vmp9iJqrlS7N1J7aC8wKMDgdA1gyBZoigPHBeTaQS87T429uqjd4MVY07q9i6BQaG85KxEYgHJxcTHlTg6cDKB4wTX2CqMGXuu6YeiFWhZXaCd1AQY3eIgx+NsAgEBDlDXUCo7b68Sz1pArjBqIQ2XM/U0MCXzxtBe2l/sYMgYFYAxEQYouRoRj3NElL5Y7ZsVtQM2IGsg1if8oRKYoKBpjyw0eGANgAAjdiaLgOFEWtQK1O264fFau90RDznQOfAeKrsYkR7nzxf9KCFJkCvT5+XmfJnsiqi4OZaKgRBCzFTC6bVbnjHbbDB2Pc6Y9JARt7f+JBGMAhrLl7Ozsh2tlooMpo1ydtokAuq1CBnTUDgS34mhYIEugaT/y5X8l7GNOTk5KhYKj+cieqJVJOqgDQJkX314E1kl8rnt+NiaDqy4ytJX2HR0d/Xal4+Pj/+VrB/3qgV857O/vly8bkIdGHmnm2RblkIODgyLMs+zw8LAYAEGagjzrtS+fjTnxawjM3X35gPzp6Wk3QScyhqipaJljiQZoXcWcZHGK/biPinEtuqAeWxz7MoYqa+J8aSNwAFl+AeaQgIFzUqgAAAAAAElFTkSuQmCC";
+var buttonBg = "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";
 
 function enableMod(){
 ctx.runOnUiThread(new Runnable({ run: function(){
@@ -478,7 +479,7 @@ menuLayout.addView(line0);
             
             var exit = new Button(MainActivity);
             exit.setText("Exit AlphαHαck");
-            exit.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+            if(mcpetheme==true)exit.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
             exit.setTextColor(Color.RED);
             exit.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -592,7 +593,7 @@ if(getLanguage=="en_US")Toast.makeText(MainActivity, "Closed successfully", 1).s
 	    
 	    var group = new android.widget.Button(ctx);
 group.setText("Community");
-group.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+if(mcpetheme==true)group.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 group.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              var urls4 = new Intent(ctx);
@@ -605,7 +606,7 @@ group.setOnClickListener(new android.view.View.OnClickListener() {
 	    
 var misc = new android.widget.Button(ctx);
 misc.setText("Misc");
-misc.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+if(mcpetheme==true)misc.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 misc.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              misc_menu();
@@ -1025,7 +1026,7 @@ miscLayout1.setPadding(20,0,20,0);
 
 var settings = new android.widget.Button(ctx);
 settings.setText("Settings");
-settings.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+if(mcpetheme==true)settings.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 settings.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              settings_menu();
@@ -1066,6 +1067,15 @@ var urls3 = new Intent(ctx);
                 }
             }));
             settingsLayout.addView(link);
+            
+            var mcpe = new Button(ctx);
+            mcpe.setText("MCPE menu theme");       
+            mcpe.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+mcpetheme = true;
+                }
+            }));
+            settingsLayout.addView(mcpe);
 		
 		var g1 = new Button(ctx);
             g1.setText("Menu center");       
@@ -1281,7 +1291,7 @@ settingsLayout1.setPadding(20,0,20,0);
 	    
 var cheats = new android.widget.Button(ctx);
 cheats.setText("Online & offline mods");
-cheats.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+if(mcpetheme==true)cheats.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 cheats.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              cheat_menu();
@@ -2282,7 +2292,7 @@ cheatLayout1.setPadding(20,0,20,0);
             
 var mods = new android.widget.Button(ctx);
 mods.setText("Single player mods");
-mods.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+if(mcpetheme==true)mods.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 mods.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              mod_menu();
@@ -3567,7 +3577,7 @@ modLayout1.setPadding(20,0,20,0);
 
 var effect = new android.widget.Button(ctx);
 effect.setText("Effect menu");
-effect.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+if(mcpetheme==true)effect.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 effect.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              effect_menu();
@@ -4959,7 +4969,7 @@ effectLayout1.setPadding(20,0,20,0);
 var enchant = new android.widget.Button(ctx);
 enchant.setText("Enchant menu");
 if(getLanguage=="de_DE")enchant.setText("Verzauberungs menu");
-enchant.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+if(mcpetheme==true)enchant.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 enchant.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              enchant_menu();
@@ -6432,7 +6442,7 @@ enchantLayout1.setPadding(20,0,20,0);
 var give = new android.widget.Button(ctx);
 give.setText("Give menu");
 if(getLanguage=="de_DE")give.setText("Geben menu");
-give.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+if(mcpetheme==true)give.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 give.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              give_menu();
@@ -6683,7 +6693,7 @@ Server.sendChat("/give " + Player.getName(Player.getEntity()) + space + I + ":" 
 var morph = new android.widget.Button(ctx);
 morph.setText("Morph menu");
 if(getLanguage=="de_DE")morph.setText("Verwandelungs menu");
-morph.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+if(mcpetheme==true)morph.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 morph.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              morph_menu();
@@ -7013,7 +7023,7 @@ morphLayout1.setPadding(20,0,20,0);
 var nuke = new android.widget.Button(ctx);
 nuke.setText("Nuke menu");
 if(getLanguage=="de_DE")nuke.setText("Vernichtungs menu");
-nuke.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+if(mcpetheme==true)nuke.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 nuke.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              nuke_menu();
@@ -7192,7 +7202,7 @@ nukeLayout1.setPadding(20,0,20,0);
 var particle = new android.widget.Button(ctx);
 particle.setText("Particle menu");
 if(getLanguage=="de_DE")particle.setText("Partikel menu");
-particle.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+if(mcpetheme==true)particle.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 particle.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              particle_menu();
@@ -7752,7 +7762,7 @@ particleLayout1.setPadding(20,0,20,0);
 var spawn = new android.widget.Button(ctx);
 spawn.setText("Spawn menu");
 if(getLanguage=="de_DE")spawn.setText("Erschaffungs menu");
-spawn.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+if(mcpetheme==true)spawn.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 spawn.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              spawn_menu();
@@ -8142,7 +8152,7 @@ spawnLayout1.setPadding(20,0,20,0);
 var speed = new android.widget.Button(ctx);
 speed.setText("Speed menu");
 if(getLanguage=="de_DE")speed.setText("Schnelligkeits menu");
-speed.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+if(mcpetheme==true)speed.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 speed.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              speed_menu();
@@ -8442,7 +8452,7 @@ speedLayout1.setPadding(20,0,20,0);
 var teleport = new android.widget.Button(ctx);
 teleport.setText("Teleport menu");
 if(getLanguage=="de_DE")teleport.setText("Teleportierungs menu");
-teleport.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+if(mcpetheme==true)teleport.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 teleport.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              teleport_menu();
@@ -8626,7 +8636,7 @@ Server.sendChat("/tp " + Player.getName(Player.getEntity()) + space + px + space
 var time = new android.widget.Button(ctx);
 time.setText("Time menu");
 if(getLanguage=="de_DE")time.setText("Zeit menu");
-time.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+if(mcpetheme==true)time.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 time.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              time_menu();
@@ -8957,7 +8967,7 @@ timeLayout1.setPadding(20,0,20,0);
 var weather = new android.widget.Button(ctx);
 weather.setText("Weather menu");
 if(getLanguage=="de_DE")weather.setText("Wetter menu");
-weather.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+if(mcpetheme==true)weather.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 weather.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              weather_menu();
@@ -9096,6 +9106,7 @@ Server.sendChat("/weather rain");
             
             menu = new PopupWindow(menuLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
            if(default1==true)menu.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+           if(mcpetheme==true)menu.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#94857f")));
 		   if(default1==false)menu.setBackgroundDrawable(new ColorDrawable(GUIColor));
 		   var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
