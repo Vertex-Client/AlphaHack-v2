@@ -10207,8 +10207,8 @@ function changeSpeedOnBlock(){
     getTile(x -1, y -2, z);
     getTile(x, y -2, z -1);
 	/*other*/
-	block.setFriction(79, 0.6000000238418579);
-	block.setFriction(174, 0.6000000238418579);
+	Block.setFriction(79, 0.6000000238418579);
+	Block.setFriction(174, 0.6000000238418579);
     /*increase*/
     if(getTile(x, y, z)=="30"){
         ModPE.setGameSpeed(100);
