@@ -10206,129 +10206,251 @@ function changeSpeedOnBlock(){
     getTile(x, y -2, z +1);
     getTile(x -1, y -2, z);
     getTile(x, y -2, z -1);
-    for(var i = 0; i < myArray.length; i++){
+	/*other*/
+	block.setFriction(79, 0.6000000238418579);
+	block.setFriction(174, 0.6000000238418579);
     /*increase*/
-    if(getTile(x, y, z)==myArray[i]){
+    if(getTile(x, y, z)=="30"){
         ModPE.setGameSpeed(100);
-        ModPE.showTipMessage("AlphaHack: Speed is increased.");
+        
     }
-    if(getTile(x, y -1, z)==myArray[i]){
+    if(getTile(x, y -1, z)=="30"){
         ModPE.setGameSpeed(100);
-        ModPE.showTipMessage("AlphaHack: Speed is increased.");
+        
     }
-    if(getTile(x, y -2, z)==myArray[i]){
+    if(getTile(x, y -2, z)=="30"){
         ModPE.setGameSpeed(100);
-        ModPE.showTipMessage("AlphaHack: Speed is increased.");
+        
     }
-    if(getTile(x +1, y, z)==myArray[i]){
+    if(getTile(x +1, y, z)=="30"){
         ModPE.setGameSpeed(100);
-        ModPE.showTipMessage("AlphaHack: Speed is increased.");
+        
     }
-    if(getTile(x, y, z +1)==myArray[i]){
+    if(getTile(x, y, z +1)=="30"){
         ModPE.setGameSpeed(100);
-        ModPE.showTipMessage("AlphaHack: Speed is increased.");
+        
     }
-    if(getTile(x -1, y, z)==myArray[i]){
+    if(getTile(x -1, y, z)=="30"){
         ModPE.setGameSpeed(100);
-        ModPE.showTipMessage("AlphaHack: Speed is increased.");
+        
     }
-    if(getTile(x, y, z -1)==myArray[i]){
+    if(getTile(x, y, z -1)=="30"){
         ModPE.setGameSpeed(100);
-        ModPE.showTipMessage("AlphaHack: Speed is increased.");
+        
     }
-    if(getTile(x +1, y -1, z)==myArray[i]){
+    if(getTile(x +1, y -1, z)=="30"){
         ModPE.setGameSpeed(100);
-        ModPE.showTipMessage("AlphaHack: Speed is increased.");
+        
     }
-    if(getTile(x, y -1, z +1)==myArray[i]){
+    if(getTile(x, y -1, z +1)=="30"){
         ModPE.setGameSpeed(100);
-        ModPE.showTipMessage("AlphaHack: Speed is increased.");
+        
     }
-    if(getTile(x -1, y -1, z)==myArray[i]){
+    if(getTile(x -1, y -1, z)=="30"){
         ModPE.setGameSpeed(100);
-        ModPE.showTipMessage("AlphaHack: Speed is increased.");
+        
     }
-    if(getTile(x, y -1, z -1)==myArray[i]){
+    if(getTile(x, y -1, z -1)=="30"){
         ModPE.setGameSpeed(100);
-        ModPE.showTipMessage("AlphaHack: Speed is increased.");
+        
     }
-    if(getTile(x +1, y -2, z)==myArray[i]){
+    if(getTile(x +1, y -2, z)=="30"){
         ModPE.setGameSpeed(100);
-        ModPE.showTipMessage("AlphaHack: Speed is increased.");
+        
     }
-    if(getTile(x, y -2, z +1)==myArray[i]){
+    if(getTile(x, y -2, z +1)=="30"){
         ModPE.setGameSpeed(100);
-        ModPE.showTipMessage("AlphaHack: Speed is increased.");
+        
     }
-    if(getTile(x -1, y -2, z)==myArray[i]){
+    if(getTile(x -1, y -2, z)=="30"){
         ModPE.setGameSpeed(100);
-        ModPE.showTipMessage("AlphaHack: Speed is increased.");
+        
     }
-    if(getTile(x, y -2, z -1)==myArray[i]){
+    if(getTile(x, y -2, z -1)=="30"){
         ModPE.setGameSpeed(100);
-        ModPE.showTipMessage("AlphaHack: Speed is increased.");
+        
     }
     /*normal*/
-    if(getTile(x, y, z)!=myArray[i]){
+    if(getTile(x, y, z)!="30"){
         ModPE.setGameSpeed(20);
-        ModPE.showTipMessage("AlphaHack: Speed is normal.");
+        
     }
-    if(getTile(x, y -1, z)!=myArray[i]){
+    if(getTile(x, y -1, z)!="30"){
         ModPE.setGameSpeed(20);
-        ModPE.showTipMessage("AlphaHack: Speed is normal.");
+        
     }
-    if(getTile(x, y -2, z)!=myArray[i]){
+    if(getTile(x, y -2, z)!="30"){
         ModPE.setGameSpeed(20);
-        ModPE.showTipMessage("AlphaHack: Speed is normal.");
+        
     }
-    if(getTile(x +1, y, z)!=myArray[i]){
+    if(getTile(x +1, y, z)!="30"){
         ModPE.setGameSpeed(20);
-        ModPE.showTipMessage("AlphaHack: Speed is normal.");
+        
     }
-    if(getTile(x, y, z +1)!=myArray[i]){
+    if(getTile(x, y, z +1)!="30"){
         ModPE.setGameSpeed(20);
-        ModPE.showTipMessage("AlphaHack: Speed is normal.");
+        
     }
-    if(getTile(x -1, y, z)!=myArray[i]){
+    if(getTile(x -1, y, z)!="30"){
         ModPE.setGameSpeed(20);
-        ModPE.showTipMessage("AlphaHack: Speed is normal.");
+        
     }
-    if(getTile(x, y, z -1)!=myArray[i]){
+    if(getTile(x, y, z -1)!="30"){
         ModPE.setGameSpeed(20);
-        ModPE.showTipMessage("AlphaHack: Speed is normal.");
+        
     }
-    if(getTile(x +1, y -1, z)!=myArray[i]){
+    if(getTile(x +1, y -1, z)!="30"){
         ModPE.setGameSpeed(20);
-        ModPE.showTipMessage("AlphaHack: Speed is normal.");
+        
     }
-    if(getTile(x, y -1, z +1)!=myArray[i]){
+    if(getTile(x, y -1, z +1)!="30"){
         ModPE.setGameSpeed(20);
-        ModPE.showTipMessage("AlphaHack: Speed is normal.");
+        
     }
-    if(getTile(x -1, y -1, z)!=myArray[i]){
+    if(getTile(x -1, y -1, z)!="30"){
         ModPE.setGameSpeed(20);
-        ModPE.showTipMessage("AlphaHack: Speed is normal.");
+        
     }
-    if(getTile(x, y -1, z -1)!=myArray[i]){
+    if(getTile(x, y -1, z -1)!="30"){
         ModPE.setGameSpeed(20);
-        ModPE.showTipMessage("AlphaHack: Speed is normal.");
+        
     }
-    if(getTile(x +1, y -2, z)!=myArray[i]){
+    if(getTile(x +1, y -2, z)!="30"){
         ModPE.setGameSpeed(20);
-        ModPE.showTipMessage("AlphaHack: Speed is normal.");
+        
     }
-    if(getTile(x, y -2, z +1)!=myArray[i]){
+    if(getTile(x, y -2, z +1)!="30"){
         ModPE.setGameSpeed(20);
-        ModPE.showTipMessage("AlphaHack: Speed is normal.");
+        
     }
-    if(getTile(x -1, y -2, z)!=myArray[i]){
+    if(getTile(x -1, y -2, z)!="30"){
         ModPE.setGameSpeed(20);
-        ModPE.showTipMessage("AlphaHack: Speed is normal.");
+        
     }
-    if(getTile(x, y -2, z -1)!=myArray[i]){
+    if(getTile(x, y -2, z -1)!="30"){
         ModPE.setGameSpeed(20);
-        ModPE.showTipMessage("AlphaHack: Speed is normal.");
+        
     }
+	if(getTile(x, y, z)=="88"){
+        ModPE.setGameSpeed(100);
+        
+    }
+    if(getTile(x, y -1, z)=="88"){
+        ModPE.setGameSpeed(100);
+        
+    }
+    if(getTile(x, y -2, z)=="88"){
+        ModPE.setGameSpeed(100);
+        
+    }
+    if(getTile(x +1, y, z)=="88"){
+        ModPE.setGameSpeed(100);
+        
+    }
+    if(getTile(x, y, z +1)=="88"){
+        ModPE.setGameSpeed(100);
+        
+    }
+    if(getTile(x -1, y, z)=="88"){
+        ModPE.setGameSpeed(100);
+        
+    }
+    if(getTile(x, y, z -1)=="88"){
+        ModPE.setGameSpeed(100);
+        
+    }
+    if(getTile(x +1, y -1, z)=="88"){
+        ModPE.setGameSpeed(100);
+        
+    }
+    if(getTile(x, y -1, z +1)=="88"){
+        ModPE.setGameSpeed(100);
+        
+    }
+    if(getTile(x -1, y -1, z)=="88"){
+        ModPE.setGameSpeed(100);
+        
+    }
+    if(getTile(x, y -1, z -1)=="88"){
+        ModPE.setGameSpeed(100);
+        
+    }
+    if(getTile(x +1, y -2, z)=="88"){
+        ModPE.setGameSpeed(100);
+        
+    }
+    if(getTile(x, y -2, z +1)=="88"){
+        ModPE.setGameSpeed(100);
+        
+    }
+    if(getTile(x -1, y -2, z)=="88"){
+        ModPE.setGameSpeed(100);
+        
+    }
+    if(getTile(x, y -2, z -1)=="88"){
+        ModPE.setGameSpeed(100);
+        
+    }
+    /*normal*/
+    if(getTile(x, y, z)!="88"){
+        ModPE.setGameSpeed(20);
+        
+    }
+    if(getTile(x, y -1, z)!="88"){
+        ModPE.setGameSpeed(20);
+        
+    }
+    if(getTile(x, y -2, z)!="88"){
+        ModPE.setGameSpeed(20);
+        
+    }
+    if(getTile(x +1, y, z)!="88"){
+        ModPE.setGameSpeed(20);
+        
+    }
+    if(getTile(x, y, z +1)!="88"){
+        ModPE.setGameSpeed(20);
+        
+    }
+    if(getTile(x -1, y, z)!="88"){
+        ModPE.setGameSpeed(20);
+        
+    }
+    if(getTile(x, y, z -1)!="88"){
+        ModPE.setGameSpeed(20);
+        
+    }
+    if(getTile(x +1, y -1, z)!="88"){
+        ModPE.setGameSpeed(20);
+        
+    }
+    if(getTile(x, y -1, z +1)!="88"){
+        ModPE.setGameSpeed(20);
+        
+    }
+    if(getTile(x -1, y -1, z)!="88"){
+        ModPE.setGameSpeed(20);
+        
+    }
+    if(getTile(x, y -1, z -1)!="88"){
+        ModPE.setGameSpeed(20);
+        
+    }
+    if(getTile(x +1, y -2, z)!="88"){
+        ModPE.setGameSpeed(20);
+        
+    }
+    if(getTile(x, y -2, z +1)!="88"){
+        ModPE.setGameSpeed(20);
+        
+    }
+    if(getTile(x -1, y -2, z)!="88"){
+        ModPE.setGameSpeed(20);
+        
+    }
+    if(getTile(x, y -2, z -1)!="88"){
+        ModPE.setGameSpeed(20);
+        
     }
 }
 
