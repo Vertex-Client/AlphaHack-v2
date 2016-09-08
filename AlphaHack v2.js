@@ -5141,6 +5141,39 @@ Player.enchant(Player.getSelectedSlotId(), Enchantment.LOOTING,tysplvl);
 Player.enchant(Player.getSelectedSlotId(), Enchantment.SHARPNESS,tysplvl);
 Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,tysplvl);
             }
+            
+        var god2 = new Button(ctx);
+            god2.setText("God pickaxe");
+            god2.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                godpickaxe()	
+                }
+            }));
+            enchantLayout.addView(god2);
+            
+            function godpickaxe(){
+            	var tysplvl = "29000";
+		var fortuneLvl = "80";
+Player.enchant(Player.getSelectedSlotId(), Enchantment.EFFICIENCY,tysplvl);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.FORTUNE,fortuneLvl);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,tysplvl);
+            }
+			
+var god3 = new Button(ctx);
+            god3.setText("God armor");
+            god3.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                godarmor()	
+                }
+            }));
+            enchantLayout.addView(god3);
+            
+            function godarmor(){
+            	var tysplvl = "29000";
+Player.enchant(Player.getSelectedSlotId(), Enchantment.FIRE_PROTECTION,tysplvl);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.THORNS,tysplvl);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,tysplvl);
+            }
 
 var ena = new Button(ctx);
             ena.setText("Aqua Affinity");
