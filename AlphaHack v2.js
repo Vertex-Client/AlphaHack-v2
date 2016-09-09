@@ -470,14 +470,14 @@ menuLayout.addView(line0);
             title2.setTextSize(20);
             title2.setText("Made by: ArceusMαtt");
             title2.setGravity(Gravity.CENTER);
-            title2.setTextColor(Color.WHITE);
+            title2.setTextColor(GUIName);
             menuLayout.addView(title2);
             
             var title = new TextView(MainActivity);
             title.setTextSize(20);
             title.setText(" AlphαHαck v2 ("+version+")");
             title.setGravity(Gravity.CENTER);
-            title.setTextColor(Color.WHITE);
+            title.setTextColor(GUIName);
             menuLayout.addView(title);
             
             var exit = new Button(MainActivity);
@@ -609,6 +609,7 @@ group.setOnClickListener(new android.view.View.OnClickListener() {
 	    
 var misc = new android.widget.Button(ctx);
 misc.setText("Misc");
+misc.setTextColor(GUIName);
 if(mcpetheme==true)misc.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 misc.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -1029,6 +1030,7 @@ miscLayout1.setPadding(20,0,20,0);
 
 var settings = new android.widget.Button(ctx);
 settings.setText("Settings");
+settings.setTextColor(GUIName);
 if(mcpetheme==true)settings.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 settings.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -1076,6 +1078,7 @@ var urls3 = new Intent(ctx);
             mcpe.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 mcpetheme = true;
+var GUIName = Color.BLACK;
                 }
             }));
             settingsLayout.addView(mcpe);
@@ -1276,6 +1279,105 @@ if(default1==true)default1 = false;
                 }
             }));
             settingsLayout.addView(l12);
+            
+        var b2 = new Button(ctx);
+            b2.setText("Black button text");       
+            b2.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIBtns = GUIBtns2
+                }
+            }));
+            settingsLayout.addView(b2);
+
+var b3 = new Button(ctx);
+            b3.setText("White button text");       
+            b3.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIBtns = GUIBtns3
+                }
+            }));
+            settingsLayout.addView(b3);
+
+var b4 = new Button(ctx);
+            b4.setText("Red button text");       
+            b4.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIBtns = GUIBtns4
+                }
+            }));
+            settingsLayout.addView(b4);
+
+var b5 = new Button(ctx);
+            b5.setText("Blue button text");       
+            b5.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIBtns = GUIBtns5
+                }
+            }));
+            settingsLayout.addView(b5);
+
+var b6 = new Button(ctx);
+            b6.setText("Gray button text");       
+            b6.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIBtns = GUIBtns6
+                }
+            }));
+            settingsLayout.addView(b6);
+
+var b7 = new Button(ctx);
+            b7.setText("Lightgray button text");       
+            b7.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIBtns = GUIBtns7
+                }
+            }));
+            settingsLayout.addView(b7);
+
+var b8 = new Button(ctx);
+            b8.setText("Yellow button text");       
+            b8.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIBtns = GUIBtns8
+                }
+            }));
+            settingsLayout.addView(b8);
+
+var b9 = new Button(ctx);
+            b9.setText("Cyan button text");       
+            b9.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIBtns = GUIBtns9
+                }
+            }));
+            settingsLayout.addView(b9);
+
+var b10 = new Button(ctx);
+            b10.setText("Darkgray button text");       
+            b10.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIBtns = GUIBtns10
+                }
+            }));
+            settingsLayout.addView(b10);
+
+var b11 = new Button(ctx);
+            b11.setText("Green button text");       
+            b11.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIBtns = GUIBtns11
+                }
+            }));
+            settingsLayout.addView(b11);
+
+var b12 = new Button(ctx);
+            b12.setText("Magenta button text");       
+            b12.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIBtns = GUIBtns12
+                }
+            }));
+            settingsLayout.addView(b12);
 
             settings = new PopupWindow(settingsLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)settings.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -1294,6 +1396,7 @@ settingsLayout1.setPadding(20,0,20,0);
 	    
 var cheats = new android.widget.Button(ctx);
 cheats.setText("Online & offline mods");
+cheats.setTextColor(GUIName);
 if(mcpetheme==true)cheats.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 cheats.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -2361,6 +2464,7 @@ cheatLayout1.setPadding(20,0,20,0);
             
 var mods = new android.widget.Button(ctx);
 mods.setText("Single player mods");
+mods.setTextColor(GUIName);
 if(mcpetheme==true)mods.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 mods.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -3646,6 +3750,7 @@ modLayout1.setPadding(20,0,20,0);
 
 var effect = new android.widget.Button(ctx);
 effect.setText("Effect menu");
+effect.setTextColor(GUIName);
 if(mcpetheme==true)effect.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 effect.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -5037,6 +5142,7 @@ effectLayout1.setPadding(20,0,20,0);
 		
 var enchant = new android.widget.Button(ctx);
 enchant.setText("Enchant menu");
+enchant.setTextColor(GUIName);
 if(getLanguage=="de_DE")enchant.setText("Verzauberungs menu");
 if(mcpetheme==true)enchant.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 enchant.setOnClickListener(new android.view.View.OnClickListener() {
@@ -5170,7 +5276,7 @@ var god3 = new Button(ctx);
             
             function godarmor(){
             	var tysplvl = "29000";
-Player.enchant(Player.getSelectedSlotId(), Enchantment.FIRE_PROTECTION,tysplvl);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.PROTECTION,tysplvl);
 Player.enchant(Player.getSelectedSlotId(), Enchantment.THORNS,tysplvl);
 Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,tysplvl);
             }
@@ -6543,6 +6649,7 @@ enchantLayout1.setPadding(20,0,20,0);
 		
 var give = new android.widget.Button(ctx);
 give.setText("Give menu");
+give.setTextColor(GUIName);
 if(getLanguage=="de_DE")give.setText("Geben menu");
 if(mcpetheme==true)give.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 give.setOnClickListener(new android.view.View.OnClickListener() {
@@ -6794,6 +6901,7 @@ Server.sendChat("/give " + Player.getName(Player.getEntity()) + space + I + ":" 
 		
 var morph = new android.widget.Button(ctx);
 morph.setText("Morph menu");
+morph.setTextColor(GUIName);
 if(getLanguage=="de_DE")morph.setText("Verwandelungs menu");
 if(mcpetheme==true)morph.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 morph.setOnClickListener(new android.view.View.OnClickListener() {
@@ -7124,6 +7232,7 @@ morphLayout1.setPadding(20,0,20,0);
 		
 var nuke = new android.widget.Button(ctx);
 nuke.setText("Nuke menu");
+nuke.setTextColor(GUIName);
 if(getLanguage=="de_DE")nuke.setText("Vernichtungs menu");
 if(mcpetheme==true)nuke.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 nuke.setOnClickListener(new android.view.View.OnClickListener() {
@@ -7303,6 +7412,7 @@ nukeLayout1.setPadding(20,0,20,0);
 		
 var particle = new android.widget.Button(ctx);
 particle.setText("Particle menu");
+particle.setTextColor(GUIName);
 if(getLanguage=="de_DE")particle.setText("Partikel menu");
 if(mcpetheme==true)particle.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 particle.setOnClickListener(new android.view.View.OnClickListener() {
@@ -7863,6 +7973,7 @@ particleLayout1.setPadding(20,0,20,0);
 		
 var spawn = new android.widget.Button(ctx);
 spawn.setText("Spawn menu");
+spawn.setTextColor(GUIName);
 if(getLanguage=="de_DE")spawn.setText("Erschaffungs menu");
 if(mcpetheme==true)spawn.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 spawn.setOnClickListener(new android.view.View.OnClickListener() {
@@ -8253,6 +8364,7 @@ spawnLayout1.setPadding(20,0,20,0);
 		
 var speed = new android.widget.Button(ctx);
 speed.setText("Speed menu");
+speed.setTextColor(GUIName);
 if(getLanguage=="de_DE")speed.setText("Schnelligkeits menu");
 if(mcpetheme==true)speed.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 speed.setOnClickListener(new android.view.View.OnClickListener() {
@@ -8553,6 +8665,7 @@ speedLayout1.setPadding(20,0,20,0);
 		
 var teleport = new android.widget.Button(ctx);
 teleport.setText("Teleport menu");
+teleport.setTextColor(GUIName);
 if(getLanguage=="de_DE")teleport.setText("Teleportierungs menu");
 if(mcpetheme==true)teleport.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 teleport.setOnClickListener(new android.view.View.OnClickListener() {
@@ -8737,6 +8850,7 @@ Server.sendChat("/tp " + Player.getName(Player.getEntity()) + space + px + space
 		
 var time = new android.widget.Button(ctx);
 time.setText("Time menu");
+time.setTextColor(GUIName);
 if(getLanguage=="de_DE")time.setText("Zeit menu");
 if(mcpetheme==true)time.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 time.setOnClickListener(new android.view.View.OnClickListener() {
@@ -9068,6 +9182,7 @@ timeLayout1.setPadding(20,0,20,0);
 		
 var weather = new android.widget.Button(ctx);
 weather.setText("Weather menu");
+weather.setTextColor(GUIName);
 if(getLanguage=="de_DE")weather.setText("Wetter menu");
 if(mcpetheme==true)weather.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 weather.setOnClickListener(new android.view.View.OnClickListener() {
@@ -10328,7 +10443,7 @@ function rptask() {
                     	}
                     }
                     if (autospam) {
-                        Server.sendChat(text);
+                        Server.sendChat(""+text+"");
                         Server.getPort();
                 	if(Server.getPort()=="0")clientMessage(text);
                     }
