@@ -534,7 +534,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             activeLayout1.addView(activeScroll);
 			
 	    var a1 = new TextView(MainActivity);
-            a1.setTextSize(10);
+            a1.setTextSize(11);
             if(aimaura==true)a1.setText("AimAura");
             if(aimaura==false)a1.setText("");
 	    if(aimaura==false)a1.setTextColor(Color.RED);
@@ -548,6 +548,80 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 			}
 		});
 		activeLayout.addView(a1);
+		
+		var a2 = new TextView(MainActivity);
+            a2.setTextSize(11);
+            if(liquidwalk==true)a2.setText("LiquidWalk");
+            if(liquidwalk==false)a2.setText("");
+	    if(liquidwalk==false)a2.setTextColor(Color.RED);
+            if(liquidwalk==true)a2.setTextColor(Color.GREEN);
+			a2.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             a2.setTextColor(Color.RED);
+			 liquidwalk = false;
+			}
+		});
+		activeLayout.addView(a2);
+		
+		var a3 = new TextView(MainActivity);
+            a3.setTextSize(11);
+            if(xray==true)a3.setText("X-ray");
+            if(xray==false)a3.setText("");
+	    if(xray==false)a3.setTextColor(Color.RED);
+            if(xray==true)a3.setTextColor(Color.GREEN);
+			a3.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             a3.setTextColor(Color.RED);
+			 xray = false;
+			}
+		});
+		activeLayout.addView(a3);
+		
+		var a4 = new TextView(MainActivity);
+            a4.setTextSize(11);
+            if(glide==true)a4.setText("Glide");
+            if(glide==false)a4.setText("");
+	    if(glide==false)a4.setTextColor(Color.RED);
+            if(glide==true)a4.setTextColor(Color.GREEN);
+			a4.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             a4.setTextColor(Color.RED);
+			 glide = false;
+			}
+		});
+		activeLayout.addView(a4);
+		
+		var a5 = new TextView(MainActivity);
+            a5.setTextSize(11);
+            if(autospam==true)a5.setText("AutoSpam");
+            if(autospam==false)a5.setText("");
+	    if(autospam==false)a5.setTextColor(Color.RED);
+            if(autospam==true)a5.setTextColor(Color.GREEN);
+			a5.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             a5.setTextColor(Color.RED);
+			 autospam = false;
+			 autospam2 = false;
+			}
+		});
+		activeLayout.addView(a5);
+		
+		var a6 = new TextView(MainActivity);
+            a6.setTextSize(11);
+            if(autospam==true)a6.setText("AutoDestroy");
+            if(extraj==true)a6.setText("AutoDestroy 2");
+            if(autospam==false)a6.setText("");
+	    if(autospam==false)a6.setTextColor(Color.RED);
+            if(autospam==true)a6.setTextColor(Color.GREEN);
+			a6.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             a6.setTextColor(Color.RED);
+			 autodestroy = false;
+			 autodestroy2 = false;
+			 extraj = false;
+			}
+		});
+		activeLayout.addView(a6);
 
 active = new PopupWindow(activeLayout1, dip2px(10), dip2px(10));
 
@@ -564,25 +638,6 @@ if(showActive==true)activeView();
         var line1 = new android.widget.LinearLayout(MainActivity);
 	    line1.setOrientation(0);
 	    
-	    var active = new TextView(MainActivity);
-            active.setTextSize(10);
-            active.setText("Active mods: ");
-            if(getLanguage=="de_DE")active.setText('Active: ');
-            active.setTextColor(Color.WHITE);
-            line1.addView(active);
-            
-            var active2 = new TextView(MainActivity);
-            active2.setTextSize(10);
-            if(liquidwalk==true)active2.setText("Liquid walk, ");
-            active2.setTextColor(Color.WHITE);
-            line1.addView(active2);
-            
-            var active3 = new TextView(MainActivity);
-            active3.setTextSize(10);
-            if(xray==true)active3.setText("Xray, ");
-            active3.setTextColor(Color.WHITE);
-            line1.addView(active3);
-            
             var active4 = new TextView(MainActivity);
             active4.setTextSize(10);
             if(armor==true)active4.setText("Armor status, ");
@@ -601,12 +656,6 @@ if(showActive==true)activeView();
             active6.setTextColor(Color.WHITE);
             line1.addView(active6);
             
-            var active7 = new TextView(MainActivity);
-            active7.setTextSize(10);
-            if(glide==true)active7.setText("Glide, ");
-            active7.setTextColor(Color.WHITE);
-            line1.addView(active7);
-            
             var active8 = new TextView(MainActivity);
             active8.setTextSize(10);
             if(ttot==true)active8.setText("TextToToast, ");
@@ -619,18 +668,6 @@ if(showActive==true)activeView();
             active9.setTextColor(Color.WHITE);
             line1.addView(active9);
             
-            var active10 = new TextView(MainActivity);
-            active10.setTextSize(10);
-            if(tapspam==true)active10.setText("TapSpam, ");
-            active10.setTextColor(Color.WHITE);
-            line1.addView(active10);
-            
-            var active11 = new TextView(MainActivity);
-            active11.setTextSize(10);
-            if(tapdestroy==true)active11.setText("TapDestroy, ");
-            active11.setTextColor(Color.WHITE);
-            line1.addView(active11);
-            
             var active12 = new TextView(MainActivity);
             active12.setTextSize(10);
             if(airwalk==true)active12.setText("AirWalk, ");
@@ -638,28 +675,6 @@ if(showActive==true)activeView();
             line1.addView(active12);
             
             menuLayout.addView(line1);
-            
-            var line2 = new android.widget.LinearLayout(MainActivity);
-	    line2.setOrientation(0);
-            
-            menuLayout.addView(line2);
-            
-            var line3 = new android.widget.LinearLayout(MainActivity);
-	    line3.setOrientation(0);
-	    
-            
-             menuLayout.addView(line3);
-             
-             var line4 = new android.widget.LinearLayout(MainActivity);
-	    line4.setOrientation(0);
-	    
-
-            menuLayout.addView(line4);
-            
-            var line6 = new android.widget.LinearLayout(MainActivity);
-	    line6.setOrientation(0);
-	    
-	    menuLayout.addView(line6);
 	    
 	    var group = new android.widget.Button(MainActivity);
 group.setText("Community");
