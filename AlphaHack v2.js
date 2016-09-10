@@ -46,6 +46,7 @@ var Alert = android.app.AlertDialog.Builder
 //Defines
 var GUI;
 var menu;
+var active;
 var update;
 var num0 = 0;
 var vidd = true;
@@ -443,7 +444,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
         menuBtn.setText("");
         menuBtn.setOnClickListener(new View.OnClickListener({
             onClick: function(viewarg){
-        if(showActive==true)active.dismiss();
+        showActive = false;
 mainMenu();
 GUI.dismiss();
 if(getLanguage=="en_US")Toast.makeText(MainActivity, "Scroll down", 1).show();
@@ -506,7 +507,10 @@ menuLayout.addView(line0);
             exit.setTextColor(Color.RED);
             exit.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-        if(showActive2==true)activeView();
+        if(showActive2==true){
+        	activeView();
+        	showActive = true;
+        }
 menu.dismiss(); 
 showMenuBtn(); 
 if(getLanguage=="en_US")Toast.makeText(MainActivity, "Closed successfully", 1).show();
