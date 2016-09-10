@@ -534,7 +534,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             activeLayout1.addView(activeScroll);
 			
 		var a1 = new TextView(MainActivity);
-            a1.setTextSize(5);
+            a1.setTextSize(10);
             if(aimaura==true)a1.setText("Aim aura");
             if(aimaura==false)a1.setText("");
 			if(aimaura==false)a1.setTextColor(Color.RED);
@@ -551,7 +551,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 
 active = new PopupWindow(activeLayout1, dip2px(10), dip2px(10));
 
-active = new PopupWindow(activeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/3, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1.3);
+active = new PopupWindow(activeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/4, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1.3);
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
       bg.setStroke(10,Color.BLACK);
@@ -1043,6 +1043,7 @@ if(showActive == true){
 activeMods.setTextColor(Color.GREEN);
 showActive2 = true;
 showActive = true;
+activeView();
 }
 if(showActive == false){
 activeMods.setTextColor(Color.RED);
