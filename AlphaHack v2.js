@@ -532,12 +532,11 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             
             activeScroll.addView(activeLayout);
             activeLayout1.addView(activeScroll);
-            
-			if(aimaura==true)activeView.addView(a1);
 			
-			var a1 = new TextView(MainActivity);
+		var a1 = new TextView(MainActivity);
             a1.setTextSize(5);
-            a1.setText("Aim aura");
+            if(aimaura==true)a1.setText("Aim aura");
+            if(aimaura==false)a1.setText("");
 			if(aimaura==false)a1.setTextColor(Color.RED);
             if(aimaura==true)a1.setTextColor(Color.GREEN);
 			a1.setOnClickListener(new android.view.View.OnClickListener() {
@@ -548,6 +547,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 			 var aimed = false;
 			}
 		});
+		activeLayout.addView(a1);
 
 active = new PopupWindow(activeLayout1, dip2px(10), dip2px(10));
 
