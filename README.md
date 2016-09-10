@@ -1,17 +1,30 @@
 # AlphaHack-v2
 ALPHAHack v2 is a remake of AlphaHack 0.8.1
-
-
+<br />
 [Download](https://arceusmatt.github.io/AlphaHack)
-
-
+<br />
+# Info
+</>--------------------</><br />
+[AlphαHαck by: ArceusMαtt (c) 2016];<br />
+</>--------------------</><br />
+[Free to use mod menu for MCPE under MIT license];<br />
+</>--------------------</><br />
+[Codes αre free to copy BUT NOT FOR COPY:<br />
+the menu itself & other developers codes in this script.<br />
+Pleαse contαct the developers of eαch code for permission.<br />
+Other codes NOT COPYαBLE: αuto spαm & αnti spαm bypαss, BL server enαbler code.];<br />
+</>--------------------</><br />
+[contributors: Godsoft029, Johnmαcrocrαft, αJ170, Peαcestorm(αgαmeR), Firepro9978, αPRIC0CKS, Vertex client teαm];<br />
+</>--------------------</><br />
+<br />
 # Issues & Features:
-- [ ] 0.8.1 Misc / settings incomplete (A bunch of useful stuff)
-- [ ] 0.8.2 Online mods incomplete (mods for servers, some crashes)
-- [ ] 0.8.2 Offline mods incomplete (mods for everything else, some crashes)
-- [ ] 0.8.1 Effect menu incomplete (Some crashes & crashes online)
-- [ ] 0.8.1 Enchant menu incomplete (Some crashes & may add more features)
-- [ ] 0.8.1 Give menu incomplete (Major crashes & may add more features)
+- [ ] 0.8.1 Misc incomplete (Missing features)
+- [ ] 0.8.1 Settings incomplete (Missing features & may add more features)
+- [ ] 0.8.2 Online mods incomplete (Mods for servers, needs more features & fixes)
+- [ ] 0.8.2 Offline mods incomplete (Mods for everything else, needs more features & fixes)
+- [ ] 0.8.1 Effect menu incomplete (Needs some testing)
+- [ ] 0.8.1 Enchant menu incomplete (May add more features & needs anti enchant bypass)
+- [ ] 0.8.1 Give menu incomplete (May add more features)
 - [ ] 0.8.1 Morph menu incomplete (Missing mobs & mobs textures are blank)
 - [x] 0.8.2 Nuke menu
 - [ ] 0.8.1 Particle menu incomplete (Some crashes & may add more features)
@@ -19,4 +32,4 @@ ALPHAHack v2 is a remake of AlphaHack 0.8.1
 - [x] 0.8.1 Speed menu
 - [ ] 0.8.1 Teleport menu incomplete (Some crashes & may add more features)
 - [ ] 0.8.1 Time menu incomplete (May add more features)
-- [ ] 0.8.1 Weather menu incomplete (Some crashes & may add more features)
+- [ ] 0.8.1 Weather menu incomplete (May add more features)
