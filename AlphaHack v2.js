@@ -10123,7 +10123,7 @@ if(changeSpeed==true)changeSpeedOnBlock();
 if(brightness==true)bright();
 if(lowhealth==true)spawnIfLowHealth();
 if(fasteat==true)fastEat();
-if(xray==true)xrayStart();
+if(xray==true)xrayRepeat();
 }
 
 function devpardon() {
