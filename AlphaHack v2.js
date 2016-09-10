@@ -1,4 +1,21 @@
 var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
+/*
+A͎̝͎͎̔͒̄ͯͤ́̍̚_͇̦̦̭ͥͪl̮̗̙̒̾_̣̭̠ͮͬp̥͚̯ͥ̉͒̆͋_̜͍̹̲̌̎͋̂ͭ̓ͥh̜̭̺ͪ͑_͔̗̮̼̺̰̰̳̄́̐͂ả̪̰̙̞͈̤̪͎͈͆_̳̱̘̗͙̪̖̖͐_̜̥͕̝̹̏ͪ͆̋̒̽̚ͅH͎̹̪̱͇̖̼͋̉_͉̯͇͖̜͈̖ͨ͆̔͊͛͑̀a̩͖̺͖̗̮̭͊ͮ͒̚_͇̲̀̈ͬ̆ͫ̊̒́c̙̹̼͚͒͋́͑ͧͪ̅ͩ_̫̮̮̤̺̯͉̠̠̽͊͊͛̇̀̾̐ḵ͕͖̉_̜̻̪͓̖͖ͩͯ̾̾̒̑̅̍ͪ_̣͕̤̓́̿̓͂͆̃̐P̰͕̾ͨE̬͎̪̹͎̖̠̋͒̓͑̅̀ͧͬͅ_̫̞̄͊_̙͕͎̱ͭͨ͑v̪͖̹͈̻̣͍͗̽̈̊̽̆̉͐2̬͔ͫͭͤ̓̈̔ͥ
+</>--------------------</>
+[AlphαHαck by: ArceusMαtt (c) 2016];
+</>--------------------</>
+[Free to use mod menu for MCPE under MIT license];
+</>--------------------</>
+[Codes αre free to copy BUT NOT FOR COPY:
+the menu itself & other developers codes in this script.
+Pleαse contαct the developers of eαch code for permission.
+Other codes NOT COPYαBLE: αuto spαm & αnti spαm bypαss, BL server enαbler code.];
+</>--------------------</>
+[contributors: Godsoft029, Johnmαcrocrαft, αJ170, Peαcestorm(αgαmeR), Firepro9978, αPRIC0CKS, Vertex client teαm];
+</>--------------------</>
+A͎̝͎͎̔͒̄ͯͤ́̍̚_͇̦̦̭ͥͪl̮̗̙̒̾_̣̭̠ͮͬp̥͚̯ͥ̉͒̆͋_̜͍̹̲̌̎͋̂ͭ̓ͥh̜̭̺ͪ͑_͔̗̮̼̺̰̰̳̄́̐͂ả̪̰̙̞͈̤̪͎͈͆_̳̱̘̗͙̪̖̖͐_̜̥͕̝̹̏ͪ͆̋̒̽̚ͅH͎̹̪̱͇̖̼͋̉_͉̯͇͖̜͈̖ͨ͆̔͊͛͑̀a̩͖̺͖̗̮̭͊ͮ͒̚_͇̲̀̈ͬ̆ͫ̊̒́c̙̹̼͚͒͋́͑ͧͪ̅ͩ_̫̮̮̤̺̯͉̠̠̽͊͊͛̇̀̾̐ḵ͕͖̉_̜̻̪͓̖͖ͩͯ̾̾̒̑̅̍ͪ_̣͕̤̓́̿̓͂͆̃̐P̰͕̾ͨE̬͎̪̹͎̖̠̋͒̓͑̅̀ͧͬͅ_̫̞̄͊_̙͕͎̱ͭͨ͑v̪͖̹͈̻̣͍͗̽̈̊̽̆̉͐2̬͔ͫͭͤ̓̈̔ͥ
+*/
+
 var MainActivity = ctx;
 
 //Get language of client side minecraft
@@ -230,7 +247,7 @@ var GUIName = Color.WHITE;
 
 var GUIPos = Gravity.CENTER;
 
-var GUIBtns = Color.BLACK;
+var GUIBtns = Color.WHITE;
 
 var GUIBtns2 = Color.BLACK;
 var GUIBtns3 = Color.WHITE;
@@ -454,7 +471,7 @@ function mainMenu(){
             menuScroll.addView(menuLayout);
             menuLayout1.addView(menuScroll);
 
-var line0 = new android.widget.LinearLayout(ctx);
+var line0 = new android.widget.LinearLayout(MainActivity);
 	    line0.setOrientation(0);
             
             /*var title3 = new TextView(MainActivity);
@@ -494,7 +511,7 @@ if(getLanguage=="en_US")Toast.makeText(MainActivity, "Closed successfully", 1).s
             }));
             menuLayout.addView(exit);
             
-            var line1 = new android.widget.LinearLayout(ctx);
+        var line1 = new android.widget.LinearLayout(MainActivity);
 	    line1.setOrientation(0);
 	    
 	    var active = new TextView(MainActivity);
@@ -572,44 +589,45 @@ if(getLanguage=="en_US")Toast.makeText(MainActivity, "Closed successfully", 1).s
             
             menuLayout.addView(line1);
             
-            var line2 = new android.widget.LinearLayout(ctx);
+            var line2 = new android.widget.LinearLayout(MainActivity);
 	    line2.setOrientation(0);
             
             menuLayout.addView(line2);
             
-            var line3 = new android.widget.LinearLayout(ctx);
+            var line3 = new android.widget.LinearLayout(MainActivity);
 	    line3.setOrientation(0);
 	    
             
              menuLayout.addView(line3);
              
-             var line4 = new android.widget.LinearLayout(ctx);
+             var line4 = new android.widget.LinearLayout(MainActivity);
 	    line4.setOrientation(0);
 	    
 
             menuLayout.addView(line4);
             
-            var line6 = new android.widget.LinearLayout(ctx);
+            var line6 = new android.widget.LinearLayout(MainActivity);
 	    line6.setOrientation(0);
 	    
 	    menuLayout.addView(line6);
 	    
-	    var group = new android.widget.Button(ctx);
+	    var group = new android.widget.Button(MainActivity);
 group.setText("Community");
+group.setTextColor(GUIBtns);
 if(mcpetheme==true)group.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 group.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-             var urls4 = new Intent(ctx);
+             var urls4 = new Intent(MainActivity);
 	  urls4.setAction(Intent.ACTION_VIEW);
                     urls4.setData(Uri.parse("https://plus.google.com/communities/103695355587842948163"));
-                    ctx.startActivity(urls4);
+                    MainActivity.startActivity(urls4);
 			}
 		});
 		menuLayout.addView(group);
 	    
-var misc = new android.widget.Button(ctx);
+var misc = new android.widget.Button(MainActivity);
 misc.setText("Misc");
-misc.setTextColor(GUIName);
+misc.setTextColor(GUIBtns);
 if(mcpetheme==true)misc.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 misc.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -620,17 +638,17 @@ misc.setOnClickListener(new android.view.View.OnClickListener() {
 		menuLayout.addView(misc);
 		
 		function misc_menu(){
-ctx.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
-            var miscLayout = new LinearLayout(ctx);
-            var miscScroll = new ScrollView(ctx);
-            var miscLayout1 = new LinearLayout(ctx);
+            var miscLayout = new LinearLayout(MainActivity);
+            var miscScroll = new ScrollView(MainActivity);
+            var miscLayout1 = new LinearLayout(MainActivity);
             miscLayout.setOrientation(1);
             miscLayout1.setOrientation(1);
             miscScroll.addView(miscLayout);
             miscLayout1.addView(miscScroll);
             
-            var exit = new android.widget.Button(ctx);
+            var exit = new android.widget.Button(MainActivity);
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -640,7 +658,7 @@ ctx.runOnUiThread(new Runnable({ run: function(){
 		});
 		miscLayout.addView(exit);
 		
-		var credits = new android.widget.Button(ctx);
+		var credits = new android.widget.Button(MainActivity);
 		credits.setText("Credits");
 		credits.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -651,17 +669,17 @@ ctx.runOnUiThread(new Runnable({ run: function(){
 		miscLayout.addView(credits);
 		
 		function credit_menu(){
-ctx.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
-            var creditLayout = new LinearLayout(ctx);
-            var creditScroll = new ScrollView(ctx);
-            var creditLayout1 = new LinearLayout(ctx);
+            var creditLayout = new LinearLayout(MainActivity);
+            var creditScroll = new ScrollView(MainActivity);
+            var creditLayout1 = new LinearLayout(MainActivity);
             creditLayout.setOrientation(1);
             creditLayout1.setOrientation(1);
             creditScroll.addView(creditLayout);
             creditLayout1.addView(creditScroll);
 
-			var exit = new android.widget.Button(ctx);
+			var exit = new android.widget.Button(MainActivity);
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -701,21 +719,21 @@ ctx.runOnUiThread(new Runnable({ run: function(){
             credit5.setTextColor(Color.RED);
             creditLayout.addView(credit5);
 			
-credit = new PopupWindow(creditLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1, ctx.getWindowManager().getDefaultDisplay().getHeight());
+credit = new PopupWindow(creditLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/1, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             credit.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#000000")));
       var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
       bg.setStroke(10,Color.BLACK);
 creditLayout1.setBackgroundDrawable(bg);
 creditLayout1.setPadding(20,0,20,0);
-            credit.showAtLocation(ctx.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            credit.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(ctx, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
             }
     }}));
 }
 
-var pass = new android.widget.Button(ctx);
+var pass = new android.widget.Button(MainActivity);
 		pass.setText("Brute force (Numbers)");
 		pass.setTextColor(Color.RED);
 if(hackk==true)pass.setTextColor(Color.GREEN);
@@ -736,15 +754,15 @@ hackk = false;
 		});
 		miscLayout.addView(pass);
 		
-		var ht1 = new android.widget.Button(ctx);
+		var ht1 = new android.widget.Button(MainActivity);
 		ht1.setText("How to bypass ban");
 		ht1.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-var alert = new android.app.AlertDialog.Builder(ctx); 
+var alert = new android.app.AlertDialog.Builder(MainActivity); 
 /*alert.setTitle(""); */
 
-var scroll = new android.widget.ScrollView(ctx); 
-var layout = new android.widget.LinearLayout(ctx); 
+var scroll = new android.widget.ScrollView(MainActivity); 
+var layout = new android.widget.LinearLayout(MainActivity); 
 layout.setOrientation(1);
 
 alert.setTitle("How to bypass a /ban");
@@ -768,15 +786,15 @@ dialog.show();
 		});
 		miscLayout.addView(ht1);
 
-var ht2 = new android.widget.Button(ctx);
+var ht2 = new android.widget.Button(MainActivity);
 		ht2.setText("How to bypass ip ban");
 		ht2.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-var alert = new android.app.AlertDialog.Builder(ctx); 
+var alert = new android.app.AlertDialog.Builder(MainActivity); 
 /*alert.setTitle(""); */
 
-var scroll = new android.widget.ScrollView(ctx); 
-var layout = new android.widget.LinearLayout(ctx); 
+var scroll = new android.widget.ScrollView(MainActivity); 
+var layout = new android.widget.LinearLayout(MainActivity); 
 layout.setOrientation(1);
 
 alert.setTitle("How to bypass a /ban-ip");
@@ -800,15 +818,15 @@ dialog.show();
 		});
 		miscLayout.addView(ht2);
 
-var ht3 = new android.widget.Button(ctx);
+var ht3 = new android.widget.Button(MainActivity);
 		ht3.setText("How to bypass CID/devban");
 		ht3.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-var alert = new android.app.AlertDialog.Builder(ctx); 
+var alert = new android.app.AlertDialog.Builder(MainActivity); 
 /*alert.setTitle(""); */
 
-var scroll = new android.widget.ScrollView(ctx); 
-var layout = new android.widget.LinearLayout(ctx); 
+var scroll = new android.widget.ScrollView(MainActivity); 
+var layout = new android.widget.LinearLayout(MainActivity); 
 layout.setOrientation(1);
 
 alert.setTitle("How to bypass a /devban");
@@ -832,15 +850,15 @@ dialog.show();
 		});
 		miscLayout.addView(ht3);
 		
-		var ht4 = new android.widget.Button(ctx);
+		var ht4 = new android.widget.Button(MainActivity);
 		ht4.setText("How to bypass Alias");
 		ht4.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-var alert = new android.app.AlertDialog.Builder(ctx); 
+var alert = new android.app.AlertDialog.Builder(MainActivity); 
 /*alert.setTitle(""); */
 
-var scroll = new android.widget.ScrollView(ctx); 
-var layout = new android.widget.LinearLayout(ctx); 
+var scroll = new android.widget.ScrollView(MainActivity); 
+var layout = new android.widget.LinearLayout(MainActivity); 
 layout.setOrientation(1);
 
 alert.setTitle("How to bypass /alias");
@@ -864,7 +882,7 @@ dialog.show();
 		});
 		miscLayout.addView(ht4);
             
-            var sit = new android.widget.Button(ctx);
+            var sit = new android.widget.Button(MainActivity);
 		sit.setText("Image lookup");
 		sit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -876,13 +894,13 @@ web3();
 
       function web3()
       {
-      var urls2 = new Intent(ctx);
+      var urls2 = new Intent(MainActivity);
 	  urls2.setAction(Intent.ACTION_VIEW);
                     urls2.setData(Uri.parse("http://www.tineye.com"));
-                    ctx.startActivity(urls2);
+                    MainActivity.startActivity(urls2);
       }
 
-var sid = new android.widget.Button(ctx);
+var sid = new android.widget.Button(MainActivity);
 		sid.setText("View website code");
 		sid.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -893,14 +911,14 @@ var sid = new android.widget.Button(ctx);
 		miscLayout.addView(sid);
 
 function scc() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 scc = new android.widget.PopupWindow();
-var Layer5 = new android.widget.LinearLayout(ctx);
-var sc1 = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer5 = new android.widget.LinearLayout(MainActivity);
+var sc1 = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter website");
 Dialog.setContentView(Layer5);
@@ -926,7 +944,7 @@ showMenuBtn();
 
 scc.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 scc.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-scc.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+scc.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The scc Dialog Is Malfunctioning:"+e);
 }
@@ -935,44 +953,44 @@ print("The scc Dialog Is Malfunctioning:"+e);
 
       function sc3()
       {
-      ctx.runOnUiThread(new java.lang.Runnable({run: function(){
-      var webs = new android.webkit.WebView(ctx);
+      MainActivity.runOnUiThread(new java.lang.Runnable({run: function(){
+      var webs = new android.webkit.WebView(MainActivity);
       var webset = webs.getSettings();
       webset.setJavaScriptEnabled(true);
       webs.setWebChromeClient(new android.webkit.WebChromeClient());
       webs.setWebViewClient(new android.webkit.WebViewClient());
       webs.loadUrl('view-source:' + sc2);
 /*Site URL*/
-      new android.app.AlertDialog.Builder(ctx).setView(webs).show();
+      new android.app.AlertDialog.Builder(MainActivity).setView(webs).show();
       }}));
       }
       
-      var aniview = new android.widget.Button(ctx);
+      var aniview = new android.widget.Button(MainActivity);
 		aniview.setText("Watch anime on MCPE");
 		aniview.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              misc.dismiss();
              animeView();
-Toast.makeText(ctx, "Please avoid ads & adjust your zoom", 1).show();
+Toast.makeText(MainActivity, "Please avoid ads & adjust your zoom", 1).show();
 			}
 		});
 		miscLayout.addView(aniview);
 		
 		function animeView(){
-ctx.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
-            var animeLayout = new LinearLayout(ctx);
+            var animeLayout = new LinearLayout(MainActivity);
             
-            var animeScroll = new ScrollView(ctx);
+            var animeScroll = new ScrollView(MainActivity);
             
-            var animeLayout1 = new LinearLayout(ctx);
+            var animeLayout1 = new LinearLayout(MainActivity);
             animeLayout.setOrientation(1);
             animeLayout1.setOrientation(1);
             
             animeScroll.addView(animeLayout);
             animeLayout1.addView(animeScroll);
 
-var exit = new Button(ctx);
+var exit = new Button(MainActivity);
             exit.setText("Exit");
 exit.setTextColor(Color.RED);
             exit.setOnClickListener(new View.OnClickListener({
@@ -985,7 +1003,7 @@ showMenuBtn();
             }));
             animeLayout.addView(exit);
             
-            var webs = new android.webkit.WebView(ctx);
+            var webs = new android.webkit.WebView(MainActivity);
       var webset = webs.getSettings();
       webset.setJavaScriptEnabled(true);
       webs.setWebChromeClient(new android.webkit.WebChromeClient());
@@ -999,21 +1017,21 @@ showMenuBtn();
 
 anime = new PopupWindow(animeLayout1, dip2px(500), dip2px(500));
 
-anime = new PopupWindow(animeLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/1.4, ctx.getWindowManager().getDefaultDisplay().getHeight()/1.3);
+anime = new PopupWindow(animeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/1.4, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1.3);
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
       bg.setStroke(10,Color.BLACK);
 animeLayout1.setBackgroundDrawable(bg);
 animeLayout1.setPadding(20,0,20,0);
 anime.setBackgroundDrawable(new ColorDrawable(Color.BLACK));
-            anime.showAtLocation(ctx.getWindow().getDecorView(), Gravity.CENTER | Gravity.CENTER, 0, 0);
+            anime.showAtLocation(MainActivity.getWindow().getDecorView(), Gravity.CENTER | Gravity.CENTER, 0, 0);
             }catch(error){
-                Toast.makeText(ctx, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
             }
     }}));
 }
 
-            misc = new PopupWindow(miscLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
+            misc = new PopupWindow(miscLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)misc.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
       if(default1==false)misc.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
@@ -1021,16 +1039,16 @@ anime.setBackgroundDrawable(new ColorDrawable(Color.BLACK));
       bg.setStroke(10,Color.BLACK);
 miscLayout1.setBackgroundDrawable(bg);
 miscLayout1.setPadding(20,0,20,0);
-            misc.showAtLocation(ctx.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            misc.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(ctx, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
             }
     }}));
 }
 
-var settings = new android.widget.Button(ctx);
+var settings = new android.widget.Button(MainActivity);
 settings.setText("Settings");
-settings.setTextColor(GUIName);
+settings.setTextColor(GUIBtns);
 if(mcpetheme==true)settings.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 settings.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -1041,17 +1059,17 @@ settings.setOnClickListener(new android.view.View.OnClickListener() {
 		menuLayout.addView(settings);
 	
 		function settings_menu(){
-ctx.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
-            var settingsLayout = new LinearLayout(ctx);
-            var settingsScroll = new ScrollView(ctx);
-            var settingsLayout1 = new LinearLayout(ctx);
+            var settingsLayout = new LinearLayout(MainActivity);
+            var settingsScroll = new ScrollView(MainActivity);
+            var settingsLayout1 = new LinearLayout(MainActivity);
             settingsLayout.setOrientation(1);
             settingsLayout1.setOrientation(1);
             settingsScroll.addView(settingsLayout);
             settingsLayout1.addView(settingsScroll);
             
-var exit = new android.widget.Button(ctx);
+var exit = new android.widget.Button(MainActivity);
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -1061,29 +1079,30 @@ var exit = new android.widget.Button(ctx);
 		});
 		settingsLayout.addView(exit);
 		
-	    var link = new Button(ctx);
+	    var link = new Button(MainActivity);
             link.setText("Download link");       
             link.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-var urls3 = new Intent(ctx);
+var urls3 = new Intent(MainActivity);
 	  urls3.setAction(Intent.ACTION_VIEW);
                     urls3.setData(Uri.parse("https://arceusmatt.github.io/AlphaHack"));
-                    ctx.startActivity(urls3);
+                    MainActivity.startActivity(urls3);
                 }
             }));
             settingsLayout.addView(link);
             
-            var mcpe = new Button(ctx);
+            var mcpe = new Button(MainActivity);
             mcpe.setText("MCPE menu theme");       
             mcpe.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 mcpetheme = true;
-var GUIName = Color.BLACK;
+GUIName = Color.BLACK;
+GUIBtns = Color.BLACK;
                 }
             }));
             settingsLayout.addView(mcpe);
 		
-		var g1 = new Button(ctx);
+		var g1 = new Button(MainActivity);
             g1.setText("Menu center");       
             g1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1094,7 +1113,7 @@ GUIPos3 = Gravity.CENTER;
             }));
             settingsLayout.addView(g1);
 
-var g2 = new Button(ctx);
+var g2 = new Button(MainActivity);
             g2.setText("Menu right");       
             g2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1105,7 +1124,7 @@ GUIPos3 = Gravity.RIGHT;
             }));
             settingsLayout.addView(g2);
 
-var g3 = new Button(ctx);
+var g3 = new Button(MainActivity);
             g3.setText("Menu left");       
             g3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1116,7 +1135,7 @@ GUIPos3 = Gravity.LEFT;
             }));
             settingsLayout.addView(g3);
 			
-			var gs0 = new Button(ctx);
+			var gs0 = new Button(MainActivity);
             gs0.setText("Menu Size 1");       
             gs0.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1125,7 +1144,7 @@ GUISize = 4;
             }));
             settingsLayout.addView(gs0);
 
-var gs1 = new Button(ctx);
+var gs1 = new Button(MainActivity);
             gs1.setText("Menu Size 2");       
             gs1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1134,7 +1153,7 @@ GUISize = 3;
             }));
             settingsLayout.addView(gs1);
 
-var gs2 = new Button(ctx);
+var gs2 = new Button(MainActivity);
             gs2.setText("Menu Size normal");       
             gs2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1143,7 +1162,7 @@ GUISize = 2;
             }));
             settingsLayout.addView(gs2);
 
-var gs3 = new Button(ctx);
+var gs3 = new Button(MainActivity);
             gs3.setText("Menu Size 3");       
             gs3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1152,40 +1171,40 @@ GUISize = 1;
             }));
             settingsLayout.addView(gs3);
             
-var l1 = new Button(ctx);
+var l1 = new Button(MainActivity);
             l1.setText("Default Menu");       
             l1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIColor = GUIColor1
-var GUIName = Color.WHITE;
+var GUIBtns = Color.WHITE;
 default1 = true;
                 }
             }));
             settingsLayout.addView(l1);
             
-            var l2 = new Button(ctx);
+            var l2 = new Button(MainActivity);
             l2.setText("Black Menu");       
             l2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIColor = GUIColor2
- var GUIName = Color.BLACK;
+ var GUIBtns = Color.BLACK;
  if(default1==true)default1 = false;
                 }
             }));
             settingsLayout.addView(l2);
 
-var l3 = new Button(ctx);
+var l3 = new Button(MainActivity);
             l3.setText("White Menu");       
             l3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIColor = GUIColor3
-var GUIName = Color.BLACK
+var GUIBtns = Color.BLACK
 if(default1==true)default1 = false;
                 }
             }));
             settingsLayout.addView(l3);
 
-var l4 = new Button(ctx);
+var l4 = new Button(MainActivity);
             l4.setText("Red Menu");       
             l4.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1195,7 +1214,7 @@ if(default1==true)default1 = false;
             }));
             settingsLayout.addView(l4);
 
-var l5 = new Button(ctx);
+var l5 = new Button(MainActivity);
             l5.setText("Blue Menu");       
             l5.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1205,62 +1224,62 @@ if(default1==true)default1 = false;
             }));
             settingsLayout.addView(l5);
 
-var l6 = new Button(ctx);
+var l6 = new Button(MainActivity);
             l6.setText("Gray Menu");       
             l6.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIColor = GUIColor6
-var GUIName = Color.WHITE;
+var GUIBtns = Color.WHITE;
 if(default1==true)default1 = false;
                 }
             }));
             settingsLayout.addView(l6);
 
-var l7 = new Button(ctx);
+var l7 = new Button(MainActivity);
             l7.setText("Light gray Menu");       
             l7.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIColor = GUIColor7
-var GUIName = Color.BLACK;
+var GUIBtns = Color.BLACK;
 if(default1==true)default1 = false;
                 }
             }));
             settingsLayout.addView(l7);
 
-var l8 = new Button(ctx);
+var l8 = new Button(MainActivity);
             l8.setText("Yellow Menu");       
             l8.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIColor = GUIColor8
-var GUIName = Color.BLACK;
+var GUIBtns = Color.BLACK;
 if(default1==true)default1 = false;
                 }
             }));
             settingsLayout.addView(l8);
 
-var l9 = new Button(ctx);
+var l9 = new Button(MainActivity);
             l9.setText("Cyan Menu");       
             l9.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIColor = GUIColor9
-var GUIName = Color.BLACK;
+var GUIBtns = Color.BLACK;
 if(default1==true)default1 = false;
                 }
             }));
             settingsLayout.addView(l9);
 
-var l10 = new Button(ctx);
+var l10 = new Button(MainActivity);
             l10.setText("Dark gray Menu");       
             l10.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIColor = GUIColor10
-var GUIName = Color.WHITE
+var GUIBtns = Color.WHITE
 if(default1==true)default1 = false;
                 }
             }));
             settingsLayout.addView(l10);
 
-var l11 = new Button(ctx);
+var l11 = new Button(MainActivity);
             l11.setText("Green Menu");       
             l11.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1270,7 +1289,7 @@ if(default1==true)default1 = false;
             }));
             settingsLayout.addView(l11);
 
-var l12 = new Button(ctx);
+var l12 = new Button(MainActivity);
             l12.setText("Magenta Menu");       
             l12.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1280,7 +1299,7 @@ if(default1==true)default1 = false;
             }));
             settingsLayout.addView(l12);
             
-        var b2 = new Button(ctx);
+        var b2 = new Button(MainActivity);
             b2.setText("Black button text");       
             b2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1289,7 +1308,7 @@ GUIBtns = GUIBtns2
             }));
             settingsLayout.addView(b2);
 
-var b3 = new Button(ctx);
+var b3 = new Button(MainActivity);
             b3.setText("White button text");       
             b3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1298,7 +1317,7 @@ GUIBtns = GUIBtns3
             }));
             settingsLayout.addView(b3);
 
-var b4 = new Button(ctx);
+var b4 = new Button(MainActivity);
             b4.setText("Red button text");       
             b4.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1307,7 +1326,7 @@ GUIBtns = GUIBtns4
             }));
             settingsLayout.addView(b4);
 
-var b5 = new Button(ctx);
+var b5 = new Button(MainActivity);
             b5.setText("Blue button text");       
             b5.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1316,7 +1335,7 @@ GUIBtns = GUIBtns5
             }));
             settingsLayout.addView(b5);
 
-var b6 = new Button(ctx);
+var b6 = new Button(MainActivity);
             b6.setText("Gray button text");       
             b6.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1325,7 +1344,7 @@ GUIBtns = GUIBtns6
             }));
             settingsLayout.addView(b6);
 
-var b7 = new Button(ctx);
+var b7 = new Button(MainActivity);
             b7.setText("Lightgray button text");       
             b7.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1334,7 +1353,7 @@ GUIBtns = GUIBtns7
             }));
             settingsLayout.addView(b7);
 
-var b8 = new Button(ctx);
+var b8 = new Button(MainActivity);
             b8.setText("Yellow button text");       
             b8.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1343,7 +1362,7 @@ GUIBtns = GUIBtns8
             }));
             settingsLayout.addView(b8);
 
-var b9 = new Button(ctx);
+var b9 = new Button(MainActivity);
             b9.setText("Cyan button text");       
             b9.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1352,7 +1371,7 @@ GUIBtns = GUIBtns9
             }));
             settingsLayout.addView(b9);
 
-var b10 = new Button(ctx);
+var b10 = new Button(MainActivity);
             b10.setText("Darkgray button text");       
             b10.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1361,7 +1380,7 @@ GUIBtns = GUIBtns10
             }));
             settingsLayout.addView(b10);
 
-var b11 = new Button(ctx);
+var b11 = new Button(MainActivity);
             b11.setText("Green button text");       
             b11.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1370,7 +1389,7 @@ GUIBtns = GUIBtns11
             }));
             settingsLayout.addView(b11);
 
-var b12 = new Button(ctx);
+var b12 = new Button(MainActivity);
             b12.setText("Magenta button text");       
             b12.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1379,7 +1398,7 @@ GUIBtns = GUIBtns12
             }));
             settingsLayout.addView(b12);
 
-            settings = new PopupWindow(settingsLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
+            settings = new PopupWindow(settingsLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)settings.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
       if(default1==false)settings.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
@@ -1387,16 +1406,16 @@ GUIBtns = GUIBtns12
       bg.setStroke(10,Color.BLACK);
 settingsLayout1.setBackgroundDrawable(bg);
 settingsLayout1.setPadding(20,0,20,0);
-            settings.showAtLocation(ctx.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            settings.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(ctx, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
             }
     }}));
 }
 	    
-var cheats = new android.widget.Button(ctx);
+var cheats = new android.widget.Button(MainActivity);
 cheats.setText("Online & offline mods");
-cheats.setTextColor(GUIName);
+cheats.setTextColor(GUIBtns);
 if(mcpetheme==true)cheats.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 cheats.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -1407,17 +1426,17 @@ cheats.setOnClickListener(new android.view.View.OnClickListener() {
 		menuLayout.addView(cheats);
 		
 		function cheat_menu(){
-ctx.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
-            var cheatLayout = new LinearLayout(ctx);
-            var cheatScroll = new ScrollView(ctx);
-            var cheatLayout1 = new LinearLayout(ctx);
+            var cheatLayout = new LinearLayout(MainActivity);
+            var cheatScroll = new ScrollView(MainActivity);
+            var cheatLayout1 = new LinearLayout(MainActivity);
             cheatLayout.setOrientation(1);
             cheatLayout1.setOrientation(1);
             cheatScroll.addView(cheatLayout);
             cheatLayout1.addView(cheatScroll);
             
-            var exit = new android.widget.Button(ctx);
+            var exit = new android.widget.Button(MainActivity);
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -1450,17 +1469,17 @@ antispam2 = false;
             cheatLayout.addView(bypass1);
             
             function spa2() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 new10 = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var m1 = new android.widget.EditText(ctx);
-var select1 = new android.widget.Button(ctx);
-var select2 = new android.widget.Button(ctx);
-var select3 = new android.widget.Button(ctx);
-var select4 = new android.widget.Button(ctx);
-var Dialog = new android.app.Dialog(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var m1 = new android.widget.EditText(MainActivity);
+var select1 = new android.widget.Button(MainActivity);
+var select2 = new android.widget.Button(MainActivity);
+var select3 = new android.widget.Button(MainActivity);
+var select4 = new android.widget.Button(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
  
 Dialog.setTitle("Enter text & select");
 Dialog.setContentView(Layer);
@@ -1525,7 +1544,7 @@ showMenuBtn();
  
 new10.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 new10.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-new10.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+new10.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("Bypass error: "+e);
 }
@@ -1780,7 +1799,7 @@ clientMessage(client + "Amount in hand: " + Player.getCarriedItemCount());
                 	for(var hk = 0; hk < 4; hk++){
                 		if(hk==3)devpardon();
                 	}
-Toast.makeText(ctx, "You will crash & be unbanned!", 1).show();
+Toast.makeText(MainActivity, "You will crash & be unbanned!", 1).show();
                 }
             }));
             cheatLayout.addView(cidban);
@@ -1948,14 +1967,14 @@ tapspam = false;
             cheatLayout.addView(button9);
             
             function spa() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 spa = new android.widget.PopupWindow();
-var Layer6 = new android.widget.LinearLayout(ctx);
-var mm = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer6 = new android.widget.LinearLayout(MainActivity);
+var mm = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter text for spam");
 Dialog.setContentView(Layer6);
@@ -1978,7 +1997,7 @@ if(autospam2==true)autospam = true;
 
 spa.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 spa.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-spa.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+spa.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("Spam dialog error:"+e);
 }
@@ -2075,17 +2094,17 @@ autodestroy2 = false;
             cheatLayout.addView(button13);
             
             function dig1() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 digg = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var select1 = new android.widget.Button(ctx);
-var select2 = new android.widget.Button(ctx);
-var select3 = new android.widget.Button(ctx);
-var ddf = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var select1 = new android.widget.Button(MainActivity);
+var select2 = new android.widget.Button(MainActivity);
+var select3 = new android.widget.Button(MainActivity);
+var ddf = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
  
 Dialog.setTitle("Select");
 Dialog.setContentView(Layer);
@@ -2119,7 +2138,7 @@ showMenuBtn();
  
 digg.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 digg.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-digg.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+digg.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("Error :"+e);
 }
@@ -2148,7 +2167,7 @@ taptoid = false;
             }));
             cheatLayout.addView(taptoid);
             
-            var kjump = new android.widget.Button(ctx);
+            var kjump = new android.widget.Button(MainActivity);
             kjump.setText("Higher jumps: "+(jump?"on":"off"));
             kjump.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -2166,7 +2185,7 @@ jump = false;
             }));
             cheatLayout.addView(kjump);
             
-            var nowall = new android.widget.Button(ctx);
+            var nowall = new android.widget.Button(MainActivity);
             nowall.setText("No clip: "+(noclip?"on":"off"));
             nowall.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -2337,7 +2356,7 @@ afkspawn = false;
             }));
             cheatLayout.addView(afkspawn);
             
-            var ecd = new Button(ctx);
+            var ecd = new Button(MainActivity);
             ecd.setText("Easy commands");       
             ecd.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -2348,17 +2367,17 @@ afkspawn = false;
             cheatLayout.addView(ecd);
             
             function cmd_menu(){
-ctx.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
-            var cmdLayout = new LinearLayout(ctx);
-            var cmdScroll = new ScrollView(ctx);
-            var cmdLayout1 = new LinearLayout(ctx);
+            var cmdLayout = new LinearLayout(MainActivity);
+            var cmdScroll = new ScrollView(MainActivity);
+            var cmdLayout1 = new LinearLayout(MainActivity);
             cmdLayout.setOrientation(1);
             cmdLayout1.setOrientation(1);
             cmdScroll.addView(cmdLayout);
             cmdLayout1.addView(cmdScroll);
             
-            var exit = new android.widget.Button(ctx);
+            var exit = new android.widget.Button(MainActivity);
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -2368,61 +2387,61 @@ ctx.runOnUiThread(new Runnable({ run: function(){
 		});
 		cmdLayout.addView(exit);
 		
-		var cmd1 = new android.widget.Button(ctx);
+		var cmd1 = new android.widget.Button(MainActivity);
 		cmd1.setText("Creative");
 		cmd1.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
 				Server.sendChat("/gamemode 1");
 				Server.sendChat("/gamemode creative");
-				Toast.makeText(ctx, "Command has been sent.", 1).show();
+				Toast.makeText(MainActivity, "Command has been sent.", 1).show();
 			}
 		});
 		cmdLayout.addView(cmd1);
 		
-		var cmd2 = new android.widget.Button(ctx);
+		var cmd2 = new android.widget.Button(MainActivity);
 		cmd2.setText("Survival");
 		cmd2.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
 				Server.sendChat("/gamemode 0");
 				Server.sendChat("/gamemode survival");
-				Toast.makeText(ctx, "Command has been sent.", 1).show();
+				Toast.makeText(MainActivity, "Command has been sent.", 1).show();
 			}
 		});
 		cmdLayout.addView(cmd2);
 		
-		var cmd3 = new android.widget.Button(ctx);
+		var cmd3 = new android.widget.Button(MainActivity);
 		cmd3.setText("Adventure");
 		cmd3.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
 				Server.sendChat("/gamemode 2");
 				Server.sendChat("/gamemode adventure");
-				Toast.makeText(ctx, "Command has been sent.", 1).show();
+				Toast.makeText(MainActivity, "Command has been sent.", 1).show();
 			}
 		});
 		cmdLayout.addView(cmd3);
 		
-		var cmd4 = new android.widget.Button(ctx);
+		var cmd4 = new android.widget.Button(MainActivity);
 		cmd4.setText("Spectator");
 		cmd4.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
 				Server.sendChat("/gamemode 3");
 				Server.sendChat("/gamemode spectator");
-				Toast.makeText(ctx, "Command has been sent.", 1).show();
+				Toast.makeText(MainActivity, "Command has been sent.", 1).show();
 			}
 		});
 		cmdLayout.addView(cmd4);
 		
-		var cmd5 = new android.widget.Button(ctx);
+		var cmd5 = new android.widget.Button(MainActivity);
 		cmd5.setText("List");
 		cmd5.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
 				Server.sendChat("/list");
-				Toast.makeText(ctx, "Command has been sent.", 1).show();
+				Toast.makeText(MainActivity, "Command has been sent.", 1).show();
 			}
 		});
 		cmdLayout.addView(cmd5);
 		
-	    var opp = new Button(ctx);
+	    var opp = new Button(MainActivity);
             opp.setText("OP perm (Not hack)");        
             opp.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){ 
@@ -2433,21 +2452,21 @@ clientMessage(client + "gives you permanent op if you were op before, if server 
             }));
             cmdLayout.addView(opp);
             
-            cmd = new PopupWindow(cmdLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
+            cmd = new PopupWindow(cmdLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             cmd.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
       var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
       bg.setStroke(10,Color.BLACK);
 cmdLayout1.setBackgroundDrawable(bg);
 cmdLayout1.setPadding(20,0,20,0);
-            cmd.showAtLocation(ctx.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            cmd.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(ctx, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
             }
     }}));
 }
 
-            cheat = new PopupWindow(cheatLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
+            cheat = new PopupWindow(cheatLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)cheat.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
       if(default1==false)cheat.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
@@ -2455,16 +2474,16 @@ cmdLayout1.setPadding(20,0,20,0);
       bg.setStroke(10,Color.BLACK);
 cheatLayout1.setBackgroundDrawable(bg);
 cheatLayout1.setPadding(20,0,20,0);
-            cheat.showAtLocation(ctx.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            cheat.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(ctx, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
             }
     }}));
 }
             
-var mods = new android.widget.Button(ctx);
+var mods = new android.widget.Button(MainActivity);
 mods.setText("Single player mods");
-mods.setTextColor(GUIName);
+mods.setTextColor(GUIBtns);
 if(mcpetheme==true)mods.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 mods.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -2475,17 +2494,17 @@ mods.setOnClickListener(new android.view.View.OnClickListener() {
 		menuLayout.addView(mods);
 		
 		function mod_menu(){
-ctx.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
-            var modLayout = new LinearLayout(ctx);
-            var modScroll = new ScrollView(ctx);
-            var modLayout1 = new LinearLayout(ctx);
+            var modLayout = new LinearLayout(MainActivity);
+            var modScroll = new ScrollView(MainActivity);
+            var modLayout1 = new LinearLayout(MainActivity);
             modLayout.setOrientation(1);
             modLayout1.setOrientation(1);
             modScroll.addView(modLayout);
             modLayout1.addView(modScroll);
             
-            var exit = new android.widget.Button(ctx);
+            var exit = new android.widget.Button(MainActivity);
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -2542,15 +2561,15 @@ portal.setText("Nether portal");
             modLayout.addView(portal);
             
             function new9() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 fov = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var select1 = new android.widget.Button(ctx);
-var select2 = new android.widget.Button(ctx);
-var Dialog = new android.app.Dialog(ctx);
-//var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var select1 = new android.widget.Button(MainActivity);
+var select2 = new android.widget.Button(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+//var Exit = new android.widget.Button(MainActivity);
  
 Dialog.setTitle("Select");
 Dialog.setContentView(Layer);
@@ -2646,7 +2665,7 @@ showMenuBtn();
 
 new9.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 new9.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-new9.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+new9.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("error: "+e);
 }
@@ -2713,7 +2732,7 @@ antivoid = false;
             }));
             modLayout.addView(anti2void);
 
-var df = new android.widget.Button(ctx);
+var df = new android.widget.Button(MainActivity);
       df.setText("Disable up/down fly: "+(nofly?"on":"off"));
 		df.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -2735,7 +2754,7 @@ nofly = false;
 		});
 		modLayout.addView(df);
 
-var es = new Button(ctx);
+var es = new Button(MainActivity);
             es.setText("Entity spawner");        
             es.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -2745,17 +2764,17 @@ var es = new Button(ctx);
             modLayout.addView(es);
  
 function new3() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 fov = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var select1 = new android.widget.Button(ctx);
-var select2 = new android.widget.Button(ctx);
-var select3 = new android.widget.Button(ctx);
-var select4 = new android.widget.Button(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var select1 = new android.widget.Button(MainActivity);
+var select2 = new android.widget.Button(MainActivity);
+var select3 = new android.widget.Button(MainActivity);
+var select4 = new android.widget.Button(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
  
 Dialog.setTitle("Select");
 Dialog.setContentView(Layer);
@@ -2836,14 +2855,14 @@ showMenuBtn();
  
 new3.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 new3.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-new3.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+new3.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The new Dialog Is Malfunctioning:"+e);
 }
 }});
 }
 
-var cc = new Button(ctx);
+var cc = new Button(MainActivity);
             cc.setText("Clear your chat");        
             cc.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -2867,7 +2886,7 @@ clientMessage(" " + "\n" + " ");
             }));
             modLayout.addView(cc);
 
-var me = new Button(ctx);
+var me = new Button(MainActivity);
             me.setText("My username / nametag");
             me.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){ 
@@ -2876,7 +2895,7 @@ clientMessage(client + "Username is: " + Player.getName(Player.getEntity()))
             }));
             modLayout.addView(me);
 
-var d = new Button(ctx);
+var d = new Button(MainActivity);
             d.setText("Difficulty");        
             d.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -2885,7 +2904,7 @@ var d = new Button(ctx);
             }));
             modLayout.addView(d);
 
-var dh = new Button(ctx);
+var dh = new Button(MainActivity);
             dh.setText("Max player health");        
             dh.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -2894,7 +2913,7 @@ var dh = new Button(ctx);
             }));
             modLayout.addView(dh);
 
-var rr = new android.widget.Button(ctx);
+var rr = new android.widget.Button(MainActivity);
 rr.setText("Reactor time mode: "+(remode?"on":"off"));
 rr.setOnClickListener(new android.view.View.OnClickListener({
 onClick: function(viewarg){
@@ -2916,7 +2935,7 @@ remode = false
 }));
 modLayout.addView(rr);
 
-var cs = new android.widget.Button(ctx);
+var cs = new android.widget.Button(MainActivity);
       cs.setText("Sign Editor: "+(deadchat?"on":"off"));
 		cs.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -2936,7 +2955,7 @@ deadchat = false;
 		});
 		modLayout.addView(cs);
 
-var killme = new Button(ctx);
+var killme = new Button(MainActivity);
             killme.setText("Kill yourself");        
             killme.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){ 
@@ -2946,7 +2965,7 @@ Player.setHealth(0);
             }));
             modLayout.addView(killme);
 
-var hea = new android.widget.Button(ctx);
+var hea = new android.widget.Button(MainActivity);
       hea.setText("Heal hearts");
 		hea.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -2956,7 +2975,7 @@ var hea = new android.widget.Button(ctx);
 		});
 		modLayout.addView(hea);
 
-var hun = new android.widget.Button(ctx);
+var hun = new android.widget.Button(MainActivity);
       hun.setText("Heal hunger");
 		hun.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -2966,7 +2985,7 @@ var hun = new android.widget.Button(ctx);
 		});
 		modLayout.addView(hun);
 
-var mm = new android.widget.Button(ctx);
+var mm = new android.widget.Button(MainActivity);
       mm.setText("Infinite health: "+(stackheart?"on":"off"));
 		mm.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){         stackheart?stackheart=false:stackheart=true;
@@ -2984,7 +3003,7 @@ stackheart = false;
 		});
 		modLayout.addView(mm);
 
-var mm2 = new android.widget.Button(ctx);
+var mm2 = new android.widget.Button(MainActivity);
 mm2.setText("Infinite hunger: "+(infhun?"on":"off"));
 mm2.setOnClickListener(new android.view.View.OnClickListener({
 onClick: function(viewarg){
@@ -3001,7 +3020,7 @@ Player.setHunger(20);
             }));
             modLayout.addView(mm2);
 
-var zm = new android.widget.Button(ctx);
+var zm = new android.widget.Button(MainActivity);
       zm.setText("1 hit kill: "+(instakilled?"on":"off"));
 		zm.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){         instakilled?instakilled=false:instakilled=true;
@@ -3018,7 +3037,7 @@ instakilled = false;
 		});
 		modLayout.addView(zm);
 
-var zmm = new android.widget.Button(ctx);
+var zmm = new android.widget.Button(MainActivity);
       zmm.setText("Ride mobs: "+(saddle?"on":"off"));
 		zmm.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -3037,7 +3056,7 @@ saddle = false;
 		});
 		modLayout.addView(zmm);
 
-var zmmm = new android.widget.Button(ctx);
+var zmmm = new android.widget.Button(MainActivity);
       zmmm.setText("Instant break: "+(instabreak?"on":"off"));
 		zmmm.setOnClickListener(new android.view.View.OnClickListener() {
 		 onClick: function(v){
@@ -3055,7 +3074,7 @@ defaultDestroy();
 		});
 		modLayout.addView(zmmm);
 
-var f = new android.widget.Button(ctx);
+var f = new android.widget.Button(MainActivity);
             f.setText("Fly in survival: "+(fch?"on":"off"));
             f.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -3073,7 +3092,7 @@ Player.setCanFly(0);
             }));
             modLayout.addView(f);
 
-var g = new android.widget.Button(ctx);
+var g = new android.widget.Button(MainActivity);
             g.setText("Grief: "+(grief?"on":"off"));
             g.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -3091,17 +3110,17 @@ grief = false;
             modLayout.addView(g);
 
 function new2() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 new2 = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var select1 = new android.widget.Button(ctx);
-var select2 = new android.widget.Button(ctx);
-var select3 = new android.widget.Button(ctx);
-var ddf = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var select1 = new android.widget.Button(MainActivity);
+var select2 = new android.widget.Button(MainActivity);
+var select3 = new android.widget.Button(MainActivity);
+var ddf = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
  
 Dialog.setTitle("Select");
 Dialog.setContentView(Layer);
@@ -3151,14 +3170,14 @@ showMenuBtn();
  
 new2.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 new2.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-new2.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+new2.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("Error :"+e);
 }
 }});
 }
 
-var kl = new android.widget.Button(ctx);
+var kl = new android.widget.Button(MainActivity);
             kl.setText("KillAura: "+(killaura?"on":"off"));
             kl.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -3176,7 +3195,7 @@ killaura = false;
             }));
             modLayout.addView(kl);
 
-var kl2 = new android.widget.Button(ctx);
+var kl2 = new android.widget.Button(MainActivity);
             kl2.setText("FreezeAura: "+(killfaura?"on":"off"));
             kl2.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -3194,7 +3213,7 @@ killfaura = false;
             }));
             modLayout.addView(kl2);
 
-var ui = new android.widget.Button(ctx);
+var ui = new android.widget.Button(MainActivity);
             ui.setText("Ui Layout Viewer: "+(uirender?"on":"off"));
             ui.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -3210,7 +3229,7 @@ ModPE.setUiRenderDebug(false);
             }));
             modLayout.addView(ui);
 
-var attd = new Button(ctx);
+var attd = new Button(MainActivity);
             attd.setText("Set difficulty");        
             attd.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){ 
@@ -3221,14 +3240,14 @@ named();
             modLayout.addView(attd);
 
 function named() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer8 = new android.widget.LinearLayout(ctx);
-var ntd = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer8 = new android.widget.LinearLayout(MainActivity);
+var ntd = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter difficulty");
 Dialog.setContentView(Layer8);
@@ -3253,7 +3272,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The setdiff Dialog Is Malfunctioning:"+e);
 }
@@ -3264,7 +3283,7 @@ function setdiff(){
 Level.setDifficulty(nametd);
 }
 
-var fovy = new Button(ctx);
+var fovy = new Button(MainActivity);
             fovy.setText("Fov editor");        
             fovy.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){ 
@@ -3276,7 +3295,7 @@ zmenu.dismiss();
             }));
             modLayout.addView(fovy);
 
-var att = new Button(ctx);
+var att = new Button(MainActivity);
             att.setText("Set nametag");        
             att.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){ 
@@ -3287,14 +3306,14 @@ nameMe();
             modLayout.addView(att);
 
 function nameMe() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer8 = new android.widget.LinearLayout(ctx);
-var nt = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer8 = new android.widget.LinearLayout(MainActivity);
+var nt = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter nickname");
 Dialog.setContentView(Layer8);
@@ -3319,7 +3338,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The setName Dialog Is Malfunctioning:"+e);
 }
@@ -3331,7 +3350,7 @@ Entity.setNameTag(Player.getEntity(), nametgg);
 Server.sendChat("/nick set " + nametgg);
 }
 
-var fp = new android.widget.Button(ctx);
+var fp = new android.widget.Button(MainActivity);
             fp.setText("Fire punch: "+(firepunch?"on":"off"));
             fp.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -3347,7 +3366,7 @@ clientMessage(client + "§7Falcon punch! off");
             }));
             modLayout.addView(fp);
 
-var sbn = new Button(ctx);
+var sbn = new Button(MainActivity);
             sbn.setText("Set block brightness");        
             sbn.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){ 
@@ -3358,15 +3377,15 @@ block1();
             modLayout.addView(sbn);
 
 function block1() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer8 = new android.widget.LinearLayout(ctx);
-var bd = new android.widget.EditText(ctx);
-var bn = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer8 = new android.widget.LinearLayout(MainActivity);
+var bd = new android.widget.EditText(MainActivity);
+var bn = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Set block light");
 Dialog.setContentView(Layer8);
@@ -3395,7 +3414,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The block L Dialog Is Malfunctioning:"+e);
 }
@@ -3406,7 +3425,7 @@ function setLight(){
 Block.setLightLevel(idm, levelm);
 }
 
-var sbr = new Button(ctx);
+var sbr = new Button(MainActivity);
             sbr.setText("Set block Resistance");        
             sbr.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){ 
@@ -3417,15 +3436,15 @@ block2();
             modLayout.addView(sbr);
 
 function block2() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer8 = new android.widget.LinearLayout(ctx);
-var bi = new android.widget.EditText(ctx);
-var br = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer8 = new android.widget.LinearLayout(MainActivity);
+var bi = new android.widget.EditText(MainActivity);
+var br = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Set block resistance");
 Dialog.setContentView(Layer8);
@@ -3454,7 +3473,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The block R Dialog Is Malfunctioning:"+e);
 }
@@ -3465,7 +3484,7 @@ function setResis(){
 Block.setExplosionResistance(idb, resis);
 }
 
-/*var hst = new android.widget.Button(ctx);
+/*var hst = new android.widget.Button(MainActivity);
            hst.setText("Health status: "+(somd?"on":"off"));
             hst.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -3485,7 +3504,7 @@ somd = false
             }));
             modLayout.addView(hst);*/
 
-var saysome = new android.widget.Button(ctx);
+var saysome = new android.widget.Button(MainActivity);
             saysome.setText("BurnAura: "+(killdaura?"on":"off"));
             saysome.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -3503,7 +3522,7 @@ killdaura = false;
             }));
             modLayout.addView(saysome);
 
-var nh = new Button(ctx);
+var nh = new Button(MainActivity);
             nh.setText("Add more hearts");        
             nh.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){ 
@@ -3514,14 +3533,14 @@ newhealth();
             modLayout.addView(nh);
 
 function newhealth() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer8 = new android.widget.LinearLayout(ctx);
-var enh = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer8 = new android.widget.LinearLayout(MainActivity);
+var enh = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter new hearts");
 Dialog.setContentView(Layer8);
@@ -3546,7 +3565,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The set health Dialog Is Malfunctioning:"+e);
 }
@@ -3557,7 +3576,7 @@ function sethealth(){
 Entity.setMaxHealth(getPlayerEnt(), newheart);
 }
 
-var horse = new android.widget.Button(ctx);
+var horse = new android.widget.Button(MainActivity);
       horse.setText("Set mob health: "+(horsehealth?"on":"off"));
 		horse.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -3577,14 +3596,14 @@ horsehealth = false;
 		modLayout.addView(horse);
             
 function horsehealth1() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer10 = new android.widget.LinearLayout(ctx);
-var eha = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer10 = new android.widget.LinearLayout(MainActivity);
+var eha = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter new hearts");
 Dialog.setContentView(Layer10);
@@ -3609,14 +3628,14 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The set health Dialog Is Malfunctioning:"+e);
 }
 }});
 }
 
-var gage = new android.widget.Button(ctx);
+var gage = new android.widget.Button(MainActivity);
       gage.setText("Get mob age: "+(getage?"on":"off"));
 		gage.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -3636,7 +3655,7 @@ getage = false;
 		});
 		modLayout.addView(gage);
 		
-		var sage = new android.widget.Button(ctx);
+		var sage = new android.widget.Button(MainActivity);
       sage.setText("Set mob age: "+(setage?"on":"off"));
 		sage.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -3656,15 +3675,15 @@ setage = false;
 		modLayout.addView(sage);
 		
 		function new4() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 fov = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var select1 = new android.widget.Button(ctx);
-var select2 = new android.widget.Button(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var select1 = new android.widget.Button(MainActivity);
+var select2 = new android.widget.Button(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
  
 Dialog.setTitle("Select");
 Dialog.setContentView(Layer);
@@ -3706,14 +3725,14 @@ showMenuBtn();
  
 new3.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 new3.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-new3.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+new3.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The new Dialog Is Malfunctioning:"+e);
 }
 }});
 }
 
-var laura = new android.widget.Button(ctx);
+var laura = new android.widget.Button(MainActivity);
       laura.setText("LightningAura: "+(lightningaura?"on":"off"));
 		laura.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -3733,7 +3752,7 @@ lightningaura = false;
 		});
 		modLayout.addView(laura);
 
-            mod = new PopupWindow(modLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
+            mod = new PopupWindow(modLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)mod.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
       if(default1==false)mod.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
@@ -3741,16 +3760,16 @@ lightningaura = false;
       bg.setStroke(10,Color.BLACK);
 modLayout1.setBackgroundDrawable(bg);
 modLayout1.setPadding(20,0,20,0);
-            mod.showAtLocation(ctx.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            mod.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(ctx, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
             }
     }}));
 }
 
-var effect = new android.widget.Button(ctx);
+var effect = new android.widget.Button(MainActivity);
 effect.setText("Effect menu");
-effect.setTextColor(GUIName);
+effect.setTextColor(GUIBtns);
 if(mcpetheme==true)effect.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 effect.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -3761,17 +3780,17 @@ effect.setOnClickListener(new android.view.View.OnClickListener() {
 		menuLayout.addView(effect);
 		
 		function effect_menu(){
-ctx.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
-            var effectLayout = new LinearLayout(ctx);
-            var effectScroll = new ScrollView(ctx);
-            var effectLayout1 = new LinearLayout(ctx);
+            var effectLayout = new LinearLayout(MainActivity);
+            var effectScroll = new ScrollView(MainActivity);
+            var effectLayout1 = new LinearLayout(MainActivity);
             effectLayout.setOrientation(1);
             effectLayout1.setOrientation(1);
             effectScroll.addView(effectLayout);
             effectLayout1.addView(effectScroll);
             
-            var exit = new android.widget.Button(ctx);
+            var exit = new android.widget.Button(MainActivity);
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -3781,7 +3800,7 @@ ctx.runOnUiThread(new Runnable({ run: function(){
 		});
 		effectLayout.addView(exit);
 		
-		var mov = new Button(ctx);
+		var mov = new Button(MainActivity);
             mov.setText("Remove all effect");
             mov.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -3791,7 +3810,7 @@ Entity.removeAllEffects(getPlayerEnt());
             }));
             effectLayout.addView(mov);
 
-var e1 = new Button(ctx);
+var e1 = new Button(MainActivity);
             e1.setText("saturation");
             e1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -3801,15 +3820,15 @@ ea();
             effectLayout.addView(e1);
 
 function ea() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var sec = new android.widget.EditText(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var sec = new android.widget.EditText(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -3838,7 +3857,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Effect Dialog Is Malfunctioning:"+e);
 }
@@ -3849,7 +3868,7 @@ function inn1() {
 Entity.addEffect(getPlayerEnt(), MobEffect.saturation, s*l, 0, false, true);
 }
             
-            var e2 = new Button(ctx);
+            var e2 = new Button(MainActivity);
             e2.setText("Absorption");
             e2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -3859,15 +3878,15 @@ eb();
             effectLayout.addView(e2);
 
 function eb() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var sec = new android.widget.EditText(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var sec = new android.widget.EditText(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -3896,7 +3915,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Effect Dialog Is Malfunctioning:"+e);
 }
@@ -3907,7 +3926,7 @@ function inn2() {
 Entity.addEffect(getPlayerEnt(), MobEffect.absorption, s*l, 0, false, true);
 }
 
-var e3 = new Button(ctx);
+var e3 = new Button(MainActivity);
             e3.setText("Health boost");
             e3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -3917,15 +3936,15 @@ var e3 = new Button(ctx);
             effectLayout.addView(e3);
 
 function ec() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var sec = new android.widget.EditText(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var sec = new android.widget.EditText(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -3954,7 +3973,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Effect Dialog Is Malfunctioning:"+e);
 }
@@ -3965,7 +3984,7 @@ function inn3() {
 Entity.addEffect(getPlayerEnt(), MobEffect.healthBoost, s*l, 0, false, true);
 }
 
-var e4 = new Button(ctx);
+var e4 = new Button(MainActivity);
             e4.setText("Wither");
             e4.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -3975,15 +3994,15 @@ ed();
             effectLayout.addView(e4);
 
 function ed() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var sec = new android.widget.EditText(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var sec = new android.widget.EditText(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -4012,7 +4031,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Effect Dialog Is Malfunctioning:"+e);
 }
@@ -4023,7 +4042,7 @@ function inn4() {
 Entity.addEffect(getPlayerEnt(), MobEffect.wither, s*l, 0, false, true);
 }
             
-            var e5 = new Button(ctx);
+            var e5 = new Button(MainActivity);
             e5.setText("Poison");
             e5.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -4033,15 +4052,15 @@ ee();
             effectLayout.addView(e5);
 
 function ee() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var sec = new android.widget.EditText(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var sec = new android.widget.EditText(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -4070,7 +4089,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Effect Dialog Is Malfunctioning:"+e);
 }
@@ -4081,7 +4100,7 @@ function inn5() {
 Entity.addEffect(getPlayerEnt(), MobEffect.poison, s*l, 0, false, true);
 }
 
-var e6 = new Button(ctx);
+var e6 = new Button(MainActivity);
             e6.setText("Weakness");
             e6.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -4091,15 +4110,15 @@ var e6 = new Button(ctx);
             effectLayout.addView(e6);
 
 function ef() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var sec = new android.widget.EditText(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var sec = new android.widget.EditText(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -4128,7 +4147,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Effect Dialog Is Malfunctioning:"+e);
 }
@@ -4139,7 +4158,7 @@ function inn6() {
 Entity.addEffect(getPlayerEnt(), MobEffect.weakness, s*l, 0, false, true);
 }
 
-var e7 = new Button(ctx);
+var e7 = new Button(MainActivity);
             e7.setText("Hunger");
             e7.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -4149,15 +4168,15 @@ eg()
             effectLayout.addView(e7);
 
 function eg() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var sec = new android.widget.EditText(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var sec = new android.widget.EditText(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -4186,7 +4205,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Effect Dialog Is Malfunctioning:"+e);
 }
@@ -4197,7 +4216,7 @@ function inn7() {
 Entity.addEffect(getPlayerEnt(), MobEffect.hunger, s*l, 0, false, true);
 }
 
-var e8 = new Button(ctx);
+var e8 = new Button(MainActivity);
             e8.setText("Night vision");
             e8.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -4207,15 +4226,15 @@ eh();
             effectLayout.addView(e8);
 
 function eh() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var sec = new android.widget.EditText(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var sec = new android.widget.EditText(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -4244,7 +4263,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Effect Dialog Is Malfunctioning:"+e);
 }
@@ -4255,7 +4274,7 @@ function inn8() {
 Entity.addEffect(getPlayerEnt(), MobEffect.nightVision, s*l, 0, false, true);
 }
 
-var e9 = new Button(ctx);
+var e9 = new Button(MainActivity);
             e9.setText("Blindness");
             e9.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -4265,15 +4284,15 @@ ei();
             effectLayout.addView(e9);
 
 function ei() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var sec = new android.widget.EditText(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var sec = new android.widget.EditText(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -4302,7 +4321,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Effect Dialog Is Malfunctioning:"+e);
 }
@@ -4313,7 +4332,7 @@ function inn9() {
 Entity.addEffect(getPlayerEnt(), MobEffect.blindness, s*l, 0, false, true);
 }
 
-var e10 = new Button(ctx);
+var e10 = new Button(MainActivity);
             e10.setText("Invisibility");
             e10.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -4323,15 +4342,15 @@ var e10 = new Button(ctx);
             effectLayout.addView(e10);
 
 function ej() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var sec = new android.widget.EditText(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var sec = new android.widget.EditText(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -4360,7 +4379,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Effect Dialog Is Malfunctioning:"+e);
 }
@@ -4371,7 +4390,7 @@ function inn10() {
 Entity.addEffect(getPlayerEnt(), MobEffect.invisibility, s*l, 0, false, true);
 }
 
-var e11 = new Button(ctx);
+var e11 = new Button(MainActivity);
             e11.setText("Water breathing");
             e11.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -4381,15 +4400,15 @@ ek();
             effectLayout.addView(e11);
 
 function ek() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var sec = new android.widget.EditText(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var sec = new android.widget.EditText(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -4418,7 +4437,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Effect Dialog Is Malfunctioning:"+e);
 }
@@ -4429,7 +4448,7 @@ function inn11() {
 Entity.addEffect(getPlayerEnt(), MobEffect.waterBreathing, s*l, 0, false, true);
 }
 
-var e12 = new Button(ctx);
+var e12 = new Button(MainActivity);
             e12.setText("Fire resistance");
             e12.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -4439,15 +4458,15 @@ el();
             effectLayout.addView(e12);
 
 function el() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var sec = new android.widget.EditText(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var sec = new android.widget.EditText(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -4476,7 +4495,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Effect Dialog Is Malfunctioning:"+e);
 }
@@ -4487,7 +4506,7 @@ function inn12() {
 Entity.addEffect(getPlayerEnt(), MobEffect.fireResistance, s*l, 0, false, true);
 }
 
-var e13 = new Button(ctx);
+var e13 = new Button(MainActivity);
             e13.setText("Resistance");
             e13.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -4497,15 +4516,15 @@ em();
             effectLayout.addView(e13);
 
 function em() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var sec = new android.widget.EditText(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var sec = new android.widget.EditText(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -4534,7 +4553,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Effect Dialog Is Malfunctioning:"+e);
 }
@@ -4545,7 +4564,7 @@ function inn13() {
 Entity.addEffect(getPlayerEnt(), MobEffect.damageResistance, s*l, 0, false, true);
 }
 
-var e14 = new Button(ctx);
+var e14 = new Button(MainActivity);
             e14.setText("Regeneration");
             e14.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -4555,15 +4574,15 @@ en();
             effectLayout.addView(e14);
 
 function en() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var sec = new android.widget.EditText(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var sec = new android.widget.EditText(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -4592,7 +4611,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Effect Dialog Is Malfunctioning:"+e);
 }
@@ -4603,7 +4622,7 @@ function inn14() {
 Entity.addEffect(getPlayerEnt(), MobEffect.regeneration, s*l, 0, false, true);
 }
 
-var e15 = new Button(ctx);
+var e15 = new Button(MainActivity);
             e15.setText("Nausea");
             e15.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -4613,15 +4632,15 @@ var e15 = new Button(ctx);
             effectLayout.addView(e15);
 
 function eo() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var sec = new android.widget.EditText(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var sec = new android.widget.EditText(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -4650,7 +4669,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Effect Dialog Is Malfunctioning:"+e);
 }
@@ -4661,7 +4680,7 @@ function inn15() {
 Entity.addEffect(getPlayerEnt(), MobEffect.confusion, s*l, 0, false, true);
 }
 
-var e16 = new Button(ctx);
+var e16 = new Button(MainActivity);
             e16.setText("Jump boost");
             e16.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -4671,15 +4690,15 @@ var e16 = new Button(ctx);
             effectLayout.addView(e16);
 
 function ep() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var sec = new android.widget.EditText(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var sec = new android.widget.EditText(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -4708,7 +4727,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Effect Dialog Is Malfunctioning:"+e);
 }
@@ -4719,7 +4738,7 @@ function inn16() {
 Entity.addEffect(getPlayerEnt(), MobEffect.jump, s*l, 0, false, true);
 }
 
-var e17 = new Button(ctx);
+var e17 = new Button(MainActivity);
             e17.setText("harm");
             e17.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -4729,15 +4748,15 @@ eq();
             effectLayout.addView(e17);
 
 function eq() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var sec = new android.widget.EditText(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var sec = new android.widget.EditText(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -4766,7 +4785,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Effect Dialog Is Malfunctioning:"+e);
 }
@@ -4777,7 +4796,7 @@ function inn17() {
 Entity.addEffect(getPlayerEnt(), MobEffect.harm, s*l, 0, false, true);
 }
 
-var e18 = new Button(ctx);
+var e18 = new Button(MainActivity);
             e18.setText("heal");
             e18.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -4787,15 +4806,15 @@ er();
             effectLayout.addView(e18);
 
 function er() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var sec = new android.widget.EditText(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var sec = new android.widget.EditText(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -4824,7 +4843,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Effect Dialog Is Malfunctioning:"+e);
 }
@@ -4835,7 +4854,7 @@ function inn18() {
 Entity.addEffect(getPlayerEnt(), MobEffect.heal, s*l, 0, false, true);
 }
 
-var e19 = new Button(ctx);
+var e19 = new Button(MainActivity);
             e19.setText("Strength");
             e19.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -4845,15 +4864,15 @@ es();
             effectLayout.addView(e19);
 
 function es() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var sec = new android.widget.EditText(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var sec = new android.widget.EditText(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -4882,7 +4901,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Effect Dialog Is Malfunctioning:"+e);
 }
@@ -4893,7 +4912,7 @@ function inn19() {
 Entity.addEffect(getPlayerEnt(), MobEffect.damageBoost, s*l, 0, false, true);
 }
 
-var e20 = new Button(ctx);
+var e20 = new Button(MainActivity);
             e20.setText("Mining fatigue");
             e20.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -4903,15 +4922,15 @@ et();
             effectLayout.addView(e20);
 
 function et() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var sec = new android.widget.EditText(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var sec = new android.widget.EditText(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -4940,7 +4959,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Effect Dialog Is Malfunctioning:"+e);
 }
@@ -4951,7 +4970,7 @@ function inn20() {
 Entity.addEffect(getPlayerEnt(), MobEffect.digSlowdown, s*l, 0, false, true);
 }
 
-var e21 = new Button(ctx);
+var e21 = new Button(MainActivity);
             e21.setText("Haste");
             e21.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -4961,15 +4980,15 @@ eu();
             effectLayout.addView(e21);
 
 function eu() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var sec = new android.widget.EditText(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var sec = new android.widget.EditText(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -4998,7 +5017,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Effect Dialog Is Malfunctioning:"+e);
 }
@@ -5009,7 +5028,7 @@ function inn21() {
 Entity.addEffect(getPlayerEnt(), MobEffect.digSpeed, s*l, 0, false, true);
 }
 
-var e22 = new Button(ctx);
+var e22 = new Button(MainActivity);
             e22.setText("Slowness");
             e22.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -5019,15 +5038,15 @@ ev();
             effectLayout.addView(e22);
 
 function ev() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var sec = new android.widget.EditText(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var sec = new android.widget.EditText(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -5056,7 +5075,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Effect Dialog Is Malfunctioning:"+e);
 }
@@ -5067,7 +5086,7 @@ function inn22() {
 Entity.addEffect(getPlayerEnt(), MobEffect.movementSlowdown, s*l, 0, false, true);
 }
 
-var e23 = new Button(ctx);
+var e23 = new Button(MainActivity);
             e23.setText("Speed boost");
             e23.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -5077,15 +5096,15 @@ ew();
             effectLayout.addView(e23);
 
 function ew() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var sec = new android.widget.EditText(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var sec = new android.widget.EditText(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -5114,7 +5133,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Effect Dialog Is Malfunctioning:"+e);
 }
@@ -5125,7 +5144,7 @@ function inn23() {
 Entity.addEffect(getPlayerEnt(), MobEffect.movementSpeed, s*l, 0, false, true);
 }
 
-            effect = new PopupWindow(effectLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
+            effect = new PopupWindow(effectLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)effect.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
       if(default1==false)effect.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
@@ -5133,16 +5152,16 @@ Entity.addEffect(getPlayerEnt(), MobEffect.movementSpeed, s*l, 0, false, true);
       bg.setStroke(10,Color.BLACK);
 effectLayout1.setBackgroundDrawable(bg);
 effectLayout1.setPadding(20,0,20,0);
-            effect.showAtLocation(ctx.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            effect.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(ctx, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
             }
     }}));
 }
 		
-var enchant = new android.widget.Button(ctx);
+var enchant = new android.widget.Button(MainActivity);
 enchant.setText("Enchant menu");
-enchant.setTextColor(GUIName);
+enchant.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")enchant.setText("Verzauberungs menu");
 if(mcpetheme==true)enchant.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 enchant.setOnClickListener(new android.view.View.OnClickListener() {
@@ -5154,17 +5173,17 @@ enchant.setOnClickListener(new android.view.View.OnClickListener() {
 		menuLayout.addView(enchant);
 		
 		function enchant_menu(){
-ctx.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
-            var enchantLayout = new LinearLayout(ctx);
-            var enchantScroll = new ScrollView(ctx);
-            var enchantLayout1 = new LinearLayout(ctx);
+            var enchantLayout = new LinearLayout(MainActivity);
+            var enchantScroll = new ScrollView(MainActivity);
+            var enchantLayout1 = new LinearLayout(MainActivity);
             enchantLayout.setOrientation(1);
             enchantLayout1.setOrientation(1);
             enchantScroll.addView(enchantLayout);
             enchantLayout1.addView(enchantScroll);
             
-            var exit = new android.widget.Button(ctx);
+            var exit = new android.widget.Button(MainActivity);
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -5174,7 +5193,7 @@ ctx.runOnUiThread(new Runnable({ run: function(){
 		});
 		enchantLayout.addView(exit);
 		
-		var button = new android.widget.Button(ctx);
+		var button = new android.widget.Button(MainActivity);
             button.setText("Add experience");
             button.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -5185,14 +5204,14 @@ enchant.dismiss();
             enchantLayout.addView(button);
             
             function XGive() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var XP = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var XP = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter XP Amount");
 Dialog.setContentView(Layer);
@@ -5217,7 +5236,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The XP Dialog Is Malfunctioning:"+e);
 }
@@ -5230,7 +5249,7 @@ Player.setLevel(Math.round(L));
 if(Server.getPort()!="0")Server.sendChat("/xp " + L + space + Player.getName(Player.getEntity()));
 }
 
-var god1 = new Button(ctx);
+var god1 = new Button(MainActivity);
             god1.setText("God sword");
             god1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -5248,7 +5267,7 @@ Player.enchant(Player.getSelectedSlotId(), Enchantment.SHARPNESS,tysplvl);
 Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,tysplvl);
             }
             
-        var god2 = new Button(ctx);
+        var god2 = new Button(MainActivity);
             god2.setText("God pickaxe");
             god2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -5265,7 +5284,7 @@ Player.enchant(Player.getSelectedSlotId(), Enchantment.FORTUNE,fortuneLvl);
 Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,tysplvl);
             }
 			
-var god3 = new Button(ctx);
+var god3 = new Button(MainActivity);
             god3.setText("God armor");
             god3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -5281,7 +5300,7 @@ Player.enchant(Player.getSelectedSlotId(), Enchantment.THORNS,tysplvl);
 Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,tysplvl);
             }
 
-var ena = new Button(ctx);
+var ena = new Button(MainActivity);
             ena.setText("Aqua Affinity");
             ena.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -5291,14 +5310,14 @@ en1();
             enchantLayout.addView(ena);
 
 function en1() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -5323,7 +5342,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Enchant Dialog Is Malfunctioning:"+e);
 }
@@ -5334,7 +5353,7 @@ function add1() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.AQUA_AFFINITY,ll);
 }
 
-var enb = new Button(ctx);
+var enb = new Button(MainActivity);
             enb.setText("Bane Of Athropods");
             enb.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -5344,14 +5363,14 @@ en2();
             enchantLayout.addView(enb);
 
 function en2() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -5376,7 +5395,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Enchant Dialog Is Malfunctioning:"+e);
 }
@@ -5387,7 +5406,7 @@ function add2() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.BANE_OF_ARTHROPODS,ll);
 }
 
-var enc = new Button(ctx);
+var enc = new Button(MainActivity);
             enc.setText("Blast Protection");
             enc.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -5397,14 +5416,14 @@ en3();
             enchantLayout.addView(enc);
 
 function en3() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -5429,7 +5448,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Enchant Dialog Is Malfunctioning:"+e);
 }
@@ -5440,7 +5459,7 @@ function add3() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.BLAST_PROTECTION,ll);
 }
 
-var enf = new Button(ctx);
+var enf = new Button(MainActivity);
             enf.setText("Depth Strider");
             enf.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -5450,14 +5469,14 @@ en5();
             enchantLayout.addView(enf);
 
 function en5() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -5482,7 +5501,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Enchant Dialog Is Malfunctioning:"+e);
 }
@@ -5493,7 +5512,7 @@ function add5() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.DEPTH_STRIDER,ll);
 }
 
-var ene = new Button(ctx);
+var ene = new Button(MainActivity);
             ene.setText("Efficiency");
             ene.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -5503,14 +5522,14 @@ en6();
             enchantLayout.addView(ene);
 
 function en6() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -5535,7 +5554,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Enchant Dialog Is Malfunctioning:"+e);
 }
@@ -5546,7 +5565,7 @@ function add6() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.EFFICIENCY,ll);
 }
 
-var eng = new Button(ctx);
+var eng = new Button(MainActivity);
             eng.setText("Feather Falling");
             eng.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -5556,14 +5575,14 @@ en7();
             enchantLayout.addView(eng);
 
 function en7() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -5588,7 +5607,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Enchant Dialog Is Malfunctioning:"+e);
 }
@@ -5599,7 +5618,7 @@ function add7() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.FEATHER_FALLING,ll);
 }
 
-var enh = new Button(ctx);
+var enh = new Button(MainActivity);
             enh.setText("Fire Aspect");
             enh.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -5609,14 +5628,14 @@ en8();
             enchantLayout.addView(enh);
 
 function en8() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -5641,7 +5660,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Enchant Dialog Is Malfunctioning:"+e);
 }
@@ -5652,7 +5671,7 @@ function add8() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.FIRE_ASPECT,ll);
 }
 
-var eni = new Button(ctx);
+var eni = new Button(MainActivity);
             eni.setText("Fire Protection");
             eni.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -5662,14 +5681,14 @@ en9();
             enchantLayout.addView(eni);
 
 function en9() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -5694,7 +5713,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Enchant Dialog Is Malfunctioning:"+e);
 }
@@ -5705,7 +5724,7 @@ function add9() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.FIRE_PROTECTION,ll);
 }
 
-var enj = new Button(ctx);
+var enj = new Button(MainActivity);
             enj.setText("Flame");
             enj.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -5715,14 +5734,14 @@ en10();
             enchantLayout.addView(enj);
 
 function en10() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -5747,7 +5766,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Enchant Dialog Is Malfunctioning:"+e);
 }
@@ -5758,7 +5777,7 @@ function add10() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.FLAME,ll);
 }
 
-var enk = new Button(ctx);
+var enk = new Button(MainActivity);
             enk.setText("Fortune");
             enk.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -5768,14 +5787,14 @@ en11();
             enchantLayout.addView(enk);
 
 function en11() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -5800,7 +5819,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Enchant Dialog Is Malfunctioning:"+e);
 }
@@ -5811,7 +5830,7 @@ function add11() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.FORTUNE,ll);
 }
 
-var enl = new Button(ctx);
+var enl = new Button(MainActivity);
             enl.setText("Infinity");
             enl.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -5821,14 +5840,14 @@ en12();
             enchantLayout.addView(enl);
 
 function en12() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -5853,7 +5872,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Enchant Dialog Is Malfunctioning:"+e);
 }
@@ -5864,7 +5883,7 @@ function add12() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.INFINITY,ll);
 }
 
-var enm = new Button(ctx);
+var enm = new Button(MainActivity);
             enm.setText("Knockback");
             enm.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -5874,14 +5893,14 @@ en13();
             enchantLayout.addView(enm);
 
 function en13() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -5906,7 +5925,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Enchant Dialog Is Malfunctioning:"+e);
 }
@@ -5917,7 +5936,7 @@ function add13() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.KNOCKBACK,ll);
 }
 
-var enn = new Button(ctx);
+var enn = new Button(MainActivity);
             enn.setText("Looting");
             enn.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -5927,14 +5946,14 @@ en14();
             enchantLayout.addView(enn);
 
 function en14() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -5959,7 +5978,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Enchant Dialog Is Malfunctioning:"+e);
 }
@@ -5970,7 +5989,7 @@ function add14() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.LOOTING,ll);
 }
 
-var eno = new Button(ctx);
+var eno = new Button(MainActivity);
             eno.setText("Luck of the sea");
             eno.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -5980,14 +5999,14 @@ en15();
             enchantLayout.addView(eno);
 
 function en15() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -6012,7 +6031,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Enchant Dialog Is Malfunctioning:"+e);
 }
@@ -6023,7 +6042,7 @@ function add15() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.LUCK_OF_THE_SEA,ll);
 }
 
-var enp = new Button(ctx);
+var enp = new Button(MainActivity);
             enp.setText("Lure");
             enp.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -6033,14 +6052,14 @@ en16();
             enchantLayout.addView(enp);
 
 function en16() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -6065,7 +6084,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Enchant Dialog Is Malfunctioning:"+e);
 }
@@ -6076,7 +6095,7 @@ function add16() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.LURE,ll);
 }
 
-var enq = new Button(ctx);
+var enq = new Button(MainActivity);
             enq.setText("Power");
             enq.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -6086,14 +6105,14 @@ en17();
             enchantLayout.addView(enq);
 
 function en17() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -6118,7 +6137,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Enchant Dialog Is Malfunctioning:"+e);
 }
@@ -6129,7 +6148,7 @@ function add17() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.POWER,ll);
 }
 
-var enr = new Button(ctx);
+var enr = new Button(MainActivity);
             enr.setText("Projectile protection");
             enr.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -6139,14 +6158,14 @@ en18();
             enchantLayout.addView(enr);
 
 function en18() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -6171,7 +6190,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Enchant Dialog Is Malfunctioning:"+e);
 }
@@ -6182,7 +6201,7 @@ function add18() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.PROJECTILE_PROTECTION,ll);
 }
 
-var ens = new Button(ctx);
+var ens = new Button(MainActivity);
             ens.setText("Protection");
             ens.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -6192,14 +6211,14 @@ en19();
             enchantLayout.addView(ens);
 
 function en19() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -6224,7 +6243,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Enchant Dialog Is Malfunctioning:"+e);
 }
@@ -6235,7 +6254,7 @@ function add19() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.PROTECTION,ll);
 }
 
-var ent = new Button(ctx);
+var ent = new Button(MainActivity);
             ent.setText("Punch");
             ent.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -6245,14 +6264,14 @@ en20();
             enchantLayout.addView(ent);
 
 function en20() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -6277,7 +6296,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Enchant Dialog Is Malfunctioning:"+e);
 }
@@ -6288,7 +6307,7 @@ function add20() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.PUNCH,ll);
 }
 
-var enu = new Button(ctx);
+var enu = new Button(MainActivity);
             enu.setText("Respiration");
             enu.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -6298,14 +6317,14 @@ en21();
             enchantLayout.addView(enu);
 
 function en21() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -6330,7 +6349,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Enchant Dialog Is Malfunctioning:"+e);
 }
@@ -6341,7 +6360,7 @@ function add21() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.RESPIRATION,ll);
 }
 
-var env = new Button(ctx);
+var env = new Button(MainActivity);
             env.setText("Sharpness");
             env.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -6351,14 +6370,14 @@ en22();
             enchantLayout.addView(env);
 
 function en22() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -6383,7 +6402,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Enchant Dialog Is Malfunctioning:"+e);
 }
@@ -6394,7 +6413,7 @@ function add22() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.SHARPNESS,ll);
 }
 
-var enw = new Button(ctx);
+var enw = new Button(MainActivity);
             enw.setText("Silk touch");
             enw.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -6404,14 +6423,14 @@ en23();
             enchantLayout.addView(enw);
 
 function en23() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -6436,7 +6455,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Enchant Dialog Is Malfunctioning:"+e);
 }
@@ -6447,7 +6466,7 @@ function add23() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.SILK_TOUCH,ll);
 }
 
-var enx = new Button(ctx);
+var enx = new Button(MainActivity);
             enx.setText("Smite");
             enx.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -6457,14 +6476,14 @@ en24();
             enchantLayout.addView(enx);
 
 function en24() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -6489,7 +6508,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Enchant Dialog Is Malfunctioning:"+e);
 }
@@ -6500,7 +6519,7 @@ function add24() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.SMITE,ll);
 }
 
-var eny = new Button(ctx);
+var eny = new Button(MainActivity);
             eny.setText("Thorns");
             eny.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -6510,14 +6529,14 @@ en25();
             enchantLayout.addView(eny);
 
 function en25() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -6542,7 +6561,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Enchant Dialog Is Malfunctioning:"+e);
 }
@@ -6553,7 +6572,7 @@ function add25() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.THORNS,ll);
 }
 
-var enz = new Button(ctx);
+var enz = new Button(MainActivity);
             enz.setText("Unbreaking");
             enz.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -6563,14 +6582,14 @@ en26();
             enchantLayout.addView(enz);
 
 function en26() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var lvl = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var lvl = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -6595,7 +6614,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Enchant Dialog Is Malfunctioning:"+e);
 }
@@ -6632,7 +6651,7 @@ Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,ll);
 //Enchantment.THORNS;
 //Enchantment.UNBREAKING;
 
-            enchant = new PopupWindow(enchantLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
+            enchant = new PopupWindow(enchantLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)enchant.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
       if(default1==false)enchant.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
@@ -6640,16 +6659,16 @@ Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,ll);
       bg.setStroke(10,Color.BLACK);
 enchantLayout1.setBackgroundDrawable(bg);
 enchantLayout1.setPadding(20,0,20,0);
-            enchant.showAtLocation(ctx.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            enchant.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(ctx, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
             }
     }}));
 }
 		
-var give = new android.widget.Button(ctx);
+var give = new android.widget.Button(MainActivity);
 give.setText("Give menu");
-give.setTextColor(GUIName);
+give.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")give.setText("Geben menu");
 if(mcpetheme==true)give.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 give.setOnClickListener(new android.view.View.OnClickListener() {
@@ -6661,17 +6680,17 @@ give.setOnClickListener(new android.view.View.OnClickListener() {
 		menuLayout.addView(give);
 		
 		function give_menu(){
-ctx.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
-            var giveLayout = new LinearLayout(ctx);
-            var giveScroll = new ScrollView(ctx);
-            var giveLayout1 = new LinearLayout(ctx);
+            var giveLayout = new LinearLayout(MainActivity);
+            var giveScroll = new ScrollView(MainActivity);
+            var giveLayout1 = new LinearLayout(MainActivity);
             giveLayout.setOrientation(1);
             giveLayout1.setOrientation(1);
             giveScroll.addView(giveLayout);
             giveLayout1.addView(giveScroll);
             
-            var exit = new android.widget.Button(ctx);
+            var exit = new android.widget.Button(MainActivity);
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -6681,7 +6700,7 @@ ctx.runOnUiThread(new Runnable({ run: function(){
 		});
 		giveLayout.addView(exit);
 		
-		var button = new android.widget.Button(ctx);
+		var button = new android.widget.Button(MainActivity);
             button.setText("Custom Give");
             button.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -6691,7 +6710,7 @@ give.dismiss();
             }));
             giveLayout.addView(button);
 
-var button90 = new android.widget.Button(ctx);
+var button90 = new android.widget.Button(MainActivity);
             button90.setText("Item ID list");
             button90.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -6702,19 +6721,19 @@ idList();
 
 function idList()
       {
-      ctx.runOnUiThread(new java.lang.Runnable({run: function(){
-      var webs = new android.webkit.WebView(ctx);
+      MainActivity.runOnUiThread(new java.lang.Runnable({run: function(){
+      var webs = new android.webkit.WebView(MainActivity);
       var webset = webs.getSettings();
       webset.setJavaScriptEnabled(true);
       webs.setWebChromeClient(new android.webkit.WebChromeClient());
       webs.setWebViewClient(new android.webkit.WebViewClient());
       webs.loadUrl('https://arceusmatt.github.io/minecraftid.html');
 /*Site URL*/
-      new android.app.AlertDialog.Builder(ctx).setView(webs).show();
+      new android.app.AlertDialog.Builder(MainActivity).setView(webs).show();
       }}));
       }
 
-var butto = new android.widget.Button(ctx);
+var butto = new android.widget.Button(MainActivity);
             butto.setText("Special creative inventory");
             butto.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -6727,7 +6746,7 @@ if(j==900)clientMessage(client + "§7Done, all items added.");
             }));
             giveLayout.addView(butto);
 
-var clear = new Button(ctx);
+var clear = new Button(MainActivity);
             clear.setText("Clear inventory");        
             clear.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){ 
@@ -6739,7 +6758,7 @@ for(var k = 0; k < 50; k++){
             }));
             giveLayout.addView(clear);
 
-var k1 = new android.widget.Button(ctx);
+var k1 = new android.widget.Button(MainActivity);
             k1.setText("Leather kit");
             k1.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -6757,7 +6776,7 @@ addItemInventory(290, 1, 0);
             }));
             giveLayout.addView(k1);
 
-var k2 = new android.widget.Button(ctx);
+var k2 = new android.widget.Button(MainActivity);
             k2.setText("Chain kit");
             k2.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -6775,7 +6794,7 @@ addItemInventory(291, 1, 0);
             }));
             giveLayout.addView(k2);
 
-var k3 = new android.widget.Button(ctx);
+var k3 = new android.widget.Button(MainActivity);
             k3.setText("Iron kit");
             k3.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -6793,7 +6812,7 @@ addItemInventory(292, 1, 0);
             }));
             giveLayout.addView(k3);
 
-var k4 = new android.widget.Button(ctx);
+var k4 = new android.widget.Button(MainActivity);
             k4.setText("Gold kit");
             k4.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -6811,7 +6830,7 @@ addItemInventory(294, 1, 0);
             }));
             giveLayout.addView(k4);
 
-var k5 = new android.widget.Button(ctx);
+var k5 = new android.widget.Button(MainActivity);
             k5.setText("Diamond kit");
             k5.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -6829,7 +6848,7 @@ addItemInventory(293, 1, 0);
             }));
             giveLayout.addView(k5);
 
-            give = new PopupWindow(giveLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
+            give = new PopupWindow(giveLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)give.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
       if(default1==false)give.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
@@ -6837,24 +6856,24 @@ addItemInventory(293, 1, 0);
       bg.setStroke(10,Color.BLACK);
 giveLayout1.setBackgroundDrawable(bg);
 giveLayout1.setPadding(20,0,20,0);
-            give.showAtLocation(ctx.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            give.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(ctx, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
             }
     }}));
 }
 
 function Give() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var ID = new android.widget.EditText(ctx);
-var Amount = new android.widget.EditText(ctx);
-var Damage = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var ID = new android.widget.EditText(MainActivity);
+var Amount = new android.widget.EditText(MainActivity);
+var Damage = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter ID,Amt,Dmg");
 Dialog.setContentView(Layer);
@@ -6887,7 +6906,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Give Dialog Is Malfunctioning:"+e);
 }
@@ -6899,9 +6918,9 @@ Player.addItemInventory(I,A,D);
 Server.sendChat("/give " + Player.getName(Player.getEntity()) + space + I + ":" + D + space + A);
 }
 		
-var morph = new android.widget.Button(ctx);
+var morph = new android.widget.Button(MainActivity);
 morph.setText("Morph menu");
-morph.setTextColor(GUIName);
+morph.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")morph.setText("Verwandelungs menu");
 if(mcpetheme==true)morph.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 morph.setOnClickListener(new android.view.View.OnClickListener() {
@@ -6913,17 +6932,17 @@ morph.setOnClickListener(new android.view.View.OnClickListener() {
 		menuLayout.addView(morph);
 		
 		function morph_menu(){
-ctx.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
-            var morphLayout = new LinearLayout(ctx);
-            var morphScroll = new ScrollView(ctx);
-            var morphLayout1 = new LinearLayout(ctx);
+            var morphLayout = new LinearLayout(MainActivity);
+            var morphScroll = new ScrollView(MainActivity);
+            var morphLayout1 = new LinearLayout(MainActivity);
             morphLayout.setOrientation(1);
             morphLayout1.setOrientation(1);
             morphScroll.addView(morphLayout);
             morphLayout1.addView(morphScroll);
             
-            var exit = new android.widget.Button(ctx);
+            var exit = new android.widget.Button(MainActivity);
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -6933,7 +6952,7 @@ ctx.runOnUiThread(new Runnable({ run: function(){
 		});
 		morphLayout.addView(exit);
 		
-		var mm1 = new android.widget.Button(ctx);
+		var mm1 = new android.widget.Button(MainActivity);
             mm1.setText("Player");
             mm1.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -6944,7 +6963,7 @@ Entity.setRenderType(Player.getEntity(), EntityRenderType.player);
             }));
             morphLayout.addView(mm1);
 
-var mm = new android.widget.Button(ctx);
+var mm = new android.widget.Button(MainActivity);
             mm.setText("Bat");
             mm.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -6956,7 +6975,7 @@ Entity.setRenderType(Player.getEntity(), EntityRenderType.bat);
             }));
             morphLayout.addView(mm);
 
-var mm0 = new android.widget.Button(ctx);
+var mm0 = new android.widget.Button(MainActivity);
             mm0.setText("Blaze");
             mm0.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -6967,7 +6986,7 @@ Entity.setRenderType(Player.getEntity(), EntityRenderType.blaze);
             }));
             morphLayout.addView(mm0);
 
-var mm2 = new android.widget.Button(ctx);
+var mm2 = new android.widget.Button(MainActivity);
             mm2.setText("Chicken");
             mm2.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -6979,7 +6998,7 @@ Entity.setRenderType(Player.getEntity(), EntityRenderType.chicken);
             }));
             morphLayout.addView(mm2);
 
-var mm3 = new android.widget.Button(ctx);
+var mm3 = new android.widget.Button(MainActivity);
             mm3.setText("Cow");
             mm3.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -6991,7 +7010,7 @@ Entity.setRenderType(Player.getEntity(), EntityRenderType.cow);
             }));
             morphLayout.addView(mm3);
 
-var mm4 = new android.widget.Button(ctx);
+var mm4 = new android.widget.Button(MainActivity);
             mm4.setText("Creeper");
             mm4.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7003,7 +7022,7 @@ Entity.setRenderType(Player.getEntity(), EntityRenderType.creeper);
             }));
             morphLayout.addView(mm4);
 
-var mm5 = new android.widget.Button(ctx);
+var mm5 = new android.widget.Button(MainActivity);
             mm5.setText("Enderman");
             mm5.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7014,7 +7033,7 @@ Entity.setRenderType(Player.getEntity(), EntityRenderType.enderman);
             }));
             morphLayout.addView(mm5);
 
-var mm6 = new android.widget.Button(ctx);
+var mm6 = new android.widget.Button(MainActivity);
             mm6.setText("Ghast");
             mm6.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7026,7 +7045,7 @@ Entity.setRenderType(Player.getEntity(), EntityRenderType.ghast);
             }));
             morphLayout.addView(mm6);
 
-var mm7 = new android.widget.Button(ctx);
+var mm7 = new android.widget.Button(MainActivity);
             mm7.setText("Iron golem");
             mm7.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7037,7 +7056,7 @@ Entity.setRenderType(Player.getEntity(), EntityRenderType.ironGolem);
             }));
             morphLayout.addView(mm7);
 
-var mm8 = new android.widget.Button(ctx);
+var mm8 = new android.widget.Button(MainActivity);
             mm8.setText("Lava slime");
             mm8.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7049,7 +7068,7 @@ Entity.setRenderType(Player.getEntity(), EntityRenderType.lavaSlime);
             }));
             morphLayout.addView(mm8);
 
-var mm9 = new android.widget.Button(ctx);
+var mm9 = new android.widget.Button(MainActivity);
             mm9.setText("Ocelot");
             mm9.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7060,7 +7079,7 @@ Entity.setRenderType(Player.getEntity(), EntityRenderType.ocelot);
             }));
             morphLayout.addView(mm9);
 
-var mm10 = new android.widget.Button(ctx);
+var mm10 = new android.widget.Button(MainActivity);
             mm10.setText("Pig");
             mm10.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7073,7 +7092,7 @@ Entity.setRenderType(Player.getEntity(), EntityRenderType.pig);
             }));
             morphLayout.addView(mm10);
 
-var mm11 = new android.widget.Button(ctx);
+var mm11 = new android.widget.Button(MainActivity);
             mm11.setText("Sheep");
             mm11.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7085,7 +7104,7 @@ Entity.setRenderType(Player.getEntity(), EntityRenderType.sheep);
             }));
             morphLayout.addView(mm11);
 
-var mm12 = new android.widget.Button(ctx);
+var mm12 = new android.widget.Button(MainActivity);
             mm12.setText("Silverfish");
             mm12.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7097,7 +7116,7 @@ Entity.setRenderType(Player.getEntity(), EntityRenderType.silverfish);
             }));
             morphLayout.addView(mm12);
 
-var mm13 = new android.widget.Button(ctx);
+var mm13 = new android.widget.Button(MainActivity);
             mm13.setText("Skeleton");
             mm13.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7109,7 +7128,7 @@ Entity.setRenderType(Player.getEntity(), EntityRenderType.skeleton);
             }));
             morphLayout.addView(mm13);
 
-var mm14 = new android.widget.Button(ctx);
+var mm14 = new android.widget.Button(MainActivity);
             mm14.setText("Slime");
             mm14.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7121,7 +7140,7 @@ Entity.setRenderType(Player.getEntity(), EntityRenderType.slime);
             }));
             morphLayout.addView(mm14);
 
-var mm15 = new android.widget.Button(ctx);
+var mm15 = new android.widget.Button(MainActivity);
             mm15.setText("Snow golem");
             mm15.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7132,7 +7151,7 @@ Entity.setRenderType(Player.getEntity(), EntityRenderType.snowGolem);
             }));
             morphLayout.addView(mm15);
 
-var mm16 = new android.widget.Button(ctx);
+var mm16 = new android.widget.Button(MainActivity);
             mm16.setText("Spider");
             mm16.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7144,7 +7163,7 @@ Entity.setRenderType(Player.getEntity(), EntityRenderType.spider);
             }));
             morphLayout.addView(mm16);
 
-var mm17 = new android.widget.Button(ctx);
+var mm17 = new android.widget.Button(MainActivity);
             mm17.setText("Squid");
             mm17.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7156,7 +7175,7 @@ Entity.setRenderType(Player.getEntity(), EntityRenderType.squid);
             }));
             morphLayout.addView(mm17);
 
-var mm18 = new android.widget.Button(ctx);
+var mm18 = new android.widget.Button(MainActivity);
             mm18.setText("Villager");
             mm18.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7167,7 +7186,7 @@ Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);
             }));
             morphLayout.addView(mm18);
 
-var mm19 = new android.widget.Button(ctx);
+var mm19 = new android.widget.Button(MainActivity);
             mm19.setText("Villager zombie");
             mm19.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7179,7 +7198,7 @@ Entity.setRenderType(Player.getEntity(), EntityRenderType.zombieVillager);
             }));
             morphLayout.addView(mm19);
 
-var mm20 = new android.widget.Button(ctx);
+var mm20 = new android.widget.Button(MainActivity);
             mm20.setText("Wolf");
             mm20.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7191,7 +7210,7 @@ Entity.setRenderType(Player.getEntity(), EntityRenderType.wolf);
             }));
             morphLayout.addView(mm20);
 
-var mm21 = new android.widget.Button(ctx);
+var mm21 = new android.widget.Button(MainActivity);
             mm21.setText("Zombie");
             mm21.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7203,7 +7222,7 @@ Entity.setRenderType(Player.getEntity(), EntityRenderType.zombie);
             }));
             morphLayout.addView(mm21);
 
-var mm22 = new android.widget.Button(ctx);
+var mm22 = new android.widget.Button(MainActivity);
             mm22.setText("Zombie pigman");
             mm22.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7215,7 +7234,7 @@ Entity.setRenderType(Player.getEntity(), EntityRenderType.zombie);
             }));
             morphLayout.addView(mm22);
 
-            morph = new PopupWindow(morphLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
+            morph = new PopupWindow(morphLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)morph.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
 			if(default1==false)morph.setBackgroundDrawable(new ColorDrawable(GUIColor));
       var bg = new android.graphics.drawable.GradientDrawable();
@@ -7223,16 +7242,16 @@ Entity.setRenderType(Player.getEntity(), EntityRenderType.zombie);
       bg.setStroke(10,Color.BLACK);
 morphLayout1.setBackgroundDrawable(bg);
 morphLayout1.setPadding(20,0,20,0);
-            morph.showAtLocation(ctx.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            morph.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(ctx, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
             }
     }}));
 }
 		
-var nuke = new android.widget.Button(ctx);
+var nuke = new android.widget.Button(MainActivity);
 nuke.setText("Nuke menu");
-nuke.setTextColor(GUIName);
+nuke.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")nuke.setText("Vernichtungs menu");
 if(mcpetheme==true)nuke.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 nuke.setOnClickListener(new android.view.View.OnClickListener() {
@@ -7244,17 +7263,17 @@ nuke.setOnClickListener(new android.view.View.OnClickListener() {
 		menuLayout.addView(nuke);
 		
 		function nuke_menu(){
-ctx.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
-            var nukeLayout = new LinearLayout(ctx);
-            var nukeScroll = new ScrollView(ctx);
-            var nukeLayout1 = new LinearLayout(ctx);
+            var nukeLayout = new LinearLayout(MainActivity);
+            var nukeScroll = new ScrollView(MainActivity);
+            var nukeLayout1 = new LinearLayout(MainActivity);
             nukeLayout.setOrientation(1);
             nukeLayout1.setOrientation(1);
             nukeScroll.addView(nukeLayout);
             nukeLayout1.addView(nukeScroll);
             
-            var exit = new android.widget.Button(ctx);
+            var exit = new android.widget.Button(MainActivity);
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -7264,7 +7283,7 @@ ctx.runOnUiThread(new Runnable({ run: function(){
 		});
 		nukeLayout.addView(exit);
 		
-            var tn = new android.widget.Button(ctx);
+            var tn = new android.widget.Button(MainActivity);
             tn.setText("Tap nuke: "+(tapnuke?"on":"off"));
             tn.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7280,7 +7299,7 @@ clientMessage(client + "§7Tap nuke is off");
             }));
             nukeLayout.addView(tn);
             
-            var an = new android.widget.Button(ctx);
+            var an = new android.widget.Button(MainActivity);
             an.setText("Auto nuke: "+(autonuke?"on":"off"));
             an.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7296,7 +7315,7 @@ clientMessage(client + "§7Auto nuke is off");
             }));
             nukeLayout.addView(an);
 		
-		var n1 = new Button(ctx);
+		var n1 = new Button(MainActivity);
             n1.setText("Nuke 1%");  
             n1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -7305,7 +7324,7 @@ clientMessage(client + "§7Auto nuke is off");
             }));
             nukeLayout.addView(n1);
 
-     var n2 = new Button(ctx);
+     var n2 = new Button(MainActivity);
             n2.setText("Nuke 5%");
             n2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -7314,7 +7333,7 @@ clientMessage(client + "§7Auto nuke is off");
             }));
             nukeLayout.addView(n2);
 
-var n3 = new Button(ctx);
+var n3 = new Button(MainActivity);
             n3.setText("Nuke 10%");
             n3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -7323,7 +7342,7 @@ var n3 = new Button(ctx);
             }));
             nukeLayout.addView(n3);
 
-var n4 = new Button(ctx);
+var n4 = new Button(MainActivity);
             n4.setText("Nuke 15%");
             n4.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -7332,7 +7351,7 @@ var n4 = new Button(ctx);
             }));
             nukeLayout.addView(n4);
 
-var n5 = new Button(ctx);
+var n5 = new Button(MainActivity);
             n5.setText("Nuke 20%");
             n5.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -7341,7 +7360,7 @@ var n5 = new Button(ctx);
             }));
             nukeLayout.addView(n5);
 
-var n6 = new Button(ctx);
+var n6 = new Button(MainActivity);
             n6.setText("Nuke 25%");
             n6.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -7350,7 +7369,7 @@ var n6 = new Button(ctx);
             }));
             nukeLayout.addView(n6);
 
-var n7 = new Button(ctx);
+var n7 = new Button(MainActivity);
             n7.setText("Nuke 30%");
             n7.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -7359,7 +7378,7 @@ var n7 = new Button(ctx);
             }));
             nukeLayout.addView(n7);
 
-var n8 = new Button(ctx);
+var n8 = new Button(MainActivity);
             n8.setText("Nuke 35%");
             n8.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -7368,7 +7387,7 @@ var n8 = new Button(ctx);
             }));
             nukeLayout.addView(n8);
 
-var n9 = new Button(ctx);
+var n9 = new Button(MainActivity);
             n9.setText("Nuke 40%");
             n9.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -7377,7 +7396,7 @@ var n9 = new Button(ctx);
             }));
             nukeLayout.addView(n9);
 
-var n10 = new Button(ctx);
+var n10 = new Button(MainActivity);
             n10.setText("Nuke 45%");
             n10.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -7386,7 +7405,7 @@ var n10 = new Button(ctx);
             }));
             nukeLayout.addView(n10);
 
-var n11 = new Button(ctx);
+var n11 = new Button(MainActivity);
             n11.setText("Nuke 50%");
             n11.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -7395,7 +7414,7 @@ var n11 = new Button(ctx);
             }));
             nukeLayout.addView(n11);
 
-            nuke = new PopupWindow(nukeLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
+            nuke = new PopupWindow(nukeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)nuke.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
       if(default1==false)nuke.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
@@ -7403,16 +7422,16 @@ var n11 = new Button(ctx);
       bg.setStroke(10,Color.BLACK);
 nukeLayout1.setBackgroundDrawable(bg);
 nukeLayout1.setPadding(20,0,20,0);
-            nuke.showAtLocation(ctx.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            nuke.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(ctx, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
             }
     }}));
 }
 		
-var particle = new android.widget.Button(ctx);
+var particle = new android.widget.Button(MainActivity);
 particle.setText("Particle menu");
-particle.setTextColor(GUIName);
+particle.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")particle.setText("Partikel menu");
 if(mcpetheme==true)particle.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 particle.setOnClickListener(new android.view.View.OnClickListener() {
@@ -7424,17 +7443,17 @@ particle.setOnClickListener(new android.view.View.OnClickListener() {
 		menuLayout.addView(particle);
 		
 		function particle_menu(){
-ctx.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
-            var particleLayout = new LinearLayout(ctx);
-            var particleScroll = new ScrollView(ctx);
-            var particleLayout1 = new LinearLayout(ctx);
+            var particleLayout = new LinearLayout(MainActivity);
+            var particleScroll = new ScrollView(MainActivity);
+            var particleLayout1 = new LinearLayout(MainActivity);
             particleLayout.setOrientation(1);
             particleLayout1.setOrientation(1);
             particleScroll.addView(particleLayout);
             particleLayout1.addView(particleScroll);
             
-            var exit = new android.widget.Button(ctx);
+            var exit = new android.widget.Button(MainActivity);
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -7444,7 +7463,7 @@ ctx.runOnUiThread(new Runnable({ run: function(){
 		});
 		particleLayout.addView(exit);
 		
-var p1 = new android.widget.Button(ctx);
+var p1 = new android.widget.Button(MainActivity);
             p1.setText("Angry villager: "+(particle1?"on":"off"));
             p1.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7460,7 +7479,7 @@ clientMessage(client + "§7Particle 1 is false");
             }));
             particleLayout.addView(p1);
 
-var p2 = new android.widget.Button(ctx);
+var p2 = new android.widget.Button(MainActivity);
             p2.setText("bubble: "+(particle2?"on":"off"));
             p2.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7476,7 +7495,7 @@ clientMessage(client + "§7Particle 2 is false");
             }));
             particleLayout.addView(p2);
 
-var p3 = new android.widget.Button(ctx);
+var p3 = new android.widget.Button(MainActivity);
             p3.setText("cloud: "+(particle3?"on":"off"));
             p3.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7492,7 +7511,7 @@ clientMessage(client + "§7Particle 3 is false");
             }));
             particleLayout.addView(p3);
 
-var p4 = new android.widget.Button(ctx);
+var p4 = new android.widget.Button(MainActivity);
             p4.setText("crit: "+(particle4?"on":"off"));
             p4.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7508,7 +7527,7 @@ clientMessage(client + "§7Particle 4 is false");
             }));
             particleLayout.addView(p4);
 
-var p5 = new android.widget.Button(ctx);
+var p5 = new android.widget.Button(MainActivity);
             p5.setText("drip lava: "+(particle5?"on":"off"));
             p5.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7524,7 +7543,7 @@ clientMessage(client + "§7Particle 5 is false");
             }));
             particleLayout.addView(p5);
 
-var p6 = new android.widget.Button(ctx);
+var p6 = new android.widget.Button(MainActivity);
             p6.setText("drip water: "+(particle6?"on":"off"));
             p6.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7540,7 +7559,7 @@ clientMessage(client + "§7Particle 6 is false");
             }));
             particleLayout.addView(p6);
 
-var p7 = new android.widget.Button(ctx);
+var p7 = new android.widget.Button(MainActivity);
             p7.setText("enchanting table: "+(particle7?"on":"off"));
             p7.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7556,7 +7575,7 @@ clientMessage(client + "§7Particle 7 is false");
             }));
             particleLayout.addView(p7);
 
-var p8 = new android.widget.Button(ctx);
+var p8 = new android.widget.Button(MainActivity);
             p8.setText("falling dust: "+(particle8?"on":"off"));
             p8.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7572,7 +7591,7 @@ clientMessage(client + "§7Particle 8 is false");
             }));
             particleLayout.addView(p8);
 
-var p9 = new android.widget.Button(ctx);
+var p9 = new android.widget.Button(MainActivity);
             p9.setText("flame: "+(particle9?"on":"off"));
             p9.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7588,7 +7607,7 @@ clientMessage(client + "§7Particle 9 is false");
             }));
             particleLayout.addView(p9);
 
-var p10 = new android.widget.Button(ctx);
+var p10 = new android.widget.Button(MainActivity);
             p10.setText("Happy villager: "+(particle10?"on":"off"));
             p10.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7604,7 +7623,7 @@ clientMessage(client + "§7Particle 10 is false");
             }));
             particleLayout.addView(p10);
 
-var p11 = new android.widget.Button(ctx);
+var p11 = new android.widget.Button(MainActivity);
             p11.setText("heart: "+(particle11?"on":"off"));
             p11.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7620,7 +7639,7 @@ clientMessage(client + "§7Particle 11 is false");
             }));
             particleLayout.addView(p11);
 
-var p12 = new android.widget.Button(ctx);
+var p12 = new android.widget.Button(MainActivity);
             p12.setText("Huge explosion: "+(particle12?"on":"off"));
             p12.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7636,7 +7655,7 @@ clientMessage(client + "§7Particle 12 is false");
             }));
             particleLayout.addView(p12);
 
-var p13 = new android.widget.Button(ctx);
+var p13 = new android.widget.Button(MainActivity);
             p13.setText("Explosion seed: "+(particle13?"on":"off"));
             p13.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7652,7 +7671,7 @@ clientMessage(client + "§7Particle 13 is false");
             }));
             particleLayout.addView(p13);
 
-var p14 = new android.widget.Button(ctx);
+var p14 = new android.widget.Button(MainActivity);
             p14.setText("ink: "+(particle14?"on":"off"));
             p14.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7668,7 +7687,7 @@ clientMessage(client + "§7Particle 14 is false");
             }));
             particleLayout.addView(p14);
 
-var p15 = new android.widget.Button(ctx);
+var p15 = new android.widget.Button(MainActivity);
             p15.setText("Item break: "+(particle15?"on":"off"));
             p15.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7684,7 +7703,7 @@ clientMessage(client + "§7Particle 15 is false");
             }));
             particleLayout.addView(p15);
 
-var p16 = new android.widget.Button(ctx);
+var p16 = new android.widget.Button(MainActivity);
             p16.setText("Lava: "+(particle16?"on":"off"));
             p16.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7700,7 +7719,7 @@ clientMessage(client + "§7Particle 16 is false");
             }));
             particleLayout.addView(p16);
 
-var p17 = new android.widget.Button(ctx);
+var p17 = new android.widget.Button(MainActivity);
             p17.setText("Mob flame: "+(particle17?"on":"off"));
             p17.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7716,7 +7735,7 @@ clientMessage(client + "§7Particle 17 is false");
             }));
             particleLayout.addView(p17);
 
-var p18 = new android.widget.Button(ctx);
+var p18 = new android.widget.Button(MainActivity);
             p18.setText("Note: "+(particle18?"on":"off"));
             p18.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7732,7 +7751,7 @@ clientMessage(client + "§7Particle 18 is false");
             }));
             particleLayout.addView(p18);
 
-var p19 = new android.widget.Button(ctx);
+var p19 = new android.widget.Button(MainActivity);
             p19.setText("Portal: "+(particle19?"on":"off"));
             p19.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7748,7 +7767,7 @@ clientMessage(client + "§7Particle 19 is false");
             }));
             particleLayout.addView(p19);
 
-var p20 = new android.widget.Button(ctx);
+var p20 = new android.widget.Button(MainActivity);
             p20.setText("Rain splash: "+(particle20?"on":"off"));
             p20.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7764,7 +7783,7 @@ clientMessage(client + "§7Particle 20 is false");
             }));
             particleLayout.addView(p20);
 
-var p21 = new android.widget.Button(ctx);
+var p21 = new android.widget.Button(MainActivity);
             p21.setText("Redstone: "+(particle21?"on":"off"));
             p21.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7780,7 +7799,7 @@ clientMessage(client + "§7Particle 21 is false");
             }));
             particleLayout.addView(p21);
 
-var p22 = new android.widget.Button(ctx);
+var p22 = new android.widget.Button(MainActivity);
             p22.setText("Slime: "+(particle22?"on":"off"));
             p22.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7796,7 +7815,7 @@ clientMessage(client + "§7Particle 22 is false");
             }));
             particleLayout.addView(p22);
 
-var p23 = new android.widget.Button(ctx);
+var p23 = new android.widget.Button(MainActivity);
             p23.setText("Smoke: "+(particle23?"on":"off"));
             p23.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7812,7 +7831,7 @@ clientMessage(client + "§7Particle 23 is false");
             }));
             particleLayout.addView(p23);
 
-var p24 = new android.widget.Button(ctx);
+var p24 = new android.widget.Button(MainActivity);
             p24.setText("Snow ball poof: "+(particle24?"on":"off"));
             p24.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7828,7 +7847,7 @@ clientMessage(client + "§7Particle 24 is false");
             }));
             particleLayout.addView(p24);
 
-var p25 = new android.widget.Button(ctx);
+var p25 = new android.widget.Button(MainActivity);
             p25.setText("Spell: "+(particle25?"on":"off"));
             p25.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7844,7 +7863,7 @@ clientMessage(client + "§7Particle 25 is false");
             }));
             particleLayout.addView(p25);
 
-var p26 = new android.widget.Button(ctx);
+var p26 = new android.widget.Button(MainActivity);
             p26.setText("Splash: "+(particle26?"on":"off"));
             p26.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7860,7 +7879,7 @@ clientMessage(client + "§7Particle 26 is false");
             }));
             particleLayout.addView(p26);
 
-var p27 = new android.widget.Button(ctx);
+var p27 = new android.widget.Button(MainActivity);
             p27.setText("Suspended town: "+(particle27?"on":"off"));
             p27.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7876,7 +7895,7 @@ clientMessage(client + "§7Particle 27 is false");
             }));
             particleLayout.addView(p27);
 
-var p28 = new android.widget.Button(ctx);
+var p28 = new android.widget.Button(MainActivity);
             p28.setText("Terrain: "+(particle28?"on":"off"));
             p28.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7892,7 +7911,7 @@ clientMessage(client + "§7Particle 28 is false");
             }));
             particleLayout.addView(p28);
 
-var p29 = new android.widget.Button(ctx);
+var p29 = new android.widget.Button(MainActivity);
             p29.setText("Water wake: "+(particle29?"on":"off"));
             p29.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7908,7 +7927,7 @@ clientMessage(client + "§7Particle 29 is false");
             }));
             particleLayout.addView(p29);
 
-var p30 = new android.widget.Button(ctx);
+var p30 = new android.widget.Button(MainActivity);
             p30.setText("Large explosion: "+(particle30?"on":"off"));
             p30.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7924,7 +7943,7 @@ clientMessage(client + "§7Particle 30 is false");
             }));
             particleLayout.addView(p30);
 
-var p31 = new android.widget.Button(ctx);
+var p31 = new android.widget.Button(MainActivity);
             p31.setText("Spell 2: "+(particle31?"on":"off"));
             p31.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7940,7 +7959,7 @@ clientMessage(client + "§7Particle 31 is false");
             }));
             particleLayout.addView(p31);
 
-var p32 = new android.widget.Button(ctx);
+var p32 = new android.widget.Button(MainActivity);
             p32.setText("Spell 3: "+(particle32?"on":"off"));
             p32.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7956,7 +7975,7 @@ clientMessage(client + "§7Particle 32 is false");
             }));
             particleLayout.addView(p32);
 
-            particle = new PopupWindow(particleLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
+            particle = new PopupWindow(particleLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)particle.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
       if(default1==false)particle.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
@@ -7964,16 +7983,16 @@ clientMessage(client + "§7Particle 32 is false");
       bg.setStroke(10,Color.BLACK);
 particleLayout1.setBackgroundDrawable(bg);
 particleLayout1.setPadding(20,0,20,0);
-            particle.showAtLocation(ctx.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            particle.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(ctx, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
             }
     }}));
 }
 		
-var spawn = new android.widget.Button(ctx);
+var spawn = new android.widget.Button(MainActivity);
 spawn.setText("Spawn menu");
-spawn.setTextColor(GUIName);
+spawn.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")spawn.setText("Erschaffungs menu");
 if(mcpetheme==true)spawn.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 spawn.setOnClickListener(new android.view.View.OnClickListener() {
@@ -7985,17 +8004,17 @@ spawn.setOnClickListener(new android.view.View.OnClickListener() {
 		menuLayout.addView(spawn);
 		
 		function spawn_menu(){
-ctx.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
-            var spawnLayout = new LinearLayout(ctx);
-            var spawnScroll = new ScrollView(ctx);
-            var spawnLayout1 = new LinearLayout(ctx);
+            var spawnLayout = new LinearLayout(MainActivity);
+            var spawnScroll = new ScrollView(MainActivity);
+            var spawnLayout1 = new LinearLayout(MainActivity);
             spawnLayout.setOrientation(1);
             spawnLayout1.setOrientation(1);
             spawnScroll.addView(spawnLayout);
             spawnLayout1.addView(spawnScroll);
             
-            var exit = new android.widget.Button(ctx);
+            var exit = new android.widget.Button(MainActivity);
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -8005,7 +8024,7 @@ ctx.runOnUiThread(new Runnable({ run: function(){
 		});
 		spawnLayout.addView(exit);
 		
-		var spawn10 = new Button(ctx);
+		var spawn10 = new Button(MainActivity);
             spawn10.setText("Spawn Chicken");      
             spawn10.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8014,7 +8033,7 @@ ctx.runOnUiThread(new Runnable({ run: function(){
             }));
             spawnLayout.addView(spawn10);
 
-var spawn11 = new Button(ctx);
+var spawn11 = new Button(MainActivity);
             spawn11.setText("Spawn Cow");
             spawn11.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8023,7 +8042,7 @@ var spawn11 = new Button(ctx);
             }));
             spawnLayout.addView(spawn11);
             
-            var spawn12 = new Button(ctx);
+            var spawn12 = new Button(MainActivity);
             spawn12.setText("Spawn Pig");
             spawn12.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8032,7 +8051,7 @@ var spawn11 = new Button(ctx);
             }));
             spawnLayout.addView(spawn12);
             
-            var spawn13 = new Button(ctx);
+            var spawn13 = new Button(MainActivity);
             spawn13.setText("Spawn Sheep");
             spawn13.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8041,7 +8060,7 @@ var spawn11 = new Button(ctx);
             }));
             spawnLayout.addView(spawn13);
             
-            var spawn14 = new Button(ctx);
+            var spawn14 = new Button(MainActivity);
             spawn14.setText("Spawn Wolf");
             spawn14.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8050,7 +8069,7 @@ var spawn11 = new Button(ctx);
             }));
             spawnLayout.addView(spawn14);
             
-            var spawn15 = new Button(ctx);
+            var spawn15 = new Button(MainActivity);
             spawn15.setText("Spawn Villager");
             spawn15.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8059,7 +8078,7 @@ var spawn11 = new Button(ctx);
             }));
             spawnLayout.addView(spawn15);
             
-            var spawn16 = new Button(ctx);
+            var spawn16 = new Button(MainActivity);
             spawn16.setText("Spawn Mushrom cow");
             spawn16.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8068,7 +8087,7 @@ var spawn11 = new Button(ctx);
             }));
             spawnLayout.addView(spawn16);
             
-            var spawn17 = new Button(ctx);
+            var spawn17 = new Button(MainActivity);
             spawn17.setText("Spawn Squid");
             spawn17.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8077,7 +8096,7 @@ var spawn11 = new Button(ctx);
             }));
             spawnLayout.addView(spawn17);
             
-            var spawn18 = new Button(ctx);
+            var spawn18 = new Button(MainActivity);
             spawn18.setText("Spawn Rabbit");
             spawn18.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8086,7 +8105,7 @@ var spawn11 = new Button(ctx);
             }));
             spawnLayout.addView(spawn18);
             
-            var spawn19 = new Button(ctx);
+            var spawn19 = new Button(MainActivity);
             spawn19.setText("Spawn Bat");
             spawn19.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8095,7 +8114,7 @@ var spawn11 = new Button(ctx);
             }));
             spawnLayout.addView(spawn19);
             
-            var spawn20 = new Button(ctx);
+            var spawn20 = new Button(MainActivity);
             spawn20.setText("Spawn Iron golem");
             spawn20.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8104,7 +8123,7 @@ var spawn11 = new Button(ctx);
             }));
             spawnLayout.addView(spawn20);
             
-            var spawn21 = new Button(ctx);
+            var spawn21 = new Button(MainActivity);
             spawn21.setText("Spawn Snow golem");
             spawn21.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8113,7 +8132,7 @@ var spawn11 = new Button(ctx);
             }));
             spawnLayout.addView(spawn21);
             
-            var spawn22 = new Button(ctx);
+            var spawn22 = new Button(MainActivity);
             spawn22.setText("Spawn Ocelot");
             spawn22.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8122,7 +8141,7 @@ var spawn11 = new Button(ctx);
             }));
             spawnLayout.addView(spawn22);
 
-var spawn32 = new Button(ctx);
+var spawn32 = new Button(MainActivity);
             spawn32.setText("Spawn Zombie");
             spawn32.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8131,7 +8150,7 @@ var spawn32 = new Button(ctx);
             }));
             spawnLayout.addView(spawn32);
 
-var spawn33 = new Button(ctx);
+var spawn33 = new Button(MainActivity);
             spawn33.setText("Spawn Creeper");
             spawn33.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8140,7 +8159,7 @@ var spawn33 = new Button(ctx);
             }));
             spawnLayout.addView(spawn33);
 
-var spawn34 = new Button(ctx);
+var spawn34 = new Button(MainActivity);
             spawn34.setText("Spawn Skeleton");
             spawn34.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8149,7 +8168,7 @@ var spawn34 = new Button(ctx);
             }));
             spawnLayout.addView(spawn34);
             
-            var spawn35 = new Button(ctx);
+            var spawn35 = new Button(MainActivity);
             spawn35.setText("Spawn Spider");
             spawn35.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8158,7 +8177,7 @@ var spawn34 = new Button(ctx);
             }));
             spawnLayout.addView(spawn35);
             
-            var spawn36 = new Button(ctx);
+            var spawn36 = new Button(MainActivity);
             spawn36.setText("Spawn Zombie pigman");
             spawn36.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8167,7 +8186,7 @@ var spawn34 = new Button(ctx);
             }));
             spawnLayout.addView(spawn36);
             
-            var spawn37 = new Button(ctx);
+            var spawn37 = new Button(MainActivity);
             spawn37.setText("Spawn Slime");
             spawn37.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8176,7 +8195,7 @@ var spawn34 = new Button(ctx);
             }));
             spawnLayout.addView(spawn37);
             
-            var spawn38 = new Button(ctx);
+            var spawn38 = new Button(MainActivity);
             spawn38.setText("Spawn Enderman");     
             spawn38.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8185,7 +8204,7 @@ var spawn34 = new Button(ctx);
             }));
             spawnLayout.addView(spawn38);
             
-            var spawn39 = new Button(ctx);
+            var spawn39 = new Button(MainActivity);
             spawn39.setText("Spawn Silverfish");
             spawn39.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8194,7 +8213,7 @@ var spawn34 = new Button(ctx);
             }));
             spawnLayout.addView(spawn39);
 
-var spawn40 = new Button(ctx);
+var spawn40 = new Button(MainActivity);
             spawn40.setText("Spawn Cave spider"); 
             spawn40.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8203,7 +8222,7 @@ var spawn40 = new Button(ctx);
             }));
             spawnLayout.addView(spawn40);
 
-var spawn41 = new Button(ctx);
+var spawn41 = new Button(MainActivity);
             spawn41.setText("Spawn Ghast");      
             spawn41.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8212,7 +8231,7 @@ var spawn41 = new Button(ctx);
             }));
             spawnLayout.addView(spawn41);
 
-var spawn42 = new Button(ctx);
+var spawn42 = new Button(MainActivity);
             spawn42.setText("Spawn Magma cube");
             spawn42.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8221,7 +8240,7 @@ var spawn42 = new Button(ctx);
             }));
             spawnLayout.addView(spawn42);
 
-var spawn43 = new Button(ctx);
+var spawn43 = new Button(MainActivity);
             spawn43.setText("Spawn Blaze");       
             spawn43.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8230,7 +8249,7 @@ var spawn43 = new Button(ctx);
             }));
             spawnLayout.addView(spawn43);
 
-var spawn44 = new Button(ctx);
+var spawn44 = new Button(MainActivity);
             spawn44.setText("Spawn Zombie villager");
             spawn44.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8239,7 +8258,7 @@ var spawn44 = new Button(ctx);
             }));
             spawnLayout.addView(spawn44);
 
-var spawn66 = new Button(ctx);
+var spawn66 = new Button(MainActivity);
             spawn66.setText("Spawn Witch");            
             spawn66.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8248,7 +8267,7 @@ var spawn66 = new Button(ctx);
             }));
             spawnLayout.addView(spawn66);
 
-			var spawn67 = new Button(ctx);
+			var spawn67 = new Button(MainActivity);
             spawn67.setText("Spawn Endermite");            
             spawn67.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8257,7 +8276,7 @@ var spawn66 = new Button(ctx);
             }));
             spawnLayout.addView(spawn67);
 			
-			var spawn68 = new Button(ctx);
+			var spawn68 = new Button(MainActivity);
             spawn68.setText("Spawn Guardian");            
             spawn68.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8266,7 +8285,7 @@ var spawn66 = new Button(ctx);
             }));
             spawnLayout.addView(spawn68);
 			
-			var spawn69 = new Button(ctx);
+			var spawn69 = new Button(MainActivity);
             spawn69.setText("Spawn Shulker");            
             spawn69.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8275,7 +8294,7 @@ var spawn66 = new Button(ctx);
             }));
             spawnLayout.addView(spawn69);
 			
-var spawn70 = new Button(ctx);
+var spawn70 = new Button(MainActivity);
             spawn70.setText("Spawn Horse");            
             spawn70.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8284,7 +8303,7 @@ var spawn70 = new Button(ctx);
             }));
             spawnLayout.addView(spawn70);
 			
-			var spawn71 = new Button(ctx);
+			var spawn71 = new Button(MainActivity);
             spawn71.setText("Spawn Donkey");            
             spawn71.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8293,7 +8312,7 @@ var spawn70 = new Button(ctx);
             }));
             spawnLayout.addView(spawn71);
 			
-			var spawn72 = new Button(ctx);
+			var spawn72 = new Button(MainActivity);
             spawn72.setText("Spawn Mule");            
             spawn72.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8302,7 +8321,7 @@ var spawn70 = new Button(ctx);
             }));
             spawnLayout.addView(spawn72);
 			
-			var spawn73 = new Button(ctx);
+			var spawn73 = new Button(MainActivity);
             spawn73.setText("Spawn Skeleton Horse");            
             spawn73.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8311,7 +8330,7 @@ var spawn70 = new Button(ctx);
             }));
             spawnLayout.addView(spawn73);
 			
-			var spawn74 = new Button(ctx);
+			var spawn74 = new Button(MainActivity);
             spawn74.setText("Spawn Zombie Horse");            
             spawn74.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8320,7 +8339,7 @@ var spawn70 = new Button(ctx);
             }));
             spawnLayout.addView(spawn74);
 			
-			var spawn75 = new Button(ctx);
+			var spawn75 = new Button(MainActivity);
             spawn75.setText("Spawn Wither skeleton");            
             spawn75.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8329,7 +8348,7 @@ var spawn70 = new Button(ctx);
             }));
             spawnLayout.addView(spawn75);
 			
-			var spawn76 = new Button(ctx);
+			var spawn76 = new Button(MainActivity);
             spawn76.setText("Spawn Stray");            
             spawn76.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8338,7 +8357,7 @@ var spawn70 = new Button(ctx);
             }));
             spawnLayout.addView(spawn76);
 			
-			var spawn77 = new Button(ctx);
+			var spawn77 = new Button(MainActivity);
             spawn77.setText("Spawn Husk");            
             spawn77.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8347,7 +8366,7 @@ var spawn70 = new Button(ctx);
             }));
             spawnLayout.addView(spawn77);
 
-            spawn = new PopupWindow(spawnLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
+            spawn = new PopupWindow(spawnLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)spawn.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
       if(default1==false)spawn.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
@@ -8355,16 +8374,16 @@ var spawn70 = new Button(ctx);
       bg.setStroke(10,Color.BLACK);
 spawnLayout1.setBackgroundDrawable(bg);
 spawnLayout1.setPadding(20,0,20,0);
-            spawn.showAtLocation(ctx.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            spawn.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(ctx, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
             }
     }}));
 }
 		
-var speed = new android.widget.Button(ctx);
+var speed = new android.widget.Button(MainActivity);
 speed.setText("Speed menu");
-speed.setTextColor(GUIName);
+speed.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")speed.setText("Schnelligkeits menu");
 if(mcpetheme==true)speed.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 speed.setOnClickListener(new android.view.View.OnClickListener() {
@@ -8376,17 +8395,17 @@ speed.setOnClickListener(new android.view.View.OnClickListener() {
 		menuLayout.addView(speed);
 		
 		function speed_menu(){
-ctx.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
-            var speedLayout = new LinearLayout(ctx);
-            var speedScroll = new ScrollView(ctx);
-            var speedLayout1 = new LinearLayout(ctx);
+            var speedLayout = new LinearLayout(MainActivity);
+            var speedScroll = new ScrollView(MainActivity);
+            var speedLayout1 = new LinearLayout(MainActivity);
             speedLayout.setOrientation(1);
             speedLayout1.setOrientation(1);
             speedScroll.addView(speedLayout);
             speedLayout1.addView(speedScroll);
             
-            var exit = new android.widget.Button(ctx);
+            var exit = new android.widget.Button(MainActivity);
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -8396,7 +8415,7 @@ ctx.runOnUiThread(new Runnable({ run: function(){
 		});
 		speedLayout.addView(exit);
 		
-		var d1 = new Button(ctx);
+		var d1 = new Button(MainActivity);
             d1.setText("Normal speed");       
             d1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8405,7 +8424,7 @@ ctx.runOnUiThread(new Runnable({ run: function(){
             }));
             speedLayout.addView(d1);
 			
-			var d0 = new Button(ctx);
+			var d0 = new Button(MainActivity);
             d0.setText("Speed 0%");       
             d0.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8414,7 +8433,7 @@ ctx.runOnUiThread(new Runnable({ run: function(){
             }));
             speedLayout.addView(d0);
             
-            var d2 = new Button(ctx);
+            var d2 = new Button(MainActivity);
             d2.setText("Speed 5%");       
             d2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8423,7 +8442,7 @@ ctx.runOnUiThread(new Runnable({ run: function(){
             }));
             speedLayout.addView(d2);
             
-            var d3 = new Button(ctx);
+            var d3 = new Button(MainActivity);
             d3.setText("Speed 10%");       
             d3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8432,7 +8451,7 @@ ctx.runOnUiThread(new Runnable({ run: function(){
             }));
             speedLayout.addView(d3);
             
-            var d4 = new Button(ctx);
+            var d4 = new Button(MainActivity);
             d4.setText("Speed 15%");       
             d4.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8441,7 +8460,7 @@ ctx.runOnUiThread(new Runnable({ run: function(){
             }));
             speedLayout.addView(d4);
             
-            var d5 = new Button(ctx);
+            var d5 = new Button(MainActivity);
             d5.setText("Speed 20%");       
             d5.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8450,7 +8469,7 @@ ctx.runOnUiThread(new Runnable({ run: function(){
             }));
             speedLayout.addView(d5);
             
-            var d6 = new Button(ctx);
+            var d6 = new Button(MainActivity);
             d6.setText("Speed 25%");       
             d6.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8459,7 +8478,7 @@ ctx.runOnUiThread(new Runnable({ run: function(){
             }));
             speedLayout.addView(d6);
             
-            var d7 = new Button(ctx);
+            var d7 = new Button(MainActivity);
             d7.setText("Speed 30%");       
             d7.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8468,7 +8487,7 @@ ctx.runOnUiThread(new Runnable({ run: function(){
             }));
             speedLayout.addView(d7);
             
-            var d8 = new Button(ctx);
+            var d8 = new Button(MainActivity);
             d8.setText("Speed 35%");       
             d8.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8477,7 +8496,7 @@ ctx.runOnUiThread(new Runnable({ run: function(){
             }));
             speedLayout.addView(d8);
             
-            var d9 = new Button(ctx);
+            var d9 = new Button(MainActivity);
             d9.setText("Speed 40%");       
             d9.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8486,7 +8505,7 @@ ctx.runOnUiThread(new Runnable({ run: function(){
             }));
             speedLayout.addView(d9);
 
-var d10 = new Button(ctx);
+var d10 = new Button(MainActivity);
             d10.setText("Speed 45%");       
             d10.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8495,7 +8514,7 @@ var d10 = new Button(ctx);
             }));
             speedLayout.addView(d10);
 
-var d11 = new Button(ctx);
+var d11 = new Button(MainActivity);
             d11.setText("Speed 50%");       
             d11.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8504,7 +8523,7 @@ var d11 = new Button(ctx);
             }));
             speedLayout.addView(d11);
 
-var d12 = new Button(ctx);
+var d12 = new Button(MainActivity);
             d12.setText("Speed 55%");       
             d12.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8513,7 +8532,7 @@ var d12 = new Button(ctx);
             }));
             speedLayout.addView(d12);
 
-var d13 = new Button(ctx);
+var d13 = new Button(MainActivity);
             d13.setText("Speed 60%");       
             d13.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8522,7 +8541,7 @@ var d13 = new Button(ctx);
             }));
             speedLayout.addView(d13);
 
-var d14 = new Button(ctx);
+var d14 = new Button(MainActivity);
             d14.setText("Speed 65%");       
             d14.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8531,7 +8550,7 @@ var d14 = new Button(ctx);
             }));
             speedLayout.addView(d14);
 
-var d15 = new Button(ctx);
+var d15 = new Button(MainActivity);
             d15.setText("Speed 70%");       
             d15.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8540,7 +8559,7 @@ var d15 = new Button(ctx);
             }));
             speedLayout.addView(d15);
 
-var d16 = new Button(ctx);
+var d16 = new Button(MainActivity);
             d16.setText("Speed 75%");       
             d16.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8549,7 +8568,7 @@ var d16 = new Button(ctx);
             }));
             speedLayout.addView(d16);
 
-var d17 = new Button(ctx);
+var d17 = new Button(MainActivity);
             d17.setText("Speed 80%");       
             d17.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8558,7 +8577,7 @@ var d17 = new Button(ctx);
             }));
             speedLayout.addView(d17);
 
-var d18 = new Button(ctx);
+var d18 = new Button(MainActivity);
             d18.setText("Speed 85%");       
             d18.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8567,7 +8586,7 @@ var d18 = new Button(ctx);
             }));
             speedLayout.addView(d18);
 
-var d19 = new Button(ctx);
+var d19 = new Button(MainActivity);
             d19.setText("Speed 90%");       
             d19.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8576,7 +8595,7 @@ var d19 = new Button(ctx);
             }));
             speedLayout.addView(d19);
 
-var d20 = new Button(ctx);
+var d20 = new Button(MainActivity);
             d20.setText("Speed 95%");       
             d20.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8585,7 +8604,7 @@ var d20 = new Button(ctx);
             }));
             speedLayout.addView(d20);
 
-var d21 = new Button(ctx);
+var d21 = new Button(MainActivity);
             d21.setText("Speed 100%");       
             d21.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8594,7 +8613,7 @@ var d21 = new Button(ctx);
             }));
             speedLayout.addView(d21);
 			
-			var d22 = new Button(ctx);
+			var d22 = new Button(MainActivity);
             d22.setText("Custom speed");        
             d22.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){ 
@@ -8605,14 +8624,14 @@ newspeed();
             speedLayout.addView(d22);
 
 function newspeed() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer8 = new android.widget.LinearLayout(ctx);
-var vspee = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer8 = new android.widget.LinearLayout(MainActivity);
+var vspee = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter custom speed");
 Dialog.setContentView(Layer8);
@@ -8637,7 +8656,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The set speed Dialog Is Malfunctioning:"+e);
 }
@@ -8648,7 +8667,7 @@ function setspeed(){
 ModPE.setGameSpeed(nspee);
 }
 
-            speed = new PopupWindow(speedLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
+            speed = new PopupWindow(speedLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)speed.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
       if(default1==false)speed.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
@@ -8656,16 +8675,16 @@ ModPE.setGameSpeed(nspee);
       bg.setStroke(10,Color.BLACK);
 speedLayout1.setBackgroundDrawable(bg);
 speedLayout1.setPadding(20,0,20,0);
-            speed.showAtLocation(ctx.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            speed.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(ctx, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
             }
     }}));
 }
 		
-var teleport = new android.widget.Button(ctx);
+var teleport = new android.widget.Button(MainActivity);
 teleport.setText("Teleport menu");
-teleport.setTextColor(GUIName);
+teleport.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")teleport.setText("Teleportierungs menu");
 if(mcpetheme==true)teleport.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 teleport.setOnClickListener(new android.view.View.OnClickListener() {
@@ -8677,17 +8696,17 @@ teleport.setOnClickListener(new android.view.View.OnClickListener() {
 		menuLayout.addView(teleport);
 		
 		function teleport_menu(){
-ctx.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
-            var teleportLayout = new LinearLayout(ctx);
-            var teleportScroll = new ScrollView(ctx);
-            var teleportLayout1 = new LinearLayout(ctx);
+            var teleportLayout = new LinearLayout(MainActivity);
+            var teleportScroll = new ScrollView(MainActivity);
+            var teleportLayout1 = new LinearLayout(MainActivity);
             teleportLayout.setOrientation(1);
             teleportLayout1.setOrientation(1);
             teleportScroll.addView(teleportLayout);
             teleportLayout1.addView(teleportScroll);
             
-            var exit = new android.widget.Button(ctx);
+            var exit = new android.widget.Button(MainActivity);
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -8697,7 +8716,7 @@ ctx.runOnUiThread(new Runnable({ run: function(){
 		});
 		teleportLayout.addView(exit);
 		
-		var button = new android.widget.Button(ctx);
+		var button = new android.widget.Button(MainActivity);
             button.setText("Select coords");
             button.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8707,7 +8726,7 @@ tmenu.dismiss();
             }));
             teleportLayout.addView(button);
 
-var Uspawn = new Button(ctx);
+var Uspawn = new Button(MainActivity);
             Uspawn.setText("Set home");       
             Uspawn.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8721,7 +8740,7 @@ clientMessage(client + "§7Home set to: " + Math.round(xhome) + ", " + Math.roun
             }));
             teleportLayout.addView(Uspawn);
 
-var Rspawn = new Button(ctx);
+var Rspawn = new Button(MainActivity);
             Rspawn.setText("Return to home");       
             Rspawn.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8732,7 +8751,7 @@ clientMessage(client + "§7Returning to your saved home");
             }));
             teleportLayout.addView(Rspawn);
 
-var sspawn = new Button(ctx);
+var sspawn = new Button(MainActivity);
             sspawn.setText("Set spawn");       
             sspawn.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8742,7 +8761,7 @@ clientMessage(client + "§7Spawn set to " + Math.round(getPlayerX()) + ", " + Ma
             }));
             teleportLayout.addView(sspawn);
 			
-			var randomtp = new Button(ctx);
+			var randomtp = new Button(MainActivity);
             randomtp.setText("Random TP");       
             randomtp.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8752,7 +8771,7 @@ clientMessage(client + "Woah!");
             }));
             teleportLayout.addView(randomtp);
 			
-			var at = new android.widget.Button(ctx);
+			var at = new android.widget.Button(MainActivity);
       at.setText("Tap teleport: "+(taptp?"on":"off"));
 		at.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -8770,14 +8789,14 @@ taptp = false;
 		});
 		teleportLayout.addView(at);
 			
-			var et = new android.widget.TextView(ctx);
+			var et = new android.widget.TextView(MainActivity);
 			et.setGravity(android.view.Gravity.CENTER);
 		et.setText("You may crash while tping because blocks do not load correctly.");
        et.setTextColor(Color.RED);
 		et.setTextSize(20);
 		teleportLayout.addView(et);
 
-            teleport = new PopupWindow(teleportLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
+            teleport = new PopupWindow(teleportLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)teleport.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
       if(default1==false)teleport.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
@@ -8785,24 +8804,24 @@ taptp = false;
       bg.setStroke(10,Color.BLACK);
 teleportLayout1.setBackgroundDrawable(bg);
 teleportLayout1.setPadding(20,0,20,0);
-            teleport.showAtLocation(ctx.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            teleport.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(ctx, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
             }
     }}));
 }
 
 function Tsele() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var X = new android.widget.EditText(ctx);
-var Y = new android.widget.EditText(ctx);
-var Z = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var X = new android.widget.EditText(MainActivity);
+var Y = new android.widget.EditText(MainActivity);
+var Z = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Type coords to teleport");
 Dialog.setContentView(Layer);
@@ -8835,7 +8854,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The Teleport Dialog Is Malfunctioning:"+e);
 }
@@ -8848,9 +8867,9 @@ if(Server.getPort()=="0")setPosition(Player.getEntity(), px, py, pz);
 Server.sendChat("/tp " + Player.getName(Player.getEntity()) + space + px + space + py + space + pz);
 }
 		
-var time = new android.widget.Button(ctx);
+var time = new android.widget.Button(MainActivity);
 time.setText("Time menu");
-time.setTextColor(GUIName);
+time.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")time.setText("Zeit menu");
 if(mcpetheme==true)time.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 time.setOnClickListener(new android.view.View.OnClickListener() {
@@ -8862,17 +8881,17 @@ time.setOnClickListener(new android.view.View.OnClickListener() {
 		menuLayout.addView(time);
 		
 		function time_menu(){
-ctx.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
-            var timeLayout = new LinearLayout(ctx);
-            var timeScroll = new ScrollView(ctx);
-            var timeLayout1 = new LinearLayout(ctx);
+            var timeLayout = new LinearLayout(MainActivity);
+            var timeScroll = new ScrollView(MainActivity);
+            var timeLayout1 = new LinearLayout(MainActivity);
             timeLayout.setOrientation(1);
             timeLayout1.setOrientation(1);
             timeScroll.addView(timeLayout);
             timeLayout1.addView(timeScroll);
             
-            var exit = new android.widget.Button(ctx);
+            var exit = new android.widget.Button(MainActivity);
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -8882,7 +8901,7 @@ ctx.runOnUiThread(new Runnable({ run: function(){
 		});
 		timeLayout.addView(exit);
 		
-		var aa = new android.widget.Button(ctx);
+		var aa = new android.widget.Button(MainActivity);
             aa.setText("Only day: "+(onlyday?"on":"off"));
             aa.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8903,7 +8922,7 @@ onlyday = false;
             }));
             timeLayout.addView(aa);
 
-var aa2 = new android.widget.Button(ctx);
+var aa2 = new android.widget.Button(MainActivity);
             aa2.setText("Only night: "+(onlynight?"on":"off"));
             aa2.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8924,7 +8943,7 @@ onlynight = false;
             }));
             timeLayout.addView(aa2);
 
-var a1 = new Button(ctx);
+var a1 = new Button(MainActivity);
             a1.setText("Time: 6:00am");
             a1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8934,7 +8953,7 @@ Server.sendChat("/time set 0");
             }));
             timeLayout.addView(a1);
 
-var a2 = new Button(ctx);
+var a2 = new Button(MainActivity);
             a2.setText("Time: 7:00am");
             a2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8944,7 +8963,7 @@ Server.sendChat("/time set 1000");
             }));
             timeLayout.addView(a2);
 
-var a3 = new Button(ctx);
+var a3 = new Button(MainActivity);
             a3.setText("Time: 8:00am");
             a3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8954,7 +8973,7 @@ Server.sendChat("/time set 2000");
             }));
             timeLayout.addView(a3);
 
-var a4 = new Button(ctx);
+var a4 = new Button(MainActivity);
             a4.setText("Time: 9:00am");
             a4.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8964,7 +8983,7 @@ Server.sendChat("/time set 3000");
             }));
             timeLayout.addView(a4);
 
-var a5 = new Button(ctx);
+var a5 = new Button(MainActivity);
             a5.setText("Time: 10:00am");
             a5.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8974,7 +8993,7 @@ Server.sendChat("/time set 4000");
             }));
             timeLayout.addView(a5);
 
-var a6 = new Button(ctx);
+var a6 = new Button(MainActivity);
             a6.setText("Time: 11:00am");
             a6.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8984,7 +9003,7 @@ Server.sendChat("/time set 5000");
             }));
             timeLayout.addView(a6);
 
-var a7 = new Button(ctx);
+var a7 = new Button(MainActivity);
             a7.setText("Time: 12:00pm");
             a7.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8994,7 +9013,7 @@ Server.sendChat("/time set 6000");
             }));
             timeLayout.addView(a7);
 
-var a8 = new Button(ctx);
+var a8 = new Button(MainActivity);
             a8.setText("Time: 1:00pm");
             a8.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -9004,7 +9023,7 @@ Server.sendChat("/time set 7000");
             }));
             timeLayout.addView(a8);
 
-var a9 = new Button(ctx);
+var a9 = new Button(MainActivity);
             a9.setText("Time: 2:00pm");
             a9.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -9014,7 +9033,7 @@ Server.sendChat("/time set 8000");
             }));
             timeLayout.addView(a9);
 
-var a10 = new Button(ctx);
+var a10 = new Button(MainActivity);
             a10.setText("Time: 3:00pm");
             a10.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -9024,7 +9043,7 @@ Server.sendChat("/time set 9000");
             }));
             timeLayout.addView(a10);
 
-var a11 = new Button(ctx);
+var a11 = new Button(MainActivity);
             a11.setText("Time: 4:00pm");
             a11.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -9034,7 +9053,7 @@ Server.sendChat("/time set 10000");
             }));
             timeLayout.addView(a11);
 
-var a12 = new Button(ctx);
+var a12 = new Button(MainActivity);
             a12.setText("Time: 5:00pm");
             a12.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -9044,7 +9063,7 @@ Server.sendChat("/time set 11000");
             }));
             timeLayout.addView(a12);
 
-var a13 = new Button(ctx);
+var a13 = new Button(MainActivity);
             a13.setText("Time: 6:00pm");
             a13.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -9054,7 +9073,7 @@ Server.sendChat("/time set 12000");
             }));
             timeLayout.addView(a13);
 
-var a14 = new Button(ctx);
+var a14 = new Button(MainActivity);
             a14.setText("Time: 7:00pm");
             a14.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -9064,7 +9083,7 @@ Server.sendChat("/time set 13000");
             }));
             timeLayout.addView(a14);
 
-var a15 = new Button(ctx);
+var a15 = new Button(MainActivity);
             a15.setText("Time: 8:00pm");
             a15.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -9074,7 +9093,7 @@ Server.sendChat("/time set 14000");
             }));
             timeLayout.addView(a15);
 
-var a16 = new Button(ctx);
+var a16 = new Button(MainActivity);
             a16.setText("Time: 9:00pm");
             a16.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -9084,7 +9103,7 @@ Server.sendChat("/time set 15000");
             }));
             timeLayout.addView(a16);
 
-var a17 = new Button(ctx);
+var a17 = new Button(MainActivity);
             a17.setText("Time: 10:00pm");
             a17.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -9094,7 +9113,7 @@ Server.sendChat("/time set 16000");
             }));
             timeLayout.addView(a17);
 
-var a18 = new Button(ctx);
+var a18 = new Button(MainActivity);
             a18.setText("Time: 11:00pm");
             a18.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -9104,7 +9123,7 @@ Server.sendChat("/time set 17000");
             }));
             timeLayout.addView(a18);
 
-var a19 = new Button(ctx);
+var a19 = new Button(MainActivity);
             a19.setText("Time: 12:00am");
             
             a19.setOnClickListener(new View.OnClickListener({
@@ -9115,7 +9134,7 @@ Server.sendChat("/time set 18000");
             }));
             timeLayout.addView(a19);
 
-var a20 = new Button(ctx);
+var a20 = new Button(MainActivity);
             a20.setText("Time: 1:00am");
             a20.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -9125,7 +9144,7 @@ Server.sendChat("/time set 19000");
             }));
             timeLayout.addView(a20);
 
-var a21 = new Button(ctx);
+var a21 = new Button(MainActivity);
             a21.setText("Time: 2:00am");
             a21.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -9135,7 +9154,7 @@ Server.sendChat("/time set 20000");
             }));
             timeLayout.addView(a21);
 
-var a22 = new Button(ctx);
+var a22 = new Button(MainActivity);
             a22.setText("Time: 3:00am");
             a22.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -9145,7 +9164,7 @@ Server.sendChat("/time set 21000");
             }));
             timeLayout.addView(a22);
 
-var a23 = new Button(ctx);
+var a23 = new Button(MainActivity);
             a23.setText("Time: 4:00am");
             a23.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -9155,7 +9174,7 @@ Server.sendChat("/time set 22000");
             }));
             timeLayout.addView(a23);
 
-var a24 = new Button(ctx);
+var a24 = new Button(MainActivity);
             a24.setText("Time: 5:00am");          
             a24.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -9165,7 +9184,7 @@ Server.sendChat("/time set 23000");
             }));
             timeLayout.addView(a24);
 
-            time = new PopupWindow(timeLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
+            time = new PopupWindow(timeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)time.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
       if(default1==false)time.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
@@ -9173,16 +9192,16 @@ Server.sendChat("/time set 23000");
       bg.setStroke(10,Color.BLACK);
 timeLayout1.setBackgroundDrawable(bg);
 timeLayout1.setPadding(20,0,20,0);
-            time.showAtLocation(ctx.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            time.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(ctx, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
             }
     }}));
 }
 		
-var weather = new android.widget.Button(ctx);
+var weather = new android.widget.Button(MainActivity);
 weather.setText("Weather menu");
-weather.setTextColor(GUIName);
+weather.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")weather.setText("Wetter menu");
 if(mcpetheme==true)weather.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 weather.setOnClickListener(new android.view.View.OnClickListener() {
@@ -9194,17 +9213,17 @@ weather.setOnClickListener(new android.view.View.OnClickListener() {
 		menuLayout.addView(weather);
 		
 		function weather_menu(){
-ctx.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
-            var weatherLayout = new LinearLayout(ctx);
-            var weatherScroll = new ScrollView(ctx);
-            var weatherLayout1 = new LinearLayout(ctx);
+            var weatherLayout = new LinearLayout(MainActivity);
+            var weatherScroll = new ScrollView(MainActivity);
+            var weatherLayout1 = new LinearLayout(MainActivity);
             weatherLayout.setOrientation(1);
             weatherLayout1.setOrientation(1);
             weatherScroll.addView(weatherLayout);
             weatherLayout1.addView(weatherScroll);
             
-            var exit = new android.widget.Button(ctx);
+            var exit = new android.widget.Button(MainActivity);
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -9214,7 +9233,7 @@ ctx.runOnUiThread(new Runnable({ run: function(){
 		});
 		weatherLayout.addView(exit);
 		
-		var button = new android.widget.Button(ctx);
+		var button = new android.widget.Button(MainActivity);
             button.setText("Custom wether");
             button.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9224,7 +9243,7 @@ weather.dismiss();
             }));
             weatherLayout.addView(button);
 			
-	    var button3 = new android.widget.Button(ctx);
+	    var button3 = new android.widget.Button(MainActivity);
             button3.setText("Rain");
             button3.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9234,7 +9253,7 @@ Server.sendChat("/weather rain");
             }));
             weatherLayout.addView(button3);
 			
-			var button4 = new android.widget.Button(ctx);
+			var button4 = new android.widget.Button(MainActivity);
             button4.setText("Lightning");
             button4.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9244,7 +9263,7 @@ Server.sendChat("/weather rain");
             }));
             weatherLayout.addView(button4);
 
-var button2 = new android.widget.Button(ctx);
+var button2 = new android.widget.Button(MainActivity);
             button2.setText("Clear weather");
             button2.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9255,7 +9274,7 @@ Server.sendChat("/weather clear");
             }));
             weatherLayout.addView(button2);
 
-            weather = new PopupWindow(weatherLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, ctx.getWindowManager().getDefaultDisplay().getHeight());
+            weather = new PopupWindow(weatherLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)weather.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
       if(default1==false)weather.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
@@ -9263,23 +9282,23 @@ Server.sendChat("/weather clear");
       bg.setStroke(10,Color.BLACK);
 weatherLayout1.setBackgroundDrawable(bg);
 weatherLayout1.setPadding(20,0,20,0);
-            weather.showAtLocation(ctx.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            weather.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(ctx, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
             }
     }}));
 }
 
 function setDialogW() {
-ctx.runOnUiThread(new java.lang.Runnable(){
+MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var w = new android.widget.EditText(ctx);
-var w2 = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Layer = new android.widget.LinearLayout(MainActivity);
+var w = new android.widget.EditText(MainActivity);
+var w2 = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Set Weather");
 Dialog.setContentView(Layer);
@@ -9308,7 +9327,7 @@ showMenuBtn();
 
 GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The WS Dialog Is Malfunctioning:"+e);
 }
@@ -9321,7 +9340,7 @@ Level.setLightningLevel(v2);
 Server.sendChat("/weather rain");
 }
             
-            menu = new PopupWindow(menuLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
+            menu = new PopupWindow(menuLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
            if(default1==true)menu.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
            if(mcpetheme==true)menu.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#94857f")));
 		   if(default1==false)menu.setBackgroundDrawable(new ColorDrawable(GUIColor));
@@ -9336,7 +9355,7 @@ menuLayout1.setPadding(20,0,20,0);
             }
     }}));
 }
-
+        
 function serverMessageReceiveHook(str) {
 	ctx.runOnUiThread(new java.lang.Runnable(){
 run: function(){
