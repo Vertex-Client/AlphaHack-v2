@@ -121,6 +121,8 @@ var changeSpeed = false;
 var brightness = false;
 var lowhealth = false;
 var fasteat = false;
+var showActive = false;
+var showActive2 = false;
 
 var lightning = false;
 var primedtnt = false;
@@ -441,6 +443,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
         menuBtn.setText("");
         menuBtn.setOnClickListener(new View.OnClickListener({
             onClick: function(viewarg){
+        if(showActive==true)active.dismiss();
 mainMenu();
 GUI.dismiss();
 if(getLanguage=="en_US")Toast.makeText(MainActivity, "Scroll down", 1).show();
@@ -503,6 +506,7 @@ menuLayout.addView(line0);
             exit.setTextColor(Color.RED);
             exit.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
+        if(showActive2==true)activeView();
 menu.dismiss(); 
 showMenuBtn(); 
 if(getLanguage=="en_US")Toast.makeText(MainActivity, "Closed successfully", 1).show();
@@ -510,6 +514,53 @@ if(getLanguage=="en_US")Toast.makeText(MainActivity, "Closed successfully", 1).s
                 }
             }));
             menuLayout.addView(exit);
+            
+        function activeView(){
+MainActivity.runOnUiThread(new Runnable({ run: function(){
+        try{
+            var activeLayout = new LinearLayout(MainActivity);
+            
+            var activeScroll = new ScrollView(MainActivity);
+            
+            var activeLayout1 = new LinearLayout(MainActivity);
+            activeLayout.setOrientation(1);
+            activeLayout1.setOrientation(1);
+            
+            activeScroll.addView(activeLayout);
+            activeLayout1.addView(activeScroll);
+            
+			if(aimaura==true)activeView.addView(a1);
+			
+			var a1 = new TextView(MainActivity);
+            a1.setTextSize(5);
+            a1.setText("Aim aura");
+			if(aimaura==false)a1.setTextColor(Color.RED);
+            if(aimaura==true)a1.setTextColor(Color.GREEN);
+			a1.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             a1.setTextColor(Color.RED);
+			 var aimaura = false;
+			 var aimbot = false;
+			 var aimed = false;
+			}
+		});
+
+active = new PopupWindow(activeLayout1, dip2px(10), dip2px(10));
+
+active = new PopupWindow(activeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/3, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1.3);
+	  var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(Color.TRANSPARENT);
+      bg.setStroke(10,Color.BLACK);
+activeLayout1.setBackgroundDrawable(bg);
+activeLayout1.setPadding(20,0,20,0);
+active.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            active.showAtLocation(MainActivity.getWindow().getDecorView(), Gravity.RIGHT | Gravity.RIGHT, 0, 0);
+            }catch(error){
+                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
+            }
+    }}));
+}
+if(showActive==true)activeView();
             
         var line1 = new android.widget.LinearLayout(MainActivity);
 	    line1.setOrientation(0);
@@ -975,6 +1026,28 @@ Toast.makeText(MainActivity, "Please avoid ads & adjust your zoom", 1).show();
 			}
 		});
 		miscLayout.addView(aniview);
+		
+	var activeMods = new Button(MainActivity);
+activeMods.setText("Active mods dialog");
+activeMods.setTextColor(Color.RED);
+if(showActive==true)activeMods.setTextColor(Color.GREEN);
+            activeMods.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             showActive?showActive=false:showActive=true;
+activeMods.setText("Active mods dialog");
+if(showActive == true){
+activeMods.setTextColor(Color.GREEN);
+showActive2 = true;
+showActive = true;
+}
+if(showActive == false){
+activeMods.setTextColor(Color.RED);
+showActive2 = false;
+showActive = false;
+}
+                }
+            }));
+            miscLayout.addView(activeMods);
 		
 		function animeView(){
 MainActivity.runOnUiThread(new Runnable({ run: function(){
