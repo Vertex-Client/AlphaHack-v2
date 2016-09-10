@@ -533,11 +533,11 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             activeScroll.addView(activeLayout);
             activeLayout1.addView(activeScroll);
 			
-		var a1 = new TextView(MainActivity);
+	    var a1 = new TextView(MainActivity);
             a1.setTextSize(10);
-            if(aimaura==true)a1.setText("Aim aura");
+            if(aimaura==true)a1.setText("AimAura");
             if(aimaura==false)a1.setText("");
-			if(aimaura==false)a1.setTextColor(Color.RED);
+	    if(aimaura==false)a1.setTextColor(Color.RED);
             if(aimaura==true)a1.setTextColor(Color.GREEN);
 			a1.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -551,14 +551,9 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 
 active = new PopupWindow(activeLayout1, dip2px(10), dip2px(10));
 
-active = new PopupWindow(activeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/4, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1.3);
-	  var bg = new android.graphics.drawable.GradientDrawable();
-      bg.setColor(Color.TRANSPARENT);
-      bg.setStroke(10,Color.BLACK);
-activeLayout1.setBackgroundDrawable(bg);
-activeLayout1.setPadding(20,0,20,0);
+active = new PopupWindow(activeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/9, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/3.5);
 active.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-            active.showAtLocation(MainActivity.getWindow().getDecorView(), Gravity.RIGHT | Gravity.RIGHT, 0, 0);
+            active.showAtLocation(MainActivity.getWindow().getDecorView(), Gravity.LEFT | Gravity.TOP, 0, 120);
             }catch(error){
                 Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
             }
