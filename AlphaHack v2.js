@@ -1811,13 +1811,8 @@ if(xray==true)button2.setTextColor(Color.GREEN);
 button2.setText("X-Ray");
 if(xray == true){
 button2.setTextColor(Color.GREEN);
-clientMessage(client + "You may crash!\nchange on/off fancy graphics for better view.");
-Block.setRenderLayer(1,1);
-Block.setRenderLayer(2,1);
-Block.setRenderLayer(3,1);
-Block.setRenderLayer(12,1);
-Block.setRenderLayer(24,1);
-Block.setRenderLayer(78,1);
+clientMessage(client + "You may crash!\nchange on/off fancy graphics for better view.\nAlso try relogging from the world.");
+
 xray = true;
 }
 if(xray == false){
@@ -10128,6 +10123,7 @@ if(changeSpeed==true)changeSpeedOnBlock();
 if(brightness==true)bright();
 if(lowhealth==true)spawnIfLowHealth();
 if(fasteat==true)fastEat();
+if(xray==true)xrayStart();
 }
 
 function devpardon() {
@@ -10428,6 +10424,35 @@ function bright(){
     var i = 0;
     i++
     Block.setLightLevel(i, 1000);
+}
+
+function xrayRepeat(){
+	Block.setLightLevel(14, 1000);
+	Block.setLightLevel(15, 1000);
+	Block.setLightLevel(16, 1000);
+	Block.setLightLevel(21, 1000);
+	Block.setLightLevel(22, 1000);
+	Block.setLightLevel(49, 1000);
+	Block.setLightLevel(52, 1000);
+	Block.setLightLevel(54, 1000);
+	Block.setLightLevel(56, 1000);
+	Block.setLightLevel(57, 1000);
+	Block.setLightLevel(61, 1000);
+	Block.setLightLevel(63, 1000);
+	Block.setLightLevel(73, 1000);
+	Block.setLightLevel(129, 1000);
+	Block.setLightLevel(130, 1000);
+	Block.setLightLevel(133, 1000);
+	Block.setLightLevel(152, 1000);
+	Block.setLightLevel(153, 1000);
+	Block.setLightLevel(154, 1000);
+        Block.setLightLevel(232, 1000);
+Block.setRenderLayer(1,1);
+Block.setRenderLayer(2,1);
+Block.setRenderLayer(3,1);
+Block.setRenderLayer(12,1);
+Block.setRenderLayer(24,1);
+Block.setRenderLayer(78,1);
 }
 
 function spawnIfLowHealth(){
