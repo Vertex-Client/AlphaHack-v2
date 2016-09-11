@@ -6,10 +6,7 @@ A͎̝͎͎̔͒̄ͯͤ́̍̚_͇̦̦̭ͥͪl̮̗̙̒̾_̣̭̠ͮͬp̥͚̯ͥ̉͒̆͋_̌
 </>--------------------</>
 [Free to use mod menu for MCPE under MIT license];
 </>--------------------</>
-[Codes αre free to copy BUT NOT FOR COPY:
-the menu itself & other developers codes in this script.
-Pleαse contαct the developers of eαch code for permission.
-Other codes NOT COPYαBLE: αuto spαm & αnti spαm bypαss, BL server enαbler code.];
+[Pleαse contαct the developers of eαch code for permission to copy.];
 </>--------------------</>
 [contributors: Godsoft029, Johnmαcrocrαft, αJ170, Peαcestorm(αgαmeR), Firepro9978, αPRIC0CKS, Vertex client teαm];
 </>--------------------</>
@@ -61,6 +58,9 @@ var chestTracersParticle = "on";
 var playerTracersRange = 10;
 var playerTracersGroundMode = "on";
 var playerTracersParticle = "on";
+var oreTracersRange = 10;
+var oreTracersGroundMode = "on";
+var oreTracersParticle = "on";
 var offtime = 0;
 var horseheart = "";
 var newage = "";
