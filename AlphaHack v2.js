@@ -122,8 +122,10 @@ var changeSpeed = false;
 var brightness = false;
 var lowhealth = false;
 var fasteat = false;
+
 var showActive = false;
 var showActive2 = false;
+var betaTestMenu = false;
 
 var lightning = false;
 var primedtnt = false;
@@ -444,7 +446,6 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
         menuBtn.setText("");
         menuBtn.setOnClickListener(new View.OnClickListener({
             onClick: function(viewarg){
-        activeView.dismiss();
         active.dismiss();
 mainMenu();
 GUI.dismiss();
@@ -3813,25 +3814,7 @@ print("The new Dialog Is Malfunctioning:"+e);
 }});
 }
 
-var laura = new android.widget.Button(MainActivity);
-      laura.setText("LightningAura: "+(lightningaura?"on":"off"));
-		laura.setOnClickListener(new android.view.View.OnClickListener() {
-			onClick: function(v){
-			lightningaura?lightningaura=false:lightningaura=true;
-laura.setText("LightningAura: "+(lightningaura?"on":"off"));
-if(lightningaura == true){
-clientMessage(client + "§7LightningAura is on");
 
-lightningaura = true;
-}
-if(lightningaura == false){
-clientMessage(client + "§7LightningAura is off");
-
-lightningaura = false;
- }
-			}
-		});
-		modLayout.addView(laura);
 
             mod = new PopupWindow(modLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)mod.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -7050,8 +7033,8 @@ var mm = new android.widget.Button(MainActivity);
                 onClick: function(viewarg){
 Entity.setCollisionSize(Player.getEntity(), 0.2, 0.2, 0.2);
 
-Entity.setRenderType(Player.getEntity(), EntityRenderType.bat);
-			Entity.setMobSkin(Player.getEntity(),"mob/bat.png");
+Entity.setRenderType(Player.getEntity(), 10);
+/*Entity.setMobSkin(Player.getEntity(),"mob/bat.png");*/
                 }
             }));
             morphLayout.addView(mm);
@@ -7061,8 +7044,8 @@ var mm0 = new android.widget.Button(MainActivity);
             mm0.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);
-Entity.setRenderType(Player.getEntity(), EntityRenderType.blaze);
-			Entity.setMobSkin(Player.getEntity(),"mob/blaze.png");
+Entity.setRenderType(Player.getEntity(), 18);
+/*Entity.setMobSkin(Player.getEntity(),"mob/blaze.png");*/
                 }
             }));
             morphLayout.addView(mm0);
@@ -7072,9 +7055,8 @@ var mm2 = new android.widget.Button(MainActivity);
             mm2.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 Entity.setCollisionSize(Player.getEntity(), 0.4, 0.4, 0.4);
-
-Entity.setRenderType(Player.getEntity(), EntityRenderType.chicken);
-			Entity.setMobSkin(Player.getEntity(),"mob/chicken.png");
+Entity.setRenderType(Player.getEntity(), 5);
+/*Entity.setMobSkin(Player.getEntity(),"mob/chicken.png");*/
                 }
             }));
             morphLayout.addView(mm2);
@@ -7084,9 +7066,8 @@ var mm3 = new android.widget.Button(MainActivity);
             mm3.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 Entity.setCollisionSize(Player.getEntity(), 0.8, 1.7, 0.8);
-
-Entity.setRenderType(Player.getEntity(), EntityRenderType.cow);
-			Entity.setMobSkin(Player.getEntity(),"mob/cow.png");
+Entity.setRenderType(Player.getEntity(), 6);
+/*Entity.setMobSkin(Player.getEntity(),"mob/cow.png");*/
                 }
             }));
             morphLayout.addView(mm3);
@@ -7096,9 +7077,8 @@ var mm4 = new android.widget.Button(MainActivity);
             mm4.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);
-
-Entity.setRenderType(Player.getEntity(), EntityRenderType.creeper);
-			Entity.setMobSkin(Player.getEntity(),"mob/creeper.png");
+Entity.setRenderType(Player.getEntity(), 22);
+/*Entity.setMobSkin(Player.getEntity(),"mob/creeper.png");*/
                 }
             }));
             morphLayout.addView(mm4);
@@ -7108,8 +7088,8 @@ var mm5 = new android.widget.Button(MainActivity);
             mm5.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 Entity.setCollisionSize(Player.getEntity(), 0.7, 3, 0.7);
-Entity.setRenderType(Player.getEntity(), EntityRenderType.enderman);
-			Entity.setMobSkin(Player.getEntity(),"mob/enderman.tga");
+Entity.setRenderType(Player.getEntity(), 24);
+/*Entity.setMobSkin(Player.getEntity(),"mob/enderman.tga");*/
                 }
             }));
             morphLayout.addView(mm5);
@@ -7119,9 +7099,8 @@ var mm6 = new android.widget.Button(MainActivity);
             mm6.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 Entity.setCollisionSize(Player.getEntity(), 4, 4, 4);
-
-Entity.setRenderType(Player.getEntity(), EntityRenderType.ghast);
-			Entity.setMobSkin(Player.getEntity(),"mob/ghast.png");
+Entity.setRenderType(Player.getEntity(), 17);
+/*Entity.setMobSkin(Player.getEntity(),"mob/ghast.png");*/
                 }
             }));
             morphLayout.addView(mm6);
@@ -7131,8 +7110,8 @@ var mm7 = new android.widget.Button(MainActivity);
             mm7.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 Entity.setCollisionSize(Player.getEntity(), 1, 3, 1);
-Entity.setRenderType(Player.getEntity(), EntityRenderType.ironGolem);
-			Entity.setMobSkin(Player.getEntity(),"mob/iron_golem.png");
+Entity.setRenderType(Player.getEntity(), 42);
+/*Entity.setMobSkin(Player.getEntity(),"mob/iron_golem.png");*/
                 }
             }));
             morphLayout.addView(mm7);
@@ -7142,9 +7121,8 @@ var mm8 = new android.widget.Button(MainActivity);
             mm8.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 Entity.setCollisionSize(Player.getEntity(), 2, 2, 2);
-
-Entity.setRenderType(Player.getEntity(), EntityRenderType.lavaSlime);
-			Entity.setMobSkin(Player.getEntity(),"mob/magmacube.png");
+Entity.setRenderType(Player.getEntity(), 16);
+/*Entity.setMobSkin(Player.getEntity(),"mob/magmacube.png");*/
                 }
             }));
             morphLayout.addView(mm8);
@@ -7154,8 +7132,8 @@ var mm9 = new android.widget.Button(MainActivity);
             mm9.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 Entity.setCollisionSize(Player.getEntity(), 0.5, 0.5, 0.5);
-Entity.setRenderType(Player.getEntity(), EntityRenderType.ocelot);
-			Entity.setMobSkin(Player.getEntity(),"mob/cat/ocelot.png");
+Entity.setRenderType(Player.getEntity(), 43);
+/*Entity.setMobSkin(Player.getEntity(),"mob/cat/ocelot.png");*/
                 }
             }));
             morphLayout.addView(mm9);
@@ -7165,10 +7143,8 @@ var mm10 = new android.widget.Button(MainActivity);
             mm10.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 Entity.setCollisionSize(Player.getEntity(), 0.8, 1, 0.8);
-
-POTION()
-Entity.setRenderType(Player.getEntity(), EntityRenderType.pig);
-			Entity.setMobSkin(Player.getEntity(),"mob/pig.png");
+Entity.setRenderType(Player.getEntity(), 8);
+/*Entity.setMobSkin(Player.getEntity(),"mob/pig.png");*/
                 }
             }));
             morphLayout.addView(mm10);
@@ -7178,9 +7154,8 @@ var mm11 = new android.widget.Button(MainActivity);
             mm11.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 Entity.setCollisionSize(Player.getEntity(), 0.8, 1.7, 0.8);
-
-Entity.setRenderType(Player.getEntity(), EntityRenderType.sheep);
-			Entity.setMobSkin(Player.getEntity(),"mob/sheep.tga");
+Entity.setRenderType(Player.getEntity(), 9);
+/*Entity.setMobSkin(Player.getEntity(),"mob/sheep.tga");*/
                 }
             }));
             morphLayout.addView(mm11);
@@ -7190,9 +7165,8 @@ var mm12 = new android.widget.Button(MainActivity);
             mm12.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 Entity.setCollisionSize(Player.getEntity(), 0.3, 0.4, 0.3);
-
-Entity.setRenderType(Player.getEntity(), EntityRenderType.silverfish);
-			Entity.setMobSkin(Player.getEntity(),"mob/silverfish.png");
+Entity.setRenderType(Player.getEntity(), 21);
+/*Entity.setMobSkin(Player.getEntity(),"mob/silverfish.png");*/
                 }
             }));
             morphLayout.addView(mm12);
@@ -7202,9 +7176,8 @@ var mm13 = new android.widget.Button(MainActivity);
             mm13.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);
-
-Entity.setRenderType(Player.getEntity(), EntityRenderType.skeleton);
-			Entity.setMobSkin(Player.getEntity(),"mob/skeleton.png");
+Entity.setRenderType(Player.getEntity(), 19);
+/*Entity.setMobSkin(Player.getEntity(),"mob/skeleton.png");*/
                 }
             }));
             morphLayout.addView(mm13);
@@ -7214,9 +7187,8 @@ var mm14 = new android.widget.Button(MainActivity);
             mm14.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 Entity.setCollisionSize(Player.getEntity(), 2, 2, 2);
-
-Entity.setRenderType(Player.getEntity(), EntityRenderType.slime);
-			Entity.setMobSkin(Player.getEntity(),"mob/slime.png");
+Entity.setRenderType(Player.getEntity(), 23);
+/*Entity.setMobSkin(Player.getEntity(),"mob/slime.png");*/
                 }
             }));
             morphLayout.addView(mm14);
@@ -7226,8 +7198,8 @@ var mm15 = new android.widget.Button(MainActivity);
             mm15.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 Entity.setCollisionSize(Player.getEntity(), 0.7, 2, 0.7);
-Entity.setRenderType(Player.getEntity(), EntityRenderType.snowGolem);
-			Entity.setMobSkin(Player.getEntity(),"mob/snow_golem.png");
+Entity.setRenderType(Player.getEntity(), 44);
+/*Entity.setMobSkin(Player.getEntity(),"mob/snow_golem.png");*/
                 }
             }));
             morphLayout.addView(mm15);
@@ -7237,9 +7209,8 @@ var mm16 = new android.widget.Button(MainActivity);
             mm16.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 Entity.setCollisionSize(Player.getEntity(), 1, 0.4, 1);
-
-Entity.setRenderType(Player.getEntity(), EntityRenderType.spider);
-			Entity.setMobSkin(Player.getEntity(),"mob/spider.tga");
+Entity.setRenderType(Player.getEntity(), 20);
+/*Entity.setMobSkin(Player.getEntity(),"mob/spider.tga");*/
                 }
             }));
             morphLayout.addView(mm16);
@@ -7249,9 +7220,8 @@ var mm17 = new android.widget.Button(MainActivity);
             mm17.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 Entity.setCollisionSize(Player.getEntity(), 0.5, 0.5, 0.5);
-
-Entity.setRenderType(Player.getEntity(), EntityRenderType.squid);
-			Entity.setMobSkin(Player.getEntity(),"mob/squid.png");
+Entity.setRenderType(Player.getEntity(), 36);
+/*Entity.setMobSkin(Player.getEntity(),"mob/squid.png");*/
                 }
             }));
             morphLayout.addView(mm17);
@@ -7261,8 +7231,8 @@ var mm18 = new android.widget.Button(MainActivity);
             mm18.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);
-                Entity.setRenderType(Player.getEntity(), EntityRenderType.villager);
-			Entity.setMobSkin(Player.getEntity(),"mob/villager/villager.png");
+Entity.setRenderType(Player.getEntity(), 12);
+/*Entity.setMobSkin(Player.getEntity(),"mob/villager/villager.png");*/
                 }
             }));
             morphLayout.addView(mm18);
@@ -7272,9 +7242,8 @@ var mm19 = new android.widget.Button(MainActivity);
             mm19.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);
-
-Entity.setRenderType(Player.getEntity(), EntityRenderType.zombieVillager);
-			Entity.setMobSkin(Player.getEntity(),"mob/zombieVillager.png");
+Entity.setRenderType(Player.getEntity(), 39);
+/*Entity.setMobSkin(Player.getEntity(),"mob/zombieVillager.png");*/
                 }
             }));
             morphLayout.addView(mm19);
@@ -7284,9 +7253,8 @@ var mm20 = new android.widget.Button(MainActivity);
             mm20.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 Entity.setCollisionSize(Player.getEntity(), 0.8, 0.7, 0.8);
-
-Entity.setRenderType(Player.getEntity(), EntityRenderType.wolf);
-			Entity.setMobSkin(Player.getEntity(),"mob/wolf.png");
+Entity.setRenderType(Player.getEntity(), 11);
+/*Entity.setMobSkin(Player.getEntity(),"mob/wolf.png");*/
                 }
             }));
             morphLayout.addView(mm20);
@@ -7296,9 +7264,8 @@ var mm21 = new android.widget.Button(MainActivity);
             mm21.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);
-
-Entity.setRenderType(Player.getEntity(), EntityRenderType.zombie);
-			Entity.setMobSkin(Player.getEntity(),"mob/zombie.png");
+Entity.setRenderType(Player.getEntity(), 14);
+/*Entity.setMobSkin(Player.getEntity(),"mob/zombie.png");*/
                 }
             }));
             morphLayout.addView(mm21);
@@ -7308,9 +7275,8 @@ var mm22 = new android.widget.Button(MainActivity);
             mm22.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);
-
-Entity.setRenderType(Player.getEntity(), EntityRenderType.zombie);
-			Entity.setMobSkin(Player.getEntity(),"mob/pigzombie.png");
+Entity.setRenderType(Player.getEntity(), 15);
+/*Entity.setMobSkin(Player.getEntity(),"mob/pigzombie.png*/
                 }
             }));
             morphLayout.addView(mm22);
