@@ -9,10 +9,7 @@ ALPHAHack v2 is a remake of AlphaHack 0.8.1
 </>--------------------</><br />
 [Free to use mod menu for MCPE under MIT license];<br />
 </>--------------------</><br />
-[Codes αre free to copy BUT NOT FOR COPY:<br />
-the menu itself & other developers codes in this script.<br />
-Pleαse contαct the developers of eαch code for permission.<br />
-Other codes NOT COPYαBLE: αuto spαm & αnti spαm bypαss, BL server enαbler code.];<br />
+[Pleαse contαct the developers of eαch code for permission to copy.];<br />
 </>--------------------</><br />
 [contributors: Godsoft029, Johnmαcrocrαft, αJ170, Peαcestorm(αgαmeR), Firepro9978, αPRIC0CKS, Vertex client teαm];<br />
 </>--------------------</><br />
@@ -25,7 +22,7 @@ Other codes NOT COPYαBLE: αuto spαm & αnti spαm bypαss, BL server enαbler
 - [ ] 0.8.1 Effect menu incomplete (Needs some testing)
 - [ ] 0.8.1 Enchant menu incomplete (May add more features & needs anti enchant bypass)
 - [ ] 0.8.1 Give menu incomplete (May add more features)
-- [ ] 0.8.1 Morph menu incomplete (Missing mobs & mobs textures are blank)
+- [ ] 0.8.1 Morph menu incomplete (May add more features)
 - [x] 0.8.2 Nuke menu
 - [ ] 0.8.1 Particle menu incomplete (Some crashes & may add more features)
 - [x] 0.15.6 Spawn menu
