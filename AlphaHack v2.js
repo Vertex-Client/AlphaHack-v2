@@ -444,7 +444,8 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
         menuBtn.setText("");
         menuBtn.setOnClickListener(new View.OnClickListener({
             onClick: function(viewarg){
-        showActive = false;
+        activeView.dismiss();
+        active.dismiss();
 mainMenu();
 GUI.dismiss();
 if(getLanguage=="en_US")Toast.makeText(MainActivity, "Scroll down", 1).show();
@@ -464,62 +465,7 @@ if(getLanguage=="en_US")Toast.makeText(MainActivity, "Scroll down", 1).show();
 }
 showMenuBtn(); 
 
-function mainMenu(){
-    MainActivity.runOnUiThread(new Runnable({ run: function(){
-        try{
-            var menuLayout = new LinearLayout(MainActivity);
-            var menuScroll = new ScrollView(MainActivity);
-            var menuLayout1 = new LinearLayout(MainActivity);
-            menuLayout.setOrientation(1);
-            menuLayout1.setOrientation(1);
-            menuScroll.addView(menuLayout);
-            menuLayout1.addView(menuScroll);
-
-var line0 = new android.widget.LinearLayout(MainActivity);
-	    line0.setOrientation(0);
-            
-            /*var title3 = new TextView(MainActivity);
-            title3.setTextSize(20);
-            title3.setText("     Scroll down!");
-            title3.setGravity(Gravity.RIGHT);
-            title3.setTextColor(Color.WHITE);
-            menuLayout.addView(title3);*/
-
-menuLayout.addView(line0);
-
-            var title2 = new TextView(MainActivity);
-            title2.setTextSize(20);
-            title2.setText("Made by: ArceusMαtt");
-            title2.setGravity(Gravity.CENTER);
-            title2.setTextColor(GUIName);
-            menuLayout.addView(title2);
-            
-            var title = new TextView(MainActivity);
-            title.setTextSize(20);
-            title.setText(" AlphαHαck v2 ("+version+")");
-            title.setGravity(Gravity.CENTER);
-            title.setTextColor(GUIName);
-            menuLayout.addView(title);
-            
-            var exit = new Button(MainActivity);
-            exit.setText("Exit AlphαHαck");
-            if(mcpetheme==true)exit.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
-            exit.setTextColor(Color.RED);
-            exit.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-        if(showActive2==true){
-        	activeView();
-        	showActive = true;
-        }
-menu.dismiss(); 
-showMenuBtn(); 
-if(getLanguage=="en_US")Toast.makeText(MainActivity, "Closed successfully", 1).show();
- if(getLanguage=="de_DE")Toast.makeText(MainActivity, "Erfolgreich geschlossen", 1).show();
-                }
-            }));
-            menuLayout.addView(exit);
-            
-        function activeView(){
+function activeView(){
 MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
             var activeLayout = new LinearLayout(MainActivity);
@@ -633,7 +579,59 @@ active.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             }
     }}));
 }
-if(showActive==true)activeView();
+activeView();
+
+function mainMenu(){
+    MainActivity.runOnUiThread(new Runnable({ run: function(){
+        try{
+            var menuLayout = new LinearLayout(MainActivity);
+            var menuScroll = new ScrollView(MainActivity);
+            var menuLayout1 = new LinearLayout(MainActivity);
+            menuLayout.setOrientation(1);
+            menuLayout1.setOrientation(1);
+            menuScroll.addView(menuLayout);
+            menuLayout1.addView(menuScroll);
+
+            var title2 = new TextView(MainActivity);
+            title2.setTextSize(20);
+            title2.setText("Made by: ArceusMαtt");
+            title2.setGravity(Gravity.CENTER);
+            title2.setTextColor(GUIName);
+            menuLayout.addView(title2);
+            
+            var title = new TextView(MainActivity);
+            title.setTextSize(20);
+            title.setText(" AlphαHαck v2 ("+version+")");
+            title.setGravity(Gravity.CENTER);
+            title.setTextColor(GUIName);
+            menuLayout.addView(title);
+            
+            var exit = new Button(MainActivity);
+            exit.setText("Exit AlphαHαck");
+            if(mcpetheme==true)exit.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+            exit.setTextColor(Color.RED);
+            exit.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+        activeView();
+menu.dismiss(); 
+showMenuBtn(); 
+if(getLanguage=="en_US")Toast.makeText(MainActivity, "Closed successfully", 1).show();
+ if(getLanguage=="de_DE")Toast.makeText(MainActivity, "Erfolgreich geschlossen", 1).show();
+                }
+            }));
+            menuLayout.addView(exit);
+            
+        var line0 = new android.widget.LinearLayout(MainActivity);
+	    line0.setOrientation(0);
+        
+        function betaMenu(){
+        
+        }
+        if(betaTestMenu==true)betaMenu();
+
+        menuLayout.addView(line0);
+            
+        
             
         var line1 = new android.widget.LinearLayout(MainActivity);
 	    line1.setOrientation(0);
