@@ -489,9 +489,9 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 			a1.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              a1.setTextColor(Color.RED);
-			 var aimaura = false;
-			 var aimbot = false;
-			 var aimed = false;
+aimbot = false;
+aimed = false;
+aimaura = false;
 			}
 		});
 		activeLayout.addView(a1);
@@ -7022,7 +7022,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
                 onClick: function(viewarg){
 Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);
 Entity.setRenderType(Player.getEntity(), EntityRenderType.player);
-			Entity.setMobSkin(Player.getEntity(),"mob/char.png");
+/*Entity.setMobSkin(Player.getEntity(),"mob/char.png");*/
                 }
             }));
             morphLayout.addView(mm1);
@@ -7131,7 +7131,7 @@ var mm9 = new android.widget.Button(MainActivity);
             mm9.setText("Ocelot");
             mm9.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-Entity.setCollisionSize(Player.getEntity(), 0.5, 0.5, 0.5);
+/*Entity.setCollisionSize(Player.getEntity(), 0.5, 0.5, 0.5);*/
 Entity.setRenderType(Player.getEntity(), 43);
 /*Entity.setMobSkin(Player.getEntity(),"mob/cat/ocelot.png");*/
                 }
