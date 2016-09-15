@@ -7172,7 +7172,7 @@ Entity.setRenderType(Player.getEntity(), 8);
             mmR.setText("Rabbit");
             mmR.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-Entity.setRenderType(Player.getEntity(), 46;
+Entity.setRenderType(Player.getEntity(), 46);
 /*Entity.setMobSkin(Player.getEntity(),"mob/rabbit.png");*/
                 }
             }));
