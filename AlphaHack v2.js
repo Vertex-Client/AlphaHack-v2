@@ -2610,8 +2610,8 @@ var doubleBtn1 = new android.widget.LinearLayout(MainActivity);
                 onClick: function(viewarg){
 oreEsp = true;
 oreId = "16";
+var oreId = "16";
 Dialog.dismiss();
-showMenuBtn();
                 }
             }));
              
@@ -2620,8 +2620,8 @@ showMenuBtn();
                 onClick: function(viewarg){
 oreEsp = true;
 oreId = "15";
+var oreId = "15";
 Dialog.dismiss();
-showMenuBtn();
                 }
             }));
 			
@@ -2639,8 +2639,8 @@ showMenuBtn();
                 onClick: function(viewarg){
 oreEsp = true;
 oreId = "14";
+var oreId = "14";
 Dialog.dismiss();
-showMenuBtn();
                 }
             }));
             
@@ -2649,8 +2649,8 @@ showMenuBtn();
                 onClick: function(viewarg){
 oreEsp = true;
 oreId = "56";
+var oreId = "56";
 Dialog.dismiss();
-showMenuBtn();
                 }
             }));
 			
@@ -2668,8 +2668,8 @@ showMenuBtn();
                 onClick: function(viewarg){
 oreEsp = true;
 oreId = "73";
+var oreId = "73";
 Dialog.dismiss();
-showMenuBtn();
                 }
             }));
             
@@ -2678,8 +2678,8 @@ showMenuBtn();
                 onClick: function(viewarg){
 oreEsp = true;
 oreId = "21";
+var oreId = "21";
 Dialog.dismiss();
-showMenuBtn();
                 }
             }));
 			
@@ -2697,8 +2697,8 @@ showMenuBtn();
                 onClick: function(viewarg){
 oreEsp = true;
 oreId = "129";
+var oreId = "129";
 Dialog.dismiss();
-showMenuBtn();
                 }
             }));
             
@@ -2707,8 +2707,8 @@ showMenuBtn();
                 onClick: function(viewarg){
 oreEsp = true;
 oreId = "153";
+var oreId = "153";
 Dialog.dismiss();
-showMenuBtn();
                 }
             }));
 			
@@ -10783,7 +10783,7 @@ function rptask2() {
  		}
                     }
                     if(playeresp){
-        var x = getPlayerX();
+                var x = getPlayerX();
  		var y = getPlayerY();
  		var z = getPlayerZ();
  		var newX;
