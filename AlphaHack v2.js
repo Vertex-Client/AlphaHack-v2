@@ -2586,6 +2586,10 @@ var select1 = new android.widget.Button(MainActivity);
 var select2 = new android.widget.Button(MainActivity);
 var select3 = new android.widget.Button(MainActivity);
 var select4 = new android.widget.Button(MainActivity);
+var select5 = new android.widget.Button(MainActivity);
+var select6 = new android.widget.Button(MainActivity);
+var select7 = new android.widget.Button(MainActivity);
+var select8 = new android.widget.Button(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
  
 Dialog.setTitle("Select ore");
@@ -2604,6 +2608,7 @@ var doubleBtn1 = new android.widget.LinearLayout(MainActivity);
             select1.setText("Coal ore");
             select1.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
+oreEsp = true;
 oreId = "16";
 Dialog.dismiss();
 showMenuBtn();
@@ -2613,6 +2618,7 @@ showMenuBtn();
             select2.setText("Iron ore");
             select2.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
+oreEsp = true;
 oreId = "15";
 Dialog.dismiss();
 showMenuBtn();
@@ -2631,6 +2637,7 @@ showMenuBtn();
             select3.setText("Gold ore");
             select3.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
+oreEsp = true;
 oreId = "14";
 Dialog.dismiss();
 showMenuBtn();
@@ -2640,6 +2647,7 @@ showMenuBtn();
             select4.setText("Diamond ore");
             select4.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
+oreEsp = true;
 oreId = "56";
 Dialog.dismiss();
 showMenuBtn();
@@ -2658,6 +2666,7 @@ showMenuBtn();
             select5.setText("Redstone ore");
             select5.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
+oreEsp = true;
 oreId = "73";
 Dialog.dismiss();
 showMenuBtn();
@@ -2667,6 +2676,7 @@ showMenuBtn();
             select6.setText("Lapis ore");
             select6.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
+oreEsp = true;
 oreId = "21";
 Dialog.dismiss();
 showMenuBtn();
@@ -2685,6 +2695,7 @@ showMenuBtn();
             select7.setText("Emerald ore");
             select7.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
+oreEsp = true;
 oreId = "129";
 Dialog.dismiss();
 showMenuBtn();
@@ -2694,6 +2705,7 @@ showMenuBtn();
             select8.setText("Quartz ore");
             select8.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
+oreEsp = true;
 oreId = "153";
 Dialog.dismiss();
 showMenuBtn();
