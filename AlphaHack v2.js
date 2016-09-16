@@ -77,7 +77,7 @@ var notex;
 var notey;
 var notez;
 var test2 = false;
-var oreId;
+var oreId = "";
 
 var GUISize = "2";
 
@@ -10776,7 +10776,7 @@ function rptask2() {
   					newY = y + blockY;
   					newZ = z + blockZ;
   					if(getTile(newX, newY, newZ) == oreId) {
-						AlphaHack.drawTracer(newX, newY, newZ, oreTracersGroundMode=="on"?true:false, oreTracersParticle);
+  						AlphaHack.drawTracer(newX, newY, newZ, oreTracersGroundMode=="on"?true:false, oreTracersParticle);
   					}
   				}
   			}
@@ -10795,13 +10795,15 @@ function rptask2() {
  					newX = x + blockX;
   					newY = y + blockY;
   					newZ = z + blockZ;
-					var mobs = Server.getAllPlayers();
+					var mobs = Entity.getAll();
                                         for (var e = 0; e < mobs.length; e++) {
                                         var newX = Entity.getX(mobs[e]);
                                         var newY = Entity.getY(mobs[e]);
                                         var newZ = Entity.getZ(mobs[e]);
+                                        if(Entity.getEntityTypeId(mobs[e]) == 27 || Entity.getEntityTypeId(mobs[e]) == 65){
 						AlphaHack.drawTracer(newX, newY, newZ, playerTracersGroundMode=="on"?true:false, playerTracersParticle);
-  				}
+                                        }
+                                }
   			}
  		}
 	}
