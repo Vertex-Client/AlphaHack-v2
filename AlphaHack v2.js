@@ -77,6 +77,7 @@ var notex;
 var notey;
 var notez;
 var test2 = false;
+var oreId;
 
 var GUISize = "2";
 
@@ -104,6 +105,7 @@ var autonuke = false;
 var antispam = false;
 var antispam2 = false;
 var playeresp = false;
+var oreEsp = false;
 var lightningaura = false;
 var tapid = false;
 var horsehealth = false;
@@ -122,6 +124,7 @@ var changeSpeed = false;
 var brightness = false;
 var lowhealth = false;
 var fasteat = false;
+var oreEsp2 = false;
 
 var showActive = false;
 var showActive2 = false;
@@ -2041,7 +2044,8 @@ tapspam = true;
 }
 if(tapspam == false){
 button8.setTextColor(Color.RED);
-
+autospam = false;
+autospam2 = false;
 tapspam = false;
 }
                 }
@@ -2547,6 +2551,189 @@ cmdLayout1.setPadding(20,0,20,0);
             }
     }}));
 }
+
+var oreTrace = new Button(MainActivity);
+oreTrace.setText("Ore ESP");
+oreTrace.setTextColor(Color.RED);
+if(oreEsp2==true)oreTrace.setTextColor(Color.GREEN);
+            oreTrace.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             oreEsp2?oreEsp2=false:oreEsp2=true;
+oreTrace.setText("Ore ESP");
+if(oreEsp2 == true){
+oreTrace.setTextColor(Color.GREEN);
+clientMessage(client + "Ore ESP on");
+oreDialog();
+oreEsp2 = true;
+}
+if(oreEsp2 == false){
+oreTrace.setTextColor(Color.RED);
+clientMessage(client + "Ore ESP off");
+oreEsp = false;
+oreEsp2 = false;
+}
+                }
+            }));
+            cheatLayout.addView(oreTrace);
+			
+			function oreDialog() {
+MainActivity.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+orey = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(MainActivity);
+var select1 = new android.widget.Button(MainActivity);
+var select2 = new android.widget.Button(MainActivity);
+var select3 = new android.widget.Button(MainActivity);
+var select4 = new android.widget.Button(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+ 
+Dialog.setTitle("Select ore");
+Dialog.setContentView(Layer);
+ 
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+
+var doubleBtn1 = new android.widget.LinearLayout(MainActivity);
+	    doubleBtn1.setOrientation(0);
+		
+		doubleBtn1.addView(select1);
+
+		doubleBtn1.addView(select2);
+ 
+            select1.setText("Coal ore");
+            select1.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+oreId = "16";
+Dialog.dismiss();
+showMenuBtn();
+                }
+            }));
+             
+            select2.setText("Iron ore");
+            select2.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+oreId = "15";
+Dialog.dismiss();
+showMenuBtn();
+                }
+            }));
+			
+			Layer.addView(doubleBtn1);
+			
+			var doubleBtn2 = new android.widget.LinearLayout(MainActivity);
+	    doubleBtn2.setOrientation(0);
+		
+		doubleBtn2.addView(select3);
+
+		doubleBtn2.addView(select4);
+            
+            select3.setText("Gold ore");
+            select3.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+oreId = "14";
+Dialog.dismiss();
+showMenuBtn();
+                }
+            }));
+            
+            select4.setText("Diamond ore");
+            select4.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+oreId = "56";
+Dialog.dismiss();
+showMenuBtn();
+                }
+            }));
+			
+			Layer.addView(doubleBtn2);
+			
+			var doubleBtn3 = new android.widget.LinearLayout(MainActivity);
+	    doubleBtn3.setOrientation(0);
+		
+		doubleBtn3.addView(select5);
+
+		doubleBtn3.addView(select6);
+            
+            select5.setText("Redstone ore");
+            select5.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+oreId = "73";
+Dialog.dismiss();
+showMenuBtn();
+                }
+            }));
+            
+            select6.setText("Lapis ore");
+            select6.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+oreId = "21";
+Dialog.dismiss();
+showMenuBtn();
+                }
+            }));
+			
+			Layer.addView(doubleBtn3);
+			
+			var doubleBtn4 = new android.widget.LinearLayout(MainActivity);
+	    doubleBtn4.setOrientation(0);
+		
+		doubleBtn4.addView(select7);
+
+		doubleBtn4.addView(select8);
+            
+            select7.setText("Emerald ore");
+            select7.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+oreId = "129";
+Dialog.dismiss();
+showMenuBtn();
+                }
+            }));
+            
+            select8.setText("Quartz ore");
+            select8.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+oreId = "153";
+Dialog.dismiss();
+showMenuBtn();
+                }
+            }));
+			
+			Layer.addView(doubleBtn4);
+ 
+orey.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+orey.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+orey.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("Ore error: "+e);
+}
+}});
+}
+			
+var playerTracer = new Button(MainActivity);
+playerTracer.setText("Player ESP");
+playerTracer.setTextColor(Color.RED);
+if(playeresp==true)playerTracer.setTextColor(Color.GREEN);
+            playerTracer.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             playeresp?playeresp=false:playeresp=true;
+playerTracer.setText("Player ESP");
+if(playeresp == true){
+playerTracer.setTextColor(Color.GREEN);
+clientMessage(client + "Player esp on");
+
+playeresp = true;
+}
+if(playeresp == false){
+playerTracer.setTextColor(Color.RED);
+clientMessage(client + "Player esp off");
+
+playeresp = false;
+}
+                }
+            }));
+            cheatLayout.addView(playerTracer);
 
             cheat = new PopupWindow(cheatLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)cheat.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -10563,8 +10750,49 @@ function rptask2() {
   			}
  		}
                     }
+                    if(oreEsp){
+                var x = getPlayerX();
+ 		var y = getPlayerY();
+ 		var z = getPlayerZ();
+ 		var newX;
+ 		var newY;
+ 		var newZ;
+ 		for(var blockX = - oreTracersRange; blockX <= oreTracersRange; blockX++) {
+ 			for(var blockY = - oreTracersRange; blockY <= oreTracersRange; blockY++) {
+ 				for(var blockZ = - oreTracersRange; blockZ <= oreTracersRange; blockZ++) {
+ 					newX = x + blockX;
+  					newY = y + blockY;
+  					newZ = z + blockZ;
+  					if(getTile(newX, newY, newZ) == oreId) {
+						AlphaHack.drawTracer(newX, newY, newZ, oreTracersGroundMode=="on"?true:false, oreTracersParticle);
+  					}
+  				}
+  			}
+ 		}
+                    }
                     if(playeresp){
-                    	
+        var x = getPlayerX();
+ 		var y = getPlayerY();
+ 		var z = getPlayerZ();
+ 		var newX;
+ 		var newY;
+ 		var newZ;
+ 		for(var blockX = - playerTracersRange; blockX <= playerTracersRange; blockX++) {
+ 			for(var blockY = - playerTracersRange; blockY <= playerTracersRange; blockY++) {
+ 				for(var blockZ = - playerTracersRange; blockZ <= playerTracersRange; blockZ++) {
+ 					newX = x + blockX;
+  					newY = y + blockY;
+  					newZ = z + blockZ;
+					var mobs = Server.getAllPlayers();
+                                        for (var e = 0; e < mobs.length; e++) {
+                                        var newX = Entity.getX(mobs[e]);
+                                        var newY = Entity.getY(mobs[e]);
+                                        var newZ = Entity.getZ(mobs[e]);
+						AlphaHack.drawTracer(newX, newY, newZ, playerTracersGroundMode=="on"?true:false, playerTracersParticle);
+  				}
+  			}
+ 		}
+	}
                     }
                     nx = getPlayerX();
                     ny = getPlayerY();
