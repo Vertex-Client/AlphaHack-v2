@@ -271,6 +271,20 @@ var GUIBtns10 = Color.DKGRAY;
 var GUIBtns11 = Color.GREEN;
 var GUIBtns12 = Color.MAGENTA;
 
+var GUIStroke = Color.BLACK;
+
+var GUIStroke2 = Color.BLACK;
+var GUIStroke3 = Color.WHITE;
+var GUIStroke4 = Color.RED;
+var GUIStroke5 = Color.BLUE;
+var GUIStroke6 = Color.GRAY;
+var GUIStroke7 = Color.LTGRAY;
+var GUIStroke8 = Color.YELLOW;
+var GUIStroke9 = Color.CYAN;
+var GUIStroke10 = Color.DKGRAY;
+var GUIStroke11 = Color.GREEN;
+var GUIStroke12 = Color.MAGENTA;
+
 var AlphaHack = {};
 AlphaHack.drawTracer = function(x, y, z, groundMode, particleName) {
 	for(var count = 0; count <= 25; count++) {
@@ -375,8 +389,6 @@ ModPE.langEdit("commands.op.success","§l" + ModPE.getI18n("commands.op.success"
 ModPE.langEdit("commands.banip.success","§l" + ModPE.getI18n("commands.banip.success"));
 ModPE.langEdit("commands.banip.success.players","§l" + ModPE.getI18n("commands.banip.success.players"));
 
-
-ModPE.langEdit("options.allowCellularData",viddd + ModPE.getI18n("options.allowCellularData"));
 ModPE.langEdit("playscreen.new",viddd + ModPE.getI18n("playscreen.new"));
 ModPE.langEdit("skins.restore.button",viddd + ModPE.getI18n("skins.restore.button"));
 ModPE.langEdit("externalServerScreen.addServer",viddd + ModPE.getI18n("externalServerScreen.addServer"));
