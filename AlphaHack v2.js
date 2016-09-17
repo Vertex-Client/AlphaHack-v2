@@ -587,10 +587,10 @@ aimaura = false;
 		});
 		activeLayout.addView(a6);
 
-active = new PopupWindow(activeLayout1, dip2px(10), dip2px(10));
+active = new PopupWindow(activeLayout1, dip2px(46), dip2px(46));
 
-active = new PopupWindow(activeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/8.12, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/3.5);
-active.setBackgroundDrawable(new ColorDrawable(Color.BLACK));
+active = new PopupWindow(activeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/13, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/3.5);
+active.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             active.showAtLocation(MainActivity.getWindow().getDecorView(), Gravity.LEFT | Gravity.TOP, 0, 120);
             }catch(error){
                 Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
