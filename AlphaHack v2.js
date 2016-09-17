@@ -1669,7 +1669,7 @@ var info = new Button(MainActivity);
             info.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
                     worldInfoView();
-		    menu.dismiss();
+		    cheat.dismiss();
 		    Toast.makeText(MainActivity, "Scroll down", 1).show();
                 }
             }));
@@ -1757,6 +1757,12 @@ exit.setTextColor(Color.RED);
 			difficulty.setText("Difficulty: "+Level.getDifficulty());
             difficulty.setTextColor(Color.WHITE);
             worldInfoLayout.addView(difficulty);
+            
+            var maxHearts = new TextView(MainActivity);
+            maxHearts.setTextSize(15);
+	    maxHearts.setText("Max hearts: "+Entity.getMaxHealth(getPlayerEnt()));
+            maxHearts.setTextColor(Color.WHITE);
+            worldInfoLayout.addView(maxHearts);
 
 worldInfo = new PopupWindow(worldInfoLayout1, dip2px(500), dip2px(500));
 
