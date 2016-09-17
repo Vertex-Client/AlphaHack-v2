@@ -10439,7 +10439,7 @@ if(yawpitch){
 ModPE.showTipMessage("pitch: "+Math.round(getPitch(getPlayerEnt()))+" \nYaw: "+Math.round(getYaw(getPlayerEnt()))+" ");
 }
 if(airwalk){
-if(Level.getTile(getPlayerX(), getPlayerY() -2, getPlayerZ())=="0"){
+if(Level.getTile(getPlayerX(), getPlayerY() -2, getPlayerZ())=="0" || Level.getTile(getPlayerX(), getPlayerY() -2, getPlayerZ())=="95"){
 	Level.setTile(getPlayerX() +1, getPlayerY() -2, getPlayerZ(), 95, 0);
 	 Level.setTile(getPlayerX() +2, getPlayerY() -2, getPlayerZ(), 95, 0);
 	 Level.setTile(getPlayerX() +3, getPlayerY() -2, getPlayerZ(), 95, 0);
