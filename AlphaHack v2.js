@@ -78,6 +78,7 @@ var notey;
 var notez;
 var test2 = false;
 var oreId = "";
+var numhack2 = 0;
 
 var GUISize = "2";
 
@@ -125,6 +126,7 @@ var brightness = false;
 var lowhealth = false;
 var fasteat = false;
 var oreEsp2 = false;
+var hackk2 = false;
 
 var showActive = false;
 var showActive2 = false;
@@ -575,7 +577,7 @@ aimaura = false;
 
 active = new PopupWindow(activeLayout1, dip2px(10), dip2px(10));
 
-active = new PopupWindow(activeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/9, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/3.5);
+active = new PopupWindow(activeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/8.6, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/3.5);
 active.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             active.showAtLocation(MainActivity.getWindow().getDecorView(), Gravity.LEFT | Gravity.TOP, 0, 120);
             }catch(error){
@@ -820,6 +822,27 @@ hackk = false;
 			}
 		});
 		miscLayout.addView(pass);
+		
+		var pass2 = new android.widget.Button(MainActivity);
+		pass2.setText("SQL Inject (Numbers)");
+		pass2.setTextColor(Color.RED);
+if(hackk2==true)pass2.setTextColor(Color.GREEN);
+		pass2.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             hackk2?hackk2=false:hackk2=true;
+pass2.setText("SQL Inject (Numbers)");
+if(hackk2 == true){
+pass2.setTextColor(Color.GREEN);
+hackk2 = true;
+}
+if(hackk2 == false){
+pass2.setTextColor(Color.RED);
+
+hackk2 = false;
+}
+			}
+		});
+		miscLayout.addView(pass2);
 		
 		var ht1 = new android.widget.Button(MainActivity);
 		ht1.setText("How to bypass ban");
@@ -1640,19 +1663,116 @@ print("Bypass error: "+e);
 }
 }});
 }
-		
-		var worldInfo = new Button(MainActivity);
-            worldInfo.setText("World info");
-            worldInfo.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){ 
-                Level.getRainLevel();	
-clientMessage("World name: "+Level.getWorldName()+" World: "+Player.getDimension()+" Biome: "+Level.getBiomeName());
-Math.round(Level.getRainLevel());
-if(Math.round(Level.getRainLevel())=="0")clientMessage("Weather: clear"+" Time: "+Level.getTime());
-if(Math.round(Level.getRainLevel())=="1")clientMessage("Weather: rain/snow "+" Time: "+Level.getTime());
+
+var info = new Button(MainActivity);
+            info.setText("Info dialog");
+            info.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    worldInfoView();
+		    menu.dismiss();
+		    Toast.makeText(MainActivity, "Scroll down", 1).show();
                 }
             }));
-            cheatLayout.addView(worldInfo);
+            cheatLayout.addView(info);
+
+function worldInfoView(){
+MainActivity.runOnUiThread(new Runnable({ run: function(){
+        try{
+            var worldInfoLayout = new LinearLayout(MainActivity);
+            
+            var worldInfoScroll = new ScrollView(MainActivity);
+            
+            var worldInfoLayout1 = new LinearLayout(MainActivity);
+            worldInfoLayout.setOrientation(1);
+            worldInfoLayout1.setOrientation(1);
+            
+            worldInfoScroll.addView(worldInfoLayout);
+            worldInfoLayout1.addView(worldInfoScroll);
+
+var exit = new Button(MainActivity);
+            exit.setText("Exit");
+exit.setTextColor(Color.RED);
+            exit.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+
+                    worldInfo.dismiss();
+
+					showMenuBtn();
+                }
+            }));
+            worldInfoLayout.addView(exit);
+			
+			var refresh = new Button(MainActivity);
+            refresh.setText("Refresh");
+            refresh.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    worldInfo.dismiss();
+					for(var t = 0; t < 5; t++){
+					if(t==1)worldInfoView();
+					}
+                }
+            }));
+            worldInfoLayout.addView(refresh);
+			
+			var username = new TextView(MainActivity);
+            username.setTextSize(15);
+			username.setText("Username: "+Player.getName(Player.getEntity()));
+            username.setTextColor(Color.WHITE);
+            worldInfoLayout.addView(username);
+			
+			var dimension = new TextView(MainActivity);
+            dimension.setTextSize(15);
+            dimension.setText("dimension: "+Player.getDimension());
+            dimension.setTextColor(Color.WHITE);
+            worldInfoLayout.addView(dimension);
+			
+			var world = new TextView(MainActivity);
+            world.setTextSize(15);
+            world.setText("World: "+Level.getWorldName());
+            world.setTextColor(Color.WHITE);
+            worldInfoLayout.addView(world);
+			
+			var biome = new TextView(MainActivity);
+            biome.setTextSize(15);
+            biome.setText("Biome: "+Level.getBiomeName());
+            biome.setTextColor(Color.WHITE);
+            worldInfoLayout.addView(biome);
+			
+			Level.getRainLevel();
+			var rain = new TextView(MainActivity);
+            rain.setTextSize(15);
+			if(Math.round(Level.getRainLevel())=="0")rain.setText("Weather: clear");
+            if(Math.round(Level.getRainLevel())=="1")rain.setText("Weather: rain");
+            rain.setTextColor(Color.WHITE);
+            worldInfoLayout.addView(rain);
+			
+			var time = new TextView(MainActivity);
+            time.setTextSize(15);
+			time.setText("Time: "+Level.getTime());
+            time.setTextColor(Color.WHITE);
+            worldInfoLayout.addView(time);
+			
+			var difficulty = new TextView(MainActivity);
+            difficulty.setTextSize(15);
+			difficulty.setText("Difficulty: "+Level.getDifficulty());
+            difficulty.setTextColor(Color.WHITE);
+            worldInfoLayout.addView(difficulty);
+
+worldInfo = new PopupWindow(worldInfoLayout1, dip2px(500), dip2px(500));
+
+worldInfo = new PopupWindow(worldInfoLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/2, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1);
+	  var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(Color.TRANSPARENT);
+      bg.setStroke(10,Color.BLACK);
+worldInfoLayout1.setBackgroundDrawable(bg);
+worldInfoLayout1.setPadding(20,0,20,0);
+worldInfo.setBackgroundDrawable(new ColorDrawable(Color.BLACK));
+            worldInfo.showAtLocation(MainActivity.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
+            }catch(error){
+                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
+            }
+    }}));
+}
 	    
 	    var button1 = new Button(MainActivity);
 button1.setText("Walk on liquid");
@@ -1867,7 +1987,7 @@ if(Server.getAddress()=="null" || Server.getPort()=="0")clientMessage(client + "
             cheatLayout.addView(svr);
             
             var itemInfo = new Button(MainActivity);
-            itemInfo.setText("Item info"); 
+            itemInfo.setText("Item status"); 
             itemInfo.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
 clientMessage(client + "Item ID: " + Player.getCarriedItem());
@@ -2746,7 +2866,51 @@ playeresp = false;
                 }
             }));
             cheatLayout.addView(playerTracer);
+            
+            var anti2void = new Button(MainActivity);
+anti2void.setText("Anti void");
+anti2void.setTextColor(Color.RED);
+if(antivoid==true)anti2void.setTextColor(Color.GREEN);
+            anti2void.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             antivoid?antivoid=false:antivoid=true;
+anti2void.setText("Anti void");
+if(antivoid == true){
+anti2void.setTextColor(Color.GREEN);
 
+antivoid = true;
+}
+if(antivoid == false){
+anti2void.setTextColor(Color.RED);
+
+antivoid = false;
+}
+                }
+            }));
+            cheatLayout.addView(anti2void);
+			
+var zmmm = new android.widget.Button(MainActivity);
+      zmmm.setText("Instant break");
+zmmm.setTextColor(Color.RED);
+if(instabreak==true)zmmm.setTextColor(Color.GREEN);
+		zmmm.setOnClickListener(new android.view.View.OnClickListener() {
+		 onClick: function(v){
+ instabreak?instabreak=false:instabreak=true;
+zmmm.setText("Instant break");
+if(instabreak == true){
+zmmm.setTextColor(Color.GREEN);
+instaDestroy();
+clientMessage(client + "§7Instant break is on");
+}
+if(instabreak == false){
+zmmm.setTextColor(Color.RED);
+clientMessage(client + "§7Instant break is off");
+defaultDestroy();
+                }
+			}
+		});
+		cheatLayout.addView(zmmm);
+            
             cheat = new PopupWindow(cheatLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)cheat.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
       if(default1==false)cheat.setBackgroundDrawable(new ColorDrawable(GUIColor));
@@ -2990,28 +3154,6 @@ button14.setText("Wheat farm");
                 }
             }));
             modLayout.addView(button14);
-            
-            var anti2void = new Button(MainActivity);
-anti2void.setText("Anti void");
-anti2void.setTextColor(Color.RED);
-if(antivoid==true)anti2void.setTextColor(Color.GREEN);
-            anti2void.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             antivoid?antivoid=false:antivoid=true;
-anti2void.setText("Anti void");
-if(antivoid == true){
-anti2void.setTextColor(Color.GREEN);
-
-antivoid = true;
-}
-if(antivoid == false){
-anti2void.setTextColor(Color.RED);
-
-antivoid = false;
-}
-                }
-            }));
-            modLayout.addView(anti2void);
 
 var df = new android.widget.Button(MainActivity);
       df.setText("Disable up/down fly: "+(nofly?"on":"off"));
@@ -3167,33 +3309,6 @@ clientMessage(" " + "\n" + " ");
             }));
             modLayout.addView(cc);
 
-var me = new Button(MainActivity);
-            me.setText("My username / nametag");
-            me.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){ 
-clientMessage(client + "Username is: " + Player.getName(Player.getEntity()))
-                }
-            }));
-            modLayout.addView(me);
-
-var d = new Button(MainActivity);
-            d.setText("Difficulty");        
-            d.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-  clientMessage(client + "Difficulty: " + Level.getDifficulty());
-                }
-            }));
-            modLayout.addView(d);
-
-var dh = new Button(MainActivity);
-            dh.setText("Max player health");        
-            dh.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-                     clientMessage(client + "Max health: " + Entity.getMaxHealth(getPlayerEnt()));
-                }
-            }));
-            modLayout.addView(dh);
-
 var rr = new android.widget.Button(MainActivity);
 rr.setText("Reactor time mode: "+(remode?"on":"off"));
 rr.setOnClickListener(new android.view.View.OnClickListener({
@@ -3242,6 +3357,7 @@ var killme = new Button(MainActivity);
                 onClick: function(viewarg){ 
 Player.setHealth(0);
 Player.setHealth(0);
+Server.sendChat("/kill");
                 }
             }));
             modLayout.addView(killme);
@@ -3336,24 +3452,6 @@ saddle = false;
 			}
 		});
 		modLayout.addView(zmm);
-
-var zmmm = new android.widget.Button(MainActivity);
-      zmmm.setText("Instant break: "+(instabreak?"on":"off"));
-		zmmm.setOnClickListener(new android.view.View.OnClickListener() {
-		 onClick: function(v){
- instabreak?instabreak=false:instabreak=true;
-zmmm.setText("Instant break: "+(instabreak?"on":"off"));
-if(instabreak == true){
-instaDestroy();
-clientMessage(client + "§7Instant break is on");
-}
-if(instabreak == false){
-clientMessage(client + "§7Instant break is off");
-defaultDestroy();
-                }
-			}
-		});
-		modLayout.addView(zmmm);
 
 var f = new android.widget.Button(MainActivity);
             f.setText("Fly in survival: "+(fch?"on":"off"));
@@ -10848,6 +10946,11 @@ function rptask() {
                     	numhack++
                     	Server.sendChat("/login "+numhack);
                     	clientMessage(client + "Trying: "+numhack);
+                    }
+                    if(hackk2){
+                    	numhack2++
+                    	Server.sendChat(numhack2+"' or '"+numhack2+"' = '"+numhack2);
+                    	clientMessage(client + "Injecting: "+numhack2);
                     }
                     if (autodestroy) {
                         Level.destroyBlock(Player.getPointedBlockX(), Player.getPointedBlockY(), Player.getPointedBlockZ(), true);
