@@ -1668,26 +1668,28 @@ var info = new Button(MainActivity);
             info.setText("Info dialog");
             info.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-                    worldInfoView();
+                    infoView();
+                    
 		    cheat.dismiss();
+		    
 		    Toast.makeText(MainActivity, "Scroll down", 1).show();
                 }
             }));
             cheatLayout.addView(info);
 
-function worldInfoView(){
+function infoView(){
 MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
-            var worldInfoLayout = new LinearLayout(MainActivity);
+            var infoLayout = new LinearLayout(MainActivity);
             
-            var worldInfoScroll = new ScrollView(MainActivity);
+            var infoScroll = new ScrollView(MainActivity);
             
-            var worldInfoLayout1 = new LinearLayout(MainActivity);
-            worldInfoLayout.setOrientation(1);
-            worldInfoLayout1.setOrientation(1);
+            var infoLayout1 = new LinearLayout(MainActivity);
+            infoLayout.setOrientation(1);
+            infoLayout1.setOrientation(1);
             
-            worldInfoScroll.addView(worldInfoLayout);
-            worldInfoLayout1.addView(worldInfoScroll);
+            infoScroll.addView(infoLayout);
+            infoLayout1.addView(infoScroll);
 
 var exit = new Button(MainActivity);
             exit.setText("Exit");
@@ -1695,85 +1697,85 @@ exit.setTextColor(Color.RED);
             exit.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
 
-                    worldInfo.dismiss();
+                info.dismiss();
 
-					showMenuBtn();
+		showMenuBtn();
                 }
             }));
-            worldInfoLayout.addView(exit);
+            infoLayout.addView(exit);
 			
-			var refresh = new Button(MainActivity);
+            var refresh = new Button(MainActivity);
             refresh.setText("Refresh");
             refresh.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-                    worldInfo.dismiss();
-					for(var t = 0; t < 5; t++){
-					if(t==1)worldInfoView();
-					}
+                info.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)infoView();
+		}
                 }
             }));
-            worldInfoLayout.addView(refresh);
+            infoLayout.addView(refresh);
 			
-			var username = new TextView(MainActivity);
+	    var username = new TextView(MainActivity);
             username.setTextSize(15);
-			username.setText("Username: "+Player.getName(Player.getEntity()));
+	    username.setText("Username: "+Player.getName(Player.getEntity()));
             username.setTextColor(Color.WHITE);
-            worldInfoLayout.addView(username);
+            infoLayout.addView(username);
 			
-			var dimension = new TextView(MainActivity);
+	    var dimension = new TextView(MainActivity);
             dimension.setTextSize(15);
             dimension.setText("dimension: "+Player.getDimension());
             dimension.setTextColor(Color.WHITE);
-            worldInfoLayout.addView(dimension);
+            infoLayout.addView(dimension);
 			
-			var world = new TextView(MainActivity);
+	    var world = new TextView(MainActivity);
             world.setTextSize(15);
             world.setText("World: "+Level.getWorldName());
             world.setTextColor(Color.WHITE);
-            worldInfoLayout.addView(world);
+            infoLayout.addView(world);
 			
-			var biome = new TextView(MainActivity);
+	    var biome = new TextView(MainActivity);
             biome.setTextSize(15);
             biome.setText("Biome: "+Level.getBiomeName());
             biome.setTextColor(Color.WHITE);
-            worldInfoLayout.addView(biome);
+            infoLayout.addView(biome);
 			
 			Level.getRainLevel();
-			var rain = new TextView(MainActivity);
+	    var rain = new TextView(MainActivity);
             rain.setTextSize(15);
-			if(Math.round(Level.getRainLevel())=="0")rain.setText("Weather: clear");
+	    if(Math.round(Level.getRainLevel())=="0")rain.setText("Weather: clear");
             if(Math.round(Level.getRainLevel())=="1")rain.setText("Weather: rain");
             rain.setTextColor(Color.WHITE);
-            worldInfoLayout.addView(rain);
+            infoLayout.addView(rain);
 			
-			var time = new TextView(MainActivity);
+	    var time = new TextView(MainActivity);
             time.setTextSize(15);
-			time.setText("Time: "+Level.getTime());
+	    time.setText("Time: "+Level.getTime());
             time.setTextColor(Color.WHITE);
-            worldInfoLayout.addView(time);
+            infoLayout.addView(time);
 			
-			var difficulty = new TextView(MainActivity);
+	    var difficulty = new TextView(MainActivity);
             difficulty.setTextSize(15);
-			difficulty.setText("Difficulty: "+Level.getDifficulty());
+	    difficulty.setText("Difficulty: "+Level.getDifficulty());
             difficulty.setTextColor(Color.WHITE);
-            worldInfoLayout.addView(difficulty);
+            infoLayout.addView(difficulty);
             
             var maxHearts = new TextView(MainActivity);
             maxHearts.setTextSize(15);
 	    maxHearts.setText("Max hearts: "+Entity.getMaxHealth(getPlayerEnt()));
             maxHearts.setTextColor(Color.WHITE);
-            worldInfoLayout.addView(maxHearts);
+            infoLayout.addView(maxHearts);
 
-worldInfo = new PopupWindow(worldInfoLayout1, dip2px(500), dip2px(500));
+info = new PopupWindow(infoLayout1, dip2px(500), dip2px(500));
 
-worldInfo = new PopupWindow(worldInfoLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/2, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1);
+info = new PopupWindow(infoLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/2, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1);
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
       bg.setStroke(10,Color.BLACK);
-worldInfoLayout1.setBackgroundDrawable(bg);
-worldInfoLayout1.setPadding(20,0,20,0);
-worldInfo.setBackgroundDrawable(new ColorDrawable(Color.BLACK));
-            worldInfo.showAtLocation(MainActivity.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
+infoLayout1.setBackgroundDrawable(bg);
+infoLayout1.setPadding(20,0,20,0);
+info.setBackgroundDrawable(new ColorDrawable(Color.BLACK));
+            info.showAtLocation(MainActivity.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
             }catch(error){
                 Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
             }
