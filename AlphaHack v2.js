@@ -589,7 +589,7 @@ aimaura = false;
 
 active = new PopupWindow(activeLayout1, dip2px(10), dip2px(10));
 
-active = new PopupWindow(activeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/8.7, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/3.5);
+active = new PopupWindow(activeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/8.9, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/3.5);
 active.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             active.showAtLocation(MainActivity.getWindow().getDecorView(), Gravity.LEFT | Gravity.TOP, 0, 120);
             }catch(error){
@@ -10959,18 +10959,16 @@ function rptask() {
                     }
                     if (autospam) {
                         Server.sendChat(""+text+"");
-                        Server.getPort();
-                	if(Server.getPort()=="0")clientMessage(text);
                     }
                     if(hackk){
                     	numhack++
                     	Server.sendChat("/login "+numhack);
-                    	clientMessage(client + "Trying: "+numhack);
+                    	clientMessage("/login "+numhack);
                     }
                     if(hackk2){
                     	numhack2++
                     	Server.sendChat("/login "+numhack2+"' or '"+numhack2+"' = '"+numhack2);
-                    	clientMessage(client + "Injecting: "+numhack2);
+                    	clientMessage("/login "+numhack2+"' or '"+numhack2+"' = '"+numhack2);
                     }
                     if (autodestroy) {
                         Level.destroyBlock(Player.getPointedBlockX(), Player.getPointedBlockY(), Player.getPointedBlockZ(), true);
