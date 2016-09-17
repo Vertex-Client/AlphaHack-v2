@@ -589,8 +589,8 @@ aimaura = false;
 
 active = new PopupWindow(activeLayout1, dip2px(10), dip2px(10));
 
-active = new PopupWindow(activeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/8.9, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/3.5);
-active.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+active = new PopupWindow(activeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/8.12, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/3.5);
+active.setBackgroundDrawable(new ColorDrawable(Color.BLACK));
             active.showAtLocation(MainActivity.getWindow().getDecorView(), Gravity.LEFT | Gravity.TOP, 0, 120);
             }catch(error){
                 Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
@@ -1736,7 +1736,7 @@ exit.setTextColor(Color.RED);
 			
 	    var dimension = new TextView(MainActivity);
             dimension.setTextSize(15);
-            dimension.setText("dimension: "+Player.getDimension());
+            dimension.setText("Dimension: "+Player.getDimension());
             dimension.setTextColor(Color.WHITE);
             infoLayout.addView(dimension);
 			
