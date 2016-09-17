@@ -577,7 +577,7 @@ aimaura = false;
 
 active = new PopupWindow(activeLayout1, dip2px(10), dip2px(10));
 
-active = new PopupWindow(activeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/8.6, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/3.5);
+active = new PopupWindow(activeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/8.7, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/3.5);
 active.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             active.showAtLocation(MainActivity.getWindow().getDecorView(), Gravity.LEFT | Gravity.TOP, 0, 120);
             }catch(error){
