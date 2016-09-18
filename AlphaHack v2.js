@@ -8703,7 +8703,7 @@ var spawn66 = new Button(MainActivity);
             spawn68.setText("Spawn Guardian");            
             spawn68.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 68);
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 49);
                 }
             }));
             spawnLayout.addView(spawn68);
@@ -8780,7 +8780,7 @@ var spawn70 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn76);
 			
-			var spawn77 = new Button(MainActivity);
+	    var spawn77 = new Button(MainActivity);
             spawn77.setText("Spawn Husk");            
             spawn77.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -8788,6 +8788,33 @@ var spawn70 = new Button(MainActivity);
                 }
             }));
             spawnLayout.addView(spawn77);
+            
+            var spawn78 = new Button(MainActivity);
+            spawn78.setText("Spawn Elder guardian");            
+            spawn78.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 50);
+                }
+            }));
+            spawnLayout.addView(spawn78);
+            
+            var spawn79 = new Button(MainActivity);
+            spawn79.setText("Spawn Wither");            
+            spawn79.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 47);
+                }
+            }));
+            spawnLayout.addView(spawn79);
+            
+            var spawn80 = new Button(MainActivity);
+            spawn80.setText("Spawn NPC");            
+            spawn80.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 51);
+                }
+            }));
+            spawnLayout.addView(spawn80);
 
             spawn = new PopupWindow(spawnLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)spawn.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
