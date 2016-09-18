@@ -80,6 +80,64 @@ var test2 = false;
 var oreId = "";
 var numhack2 = 0;
 
+var Utils = {
+	
+            Block: {
+                 isLiquid: function (id) {
+			if(id >= 8 && id <= 11) return true;
+			return false;
+		         }
+            },
+            Player: {
+                isInWater: function () {
+			if(Utils.Block.isLiquid(getTile(getPlayerX(), getPlayerY() - 1.65, getPlayerZ()))) {
+            return true;
+            } else {
+			return false;
+			  m    }
+		    },
+                isOnGround: function () {
+			var y = getPlayerY();
+			while(y > 1) y -= 1;
+			if((Math.round(y * 100) >= 61 && Math.round(y * 100) <= 63) && getTile(getPlayerX(), getPlayerY() - 1.65, getPlayerZ()) != 0 && !Utils.Block.isLiquid(getTile(getPlayerX(), getPlayerY() - 1.65, getPlayerZ()))) {
+            return true;
+            }
+			if((Math.round(y * 100) >= 11 && Math.round(y * 100) <= 13) && getTile(getPlayerX(), getPlayerY() - 1.65, getPlayerZ()) != 0 && !Utils.Block.isLiquid(getTile(getPlayerX(), getPlayerY() - 1.65, getPlayerZ()))) {
+            return true;
+            } else {
+			return false;
+			  }
+		    },
+            isCollidedHorizontally: function() {
+			var x = getPlayerX();
+			var z = getPlayerZ();
+			var blockX = Math.round(x - 0.5);
+			var blockZ = Math.round(z - 0.5);
+			while(x < 1) x += 1;
+			while(z < 1) z += 1;
+			while(x > 1) x -= 1;
+			while(z > 1) z -= 1;
+
+			if(Math.round(x * 100) == 31) x -= 0.01;
+			if(Math.round(z * 100) == 31) z -= 0.01;
+			if(Math.round(x * 100) == 69) x += 0.01;
+			if(Math.round(z * 100) == 69) z += 0.01;
+			if(Math.round(x * 100) == 30) blockX--;
+			if(Math.round(z * 100) == 30) blockZ--;
+			if(Math.round(x * 100) == 70) blockX++;
+			if(Math.round(z * 100) == 70) blockZ++;
+			//clientMessage(blockX+";"+blockZ);
+			if(getTile(blockX, getPlayerY(), blockZ) == 0 && getTile(blockX, getPlayerY() - 1, blockZ) == 0) return false;
+
+			if(Block.getDestroyTime(getTile(blockX, getPlayerY() - 1, blockZ)) <= 0.1 && Block.getDestroyTime(getTile(blockX, getPlayerY(), blockZ)) <= 0.1) return false;
+
+			if(Math.round(x * 100) == 30 || Math.round(x * 100) == 70) return true;
+			if(Math.round(z * 100) == 30 || Math.round(z * 100) == 70) return true;
+			return false;
+		}
+	}
+};
+
 var GUISize = "2";
 
 var liquidwalk = false;
@@ -127,6 +185,11 @@ var lowhealth = false;
 var fasteat = false;
 var oreEsp2 = false;
 var hackk2 = false;
+var spider = false;
+var autowalk = false;
+var jetpack = false;
+var tapjump = false;
+var betterJumps = false;
 
 var showActive = false;
 var showActive2 = false;
@@ -2394,11 +2457,11 @@ taptoid = false;
             cheatLayout.addView(taptoid);
             
             var kjump = new android.widget.Button(MainActivity);
-            kjump.setText("Higher jumps: "+(jump?"on":"off"));
+            kjump.setText("Infinite jump: "+(jump?"on":"off"));
             kjump.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 jump?jump=false:jump=true;
-kjump.setText("Higher jumps: "+(jump?"on":"off"));
+kjump.setText("Infinite jump: "+(jump?"on":"off"));
 if(jump == true){
 clientMessage(client + "§7");
 jump = true;
@@ -2930,6 +2993,54 @@ defaultDestroy();
 			}
 		});
 		cheatLayout.addView(zmmm);
+		
+		var tju = new Button(MainActivity);
+tju.setText("Tap jump");
+tju.setTextColor(Color.RED);
+if(tapjump==true)tju.setTextColor(Color.GREEN);
+            tju.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             tapjump?tapjump=false:tapjump=true;
+tju.setText("Tap jump");
+if(tapjump == true){
+tju.setTextColor(Color.GREEN);
+clientMessage(client + "Tap jump on\nTap ground to jump!");
+
+tapjump = true;
+}
+if(tapjump == false){
+tju.setTextColor(Color.RED);
+clientMessage(client + "Tap jump is off");
+
+tju = false;
+}
+                }
+            }));
+            cheatLayout.addView(tju);
+            
+            var spiderman = new Button(MainActivity);
+spiderman.setText("Spider hack");
+spiderman.setTextColor(Color.RED);
+if(spider==true)spiderman.setTextColor(Color.GREEN);
+            spiderman.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             spider?spider=false:spider=true;
+spiderman.setText("Spider hack");
+if(spider == true){
+spiderman.setTextColor(Color.GREEN);
+clientMessage(client + "Spider hack on");
+Utils.Player.isCollidedHorizontally();
+spider = true;
+}
+if(spider == false){
+spiderman.setTextColor(Color.RED);
+clientMessage(client + "Spider hack off");
+
+spiderman = false;
+}
+                }
+            }));
+            cheatLayout.addView(spiderman);
             
             cheat = new PopupWindow(cheatLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)cheat.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -3403,10 +3514,10 @@ var hun = new android.widget.Button(MainActivity);
 		modLayout.addView(hun);
 
 var mm = new android.widget.Button(MainActivity);
-      mm.setText("Infinite health: "+(stackheart?"on":"off"));
+      mm.setText("Anti health: "+(stackheart?"on":"off"));
 		mm.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){         stackheart?stackheart=false:stackheart=true;
-mm.setText("Infinite health: "+(stackheart?"on":"off"));
+mm.setText("Anti health: "+(stackheart?"on":"off"));
 if(stackheart == true){
 stackheart = true;
 clientMessage(client + "§7infinite health is on");
@@ -3421,11 +3532,11 @@ stackheart = false;
 		modLayout.addView(mm);
 
 var mm2 = new android.widget.Button(MainActivity);
-mm2.setText("Infinite hunger: "+(infhun?"on":"off"));
+mm2.setText("Anti hunger: "+(infhun?"on":"off"));
 mm2.setOnClickListener(new android.view.View.OnClickListener({
 onClick: function(viewarg){
 infhun?infhun=false:infhun=true;
-mm2.setText("Infinite hunger: "+(infhun?"on":"off"));
+mm2.setText("Anti hunger: "+(infhun?"on":"off"));
 if(infhun == true){
 clientMessage(client + "§7infinite hunger is on");
 }
@@ -9215,7 +9326,7 @@ clientMessage(client + "§7Spawn set to " + Math.round(getPlayerX()) + ", " + Ma
             randomtp.setText("Random TP");       
             randomtp.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
- setPosition(Player.getEntity(), (Math.floor(Math.random() * (5000 - 100 + 1)) + 100), 60, (Math.floor(Math.random() * (5000 - 100 + 1)) + 100));
+ Entity.setPosition(Player.getEntity(), (Math.floor(Math.random() * (5000 - 100 + 1)) + 100), 60, (Math.floor(Math.random() * (5000 - 100 + 1)) + 100));
 clientMessage(client + "Woah!");
                 }
             }));
@@ -9313,7 +9424,7 @@ print("The Teleport Dialog Is Malfunctioning:"+e);
 
 function set() {
 Server.getPort();
-if(Server.getPort()=="0")setPosition(Player.getEntity(), px, py, pz);
+if(Server.getPort()=="0")Entity.setPosition(Player.getEntity(), px, py, pz);
 Server.sendChat("/tp " + Player.getName(Player.getEntity()) + space + px + space + py + space + pz);
 }
 		
@@ -10365,12 +10476,13 @@ if(tapdestroy){
 
 if(taptp){
 	Server.getPort();
-        if(Server.getPort()=="0")setPosition(Player.getEntity(), x, y, z);
+        if(Server.getPort()=="0")Entity.setPosition(Player.getEntity(), x, y, z);
 Server.sendChat("/tp " + Player.getName(Player.getEntity()) + space + x + space + y + space + z);
 
 }
 if(tapnuke)explode(x,y,z,5);
 if(tapid)clientMessage(client + "Block ID: "+blockId+" Item ID: "+itemId+"\n"+" X: "+x+" Y: "+y+" Z: "+z);
+if(tapjump)setVelY(getPlayerEnt(),0.8);
 }
 
 function modTick(){
@@ -10394,10 +10506,6 @@ killingf();
 if(killdaura) {
 	
 	killingd();
-}
-if(lightningaura) {
-	
-	killingl();
 }
 if(particle1)Level.addParticle(ParticleType.angryVillager, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 5);
 if(particle2)Level.addParticle(ParticleType.bubble, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
@@ -10442,7 +10550,7 @@ if(onlyday)Level.setTime(0);
 			clientMessage(client + "You were at void!");
 			Server.sendChat("/spawn");
 			Server.getPort();
-                	if(Server.getPort()=="0")setPosition(Player.getEntity(), getPlayerX(), 65, getPlayerZ()+5);
+                	if(Server.getPort()=="0")Entity.setPosition(Player.getEntity(), getPlayerX(), 65, getPlayerZ()+5);
 		}
 	}
 	if(glide){
@@ -10450,7 +10558,7 @@ if(Entity.getVelY(Player.getEntity()) <= 0){
 setVelY(Player.getEntity(), -0.05)
 }
 }
-if(coords)ModPE.showTipMessage(client + "x"+Math.round(getPlayerX())+", y"+Math.round(getPlayerY())+", z"+Math.round(getPlayerZ()));
+if(coords)ModPE.showTipMessage(client + "\nX "+Math.round(getPlayerX())+", Y "+Math.round(getPlayerY())+", Z "+Math.round(getPlayerZ()));
 if(armor)ModPE.showTipMessage(client + "\n\nHead: " + Entity.getArmorDamage(getPlayerEnt(), 0) + " Chest: " + Entity.getArmorDamage(getPlayerEnt(), 1) + " Legs: " + Entity.getArmorDamage(getPlayerEnt(), 2) + " Feet: " + Entity.getArmorDamage(getPlayerEnt(), 3));
 if(autonuke)explode(getPlayerX(),getPlayerY(),getPlayerZ(),5);
 if(grief)Level.setTile(Player.getPointedBlockX(), Player.getPointedBlockY(), Player.getPointedBlockZ(), vid, 0);
@@ -10491,6 +10599,11 @@ if(brightness==true)bright();
 if(lowhealth==true)spawnIfLowHealth();
 if(fasteat==true)fastEat();
 if(xray==true)xrayRepeat();
+if (spider && Utils.Player.isCollidedHorizontally()) {
+		if(getTile(Player.getX()+1, Player.getY(), Player.getZ())> 0 || getTile(Player.getX()-1, Player.getY(), Player.getZ())> 0 || getTile(Player.getX(), Player.getY(), Player.getZ()+1)> 0 || getTile(Player.getX(), Player.getY(), Player.getZ()-1)> 0) {
+        setVelY(Player.getEntity(), 0.6);
+              }
+	    }
 }
 
 function devpardon() {
