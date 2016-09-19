@@ -658,6 +658,76 @@ aimaura = false;
 			}
 		});
 		activeLayout.addView(a6);
+		
+		var a7 = new TextView(MainActivity);
+            a7.setTextSize(11);
+            if(coords==true)a7.setText("XYZ");
+            if(coords==false)a7.setText("");
+	    if(coords==false)a7.setTextColor(Color.RED);
+            if(coords==true)a7.setTextColor(Color.GREEN);
+			a7.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             a7.setTextColor(Color.RED);
+			 coords = false;
+			}
+		});
+		activeLayout.addView(a7);
+		
+		var a8 = new TextView(MainActivity);
+            a8.setTextSize(11);
+            if(chestesp==true)a8.setText("ChestESP");
+            if(chestesp==false)a8.setText("");
+	    if(chestesp==false)a8.setTextColor(Color.RED);
+            if(chestesp==true)a8.setTextColor(Color.GREEN);
+			a8.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             a8.setTextColor(Color.RED);
+			 chestesp = false;
+			}
+		});
+		activeLayout.addView(a8);
+		
+		var a9 = new TextView(MainActivity);
+            a9.setTextSize(11);
+            if(tapjump==true)a9.setText("TapJump");
+            if(tapjump==false)a9.setText("");
+	    if(tapjump==false)a9.setTextColor(Color.RED);
+            if(tapjump==true)a9.setTextColor(Color.GREEN);
+			a9.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             a9.setTextColor(Color.RED);
+			 tapjump = false;
+			}
+		});
+		activeLayout.addView(a9);
+		
+		var a10 = new TextView(MainActivity);
+            a10.setTextSize(11);
+            if(spider==true)a10.setText("SpiderHack");
+            if(spider==false)a10.setText("");
+	    if(spider==false)a10.setTextColor(Color.RED);
+            if(spider==true)a10.setTextColor(Color.GREEN);
+			a10.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             a10.setTextColor(Color.RED);
+			 spider = false;
+			}
+		});
+		activeLayout.addView(a10);
+		
+		var a11 = new TextView(MainActivity);
+            a11.setTextSize(11);
+            if(autowalk==true)a11.setText("AutoWalk");
+            if(autowalk==false)a11.setText("");
+	    if(autowalk==false)a11.setTextColor(Color.RED);
+            if(autowalk==true)a11.setTextColor(Color.GREEN);
+			a11.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             a11.setTextColor(Color.RED);
+			 autowalk = false;
+			}
+		});
+		activeLayout.addView(a11);
 
 active = new PopupWindow(activeLayout1, dip2px(46), dip2px(46));
 
