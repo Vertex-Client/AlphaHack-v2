@@ -80,6 +80,14 @@ var test2 = false;
 var oreId = "";
 var numhack2 = 0;
 
+var playerDir = [0, 0, 0];
+var DEG_TO_RAD = Math["PI"] / 180;
+
+var can = 1;
+var canGetHP = 1;
+var HP;
+var gravity = -0.07840000092983246;
+
 var Utils = {
 	
             Block: {
@@ -545,6 +553,7 @@ if(getLanguage=="en_US")Toast.makeText(MainActivity, "Scroll down", 1).show();
     }}));
 }
 showMenuBtn(); 
+activeView();
 
 function activeView(){
 MainActivity.runOnUiThread(new Runnable({ run: function(){
@@ -660,7 +669,6 @@ active.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             }
     }}));
 }
-activeView();
 
 function mainMenu(){
     MainActivity.runOnUiThread(new Runnable({ run: function(){
@@ -1818,8 +1826,7 @@ exit.setTextColor(Color.RED);
 			Level.getRainLevel();
 	    var rain = new TextView(MainActivity);
             rain.setTextSize(15);
-	    if(Math.round(Level.getRainLevel())=="0")rain.setText("Weather: clear");
-            if(Math.round(Level.getRainLevel())=="1")rain.setText("Weather: rain");
+	    rain.setText("Weather: "+Math.round(Level.getRainLevel()));
             rain.setTextColor(Color.WHITE);
             infoLayout.addView(rain);
 			
@@ -2779,7 +2786,7 @@ oreEsp2 = false;
             }));
             cheatLayout.addView(oreTrace);
 			
-			function oreDialog() {
+function oreDialog() {
 MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
@@ -3041,6 +3048,54 @@ spiderman = false;
                 }
             }));
             cheatLayout.addView(spiderman);
+            
+            var autow = new Button(MainActivity);
+autow.setText("Auto walk");
+autow.setTextColor(Color.RED);
+if(autowalk==true)autow.setTextColor(Color.GREEN);
+            autow.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             autowalk?autowalk=false:autowalk=true;
+autow.setText("Auto walk");
+if(autowalk == true){
+autow.setTextColor(Color.GREEN);
+clientMessage(client + "Auto walk on");
+
+autowalk = true;
+}
+if(autowalk == false){
+autow.setTextColor(Color.RED);
+clientMessage(client + "Auto walk off");
+
+autow = false;
+}
+                }
+            }));
+            cheatLayout.addView(autow);
+            
+            var jumps = new Button(MainActivity);
+jumps.setText("Higher jumps");
+jumps.setTextColor(Color.RED);
+if(jump==true)jumps.setTextColor(Color.GREEN);
+            jumps.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             jump?jump=false:jump=true;
+jumps.setText("Higher jumps");
+if(jump == true){
+jumps.setTextColor(Color.GREEN);
+clientMessage(client + "Higher jumps on");
+
+jump = true;
+}
+if(jump == false){
+jumps.setTextColor(Color.RED);
+clientMessage(client + "Higher jumps off");
+
+jumps = false;
+}
+                }
+            }));
+            cheatLayout.addView(jumps);
             
             cheat = new PopupWindow(cheatLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)cheat.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -9795,7 +9850,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		weatherLayout.addView(exit);
 		
 		var button = new android.widget.Button(MainActivity);
-            button.setText("Custom wether");
+            button.setText("Custom weather");
             button.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 setDialogW();
@@ -10604,6 +10659,38 @@ if (spider && Utils.Player.isCollidedHorizontally()) {
         setVelY(Player.getEntity(), 0.6);
               }
 	    }
+	    if(autowalk) {
+    toDirectionalVector(playerDir, (getYaw() + 90) * DEG_TO_RAD, getPitch() * DEG_TO_RAD * -1);
+    setVelX(getPlayerEnt(), 0.22 * playerDir[0]);
+    setVelZ(getPlayerEnt(), 0.22 * playerDir[2]);
+}
+if(jump) {
+		if(Entity.getVelY(getPlayerEnt())< -0.1) {
+			setVelY(getPlayerEnt(),-0.5);
+		}
+		if(Entity.getVelY(getPlayerEnt())< 0.35 && Entity.getVelY(getPlayerEnt())> 0.2 && can==1 && canGetHP==1) {
+			setVelY(getPlayerEnt(), 0.6);
+			can = 2;
+			HP = Entity.getHealth(getPlayerEnt());
+			canGetHP = 0;
+		}
+		if(Entity.getVelY(getPlayerEnt())>gravity && can==2) {
+			Player.setHealth(HP);
+			canGetHP = 1;
+			can = 0;
+		}
+		if(Entity.getVelY(getPlayerEnt())==gravity && can==0) {
+			Player.setHealth(HP);
+			canGetHP = 1;
+			can = 1;
+		}
+	}
+}
+
+function toDirectionalVector(dir, a, b) {
+    dir[0] = Math["cos"](a) * Math["cos"](b);
+    dir[1] = Math["sin"](b);
+    dir[2] = Math["sin"](a) * Math["cos"](b);
 }
 
 function devpardon() {
