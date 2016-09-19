@@ -198,6 +198,7 @@ var autowalk = false;
 var jetpack = false;
 var tapjump = false;
 var betterJumps = false;
+var morphEnhance = false;
 
 var showActive = false;
 var showActive2 = false;
@@ -7569,11 +7570,37 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		morphLayout.addView(exit);
 		
+		var mne = new Button(MainActivity);
+mne.setText("Morph enhance");
+mne.setTextColor(Color.RED);
+if(morphEnhance==true)mne.setTextColor(Color.GREEN);
+            mne.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             morphEnhance?morphEnhance=false:morphEnhance=true;
+mne.setText("Morph enhance");
+if(morphEnhance == true){
+mne.setTextColor(Color.GREEN);
+clientMessage(client + "Morph enhance adds effects and more to what mob you morph into!");
+
+morphEnhance = true;
+}
+if(morphEnhance == false){
+mne.setTextColor(Color.RED);
+clientMessage(client + "Morph enhance off");
+
+morphEnhance = false;
+}
+                }
+            }));
+            morphLayout.addView(mne);
+		
 		var mm1 = new android.widget.Button(MainActivity);
             mm1.setText("Player");
             mm1.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-/*Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);*/
+if(morphEnhance==true){
+	Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);
+}
 Entity.setRenderType(Player.getEntity(), 27);
 /*Entity.setMobSkin(Player.getEntity(),"assets/mob/char.png");*/
                 }
@@ -7584,7 +7611,9 @@ var mm = new android.widget.Button(MainActivity);
             mm.setText("Bat");
             mm.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-/*Entity.setCollisionSize(Player.getEntity(), 0.2, 0.2, 0.2);*/
+if(morphEnhance==true){
+	Entity.setCollisionSize(Player.getEntity(), 0.2, 0.2, 0.2);
+}
 Entity.setRenderType(Player.getEntity(), 10);
 /*Entity.setMobSkin(Player.getEntity(),"mob/bat.png");*/
                 }
@@ -7595,7 +7624,10 @@ var mm0 = new android.widget.Button(MainActivity);
             mm0.setText("Blaze");
             mm0.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-/*Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);*/
+if(morphEnhance==true){
+	Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);
+	Entity.addEffect(getPlayerEnt(), MobEffect.fireResistance, 25*10, 0, false, true);
+}
 Entity.setRenderType(Player.getEntity(), 18);
 /*Entity.setMobSkin(Player.getEntity(),"mob/blaze.png");*/
                 }
@@ -7606,7 +7638,9 @@ var mm2 = new android.widget.Button(MainActivity);
             mm2.setText("Chicken");
             mm2.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-/*Entity.setCollisionSize(Player.getEntity(), 0.4, 0.4, 0.4);*/
+if(morphEnhance==true){
+	Entity.setCollisionSize(Player.getEntity(), 0.4, 0.4, 0.4);
+}
 Entity.setRenderType(Player.getEntity(), 5);
 /*Entity.setMobSkin(Player.getEntity(),"mob/chicken.png");*/
                 }
@@ -7617,7 +7651,9 @@ var mm3 = new android.widget.Button(MainActivity);
             mm3.setText("Cow");
             mm3.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-/*Entity.setCollisionSize(Player.getEntity(), 0.8, 1.7, 0.8);*/
+if(morphEnhance==true){
+Entity.setCollisionSize(Player.getEntity(), 0.8, 1.7, 0.8);
+}
 Entity.setRenderType(Player.getEntity(), 6);
 /*Entity.setMobSkin(Player.getEntity(),"mob/cow.png");*/
                 }
@@ -7628,7 +7664,9 @@ var mm4 = new android.widget.Button(MainActivity);
             mm4.setText("Creeper");
             mm4.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-/*Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);*/
+if(morphEnhance==true){
+Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);
+}
 Entity.setRenderType(Player.getEntity(), 22);
 /*Entity.setMobSkin(Player.getEntity(),"mob/creeper.png");*/
                 }
@@ -7639,7 +7677,9 @@ var mm5 = new android.widget.Button(MainActivity);
             mm5.setText("Enderman");
             mm5.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-/*Entity.setCollisionSize(Player.getEntity(), 0.7, 3, 0.7);*/
+if(morphEnhance==true){
+Entity.setCollisionSize(Player.getEntity(), 0.7, 3, 0.7);
+}
 Entity.setRenderType(Player.getEntity(), 24);
 /*Entity.setMobSkin(Player.getEntity(),"mob/enderman.tga");*/
                 }
@@ -7650,7 +7690,10 @@ var mm6 = new android.widget.Button(MainActivity);
             mm6.setText("Ghast");
             mm6.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-/*Entity.setCollisionSize(Player.getEntity(), 4, 4, 4);*/
+if(morphEnhance==true){
+Entity.setCollisionSize(Player.getEntity(), 4, 4, 4);
+Entity.addEffect(getPlayerEnt(), MobEffect.fireResistance, 25*10, 0, false, true);
+}
 Entity.setRenderType(Player.getEntity(), 17);
 /*Entity.setMobSkin(Player.getEntity(),"mob/ghast.png");*/
                 }
@@ -7661,6 +7704,9 @@ Entity.setRenderType(Player.getEntity(), 17);
             mmH.setText("Horse");
             mmH.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
+if(morphEnhance==true){
+	Entity.addEffect(getPlayerEnt(), MobEffect.jump, 25*10, 0, false, true);
+}
 Entity.setRenderType(Player.getEntity(), 48);
 /*Entity.setMobSkin(Player.getEntity(),"mob/horse.png");*/
                 }
@@ -7671,7 +7717,11 @@ Entity.setRenderType(Player.getEntity(), 48);
             mmH2.setText("Husk");
             mmH2.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-Entity.setRenderType(Player.getEntity(), 54);
+if(morphEnhance==true){
+	Entity.addEffect(getPlayerEnt(), MobEffect.hunger, 25*10, 0, false, true);
+	Entity.addEffect(getPlayerEnt(), MobEffect.movementSlowdown, 25*10, 0, false, true);
+}
+	Entity.setRenderType(Player.getEntity(), 54);
 /*Entity.setMobSkin(Player.getEntity(),"mob/husk.png");*/
                 }
             }));
@@ -7681,7 +7731,9 @@ var mm7 = new android.widget.Button(MainActivity);
             mm7.setText("Iron golem");
             mm7.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-/*Entity.setCollisionSize(Player.getEntity(), 1, 3, 1);*/
+if(morphEnhance==true){
+Entity.setCollisionSize(Player.getEntity(), 1, 3, 1);
+}
 Entity.setRenderType(Player.getEntity(), 42);
 /*Entity.setMobSkin(Player.getEntity(),"mob/iron_golem.png");*/
                 }
@@ -7692,7 +7744,11 @@ var mm8 = new android.widget.Button(MainActivity);
             mm8.setText("Magma cube");
             mm8.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-/*Entity.setCollisionSize(Player.getEntity(), 2, 2, 2);*/
+if(morphEnhance==true){
+Entity.setCollisionSize(Player.getEntity(), 2, 2, 2);
+Entity.addEffect(getPlayerEnt(), MobEffect.fireResistance, 25*10, 0, false, true);
+Entity.addEffect(getPlayerEnt(), MobEffect.jump, 25*10, 0, false, true);
+}
 Entity.setRenderType(Player.getEntity(), 16);
 /*Entity.setMobSkin(Player.getEntity(),"mob/magmacube.png");*/
                 }
@@ -7703,7 +7759,10 @@ var mm9 = new android.widget.Button(MainActivity);
             mm9.setText("Ocelot");
             mm9.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-/*Entity.setCollisionSize(Player.getEntity(), 0.5, 0.5, 0.5);*/
+if(morphEnhance==true){
+Entity.setCollisionSize(Player.getEntity(), 0.5, 0.5, 0.5);
+Entity.addEffect(getPlayerEnt(), MobEffect.movementSpeed, 25*10, 0, false, true);
+}
 Entity.setRenderType(Player.getEntity(), 43);
 /*Entity.setMobSkin(Player.getEntity(),"mob/cat/ocelot.png");*/
                 }
@@ -7714,7 +7773,9 @@ var mm10 = new android.widget.Button(MainActivity);
             mm10.setText("Pig");
             mm10.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-/*Entity.setCollisionSize(Player.getEntity(), 0.8, 1, 0.8);*/
+if(morphEnhance==true){
+Entity.setCollisionSize(Player.getEntity(), 0.8, 1, 0.8);
+}
 Entity.setRenderType(Player.getEntity(), 8);
 /*Entity.setMobSkin(Player.getEntity(),"mob/pig.png");*/
                 }
@@ -7725,6 +7786,9 @@ Entity.setRenderType(Player.getEntity(), 8);
             mmR.setText("Rabbit");
             mmR.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
+        if(morphEnhance==true){
+        Entity.addEffect(getPlayerEnt(), MobEffect.jump, 25*10, 0, false, true);
+        }
 Entity.setRenderType(Player.getEntity(), 46);
 /*Entity.setMobSkin(Player.getEntity(),"mob/rabbit.png");*/
                 }
@@ -7735,7 +7799,9 @@ var mm11 = new android.widget.Button(MainActivity);
             mm11.setText("Sheep");
             mm11.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-/*Entity.setCollisionSize(Player.getEntity(), 0.8, 1.7, 0.8);*/
+if(morphEnhance==true){
+Entity.setCollisionSize(Player.getEntity(), 0.8, 1.7, 0.8);
+}
 Entity.setRenderType(Player.getEntity(), 9);
 /*Entity.setMobSkin(Player.getEntity(),"mob/sheep.tga");*/
                 }
@@ -7746,7 +7812,10 @@ var mm12 = new android.widget.Button(MainActivity);
             mm12.setText("Silverfish");
             mm12.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-/*Entity.setCollisionSize(Player.getEntity(), 0.3, 0.4, 0.3);*/
+if(morphEnhance==true){
+Entity.setCollisionSize(Player.getEntity(), 0.3, 0.4, 0.3);
+Entity.addEffect(getPlayerEnt(), MobEffect.nightVision, 25*10, 0, false, true);
+}
 Entity.setRenderType(Player.getEntity(), 21);
 /*Entity.setMobSkin(Player.getEntity(),"mob/silverfish.png");*/
                 }
@@ -7757,7 +7826,11 @@ var mm13 = new android.widget.Button(MainActivity);
             mm13.setText("Skeleton");
             mm13.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-/*Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);*/
+if(morphEnhance==true){
+Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);
+Entity.addEffect(getPlayerEnt(), MobEffect.hunger, 25*10, 0, false, true);
+Entity.addEffect(getPlayerEnt(), MobEffect.movementSlowdown, 25*10, 0, false, true);
+}
 Entity.setRenderType(Player.getEntity(), 19);
 /*Entity.setMobSkin(Player.getEntity(),"mob/skeleton.png");*/
                 }
@@ -7768,7 +7841,10 @@ var mm14 = new android.widget.Button(MainActivity);
             mm14.setText("Slime");
             mm14.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-/*Entity.setCollisionSize(Player.getEntity(), 2, 2, 2);*/
+if(morphEnhance==true){
+Entity.setCollisionSize(Player.getEntity(), 2, 2, 2);
+Entity.addEffect(getPlayerEnt(), MobEffect.jump, 25*10, 0, false, true);
+}
 Entity.setRenderType(Player.getEntity(), 23);
 /*Entity.setMobSkin(Player.getEntity(),"mob/slime.png");*/
                 }
@@ -7779,7 +7855,9 @@ var mm15 = new android.widget.Button(MainActivity);
             mm15.setText("Snow golem");
             mm15.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-/*Entity.setCollisionSize(Player.getEntity(), 0.7, 2, 0.7);*/
+if(morphEnhance==true){
+Entity.setCollisionSize(Player.getEntity(), 0.7, 2, 0.7);
+}
 Entity.setRenderType(Player.getEntity(), 44);
 /*Entity.setMobSkin(Player.getEntity(),"mob/snow_golem.png");*/
                 }
@@ -7790,6 +7868,10 @@ Entity.setRenderType(Player.getEntity(), 44);
             mmS.setText("Stray");
             mmS.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
+                	if(morphEnhance==true){
+        Entity.addEffect(getPlayerEnt(), MobEffect.hunger, 25*10, 0, false, true);
+	Entity.addEffect(getPlayerEnt(), MobEffect.movementSlowdown, 25*10, 0, false, true);
+                	}
 Entity.setRenderType(Player.getEntity(), 55);
 /*Entity.setMobSkin(Player.getEntity(),"mob/stray.png");*/
                 }
@@ -7800,7 +7882,9 @@ var mm16 = new android.widget.Button(MainActivity);
             mm16.setText("Spider");
             mm16.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-/*Entity.setCollisionSize(Player.getEntity(), 1, 0.4, 1);*/
+if(morphEnhance==true){
+Entity.setCollisionSize(Player.getEntity(), 1, 0.4, 1);
+}
 Entity.setRenderType(Player.getEntity(), 20);
 /*Entity.setMobSkin(Player.getEntity(),"mob/spider.tga");*/
                 }
@@ -7811,7 +7895,10 @@ var mm17 = new android.widget.Button(MainActivity);
             mm17.setText("Squid");
             mm17.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-/*Entity.setCollisionSize(Player.getEntity(), 0.5, 0.5, 0.5);*/
+if(morphEnhance==true){
+Entity.setCollisionSize(Player.getEntity(), 0.5, 0.5, 0.5);
+Entity.addEffect(getPlayerEnt(), MobEffect.waterBreathing, 25*10, 0, false, true);
+}
 Entity.setRenderType(Player.getEntity(), 36);
 /*Entity.setMobSkin(Player.getEntity(),"mob/squid.png");*/
                 }
@@ -7822,7 +7909,9 @@ var mm18 = new android.widget.Button(MainActivity);
             mm18.setText("Villager");
             mm18.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-/*Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);*/
+if(morphEnhance==true){
+Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);
+}
 Entity.setRenderType(Player.getEntity(), 12);
 /*Entity.setMobSkin(Player.getEntity(),"mob/villager/villager.png");*/
                 }
@@ -7833,7 +7922,11 @@ var mm19 = new android.widget.Button(MainActivity);
             mm19.setText("Villager zombie");
             mm19.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-/*Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);*/
+if(morphEnhance==true){
+Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);
+Entity.addEffect(getPlayerEnt(), MobEffect.hunger, 25*10, 0, false, true);
+Entity.addEffect(getPlayerEnt(), MobEffect.movementSlowdown, 25*10, 0, false, true);
+}
 Entity.setRenderType(Player.getEntity(), 39);
 /*Entity.setMobSkin(Player.getEntity(),"mob/zombieVillager.png");*/
                 }
@@ -7854,7 +7947,9 @@ var mm20 = new android.widget.Button(MainActivity);
             mm20.setText("Wolf");
             mm20.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-/*Entity.setCollisionSize(Player.getEntity(), 0.8, 0.7, 0.8);*/
+if(morphEnhance==true){
+Entity.setCollisionSize(Player.getEntity(), 0.8, 0.7, 0.8);
+}
 Entity.setRenderType(Player.getEntity(), 11);
 /*Entity.setMobSkin(Player.getEntity(),"mob/wolf.png");*/
                 }
@@ -7865,6 +7960,11 @@ Entity.setRenderType(Player.getEntity(), 11);
             mmW2.setText("Wither skeleton");
             mmW2.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
+                	if(morphEnhance==true){
+                	Entity.addEffect(getPlayerEnt(), MobEffect.nightVision, 25*10, 0, false, true);
+                	Entity.addEffect(getPlayerEnt(), MobEffect.hunger, 25*10, 0, false, true);
+	                Entity.addEffect(getPlayerEnt(), MobEffect.movementSlowdown, 25*10, 0, false, true);
+                	}
 Entity.setRenderType(Player.getEntity(), 19);
 /*Entity.setMobSkin(Player.getEntity(),"mob/witherSkeleton.tga");*/
                 }
@@ -7875,7 +7975,11 @@ var mm21 = new android.widget.Button(MainActivity);
             mm21.setText("Zombie");
             mm21.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-/*Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);*/
+if(morphEnhance==true){
+Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);
+Entity.addEffect(getPlayerEnt(), MobEffect.hunger, 25*10, 0, false, true);
+Entity.addEffect(getPlayerEnt(), MobEffect.movementSlowdown, 25*10, 0, false, true);
+}
 Entity.setRenderType(Player.getEntity(), 14);
 /*Entity.setMobSkin(Player.getEntity(),"mob/zombie.png");*/
                 }
@@ -7886,7 +7990,10 @@ var mm22 = new android.widget.Button(MainActivity);
             mm22.setText("Zombie pigman");
             mm22.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-/*Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);*/
+if(morphEnhance==true){
+Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);
+Entity.addEffect(getPlayerEnt(), MobEffect.fireResistance, 25*10, 0, false, true);
+}
 Entity.setRenderType(Player.getEntity(), 15);
 /*Entity.setMobSkin(Player.getEntity(),"mob/pigzombie.png*/
                 }
