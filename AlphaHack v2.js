@@ -2253,7 +2253,7 @@ spa();
 tapspam = true;
 }
 if(tapspam == false){
-button8.setTextColor(Color.RED);
+button9.setTextColor(Color.RED);
 autospam = false;
 autospam2 = false;
 tapspam = false;
@@ -2457,7 +2457,7 @@ tapid = true;
 if(tapid == false){
 taptoid.setTextColor(Color.RED);
 
-taptoid = false;
+tapid = false;
 }
                 }
             }));
@@ -3019,7 +3019,7 @@ if(tapjump == false){
 tju.setTextColor(Color.RED);
 clientMessage(client + "Tap jump is off");
 
-tju = false;
+tapjump = false;
 }
                 }
             }));
@@ -3043,35 +3043,11 @@ if(spider == false){
 spiderman.setTextColor(Color.RED);
 clientMessage(client + "Spider hack off");
 
-spiderman = false;
+spider = false;
 }
                 }
             }));
             cheatLayout.addView(spiderman);
-            
-            var autow = new Button(MainActivity);
-autow.setText("Auto walk");
-autow.setTextColor(Color.RED);
-if(autowalk==true)autow.setTextColor(Color.GREEN);
-            autow.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             autowalk?autowalk=false:autowalk=true;
-autow.setText("Auto walk");
-if(autowalk == true){
-autow.setTextColor(Color.GREEN);
-clientMessage(client + "Auto walk on");
-
-autowalk = true;
-}
-if(autowalk == false){
-autow.setTextColor(Color.RED);
-clientMessage(client + "Auto walk off");
-
-autow = false;
-}
-                }
-            }));
-            cheatLayout.addView(autow);
             
             var jumps = new Button(MainActivity);
 jumps.setText("Higher jumps");
@@ -3091,11 +3067,35 @@ if(jump == false){
 jumps.setTextColor(Color.RED);
 clientMessage(client + "Higher jumps off");
 
-jumps = false;
+jump = false;
 }
                 }
             }));
             cheatLayout.addView(jumps);
+            
+            var autow = new Button(MainActivity);
+autow.setText("Auto walk");
+autow.setTextColor(Color.RED);
+if(autowalk==true)autow.setTextColor(Color.GREEN);
+            autow.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             autowalk?autowalk=false:autowalk=true;
+autow.setText("Auto walk");
+if(autowalk == true){
+autow.setTextColor(Color.GREEN);
+clientMessage(client + "Auto walk on");
+
+autowalk = true;
+}
+if(autowalk == false){
+autow.setTextColor(Color.RED);
+clientMessage(client + "Auto walk off");
+
+autowalk = false;
+}
+                }
+            }));
+            cheatLayout.addView(autow);
             
             cheat = new PopupWindow(cheatLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)cheat.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -10617,11 +10617,6 @@ if(coords)ModPE.showTipMessage(client + "\nX "+Math.round(getPlayerX())+", Y "+M
 if(armor)ModPE.showTipMessage(client + "\n\nHead: " + Entity.getArmorDamage(getPlayerEnt(), 0) + " Chest: " + Entity.getArmorDamage(getPlayerEnt(), 1) + " Legs: " + Entity.getArmorDamage(getPlayerEnt(), 2) + " Feet: " + Entity.getArmorDamage(getPlayerEnt(), 3));
 if(autonuke)explode(getPlayerX(),getPlayerY(),getPlayerZ(),5);
 if(grief)Level.setTile(Player.getPointedBlockX(), Player.getPointedBlockY(), Player.getPointedBlockZ(), vid, 0);
-if(jump){
-	if(Entity.getVelY(getPlayerEnt())< -0.1){
-		setVelY(getPlayerEnt(),0.8);
-		}
-	}
 if(getvel){
 ModPE.showTipMessage("VelX: "+Math.round(Entity.getVelX(getPlayerEnt()))+" VelY "+Math.round(Entity.getVelY(getPlayerEnt()))+" VelZ "+Math.round(Entity.getVelZ(getPlayerEnt())));
 }
@@ -10659,12 +10654,7 @@ if (spider && Utils.Player.isCollidedHorizontally()) {
         setVelY(Player.getEntity(), 0.6);
               }
 	    }
-	    if(autowalk) {
-    toDirectionalVector(playerDir, (getYaw() + 90) * DEG_TO_RAD, getPitch() * DEG_TO_RAD * -1);
-    setVelX(getPlayerEnt(), 0.22 * playerDir[0]);
-    setVelZ(getPlayerEnt(), 0.22 * playerDir[2]);
-}
-if(jump) {
+	    if(jump) {
 		if(Entity.getVelY(getPlayerEnt())< -0.1) {
 			setVelY(getPlayerEnt(),-0.5);
 		}
@@ -10685,6 +10675,11 @@ if(jump) {
 			can = 1;
 		}
 	}
+	    if(autowalk) {
+    toDirectionalVector(playerDir, (getYaw() + 90) * DEG_TO_RAD, getPitch() * DEG_TO_RAD * -1);
+    setVelX(getPlayerEnt(), 0.22 * playerDir[0]);
+    setVelZ(getPlayerEnt(), 0.22 * playerDir[2]);
+}
 }
 
 function toDirectionalVector(dir, a, b) {
@@ -10975,7 +10970,7 @@ function crosshairAimAt(ent, pos) {
   }
   
 function fastEat(){
-var foodArray = ["260", "282", "297", "319", "320", "322", "335", "349", "350", "354", "357", "360", "363", "364", "365", "366", "367", "382", "391", "392", "400", "411", "412", "423", "424"];
+var foodArray = [260, 282, 297, 319, 320, 322, 335, 349, 350, 354, 357, 360, 363, 364, 365, 366, 367, 382, 391, 392, 400, 411, 412, 423, 424];
 Player.getCarriedItem();
 for(var i = 0; i < foodArray.length; i++){
     if(Player.getCarriedItem()==foodArray[i]){
@@ -11038,7 +11033,7 @@ function changeSpeedOnBlock(){
     var x = getPlayerX();
     var y = getPlayerY();
     var z = getPlayerZ();
-    var myArray = ["30", "79", "88", "174"];
+    var myArray = [30, 79, 88, 174];
     getTile(x, y -1, z);
     getTile(x, y -2, z);
     getTile(x +1, y, z);
