@@ -3168,6 +3168,116 @@ autowalk = false;
             }));
             cheatLayout.addView(autow);
             
+            var xz = new Button(MainActivity);
+            xz.setText("Other XYZ");
+            xz.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    XYZView();
+                    
+		    cheat.dismiss();
+		    
+		    Toast.makeText(MainActivity, "Scroll down", 1).show();
+                }
+            }));
+            cheatLayout.addView(xz);
+            
+            function XYZView(){
+MainActivity.runOnUiThread(new Runnable({ run: function(){
+        try{
+            var XYZLayout = new LinearLayout(MainActivity);
+            
+            var XYZScroll = new ScrollView(MainActivity);
+            
+            var XYZLayout1 = new LinearLayout(MainActivity);
+            XYZLayout.setOrientation(1);
+            XYZLayout1.setOrientation(1);
+            
+            XYZScroll.addView(XYZLayout);
+            XYZLayout1.addView(XYZScroll);
+
+var exit = new Button(MainActivity);
+            exit.setText("Exit");
+exit.setTextColor(Color.RED);
+            exit.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+
+                XYZ.dismiss();
+
+		showMenuBtn();
+                }
+            }));
+            XYZLayout.addView(exit);
+			
+            var refresh = new Button(MainActivity);
+            refresh.setText("Refresh");
+            refresh.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                XYZ.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)XYZView();
+		}
+                }
+            }));
+            XYZLayout.addView(refresh);
+			
+			var xyZ_title = new TextView(MainActivity);
+            xyZ_title.setTextSize(15);
+	    xyZ_title.setText("Showing 5 players XYZ:");
+            xyZ_title.setTextColor(Color.WHITE);
+            XYZLayout.addView(xyZ_title);
+			
+			var players = Server.getAllPlayers();
+			var names = Server.getAllPlayerNames();
+			var x0 = Entity.getX(players[0]) - getPlayerX();
+			var y0 = Entity.getY(players[0]) - getPlayerY();
+			var z0 = Entity.getZ(players[0]) - getPlayerZ();
+			var x1 = Entity.getX(players[1]) - getPlayerX();
+			var y1 = Entity.getY(players[1]) - getPlayerY();
+			var z1 = Entity.getZ(players[1]) - getPlayerZ();
+			var x2 = Entity.getX(players[2]) - getPlayerX();
+			var y2 = Entity.getY(players[2]) - getPlayerY();
+			var z2 = Entity.getZ(players[2]) - getPlayerZ();
+			var x3 = Entity.getX(players[3]) - getPlayerX();
+			var y3 = Entity.getY(players[3]) - getPlayerY();
+			var z3 = Entity.getZ(players[3]) - getPlayerZ();
+			var x4 = Entity.getX(players[4]) - getPlayerX();
+			var y4 = Entity.getY(players[4]) - getPlayerY();
+			var z4 = Entity.getZ(players[4]) - getPlayerZ();
+			var x5 = Entity.getX(players[5]) - getPlayerX();
+			var y5 = Entity.getY(players[5]) - getPlayerY();
+			var z5 = Entity.getZ(players[5]) - getPlayerZ();
+	    var xyZ_show = new TextView(MainActivity);
+            xyZ_show.setTextSize(15);
+	    xyZ_show.setText(names[0]+"\n"+x0+" "+y0+" "+z0+"\n"+names[1]+"\n"+x1+" "+y1+" "+z1+"\n"+names[2]+"\n"+x2+" "+y2+" "+z2+"\n"+names[3]+"\n"+x3+" "+y3+" "+z3+"\n"+names[4]+"\n"+x4+" "+y4+" "+z4+"\n"+names[5]+"\n"+x5+" "+y5+" "+z5+"\n");
+            xyZ_show.setTextColor(Color.YELLOW);
+            XYZLayout.addView(xyZ_show);
+			
+XYZ = new PopupWindow(XYZLayout1, dip2px(500), dip2px(500));
+
+XYZ = new PopupWindow(XYZLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/2, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1);
+	  var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(Color.TRANSPARENT);
+      bg.setStroke(10,Color.BLACK);
+XYZLayout1.setBackgroundDrawable(bg);
+XYZLayout1.setPadding(20,0,20,0);
+XYZ.setBackgroundDrawable(new ColorDrawable(Color.BLACK));
+            XYZ.showAtLocation(MainActivity.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
+            }catch(error){
+                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
+            }
+    }}));
+}
+
+var exit2 = new android.widget.Button(MainActivity);
+		exit2.setText("Exit");
+		exit2.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             cheat.dismiss();
+             showMenuBtn();
+			}
+		});
+		cheatLayout.addView(exit2);
+            
             cheat = new PopupWindow(cheatLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)cheat.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
       if(default1==false)cheat.setBackgroundDrawable(new ColorDrawable(GUIColor));
