@@ -3248,7 +3248,7 @@ exit.setTextColor(Color.RED);
 			var z5 = Entity.getZ(players[5]) - getPlayerZ();
 	    var xyZ_show = new TextView(MainActivity);
             xyZ_show.setTextSize(15);
-	    xyZ_show.setText(names[0]+"\n"+x0+" "+y0+" "+z0+"\n"+names[1]+"\n"+x1+" "+y1+" "+z1+"\n"+names[2]+"\n"+x2+" "+y2+" "+z2+"\n"+names[3]+"\n"+x3+" "+y3+" "+z3+"\n"+names[4]+"\n"+x4+" "+y4+" "+z4+"\n"+names[5]+"\n"+x5+" "+y5+" "+z5+"\n");
+	    xyZ_show.setText(names[0]+"\n"+Math.round(x0)+" "+Math.round(y0)+" "+Math.round(z0)+"\n"+names[1]+"\n"+Math.round(x1)+" "+Math.round(y1)+" "+Math.round(z1)+"\n"+names[2]+"\n"+Math.round(x2)+" "+Math.round(y2)+" "+Math.round(z2)+"\n"+names[3]+"\n"+Math.round(x3)+" "+Math.round(y3)+" "+Math.round(z3)+"\n"+names[4]+"\n"+Math.round(x4)+" "+Math.round(y4)+" "+Math.round(z4)+"\n"+names[5]+"\n"+Math.round(x5)+" "+Math.round(y5)+" "+Math.round(z5)+"\n");
             xyZ_show.setTextColor(Color.YELLOW);
             XYZLayout.addView(xyZ_show);
 			
