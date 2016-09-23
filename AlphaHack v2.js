@@ -11688,7 +11688,8 @@ function rptask() {
                     }
                     if(aimbot) {
 			var ent = getNearestEntity(7);
-			if(ent != null || Player.getName(ent) != "" || Player.getName(ent) != " ")crosshairAimAt(ent);
+			if(Entity.getRenderType(ent)==27 && Entity.getNameTag(ent) != "" || Entity.getNameTag(ent) != " " && ent != null)crosshairAimAt(ent);
+			if(Entity.getRenderType(ent) != 27 && ent != null)crosshairAimAt(ent);
                     }
                     nx = getPlayerX();
                     ny = getPlayerY();
