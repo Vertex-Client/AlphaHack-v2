@@ -407,7 +407,6 @@ clientMessage("§2≡≡=======»§a>§9 α §a<§2«======≡≡§f§r");
 clientMessage(client + "\n§aKik§f: ArceusMatt" + "\n" + "§bTwitter§f: @ArceusMatt" + "\n" + "§cGoogle+§f: Arceus matt" + "\n" + "§fYou§4tube§f: Arceus Matt");
 clientMessage("§2≡≡=======»§a>§9 α §a<§2«======≡≡§f§r\n\n");
 getUpdate(function(info){clientMessage("")});
-test2 = true;
 }
 
 //main menu
@@ -834,7 +833,7 @@ if(getLanguage=="en_US")Toast.makeText(MainActivity, "Closed successfully", 1).s
             
             menuLayout.addView(line1);
 	    
-	    var group = new android.widget.Button(MainActivity);
+var group = new android.widget.Button(MainActivity);
 group.setText("Community");
 group.setTextColor(GUIBtns);
 if(mcpetheme==true)group.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
@@ -2818,6 +2817,223 @@ clientMessage(client + "gives you permanent op if you were op before, if server 
                 }
             }));
             cmdLayout.addView(opp);
+            
+            var a1 = new Button(MainActivity);
+            a1.setText("Time: 6:00am");
+            a1.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Server.sendChat("/time set 0");
+                }
+            }));
+            cmdLayout.addView(a1);
+
+var a2 = new Button(MainActivity);
+            a2.setText("Time: 7:00am");
+            a2.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Server.sendChat("/time set 1000");
+                }
+            }));
+            cmdLayout.addView(a2);
+
+var a3 = new Button(MainActivity);
+            a3.setText("Time: 8:00am");
+            a3.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Server.sendChat("/time set 2000");
+                }
+            }));
+            cmdLayout.addView(a3);
+
+var a4 = new Button(MainActivity);
+            a4.setText("Time: 9:00am");
+            a4.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Server.sendChat("/time set 3000");
+                }
+            }));
+            cmdLayout.addView(a4);
+
+var a5 = new Button(MainActivity);
+            a5.setText("Time: 10:00am");
+            a5.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Server.sendChat("/time set 4000");
+                }
+            }));
+            cmdLayout.addView(a5);
+
+var a6 = new Button(MainActivity);
+            a6.setText("Time: 11:00am");
+            a6.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Server.sendChat("/time set 5000");
+                }
+            }));
+            cmdLayout.addView(a6);
+
+var a7 = new Button(MainActivity);
+            a7.setText("Time: 12:00pm");
+            a7.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Server.sendChat("/time set 6000");
+                }
+            }));
+            cmdLayout.addView(a7);
+
+var a8 = new Button(MainActivity);
+            a8.setText("Time: 1:00pm");
+            a8.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Server.sendChat("/time set 7000");
+                }
+            }));
+            cmdLayout.addView(a8);
+
+var a9 = new Button(MainActivity);
+            a9.setText("Time: 2:00pm");
+            a9.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Server.sendChat("/time set 8000");
+                }
+            }));
+            cmdLayout.addView(a9);
+
+var a10 = new Button(MainActivity);
+            a10.setText("Time: 3:00pm");
+            a10.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Server.sendChat("/time set 9000");
+                }
+            }));
+            cmdLayout.addView(a10);
+
+var a11 = new Button(MainActivity);
+            a11.setText("Time: 4:00pm");
+            a11.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Server.sendChat("/time set 10000");
+                }
+            }));
+            cmdLayout.addView(a11);
+
+var a12 = new Button(MainActivity);
+            a12.setText("Time: 5:00pm");
+            a12.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Server.sendChat("/time set 11000");
+                }
+            }));
+            cmdLayout.addView(a12);
+
+var a13 = new Button(MainActivity);
+            a13.setText("Time: 6:00pm");
+            a13.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Server.sendChat("/time set 12000");
+                }
+            }));
+            cmdLayout.addView(a13);
+
+var a14 = new Button(MainActivity);
+            a14.setText("Time: 7:00pm");
+            a14.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Server.sendChat("/time set 13000");
+                }
+            }));
+            cmdLayout.addView(a14);
+
+var a15 = new Button(MainActivity);
+            a15.setText("Time: 8:00pm");
+            a15.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Server.sendChat("/time set 14000");
+                }
+            }));
+            cmdLayout.addView(a15);
+
+var a16 = new Button(MainActivity);
+            a16.setText("Time: 9:00pm");
+            a16.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Server.sendChat("/time set 15000");
+                }
+            }));
+            cmdLayout.addView(a16);
+
+var a17 = new Button(MainActivity);
+            a17.setText("Time: 10:00pm");
+            a17.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Server.sendChat("/time set 16000");
+                }
+            }));
+            cmdLayout.addView(a17);
+
+var a18 = new Button(MainActivity);
+            a18.setText("Time: 11:00pm");
+            a18.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Server.sendChat("/time set 17000");
+                }
+            }));
+            cmdLayout.addView(a18);
+
+var a19 = new Button(MainActivity);
+            a19.setText("Time: 12:00am");
+            
+            a19.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Server.sendChat("/time set 18000");
+                }
+            }));
+            cmdLayout.addView(a19);
+
+var a20 = new Button(MainActivity);
+            a20.setText("Time: 1:00am");
+            a20.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Server.sendChat("/time set 19000");
+                }
+            }));
+            cmdLayout.addView(a20);
+
+var a21 = new Button(MainActivity);
+            a21.setText("Time: 2:00am");
+            a21.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Server.sendChat("/time set 20000");
+                }
+            }));
+            cmdLayout.addView(a21);
+
+var a22 = new Button(MainActivity);
+            a22.setText("Time: 3:00am");
+            a22.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Server.sendChat("/time set 21000");
+                }
+            }));
+            cmdLayout.addView(a22);
+
+var a23 = new Button(MainActivity);
+            a23.setText("Time: 4:00am");
+            a23.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Server.sendChat("/time set 22000");
+                }
+            }));
+            cmdLayout.addView(a23);
+
+var a24 = new Button(MainActivity);
+            a24.setText("Time: 5:00am");          
+            a24.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+Server.sendChat("/time set 23000");
+                }
+            }));
+            cmdLayout.addView(a24);
             
             cmd = new PopupWindow(cmdLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             cmd.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -9669,7 +9885,7 @@ clientMessage(client + "§7Spawn set to " + Math.round(getPlayerX()) + ", " + Ma
             randomtp.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
  Entity.setPosition(Player.getEntity(), (Math.floor(Math.random() * (5000 - 100 + 1)) + 100), 60, (Math.floor(Math.random() * (5000 - 100 + 1)) + 100));
-clientMessage(client + "Woah!");
+clientMessage(client + "Woah!\n"+"Teleported to: "+getPlayerX()+" "+getPlayerY()+" "+getPlayerZ());
                 }
             }));
             teleportLayout.addView(randomtp);
@@ -9765,8 +9981,7 @@ print("The Teleport Dialog Is Malfunctioning:"+e);
 }
 
 function set() {
-Server.getPort();
-if(Server.getPort()=="0")Entity.setPosition(Player.getEntity(), px, py, pz);
+Entity.setPosition(Player.getEntity(), px, py, pz);
 Server.sendChat("/tp " + Player.getName(Player.getEntity()) + space + px + space + py + space + pz);
 }
 		
@@ -9851,7 +10066,6 @@ var a1 = new Button(MainActivity);
             a1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Level.setTime(0);
-Server.sendChat("/time set 0");
                 }
             }));
             timeLayout.addView(a1);
@@ -9861,7 +10075,6 @@ var a2 = new Button(MainActivity);
             a2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Level.setTime(1000);
-Server.sendChat("/time set 1000");
                 }
             }));
             timeLayout.addView(a2);
@@ -9871,7 +10084,6 @@ var a3 = new Button(MainActivity);
             a3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Level.setTime(2000);
-Server.sendChat("/time set 2000");
                 }
             }));
             timeLayout.addView(a3);
@@ -9881,7 +10093,6 @@ var a4 = new Button(MainActivity);
             a4.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Level.setTime(3000);
-Server.sendChat("/time set 3000");
                 }
             }));
             timeLayout.addView(a4);
@@ -9891,7 +10102,6 @@ var a5 = new Button(MainActivity);
             a5.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Level.setTime(4000);
-Server.sendChat("/time set 4000");
                 }
             }));
             timeLayout.addView(a5);
@@ -9901,7 +10111,6 @@ var a6 = new Button(MainActivity);
             a6.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Level.setTime(5000);
-Server.sendChat("/time set 5000");
                 }
             }));
             timeLayout.addView(a6);
@@ -9911,7 +10120,6 @@ var a7 = new Button(MainActivity);
             a7.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Level.setTime(6000);
-Server.sendChat("/time set 6000");
                 }
             }));
             timeLayout.addView(a7);
@@ -9921,7 +10129,6 @@ var a8 = new Button(MainActivity);
             a8.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Level.setTime(7000);
-Server.sendChat("/time set 7000");
                 }
             }));
             timeLayout.addView(a8);
@@ -9931,7 +10138,6 @@ var a9 = new Button(MainActivity);
             a9.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Level.setTime(8000);
-Server.sendChat("/time set 8000");
                 }
             }));
             timeLayout.addView(a9);
@@ -9941,7 +10147,6 @@ var a10 = new Button(MainActivity);
             a10.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Level.setTime(9000);
-Server.sendChat("/time set 9000");
                 }
             }));
             timeLayout.addView(a10);
@@ -9951,7 +10156,6 @@ var a11 = new Button(MainActivity);
             a11.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Level.setTime(10000);
-Server.sendChat("/time set 10000");
                 }
             }));
             timeLayout.addView(a11);
@@ -9961,7 +10165,6 @@ var a12 = new Button(MainActivity);
             a12.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Level.setTime(11000);
-Server.sendChat("/time set 11000");
                 }
             }));
             timeLayout.addView(a12);
@@ -9971,7 +10174,6 @@ var a13 = new Button(MainActivity);
             a13.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Level.setTime(12000);
-Server.sendChat("/time set 12000");
                 }
             }));
             timeLayout.addView(a13);
@@ -9981,7 +10183,6 @@ var a14 = new Button(MainActivity);
             a14.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Level.setTime(13000);
-Server.sendChat("/time set 13000");
                 }
             }));
             timeLayout.addView(a14);
@@ -9991,7 +10192,6 @@ var a15 = new Button(MainActivity);
             a15.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Level.setTime(14000);
-Server.sendChat("/time set 14000");
                 }
             }));
             timeLayout.addView(a15);
@@ -10001,7 +10201,6 @@ var a16 = new Button(MainActivity);
             a16.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Level.setTime(15000);
-Server.sendChat("/time set 15000");
                 }
             }));
             timeLayout.addView(a16);
@@ -10011,7 +10210,6 @@ var a17 = new Button(MainActivity);
             a17.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Level.setTime(16000);
-Server.sendChat("/time set 16000");
                 }
             }));
             timeLayout.addView(a17);
@@ -10021,7 +10219,6 @@ var a18 = new Button(MainActivity);
             a18.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Level.setTime(17000);
-Server.sendChat("/time set 17000");
                 }
             }));
             timeLayout.addView(a18);
@@ -10032,7 +10229,6 @@ var a19 = new Button(MainActivity);
             a19.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Level.setTime(18000);
-Server.sendChat("/time set 18000");
                 }
             }));
             timeLayout.addView(a19);
@@ -10042,7 +10238,6 @@ var a20 = new Button(MainActivity);
             a20.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Level.setTime(19000);
-Server.sendChat("/time set 19000");
                 }
             }));
             timeLayout.addView(a20);
@@ -10052,7 +10247,6 @@ var a21 = new Button(MainActivity);
             a21.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Level.setTime(20000);
-Server.sendChat("/time set 20000");
                 }
             }));
             timeLayout.addView(a21);
@@ -10062,7 +10256,6 @@ var a22 = new Button(MainActivity);
             a22.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Level.setTime(21000);
-Server.sendChat("/time set 21000");
                 }
             }));
             timeLayout.addView(a22);
@@ -10072,7 +10265,6 @@ var a23 = new Button(MainActivity);
             a23.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Level.setTime(22000);
-Server.sendChat("/time set 22000");
                 }
             }));
             timeLayout.addView(a23);
@@ -10082,7 +10274,6 @@ var a24 = new Button(MainActivity);
             a24.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Level.setTime(23000);
-Server.sendChat("/time set 23000");
                 }
             }));
             timeLayout.addView(a24);
@@ -11497,7 +11688,7 @@ function rptask() {
                     }
                     if(aimbot) {
 			var ent = getNearestEntity(7);
-			if(ent != null) crosshairAimAt(ent);
+			if(ent != null || Player.getName(ent) != "" || Player.getName(ent) != " ")crosshairAimAt(ent);
                     }
                     nx = getPlayerX();
                     ny = getPlayerY();
