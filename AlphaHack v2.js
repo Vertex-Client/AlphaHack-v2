@@ -495,6 +495,8 @@ ModPE.langEdit("container.inventory",viddd + ModPE.getI18n("container.inventory"
 ModPE.langEdit("container.minecart",viddd + ModPE.getI18n("container.minecart"));
 ModPE.langEdit("container.repair",viddd + ModPE.getI18n("container.repair"));
 ModPE.langEdit("container.stonecutter",viddd + ModPE.getI18n("container.stonecutter"));
+ModPE.langEdit("container.anvil",viddd + ModPE.getI18n("container.anvil"));
+ModPE.langEdit("container.enchantingTable",viddd + ModPE.getI18n("container.enchantingTable"));
 
 ModPE.langEdit("death.attack.mob",viddd + ModPE.getI18n("death.attack.mob"));
 ModPE.langEdit("death.attack.fall",viddd + ModPE.getI18n("death.attack.fall"));
