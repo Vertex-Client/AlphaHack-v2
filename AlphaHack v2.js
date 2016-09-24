@@ -475,6 +475,12 @@ ModPE.langEdit("chestScreen.header.small",viddd + ModPE.getI18n("chestScreen.hea
 ModPE.langEdit("networkWorld.add_friend",viddd + ModPE.getI18n("networkWorld.add_friend"));
 ModPE.langEdit("furnaceScreen.header",viddd + ModPE.getI18n("furnaceScreen.header"));
 ModPE.langEdit("craftingScreen.header",viddd + ModPE.getI18n("craftingScreen.header"));
+ModPE.langEdit("anvilScreen.header",viddd + ModPE.getI18n("anvilScreen.header"));
+ModPE.langEdit("enchantingScreen.header",viddd + ModPE.getI18n("enchantingScreen.header"));
+ModPE.langEdit("enchantingTableScreen.header",viddd + ModPE.getI18n("enchantingTableScreen.header"));
+ModPE.langEdit("enchantScreen.header",viddd + ModPE.getI18n("enchantScreen.header"));
+ModPE.langEdit("enchantTableScreen.header",viddd + ModPE.getI18n("enchantTableScreen.header"));
+ModPE.langEdit("beaconScreen.header",viddd + ModPE.getI18n("beaconScreen.header"));
 ModPE.langEdit("container.beacon",viddd + ModPE.getI18n("container.beacon"));
 ModPE.langEdit("container.brewing",viddd + ModPE.getI18n("container.brewing"));
 ModPE.langEdit("container.chest",viddd + ModPE.getI18n("container.chest"));
