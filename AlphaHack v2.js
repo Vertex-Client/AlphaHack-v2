@@ -329,7 +329,7 @@ var GUIName = Color.WHITE;
 
 var GUIPos = Gravity.CENTER;
 
-var GUIBtns = Color.WHITE;
+var GUIBtns = Color.BLUE;
 
 var GUIBtns2 = Color.BLACK;
 var GUIBtns3 = Color.WHITE;
@@ -343,7 +343,7 @@ var GUIBtns10 = Color.DKGRAY;
 var GUIBtns11 = Color.GREEN;
 var GUIBtns12 = Color.MAGENTA;
 
-var GUIStroke = Color.BLACK;
+var GUIStroke = Color.BLUE;
 
 var GUIStroke2 = Color.BLACK;
 var GUIStroke3 = Color.WHITE;
@@ -465,9 +465,44 @@ ModPE.langEdit("skins.restore.button",viddd + ModPE.getI18n("skins.restore.butto
 ModPE.langEdit("externalServerScreen.addServer",viddd + ModPE.getI18n("externalServerScreen.addServer"));
 ModPE.langEdit("playscreen.quit",viddd + ModPE.getI18n("playscreen.quit"));
 ModPE.langEdit("chatScreen.hide",viddd + ModPE.getI18n("chatScreen.hide"));
-ModPE.langEdit("action.interact.createMap",viddd + ModPE.getI18n("action.interact.createMap"));
 ModPE.langEdit("xbox.signin",viddd + ModPE.getI18n("xbox.signin"));
 ModPE.langEdit("xbox.signout",viddd + ModPE.getI18n("xbox.signout"));
+
+//0.16.0
+ModPE.langEdit("chestScreen.header.large",viddd + ModPE.getI18n("chestScreen.header.large"));
+ModPE.langEdit("chestScreen.header.player",viddd + ModPE.getI18n("chestScreen.header.player"));
+ModPE.langEdit("chestScreen.header.small",viddd + ModPE.getI18n("chestScreen.header.small"));
+ModPE.langEdit("networkWorld.add_friend",viddd + ModPE.getI18n("networkWorld.add_friend"));
+ModPE.langEdit("furnaceScreen.header",viddd + ModPE.getI18n("furnaceScreen.header"));
+ModPE.langEdit("craftingScreen.header",viddd + ModPE.getI18n("craftingScreen.header"));
+ModPE.langEdit("container.beacon",viddd + ModPE.getI18n("container.beacon"));
+ModPE.langEdit("container.brewing",viddd + ModPE.getI18n("container.brewing"));
+ModPE.langEdit("container.chest",viddd + ModPE.getI18n("container.chest"));
+ModPE.langEdit("container.chestDouble",viddd + ModPE.getI18n("container.chestDouble"));
+ModPE.langEdit("container.crafting",viddd + ModPE.getI18n("container.crafting"));
+ModPE.langEdit("container.dispenser",viddd + ModPE.getI18n("container.dispenser"));
+ModPE.langEdit("container.dropper",viddd + ModPE.getI18n("container.dropper"));
+ModPE.langEdit("container.enchant",viddd + ModPE.getI18n("container.enchant"));
+ModPE.langEdit("container.furnace",viddd + ModPE.getI18n("container.furnace"));
+ModPE.langEdit("container.hopper",viddd + ModPE.getI18n("container.hopper"));
+ModPE.langEdit("container.inventory",viddd + ModPE.getI18n("container.inventory"));
+ModPE.langEdit("container.minecart",viddd + ModPE.getI18n("container.minecart"));
+ModPE.langEdit("container.repair",viddd + ModPE.getI18n("container.repair"));
+ModPE.langEdit("container.stonecutter",viddd + ModPE.getI18n("container.stonecutter"));
+
+ModPE.langEdit("death.attack.mob",viddd + ModPE.getI18n("death.attack.mob"));
+ModPE.langEdit("death.attack.fall",viddd + ModPE.getI18n("death.attack.fall"));
+ModPE.langEdit("death.attack.explosion",viddd + ModPE.getI18n("death.attack.explosion"));
+ModPE.langEdit("death.attack.arrow",viddd + ModPE.getI18n("death.attack.arrow"));
+ModPE.langEdit("death.attack.drown",viddd + ModPE.getI18n("death.attack.drown"));
+ModPE.langEdit("death.fell.accident.generic",viddd + ModPE.getI18n("death.fell.generic"));
+ModPE.langEdit("death.attack.outOfWorld",viddd + ModPE.getI18n("death.attack.outOfWorld"));
+ModPE.langEdit("death.attack.onFire",viddd + ModPE.getI18n("death.attack.onFire"));
+ModPE.langEdit("death.attack.magic",viddd + ModPE.getI18n("death.attack.magic"));
+ModPE.langEdit("death.attack.inWall",viddd + ModPE.getI18n("death.attack.inWall"));
+ModPE.langEdit("death.attack.lava",viddd + ModPE.getI18n("death.attack.lava"));
+ModPE.langEdit("death.attack.inFire",viddd + ModPE.getI18n("death.attack.inFire"));
+ModPE.langEdit("death.attack.cactus",viddd + ModPE.getI18n("death.attack.cactus"));
 
 var defaultDestroyTime = [
 null, 1.5, 0.6, 0.5, 2, 2, 0, -1, null, null, null, null, 
