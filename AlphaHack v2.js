@@ -146,8 +146,6 @@ var Utils = {
 	}
 };
 
-var GUISize = "2";
-
 var liquidwalk = false;
 var xray = false;
 var ttot = false;
@@ -345,6 +343,7 @@ var GUIBtns12 = Color.MAGENTA;
 
 var GUIStroke = Color.BLUE;
 
+var GUIStroke1 = Color.BLUE;
 var GUIStroke2 = Color.BLACK;
 var GUIStroke3 = Color.WHITE;
 var GUIStroke4 = Color.RED;
@@ -356,6 +355,8 @@ var GUIStroke9 = Color.CYAN;
 var GUIStroke10 = Color.DKGRAY;
 var GUIStroke11 = Color.GREEN;
 var GUIStroke12 = Color.MAGENTA;
+
+var GUISize = "2";
 
 var AlphaHack = {};
 AlphaHack.drawTracer = function(x, y, z, groundMode, particleName) {
@@ -988,7 +989,7 @@ credit = new PopupWindow(creditLayout1, MainActivity.getWindowManager().getDefau
             credit.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#000000")));
       var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
-      bg.setStroke(10,Color.BLACK);
+      bg.setStroke(10,GUIStroke);
 creditLayout1.setBackgroundDrawable(bg);
 creditLayout1.setPadding(20,0,20,0);
             credit.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
@@ -1329,7 +1330,7 @@ anime = new PopupWindow(animeLayout1, dip2px(500), dip2px(500));
 anime = new PopupWindow(animeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/1.4, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1.3);
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
-      bg.setStroke(10,Color.BLACK);
+      bg.setStroke(10,GUIStroke);
 animeLayout1.setBackgroundDrawable(bg);
 animeLayout1.setPadding(20,0,20,0);
 anime.setBackgroundDrawable(new ColorDrawable(Color.BLACK));
@@ -1359,7 +1360,7 @@ t7x0.setTextColor(Color.RED);
       if(default1==false)misc.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
-      bg.setStroke(10,Color.BLACK);
+      bg.setStroke(10,GUIStroke);
 miscLayout1.setBackgroundDrawable(bg);
 miscLayout1.setPadding(20,0,20,0);
             misc.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
@@ -1720,13 +1721,121 @@ GUIBtns = GUIBtns12
                 }
             }));
             settingsLayout.addView(b12);
+            
+            var b1 = new Button(MainActivity);
+            b1.setText("Default outline");       
+            b1.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIStroke = GUIStroke1
+                }
+            }));
+            settingsLayout.addView(b1);
+
+var b2 = new Button(MainActivity);
+            b2.setText("Black Outline");       
+            b2.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIStroke = GUIStroke2
+                }
+            }));
+            settingsLayout.addView(b2);
+
+var b3 = new Button(MainActivity);
+            b3.setText("White Outline");       
+            b3.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIStroke = GUIStroke3
+                }
+            }));
+            settingsLayout.addView(b3);
+
+var b4 = new Button(MainActivity);
+            b4.setText("Red Outline");       
+            b4.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIStroke = GUIStroke4
+                }
+            }));
+            settingsLayout.addView(b4);
+
+var b5 = new Button(MainActivity);
+            b5.setText("Blue Outline");       
+            b5.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIStroke = GUIStroke5
+                }
+            }));
+            settingsLayout.addView(b5);
+
+var b6 = new Button(MainActivity);
+            b6.setText("Gray Outline");       
+            b6.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIStroke = GUIStroke6
+                }
+            }));
+            settingsLayout.addView(b6);
+
+var b7 = new Button(MainActivity);
+            b7.setText("Light gray Outline");       
+            b7.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIStroke = GUIStroke7
+                }
+            }));
+            settingsLayout.addView(b7);
+
+var b8 = new Button(MainActivity);
+            b8.setText("Yellow Outline");       
+            b8.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIStroke = GUIStroke8
+                }
+            }));
+            settingsLayout.addView(b8);
+
+var b9 = new Button(MainActivity);
+            b9.setText("Cyan Outline");       
+            b9.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIStroke = GUIStroke9
+                }
+            }));
+            settingsLayout.addView(b9);
+
+var b10 = new Button(MainActivity);
+            b10.setText("Dark gray Outline");       
+            b10.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIStroke = GUIStroke10
+                }
+            }));
+            settingsLayout.addView(b10);
+
+var b11 = new Button(MainActivity);
+            b11.setText("Green Outline");       
+            b11.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIStroke = GUIStroke11
+                }
+            }));
+            settingsLayout.addView(b11);
+
+var b12 = new Button(MainActivity);
+            b12.setText("Magenta Outline");       
+            b12.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIStroke = GUIStroke12
+                }
+            }));
+            settingsLayout.addView(b12);
 
             settings = new PopupWindow(settingsLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)settings.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
       if(default1==false)settings.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
-      bg.setStroke(10,Color.BLACK);
+      bg.setStroke(10,GUIStroke);
 settingsLayout1.setBackgroundDrawable(bg);
 settingsLayout1.setPadding(20,0,20,0);
             settings.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
@@ -1980,7 +2089,7 @@ info = new PopupWindow(infoLayout1, dip2px(500), dip2px(500));
 info = new PopupWindow(infoLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/2, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1);
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
-      bg.setStroke(10,Color.BLACK);
+      bg.setStroke(10,GUIStroke);
 infoLayout1.setBackgroundDrawable(bg);
 infoLayout1.setPadding(20,0,20,0);
 info.setBackgroundDrawable(new ColorDrawable(Color.BLACK));
@@ -3096,7 +3205,7 @@ Server.sendChat("/time set 23000");
             cmd.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
       var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
-      bg.setStroke(10,Color.BLACK);
+      bg.setStroke(10,GUIStroke);
 cmdLayout1.setBackgroundDrawable(bg);
 cmdLayout1.setPadding(20,0,20,0);
             cmd.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
@@ -3530,7 +3639,7 @@ XYZ = new PopupWindow(XYZLayout1, dip2px(500), dip2px(500));
 XYZ = new PopupWindow(XYZLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/2, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1);
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
-      bg.setStroke(10,Color.BLACK);
+      bg.setStroke(10,GUIStroke);
 XYZLayout1.setBackgroundDrawable(bg);
 XYZLayout1.setPadding(20,0,20,0);
 XYZ.setBackgroundDrawable(new ColorDrawable(Color.BLACK));
@@ -3556,7 +3665,7 @@ var exit2 = new android.widget.Button(MainActivity);
       if(default1==false)cheat.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
-      bg.setStroke(10,Color.BLACK);
+      bg.setStroke(10,GUIStroke);
 cheatLayout1.setBackgroundDrawable(bg);
 cheatLayout1.setPadding(20,0,20,0);
             cheat.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
@@ -4758,7 +4867,7 @@ print("The new Dialog Is Malfunctioning:"+e);
       if(default1==false)mod.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
-      bg.setStroke(10,Color.BLACK);
+      bg.setStroke(10,GUIStroke);
 modLayout1.setBackgroundDrawable(bg);
 modLayout1.setPadding(20,0,20,0);
             mod.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
@@ -6150,7 +6259,7 @@ Entity.addEffect(getPlayerEnt(), MobEffect.movementSpeed, s*l, 0, false, true);
       if(default1==false)effect.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
-      bg.setStroke(10,Color.BLACK);
+      bg.setStroke(10,GUIStroke);
 effectLayout1.setBackgroundDrawable(bg);
 effectLayout1.setPadding(20,0,20,0);
             effect.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
@@ -7657,7 +7766,7 @@ Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,ll);
       if(default1==false)enchant.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
-      bg.setStroke(10,Color.BLACK);
+      bg.setStroke(10,GUIStroke);
 enchantLayout1.setBackgroundDrawable(bg);
 enchantLayout1.setPadding(20,0,20,0);
             enchant.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
@@ -7854,7 +7963,7 @@ addItemInventory(293, 1, 0);
       if(default1==false)give.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
-      bg.setStroke(10,Color.BLACK);
+      bg.setStroke(10,GUIStroke);
 giveLayout1.setBackgroundDrawable(bg);
 giveLayout1.setPadding(20,0,20,0);
             give.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
@@ -8388,7 +8497,7 @@ Entity.setRenderType(Player.getEntity(), 15);
 			if(default1==false)morph.setBackgroundDrawable(new ColorDrawable(GUIColor));
       var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
-      bg.setStroke(10,Color.BLACK);
+      bg.setStroke(10,GUIStroke);
 morphLayout1.setBackgroundDrawable(bg);
 morphLayout1.setPadding(20,0,20,0);
             morph.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
@@ -8568,7 +8677,7 @@ var n11 = new Button(MainActivity);
       if(default1==false)nuke.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
-      bg.setStroke(10,Color.BLACK);
+      bg.setStroke(10,GUIStroke);
 nukeLayout1.setBackgroundDrawable(bg);
 nukeLayout1.setPadding(20,0,20,0);
             nuke.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
@@ -9129,7 +9238,7 @@ clientMessage(client + "§7Particle 32 is false");
       if(default1==false)particle.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
-      bg.setStroke(10,Color.BLACK);
+      bg.setStroke(10,GUIStroke);
 particleLayout1.setBackgroundDrawable(bg);
 particleLayout1.setPadding(20,0,20,0);
             particle.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
@@ -9547,7 +9656,7 @@ var spawn70 = new Button(MainActivity);
       if(default1==false)spawn.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
-      bg.setStroke(10,Color.BLACK);
+      bg.setStroke(10,GUIStroke);
 spawnLayout1.setBackgroundDrawable(bg);
 spawnLayout1.setPadding(20,0,20,0);
             spawn.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
@@ -9848,7 +9957,7 @@ ModPE.setGameSpeed(nspee);
       if(default1==false)speed.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
-      bg.setStroke(10,Color.BLACK);
+      bg.setStroke(10,GUIStroke);
 speedLayout1.setBackgroundDrawable(bg);
 speedLayout1.setPadding(20,0,20,0);
             speed.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
@@ -9977,7 +10086,7 @@ taptp = false;
       if(default1==false)teleport.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
-      bg.setStroke(10,Color.BLACK);
+      bg.setStroke(10,GUIStroke);
 teleportLayout1.setBackgroundDrawable(bg);
 teleportLayout1.setPadding(20,0,20,0);
             teleport.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
@@ -10340,7 +10449,7 @@ Level.setTime(23000);
       if(default1==false)time.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
-      bg.setStroke(10,Color.BLACK);
+      bg.setStroke(10,GUIStroke);
 timeLayout1.setBackgroundDrawable(bg);
 timeLayout1.setPadding(20,0,20,0);
             time.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
@@ -10430,7 +10539,7 @@ Server.sendChat("/weather clear");
       if(default1==false)weather.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
-      bg.setStroke(10,Color.BLACK);
+      bg.setStroke(10,GUIStroke);
 weatherLayout1.setBackgroundDrawable(bg);
 weatherLayout1.setPadding(20,0,20,0);
             weather.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
@@ -10497,7 +10606,7 @@ Server.sendChat("/weather rain");
 		   if(default1==false)menu.setBackgroundDrawable(new ColorDrawable(GUIColor));
 		   var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
-      bg.setStroke(10,Color.BLACK);
+      bg.setStroke(10,GUIStroke);
 menuLayout1.setBackgroundDrawable(bg);
 menuLayout1.setPadding(20,0,20,0);
             menu.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
