@@ -414,9 +414,9 @@ getUpdate(function(info){clientMessage("")});
 
 //main menu
 ModPE.langEdit("menu.copyright", "AlphαHαckPE");
-ModPE.langEdit("menu.generatingLevel","§l§e" + "Loading hacks\n"+ModPE.getI18n("menu.generatingLevel"));
-ModPE.langEdit("menu.generatingTerrain","§l§e" + "Loading hacks\n"+ModPE.getI18n("menu.generatingTerrain"));
-ModPE.langEdit("menu.loadingLevel","§l§e" + "Loading hacks\n"+ModPE.getI18n("menu.loadingLevel"));
+ModPE.langEdit("menu.generatingLevel","§l§e" + "Loading...\nFiles, wifi, mods & chunks.");
+ModPE.langEdit("menu.generatingTerrain","§l§e" + "Loading...\nFiles, wifi, mods & chunks.");
+ModPE.langEdit("menu.loadingLevel","§l§e" + "Loading...\nFiles, wifi, mods & chunks.");
 ModPE.langEdit("menu.play",viddd + ModPE.getI18n("menu.play"));
 ModPE.langEdit("menu.options",viddd + ModPE.getI18n("menu.options"));
 ModPE.langEdit("menu.skins",viddd + ModPE.getI18n("menu.skins"));
@@ -470,6 +470,8 @@ ModPE.langEdit("playscreen.quit",viddd + ModPE.getI18n("playscreen.quit"));
 ModPE.langEdit("chatScreen.hide",viddd + ModPE.getI18n("chatScreen.hide"));
 ModPE.langEdit("xbox.signin",viddd + ModPE.getI18n("xbox.signin"));
 ModPE.langEdit("xbox.signout",viddd + ModPE.getI18n("xbox.signout"));
+ModPE.langEdit("entity.generic.name",viddd + ModPE.getI18n("entity.generic.name"));
+ModPE.langEdit("gui.back",viddd + ModPE.getI18n("gui.back"));
 
 //0.16.0
 ModPE.langEdit("chestScreen.header.large",viddd + ModPE.getI18n("chestScreen.header.large"));
@@ -500,6 +502,12 @@ ModPE.langEdit("container.repair",viddd + ModPE.getI18n("container.repair"));
 ModPE.langEdit("container.stonecutter",viddd + ModPE.getI18n("container.stonecutter"));
 ModPE.langEdit("container.anvil",viddd + ModPE.getI18n("container.anvil"));
 ModPE.langEdit("container.enchantingTable",viddd + ModPE.getI18n("container.enchantingTable"));
+ModPE.langEdit("container.enchantmentTable",viddd + ModPE.getI18n("container.enchantmentTable"));
+ModPE.langEdit("selectWorld.create",viddd + ModPE.getI18n("selectWorld.create"));
+ModPE.langEdit("tile.enchanting_table.name",viddd + ModPE.getI18n("tile.enchanting_table.name"));
+ModPE.langEdit("tile.anvil.name",viddd + ModPE.getI18n("tile.anvil.name"));
+ModPE.langEdit("container.enderchest",viddd + ModPE.getI18n("container.enderchest"));
+ModPE.langEdit("cauldronScreen.header",viddd + ModPE.getI18n("cauldronScreen.header"));
 
 ModPE.langEdit("death.attack.mob",viddd + ModPE.getI18n("death.attack.mob"));
 ModPE.langEdit("death.attack.fall",viddd + ModPE.getI18n("death.attack.fall"));
@@ -514,6 +522,15 @@ ModPE.langEdit("death.attack.inWall",viddd + ModPE.getI18n("death.attack.inWall"
 ModPE.langEdit("death.attack.lava",viddd + ModPE.getI18n("death.attack.lava"));
 ModPE.langEdit("death.attack.inFire",viddd + ModPE.getI18n("death.attack.inFire"));
 ModPE.langEdit("death.attack.cactus",viddd + ModPE.getI18n("death.attack.cactus"));
+ModPE.langEdit("death.attack.anvil",viddd + ModPE.getI18n("death.attack.anvil"));
+ModPE.langEdit("death.attack.fireball",viddd + ModPE.getI18n("death.attack.fireball"));
+ModPE.langEdit("death.attack.generic",viddd + ModPE.getI18n("death.attack.generic"));
+ModPE.langEdit("death.attack.lightningBolt",viddd + ModPE.getI18n("death.attack.lightningBolt"));
+ModPE.langEdit("death.attack.player",viddd + ModPE.getI18n("death.attack.player"));
+ModPE.langEdit("death.attack.starve",viddd + ModPE.getI18n("death.attack.starve"));
+ModPE.langEdit("death.attack.thorns",viddd + ModPE.getI18n("death.attack.thorns"));
+ModPE.langEdit("death.attack.wither",viddd + ModPE.getI18n("death.attack.wither"));
+
 
 var defaultDestroyTime = [
 null, 1.5, 0.6, 0.5, 2, 2, 0, -1, null, null, null, null, 
@@ -796,13 +813,6 @@ function mainMenu(){
             menuLayout1.setOrientation(1);
             menuScroll.addView(menuLayout);
             menuLayout1.addView(menuScroll);
-
-            var title2 = new TextView(MainActivity);
-            title2.setTextSize(20);
-            title2.setText("Made by: ArceusMαtt");
-            title2.setGravity(Gravity.CENTER);
-            title2.setTextColor(GUIName);
-            menuLayout.addView(title2);
             
             var title = new TextView(MainActivity);
             title.setTextSize(20);
@@ -810,6 +820,13 @@ function mainMenu(){
             title.setGravity(Gravity.CENTER);
             title.setTextColor(GUIName);
             menuLayout.addView(title);
+
+            var title2 = new TextView(MainActivity);
+            title2.setTextSize(20);
+            title2.setText("Made by: ArceusMαtt");
+            title2.setGravity(Gravity.CENTER);
+            title2.setTextColor(GUIName);
+            menuLayout.addView(title2);
             
             var exit = new Button(MainActivity);
             exit.setText("Exit AlphαHαck");
@@ -841,41 +858,7 @@ if(getLanguage=="en_US")Toast.makeText(MainActivity, "Closed successfully", 1).s
         var line1 = new android.widget.LinearLayout(MainActivity);
 	    line1.setOrientation(0);
 	    
-            var active4 = new TextView(MainActivity);
-            active4.setTextSize(10);
-            if(armor==true)active4.setText("Armor status, ");
-            active4.setTextColor(Color.WHITE);
-            line1.addView(active4);
-            
-            var active5 = new TextView(MainActivity);
-            active5.setTextSize(10);
-            if(coords==true)active5.setText("Coordinates, ");
-            active5.setTextColor(Color.WHITE);
-            line1.addView(active5);
-            
-            var active6 = new TextView(MainActivity);
-            active6.setTextSize(10);
-            if(antivoid==true)active6.setText("Anti void, ");
-            active6.setTextColor(Color.WHITE);
-            line1.addView(active6);
-            
-            var active8 = new TextView(MainActivity);
-            active8.setTextSize(10);
-            if(ttot==true)active8.setText("TextToToast, ");
-            active8.setTextColor(Color.WHITE);
-            line1.addView(active8);
-            
-            var active9 = new TextView(MainActivity);
-            active9.setTextSize(10);
-            if(block==true)active9.setText("Anti break, ");
-            active9.setTextColor(Color.WHITE);
-            line1.addView(active9);
-            
-            var active12 = new TextView(MainActivity);
-            active12.setTextSize(10);
-            if(airwalk==true)active12.setText("AirWalk, ");
-            active12.setTextColor(Color.WHITE);
-            line1.addView(active12);
+
             
             menuLayout.addView(line1);
 	    
@@ -892,485 +875,6 @@ group.setOnClickListener(new android.view.View.OnClickListener() {
 			}
 		});
 		menuLayout.addView(group);
-	    
-var misc = new android.widget.Button(MainActivity);
-misc.setText("Misc");
-misc.setTextColor(GUIBtns);
-if(mcpetheme==true)misc.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
-misc.setOnClickListener(new android.view.View.OnClickListener() {
-			onClick: function(v){
-             misc_menu();
-             menu.dismiss();
-			}
-		});
-		menuLayout.addView(misc);
-		
-		function misc_menu(){
-MainActivity.runOnUiThread(new Runnable({ run: function(){
-        try{
-            var miscLayout = new LinearLayout(MainActivity);
-            var miscScroll = new ScrollView(MainActivity);
-            var miscLayout1 = new LinearLayout(MainActivity);
-            miscLayout.setOrientation(1);
-            miscLayout1.setOrientation(1);
-            miscScroll.addView(miscLayout);
-            miscLayout1.addView(miscScroll);
-            
-            var exit = new android.widget.Button(MainActivity);
-		exit.setText("Exit");
-		exit.setOnClickListener(new android.view.View.OnClickListener() {
-			onClick: function(v){
-             misc.dismiss();
-             showMenuBtn();
-			}
-		});
-		miscLayout.addView(exit);
-		
-		var credits = new android.widget.Button(MainActivity);
-		credits.setText("Credits");
-		credits.setOnClickListener(new android.view.View.OnClickListener() {
-			onClick: function(v){
-             misc.dismiss();
-             credit_menu();
-			}
-		});
-		miscLayout.addView(credits);
-		
-		function credit_menu(){
-MainActivity.runOnUiThread(new Runnable({ run: function(){
-        try{
-            var creditLayout = new LinearLayout(MainActivity);
-            var creditScroll = new ScrollView(MainActivity);
-            var creditLayout1 = new LinearLayout(MainActivity);
-            creditLayout.setOrientation(1);
-            creditLayout1.setOrientation(1);
-            creditScroll.addView(creditLayout);
-            creditLayout1.addView(creditScroll);
-
-			var exit = new android.widget.Button(MainActivity);
-		exit.setText("Exit");
-		exit.setOnClickListener(new android.view.View.OnClickListener() {
-			onClick: function(v){
-             credit.dismiss();
-             showMenuBtn();
-			}
-		});
-		creditLayout.addView(exit);
-		
-	    var credit1 = new TextView(MainActivity);
-            credit1.setTextSize(20);
-            credit1.setText("Godsoft029 for providing JS support & some of his scripts.");
-            credit1.setTextColor(Color.GREEN);
-            creditLayout.addView(credit1);
-            
-            var credit2 = new TextView(MainActivity);
-            credit2.setTextSize(20);
-            credit2.setText("Peacestorm / vertex for some of their scripts & ideas.");
-            credit2.setTextColor(Color.BLUE);
-            creditLayout.addView(credit2);
-            
-            var credit3 = new TextView(MainActivity);
-            credit3.setTextSize(20);
-            credit3.setText("AJ170 for ideas & adding 'clear inventory'.");
-            credit3.setTextColor(Color.YELLOW);
-            creditLayout.addView(credit3);
-            
-            var credit4 = new TextView(MainActivity);
-            credit4.setTextSize(20);
-            credit4.setText("APRIC0CKS for ideas & adding 'glide'.");
-            credit4.setTextColor(Color.WHITE);
-            creditLayout.addView(credit4);
-            
-            var credit5 = new TextView(MainActivity);
-            credit5.setTextSize(20);
-            credit5.setText("Johnmacrocraft for korean translate & adding 'block protect'.");
-            credit5.setTextColor(Color.RED);
-            creditLayout.addView(credit5);
-			
-credit = new PopupWindow(creditLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/1, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
-            credit.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#000000")));
-      var bg = new android.graphics.drawable.GradientDrawable();
-      bg.setColor(Color.TRANSPARENT);
-      bg.setStroke(10,GUIStroke);
-creditLayout1.setBackgroundDrawable(bg);
-creditLayout1.setPadding(20,0,20,0);
-            credit.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
-            }catch(error){
-                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
-            }
-    }}));
-}
-
-var pass = new android.widget.Button(MainActivity);
-		pass.setText("Brute force (Numbers)");
-		pass.setTextColor(Color.RED);
-if(hackk==true)pass.setTextColor(Color.GREEN);
-		pass.setOnClickListener(new android.view.View.OnClickListener() {
-			onClick: function(v){
-             hackk?hackk=false:hackk=true;
-pass.setText("Brute force (Numbers)");
-if(hackk == true){
-pass.setTextColor(Color.GREEN);
-hackk = true;
-}
-if(hackk == false){
-pass.setTextColor(Color.RED);
-
-hackk = false;
-}
-			}
-		});
-		miscLayout.addView(pass);
-		
-		var pass2 = new android.widget.Button(MainActivity);
-		pass2.setText("SQL Inject (Numbers)");
-		pass2.setTextColor(Color.RED);
-if(hackk2==true)pass2.setTextColor(Color.GREEN);
-		pass2.setOnClickListener(new android.view.View.OnClickListener() {
-			onClick: function(v){
-             hackk2?hackk2=false:hackk2=true;
-pass2.setText("SQL Inject (Numbers)");
-if(hackk2 == true){
-pass2.setTextColor(Color.GREEN);
-hackk2 = true;
-}
-if(hackk2 == false){
-pass2.setTextColor(Color.RED);
-
-hackk2 = false;
-}
-			}
-		});
-		miscLayout.addView(pass2);
-		
-		var ht1 = new android.widget.Button(MainActivity);
-		ht1.setText("How to bypass ban");
-		ht1.setOnClickListener(new android.view.View.OnClickListener() {
-			onClick: function(v){
-var alert = new android.app.AlertDialog.Builder(MainActivity); 
-/*alert.setTitle(""); */
-
-var scroll = new android.widget.ScrollView(MainActivity); 
-var layout = new android.widget.LinearLayout(MainActivity); 
-layout.setOrientation(1);
-
-alert.setTitle("How to bypass a /ban");
- alert.setMessage("OP ban you with /ban\nTo get unbanned:\n#1 let an OP unban you\n#2 Server reset can unban all players\n#3 Change your username\n/ban only bans your username.\n-ArceusMatt");
-
-alert.setPositiveButton("Exit all", new android.content.DialogInterface.OnClickListener(){ 
-  onClick: function(viewarg){
-    
-dialog.dismiss();
-misc.dismiss();
-      }});
-
-alert.setNegativeButton("Back to menu", new android.content.DialogInterface.OnClickListener(){ 
-   onClick: function(viewarg){
-
-dialog.dismiss();
-      }});
-var dialog = alert.create();
-dialog.show();
-			}
-		});
-		miscLayout.addView(ht1);
-
-var ht2 = new android.widget.Button(MainActivity);
-		ht2.setText("How to bypass ip ban");
-		ht2.setOnClickListener(new android.view.View.OnClickListener() {
-			onClick: function(v){
-var alert = new android.app.AlertDialog.Builder(MainActivity); 
-/*alert.setTitle(""); */
-
-var scroll = new android.widget.ScrollView(MainActivity); 
-var layout = new android.widget.LinearLayout(MainActivity); 
-layout.setOrientation(1);
-
-alert.setTitle("How to bypass a /ban-ip");
- alert.setMessage("OP ip ban you with /ban-ip\nTo get unbanned:\n#1 let an OP unban you\n#2 Server reset can unban all players\n#3 Change IP with a VPN\n/ban-ip only bans your public ip address");
-
-alert.setPositiveButton("Exit all", new android.content.DialogInterface.OnClickListener(){ 
-  onClick: function(viewarg){
-    
-dialog.dismiss();
-misc.dismiss();
-      }});
-
-alert.setNegativeButton("Back to menu", new android.content.DialogInterface.OnClickListener(){ 
-   onClick: function(viewarg){
-
-dialog.dismiss();
-      }});
-var dialog = alert.create();
-dialog.show();
-			}
-		});
-		miscLayout.addView(ht2);
-
-var ht3 = new android.widget.Button(MainActivity);
-		ht3.setText("How to bypass CID/devban");
-		ht3.setOnClickListener(new android.view.View.OnClickListener() {
-			onClick: function(v){
-var alert = new android.app.AlertDialog.Builder(MainActivity); 
-/*alert.setTitle(""); */
-
-var scroll = new android.widget.ScrollView(MainActivity); 
-var layout = new android.widget.LinearLayout(MainActivity); 
-layout.setOrientation(1);
-
-alert.setTitle("How to bypass a /devban");
- alert.setMessage("You can get out of a cid ban in 3 ways.\n#1 get Unbanned\n#2 server resets\n#3 Go in your file storage and go to Games > com.mojang > minecraftpe > clientId.txt and change the id to any number\nWhen an OP uses /devban on you it bans your device(MCPE Client ID) in the server and puts your ID in a type of saving system that doesn't allow you to join, /devban is a command the server has if they download a plugin\n-Arceus_matt");
-
-alert.setPositiveButton("Exit all", new android.content.DialogInterface.OnClickListener(){ 
-  onClick: function(viewarg){
-    
-dialog.dismiss();
-misc.dismiss();
-      }});
-
-alert.setNegativeButton("Back to menu", new android.content.DialogInterface.OnClickListener(){ 
-   onClick: function(viewarg){
-
-dialog.dismiss();
-      }});
-var dialog = alert.create();
-dialog.show();
-			}
-		});
-		miscLayout.addView(ht3);
-		
-		var ht4 = new android.widget.Button(MainActivity);
-		ht4.setText("How to bypass Alias");
-		ht4.setOnClickListener(new android.view.View.OnClickListener() {
-			onClick: function(v){
-var alert = new android.app.AlertDialog.Builder(MainActivity); 
-/*alert.setTitle(""); */
-
-var scroll = new android.widget.ScrollView(MainActivity); 
-var layout = new android.widget.LinearLayout(MainActivity); 
-layout.setOrientation(1);
-
-alert.setTitle("How to bypass /alias");
- alert.setMessage("Eventually you'll get banned by username,\nYou can hide your username from alias\n#1 Change IP\n#2 server resets\n#3 no longer targeted\nWhen an OP uses /alias on you it shows your usernames by IP in the server, /alias is a command the server has if they download a plugin\n-Arceus_matt");
-
-alert.setPositiveButton("Exit all", new android.content.DialogInterface.OnClickListener(){ 
-  onClick: function(viewarg){
-    
-dialog.dismiss();
-misc.dismiss();
-      }});
-
-alert.setNegativeButton("Back to menu", new android.content.DialogInterface.OnClickListener(){ 
-   onClick: function(viewarg){
-
-dialog.dismiss();
-      }});
-var dialog = alert.create();
-dialog.show();
-			}
-		});
-		miscLayout.addView(ht4);
-            
-            var sit = new android.widget.Button(MainActivity);
-		sit.setText("Image lookup");
-		sit.setOnClickListener(new android.view.View.OnClickListener() {
-			onClick: function(v){
-web3(); 
-//print("Loading web page");
-			}
-		});
-		miscLayout.addView(sit);
-
-      function web3()
-      {
-      var urls2 = new Intent(MainActivity);
-	  urls2.setAction(Intent.ACTION_VIEW);
-                    urls2.setData(Uri.parse("http://www.tineye.com"));
-                    MainActivity.startActivity(urls2);
-      }
-
-var sid = new android.widget.Button(MainActivity);
-		sid.setText("View website code");
-		sid.setOnClickListener(new android.view.View.OnClickListener() {
-			onClick: function(v){
-             misc.dismiss();
-             scc();
-			}
-		});
-		miscLayout.addView(sid);
-
-function scc() {
-MainActivity.runOnUiThread(new java.lang.Runnable(){
-run: function(){ 
-try{
-scc = new android.widget.PopupWindow();
-var Layer5 = new android.widget.LinearLayout(MainActivity);
-var sc1 = new android.widget.EditText(MainActivity);
-var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
-
-Dialog.setTitle("Enter website");
-Dialog.setContentView(Layer5);
-
-Layer5.setOrientation(android.widget.LinearLayout.VERTICAL);
-Dialog.show();
-Layer5.addView(sc1);
-Layer5.addView(Exit);
-
-sc1.setText("");
-sc1.setHint("https://example.com");
-Exit.setText("View code");
-
-Exit.setOnClickListener(new android.view.View.OnClickListener(){
-onClick: function(view){
-sc2 =sc1.getText();
-Dialog.dismiss();
-sc3();
-print("Loading web page");
-showMenuBtn();
-}
-});
-
-scc.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-scc.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-scc.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
-} catch (e){
-print("The scc Dialog Is Malfunctioning:"+e);
-}
-}});
-}
-
-      function sc3()
-      {
-      MainActivity.runOnUiThread(new java.lang.Runnable({run: function(){
-      var webs = new android.webkit.WebView(MainActivity);
-      var webset = webs.getSettings();
-      webset.setJavaScriptEnabled(true);
-      webs.setWebChromeClient(new android.webkit.WebChromeClient());
-      webs.setWebViewClient(new android.webkit.WebViewClient());
-      webs.loadUrl('view-source:' + sc2);
-/*Site URL*/
-      new android.app.AlertDialog.Builder(MainActivity).setView(webs).show();
-      }}));
-      }
-      
-      var aniview = new android.widget.Button(MainActivity);
-		aniview.setText("Watch anime on MCPE");
-		aniview.setOnClickListener(new android.view.View.OnClickListener() {
-			onClick: function(v){
-             misc.dismiss();
-             animeView();
-Toast.makeText(MainActivity, "Please avoid ads & adjust your zoom", 1).show();
-			}
-		});
-		miscLayout.addView(aniview);
-		
-	var activeMods = new Button(MainActivity);
-activeMods.setText("Active mods dialog");
-activeMods.setTextColor(Color.RED);
-if(showActive==true)activeMods.setTextColor(Color.GREEN);
-            activeMods.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             showActive?showActive=false:showActive=true;
-activeMods.setText("Active mods dialog");
-if(showActive == true){
-activeMods.setTextColor(Color.GREEN);
-showActive2 = true;
-showActive = true;
-activeView();
-}
-if(showActive == false){
-activeMods.setTextColor(Color.RED);
-showActive2 = false;
-showActive = false;
-}
-                }
-            }));
-            miscLayout.addView(activeMods);
-		
-		function animeView(){
-MainActivity.runOnUiThread(new Runnable({ run: function(){
-        try{
-            var animeLayout = new LinearLayout(MainActivity);
-            
-            var animeScroll = new ScrollView(MainActivity);
-            
-            var animeLayout1 = new LinearLayout(MainActivity);
-            animeLayout.setOrientation(1);
-            animeLayout1.setOrientation(1);
-            
-            animeScroll.addView(animeLayout);
-            animeLayout1.addView(animeScroll);
-
-var exit = new Button(MainActivity);
-            exit.setText("Exit");
-exit.setTextColor(Color.RED);
-            exit.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-
-                    anime.dismiss();
-
-showMenuBtn();
-                }
-            }));
-            animeLayout.addView(exit);
-            
-            var webs = new android.webkit.WebView(MainActivity);
-      var webset = webs.getSettings();
-      webset.setJavaScriptEnabled(true);
-      webs.setWebChromeClient(new android.webkit.WebChromeClient());
-      webs.setWebViewClient(new android.webkit.WebViewClient());
-      /*webset.setUserAgentString(userAgent);*/
-      	webset.setSupportZoom(true);
-      	webset.setBuiltInZoomControls(true);
-      	webset.setDisplayZoomControls(false);
-      webs.loadUrl('https://watch-anime.net');
-      animeLayout.addView(webs);
-
-anime = new PopupWindow(animeLayout1, dip2px(500), dip2px(500));
-
-anime = new PopupWindow(animeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/1.4, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1.3);
-	  var bg = new android.graphics.drawable.GradientDrawable();
-      bg.setColor(Color.TRANSPARENT);
-      bg.setStroke(10,GUIStroke);
-animeLayout1.setBackgroundDrawable(bg);
-animeLayout1.setPadding(20,0,20,0);
-anime.setBackgroundDrawable(new ColorDrawable(Color.BLACK));
-            anime.showAtLocation(MainActivity.getWindow().getDecorView(), Gravity.CENTER | Gravity.CENTER, 0, 0);
-            }catch(error){
-                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
-            }
-    }}));
-}
-
-var t7x0 = new Button(MainActivity);
-            t7x0.setText("Custom server player corruption test");
-t7x0.setTextColor(Color.RED);
-            t7x0.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ(), 208, 0);
-             Level.setTile(getPlayerX() -1, getPlayerY() -2, getPlayerZ(), 208, 0);
-             Level.setTile(getPlayerX() +1, getPlayerY() -2, getPlayerZ(), 208, 0);
-             Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() +1, 208, 0);
-             Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() -1, 208, 0);
-                }
-            }));
-            miscLayout.addView(t7x0);
-
-            misc = new PopupWindow(miscLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
-            if(default1==true)misc.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
-      if(default1==false)misc.setBackgroundDrawable(new ColorDrawable(GUIColor));
-	  var bg = new android.graphics.drawable.GradientDrawable();
-      bg.setColor(Color.TRANSPARENT);
-      bg.setStroke(10,GUIStroke);
-miscLayout1.setBackgroundDrawable(bg);
-miscLayout1.setPadding(20,0,20,0);
-            misc.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
-            }catch(error){
-                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
-            }
-    }}));
-}
 
 var settings = new android.widget.Button(MainActivity);
 settings.setText("Settings");
@@ -1841,6 +1345,606 @@ GUIStroke = GUIStroke12
 settingsLayout1.setBackgroundDrawable(bg);
 settingsLayout1.setPadding(20,0,20,0);
             settings.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            }catch(error){
+                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
+            }
+    }}));
+}
+
+var misc = new android.widget.Button(MainActivity);
+misc.setText("Misc");
+misc.setTextColor(GUIBtns);
+if(mcpetheme==true)misc.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+misc.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             misc_menu();
+             menu.dismiss();
+			}
+		});
+		menuLayout.addView(misc);
+		
+		function misc_menu(){
+MainActivity.runOnUiThread(new Runnable({ run: function(){
+        try{
+            var miscLayout = new LinearLayout(MainActivity);
+            var miscScroll = new ScrollView(MainActivity);
+            var miscLayout1 = new LinearLayout(MainActivity);
+            miscLayout.setOrientation(1);
+            miscLayout1.setOrientation(1);
+            miscScroll.addView(miscLayout);
+            miscLayout1.addView(miscScroll);
+            
+            var exit = new android.widget.Button(MainActivity);
+		exit.setText("Exit");
+		exit.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             misc.dismiss();
+             showMenuBtn();
+			}
+		});
+		miscLayout.addView(exit);
+		
+		var credits = new android.widget.Button(MainActivity);
+		credits.setText("Credits");
+		credits.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             misc.dismiss();
+             credit_menu();
+			}
+		});
+		miscLayout.addView(credits);
+		
+		function credit_menu(){
+MainActivity.runOnUiThread(new Runnable({ run: function(){
+        try{
+            var creditLayout = new LinearLayout(MainActivity);
+            var creditScroll = new ScrollView(MainActivity);
+            var creditLayout1 = new LinearLayout(MainActivity);
+            creditLayout.setOrientation(1);
+            creditLayout1.setOrientation(1);
+            creditScroll.addView(creditLayout);
+            creditLayout1.addView(creditScroll);
+
+			var exit = new android.widget.Button(MainActivity);
+		exit.setText("Exit");
+		exit.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             credit.dismiss();
+             showMenuBtn();
+			}
+		});
+		creditLayout.addView(exit);
+		
+	    var credit1 = new TextView(MainActivity);
+            credit1.setTextSize(20);
+            credit1.setText("Godsoft029 for providing JS support & some of his scripts.");
+            credit1.setTextColor(Color.GREEN);
+            creditLayout.addView(credit1);
+            
+            var credit2 = new TextView(MainActivity);
+            credit2.setTextSize(20);
+            credit2.setText("Peacestorm / vertex for some of their scripts & ideas.");
+            credit2.setTextColor(Color.BLUE);
+            creditLayout.addView(credit2);
+            
+            var credit3 = new TextView(MainActivity);
+            credit3.setTextSize(20);
+            credit3.setText("AJ170 for ideas & adding 'clear inventory'.");
+            credit3.setTextColor(Color.YELLOW);
+            creditLayout.addView(credit3);
+            
+            var credit4 = new TextView(MainActivity);
+            credit4.setTextSize(20);
+            credit4.setText("APRIC0CKS for ideas & adding 'glide'.");
+            credit4.setTextColor(Color.WHITE);
+            creditLayout.addView(credit4);
+            
+            var credit5 = new TextView(MainActivity);
+            credit5.setTextSize(20);
+            credit5.setText("Johnmacrocraft for korean translate & adding 'block protect'.");
+            credit5.setTextColor(Color.RED);
+            creditLayout.addView(credit5);
+			
+credit = new PopupWindow(creditLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/1, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
+            credit.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#000000")));
+      var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(Color.TRANSPARENT);
+      bg.setStroke(10,GUIStroke);
+creditLayout1.setBackgroundDrawable(bg);
+creditLayout1.setPadding(20,0,20,0);
+            credit.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            }catch(error){
+                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
+            }
+    }}));
+}
+
+var pass = new android.widget.Button(MainActivity);
+		pass.setText("Brute force (Numbers)");
+		pass.setTextColor(Color.RED);
+if(hackk==true)pass.setTextColor(Color.GREEN);
+		pass.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             hackk?hackk=false:hackk=true;
+pass.setText("Brute force (Numbers)");
+if(hackk == true){
+pass.setTextColor(Color.GREEN);
+hackk = true;
+}
+if(hackk == false){
+pass.setTextColor(Color.RED);
+
+hackk = false;
+}
+			}
+		});
+		miscLayout.addView(pass);
+		
+		var pass2 = new android.widget.Button(MainActivity);
+		pass2.setText("SQL Inject (Numbers)");
+		pass2.setTextColor(Color.RED);
+if(hackk2==true)pass2.setTextColor(Color.GREEN);
+		pass2.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             hackk2?hackk2=false:hackk2=true;
+pass2.setText("SQL Inject (Numbers)");
+if(hackk2 == true){
+pass2.setTextColor(Color.GREEN);
+hackk2 = true;
+}
+if(hackk2 == false){
+pass2.setTextColor(Color.RED);
+
+hackk2 = false;
+}
+			}
+		});
+		miscLayout.addView(pass2);
+		
+		var ht1 = new android.widget.Button(MainActivity);
+		ht1.setText("How to bypass ban");
+		ht1.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+var alert = new android.app.AlertDialog.Builder(MainActivity); 
+/*alert.setTitle(""); */
+
+var scroll = new android.widget.ScrollView(MainActivity); 
+var layout = new android.widget.LinearLayout(MainActivity); 
+layout.setOrientation(1);
+
+alert.setTitle("How to bypass a /ban");
+ alert.setMessage("OP ban you with /ban\nTo get unbanned:\n#1 let an OP unban you\n#2 Server reset can unban all players\n#3 Change your username\n/ban only bans your username.\n-ArceusMatt");
+
+alert.setPositiveButton("Exit all", new android.content.DialogInterface.OnClickListener(){ 
+  onClick: function(viewarg){
+    
+dialog.dismiss();
+misc.dismiss();
+      }});
+
+alert.setNegativeButton("Back to menu", new android.content.DialogInterface.OnClickListener(){ 
+   onClick: function(viewarg){
+
+dialog.dismiss();
+      }});
+var dialog = alert.create();
+dialog.show();
+			}
+		});
+		miscLayout.addView(ht1);
+
+var ht2 = new android.widget.Button(MainActivity);
+		ht2.setText("How to bypass ip ban");
+		ht2.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+var alert = new android.app.AlertDialog.Builder(MainActivity); 
+/*alert.setTitle(""); */
+
+var scroll = new android.widget.ScrollView(MainActivity); 
+var layout = new android.widget.LinearLayout(MainActivity); 
+layout.setOrientation(1);
+
+alert.setTitle("How to bypass a /ban-ip");
+ alert.setMessage("OP ip ban you with /ban-ip\nTo get unbanned:\n#1 let an OP unban you\n#2 Server reset can unban all players\n#3 Change IP with a VPN\n/ban-ip only bans your public ip address");
+
+alert.setPositiveButton("Exit all", new android.content.DialogInterface.OnClickListener(){ 
+  onClick: function(viewarg){
+    
+dialog.dismiss();
+misc.dismiss();
+      }});
+
+alert.setNegativeButton("Back to menu", new android.content.DialogInterface.OnClickListener(){ 
+   onClick: function(viewarg){
+
+dialog.dismiss();
+      }});
+var dialog = alert.create();
+dialog.show();
+			}
+		});
+		miscLayout.addView(ht2);
+
+var ht3 = new android.widget.Button(MainActivity);
+		ht3.setText("How to bypass CID/devban");
+		ht3.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+var alert = new android.app.AlertDialog.Builder(MainActivity); 
+/*alert.setTitle(""); */
+
+var scroll = new android.widget.ScrollView(MainActivity); 
+var layout = new android.widget.LinearLayout(MainActivity); 
+layout.setOrientation(1);
+
+alert.setTitle("How to bypass a /devban");
+ alert.setMessage("You can get out of a cid ban in 3 ways.\n#1 get Unbanned\n#2 server resets\n#3 Go in your file storage and go to Games > com.mojang > minecraftpe > clientId.txt and change the id to any number\nWhen an OP uses /devban on you it bans your device(MCPE Client ID) in the server and puts your ID in a type of saving system that doesn't allow you to join, /devban is a command the server has if they download a plugin\n-Arceus_matt");
+
+alert.setPositiveButton("Exit all", new android.content.DialogInterface.OnClickListener(){ 
+  onClick: function(viewarg){
+    
+dialog.dismiss();
+misc.dismiss();
+      }});
+
+alert.setNegativeButton("Back to menu", new android.content.DialogInterface.OnClickListener(){ 
+   onClick: function(viewarg){
+
+dialog.dismiss();
+      }});
+var dialog = alert.create();
+dialog.show();
+			}
+		});
+		miscLayout.addView(ht3);
+		
+		var ht4 = new android.widget.Button(MainActivity);
+		ht4.setText("How to bypass Alias");
+		ht4.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+var alert = new android.app.AlertDialog.Builder(MainActivity); 
+/*alert.setTitle(""); */
+
+var scroll = new android.widget.ScrollView(MainActivity); 
+var layout = new android.widget.LinearLayout(MainActivity); 
+layout.setOrientation(1);
+
+alert.setTitle("How to bypass /alias");
+ alert.setMessage("Eventually you'll get banned by username,\nYou can hide your username from alias\n#1 Change IP\n#2 server resets\n#3 no longer targeted\nWhen an OP uses /alias on you it shows your usernames by IP in the server, /alias is a command the server has if they download a plugin\n-Arceus_matt");
+
+alert.setPositiveButton("Exit all", new android.content.DialogInterface.OnClickListener(){ 
+  onClick: function(viewarg){
+    
+dialog.dismiss();
+misc.dismiss();
+      }});
+
+alert.setNegativeButton("Back to menu", new android.content.DialogInterface.OnClickListener(){ 
+   onClick: function(viewarg){
+
+dialog.dismiss();
+      }});
+var dialog = alert.create();
+dialog.show();
+			}
+		});
+		miscLayout.addView(ht4);
+            
+            var sit = new android.widget.Button(MainActivity);
+		sit.setText("Image lookup");
+		sit.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+web3(); 
+//print("Loading web page");
+			}
+		});
+		miscLayout.addView(sit);
+
+      function web3()
+      {
+      var urls2 = new Intent(MainActivity);
+	  urls2.setAction(Intent.ACTION_VIEW);
+                    urls2.setData(Uri.parse("http://www.tineye.com"));
+                    MainActivity.startActivity(urls2);
+      }
+
+var sid = new android.widget.Button(MainActivity);
+		sid.setText("View website code");
+		sid.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             misc.dismiss();
+             scc();
+			}
+		});
+		miscLayout.addView(sid);
+
+function scc() {
+MainActivity.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+scc = new android.widget.PopupWindow();
+var Layer5 = new android.widget.LinearLayout(MainActivity);
+var sc1 = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
+
+Dialog.setTitle("Enter website");
+Dialog.setContentView(Layer5);
+
+Layer5.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer5.addView(sc1);
+Layer5.addView(Exit);
+
+sc1.setText("");
+sc1.setHint("https://example.com");
+Exit.setText("View code");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+sc2 =sc1.getText();
+Dialog.dismiss();
+sc3();
+print("Loading web page");
+showMenuBtn();
+}
+});
+
+scc.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+scc.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+scc.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The scc Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+      function sc3()
+      {
+      MainActivity.runOnUiThread(new java.lang.Runnable({run: function(){
+      var webs = new android.webkit.WebView(MainActivity);
+      var webset = webs.getSettings();
+      webset.setJavaScriptEnabled(true);
+      webs.setWebChromeClient(new android.webkit.WebChromeClient());
+      webs.setWebViewClient(new android.webkit.WebViewClient());
+      webs.loadUrl('view-source:' + sc2);
+/*Site URL*/
+      new android.app.AlertDialog.Builder(MainActivity).setView(webs).show();
+      }}));
+      }
+      
+      var aniview = new android.widget.Button(MainActivity);
+		aniview.setText("Watch anime on MCPE");
+		aniview.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             misc.dismiss();
+             animeView();
+Toast.makeText(MainActivity, "Please avoid ads & adjust your zoom", 1).show();
+			}
+		});
+		miscLayout.addView(aniview);
+		
+	var activeMods = new Button(MainActivity);
+activeMods.setText("Active mods dialog");
+activeMods.setTextColor(Color.RED);
+if(showActive==true)activeMods.setTextColor(Color.GREEN);
+            activeMods.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             showActive?showActive=false:showActive=true;
+activeMods.setText("Active mods dialog");
+if(showActive == true){
+activeMods.setTextColor(Color.GREEN);
+showActive2 = true;
+showActive = true;
+activeView();
+}
+if(showActive == false){
+activeMods.setTextColor(Color.RED);
+showActive2 = false;
+showActive = false;
+}
+                }
+            }));
+            miscLayout.addView(activeMods);
+		
+		function animeView(){
+MainActivity.runOnUiThread(new Runnable({ run: function(){
+        try{
+            var animeLayout = new LinearLayout(MainActivity);
+            
+            var animeScroll = new ScrollView(MainActivity);
+            
+            var animeLayout1 = new LinearLayout(MainActivity);
+            animeLayout.setOrientation(1);
+            animeLayout1.setOrientation(1);
+            
+            animeScroll.addView(animeLayout);
+            animeLayout1.addView(animeScroll);
+
+var exit = new Button(MainActivity);
+            exit.setText("Exit");
+exit.setTextColor(Color.RED);
+            exit.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+
+                    anime.dismiss();
+
+showMenuBtn();
+                }
+            }));
+            animeLayout.addView(exit);
+            
+            var webs = new android.webkit.WebView(MainActivity);
+      var webset = webs.getSettings();
+      webset.setJavaScriptEnabled(true);
+      webs.setWebChromeClient(new android.webkit.WebChromeClient());
+      webs.setWebViewClient(new android.webkit.WebViewClient());
+      /*webset.setUserAgentString(userAgent);*/
+      	webset.setSupportZoom(true);
+      	webset.setBuiltInZoomControls(true);
+      	webset.setDisplayZoomControls(false);
+      webs.loadUrl('https://watch-anime.net');
+      animeLayout.addView(webs);
+
+anime = new PopupWindow(animeLayout1, dip2px(500), dip2px(500));
+
+anime = new PopupWindow(animeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/1.4, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1.3);
+	  var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(Color.TRANSPARENT);
+      bg.setStroke(10,GUIStroke);
+animeLayout1.setBackgroundDrawable(bg);
+animeLayout1.setPadding(20,0,20,0);
+anime.setBackgroundDrawable(new ColorDrawable(Color.BLACK));
+            anime.showAtLocation(MainActivity.getWindow().getDecorView(), Gravity.CENTER | Gravity.CENTER, 0, 0);
+            }catch(error){
+                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
+            }
+    }}));
+}
+
+var ip0 = new android.widget.Button(ctx);
+            ip0.setText("IP lookup");
+            ip0.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+misc.dismiss();
+iplu();
+                }
+            }));
+            miscLayout.addView(ip0);
+
+function iplu() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+iplu = new android.widget.PopupWindow();
+var Layer4 = new android.widget.LinearLayout(ctx);
+var ip1 = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter IP to trace");
+Dialog.setContentView(Layer4);
+
+Layer4.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer4.addView(ip1);
+Layer4.addView(Exit);
+
+ip1.setText("");
+ip1.setHint("IP address, domain, blank for your IP");
+Exit.setText("Trace");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ip =ip1.getText();
+Dialog.dismiss();
+ip2();
+print("Loading web page");
+showMenuBtn();
+}
+});
+
+iplu.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+iplu.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+iplu.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The IPLU Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+      function ip2()
+      {
+      ctx.runOnUiThread(new java.lang.Runnable({run: function(){
+      var webs = new android.webkit.WebView(ctx);
+      var webset = webs.getSettings();
+      webset.setJavaScriptEnabled(true);
+      webs.setWebChromeClient(new android.webkit.WebChromeClient());
+      webs.setWebViewClient(new android.webkit.WebViewClient());
+      webs.loadUrl('http://ip-api.com/json/' + ip);
+/*Site URL*/
+      new android.app.AlertDialog.Builder(ctx).setView(webs).show();
+      }}));
+      }
+      
+      var ip1 = new android.widget.Button(ctx);
+            ip1.setText("Players list");
+            ip1.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+misc.dismiss();
+pip();
+                }
+            }));
+            miscLayout.addView(ip1);
+
+function pip() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+pip = new android.widget.PopupWindow();
+var Layer4 = new android.widget.LinearLayout(ctx);
+var ddip = new android.widget.EditText(ctx);
+var ddip2 = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new android.widget.Button(ctx);
+
+Dialog.setTitle("Enter server");
+Dialog.setContentView(Layer4);
+
+Layer4.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer4.addView(ddip);
+Layer4.addView(ddip2);
+Layer4.addView(Exit);
+
+ddip.setText("");
+ddip.setHint("IP");
+ddip2.setText("");
+ddip2.setHint("Port");
+Exit.setText("View players");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ply =ddip.getText();
+poy =ddip2.getText();
+Dialog.dismiss();
+goto();
+Toast.makeText(ctx, "AlphaHack: Loading web page", 1).show();
+showMenuBtn();
+}
+});
+
+pip.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+pip.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+pip.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The IP Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function goto()
+      {
+      ctx.runOnUiThread(new java.lang.Runnable({run: function(){
+      var webs = new android.webkit.WebView(ctx);
+      var webset = webs.getSettings();
+      webset.setJavaScriptEnabled(true);
+      webs.setWebChromeClient(new android.webkit.WebChromeClient());
+      webs.setWebViewClient(new android.webkit.WebViewClient());
+      webs.loadUrl('http://mcapi.ca/query/'+ply+':'+poy+'/list');
+/*Site URL*/
+      new android.app.AlertDialog.Builder(ctx).setView(webs).show();
+      }}));
+      }
+
+            misc = new PopupWindow(miscLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
+            if(default1==true)misc.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+      if(default1==false)misc.setBackgroundDrawable(new ColorDrawable(GUIColor));
+	  var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(Color.TRANSPARENT);
+      bg.setStroke(10,GUIStroke);
+miscLayout1.setBackgroundDrawable(bg);
+miscLayout1.setPadding(20,0,20,0);
+            misc.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
                 Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
             }
@@ -3651,6 +3755,30 @@ XYZ.setBackgroundDrawable(new ColorDrawable(Color.BLACK));
             }
     }}));
 }
+
+var twek = new Button(MainActivity);
+twek.setText("Twerk");
+twek.setTextColor(Color.RED);
+if(twerk==true)twek.setTextColor(Color.GREEN);
+            twek.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             twerk?twerk=false:twerk=true;
+twek.setText("Twerk");
+if(twerk == true){
+twek.setTextColor(Color.GREEN);
+clientMessage(client + "Auto twerk on");
+
+twerk = true;
+}
+if(twerk == false){
+twek.setTextColor(Color.RED);
+clientMessage(client + "Auto twerk off");
+
+twerk = false;
+}
+                }
+            }));
+            cheatLayout.addView(twek);
 
 var exit2 = new android.widget.Button(MainActivity);
 		exit2.setText("Exit");
@@ -11295,7 +11423,6 @@ if(brightness==true)bright();
 if(lowhealth==true)spawnIfLowHealth();
 if(fasteat==true)fastEat();
 if(xray==true)xrayRepeat();
-if(twerk)twerking();
 if (spider && Utils.Player.isCollidedHorizontally()) {
 		if(getTile(Player.getX()+1, Player.getY(), Player.getZ())> 0 || getTile(Player.getX()-1, Player.getY(), Player.getZ())> 0 || getTile(Player.getX(), Player.getY(), Player.getZ()+1)> 0 || getTile(Player.getX(), Player.getY(), Player.getZ()-1)> 0) {
         setVelY(Player.getEntity(), 0.6);
@@ -11877,6 +12004,7 @@ function rptask() {
 			}
 			if(Entity.getRenderType(ent) != 27 && ent != null)crosshairAimAt(ent);
                     }
+                    if(twerk)twerking();
                     nx = getPlayerX();
                     ny = getPlayerY();
                     nz = getPlayerZ();
