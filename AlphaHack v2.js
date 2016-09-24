@@ -79,6 +79,7 @@ var notez;
 var test2 = false;
 var oreId = "";
 var numhack2 = 0;
+var TTick = 0;
 
 var playerDir = [0, 0, 0];
 var DEG_TO_RAD = Math["PI"] / 180;
@@ -197,6 +198,7 @@ var jetpack = false;
 var tapjump = false;
 var betterJumps = false;
 var morphEnhance = false;
+var twerk = false;
 
 var showActive = false;
 var showActive2 = false;
@@ -11293,6 +11295,7 @@ if(brightness==true)bright();
 if(lowhealth==true)spawnIfLowHealth();
 if(fasteat==true)fastEat();
 if(xray==true)xrayRepeat();
+if(twerk)twerking();
 if (spider && Utils.Player.isCollidedHorizontally()) {
 		if(getTile(Player.getX()+1, Player.getY(), Player.getZ())> 0 || getTile(Player.getX()-1, Player.getY(), Player.getZ())> 0 || getTile(Player.getX(), Player.getY(), Player.getZ()+1)> 0 || getTile(Player.getX(), Player.getY(), Player.getZ()-1)> 0) {
         setVelY(Player.getEntity(), 0.6);
@@ -11556,6 +11559,17 @@ var aimbot = false;
 var aimed = false;
 var changeSpeed = false;
 }
+function twerking(){
+TTick++
+if(TTick==0)Entity.setSneaking(getPlayerEnt(), true);
+if(TTick==1)Entity.setSneaking(getPlayerEnt(), false);
+if(TTick==2)Entity.setSneaking(getPlayerEnt(), false);
+if(TTick==3)Entity.setSneaking(getPlayerEnt(), true);
+if(TTick==4)Entity.setSneaking(getPlayerEnt(), true);
+if(TTick==5)Entity.setSneaking(getPlayerEnt(), false);
+
+if(TTick==7)TTick = 0;
+}
 
 function getNearestEntity(maxrange) {
 			var mobs = Entity.getAll();
@@ -11630,6 +11644,7 @@ function bright(){
     var i = 0;
     i++
     Block.setLightLevel(i, 1000);
+    ModPE.resetImages();
 }
 
 function xrayRepeat(){
@@ -11659,6 +11674,7 @@ Block.setRenderLayer(3,1);
 Block.setRenderLayer(12,1);
 Block.setRenderLayer(24,1);
 Block.setRenderLayer(78,1);
+ModPE.resetImages();
 }
 
 function spawnIfLowHealth(){
