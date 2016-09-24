@@ -506,7 +506,7 @@ ModPE.langEdit("death.attack.fall",viddd + ModPE.getI18n("death.attack.fall"));
 ModPE.langEdit("death.attack.explosion",viddd + ModPE.getI18n("death.attack.explosion"));
 ModPE.langEdit("death.attack.arrow",viddd + ModPE.getI18n("death.attack.arrow"));
 ModPE.langEdit("death.attack.drown",viddd + ModPE.getI18n("death.attack.drown"));
-ModPE.langEdit("death.fell.accident.generic",viddd + ModPE.getI18n("death.fell.generic"));
+ModPE.langEdit("death.fell.accident.generic",viddd + ModPE.getI18n("death.fell.accident.generic"));
 ModPE.langEdit("death.attack.outOfWorld",viddd + ModPE.getI18n("death.attack.outOfWorld"));
 ModPE.langEdit("death.attack.onFire",viddd + ModPE.getI18n("death.attack.onFire"));
 ModPE.langEdit("death.attack.magic",viddd + ModPE.getI18n("death.attack.magic"));
