@@ -1297,6 +1297,20 @@ anime.setBackgroundDrawable(new ColorDrawable(Color.BLACK));
     }}));
 }
 
+var t7x0 = new Button(MainActivity);
+            t7x0.setText("Custom server player corruption test");
+t7x0.setTextColor(Color.RED);
+            t7x0.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ(), 208, 0);
+             Level.setTile(getPlayerX() -1, getPlayerY() -2, getPlayerZ(), 208, 0);
+             Level.setTile(getPlayerX() +1, getPlayerY() -2, getPlayerZ(), 208, 0);
+             Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() +1, 208, 0);
+             Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() -1, 208, 0);
+                }
+            }));
+            miscLayout.addView(t7x0);
+
             misc = new PopupWindow(miscLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)misc.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
       if(default1==false)misc.setBackgroundDrawable(new ColorDrawable(GUIColor));
