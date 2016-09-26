@@ -200,6 +200,7 @@ var tapjump = false;
 var betterJumps = false;
 var morphEnhance = false;
 var twerk = false;
+var tpAura = false;
 
 var showActive = false;
 var showActive2 = false;
@@ -3645,6 +3646,7 @@ spiderman.setText("Spider hack");
 if(spider == true){
 spiderman.setTextColor(Color.GREEN);
 clientMessage(client + "Spider hack on");
+Toast.makeText(MainActivity, "Credit: Firepro9978 from VoidClient!", 1).show();
 Utils.Player.isCollidedHorizontally();
 spider = true;
 }
@@ -3829,6 +3831,31 @@ twerk = false;
                 }
             }));
             cheatLayout.addView(twek);
+
+var taura = new Button(MainActivity);
+taura.setText("TP Aura");
+taura.setTextColor(Color.RED);
+if(tpAura==true)taura.setTextColor(Color.GREEN);
+            taura.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             tpAura?tpAura=false:tpAura=true;
+taura.setText("TP Aura");
+if(tpAura == true){
+taura.setTextColor(Color.GREEN);
+clientMessage(client + "TP Aura on");
+Toast.makeText(MainActivity, "Credit: Apric0cks", 1).show();
+
+tpAura = true;
+}
+if(tpAura == false){
+taura.setTextColor(Color.RED);
+clientMessage(client + "TP Aura off");
+
+tpAura = false;
+}
+                }
+            }));
+            cheatLayout.addView(taura);
 
 var exit2 = new android.widget.Button(MainActivity);
 		exit2.setText("Exit");
@@ -10230,7 +10257,7 @@ clientMessage(client + "§7Spawn set to " + Math.round(getPlayerX()) + ", " + Ma
             randomtp.setText("Random TP");       
             randomtp.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
- Entity.setPosition(Player.getEntity(), (Math.floor(Math.random() * (5000 - 100 + 1)) + 100), 60, (Math.floor(Math.random() * (5000 - 100 + 1)) + 100));
+ Entity.setPosition(Player.getEntity(), (Math.floor(Math.random() * (5000 - 100 + 1)) + 100), 70, (Math.floor(Math.random() * (5000 - 100 + 1)) + 100));
 clientMessage(client + "Woah!\n"+"Teleported to: "+getPlayerX()+" "+getPlayerY()+" "+getPlayerZ());
                 }
             }));
@@ -11355,7 +11382,7 @@ if(tapdestroy){
 
 if(taptp){
 	Server.getPort();
-        if(Server.getPort()=="0")Entity.setPosition(Player.getEntity(), x, y, z);
+        if(Server.getPort()=="0")Entity.setPosition(Player.getEntity(), x, y + 3, z);
 Server.sendChat("/tp " + Player.getName(Player.getEntity()) + space + x + space + y + space + z);
 
 }
@@ -11438,7 +11465,7 @@ setVelY(Player.getEntity(), -0.05)
 }
 }
 if(coords)ModPE.showTipMessage(client + "\nX "+Math.round(getPlayerX())+", Y "+Math.round(getPlayerY())+", Z "+Math.round(getPlayerZ()));
-if(armor)ModPE.showTipMessage(client + "\n\nHead: " + Entity.getArmorDamage(getPlayerEnt(), 0) + " Chest: " + Entity.getArmorDamage(getPlayerEnt(), 1) + " Legs: " + Entity.getArmorDamage(getPlayerEnt(), 2) + " Feet: " + Entity.getArmorDamage(getPlayerEnt(), 3));
+if(armor)ModPE.showTipMessage(client + "\nHead: " + Entity.getArmorDamage(getPlayerEnt(), 0) + " Chest: " + Entity.getArmorDamage(getPlayerEnt(), 1) + " Legs: " + Entity.getArmorDamage(getPlayerEnt(), 2) + " Feet: " + Entity.getArmorDamage(getPlayerEnt(), 3));
 if(autonuke)explode(getPlayerX(),getPlayerY(),getPlayerZ(),5);
 if(grief)Level.setTile(Player.getPointedBlockX(), Player.getPointedBlockY(), Player.getPointedBlockZ(), vid, 0);
 if(getvel){
@@ -11504,6 +11531,15 @@ if (spider && Utils.Player.isCollidedHorizontally()) {
     setVelX(getPlayerEnt(), 0.22 * playerDir[0]);
     setVelZ(getPlayerEnt(), 0.22 * playerDir[2]);
 }
+	if(tpAura){
+		var players = Server.getAllPlayers();
+		for(i = 0; i < players.length; i++){
+			var x = Entity.getX(players[i]) - getPlayerX();
+			var y = Entity.getY(players[i]) - getPlayerY();
+			var z = Entity.getZ(players[i]) - getPlayerZ();
+			Entity.setPosition(Player.getEntity(), x, y + 3, z);
+		}
+	}
 }
 
 function toDirectionalVector(dir, a, b) {
@@ -11739,13 +11775,13 @@ var changeSpeed = false;
 function twerking(){
 TTick++
 if(TTick==0)Entity.setSneaking(getPlayerEnt(), true);
-if(TTick==1)Entity.setSneaking(getPlayerEnt(), false);
 if(TTick==2)Entity.setSneaking(getPlayerEnt(), false);
-if(TTick==3)Entity.setSneaking(getPlayerEnt(), true);
 if(TTick==4)Entity.setSneaking(getPlayerEnt(), true);
-if(TTick==5)Entity.setSneaking(getPlayerEnt(), false);
+if(TTick==6)Entity.setSneaking(getPlayerEnt(), false);
+if(TTick==8)Entity.setSneaking(getPlayerEnt(), true);
+if(TTick==10)Entity.setSneaking(getPlayerEnt(), false);
 
-if(TTick==7)TTick = 0;
+if(TTick==11)TTick = 0;
 }
 
 function getNearestEntity(maxrange) {
