@@ -314,6 +314,7 @@ var default1 = true;
 var mcpetheme = false;
 
 var btnPos = Gravity.RIGHT;
+var activePos = Gravity.LEFT;
 
 var GUIColor1 = Color.TRANSPARENT;
 var GUIColor2 = Color.BLACK;
@@ -595,7 +596,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
         var layout = new LinearLayout(MainActivity);
         layout.setOrientation(1);
         var menuBtn = new Button(MainActivity);
-        menuBtn.setTextSize(25);
+        menuBtn.setTextSize(30);
         if(hide==false)menuBtn.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(bg64, 0) , 0, android.util.Base64.decode(bg64, 0).length)));
         if(hide==true)menuBtn.setText("α");
         menuBtn.setOnClickListener(new View.OnClickListener({
@@ -611,7 +612,8 @@ if(getLanguage=="en_US")Toast.makeText(MainActivity, "Scroll down", 1).show();
  
         GUI = new PopupWindow(layout, dip2px(45), dip2px(45)); 
 
-        GUI.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        if(hide==true)menuBtn.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+	GUI.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         GUI.showAtLocation(MainActivity.getWindow().getDecorView(), btnPos | Gravity.TOP, 0, 120);
         }catch(err){
             Toast.makeText(MainActivity, "An error occured: " + err, 1).show();
@@ -799,7 +801,7 @@ active = new PopupWindow(activeLayout1, dip2px(46), dip2px(46));
 
 active = new PopupWindow(activeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/13, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/3.5);
 active.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-            active.showAtLocation(MainActivity.getWindow().getDecorView(), Gravity.LEFT | Gravity.TOP, 0, 120);
+            active.showAtLocation(MainActivity.getWindow().getDecorView(), activePos | Gravity.TOP, 0, 120);
             }catch(error){
                 Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
             }
@@ -861,7 +863,12 @@ if(getLanguage=="en_US")Toast.makeText(MainActivity, "Closed successfully", 1).s
         var line1 = new android.widget.LinearLayout(MainActivity);
 	    line1.setOrientation(0);
 	    
-
+var title = new TextView(MainActivity);
+            title.setTextSize(20);
+            title.setText("");
+            title.setGravity(Gravity.CENTER);
+            title.setTextColor(GUIName);
+            line1.addView(title);
             
             menuLayout.addView(line1);
 	    
@@ -949,6 +956,7 @@ hide = false;
             posright.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 btnPos = Gravity.RIGHT;
+activePos = Gravity.LEFT;
                 }
             }));
             settingsLayout.addView(posright);
@@ -958,6 +966,7 @@ btnPos = Gravity.RIGHT;
             posleft.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 btnPos = Gravity.LEFT;
+activePos = Gravity.RIGHT;
                 }
             }));
             settingsLayout.addView(posleft);
