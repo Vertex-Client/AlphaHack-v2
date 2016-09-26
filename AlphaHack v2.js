@@ -10225,8 +10225,7 @@ var Uspawn = new Button(MainActivity);
         xhome=Player.getX();
         yhome=Player.getY()+1;
         zhome=Player.getZ(); 
-        Server.getPort();
-        if(Server.getPort()=="0")save();
+save();
 clientMessage(client + "§7Home set to: " + Math.round(xhome) + ", " + Math.round(yhome) + ", " + Math.round(zhome) + ".");
                 }
             }));
@@ -10236,9 +10235,8 @@ var Rspawn = new Button(MainActivity);
             Rspawn.setText("Return to home");       
             Rspawn.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-        Server.getPort();
-        if(Server.getPort()=="0")load();
-clientMessage(client + "§7Returning to your saved home");
+load();
+clientMessage(client + "§7Returning to your saved home file");
                 }
             }));
             teleportLayout.addView(Rspawn);
@@ -11531,11 +11529,14 @@ if (spider && Utils.Player.isCollidedHorizontally()) {
 }
 	if(tpAura){
 		var players = Server.getAllPlayers();
-		for(i = 0; i < players.length; i++){
-			var x = Entity.getX(players[i]) - getPlayerX();
-			var y = Entity.getY(players[i]) - getPlayerY();
-			var z = Entity.getZ(players[i]) - getPlayerZ();
+		var names = Server.getAllPlayrNames():
+		for(var i = 0; i < 4; i++){
+			var x = Entity.getX(players[1]) - getPlayerX();
+			var y = Entity.getY(players[1]) - getPlayerY();
+			var z = Entity.getZ(players[1]) - getPlayerZ();
+			if(names[i]!="undefined"){
 			if(x!=0 || z!=0)Entity.setPosition(Player.getEntity(), x, y + 3, z);
+			}
 		}
 	}
 }
