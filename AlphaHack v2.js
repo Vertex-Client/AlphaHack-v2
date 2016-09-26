@@ -80,6 +80,7 @@ var test2 = false;
 var oreId = "";
 var numhack2 = 0;
 var TTick = 0;
+var hide = false;
 
 var playerDir = [0, 0, 0];
 var DEG_TO_RAD = Math["PI"] / 180;
@@ -311,6 +312,8 @@ var GUIColor = Color.TRANSPARENT;
 
 var default1 = true;
 var mcpetheme = false;
+
+var btnPos = Gravity.RIGHT;
 
 var GUIColor1 = Color.TRANSPARENT;
 var GUIColor2 = Color.BLACK;
@@ -592,9 +595,9 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
         var layout = new LinearLayout(MainActivity);
         layout.setOrientation(1);
         var menuBtn = new Button(MainActivity);
-        menuBtn.setTextSize(20);
-        menuBtn.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(bg64, 0) , 0, android.util.Base64.decode(bg64, 0).length)));
-        menuBtn.setText("");
+        menuBtn.setTextSize(25);
+        if(hide==false)menuBtn.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(bg64, 0) , 0, android.util.Base64.decode(bg64, 0).length)));
+        if(hide==true)menuBtn.setText("α");
         menuBtn.setOnClickListener(new View.OnClickListener({
             onClick: function(viewarg){
         active.dismiss();
@@ -609,7 +612,7 @@ if(getLanguage=="en_US")Toast.makeText(MainActivity, "Scroll down", 1).show();
         GUI = new PopupWindow(layout, dip2px(45), dip2px(45)); 
 
         GUI.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        GUI.showAtLocation(MainActivity.getWindow().getDecorView(), Gravity.RIGHT | Gravity.TOP, 0, 120);
+        GUI.showAtLocation(MainActivity.getWindow().getDecorView(), btnPos | Gravity.TOP, 0, 120);
         }catch(err){
             Toast.makeText(MainActivity, "An error occured: " + err, 1).show();
         }
@@ -920,7 +923,45 @@ var urls3 = new Intent(MainActivity);
                 }
             }));
             settingsLayout.addView(link);
-            
+	
+	
+            var hideAH = new Button(MainActivity);
+            if(hide==false)hideAH.setText("Hide AlphaHack");  
+	    if(hide==true)hideAH.setText("Unhide AlphaHack"); 
+            hideAH.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+hide?hide=false:hide=true;
+hideAH.setText("Unhide AlphaHack");
+if(hide == true){
+
+hide = true;
+}
+if(hide == false){
+
+hide = false;
+}
+                }
+            }));
+            settingsLayout.addView(hideAH);
+			
+			var posright = new Button(MainActivity);
+            posright.setText("Button right");       
+            posright.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+btnPos = Gravity.RIGHT;
+                }
+            }));
+            settingsLayout.addView(posright);
+
+            var posleft = new Button(MainActivity);
+            posleft.setText("Button left");       
+            posleft.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+btnPos = Gravity.LEFT;
+                }
+            }));
+            settingsLayout.addView(posleft);
+	
             var mcpe = new Button(MainActivity);
             mcpe.setText("MCPE menu theme");       
             mcpe.setOnClickListener(new View.OnClickListener({
