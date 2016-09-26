@@ -11529,11 +11529,11 @@ if (spider && Utils.Player.isCollidedHorizontally()) {
 }
 	if(tpAura){
 		var players = Server.getAllPlayers();
-		var names = Server.getAllPlayrNames():
+		var names = Server.getAllPlayerNames():
 		for(var i = 0; i < 4; i++){
-			var x = Entity.getX(players[1]) - getPlayerX();
-			var y = Entity.getY(players[1]) - getPlayerY();
-			var z = Entity.getZ(players[1]) - getPlayerZ();
+			var x = Entity.getX(players[i]) - getPlayerX();
+			var y = Entity.getY(players[i]) - getPlayerY();
+			var z = Entity.getZ(players[i]) - getPlayerZ();
 			if(names[i]!="undefined"){
 			if(x!=0 || z!=0)Entity.setPosition(Player.getEntity(), x, y + 3, z);
 			}
