@@ -11381,10 +11381,8 @@ if(tapdestroy){
 }
 
 if(taptp){
-	Server.getPort();
-        if(Server.getPort()=="0")Entity.setPosition(Player.getEntity(), x, y + 3, z);
+Entity.setPosition(Player.getEntity(), x, y + 3, z);
 Server.sendChat("/tp " + Player.getName(Player.getEntity()) + space + x + space + y + space + z);
-
 }
 if(tapnuke)explode(x,y,z,5);
 if(tapid)clientMessage(client + "Block ID: "+blockId+" Item ID: "+itemId+"\n"+" X: "+x+" Y: "+y+" Z: "+z);
@@ -11537,7 +11535,7 @@ if (spider && Utils.Player.isCollidedHorizontally()) {
 			var x = Entity.getX(players[i]) - getPlayerX();
 			var y = Entity.getY(players[i]) - getPlayerY();
 			var z = Entity.getZ(players[i]) - getPlayerZ();
-			Entity.setPosition(Player.getEntity(), x, y + 3, z);
+			if(x!=0 || z!=0)Entity.setPosition(Player.getEntity(), x, y + 3, z);
 		}
 	}
 }
