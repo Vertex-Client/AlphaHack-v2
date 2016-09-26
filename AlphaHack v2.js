@@ -596,7 +596,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
         var layout = new LinearLayout(MainActivity);
         layout.setOrientation(1);
         var menuBtn = new Button(MainActivity);
-        menuBtn.setTextSize(30);
+        menuBtn.setTextSize(26);
         if(hide==false)menuBtn.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(bg64, 0) , 0, android.util.Base64.decode(bg64, 0).length)));
         if(hide==true)menuBtn.setText("α");
         menuBtn.setOnClickListener(new View.OnClickListener({
