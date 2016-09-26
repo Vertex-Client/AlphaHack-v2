@@ -201,6 +201,7 @@ var betterJumps = false;
 var morphEnhance = false;
 var twerk = false;
 var tpAura = false;
+var hitBehind = false;
 
 var showActive = false;
 var showActive2 = false;
@@ -3843,7 +3844,7 @@ taura.setText("TP Aura");
 if(tpAura == true){
 taura.setTextColor(Color.GREEN);
 clientMessage(client + "TP Aura on");
-Toast.makeText(MainActivity, "Credit: Apric0cks", 1).show();
+Toast.makeText(MainActivity, "Credit: Apric0cks for the idea!", 1).show();
 
 tpAura = true;
 }
@@ -3856,6 +3857,30 @@ tpAura = false;
                 }
             }));
             cheatLayout.addView(taura);
+
+var hitme = new Button(MainActivity);
+hitme.setText("Hit behind");
+hitme.setTextColor(Color.RED);
+if(hitBehind==true)hitme.setTextColor(Color.GREEN);
+            hitme.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             hitBehind?hitBehind=false:hitBehind=true;
+hitme.setText("Hit behind");
+if(hitBehind == true){
+hitme.setTextColor(Color.GREEN);
+clientMessage(client + "Hit behind on");
+
+hitBehind = true;
+}
+if(hitBehind == false){
+hitme.setTextColor(Color.RED);
+clientMessage(client + "Hit behind off");
+
+hitBehind = false;
+}
+                }
+            }));
+            cheatLayout.addView(hitme);
 
 var exit2 = new android.widget.Button(MainActivity);
 		exit2.setText("Exit");
@@ -10841,6 +10866,13 @@ rideAnimal(attacker, victim);
 if(horsehealth)Entity.setMaxHealth(victim, horseheart);
 if(getage)clientMessage(client + "age: "+Entity.getAnimalAge(victim));
 if(setage)Entity.setAnimalAge(victim, newage);
+	if(hitBehind){
+		var x = Entity.getX(victim) - getPlayerX();
+		var y = Entity.getY(victim) - getPlayerY();
+		var z = Entity.getZ(victim) - getPlayerZ();
+		Entity.setPosition(Player.getEntity(), x -1, y + 3, z -1);
+		Entity.setPosition(Player.getEntity(), x +1, y + 3, z +1);
+	}
 }
 
 function instaDestroy(){
@@ -11529,7 +11561,7 @@ if (spider && Utils.Player.isCollidedHorizontally()) {
 }
 	if(tpAura){
 		var players = Server.getAllPlayers();
-		var names = Server.getAllPlayerNames():
+		var names = Server.getAllPlayerNames();
 		for(var i = 0; i < 4; i++){
 			var x = Entity.getX(players[i]) - getPlayerX();
 			var y = Entity.getY(players[i]) - getPlayerY();
