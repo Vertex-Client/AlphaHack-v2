@@ -202,6 +202,8 @@ var morphEnhance = false;
 var twerk = false;
 var tpAura = false;
 var hitBehind = false;
+var hitJump = false;
+var nametags = false;
 
 var showActive = false;
 var showActive2 = false;
@@ -3881,6 +3883,54 @@ hitBehind = false;
                 }
             }));
             cheatLayout.addView(hitme);
+
+var jhit = new Button(MainActivity);
+jhit.setText("Hit'n'jump");
+jhit.setTextColor(Color.RED);
+if(hitJump==true)jhit.setTextColor(Color.GREEN);
+            jhit.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             hitJump?hitJump=false:hitJump=true;
+jhit.setText("Hit'n'jump");
+if(hitJump == true){
+jhit.setTextColor(Color.GREEN);
+clientMessage(client + "Hit'n'jump on");
+
+hitJump = true;
+}
+if(hitJump == false){
+jhit.setTextColor(Color.RED);
+clientMessage(client + "Hit'n'jump off");
+
+hitJump = false;
+}
+                }
+            }));
+            cheatLayout.addView(jhit);
+
+var nameit = new Button(MainActivity);
+nameit.setText("Mob nametags");
+nameit.setTextColor(Color.RED);
+if(nametags==true)nameit.setTextColor(Color.GREEN);
+            nameit.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             nametags?nametags=false:nametags=true;
+nameit.setText("Mob nametags");
+if(nametags == true){
+nameit.setTextColor(Color.GREEN);
+clientMessage(client + "Mob nametags on");
+
+nametags = true;
+}
+if(nametags == false){
+nameit.setTextColor(Color.RED);
+clientMessage(client + "Mob nametags off");
+
+nametags = false;
+}
+                }
+            }));
+            cheatLayout.addView(nameit);
 
 var exit2 = new android.widget.Button(MainActivity);
 		exit2.setText("Exit");
@@ -9869,7 +9919,7 @@ var spawn70 = new Button(MainActivity);
             spawn79.setText("Spawn Wither");            
             spawn79.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 47);
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 52);
                 }
             }));
             spawnLayout.addView(spawn79);
@@ -10873,6 +10923,9 @@ if(setage)Entity.setAnimalAge(victim, newage);
 		Entity.setPosition(Player.getEntity(), x -1, y + 3, z -1);
 		Entity.setPosition(Player.getEntity(), x +1, y + 3, z +1);
 	}
+	if(hitJump){
+		if(victim)setVelY(getPlayerEnt(),0.8);
+	}
 }
 
 function instaDestroy(){
@@ -11240,119 +11293,328 @@ function killingd() {
     }
 }
 
-function killingl() {
+function namedem() {
     var mobs = Entity.getAll();
-    for (var d = 0; d < mobs.length; d++) {
-        var mobX = Entity.getX(mobs[d]);
-        var mobY = Entity.getY(mobs[d]);
-        var mobZ = Entity.getZ(mobs[d]);
-        if (mobX * mobX + mobY * mobY + mobZ * mobZ <= 20 * 20 && mobs[d] != getPlayerEnt()) {
-            if (Entity.getEntityTypeId(mobs[d]) == 10) {
-                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
+    for (var n = 0; n < mobs.length; n++) {
+        var mobX = Entity.getX(mobs[n]) - getPlayerX();
+        var mobY = Entity.getY(mobs[n]) - getPlayerY();
+        var mobZ = Entity.getZ(mobs[n]) - getPlayerZ();
+        if (mobX * mobX + mobY * mobY + mobZ * mobZ <= 20 * 20 && mobs[n] != getPlayerEnt()) {
+		
+		            if (Entity.getEntityTypeId(mobs[n]) == 10) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Chicken "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n])); 
             }
-            if (Entity.getEntityTypeId(mobs[d]) == 11) {
-                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 11) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Cow "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
-            if (Entity.getEntityTypeId(mobs[d]) == 12) {
-                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 12) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Pig "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
-            if (Entity.getEntityTypeId(mobs[d]) == 13) {
-                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 13) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Sheep "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
-            if (Entity.getEntityTypeId(mobs[d]) == 14) {
-                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 14) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Wolf "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
-            if (Entity.getEntityTypeId(mobs[d]) == 15) {
-                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 15) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Villager "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
-            if (Entity.getEntityTypeId(mobs[d]) == 16) {
-                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 16) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Mushroom cow "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
-            if (Entity.getEntityTypeId(mobs[d]) == 17) {
-                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 17) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Squid "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
-            if (Entity.getEntityTypeId(mobs[d]) == 18) {
-                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 18) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Rabbit "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
-            if (Entity.getEntityTypeId(mobs[d]) == 19) {
-                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 19) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Bat "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
-            if (Entity.getEntityTypeId(mobs[d]) == 20) {
-                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 20) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Iron golem "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
-            if (Entity.getEntityTypeId(mobs[d]) == 21) {
-                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 21) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Snow golem "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
-            if (Entity.getEntityTypeId(mobs[d]) == 22) {
-                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 22) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Ocelot "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
-			if (Entity.getEntityTypeId(mobs[d]) == 24) {
-                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
+			}
+			if (Entity.getEntityTypeId(mobs[n]) == 23) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Horse "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
-			if (Entity.getEntityTypeId(mobs[d]) == 25) {
-                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
+			}
+			if (Entity.getEntityTypeId(mobs[n]) == 24) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Donkey "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
-			if (Entity.getEntityTypeId(mobs[d]) == 26) {
-                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
+			}
+			if (Entity.getEntityTypeId(mobs[n]) == 25) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Mule "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
-			if (Entity.getEntityTypeId(mobs[d]) == 27) {
-                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
+			}
+			if (Entity.getEntityTypeId(mobs[n]) == 26) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Skeleton horse "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
-            if (Entity.getEntityTypeId(mobs[d]) == 32) {
-                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
+			}
+			if (Entity.getEntityTypeId(mobs[n]) == 27) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Zombie horse "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
-            if (Entity.getEntityTypeId(mobs[d]) == 33) {
-                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 32) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Zombie "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
-            if (Entity.getEntityTypeId(mobs[d]) == 34) {
-                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 33) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Creeper "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
-            if (Entity.getEntityTypeId(mobs[d]) == 35) {
-                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 34) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Skeleton "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
-            if (Entity.getEntityTypeId(mobs[d]) == 36) {
-                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 35) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Spider "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
-            if (Entity.getEntityTypeId(mobs[d]) == 37) {
-                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 36) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Zombie pigman "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
-            if (Entity.getEntityTypeId(mobs[d]) == 38) {
-                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 37) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Slime "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
-            if (Entity.getEntityTypeId(mobs[d]) == 39) {
-                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 38) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Enderman "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
-            if (Entity.getEntityTypeId(mobs[d]) == 40) {
-                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 39) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Silver fish "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
-            if (Entity.getEntityTypeId(mobs[d]) == 41) {
-                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 40) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Cave spider "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
-            if (Entity.getEntityTypeId(mobs[d]) == 42) {
-                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 41) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Ghast "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
-            if (Entity.getEntityTypeId(mobs[d]) == 43) {
-                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 42) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Magma cube "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
-            if (Entity.getEntityTypeId(mobs[d]) == 44) {
-                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 43) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Blaze "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
-            if (Entity.getEntityTypeId(mobs[d]) == 45) {
-                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 44) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Zombie villager "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
-			if (Entity.getEntityTypeId(mobs[d]) == 46) {
-                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 45) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Witch "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
-			if (Entity.getEntityTypeId(mobs[d]) == 47) {
-                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
+			}
+			if (Entity.getEntityTypeId(mobs[n]) == 46) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Stray "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
-			if (Entity.getEntityTypeId(mobs[d]) == 48) {
-                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
+			}
+			if (Entity.getEntityTypeId(mobs[n]) == 47) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Husk "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
-			if (Entity.getEntityTypeId(mobs[d]) == 100) {
-                Level.spawnMob(Entity.getX(mobs[d]), Entity.getY(mobs[d]), Entity.getZ(mobs[d]), EntityType.LIGHTNING_BOLT);
+			}
+			if (Entity.getEntityTypeId(mobs[n]) == 48) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Wither skeleton "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
-        }
+			}
+			if (Entity.getEntityTypeId(mobs[n]) == 49) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Guardian "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+			if (Entity.getEntityTypeId(mobs[n]) == 50) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Elder guardian "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+			if (Entity.getEntityTypeId(mobs[n]) == 51) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "NPC "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+			if (Entity.getEntityTypeId(mobs[n]) == 52) {
+			if(Entity.getNameTag(mobs[n]) != ""){
+			Entity.setNameTag(mobs[n], ""+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], "Wither "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+		
+	}
     }
 }
 
@@ -11441,6 +11703,10 @@ if(killdaura) {
 	
 	killingd();
 }
+if(nametags) {
+	
+	namedem();
+}
 if(particle1)Level.addParticle(ParticleType.angryVillager, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 5);
 if(particle2)Level.addParticle(ParticleType.bubble, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
 if(particle3)Level.addParticle(ParticleType.cloud, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
@@ -11483,8 +11749,7 @@ if(onlyday)Level.setTime(0);
 		if(Math.round(getPlayerY())=="-3"){
 			clientMessage(client + "You were at void!");
 			Server.sendChat("/spawn");
-			Server.getPort();
-                	if(Server.getPort()=="0")Entity.setPosition(Player.getEntity(), getPlayerX(), 65, getPlayerZ()+5);
+			Entity.setPosition(Player.getEntity(), getPlayerX(), 65, getPlayerZ()+5);
 		}
 	}
 	if(glide){
