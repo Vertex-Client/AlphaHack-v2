@@ -11507,8 +11507,10 @@ function namedem() {
         var mobZ2 = Entity.getZ(players[p]) - getPlayerZ();
         if (mobX2 * mobX2 + mobY2 * mobY2 + mobZ2 * mobZ2 <= 20 * 20 && players[p] != getPlayerEnt()) {
 if(Entity.getEntityTypeId(players[p]) == 63){
+	if(Entity.getNameTag(players[p])!="undefined"){
                 Entity.setNameTag(players[p], ""+Entity.getNameTag(players[p])+" "+Entity.getHealth(players[p])+"/"+Entity.getMaxHealth(players[p]));
-            }
+	}
+	}
 	  }
 	}
 }
