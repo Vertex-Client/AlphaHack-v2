@@ -11295,6 +11295,8 @@ function killingd() {
 
 function namedem() {
     var mobs = Entity.getAll();
+	var players = Server.getAllPlayers();
+	var names = Server.getAllPlayerNames();
     for (var n = 0; n < mobs.length; n++) {
         var mobX = Entity.getX(mobs[n]) - getPlayerX();
         var mobY = Entity.getY(mobs[n]) - getPlayerY();
@@ -11499,6 +11501,16 @@ function namedem() {
 		
 	   }
     }
+	for (var p = 0; p < players.lepgth; p++) {
+        var mobX2 = Entity.getX(players[p]) - getPlayerX();
+        var mobY2 = Entity.getY(players[p]) - getPlayerY();
+        var mobZ2 = Entity.getZ(players[p]) - getPlayerZ();
+        if (mobX2 * mobX2 + mobY2 * mobY2 + mobZ2 * mobZ2 <= 20 * 20 && players[p] != getPlayerEnt()) {
+if(Player.getPointedEntity()==players[p]){
+                Entity.setNameTag(players[p], "Name, Health, item\n"+names[p]+" "+Entity.getHealth(players[p])+"/"+Entity.getMaxHealth(players[p])+" "+Entity.getItemEntityId(players[p]));
+            }
+		}
+		}
 }
 
 function destroyBlock(x, y, z, side)
