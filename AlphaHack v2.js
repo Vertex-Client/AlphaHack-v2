@@ -11507,12 +11507,10 @@ function namedem() {
         var mobZ2 = Entity.getZ(players[p]) - getPlayerZ();
         if (mobX2 * mobX2 + mobY2 * mobY2 + mobZ2 * mobZ2 <= 20 * 20 && players[p] != getPlayerEnt()) {
 if(Entity.getEntityTypeId(players[p]) == 63){
-if(Player.getPointedEntity()==players[p]){
-                Entity.setNameTag(players[p], ""+names[p]+" "+Entity.getHealth(players[p])+"/"+Entity.getMaxHealth(players[p]));
+                Entity.setNameTag(players[p], ""+Entity.getNameTag(players[p])+" "+Entity.getHealth(players[p])+"/"+Entity.getMaxHealth(players[p]));
             }
-			}
-		}
-		}
+	  }
+	}
 }
 
 function destroyBlock(x, y, z, side)
