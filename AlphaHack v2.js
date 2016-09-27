@@ -11501,7 +11501,7 @@ function namedem() {
 		
 	   }
     }
-	for (var p = 0; p < players.lepgth; p++) {
+	for (var p = 0; p < players.length; p++) {
         var mobX2 = Entity.getX(players[p]) - getPlayerX();
         var mobY2 = Entity.getY(players[p]) - getPlayerY();
         var mobZ2 = Entity.getZ(players[p]) - getPlayerZ();
