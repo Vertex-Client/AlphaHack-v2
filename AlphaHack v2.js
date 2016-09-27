@@ -11493,7 +11493,7 @@ function namedem() {
                 Entity.setNameTag(mobs[n], " NPC "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
 			}
-			if (Entity.getEntityTypeId(mobs[n]) == 52) {
+			if () {
 			if(Entity.getNameTag(mobs[n]) == ""){
                 Entity.setNameTag(mobs[n], " Wither "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
@@ -11506,9 +11506,11 @@ function namedem() {
         var mobY2 = Entity.getY(players[p]) - getPlayerY();
         var mobZ2 = Entity.getZ(players[p]) - getPlayerZ();
         if (mobX2 * mobX2 + mobY2 * mobY2 + mobZ2 * mobZ2 <= 20 * 20 && players[p] != getPlayerEnt()) {
+if(Entity.getEntityTypeId(players[p]) == 63){
 if(Player.getPointedEntity()==players[p]){
-                Entity.setNameTag(players[p], "Name, Health, item\n"+names[p]+" "+Entity.getHealth(players[p])+"/"+Entity.getMaxHealth(players[p])+" "+Entity.getItemEntityId(players[p]));
+                Entity.setNameTag(players[p], ""+names[p]+" "+Entity.getHealth(players[p])+"/"+Entity.getMaxHealth(players[p]));
             }
+			}
 		}
 		}
 }
