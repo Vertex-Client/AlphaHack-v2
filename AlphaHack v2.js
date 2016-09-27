@@ -11493,7 +11493,7 @@ function namedem() {
                 Entity.setNameTag(mobs[n], " NPC "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
 			}
-			if () {
+			if (Entity.getEntityTypeId(mobs[n]) == 52) {
 			if(Entity.getNameTag(mobs[n]) == ""){
                 Entity.setNameTag(mobs[n], " Wither "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
