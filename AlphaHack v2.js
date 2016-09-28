@@ -204,6 +204,7 @@ var tpAura = false;
 var hitBehind = false;
 var hitJump = false;
 var nametags = false;
+var attackActions = false;
 
 var showActive = false;
 var showActive2 = false;
@@ -10924,7 +10925,7 @@ if(setage)Entity.setAnimalAge(victim, newage);
 		Entity.setPosition(Player.getEntity(), x +1, y + 3, z +1);
 	}
 	if(hitJump){
-		if(victim)setVelY(getPlayerEnt(),0.8);
+		if(victim)setVelY(getPlayerEnt(),0.5);
 	}
 }
 
@@ -11501,7 +11502,7 @@ function namedem() {
 		
 	   }
     }
-	for (var p = 0; p < players.length; p++) {
+	/*for (var p = 0; p < players.length; p++) {
         var mobX2 = Entity.getX(players[p]) - getPlayerX();
         var mobY2 = Entity.getY(players[p]) - getPlayerY();
         var mobZ2 = Entity.getZ(players[p]) - getPlayerZ();
@@ -11512,7 +11513,7 @@ if(Entity.getEntityTypeId(players[p]) == 63){
 	}
 	}
 	  }
-	}
+	}*/
 }
 
 function destroyBlock(x, y, z, side)
@@ -11575,7 +11576,7 @@ Server.sendChat("/tp " + Player.getName(Player.getEntity()) + space + x + space 
 }
 if(tapnuke)explode(x,y,z,5);
 if(tapid)clientMessage(client + "Block ID: "+blockId+" Item ID: "+itemId+"\n"+" X: "+x+" Y: "+y+" Z: "+z);
-if(tapjump)setVelY(getPlayerEnt(),0.8);
+if(tapjump)setVelY(getPlayerEnt(),0.5);
 }
 
 function modTick(){
