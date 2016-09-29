@@ -205,6 +205,7 @@ var hitBehind = false;
 var hitJump = false;
 var nametags = false;
 var attackActions = false;
+var keepHotbar = false;
 
 var showActive = false;
 var showActive2 = false;
@@ -3933,6 +3934,30 @@ nametags = false;
             }));
             cheatLayout.addView(nameit);
 
+var keeps = new Button(MainActivity);
+keeps.setText("Keep hotbar");
+keeps.setTextColor(Color.RED);
+if(keepHotbar==true)keeps.setTextColor(Color.GREEN);
+            keeps.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             keepHotbar?keepHotbar=false:keepHotbar=true;
+keeps.setText("Keep hotbar");
+if(keepHotbar == true){
+keeps.setTextColor(Color.GREEN);
+clientMessage(client + "Keep hotbar on");
+
+keepHotbar = true;
+}
+if(keepHotbar == false){
+keeps.setTextColor(Color.RED);
+clientMessage(client + "Keep hotbar off");
+
+keepHotbar = false;
+}
+                }
+            }));
+            cheatLayout.addView(keeps);
+
 var exit2 = new android.widget.Button(MainActivity);
 		exit2.setText("Exit");
 		exit2.setOnClickListener(new android.view.View.OnClickListener() {
@@ -6658,6 +6683,8 @@ Player.enchant(Player.getSelectedSlotId(), Enchantment.KNOCKBACK,tysplvl);
 Player.enchant(Player.getSelectedSlotId(), Enchantment.LOOTING,tysplvl);
 Player.enchant(Player.getSelectedSlotId(), Enchantment.SHARPNESS,tysplvl);
 Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,tysplvl);
+		    Player.setLevel(Math.round(tysplvl));
+		    Player.setItemCustomName(Player.getSelectedSlotId(), "God sword");
             }
             
         var god2 = new Button(MainActivity);
@@ -6675,6 +6702,8 @@ Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,tysplvl);
 Player.enchant(Player.getSelectedSlotId(), Enchantment.EFFICIENCY,tysplvl);
 Player.enchant(Player.getSelectedSlotId(), Enchantment.FORTUNE,fortuneLvl);
 Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,tysplvl);
+		    Player.setLevel(Math.round(tysplvl));
+		    Player.setItemCustomName(Player.getSelectedSlotId(), "God pickaxe");
             }
 			
 var god3 = new Button(MainActivity);
@@ -6691,6 +6720,8 @@ var god3 = new Button(MainActivity);
 Player.enchant(Player.getSelectedSlotId(), Enchantment.PROTECTION,tysplvl);
 Player.enchant(Player.getSelectedSlotId(), Enchantment.THORNS,tysplvl);
 Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,tysplvl);
+		    Player.setLevel(Math.round(tysplvl));
+		    Player.setItemCustomName(Player.getSelectedSlotId(), "God armor");
             }
 
 var ena = new Button(MainActivity);
@@ -11734,6 +11765,7 @@ if (spider && Utils.Player.isCollidedHorizontally()) {
 			}
 		}
 	}
+	if(keepHotbar)keepSlot();
 }
 
 function toDirectionalVector(dir, a, b) {
@@ -11966,6 +11998,7 @@ var aimbot = false;
 var aimed = false;
 var changeSpeed = false;
 }
+
 function twerking(){
 TTick++
 if(TTick==0)Entity.setSneaking(getPlayerEnt(), true);
@@ -12120,6 +12153,12 @@ function changeSpeedOnBlock(){
 	Block.setFriction(174, 0.6000000238418579);
 	Block.setFriction(88, 0.6000000238418579);
 	Block.setShape(30, null, null, null, null, null, null);
+}
+
+function keepSlot(){
+	Player.setSelectedSlotId(Player.getSelectedSlotId());
+	Player.getCarriedItem();
+	Player.setSelectedSlotId(Player.getCarriedItem());
 }
 
 function rptask3() {
