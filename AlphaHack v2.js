@@ -81,6 +81,7 @@ var oreId = "";
 var numhack2 = 0;
 var TTick = 0;
 var hide = false;
+var newAction = "";
 
 var playerDir = [0, 0, 0];
 var DEG_TO_RAD = Math["PI"] / 180;
@@ -2083,7 +2084,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var m1 = new android.widget.EditText(MainActivity);
 var select1 = new android.widget.Button(MainActivity);
 var select2 = new android.widget.Button(MainActivity);
-var select3 = new android.widget.Button(MainActivity);
+var select3 = new android.widget.EditText(MainActivity);
 var select4 = new android.widget.Button(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
  
@@ -2095,16 +2096,18 @@ Dialog.show();
 
 Layer.addView(m1);
 m1.setText("AlphaHack!");
+	
+Layer.addView(select3);
+select3.setText("");
+select3.setHint("Seconds");
  
 Layer.addView(select1);
 
 Layer.addView(select2);
 
-Layer.addView(select3);
-
 Layer.addView(select4);
  
-            select1.setText("LBSG Bypass");
+            select1.setText("LBSG");
             select1.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 text =m1.getText();
@@ -2115,7 +2118,7 @@ showMenuBtn();
                 }
             }));
              
-            select2.setText("Mineplex Bypass");
+            select2.setText("Mineplex");
             select2.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 text =m1.getText();
@@ -2126,18 +2129,7 @@ showMenuBtn();
                 }
             }));
             
-            select3.setText("Simple Bypass");
-            select3.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
-text =m1.getText();
-var seconds = "1000";
-antispam = true;
-Dialog.dismiss();
-showMenuBtn();
-                }
-            }));
-            
-            select4.setText("Leet.cc Bypass");
+            select4.setText("Leet.cc");
             select4.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 text =m1.getText();
@@ -4002,6 +3994,30 @@ keepHotbar = false;
                 }
             }));
             cheatLayout.addView(keeps);
+
+var atkact = new Button(MainActivity);
+atkact.setText("Attack action");
+atkact.setTextColor(Color.RED);
+if(attackActions==true)atkact.setTextColor(Color.GREEN);
+            atkact.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             attackActions?attackActions=false:attackActions=true;
+atkact.setText("Attack action");
+if(attackActions == true){
+atkact.setTextColor(Color.GREEN);
+clientMessage(client + "Attack action on");
+atact();
+attackActions = true;
+}
+if(attackActions == false){
+atkact.setTextColor(Color.RED);
+clientMessage(client + "Attack action off");
+
+attackActions = false;
+}
+                }
+            }));
+            cheatLayout.addView(atkact);
 
 var exit2 = new android.widget.Button(MainActivity);
 		exit2.setText("Exit");
@@ -9010,6 +9026,60 @@ var n11 = new Button(MainActivity);
                 }
             }));
             nukeLayout.addView(n11);
+	
+	var cn = new Button(MainActivity);
+            cn.setText("Custom nuke");
+            cn.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+                nuke.dismiss();
+                newn();
+                }
+            }));
+            nukeLayout.addView(cn);
+	
+	function newn() {
+MainActivity.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+newn = new android.widget.PopupWindow();
+var Layerb5 = new android.widget.LinearLayout(MainActivity);
+var nNuke = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
+
+Dialog.setTitle("Enter nuke amount");
+Dialog.setContentView(Layerb5);
+
+Layerb5.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layerb5.addView(nNuke);
+Layerb5.addView(Exit);
+
+nNuke.setText("");
+nNuke.setHint("Amount");
+Exit.setText("Nuke");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+lenuke =nNuke.getText();
+Dialog.dismiss();
+setNuke();
+showMenuBtn();
+}
+});
+
+newn.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+newn.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+newn.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The newn Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+					
+			function setNuke(){
+			   explode(getPlayerX(),getPlayerY(),getPlayerZ(),lenuke);
+			   }
 
             nuke = new PopupWindow(nukeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)nuke.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -10979,6 +11049,9 @@ if(setage)Entity.setAnimalAge(victim, newage);
 	if(hitJump){
 		if(victim)setVelY(getPlayerEnt(),0.5);
 	}
+	if(attackActions){
+		if(attacker)Server.sendChat(newAction);
+	}
 }
 
 function instaDestroy(){
@@ -11804,6 +11877,45 @@ var file = new java.io.File( android.os.Environment.getExternalStorageDirectory(
         var string="";
         write.append((Math.floor(Math.random() * (500000 - 100000 + 1)) + 100000));
         write.close();
+}
+
+function atact() {
+MainActivity.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+atact = new android.widget.PopupWindow();
+var Layerb4 = new android.widget.LinearLayout(MainActivity);
+var editAtk = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
+
+Dialog.setTitle("When attacked send...");
+Dialog.setContentView(Layerb4);
+
+Layerb4.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layerb4.addView(editAtk);
+Layerb4.addView(Exit);
+
+editAtk.setText("");
+editAtk.setHint("Command or message");
+Exit.setText("Set action");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+newAction =editAtk.getText();
+Dialog.dismiss();
+showMenuBtn();
+}
+});
+
+atact.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+atact.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+atact.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The atact Dialog Is Malfunctioning:"+e);
+}
+}});
 }
 
 function fov() {
