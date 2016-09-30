@@ -612,6 +612,15 @@ mainMenu();
 GUI.dismiss();
 if(getLanguage=="en_US")Toast.makeText(MainActivity, "Scroll down", 1).show();
  if(getLanguage=="de_DE")Toast.makeText(MainActivity, "Scroll nach unten", 1).show();
+if(GetLang=="ko_KR")
+
+if(GetLang=="es_MX")
+
+if(GetLang=="ja_JP")
+
+if(GetLang=="fr_FR")
+
+if(GetLang=="it_IT")
             }
         }));
         layout.addView(menuBtn);
@@ -10320,7 +10329,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             button.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 Tsele();
-tmenu.dismiss();
+teleport.dismiss();
                 }
             }));
             teleportLayout.addView(button);
