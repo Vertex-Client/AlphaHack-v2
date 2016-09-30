@@ -50,8 +50,8 @@ var vidd = true;
 var viddd = "§9";
 var text = "AlphαHαck!";
 var space = " ";
-var version = "0.8.2";
-if(version=="0.8.2")version = "Beta";
+var version = "0.8.4";
+if(version=="0.8.4")version = "Beta";
 var chestTracersRange = 10;
 var chestTracersGroundMode = "on";
 var chestTracersParticle = "on";
@@ -580,9 +580,9 @@ ctx.runOnUiThread(new Runnable({ run: function(){
         var layout = new LinearLayout(ctx);
         layout.setOrientation(1);
         var menuNo = new Button(ctx);
-menuNo.setTextSize(10);
+        menuNo.setTextSize(10);
         menuNo.setText("");
-		menuNo.setTextColor(Color.GREEN);
+	menuNo.setTextColor(Color.GREEN);
         layout.addView(menuNo);
  
         Debug = new PopupWindow(layout, dip2px(0), dip2px(0)); 
@@ -644,7 +644,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             activeLayout1.addView(activeScroll);
 			
 	    var a1 = new TextView(MainActivity);
-            a1.setTextSize(11);
+            a1.setTextSize(10);
             if(aimaura==true)a1.setText("AimAura");
             if(aimaura==false)a1.setText("");
 	    if(aimaura==false)a1.setTextColor(Color.RED);
@@ -660,7 +660,7 @@ aimaura = false;
 		activeLayout.addView(a1);
 		
 		var a2 = new TextView(MainActivity);
-            a2.setTextSize(11);
+            a2.setTextSize(10);
             if(liquidwalk==true)a2.setText("LiquidWalk");
             if(liquidwalk==false)a2.setText("");
 	    if(liquidwalk==false)a2.setTextColor(Color.RED);
@@ -674,7 +674,7 @@ aimaura = false;
 		activeLayout.addView(a2);
 		
 		var a3 = new TextView(MainActivity);
-            a3.setTextSize(11);
+            a3.setTextSize(10);
             if(xray==true)a3.setText("X-ray");
             if(xray==false)a3.setText("");
 	    if(xray==false)a3.setTextColor(Color.RED);
@@ -688,7 +688,7 @@ aimaura = false;
 		activeLayout.addView(a3);
 		
 		var a4 = new TextView(MainActivity);
-            a4.setTextSize(11);
+            a4.setTextSize(10);
             if(glide==true)a4.setText("Glide");
             if(glide==false)a4.setText("");
 	    if(glide==false)a4.setTextColor(Color.RED);
@@ -702,7 +702,7 @@ aimaura = false;
 		activeLayout.addView(a4);
 		
 		var a5 = new TextView(MainActivity);
-            a5.setTextSize(11);
+            a5.setTextSize(10);
             if(autospam==true)a5.setText("AutoSpam");
             if(autospam==false)a5.setText("");
 	    if(autospam==false)a5.setTextColor(Color.RED);
@@ -717,7 +717,7 @@ aimaura = false;
 		activeLayout.addView(a5);
 		
 		var a6 = new TextView(MainActivity);
-            a6.setTextSize(11);
+            a6.setTextSize(10);
             if(autospam==true)a6.setText("AutoDestroy");
             if(extraj==true)a6.setText("AutoDestroy 2");
             if(autospam==false)a6.setText("");
@@ -734,7 +734,7 @@ aimaura = false;
 		activeLayout.addView(a6);
 		
 		var a7 = new TextView(MainActivity);
-            a7.setTextSize(11);
+            a7.setTextSize(10);
             if(coords==true)a7.setText("XYZ");
             if(coords==false)a7.setText("");
 	    if(coords==false)a7.setTextColor(Color.RED);
@@ -748,7 +748,7 @@ aimaura = false;
 		activeLayout.addView(a7);
 		
 		var a8 = new TextView(MainActivity);
-            a8.setTextSize(11);
+            a8.setTextSize(10);
             if(chestesp==true)a8.setText("ChestESP");
             if(chestesp==false)a8.setText("");
 	    if(chestesp==false)a8.setTextColor(Color.RED);
@@ -762,7 +762,7 @@ aimaura = false;
 		activeLayout.addView(a8);
 		
 		var a9 = new TextView(MainActivity);
-            a9.setTextSize(11);
+            a9.setTextSize(10);
             if(tapjump==true)a9.setText("TapJump");
             if(tapjump==false)a9.setText("");
 	    if(tapjump==false)a9.setTextColor(Color.RED);
@@ -776,8 +776,8 @@ aimaura = false;
 		activeLayout.addView(a9);
 		
 		var a10 = new TextView(MainActivity);
-            a10.setTextSize(11);
-            if(spider==true)a10.setText("SpiderHack");
+            a10.setTextSize(10);
+            if(spider==true)a10.setText("Spider");
             if(spider==false)a10.setText("");
 	    if(spider==false)a10.setTextColor(Color.RED);
             if(spider==true)a10.setTextColor(Color.GREEN);
@@ -790,7 +790,7 @@ aimaura = false;
 		activeLayout.addView(a10);
 		
 		var a11 = new TextView(MainActivity);
-            a11.setTextSize(11);
+            a11.setTextSize(10);
             if(autowalk==true)a11.setText("AutoWalk");
             if(autowalk==false)a11.setText("");
 	    if(autowalk==false)a11.setTextColor(Color.RED);
@@ -915,9 +915,9 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             settingsScroll.addView(settingsLayout);
             settingsLayout1.addView(settingsScroll);
             
-var exit = new android.widget.Button(MainActivity);
+                var exit = new Button(MainActivity);
 		exit.setText("Exit");
-		exit.setOnClickListener(new android.view.View.OnClickListener() {
+		exit.setOnClickListener(new View.OnClickListener() {
 			onClick: function(v){
              settings.dismiss();
              showMenuBtn();
@@ -1684,6 +1684,18 @@ dialog.show();
 			}
 		});
 		miscLayout.addView(ht4);
+
+var cidban = new Button(MainActivity);
+            cidban.setText("CID/dev pardon"); 
+            cidban.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                	for(var hk = 0; hk < 4; hk++){
+                		if(hk==3)devpardon();
+                	}
+Toast.makeText(MainActivity, "You will crash & be unbanned!", 1).show();
+                }
+            }));
+            miscLayout.addView(cidban);
             
             var sit = new android.widget.Button(MainActivity);
 		sit.setText("Image lookup");
@@ -2146,7 +2158,7 @@ print("Bypass error: "+e);
 }
 
 var info = new Button(MainActivity);
-            info.setText("Info dialog");
+            info.setText("Game info");
             info.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
                     infoView();
@@ -2475,7 +2487,7 @@ if(Server.getAddress()=="null" || Server.getPort()=="0")clientMessage(client + "
             cheatLayout.addView(svr);
             
             var itemInfo = new Button(MainActivity);
-            itemInfo.setText("Item status"); 
+            itemInfo.setText("Item indicator"); 
             itemInfo.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
 clientMessage(client + "Item ID: " + Player.getCarriedItem());
@@ -2484,27 +2496,15 @@ clientMessage(client + "Amount in hand: " + Player.getCarriedItemCount());
                 }
             }));
             cheatLayout.addView(itemInfo);
-            
-            var cidban = new Button(MainActivity);
-            cidban.setText("CID/dev pardon"); 
-            cidban.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-                	for(var hk = 0; hk < 4; hk++){
-                		if(hk==3)devpardon();
-                	}
-Toast.makeText(MainActivity, "You will crash & be unbanned!", 1).show();
-                }
-            }));
-            cheatLayout.addView(cidban);
 	    
 	    var button4 = new Button(MainActivity);
-button4.setText("Armor status");
+button4.setText("Armor indicator");
 button4.setTextColor(Color.RED);
 if(armor==true)button4.setTextColor(Color.GREEN);
             button4.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              armor?armor=false:armor=true;
-button4.setText("Armor status");
+button4.setText("Armor indicator");
 if(armor == true){
 button4.setTextColor(Color.GREEN);
 if(coords==true)coords==false;
@@ -2546,13 +2546,13 @@ coords = false;
             cheatLayout.addView(button5);
             
             var seevel = new Button(MainActivity);
-seevel.setText("Velocity");
+seevel.setText("Velocity indicator");
 seevel.setTextColor(Color.RED);
 if(getvel==true)seevel.setTextColor(Color.GREEN);
             seevel.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              getvel?getvel=false:getvel=true;
-seevel.setText("Velocity");
+seevel.setText("Velocity indicator");
 if(getvel == true){
 seevel.setTextColor(Color.GREEN);
 if(yawpitch==true)yawpitch==false;
@@ -2721,13 +2721,13 @@ tapdestroy = false;
             cheatLayout.addView(button10);
             
             var button11 = new Button(MainActivity);
-button11.setText("Chest ESP");
+button11.setText("Storage ESP");
 button11.setTextColor(Color.RED);
 if(chestesp==true)button11.setTextColor(Color.GREEN);
             button11.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              chestesp?chestesp=false:chestesp=true;
-button11.setText("Chest ESP");
+button11.setText("Storage ESP");
 if(chestesp == true){
 button11.setTextColor(Color.GREEN);
 Toast.makeText(MainActivity, "Credit: Vertex Client team!", 1).show();
@@ -3141,7 +3141,8 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
                 onClick: function(viewarg){ 
 Server.sendChat("/setuperm " + Player.getName(Player.getEntity()) + space + perm);
 Server.sendChat("/setuperm " + Player.getName(Player.getEntity()) + space + perm);
-clientMessage(client + "gives you permanent op if you were op before, if server closes you can op yourself instead of losing it after server closes.");
+Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			clientMessage(client + "gives you permanent op if you were op before, if server closes you can op yourself instead of losing it after server closes.");
                 }
             }));
             cmdLayout.addView(opp);
@@ -3151,6 +3152,7 @@ clientMessage(client + "gives you permanent op if you were op before, if server 
             a1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("/time set 0");
+			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a1);
@@ -3160,6 +3162,7 @@ var a2 = new Button(MainActivity);
             a2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("/time set 1000");
+			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a2);
@@ -3169,6 +3172,7 @@ var a3 = new Button(MainActivity);
             a3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("/time set 2000");
+			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a3);
@@ -3178,6 +3182,7 @@ var a4 = new Button(MainActivity);
             a4.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("/time set 3000");
+			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a4);
@@ -3187,6 +3192,7 @@ var a5 = new Button(MainActivity);
             a5.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("/time set 4000");
+			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a5);
@@ -3196,6 +3202,7 @@ var a6 = new Button(MainActivity);
             a6.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("/time set 5000");
+			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a6);
@@ -3205,6 +3212,7 @@ var a7 = new Button(MainActivity);
             a7.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("/time set 6000");
+			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a7);
@@ -3214,6 +3222,7 @@ var a8 = new Button(MainActivity);
             a8.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("/time set 7000");
+			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a8);
@@ -3223,6 +3232,7 @@ var a9 = new Button(MainActivity);
             a9.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("/time set 8000");
+			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a9);
@@ -3232,6 +3242,7 @@ var a10 = new Button(MainActivity);
             a10.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("/time set 9000");
+			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a10);
@@ -3241,6 +3252,7 @@ var a11 = new Button(MainActivity);
             a11.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("/time set 10000");
+			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a11);
@@ -3250,6 +3262,7 @@ var a12 = new Button(MainActivity);
             a12.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("/time set 11000");
+			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a12);
@@ -3259,6 +3272,7 @@ var a13 = new Button(MainActivity);
             a13.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("/time set 12000");
+			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a13);
@@ -3268,6 +3282,7 @@ var a14 = new Button(MainActivity);
             a14.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("/time set 13000");
+			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a14);
@@ -3277,6 +3292,7 @@ var a15 = new Button(MainActivity);
             a15.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("/time set 14000");
+			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a15);
@@ -3286,6 +3302,7 @@ var a16 = new Button(MainActivity);
             a16.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("/time set 15000");
+			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a16);
@@ -3295,6 +3312,7 @@ var a17 = new Button(MainActivity);
             a17.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("/time set 16000");
+			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a17);
@@ -3304,6 +3322,7 @@ var a18 = new Button(MainActivity);
             a18.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("/time set 17000");
+			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a18);
@@ -3314,6 +3333,7 @@ var a19 = new Button(MainActivity);
             a19.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("/time set 18000");
+			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a19);
@@ -3323,6 +3343,7 @@ var a20 = new Button(MainActivity);
             a20.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("/time set 19000");
+			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a20);
@@ -3332,6 +3353,7 @@ var a21 = new Button(MainActivity);
             a21.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("/time set 20000");
+			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a21);
@@ -3341,6 +3363,7 @@ var a22 = new Button(MainActivity);
             a22.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("/time set 21000");
+			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a22);
@@ -3350,6 +3373,7 @@ var a23 = new Button(MainActivity);
             a23.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("/time set 22000");
+			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a23);
@@ -3359,9 +3383,30 @@ var a24 = new Button(MainActivity);
             a24.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("/time set 23000");
+			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a24);
+
+var rainy = new android.widget.Button(MainActivity);
+            rainy.setText("Weather rain");
+            rainy.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Server.sendChat("/weather rain");
+			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+                }
+            }));
+            cmdLayout.addView(rainy);
+			
+var clearain = new android.widget.Button(MainActivity);
+            clearain.setText("Weather clear");
+            clearain.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Server.sendChat("/weather clear");
+			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+                }
+            }));
+            cmdLayout.addView(clearain);
             
             cmd = new PopupWindow(cmdLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             cmd.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -3641,23 +3686,23 @@ tapjump = false;
             cheatLayout.addView(tju);
             
             var spiderman = new Button(MainActivity);
-spiderman.setText("Spider hack");
+spiderman.setText("Spider");
 spiderman.setTextColor(Color.RED);
 if(spider==true)spiderman.setTextColor(Color.GREEN);
             spiderman.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              spider?spider=false:spider=true;
-spiderman.setText("Spider hack");
+spiderman.setText("Spider");
 if(spider == true){
 spiderman.setTextColor(Color.GREEN);
-clientMessage(client + "Spider hack on");
+clientMessage(client + "Spider on");
 Toast.makeText(MainActivity, "Credit: Firepro9978 from VoidClient!", 1).show();
 Utils.Player.isCollidedHorizontally();
 spider = true;
 }
 if(spider == false){
 spiderman.setTextColor(Color.RED);
-clientMessage(client + "Spider hack off");
+clientMessage(client + "Spider off");
 
 spider = false;
 }
@@ -4919,26 +4964,6 @@ print("The block R Dialog Is Malfunctioning:"+e);
 function setResis(){
 Block.setExplosionResistance(idb, resis);
 }
-
-/*var hst = new android.widget.Button(MainActivity);
-           hst.setText("Health status: "+(somd?"on":"off"));
-            hst.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
-somd?somd=false:somd=true;
-hst.setText("Health status: "+(somed?"on":"off"));
-if(somd == true){
-clientMessage(client + "§7Health status is showing"); 
-
-somd = true
-}
-if(somd == false){
-clientMessage(client + "§7Health status off");
-
-somd = false
-                }
-}
-            }));
-            modLayout.addView(hst);*/
 
 var saysome = new android.widget.Button(MainActivity);
             saysome.setText("BurnAura: "+(killdaura?"on":"off"));
@@ -10820,17 +10845,15 @@ weather.dismiss();
             button3.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 Level.setRainLevel(1);
-Server.sendChat("/weather rain");
                 }
             }));
             weatherLayout.addView(button3);
 			
-			var button4 = new android.widget.Button(MainActivity);
+var button4 = new android.widget.Button(MainActivity);
             button4.setText("Lightning");
             button4.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 Level.setLightningLevel(1);
-Server.sendChat("/weather rain");
                 }
             }));
             weatherLayout.addView(button4);
@@ -10841,7 +10864,6 @@ var button2 = new android.widget.Button(MainActivity);
                 onClick: function(viewarg){
 Level.setRainLevel(0);
 Level.setLightningLevel(0);
-Server.sendChat("/weather clear");
                 }
             }));
             weatherLayout.addView(button2);
@@ -10909,7 +10931,6 @@ print("The WS Dialog Is Malfunctioning:"+e);
 function setWeather() {
 Level.setRainLevel(v);
 Level.setLightningLevel(v2);
-Server.sendChat("/weather rain");
 }
             
             menu = new PopupWindow(menuLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
