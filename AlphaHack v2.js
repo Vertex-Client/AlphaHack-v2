@@ -12470,6 +12470,7 @@ function rptask() {
 	Level.destroyBlock(Player.getPointedBlockX() -4, Player.getPointedBlockY(), Player.getPointedBlockZ() -4, vidd);
                     }
                     if(aimbot){
+			    var ent = getNearestEntity(7);
 			    if(ent != null && Entity.getNameTag(ent) != " " || Entity.getNameTag(ent) != "")crosshairAimAt(ent);
 		    }
                     if(twerk)twerking();
