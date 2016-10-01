@@ -11072,7 +11072,7 @@ if(setage)Entity.setAnimalAge(victim, newage);
 		if(victim)setVelY(getPlayerEnt(),0.5);
 	}
 	if(attackActions){
-		if(attacker)Server.sendChat(newAction);
+		if(victim)Server.sendChat(newAction);
 	}
 }
 
@@ -11911,7 +11911,7 @@ var editAtk = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new android.widget.Button(MainActivity);
 
-Dialog.setTitle("When attacked send...");
+Dialog.setTitle("When attacking send...");
 Dialog.setContentView(Layerb4);
 
 Layerb4.setOrientation(android.widget.LinearLayout.VERTICAL);
