@@ -2115,6 +2115,7 @@ m1.setText("AlphaHack!");
             end1.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 sec =select3.getText();
+text =m1.getText();
 seconds = sec;
 antispam = true;
 Dialog.dismiss();
@@ -12496,15 +12497,8 @@ function rptask() {
 	Level.destroyBlock(Player.getPointedBlockX() -3, Player.getPointedBlockY(), Player.getPointedBlockZ() -3, vidd);
 	Level.destroyBlock(Player.getPointedBlockX() -4, Player.getPointedBlockY(), Player.getPointedBlockZ() -4, vidd);
                     }
-			if(checkEnt){
-				var ent = getNearestEntity(7);
-				if(Entity.getEntityTypeId(ent) == 63){
-		if(Entity.getNameTag(ent) != "" || Entity.getNameTag(ent) != " ")aimbot = true;
-		if(Entity.getNameTag(ent) == "" || Entity.getNameTag(ent) == " ")aimbot = false;
-			}
-			}
                     if(aimbot){
-			    if(ent != null)crosshairAimAt(ent);
+			    if(ent != null && Entity.getNameTag(ent) != " " || Entity.getNameTag(ent) != "")crosshairAimAt(ent);
 		    }
                     if(twerk)twerking();
                     nx = getPlayerX();
