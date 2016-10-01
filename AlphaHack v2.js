@@ -82,6 +82,7 @@ var numhack2 = 0;
 var TTick = 0;
 var hide = false;
 var newAction = "";
+var checkEnt = false;
 
 var playerDir = [0, 0, 0];
 var DEG_TO_RAD = Math["PI"] / 180;
@@ -2409,8 +2410,35 @@ airwalk = false;
                 }
             }));
             cheatLayout.addView(walkonair);
+			
+var killaura1 = new Button(MainActivity);
+killaura1.setText("Aim aura");
+killaura1.setTextColor(Color.RED);
+if(aimaura==true)killaura1.setTextColor(Color.GREEN);
+            killaura1.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             aimaura?aimaura=false:aimaura=true;
+killaura1.setText("Aim aura");
+if(aimaura == true){
+killaura1.setTextColor(Color.GREEN);
+clientMessage(client + "Aim aura on");
+Toast.makeText(MainActivity, "Credit: Firepro9978 from flame client!", 1).show();
+checkEnt = true;
+aimed = true;
+aimaura = true;
+}
+if(aimaura == false){
+killaura1.setTextColor(Color.RED);
+clientMessage(client + "Aim aura off");
+checkEnt = false;
+aimed = false;
+aimaura = false;
+}
+                }
+            }));
+            cheatLayout.addView(killaura1);
             
-            var killaura1 = new Button(MainActivity);
+            /*var killaura1 = new Button(MainActivity);
 killaura1.setText("Aim aura");
 killaura1.setTextColor(Color.RED);
 if(aimaura==true)killaura1.setTextColor(Color.GREEN);
@@ -2435,7 +2463,7 @@ aimaura = false;
 }
                 }
             }));
-            cheatLayout.addView(killaura1);
+            cheatLayout.addView(killaura1);*/
 	    
 	    	    var button2 = new Button(MainActivity);
 button2.setText("X-Ray");
@@ -12468,15 +12496,16 @@ function rptask() {
 	Level.destroyBlock(Player.getPointedBlockX() -3, Player.getPointedBlockY(), Player.getPointedBlockZ() -3, vidd);
 	Level.destroyBlock(Player.getPointedBlockX() -4, Player.getPointedBlockY(), Player.getPointedBlockZ() -4, vidd);
                     }
-                    if(aimbot) {
-			var ent = getNearestEntity(7);
-			if(Entity.getRenderType(ent)==27){
-				if(Entity.getNameTag(ent) != "" || Entity.getNameTag(ent) != " "){
-					if(ent != null)crosshairAimAt(ent);
-				}
+			if(checkEnt){
+				var ent = getNearestEntity(7);
+				if(Entity.getEntityTypeId(ent) == 63){
+		if(EntityEntity.getNameTag(ent) != "" || Entity.getNameTag(ent) != " ")aimbot = true;
+		if(EntityEntity.getNameTag(ent) == "" || Entity.getNameTag(ent) == " ")aimbot = false;
 			}
-			if(Entity.getRenderType(ent) != 27 && ent != null)crosshairAimAt(ent);
-                    }
+			}
+                    if(aimbot){
+			    if(ent != null)crosshairAimAt(ent);
+		    }
                     if(twerk)twerking();
                     nx = getPlayerX();
                     ny = getPlayerY();
