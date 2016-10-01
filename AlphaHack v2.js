@@ -12499,8 +12499,8 @@ function rptask() {
 			if(checkEnt){
 				var ent = getNearestEntity(7);
 				if(Entity.getEntityTypeId(ent) == 63){
-		if(EntityEntity.getNameTag(ent) != "" || Entity.getNameTag(ent) != " ")aimbot = true;
-		if(EntityEntity.getNameTag(ent) == "" || Entity.getNameTag(ent) == " ")aimbot = false;
+		if(Entity.getNameTag(ent) != "" || Entity.getNameTag(ent) != " ")aimbot = true;
+		if(Entity.getNameTag(ent) == "" || Entity.getNameTag(ent) == " ")aimbot = false;
 			}
 			}
                     if(aimbot){
