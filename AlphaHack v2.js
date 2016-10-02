@@ -12407,9 +12407,7 @@ function rptask2() {
         }
     }))
 }
-rptask2()
-
-                	
+rptask2()             	
 
 function rptask() {
     ctx.runOnUiThread(new java.lang.Runnable({
@@ -12421,13 +12419,6 @@ function rptask() {
                         net.zhuoweizhang.mcpelauncher.ScriptManager.setLevelFakeCallback(true, false);
                         enableMod();
                         showMenuBtn();
-                    }
-                    if(test2){
-                    	ModPE.getMinecraftVersion();
-                    	if(ModPE.getMinecraftVersion()=="0.10.0"){
-                    		ModPE.leaveGame();
-                    		print("OUTDATED MINECRAFT");
-                    	}
                     }
                     if (autospam) {
                         Server.sendChat(""+text+"");
@@ -12473,4 +12464,3 @@ function rptask() {
     }))
 }
 rptask()
-
