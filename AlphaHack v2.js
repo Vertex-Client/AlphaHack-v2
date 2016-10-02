@@ -9612,8 +9612,8 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             button.setText("Custom weather");
             button.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-setDialogW();
-weather.dismiss();
+			setDialogW();
+			weather.dismiss();
                 }
             }));
             weatherLayout.addView(button);
@@ -11887,6 +11887,56 @@ print("The Teleport Dialog Is Malfunctioning:"+e);
 function setTp() {
 Entity.setPosition(Player.getEntity(), px, py, pz);
 Server.sendChat("/tp " + Player.getName(Player.getEntity()) + space + px + space + py + space + pz);
+}
+
+function setDialogW() {
+MainActivity.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(MainActivity);
+var w = new android.widget.EditText(MainActivity);
+var w2 = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new Button(MainActivity);
+
+Dialog.setTitle("Set Weather");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(w);
+Layer.addView(w2);
+Layer.addView(Exit);
+
+w.setText("");
+w.setHint("rain/snow = 1");
+w2.setText("");
+w2.setHint("lightning = 1");
+Exit.setText("Set weather");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+v=w.getText();
+v2=w2.getText();
+Dialog.dismiss();
+setWeather();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The WS Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function setWeather() {
+Level.setRainLevel(v);
+Level.setLightningLevel(v2);
 }
 
 function atact() {
