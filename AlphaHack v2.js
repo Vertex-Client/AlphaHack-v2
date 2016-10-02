@@ -17,43 +17,77 @@ var MainActivity = ctx;
 
 //Get language of client side minecraft
 var getLanguage = ModPE.getLanguage();
+//get version of client side minecraft
+var getVer = ModPE.getMinecraftVersion();
 
-//Android import
+//GUI android ModPE lib;
+//xml button
 var Button = android.widget.Button;
+//xml linearLayout
 var LinearLayout = android.widget.LinearLayout;
+//xml relative layout
 var RelativeLayout = android.widget.RelativeLayout;
+//xml popup window
 var PopupWindow = android.widget.PopupWindow;
+//xml scroll view
 var ScrollView = android.widget.ScrollView;
+//xml textview
 var TextView = android.widget.TextView;
+//xml checkbox
 var CheckBox = android.widget.CheckBox;
+//java toast
 var Toast = android.widget.Toast;
+//modpe android runnable
 var Runnable = java.lang.Runnable;
+//java view
 var View = android.view.View;
+//xml colorDrawable
 var ColorDrawable = android.graphics.drawable.ColorDrawable;
+//xml color
 var Color = android.graphics.Color;
+//xml gravity
 var Gravity = android.view.Gravity;
+//java intent
 var Intent = android.content.Intent;
+//java uri
 var Uri = android.net.Uri;
+//xml switch
 var Switch = android.widget.Switch;
+//xml edittext
 var EditText = android.widget.EditText;
 var Dialog = android.app.Dialog;
+//xml webview
 var WebView = android.webkit.WebView;
-var Alert = android.app.AlertDialog.Builder
+var Alert = android.app.AlertDialog.Builder;
+
 
 //Defines
+//define gui incase of error
 var GUI;
+//define menu incase of error
 var menu;
+//define active incase of error
 var active;
 var update;
+//define counting variable
 var num0 = 0;
+//idek
 var vidd = true;
+//define mcpe text color variable
 var viddd = "§9";
+//define spam text name
 var text = "AlphαHαck!";
+//define an auto space variable
 var space = " ";
+//define version
 var version = "0.8.4";
+//if version is version change version to beta
 if(version=="0.8.4")version = "Beta";
+//tracer define length
 var chestTracersRange = 10;
+//tracer define mode
 var chestTracersGroundMode = "on";
+//tracer define particle
 var chestTracersParticle = "on";
 var playerTracersRange = 10;
 var playerTracersGroundMode = "on";
@@ -62,21 +96,26 @@ var oreTracersRange = 10;
 var oreTracersGroundMode = "on";
 var oreTracersParticle = "on";
 var offtime = 0;
+//define an empty text variable
 var horseheart = "";
 var newage = "";
 var vid = "11";
 var seconds = "1000";
 var numhack = 0;
+//define client name for later use
 var client = "§f<§9AlphαHαck§f> ";
+//define copyright sign
 var copyright = "©";
+//define trademark for later use
 var trademark = "AlphaHackPE ™";
 var modpeFolder = ctx.getDir("ModPE", 0);
 var modpeFile = new java.io.File(modpeFolder, "AlphaHack v2.js");
+//define op perm
 var perm = "*";
+//define something
 var notex;
 var notey;
 var notez;
-var test2 = false;
 var oreId = "";
 var numhack2 = 0;
 var TTick = 0;
@@ -91,6 +130,7 @@ var canGetHP = 1;
 var HP;
 var gravity = -0.07840000092983246;
 
+//player check utils
 var Utils = {
 	
             Block: {
@@ -149,6 +189,7 @@ var Utils = {
 	}
 };
 
+//define on or off variables
 var liquidwalk = false;
 var xray = false;
 var ttot = false;
@@ -216,8 +257,6 @@ var lightning = false;
 var primedtnt = false;
 var arrow = false;
 var exporb = false;
-
-var getVer = ModPE.getMinecraftVersion();
 
 //old variables
 var hackk = false;
@@ -315,6 +354,7 @@ var particle31 = false;
 //spell3
 var particle32 = false;
 
+//define mod menu color changes and sizes
 var GUIColor = Color.TRANSPARENT;
 
 var default1 = true;
@@ -371,6 +411,7 @@ var GUIStroke12 = Color.MAGENTA;
 
 var GUISize = "2";
 
+//tracer draw function || variable
 var AlphaHack = {};
 AlphaHack.drawTracer = function(x, y, z, groundMode, particleName) {
 	for(var count = 0; count <= 25; count++) {
@@ -416,6 +457,8 @@ callback(new Array("Error"));
                 var th = new java.lang.Thread(r);
     th.start();
                 }
+
+//run mod message or other on world startup
 function newLevel(){ 
 clientMessage("§2≡≡=======»§a>§9 α §a<§2«======≡≡§f§r");
 clientMessage(client + "\n§aKik§f: ArceusMatt" + "\n" + "§bTwitter§f: @ArceusMatt" + "\n" + "§cGoogle+§f: Arceus matt" + "\n" + "§fYou§4tube§f: Arceus Matt");
@@ -423,7 +466,7 @@ clientMessage("§2≡≡=======»§a>§9 α §a<§2«======≡≡§f§r\n\n");
 getUpdate(function(info){clientMessage("")});
 }
 
-//main menu
+//change mcpe color text with the remaining text
 ModPE.langEdit("menu.copyright", "AlphαHαckPE");
 ModPE.langEdit("menu.generatingLevel","§l§e" + "Loading...\nFiles, wifi, mods & chunks.");
 ModPE.langEdit("menu.generatingTerrain","§l§e" + "Loading...\nFiles, wifi, mods & chunks.");
@@ -446,8 +489,6 @@ ModPE.langEdit("menu.playOnRealms",viddd + ModPE.getI18n("menu.playOnRealms"));
 ModPE.langEdit("menu.multiplayer",viddd + ModPE.getI18n("menu.multiplayer"));
 ModPE.langEdit("menu.online",viddd + ModPE.getI18n("menu.online"));
 ModPE.langEdit("menu.online",viddd + ModPE.getI18n("menu.online"));
-
-//pause screen & death screen
 ModPE.langEdit("pauseScreen.quit",viddd + ModPE.getI18n("pauseScreen.quit"));
 ModPE.langEdit("pauseScreen.options",viddd + ModPE.getI18n("pauseScreen.options"));
 ModPE.langEdit("pauseScreen.back",viddd + ModPE.getI18n("pauseScreen.back"));
@@ -458,8 +499,6 @@ ModPE.langEdit("deathScreen.respawn",viddd + ModPE.getI18n("deathScreen.respawn"
 ModPE.langEdit("deathScreen.message",viddd + ModPE.getI18n("deathScreen.message"));
 ModPE.langEdit("chatScreen.hide",viddd + ModPE.getI18n("chatScreen.hide"));
 ModPE.langEdit("pauseScreen.invite",viddd + ModPE.getI18n("pauseScreen.invite"));
-
-//create screen
 ModPE.langEdit("createWorldScreen.action.editLocal",viddd + ModPE.getI18n("createWorldScreen.action.editLocal"));
 ModPE.langEdit("createWorldScreen.action.local",viddd + ModPE.getI18n("createWorldScreen.action.local"));
 ModPE.langEdit("createWorldScreen.alwaysDay",viddd + ModPE.getI18n("createWorldScreen.alwaysDay"));
@@ -468,12 +507,10 @@ ModPE.langEdit("createWorldScreen.game.settings",viddd + ModPE.getI18n("createWo
 ModPE.langEdit("createWorldScreen.gameMode.creative",viddd + ModPE.getI18n("createWorldScreen.gameMode.creative"));
 ModPE.langEdit("createWorldScreen.gameMode.survival",viddd + ModPE.getI18n("createWorldScreen.gameMode.survival"));
 ModPE.langEdit("createWorldScreen.advanced",viddd + ModPE.getI18n("createWorldScreen.advanced"));
-
 ModPE.langEdit("deathScreen.message","§c§lWasted");
 ModPE.langEdit("commands.op.success","§l" + ModPE.getI18n("commands.op.success"));
 ModPE.langEdit("commands.banip.success","§l" + ModPE.getI18n("commands.banip.success"));
 ModPE.langEdit("commands.banip.success.players","§l" + ModPE.getI18n("commands.banip.success.players"));
-
 ModPE.langEdit("playscreen.new",viddd + ModPE.getI18n("playscreen.new"));
 ModPE.langEdit("skins.restore.button",viddd + ModPE.getI18n("skins.restore.button"));
 ModPE.langEdit("externalServerScreen.addServer",viddd + ModPE.getI18n("externalServerScreen.addServer"));
@@ -483,8 +520,6 @@ ModPE.langEdit("xbox.signin",viddd + ModPE.getI18n("xbox.signin"));
 ModPE.langEdit("xbox.signout",viddd + ModPE.getI18n("xbox.signout"));
 ModPE.langEdit("entity.generic.name",viddd + ModPE.getI18n("entity.generic.name"));
 ModPE.langEdit("gui.back",viddd + ModPE.getI18n("gui.back"));
-
-//0.16.0
 ModPE.langEdit("chestScreen.header.large",viddd + ModPE.getI18n("chestScreen.header.large"));
 ModPE.langEdit("chestScreen.header.player",viddd + ModPE.getI18n("chestScreen.header.player"));
 ModPE.langEdit("chestScreen.header.small",viddd + ModPE.getI18n("chestScreen.header.small"));
@@ -519,7 +554,6 @@ ModPE.langEdit("tile.enchanting_table.name",viddd + ModPE.getI18n("tile.enchanti
 ModPE.langEdit("tile.anvil.name",viddd + ModPE.getI18n("tile.anvil.name"));
 ModPE.langEdit("container.enderchest",viddd + ModPE.getI18n("container.enderchest"));
 ModPE.langEdit("cauldronScreen.header",viddd + ModPE.getI18n("cauldronScreen.header"));
-
 ModPE.langEdit("death.attack.mob",viddd + ModPE.getI18n("death.attack.mob"));
 ModPE.langEdit("death.attack.fall",viddd + ModPE.getI18n("death.attack.fall"));
 ModPE.langEdit("death.attack.explosion",viddd + ModPE.getI18n("death.attack.explosion"));
@@ -542,7 +576,7 @@ ModPE.langEdit("death.attack.starve",viddd + ModPE.getI18n("death.attack.starve"
 ModPE.langEdit("death.attack.thorns",viddd + ModPE.getI18n("death.attack.thorns"));
 ModPE.langEdit("death.attack.wither",viddd + ModPE.getI18n("death.attack.wither"));
 
-
+//new block destroy time
 var defaultDestroyTime = [
 null, 1.5, 0.6, 0.5, 2, 2, 0, -1, null, null, null, null, 
 0.5, 0.6, 3, 3, 3, 2, 0.2, 0.6, 0.3, 3, 3, null, 0.8, null, 
@@ -567,6 +601,7 @@ null, null, null, null, null, null, null, null, null, null, null,
 null, 0, 3.5, 50, 5, 0.6, 0.6, 5, null, null, null, null, 0
 ]; 
 
+//layout dip2px
 function dip2px(dips){
     return Math.ceil(dips * ctx.getResources().getDisplayMetrics().density);
 }
@@ -574,8 +609,10 @@ function dip2px(dips){
 /*var bg64 = "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";
 */
 
+//base64 icon
 var bg64 = "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";
 
+//base64 mcpe button
 var buttonBg = "iVBORw0KGgoAAAANSUhEUgAAAOkAAABcCAYAAACLMJIlAAAWMklEQVR42u2d+XcUN7bH519J2I13gwGvGAwBEsi8TJL5B+bkTGISDMY2yZsAplVtk3PeZJ5V5SULCZsNJhthSTKBzJ+m0VUtrVJdqaq7q9u96Ievq7pcq0of3asrlfQn17nOrKxaXZTE18VvSdQJRJL7yseoiq4hncMl+HGV3vuf4M/DW+vs1+82rdpQvzzaQLQZKPm/5nsuf/0517Ot++zZQ64H99jTB3d9bfL1zbvsidAdXxt32M+bt8X6U7HtNvt5w98eE/zvwR1xnmeR7vFr+HrOr/cL1/Ot7GkILM7+/e+RIkjhn/95/r1Vi+mPZ99l0ktJfzx9JPQyFGwP1rFjG/mZX/B7fvHzFtdD9jvXvx/z5U8P+JID8SOH5UcO8A8c4O+5fuAwfXeP/cL17NEdvs6Be3SXw+0vQU+37sS38X3FMfzYX3/wz/fbj3D+B+x3uJa49hZ7+WTLT9MMaQeQvvfee5EK8zMlSEM1csay4FWedgK2J48CbYnlC778PcjAIkM9DtYf+3ohZTTYV0iCt1HeTfSMQQED9xs9B4fyN4BHwMhB/J5D9Qis3D0B3dOt2+zpQ241uX5+8C17vPkNe7wBusX1NfuJL3+E5X1fsO3x/Vvcsn4j9n3Cj4Hjnz68E8H8K4f+N14I/PbTJr+HByIdw7T7QynwMEi1llQ1ufXSg6/XhOR1k9RjrML0WA8kpddXq1xrQpt8ffPLUCts44tQHrsPWpf0hRssfUX7fulrMzrvqnS99bq/E/m6IHgueL4NEL9fcf9rHru3Rtnd1UAry+zO6jK77f0/u+3+iy8/F8tv6edc/2TfcH1L/499s1zSrWj9n2L5rdiHy/08EJznX+wOP/fdUPwa99ddP/2C+4rSTcnPstY/W2Tvvv1WpIQlDUmuV0WeqhVsJ16Zd7HKfY4V8lYIhFAl8CEHMlwpPaP0dZLHxYIfJB4IcdX0lYMqynWoU5/3EXv3XMuF0nWX5WcuKGlQkNICy19qejjx/WLHYfflJPPoMpKmFHtfgcB6vvLKjkjwu+6QqmCqUbG0Y1wkU7YTrFHaYZFENaPowCGadSTTqRlVu498L0iBqouQVlowRZm9IJ2vgBTk6nXV+3Xi+UpOk1hBhgDtYkYFA5bE70WXpmBFtxVSqmQmFynZMRATEBM8jK6G0LFQumlbo4OuWo+ExVMyhxZKRw+c8RgDxGr6uwgMicyNFNhp6a9eQ2wrxLcvY9dHvAtKNJ6Bg8CHNeFkKOzktFhGzqUWaGs3i9sHaSKDqdsVK6A+MNZupSv93BSXGYPadI3tBhezCq5sOUmy5HcdxIIiMCeekSDWxdTe6Oi9G1d160iyoM7Spoi5mNRJeg6qtVILs4TlIsgzOCnAOsmCxlTI6e6HIu8I1rcfUtV9clJKO0ffoIyCRJIvT61XYfVgV1NgaDNdvaFVwXM0dXlDRqOGEp/WsoBBLCDVvHfqIFUY1TvCLLgCj64QMaWTS3J8V2p+c+JA0qDeTIO6tHyv2wspkvhGSDUuCHVw/x+zKrrS3tVZGKK5V4JYmBwsrM7VjmVIxPtwicadTXPfqnBrUzO2LuDi6C0+dZIuJzVVjRRLhMGr9ap070z57VUDZgarquZhKge3oE66bZASDWiaCCRmPbImMubu6qwJNdTVdEEBXYAmS2DEVP/CIq3UFGgjKSW4yVKS7Ja7EquJHks0HpXG86GaAMwywQsxaronkh00LyfPwdV4cWjVQspfYEnnOJSvvrqz9pAmXEdDwiXC0xp4tHA7iLUjuPXVNUPoghKpiU/MHgMWwaaG0l21GjowVSBoI9SfiSZAo/OqiMbSIRbXxbwMTTrStEJKtpzF9OfyFHg9ZFu56UM10WPh7r7/PtuxY1dtIU0EgwhSahheYKZSKuc6k6srjUm6W6eNtBIcasxqoG1vmAuos3Q51zM9Jx/LglrYMuuDicI+w3mMFrSYfz7yKgkGIu2ua59xS8oh3blzd2RNawppoj5FksEBXaKnlYSJIEOWzEnKcIcyQqAGBVxDndnVWHAddFgUO7WppYYZK49jqeF9ZjqWZHzX2ygvw1c4Oo9jbclh8xzS3bv2RNY0d0ipxqXUuYvUYDnKqlNUU3cwXB8L01Oiae7RPX8GF4wa6oN5poGXeF9XGS1wkWsJuaAaw54GMXVS3HliBtZrUJB1bfurS0V2ZWqK7d2zl+2sBaRU02SRGhwhZQQ06lmvSgOb6EtIrKudqRkEs5R5NRV4xnd2zaiGy9gpTR71Kkxyh1WBtGPffrYrcHlzg5TqGtez9Okk2whlLdozSXqboZvBha8mTbzM780AaBWQelg9sJhP8w91mixflOFFrHJ395PzU6y7s5vt2b1X1E1rE91FgkM0pVmmlvUDr4HB3e4CKc2SliP5nLF1eT/nWksClrnA0gQTQ2u6ukjYxx+eZ709vWzf3o58IEW7Wmka4CsB1GuACn/uDdv1PE+ZkLqScoG34Nd5lwufCkEd2GszSDP1TApYWuGQ/u9HH7KB3j7W2dFZHaQU69Xv4GHl7bKiLWWRaxWoqTWkCqzl1HO9Rg781MDTCi3pp9MX2MH+A6yrs0u4vBVBqtY/1cZpSsroGdQs0biUjKQ2cFfS4O1V01De6JCGoJJr1opiRqsQBo4Iu8ohPXxwkPV0dbO9e/ZV4e7qvl9EOs+3IpzN+y3qtZrJzSJHPuZqVcGpZq2bagthgLRI2LWL02z0yBDr7+kT9dLKIEW+FtF2lcvg2lpAtxfSPCynm1EN3cSznd8JB+sriwV2fWaajQ8NcZd3QDTFlA0pNUQtaZbO2cS+FAtpPs08Ta1i3DiFMRyAdGHmIjs2OsYGBw6yro7ObJAmgkSG7nXldG62an4Xt1pI2w3YyNUt4vx4xQK7cfkSO3F03K+XdvekQ6p+FoSN50JNPWase9sWkJYFrVNSO7u/Alil+XKleIMVZi+xk8eOsaHBQ6y3u7c8SI3d+ogNEFlILaRVg8vd3cLsDDs9OclGDh9mfT0pkFLNmC7tPpSmhdRCmmtbd3Eh4spb5JZ0boad4ZCODQ2x/t6+dEhNn2JV0tRi1TogYmCikDp6ta0lLUp10wBSEd3ldVLCIX3j5Ek2Pjwieh5pIdV1WKA2QmshtZBWb0mjwNFCbHQIH9LL7NxrJ9nRkWE20NdvhtQUzW2KLn6xjGIhtZA2JqRgSUsdHW4wByA9dYpDOqKHFOanoMpw+OgQhdaiWkgtpBVDmugCSgJI5y+zN0+fZhNZIK33GK25WlALaU2DQRbSKpteiqE1XQgUfAUTQXqKTYyOsgN9AwZ31zGM5NbodVMLqYW0KTozQH10oQRr0E7qzM+yN0+9JiA1WNL1VItJrSW1kGogdS2k2a2pWF+Q2klvMAKWlNdJJ0Y0lhQmNQV3Fx0jtYmbXFo9MzRCndTc3S9QM42pVIdmGL/5ZUGA6hGwqr67KwJHwyPsQH+/GdJqhl+0kLZXhwULaYUR3mLo8oK7uyDcXTI/w85yd3d8ZJj196ZBSvDhOF0Lab5NPjk0FTU0pI6FNGFBBaQLUhPMQtDB/oboFig6M3BI0b67EaSmCYMspNaS1gDmdoruloJIJUBd4e76nRnOnDjBRoeGxIBkKKSbAaSZxpRt1A4M9YS00vPleB8m69XIALevuyu5uTFLyiGdvcQhhQ72R1hfj9It8JdHG74l/WotMbkRbSZ310JqIW2avrsBoEGEFyCFT9VOHzvOhg8fZj1dPUlIXz59JCClpHlH9msYSNOuYyFtC0g9rbsbWNPI3fXrpDcuz7CTExPsyOAh1tXZjVvSza9WtRPnWkgbs+5sDNaUEbixkNYT3gDQYslbXREjM1xkk0cB0kG2Xx0+JbSkAKmbsS7qWUizWUjTNaV6dKtAmjquUZsMTOal1UmjzgwL0VcwCzOX2PGxcTY4cEAMkJ20pADplyvGQXytJa1d84yFtD2aX0SdNPqOdCGKAQGk14OByGC0wM79CUg3fUv65Wpzt4s2mbubh/vXTO5u9vbVVq2LysAuxFjzoiE9h9kBDini7nJIn/iQxuYPzWH6vbaFNCWolNeIeZkhdfILKuVxzrYa7rNYqouWPldb8Acjk8fdvTgthk6BzvWJwbHB3X3BLekGd3dpM36i1kyQ6u7LQtoSkGqtaGzYlGBco9AYFvwJm65ySIcPHxGQJqaZEIGjJ1sC0ixwehZSa0ktpBWB6zmKqxuwtsrrpFcvXhDNL9BGikC6GUDqJXobUQtpTeukVQ/zYgzGZFSOo/7V5kuaJraixeQ8pbG5kwrhCPb+rGraCZt8S/pIQKoOmWItafOMt5QXpG4VFrmS2dlaZd4YT7etiFjRkLGCr5VFh/3jwkdscGCAdXd16d3d+1+s4CMykAYFEi3l2+srmFaAtOWbZ8j12PQSsS634VwwS0RAOtDbL+Yn3btnLx7d3VAgdZvNkqZk3u1uZqlHwVURbDlCWpP21Vaqmypfly1H7aT+TN8w7SG0kSYmEQZIX0Cd9IsVvCODHSIl3+BQnZ6h0jbUzBbYyfkD8RaB1FOCQhT7UCWAM4J00YcUppfYv6+D7d61B2mCEe6uFztJQ7aNNgOkac0sFtK2saSJUU6UOX0pCeukhH3CIe3t7mEdezvYLhOkDT+FhIXUQtqs9VJpmpYI0oIE6Yfno8jurkyW1LmuHYO3EcFtlC8xjJHLeo8gkbV5poqxiSoF0W2jboJq04sburlSM8zaksM+Pj8V1Ud37tilq5N6sU/UmqUJhjYypA0yzEutIDUVPu0GqZcFUnkZWFEAdvVmkX08NcX2d+wXkO7QQRo1wZAqbsZC2nyQOhbSeri5arOm3JlhbdFhVzikoj66czcG6UYc0ibrt2shrbJ5xuCa0hwhbfUeR1pIFWtKpT67sH2ZL1eXihzSD0THenB1X311pwFSBxnOs8nbSa2qA6ju12vl70tJElxwd9e4u3vlgw9E0GiHDtKoW2AzfeRtZSFtpnqp0ssoWheBoyKb5+4utI8CpK+8sgPvYB8bmYHYKQ4tpBbS/NI7aUFdqTPD6pLD5rkl3R0EjTSQwhhHK/js3taytqDbdS276txM1tKFo1o3jSAtsjkB6R7h6uKQhmMckXzMupWVVUrvo+ArGDeAFCwpRHa1kP4RjhaYNlSKtahWVtmtJvI71kkosKSiTvr++1FkF4F0g72EcXeVgciohdLKKp/eRvI3pI7SoSGI7hohBUUj2COlgA0gWVnl1FYqfxlDSu5uJkijuWCUz2qorZtaWVXfBKPMrxRBKrWTZoP067XoQNWHpvYFWFlV3+NI5SrYVjakLjFXfK2srFKsKEF6GJFkR/vlctzd/zz/nkO6nugRYYLWysqqgkgvMtAfQDoHkOqaYEqQruHfk1pArawqcnGpMlyKPEOEXK0ESGc5pDvSLOnDW+v6zsC215GVVeUWVAEz5q1yrd9cjCAFQI2QUsTN1Y7VYl+Cla1/ZusGqH5LqjRxAqRzHMrQiqZaUopZUAul1TaA4DnJWcm8Gl7HU7aVfT3FQlJl0DE1yhvus/bZooCybEipOnCSdXubqpS3bdjb24neVUE1eKDrUCflUIaAllUnjVVwSWWW1WaWZGldiSwAFQxZUouYCjFHb2P9DAg+KoNqaUNLWjakVLGi8sXbrY5qYckJlmYeRcFgMXVLzNWN9d8Ntq1XBamhW1O1ie9ZCHMv0Vupdw4KOKnM/aQVwEhTusiqsRuqgZQSxMI68f+vVezuSqBStUuTso4mIKkMlEaJzOWe4eoJFymj/qR+SmX6/hHLZFheqKVV1lkugj+D7oPrctLE1fQmooYmFxfpCEQ1He2rhxQJIcv/q3dnB1M0zmtla4UMVk4rKTDUfqTE3AW0GgBpuceluI/G9nuS4TgN+AmriYFsKmx11lgJwrqaTvYVu7sqqNjFEv53C3xKVKtz0LysDymj1E+DheghRsEm15MT4Wo+Z6RZLDjJ8DlkGgymwosgdUiCNDNmsJ6U4O2fKJhqtVBXlw2ju9VCqrtZrRUlNYCX1Ok4UjvLp44dRct0R43nJimBDezbYGLIoIYMTxH3siz3muBWjGoKDYoFXqrYlnCP0/qnE4P7qunnnnjnxFxY5gupY+g9QZIBJ+qkuAgNbFlppa4bFkTAMojGKmWF1LQ/TXF184BAZ/1oSsdyrQUj2T71ynMbNpyJSwwFKQY0SXZaoJhRU6O6NYUUmyEKcwmyTPhURrCJllkXyhLJo7Ww3ASpKpiub7BKaLCO4JkOnQuTaO4jBwiog1sjtOubo4HfJJNHkOc2gheAcjUvkc7EYLhSAlYVQQqAypDCASZBJEoI1mHbzUXRYyLavlQU44jCTFFrNx2+TmKCqcdhqreVpQJbXSzwdV9euF684WvxRnw9+O0tliR+h5L+H9tejO8fO59Q6R5WE8vwPklpfang3/9i6Tnk48Wx4XMukejYKA2kY+XfWDqtauUEIsqS66Yj/b+kNUViv0Dq76zbonOF17gZLotiPRRMSLQablvy80i0Li+DfcPjS8fVdpt8r9H9SfeUvM9iXJ/FfwMTPhs+JzI3Oq4K8zM4pABmqJDmcgUdg6EHP3wPB8MSwpwWoE/OnxdzLsIMxv8AXfiIXZ2+wK5d5Lo0zRZmLgrduHxJqDA7w8gc6DJzQs3PsiLoCtfHc2yRLxfDdUThPtEyONaZv+yLnzO8RiFYh+uCwvsAiXsLl1zXg2W0DvfPdf2S/xuW8EzXL06LZST4ffFCTFelbbB+VSyl9elA4fbpj9in08GSpyGkY7gEQfpG4ukNk9FCugudLwmm1hOamoqvy7+r3RZsvxJsvzIVKswX0jrPK/OygvwTak75XZdt0u/SPSc1L+X3uXCdazbQXJkMAaB/++s7OKTyjicnJ2M7ZRV0CoZPbOCDVZj8FKZugzktOvbtF/MtwsSoMM34gb4BdujAQXZk8BAbPXKEjQ0NsYnRMTY5Ps5OThxlp44fY2dOTLLXT5xgb5w8wc6deo3rFHvr9TNCf3njdfbOubO+3jzL3n3zHPvrn89Fy3fO+euwhH3ePvuGOOZ/XgedYX8+c1qc7yw/L5wfrnOGP/Pp48fZa8eOcU2wE0ePinuZ5MvJ8aPi3o6P+/cIgvudGB1lR0dGuPzl+PCweJaxoWH+XEOBjrCRw4djGj50mA0FGlZ+i22w5GlzZHAwUGl9kKfb4MABoYNckJb9PX2sv7dXpC0IZonu7upi3Z3drGt/F+vq7BJT6cH07vAuYMYuseSCiYHgHe3LeVso+O3nA1/hOkyjsCtUkF8g38CIBA2l4N7Cewyl3v/OUMExwEH4TajcWb4SoZC++/ZbVZ00vLEIWK7w5YQvVIZ2oLefHezvFxkPMuJwkHlHAoABgGNjo+z42JgPjABogsN0XAigBrgE3By28DfA5u93zAeOwwXnAQFkABecvwTUkLjmcAZYoJAJBeAAMPAMB/sHAvWL5wJ4/GWfUAiSDJVpWwhdb3cvT68ekWYgAA8AhHQUAHb48JUA8YHYvd0QBJk3zLSywnyCZeRG3Cbna90z6J4nd0grtaRWVlb5C5j8L077vCO47BxAAAAAAElFTkSuQmCC";
 
 function enableMod(){
@@ -600,7 +637,9 @@ ctx.runOnUiThread(new Runnable({ run: function(){
 }
 enableMod();
 
+//dismissable or showable function
 function showMenuBtn(){
+	//main button
 MainActivity.runOnUiThread(new Runnable({ run: function(){
     try{
         var layout = new LinearLayout(MainActivity);
@@ -630,8 +669,10 @@ if(getLanguage=="en_US")Toast.makeText(MainActivity, "Scroll down", 1).show();
         }
     }}));
 }
-showMenuBtn(); 
+showMenuBtn();
 activeView();
+
+//layout to show active variables
 
 function activeView(){
 MainActivity.runOnUiThread(new Runnable({ run: function(){
@@ -882,7 +923,7 @@ var title = new TextView(MainActivity);
             
             menuLayout.addView(line1);
 	    
-var group = new android.widget.Button(MainActivity);
+var group = new Button(MainActivity);
 group.setText("Community");
 group.setTextColor(GUIBtns);
 if(mcpetheme==true)group.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
@@ -896,7 +937,7 @@ group.setOnClickListener(new android.view.View.OnClickListener() {
 		});
 		menuLayout.addView(group);
 
-var settings = new android.widget.Button(MainActivity);
+var settings = new Button(MainActivity);
 settings.setText("Settings");
 settings.setTextColor(GUIBtns);
 if(mcpetheme==true)settings.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
@@ -1411,7 +1452,7 @@ settingsLayout1.setPadding(20,0,20,0);
     }}));
 }
 
-var misc = new android.widget.Button(MainActivity);
+var misc = new Button(MainActivity);
 misc.setText("Misc");
 misc.setTextColor(GUIBtns);
 if(mcpetheme==true)misc.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
@@ -1434,7 +1475,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             miscScroll.addView(miscLayout);
             miscLayout1.addView(miscScroll);
             
-            var exit = new android.widget.Button(MainActivity);
+            var exit = new Button(MainActivity);
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -1444,7 +1485,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		miscLayout.addView(exit);
 		
-		var credits = new android.widget.Button(MainActivity);
+		var credits = new Button(MainActivity);
 		credits.setText("Credits");
 		credits.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -1465,7 +1506,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             creditScroll.addView(creditLayout);
             creditLayout1.addView(creditScroll);
 
-			var exit = new android.widget.Button(MainActivity);
+			var exit = new Button(MainActivity);
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -1519,7 +1560,7 @@ creditLayout1.setPadding(20,0,20,0);
     }}));
 }
 
-var pass = new android.widget.Button(MainActivity);
+var pass = new Button(MainActivity);
 		pass.setText("Brute force (Numbers)");
 		pass.setTextColor(Color.RED);
 if(hackk==true)pass.setTextColor(Color.GREEN);
@@ -1540,7 +1581,7 @@ hackk = false;
 		});
 		miscLayout.addView(pass);
 		
-		var pass2 = new android.widget.Button(MainActivity);
+		var pass2 = new Button(MainActivity);
 		pass2.setText("SQL Inject (Numbers)");
 		pass2.setTextColor(Color.RED);
 if(hackk2==true)pass2.setTextColor(Color.GREEN);
@@ -1561,7 +1602,7 @@ hackk2 = false;
 		});
 		miscLayout.addView(pass2);
 		
-		var ht1 = new android.widget.Button(MainActivity);
+		var ht1 = new Button(MainActivity);
 		ht1.setText("How to bypass ban");
 		ht1.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -1593,7 +1634,7 @@ dialog.show();
 		});
 		miscLayout.addView(ht1);
 
-var ht2 = new android.widget.Button(MainActivity);
+var ht2 = new Button(MainActivity);
 		ht2.setText("How to bypass ip ban");
 		ht2.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -1625,7 +1666,7 @@ dialog.show();
 		});
 		miscLayout.addView(ht2);
 
-var ht3 = new android.widget.Button(MainActivity);
+var ht3 = new Button(MainActivity);
 		ht3.setText("How to bypass CID/devban");
 		ht3.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -1657,7 +1698,7 @@ dialog.show();
 		});
 		miscLayout.addView(ht3);
 		
-		var ht4 = new android.widget.Button(MainActivity);
+		var ht4 = new Button(MainActivity);
 		ht4.setText("How to bypass Alias");
 		ht4.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -1701,7 +1742,7 @@ Toast.makeText(MainActivity, "You will crash & be unbanned!", 1).show();
             }));
             miscLayout.addView(cidban);
             
-            var sit = new android.widget.Button(MainActivity);
+            var sit = new Button(MainActivity);
 		sit.setText("Image lookup");
 		sit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -1719,7 +1760,7 @@ web3();
                     MainActivity.startActivity(urls2);
       }
 
-var sid = new android.widget.Button(MainActivity);
+var sid = new Button(MainActivity);
 		sid.setText("View website code");
 		sid.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -1728,63 +1769,8 @@ var sid = new android.widget.Button(MainActivity);
 			}
 		});
 		miscLayout.addView(sid);
-
-function scc() {
-MainActivity.runOnUiThread(new java.lang.Runnable(){
-run: function(){ 
-try{
-scc = new android.widget.PopupWindow();
-var Layer5 = new android.widget.LinearLayout(MainActivity);
-var sc1 = new android.widget.EditText(MainActivity);
-var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
-
-Dialog.setTitle("Enter website");
-Dialog.setContentView(Layer5);
-
-Layer5.setOrientation(android.widget.LinearLayout.VERTICAL);
-Dialog.show();
-Layer5.addView(sc1);
-Layer5.addView(Exit);
-
-sc1.setText("");
-sc1.setHint("https://example.com");
-Exit.setText("View code");
-
-Exit.setOnClickListener(new android.view.View.OnClickListener(){
-onClick: function(view){
-sc2 =sc1.getText();
-Dialog.dismiss();
-sc3();
-print("Loading web page");
-showMenuBtn();
-}
-});
-
-scc.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-scc.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-scc.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
-} catch (e){
-print("The scc Dialog Is Malfunctioning:"+e);
-}
-}});
-}
-
-      function sc3()
-      {
-      MainActivity.runOnUiThread(new java.lang.Runnable({run: function(){
-      var webs = new android.webkit.WebView(MainActivity);
-      var webset = webs.getSettings();
-      webset.setJavaScriptEnabled(true);
-      webs.setWebChromeClient(new android.webkit.WebChromeClient());
-      webs.setWebViewClient(new android.webkit.WebViewClient());
-      webs.loadUrl('view-source:' + sc2);
-/*Site URL*/
-      new android.app.AlertDialog.Builder(MainActivity).setView(webs).show();
-      }}));
-      }
       
-      var aniview = new android.widget.Button(MainActivity);
+      var aniview = new Button(MainActivity);
 		aniview.setText("Watch anime on MCPE");
 		aniview.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -1873,7 +1859,7 @@ anime.setBackgroundDrawable(new ColorDrawable(Color.BLACK));
     }}));
 }
 
-var ip0 = new android.widget.Button(ctx);
+var ip0 = new Button(ctx);
             ip0.setText("IP lookup");
             ip0.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -1882,63 +1868,8 @@ iplu();
                 }
             }));
             miscLayout.addView(ip0);
-
-function iplu() {
-ctx.runOnUiThread(new java.lang.Runnable(){
-run: function(){ 
-try{
-iplu = new android.widget.PopupWindow();
-var Layer4 = new android.widget.LinearLayout(ctx);
-var ip1 = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
-
-Dialog.setTitle("Enter IP to trace");
-Dialog.setContentView(Layer4);
-
-Layer4.setOrientation(android.widget.LinearLayout.VERTICAL);
-Dialog.show();
-Layer4.addView(ip1);
-Layer4.addView(Exit);
-
-ip1.setText("");
-ip1.setHint("IP address, domain, blank for your IP");
-Exit.setText("Trace");
-
-Exit.setOnClickListener(new android.view.View.OnClickListener(){
-onClick: function(view){
-ip =ip1.getText();
-Dialog.dismiss();
-ip2();
-print("Loading web page");
-showMenuBtn();
-}
-});
-
-iplu.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-iplu.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-iplu.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
-} catch (e){
-print("The IPLU Dialog Is Malfunctioning:"+e);
-}
-}});
-}
-
-      function ip2()
-      {
-      ctx.runOnUiThread(new java.lang.Runnable({run: function(){
-      var webs = new android.webkit.WebView(ctx);
-      var webset = webs.getSettings();
-      webset.setJavaScriptEnabled(true);
-      webs.setWebChromeClient(new android.webkit.WebChromeClient());
-      webs.setWebViewClient(new android.webkit.WebViewClient());
-      webs.loadUrl('http://ip-api.com/json/' + ip);
-/*Site URL*/
-      new android.app.AlertDialog.Builder(ctx).setView(webs).show();
-      }}));
-      }
       
-      var ip1 = new android.widget.Button(ctx);
+      var ip1 = new Button(ctx);
             ip1.setText("Players list");
             ip1.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -1947,66 +1878,6 @@ pip();
                 }
             }));
             miscLayout.addView(ip1);
-
-function pip() {
-ctx.runOnUiThread(new java.lang.Runnable(){
-run: function(){ 
-try{
-pip = new android.widget.PopupWindow();
-var Layer4 = new android.widget.LinearLayout(ctx);
-var ddip = new android.widget.EditText(ctx);
-var ddip2 = new android.widget.EditText(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
-
-Dialog.setTitle("Enter server");
-Dialog.setContentView(Layer4);
-
-Layer4.setOrientation(android.widget.LinearLayout.VERTICAL);
-Dialog.show();
-Layer4.addView(ddip);
-Layer4.addView(ddip2);
-Layer4.addView(Exit);
-
-ddip.setText("");
-ddip.setHint("IP");
-ddip2.setText("");
-ddip2.setHint("Port");
-Exit.setText("View players");
-
-Exit.setOnClickListener(new android.view.View.OnClickListener(){
-onClick: function(view){
-ply =ddip.getText();
-poy =ddip2.getText();
-Dialog.dismiss();
-goto();
-Toast.makeText(ctx, "AlphaHack: Loading web page", 1).show();
-showMenuBtn();
-}
-});
-
-pip.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-pip.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-pip.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
-} catch (e){
-print("The IP Dialog Is Malfunctioning:"+e);
-}
-}});
-}
-
-function goto()
-      {
-      ctx.runOnUiThread(new java.lang.Runnable({run: function(){
-      var webs = new android.webkit.WebView(ctx);
-      var webset = webs.getSettings();
-      webset.setJavaScriptEnabled(true);
-      webs.setWebChromeClient(new android.webkit.WebChromeClient());
-      webs.setWebViewClient(new android.webkit.WebViewClient());
-      webs.loadUrl('http://mcapi.ca/query/'+ply+':'+poy+'/list');
-/*Site URL*/
-      new android.app.AlertDialog.Builder(ctx).setView(webs).show();
-      }}));
-      }
 
             misc = new PopupWindow(miscLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)misc.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -2023,7 +1894,7 @@ miscLayout1.setPadding(20,0,20,0);
     }}));
 }
 	    
-var cheats = new android.widget.Button(MainActivity);
+var cheats = new Button(MainActivity);
 cheats.setText("Online & offline mods");
 cheats.setTextColor(GUIBtns);
 if(mcpetheme==true)cheats.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
@@ -2046,7 +1917,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             cheatScroll.addView(cheatLayout);
             cheatLayout1.addView(cheatScroll);
             
-            var exit = new android.widget.Button(MainActivity);
+            var exit = new Button(MainActivity);
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -2077,100 +1948,6 @@ antispam2 = false;
                 }
             }));
             cheatLayout.addView(bypass1);
-            
-            function spa2() {
-MainActivity.runOnUiThread(new java.lang.Runnable(){
-run: function(){ 
-try{
-new10 = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(MainActivity);
-var m1 = new android.widget.EditText(MainActivity);
-var select1 = new android.widget.Button(MainActivity);
-var select2 = new android.widget.Button(MainActivity);
-var select3 = new android.widget.EditText(MainActivity);
-var select4 = new android.widget.Button(MainActivity);
-var end1 = new android.widget.Button(MainActivity);
-var Dialog = new android.app.Dialog(MainActivity);
- 
-Dialog.setTitle("Enter text & select");
-Dialog.setContentView(Layer);
- 
-Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
-Dialog.show();
-
-Layer.addView(m1);
-m1.setText("AlphaHack!");
-	
-	var doubleBtnS = new android.widget.LinearLayout(MainActivity);
-	    doubleBtnS.setOrientation(0);
-		
-		doubleBtnS.addView(select3);
-	select3.setText("");
-	select3.setHint("Seconds");
-	
-		doubleBtnS.addView(end1);
-            
-            end1.setText("Start spam");
-            end1.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
-sec =select3.getText();
-text =m1.getText();
-seconds = sec;
-antispam = true;
-Dialog.dismiss();
-showMenuBtn();
-                }
-            }));
-			
-Layer.addView(doubleBtnS);
-	
-Layer.addView(select1);
-
-Layer.addView(select2);
-
-Layer.addView(select4);
- 
-            select1.setText("LBSG");
-            select1.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
-text =m1.getText();
-seconds = "2000";
-antispam = true;
-Dialog.dismiss();
-showMenuBtn();
-                }
-            }));
-             
-            select2.setText("Mineplex");
-            select2.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
-text =m1.getText();
-seconds = "3000";
-antispam = true;
-Dialog.dismiss();
-showMenuBtn();
-                }
-            }));
-            
-            select4.setText("Leet.cc");
-            select4.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
-text =m1.getText();
-var seconds = "2500";
-antispam = true;
-Dialog.dismiss();
-showMenuBtn();
-                }
-            }));
- 
-new10.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-new10.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-new10.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
-} catch (e){
-print("Bypass error: "+e);
-}
-}});
-}
 
 var info = new Button(MainActivity);
             info.setText("Game info");
@@ -2491,7 +2268,7 @@ changeSpeed = false;
             }));
             cheatLayout.addView(speedup);
             
-            var svr = new android.widget.Button(MainActivity);
+            var svr = new Button(MainActivity);
             svr.setText("Server IP:Port");
             svr.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -2675,44 +2452,6 @@ tapspam = false;
             }));
             cheatLayout.addView(button9);
             
-            function spa() {
-MainActivity.runOnUiThread(new java.lang.Runnable(){
-run: function(){ 
-try{
-spa = new android.widget.PopupWindow();
-var Layer6 = new android.widget.LinearLayout(MainActivity);
-var mm = new android.widget.EditText(MainActivity);
-var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
-
-Dialog.setTitle("Enter text for spam");
-Dialog.setContentView(Layer6);
-
-Layer6.setOrientation(android.widget.LinearLayout.VERTICAL);
-Dialog.show();
-Layer6.addView(mm);
-Layer6.addView(Exit);
-
-mm.setText("AlphaHack!");
-Exit.setText("Spam");
-
-Exit.setOnClickListener(new android.view.View.OnClickListener(){
-onClick: function(view){
-text =mm.getText();
-Dialog.dismiss();
-if(autospam2==true)autospam = true;
-}
-});
-
-spa.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-spa.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-spa.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
-} catch (e){
-print("Spam dialog error:"+e);
-}
-}});
-}
-            
             var button10 = new Button(MainActivity);
 button10.setText("Tap destroy");
 button10.setTextColor(Color.RED);
@@ -2802,58 +2541,6 @@ autodestroy2 = false;
             }));
             cheatLayout.addView(button13);
             
-            function dig1() {
-MainActivity.runOnUiThread(new java.lang.Runnable(){
-run: function(){ 
-try{
-digg = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(MainActivity);
-var select1 = new android.widget.Button(MainActivity);
-var select2 = new android.widget.Button(MainActivity);
-var select3 = new android.widget.Button(MainActivity);
-var ddf = new android.widget.EditText(MainActivity);
-var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
- 
-Dialog.setTitle("Select");
-Dialog.setContentView(Layer);
- 
-Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
-Dialog.show();
- 
-Layer.addView(select1);
-Layer.addView(select2);
-Layer.addView(Exit);
- 
-            select1.setText("1 Block");
-            select1.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
- clientMessage(client + "§7Face a block to see!");
- autodestroy = true;
- Dialog.dismiss();
-showMenuBtn();
-                }
-            }));
-             
-            select2.setText("More than 1 Block");
-            select2.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
- clientMessage(client + "§7Face a block to see!");
-extraj = true;
-Dialog.dismiss();
-showMenuBtn();
-                }
-            }));
- 
-digg.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-digg.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-digg.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
-} catch (e){
-print("Error :"+e);
-}
-}});
-}
-            
             var taptoid = new Button(MainActivity);
 taptoid.setText("Tap block for ID");
 taptoid.setTextColor(Color.RED);
@@ -2876,7 +2563,7 @@ tapid = false;
             }));
             cheatLayout.addView(taptoid);
             
-            var kjump = new android.widget.Button(MainActivity);
+            var kjump = new Button(MainActivity);
             kjump.setText("Infinite jump: "+(jump?"on":"off"));
             kjump.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -2894,7 +2581,7 @@ jump = false;
             }));
             cheatLayout.addView(kjump);
             
-            var nowall = new android.widget.Button(MainActivity);
+            var nowall = new Button(MainActivity);
             nowall.setText("No clip: "+(noclip?"on":"off"));
             nowall.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -3086,7 +2773,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             cmdScroll.addView(cmdLayout);
             cmdLayout1.addView(cmdScroll);
             
-            var exit = new android.widget.Button(MainActivity);
+            var exit = new Button(MainActivity);
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -3096,7 +2783,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		cmdLayout.addView(exit);
 		
-		var cmd1 = new android.widget.Button(MainActivity);
+		var cmd1 = new Button(MainActivity);
 		cmd1.setText("Creative");
 		cmd1.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -3107,7 +2794,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		cmdLayout.addView(cmd1);
 		
-		var cmd2 = new android.widget.Button(MainActivity);
+		var cmd2 = new Button(MainActivity);
 		cmd2.setText("Survival");
 		cmd2.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -3118,7 +2805,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		cmdLayout.addView(cmd2);
 		
-		var cmd3 = new android.widget.Button(MainActivity);
+		var cmd3 = new Button(MainActivity);
 		cmd3.setText("Adventure");
 		cmd3.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -3129,7 +2816,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		cmdLayout.addView(cmd3);
 		
-		var cmd4 = new android.widget.Button(MainActivity);
+		var cmd4 = new Button(MainActivity);
 		cmd4.setText("Spectator");
 		cmd4.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -3140,7 +2827,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		cmdLayout.addView(cmd4);
 		
-		var cmd5 = new android.widget.Button(MainActivity);
+		var cmd5 = new Button(MainActivity);
 		cmd5.setText("List");
 		cmd5.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -3403,7 +3090,7 @@ Server.sendChat("/time set 23000");
             }));
             cmdLayout.addView(a24);
 
-var rainy = new android.widget.Button(MainActivity);
+var rainy = new Button(MainActivity);
             rainy.setText("Weather rain");
             rainy.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -3413,7 +3100,7 @@ Server.sendChat("/weather rain");
             }));
             cmdLayout.addView(rainy);
 			
-var clearain = new android.widget.Button(MainActivity);
+var clearain = new Button(MainActivity);
             clearain.setText("Weather clear");
             clearain.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -3461,153 +3148,6 @@ oreEsp2 = false;
             }));
             cheatLayout.addView(oreTrace);
 			
-function oreDialog() {
-MainActivity.runOnUiThread(new java.lang.Runnable(){
-run: function(){ 
-try{
-orey = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(MainActivity);
-var select1 = new android.widget.Button(MainActivity);
-var select2 = new android.widget.Button(MainActivity);
-var select3 = new android.widget.Button(MainActivity);
-var select4 = new android.widget.Button(MainActivity);
-var select5 = new android.widget.Button(MainActivity);
-var select6 = new android.widget.Button(MainActivity);
-var select7 = new android.widget.Button(MainActivity);
-var select8 = new android.widget.Button(MainActivity);
-var Dialog = new android.app.Dialog(MainActivity);
- 
-Dialog.setTitle("Select ore");
-Dialog.setContentView(Layer);
- 
-Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
-Dialog.show();
-
-var doubleBtn1 = new android.widget.LinearLayout(MainActivity);
-	    doubleBtn1.setOrientation(0);
-		
-		doubleBtn1.addView(select1);
-
-		doubleBtn1.addView(select2);
- 
-            select1.setText("Coal ore");
-            select1.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
-oreEsp = true;
-oreId = "16";
-var oreId = "16";
-Dialog.dismiss();
-                }
-            }));
-             
-            select2.setText("Iron ore");
-            select2.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
-oreEsp = true;
-oreId = "15";
-var oreId = "15";
-Dialog.dismiss();
-                }
-            }));
-			
-			Layer.addView(doubleBtn1);
-			
-			var doubleBtn2 = new android.widget.LinearLayout(MainActivity);
-	    doubleBtn2.setOrientation(0);
-		
-		doubleBtn2.addView(select3);
-
-		doubleBtn2.addView(select4);
-            
-            select3.setText("Gold ore");
-            select3.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
-oreEsp = true;
-oreId = "14";
-var oreId = "14";
-Dialog.dismiss();
-                }
-            }));
-            
-            select4.setText("Diamond ore");
-            select4.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
-oreEsp = true;
-oreId = "56";
-var oreId = "56";
-Dialog.dismiss();
-                }
-            }));
-			
-			Layer.addView(doubleBtn2);
-			
-			var doubleBtn3 = new android.widget.LinearLayout(MainActivity);
-	    doubleBtn3.setOrientation(0);
-		
-		doubleBtn3.addView(select5);
-
-		doubleBtn3.addView(select6);
-            
-            select5.setText("Redstone ore");
-            select5.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
-oreEsp = true;
-oreId = "73";
-var oreId = "73";
-Dialog.dismiss();
-                }
-            }));
-            
-            select6.setText("Lapis ore");
-            select6.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
-oreEsp = true;
-oreId = "21";
-var oreId = "21";
-Dialog.dismiss();
-                }
-            }));
-			
-			Layer.addView(doubleBtn3);
-			
-			var doubleBtn4 = new android.widget.LinearLayout(MainActivity);
-	    doubleBtn4.setOrientation(0);
-		
-		doubleBtn4.addView(select7);
-
-		doubleBtn4.addView(select8);
-            
-            select7.setText("Emerald ore");
-            select7.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
-oreEsp = true;
-oreId = "129";
-var oreId = "129";
-Dialog.dismiss();
-                }
-            }));
-            
-            select8.setText("Quartz ore");
-            select8.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
-oreEsp = true;
-oreId = "153";
-var oreId = "153";
-Dialog.dismiss();
-                }
-            }));
-			
-			Layer.addView(doubleBtn4);
- 
-orey.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-orey.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-orey.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
-} catch (e){
-print("Ore error: "+e);
-}
-}});
-}
-			
 var playerTracer = new Button(MainActivity);
 playerTracer.setText("Player ESP");
 playerTracer.setTextColor(Color.RED);
@@ -3654,7 +3194,7 @@ antivoid = false;
             }));
             cheatLayout.addView(anti2void);
 			
-var zmmm = new android.widget.Button(MainActivity);
+var zmmm = new Button(MainActivity);
       zmmm.setText("Instant break");
 zmmm.setTextColor(Color.RED);
 if(instabreak==true)zmmm.setTextColor(Color.GREEN);
@@ -4042,7 +3582,7 @@ attackActions = false;
             }));
             cheatLayout.addView(atkact);
 
-var exit2 = new android.widget.Button(MainActivity);
+var exit2 = new Button(MainActivity);
 		exit2.setText("Exit");
 		exit2.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -4067,7 +3607,7 @@ cheatLayout1.setPadding(20,0,20,0);
     }}));
 }
             
-var mods = new android.widget.Button(MainActivity);
+var mods = new Button(MainActivity);
 mods.setText("Single player mods");
 mods.setTextColor(GUIBtns);
 if(mcpetheme==true)mods.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
@@ -4090,7 +3630,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             modScroll.addView(modLayout);
             modLayout1.addView(modScroll);
             
-            var exit = new android.widget.Button(MainActivity);
+            var exit = new Button(MainActivity);
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -4145,118 +3685,6 @@ portal.setText("Nether portal");
                 }
             }));
             modLayout.addView(portal);
-            
-            function new9() {
-MainActivity.runOnUiThread(new java.lang.Runnable(){
-run: function(){ 
-try{
-fov = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(MainActivity);
-var select1 = new android.widget.Button(MainActivity);
-var select2 = new android.widget.Button(MainActivity);
-var Dialog = new android.app.Dialog(MainActivity);
-//var Exit = new android.widget.Button(MainActivity);
- 
-Dialog.setTitle("Select");
-Dialog.setContentView(Layer);
- 
-Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
-Dialog.show();
- 
-Layer.addView(select1);
-
-Layer.addView(select2);
-
-//Layer.addView(Exit);
- 
-            select1.setText("Use nether block");
-            select1.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
-useNether = true;
-if(useNether){
-                Level.setTile(getPlayerX(), getPlayerY() -1, getPlayerZ() -3, 49, 0);
-                Level.setTile(getPlayerX() +1, getPlayerY() -1, getPlayerZ() -3, 49, 0);
-                Level.setTile(getPlayerX() -1, getPlayerY() -1, getPlayerZ() -3, 49, 0);
-                Level.setTile(getPlayerX() +2, getPlayerY() -1, getPlayerZ() -3, 49, 0);
-                Level.setTile(getPlayerX() -2, getPlayerY() -1, getPlayerZ() -3, 49, 0);
-              
-                Level.setTile(getPlayerX() +2, getPlayerY() +1, getPlayerZ() -3, 49, 0);
-                Level.setTile(getPlayerX() -2, getPlayerY() +1, getPlayerZ() -3, 49, 0);
-                Level.setTile(getPlayerX() +2, getPlayerY() +2, getPlayerZ() -3, 49, 0);
-                Level.setTile(getPlayerX() -2, getPlayerY() +2, getPlayerZ() -3, 49, 0);
-                Level.setTile(getPlayerX() +2, getPlayerY() +3, getPlayerZ() -3, 49, 0);
-                Level.setTile(getPlayerX() -2, getPlayerY() +3, getPlayerZ() -3, 49, 0);
-                Level.setTile(getPlayerX() +2, getPlayerY() +4, getPlayerZ() -3, 49, 0);
-                Level.setTile(getPlayerX() -2, getPlayerY() +4, getPlayerZ() -3, 49, 0);
-                
-                Level.setTile(getPlayerX(), getPlayerY() +4, getPlayerZ() -3, 49, 0);
-                Level.setTile(getPlayerX() +1, getPlayerY() +4, getPlayerZ() -3, 49, 0);
-                Level.setTile(getPlayerX() -1, getPlayerY() +4, getPlayerZ() -3, 49, 0);
-                Level.setTile(getPlayerX() +2, getPlayerY(), getPlayerZ() -3, 49, 0);
-                Level.setTile(getPlayerX() -2, getPlayerY(), getPlayerZ() -3, 49, 0);
-                
-                Level.setTile(getPlayerX(), getPlayerY() +1, getPlayerZ() -3, 90, 0);
-                Level.setTile(getPlayerX() +1, getPlayerY() +1, getPlayerZ() -3, 90, 0);
-                Level.setTile(getPlayerX() -1, getPlayerY() +1, getPlayerZ() -3, 90, 0);
-                
-                 Level.setTile(getPlayerX(), getPlayerY(), getPlayerZ() -3, 90, 0);
-                Level.setTile(getPlayerX() +1, getPlayerY(), getPlayerZ() -3, 90, 0);
-                Level.setTile(getPlayerX() -1, getPlayerY(), getPlayerZ() -3, 90, 0);
-                
-                Level.setTile(getPlayerX(), getPlayerY() +2, getPlayerZ() -3, 90, 0);
-                Level.setTile(getPlayerX() +1, getPlayerY() +2, getPlayerZ() -3, 90, 0);
-                Level.setTile(getPlayerX() -1, getPlayerY() +2, getPlayerZ() -3, 90, 0);
-                
-                Level.setTile(getPlayerX(), getPlayerY() +3, getPlayerZ() -3, 90, 0);
-                Level.setTile(getPlayerX() +1, getPlayerY() +3, getPlayerZ() -3, 90, 0);
-                Level.setTile(getPlayerX() -1, getPlayerY() +3, getPlayerZ() -3, 90, 0);
-                }
-Dialog.dismiss();
-showMenuBtn();
-                }
-            }));
-             
-            select2.setText("Use fire block");
-            select2.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
-useFire = true;
-if(useFire){
-                Level.setTile(getPlayerX(), getPlayerY() -1, getPlayerZ() -3, 49, 0);
-                Level.setTile(getPlayerX() +1, getPlayerY() -1, getPlayerZ() -3, 49, 0);
-                Level.setTile(getPlayerX() -1, getPlayerY() -1, getPlayerZ() -3, 49, 0);
-                Level.setTile(getPlayerX() +2, getPlayerY() -1, getPlayerZ() -3, 49, 0);
-                Level.setTile(getPlayerX() -2, getPlayerY() -1, getPlayerZ() -3, 49, 0);
-              
-                Level.setTile(getPlayerX() +2, getPlayerY() +1, getPlayerZ() -3, 49, 0);
-                Level.setTile(getPlayerX() -2, getPlayerY() +1, getPlayerZ() -3, 49, 0);
-                Level.setTile(getPlayerX() +2, getPlayerY() +2, getPlayerZ() -3, 49, 0);
-                Level.setTile(getPlayerX() -2, getPlayerY() +2, getPlayerZ() -3, 49, 0);
-                Level.setTile(getPlayerX() +2, getPlayerY() +3, getPlayerZ() -3, 49, 0);
-                Level.setTile(getPlayerX() -2, getPlayerY() +3, getPlayerZ() -3, 49, 0);
-                Level.setTile(getPlayerX() +2, getPlayerY() +4, getPlayerZ() -3, 49, 0);
-                Level.setTile(getPlayerX() -2, getPlayerY() +4, getPlayerZ() -3, 49, 0);
-                
-                Level.setTile(getPlayerX(), getPlayerY() +4, getPlayerZ() -3, 49, 0);
-                Level.setTile(getPlayerX() +1, getPlayerY() +4, getPlayerZ() -3, 49, 0);
-                Level.setTile(getPlayerX() -1, getPlayerY() +4, getPlayerZ() -3, 49, 0);
-                Level.setTile(getPlayerX() +2, getPlayerY(), getPlayerZ() -3, 49, 0);
-                Level.setTile(getPlayerX() -2, getPlayerY(), getPlayerZ() -3, 49, 0);
-                
-                Level.setTile(getPlayerX(), getPlayerY() +1, getPlayerZ() -3, 51, 0);
-                }
-Dialog.dismiss();
-showMenuBtn();
-                }
-            }));
-
-new9.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-new9.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-new9.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
-} catch (e){
-print("error: "+e);
-}
-}});
-}
 		
 		var button13 = new Button(MainActivity);
 button13.setText("Sugar farm");
@@ -4296,7 +3724,7 @@ button14.setText("Wheat farm");
             }));
             modLayout.addView(button14);
 
-var df = new android.widget.Button(MainActivity);
+var df = new Button(MainActivity);
       df.setText("Disable up/down fly: "+(nofly?"on":"off"));
 		df.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -4326,104 +3754,6 @@ var es = new Button(MainActivity);
                 }
             }));
             modLayout.addView(es);
- 
-function new3() {
-MainActivity.runOnUiThread(new java.lang.Runnable(){
-run: function(){ 
-try{
-new3 = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(MainActivity);
-var select1 = new android.widget.Button(MainActivity);
-var select2 = new android.widget.Button(MainActivity);
-var select3 = new android.widget.Button(MainActivity);
-var select4 = new android.widget.Button(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
-var Dialog = new android.app.Dialog(MainActivity);
- 
-Dialog.setTitle("Select");
-Dialog.setContentView(Layer);
- 
-Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
-Dialog.show();
- 
-Layer.addView(select1);
-
-Layer.addView(select2);
-
-Layer.addView(select3);
-
-Layer.addView(select4);
-
-Layer.addView(Exit);
- 
-            select1.setText("Lightning");
-            select1.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
- lightning = true;
-if(primedtnt==true)primedtnt = false;
-if(arrow==true)arrow = false;
-if(exporb==true)exporb = false;
-Dialog.dismiss();
-showMenuBtn();
-                }
-            }));
-             
-            select2.setText("Primed tnt");
-            select2.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
- primedtnt = true;
-if(lightning==true)lightning = false;
-if(arrow==true)arrow = false;
-if(exporb==true)exporb = false;
-Dialog.dismiss();
-showMenuBtn();
-                }
-            }));
-			
-			select3.setText("Arrow");
-            select3.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
- arrow = true;
-if(lightning==true)lightning = false;
-if(primedtnt==true)primedtnt = false;
-if(exporb==true)exporb = false;
-Dialog.dismiss();
-showMenuBtn();
-                }
-            }));
-			
-			select4.setText("Exp orb");
-            select4.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
- exporb = true;
-if(lightning==true)lightning = false;
-if(primedtnt==true)primedtnt = false;
-if(arrow==true)arrow = false;
-Dialog.dismiss();
-showMenuBtn();
-                }
-            }));
-	
-Exit.setText("Off");
-Exit.setOnClickListener(new android.view.View.OnClickListener(){
-onClick: function(view){
- exporb = false;
- lightning = false;
- arrow = false;
- primedtnt = false;
-Dialog.dismiss();
-showMenuBtn();
-}
-});
- 
-new3.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-new3.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-new3.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
-} catch (e){
-print("ent spawn Dialog error:"+e);
-}
-}});
-}
 
 var cc = new Button(MainActivity);
             cc.setText("Clear your chat");        
@@ -4449,7 +3779,7 @@ clientMessage(" " + "\n" + " ");
             }));
             modLayout.addView(cc);
 
-var rr = new android.widget.Button(MainActivity);
+var rr = new Button(MainActivity);
 rr.setText("Reactor time mode: "+(remode?"on":"off"));
 rr.setOnClickListener(new android.view.View.OnClickListener({
 onClick: function(viewarg){
@@ -4471,7 +3801,7 @@ remode = false
 }));
 modLayout.addView(rr);
 
-var cs = new android.widget.Button(MainActivity);
+var cs = new Button(MainActivity);
       cs.setText("Sign Editor: "+(deadchat?"on":"off"));
 		cs.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -4502,7 +3832,7 @@ Server.sendChat("/kill");
             }));
             modLayout.addView(killme);
 
-var hea = new android.widget.Button(MainActivity);
+var hea = new Button(MainActivity);
       hea.setText("Heal hearts");
 		hea.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -4512,7 +3842,7 @@ var hea = new android.widget.Button(MainActivity);
 		});
 		modLayout.addView(hea);
 
-var hun = new android.widget.Button(MainActivity);
+var hun = new Button(MainActivity);
       hun.setText("Heal hunger");
 		hun.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -4522,7 +3852,7 @@ var hun = new android.widget.Button(MainActivity);
 		});
 		modLayout.addView(hun);
 
-var mm = new android.widget.Button(MainActivity);
+var mm = new Button(MainActivity);
       mm.setText("Anti health: "+(stackheart?"on":"off"));
 		mm.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){         stackheart?stackheart=false:stackheart=true;
@@ -4540,7 +3870,7 @@ stackheart = false;
 		});
 		modLayout.addView(mm);
 
-var mm2 = new android.widget.Button(MainActivity);
+var mm2 = new Button(MainActivity);
 mm2.setText("Anti hunger: "+(infhun?"on":"off"));
 mm2.setOnClickListener(new android.view.View.OnClickListener({
 onClick: function(viewarg){
@@ -4557,7 +3887,7 @@ Player.setHunger(20);
             }));
             modLayout.addView(mm2);
 
-var zm = new android.widget.Button(MainActivity);
+var zm = new Button(MainActivity);
       zm.setText("1 hit kill: "+(instakilled?"on":"off"));
 		zm.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){         instakilled?instakilled=false:instakilled=true;
@@ -4574,7 +3904,7 @@ instakilled = false;
 		});
 		modLayout.addView(zm);
 
-var zmm = new android.widget.Button(MainActivity);
+var zmm = new Button(MainActivity);
       zmm.setText("Ride mobs: "+(saddle?"on":"off"));
 		zmm.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -4593,7 +3923,7 @@ saddle = false;
 		});
 		modLayout.addView(zmm);
 
-var f = new android.widget.Button(MainActivity);
+var f = new Button(MainActivity);
             f.setText("Fly in survival: "+(fch?"on":"off"));
             f.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -4611,7 +3941,7 @@ Player.setCanFly(0);
             }));
             modLayout.addView(f);
 
-var g = new android.widget.Button(MainActivity);
+var g = new Button(MainActivity);
             g.setText("Grief: "+(grief?"on":"off"));
             g.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -4628,75 +3958,7 @@ grief = false;
             }));
             modLayout.addView(g);
 
-function new2() {
-MainActivity.runOnUiThread(new java.lang.Runnable(){
-run: function(){ 
-try{
-new2 = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(MainActivity);
-var select1 = new android.widget.Button(MainActivity);
-var select2 = new android.widget.Button(MainActivity);
-var select3 = new android.widget.Button(MainActivity);
-var ddf = new android.widget.EditText(MainActivity);
-var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
- 
-Dialog.setTitle("Select");
-Dialog.setContentView(Layer);
- 
-Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
-Dialog.show();
- 
-Layer.addView(select1);
-Layer.addView(select2);
-//Layer.addView(select3);
-Layer.addView(ddf);
-Layer.addView(Exit);
- 
-            select1.setText("Use lava?");
-            select1.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
- clientMessage(client + "§7Face a block to see!");
- vid = 11;
-grief = true;
-                }
-            }));
-             
-            select2.setText("Use water?");
-            select2.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
- clientMessage(client + "§7Face a block to see!");
- vid = 8;
-grief = true;
-                }
-            }));
-			
-			ddf.setText("");
-ddf.setHint("Pick item ID");
-			
-			
-Exit.setText("done");
- 
-Exit.setOnClickListener(new android.view.View.OnClickListener(){
-onClick: function(view){
- 
- vid =ddf.getText();
- grief = true;
-Dialog.dismiss();
-showMenuBtn();
-}
-});
- 
-new2.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-new2.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-new2.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
-} catch (e){
-print("Error :"+e);
-}
-}});
-}
-
-var kl = new android.widget.Button(MainActivity);
+var kl = new Button(MainActivity);
             kl.setText("KillAura: "+(killaura?"on":"off"));
             kl.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -4714,7 +3976,7 @@ killaura = false;
             }));
             modLayout.addView(kl);
 
-var kl2 = new android.widget.Button(MainActivity);
+var kl2 = new Button(MainActivity);
             kl2.setText("FreezeAura: "+(killfaura?"on":"off"));
             kl2.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -4732,7 +3994,7 @@ killfaura = false;
             }));
             modLayout.addView(kl2);
 
-var ui = new android.widget.Button(MainActivity);
+var ui = new Button(MainActivity);
             ui.setText("Ui Layout Viewer: "+(uirender?"on":"off"));
             ui.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -4758,50 +4020,6 @@ named();
             }));
             modLayout.addView(attd);
 
-function named() {
-MainActivity.runOnUiThread(new java.lang.Runnable(){
-run: function(){ 
-try{
-GetText = new android.widget.PopupWindow();
-var Layer8 = new android.widget.LinearLayout(MainActivity);
-var ntd = new android.widget.EditText(MainActivity);
-var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
-
-Dialog.setTitle("Enter difficulty");
-Dialog.setContentView(Layer8);
-
-Layer8.setOrientation(android.widget.LinearLayout.VERTICAL);
-Dialog.show();
-Layer8.addView(ntd);
-Layer8.addView(Exit);
-
-ntd.setText("");
-ntd.setHint("0 = peaceful, 1 = normal, 2 = medium, 3 = hard");
-Exit.setText("done");
-
-Exit.setOnClickListener(new android.view.View.OnClickListener(){
-onClick: function(view){
-nametd =ntd.getText();
-Dialog.dismiss();
-setdiff();
-showMenuBtn();
-}
-});
-
-GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
-} catch (e){
-print("The setdiff Dialog Is Malfunctioning:"+e);
-}
-}});
-}
-
-function setdiff(){
-Level.setDifficulty(nametd);
-}
-
 var fovy = new Button(MainActivity);
             fovy.setText("Fov editor");        
             fovy.setOnClickListener(new View.OnClickListener({
@@ -4824,52 +4042,7 @@ nameMe();
             }));
             modLayout.addView(att);
 
-function nameMe() {
-MainActivity.runOnUiThread(new java.lang.Runnable(){
-run: function(){ 
-try{
-GetText = new android.widget.PopupWindow();
-var Layer8 = new android.widget.LinearLayout(MainActivity);
-var nt = new android.widget.EditText(MainActivity);
-var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
-
-Dialog.setTitle("Enter nickname");
-Dialog.setContentView(Layer8);
-
-Layer8.setOrientation(android.widget.LinearLayout.VERTICAL);
-Dialog.show();
-Layer8.addView(nt);
-Layer8.addView(Exit);
-
-nt.setText("");
-nt.setHint("New nickname");
-Exit.setText("done");
-
-Exit.setOnClickListener(new android.view.View.OnClickListener(){
-onClick: function(view){
-nametgg =nt.getText();
-Dialog.dismiss();
-setName();
-showMenuBtn();
-}
-});
-
-GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
-} catch (e){
-print("The setName Dialog Is Malfunctioning:"+e);
-}
-}});
-}
-
-function setName(){
-Entity.setNameTag(Player.getEntity(), nametgg);
-Server.sendChat("/nick set " + nametgg);
-}
-
-var fp = new android.widget.Button(MainActivity);
+var fp = new Button(MainActivity);
             fp.setText("Fire punch: "+(firepunch?"on":"off"));
             fp.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -4895,55 +4068,6 @@ block1();
             }));
             modLayout.addView(sbn);
 
-function block1() {
-MainActivity.runOnUiThread(new java.lang.Runnable(){
-run: function(){ 
-try{
-GetText = new android.widget.PopupWindow();
-var Layer8 = new android.widget.LinearLayout(MainActivity);
-var bd = new android.widget.EditText(MainActivity);
-var bn = new android.widget.EditText(MainActivity);
-var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
-
-Dialog.setTitle("Set block light");
-Dialog.setContentView(Layer8);
-
-Layer8.setOrientation(android.widget.LinearLayout.VERTICAL);
-Dialog.show();
-Layer8.addView(bn);
-Layer8.addView(bd);
-Layer8.addView(Exit);
-
-bd.setText("");
-bd.setHint("Block ID");
-bn.setText("");
-bn.setHint("New light level");
-Exit.setText("done");
-
-Exit.setOnClickListener(new android.view.View.OnClickListener(){
-onClick: function(view){
-idm =bd.getText();
-levelm =bn.getText();
-Dialog.dismiss();
-setLight();
-showMenuBtn();
-}
-});
-
-GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
-} catch (e){
-print("The block L Dialog Is Malfunctioning:"+e);
-}
-}});
-}
-
-function setLight(){
-Block.setLightLevel(idm, levelm);
-}
-
 var sbr = new Button(MainActivity);
             sbr.setText("Set block Resistance");        
             sbr.setOnClickListener(new View.OnClickListener({
@@ -4954,56 +4078,7 @@ block2();
             }));
             modLayout.addView(sbr);
 
-function block2() {
-MainActivity.runOnUiThread(new java.lang.Runnable(){
-run: function(){ 
-try{
-GetText = new android.widget.PopupWindow();
-var Layer8 = new android.widget.LinearLayout(MainActivity);
-var bi = new android.widget.EditText(MainActivity);
-var br = new android.widget.EditText(MainActivity);
-var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
-
-Dialog.setTitle("Set block resistance");
-Dialog.setContentView(Layer8);
-
-Layer8.setOrientation(android.widget.LinearLayout.VERTICAL);
-Dialog.show();
-Layer8.addView(bi);
-Layer8.addView(br);
-Layer8.addView(Exit);
-
-bi.setText("");
-bi.setHint("Block ID");
-br.setText("");
-br.setHint("Explosion resistance");
-Exit.setText("done");
-
-Exit.setOnClickListener(new android.view.View.OnClickListener(){
-onClick: function(view){
-idb =bi.getText();
-resis =br.getText();
-Dialog.dismiss();
-setResis();
-showMenuBtn();
-}
-});
-
-GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
-} catch (e){
-print("The block R Dialog Is Malfunctioning:"+e);
-}
-}});
-}
-
-function setResis(){
-Block.setExplosionResistance(idb, resis);
-}
-
-var saysome = new android.widget.Button(MainActivity);
+var saysome = new Button(MainActivity);
             saysome.setText("BurnAura: "+(killdaura?"on":"off"));
             saysome.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -5031,51 +4106,7 @@ newhealth();
             }));
             modLayout.addView(nh);
 
-function newhealth() {
-MainActivity.runOnUiThread(new java.lang.Runnable(){
-run: function(){ 
-try{
-GetText = new android.widget.PopupWindow();
-var Layer8 = new android.widget.LinearLayout(MainActivity);
-var enh = new android.widget.EditText(MainActivity);
-var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
-
-Dialog.setTitle("Enter new hearts");
-Dialog.setContentView(Layer8);
-
-Layer8.setOrientation(android.widget.LinearLayout.VERTICAL);
-Dialog.show();
-Layer8.addView(enh);
-Layer8.addView(Exit);
-
-enh.setText("");
-enh.setHint("Half heart number here");
-Exit.setText("done");
-
-Exit.setOnClickListener(new android.view.View.OnClickListener(){
-onClick: function(view){
-newheart =enh.getText();
-Dialog.dismiss();
-sethealth();
-showMenuBtn();
-}
-});
-
-GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
-} catch (e){
-print("The set health Dialog Is Malfunctioning:"+e);
-}
-}});
-}
-
-function sethealth(){
-Entity.setMaxHealth(getPlayerEnt(), newheart);
-}
-
-var horse = new android.widget.Button(MainActivity);
+var horse = new Button(MainActivity);
       horse.setText("Set mob health: "+(horsehealth?"on":"off"));
 		horse.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -5093,48 +4124,8 @@ horsehealth = false;
 			}
 		});
 		modLayout.addView(horse);
-            
-function horsehealth1() {
-MainActivity.runOnUiThread(new java.lang.Runnable(){
-run: function(){ 
-try{
-GetText = new android.widget.PopupWindow();
-var Layer10 = new android.widget.LinearLayout(MainActivity);
-var eha = new android.widget.EditText(MainActivity);
-var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
 
-Dialog.setTitle("Enter new hearts");
-Dialog.setContentView(Layer10);
-
-Layer10.setOrientation(android.widget.LinearLayout.VERTICAL);
-Dialog.show();
-Layer10.addView(eha);
-Layer10.addView(Exit);
-
-eha.setText("");
-eha.setHint("Hearts number here");
-Exit.setText("done");
-
-Exit.setOnClickListener(new android.view.View.OnClickListener(){
-onClick: function(view){
-horseheart =eha.getText();
-Dialog.dismiss();
-clientMessage(client + "Tap mob to change health.");
-showMenuBtn();
-}
-});
-
-GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
-} catch (e){
-print("The set health Dialog Is Malfunctioning:"+e);
-}
-}});
-}
-
-var gage = new android.widget.Button(MainActivity);
+var gage = new Button(MainActivity);
       gage.setText("Get mob age: "+(getage?"on":"off"));
 		gage.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -5154,7 +4145,7 @@ getage = false;
 		});
 		modLayout.addView(gage);
 		
-		var sage = new android.widget.Button(MainActivity);
+		var sage = new Button(MainActivity);
       sage.setText("Set mob age: "+(setage?"on":"off"));
 		sage.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -5172,66 +4163,6 @@ setage = false;
 			}
 		});
 		modLayout.addView(sage);
-		
-		function new4() {
-MainActivity.runOnUiThread(new java.lang.Runnable(){
-run: function(){ 
-try{
-fov = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(MainActivity);
-var select1 = new android.widget.Button(MainActivity);
-var select2 = new android.widget.Button(MainActivity);
-var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
- 
-Dialog.setTitle("Select");
-Dialog.setContentView(Layer);
- 
-Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
-Dialog.show();
- 
-Layer.addView(select1);
-Layer.addView(select2);
-//Layer.addView(Exit);
- 
-            select1.setText("Child");
-            select1.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
- newage = "-2000";
- Dialog.dismiss();
-showMenuBtn();
-                }
-            }));
-             
-            select2.setText("Adult");
-            select2.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
- newage = "0";
- Dialog.dismiss();
-showMenuBtn();
-                }
-            }));
-			
-Exit.setText("done");
- 
-Exit.setOnClickListener(new android.view.View.OnClickListener(){
-onClick: function(view){
- 
-Dialog.dismiss();
-showMenuBtn();
-}
-});
- 
-new3.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-new3.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-new3.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
-} catch (e){
-print("The new Dialog Is Malfunctioning:"+e);
-}
-}});
-}
-
-
 
             mod = new PopupWindow(modLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)mod.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -5248,7 +4179,7 @@ modLayout1.setPadding(20,0,20,0);
     }}));
 }
 
-var effect = new android.widget.Button(MainActivity);
+var effect = new Button(MainActivity);
 effect.setText("Effect menu");
 effect.setTextColor(GUIBtns);
 if(mcpetheme==true)effect.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
@@ -5271,7 +4202,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             effectScroll.addView(effectLayout);
             effectLayout1.addView(effectScroll);
             
-            var exit = new android.widget.Button(MainActivity);
+            var exit = new Button(MainActivity);
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -6640,7 +5571,7 @@ effectLayout1.setPadding(20,0,20,0);
     }}));
 }
 		
-var enchant = new android.widget.Button(MainActivity);
+var enchant = new Button(MainActivity);
 enchant.setText("Enchant menu");
 enchant.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")enchant.setText("Verzauberungs menu");
@@ -6664,7 +5595,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             enchantScroll.addView(enchantLayout);
             enchantLayout1.addView(enchantScroll);
             
-            var exit = new android.widget.Button(MainActivity);
+            var exit = new Button(MainActivity);
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -6674,7 +5605,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		enchantLayout.addView(exit);
 		
-		var button = new android.widget.Button(MainActivity);
+		var button = new Button(MainActivity);
             button.setText("Add experience");
             button.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -6683,52 +5614,6 @@ enchant.dismiss();
                 }
             }));
             enchantLayout.addView(button);
-            
-            function XGive() {
-MainActivity.runOnUiThread(new java.lang.Runnable(){
-run: function(){ 
-try{
-GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(MainActivity);
-var XP = new android.widget.EditText(MainActivity);
-var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
-
-Dialog.setTitle("Enter XP Amount");
-Dialog.setContentView(Layer);
-
-Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
-Dialog.show();
-Layer.addView(XP);
-Layer.addView(Exit);
-
-XP.setText("");
-XP.setHint("EXP");
-Exit.setText("GET exp");
-
-Exit.setOnClickListener(new android.view.View.OnClickListener(){
-onClick: function(view){
-L=XP.getText();
-Dialog.dismiss();
-XG();
-showMenuBtn();
-}
-});
-
-GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
-} catch (e){
-print("The XP Dialog Is Malfunctioning:"+e);
-}
-}});
-}
-
-function XG() {
-Server.getPort()
-Player.setLevel(Math.round(L));
-if(Server.getPort()!="0")Server.sendChat("/xp " + L + space + Player.getName(Player.getEntity()));
-}
 
 var god1 = new Button(MainActivity);
             god1.setText("God sword");
@@ -8153,7 +7038,7 @@ enchantLayout1.setPadding(20,0,20,0);
     }}));
 }
 		
-var give = new android.widget.Button(MainActivity);
+var give = new Button(MainActivity);
 give.setText("Give menu");
 give.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")give.setText("Geben menu");
@@ -8177,7 +7062,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             giveScroll.addView(giveLayout);
             giveLayout1.addView(giveScroll);
             
-            var exit = new android.widget.Button(MainActivity);
+            var exit = new Button(MainActivity);
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -8187,7 +7072,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		giveLayout.addView(exit);
 		
-		var button = new android.widget.Button(MainActivity);
+		var button = new Button(MainActivity);
             button.setText("Custom Give");
             button.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8197,7 +7082,7 @@ give.dismiss();
             }));
             giveLayout.addView(button);
 
-var button90 = new android.widget.Button(MainActivity);
+var button90 = new Button(MainActivity);
             button90.setText("Item ID list");
             button90.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8220,7 +7105,7 @@ function idList()
       }}));
       }
 
-var butto = new android.widget.Button(MainActivity);
+var butto = new Button(MainActivity);
             butto.setText("Special creative inventory");
             butto.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8245,7 +7130,7 @@ for(var k = 0; k < 50; k++){
             }));
             giveLayout.addView(clear);
 
-var k1 = new android.widget.Button(MainActivity);
+var k1 = new Button(MainActivity);
             k1.setText("Leather kit");
             k1.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8263,7 +7148,7 @@ addItemInventory(290, 1, 0);
             }));
             giveLayout.addView(k1);
 
-var k2 = new android.widget.Button(MainActivity);
+var k2 = new Button(MainActivity);
             k2.setText("Chain kit");
             k2.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8281,7 +7166,7 @@ addItemInventory(291, 1, 0);
             }));
             giveLayout.addView(k2);
 
-var k3 = new android.widget.Button(MainActivity);
+var k3 = new Button(MainActivity);
             k3.setText("Iron kit");
             k3.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8299,7 +7184,7 @@ addItemInventory(292, 1, 0);
             }));
             giveLayout.addView(k3);
 
-var k4 = new android.widget.Button(MainActivity);
+var k4 = new Button(MainActivity);
             k4.setText("Gold kit");
             k4.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8317,7 +7202,7 @@ addItemInventory(294, 1, 0);
             }));
             giveLayout.addView(k4);
 
-var k5 = new android.widget.Button(MainActivity);
+var k5 = new Button(MainActivity);
             k5.setText("Diamond kit");
             k5.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8349,63 +7234,8 @@ giveLayout1.setPadding(20,0,20,0);
             }
     }}));
 }
-
-function Give() {
-MainActivity.runOnUiThread(new java.lang.Runnable(){
-run: function(){ 
-try{
-GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(MainActivity);
-var ID = new android.widget.EditText(MainActivity);
-var Amount = new android.widget.EditText(MainActivity);
-var Damage = new android.widget.EditText(MainActivity);
-var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
-
-Dialog.setTitle("Enter ID,Amt,Dmg");
-Dialog.setContentView(Layer);
-
-Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
-Dialog.show();
-Layer.addView(ID);
-Layer.addView(Amount);
-Layer.addView(Damage);
-Layer.addView(Exit);
-
-ID.setText("");
-ID.setHint("Item ID");
-Amount.setText("");
-Amount.setHint("Item Amount");
-Damage.setText("");
-Damage.setHint("Item Damage");
-Exit.setText("Give items");
-
-Exit.setOnClickListener(new android.view.View.OnClickListener(){
-onClick: function(view){
-I=ID.getText();
-A=Amount.getText();
-D=Damage.getText();
-Dialog.dismiss();
-give2();
-showMenuBtn();
-}
-});
-
-GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
-} catch (e){
-print("The Give Dialog Is Malfunctioning:"+e);
-}
-}});
-}
-
-function give2() {
-Player.addItemInventory(I,A,D);
-Server.sendChat("/give " + Player.getName(Player.getEntity()) + space + I + ":" + D + space + A);
-}
 		
-var morph = new android.widget.Button(MainActivity);
+var morph = new Button(MainActivity);
 morph.setText("Morph menu");
 morph.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")morph.setText("Verwandelungs menu");
@@ -8429,7 +7259,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             morphScroll.addView(morphLayout);
             morphLayout1.addView(morphScroll);
             
-            var exit = new android.widget.Button(MainActivity);
+            var exit = new Button(MainActivity);
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -8463,7 +7293,7 @@ morphEnhance = false;
             }));
             morphLayout.addView(mne);
 		
-		var mm1 = new android.widget.Button(MainActivity);
+		var mm1 = new Button(MainActivity);
             mm1.setText("Player");
             mm1.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8476,7 +7306,7 @@ Entity.setRenderType(Player.getEntity(), 27);
             }));
             morphLayout.addView(mm1);
 
-var mm = new android.widget.Button(MainActivity);
+var mm = new Button(MainActivity);
             mm.setText("Bat");
             mm.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8489,7 +7319,7 @@ Entity.setRenderType(Player.getEntity(), 10);
             }));
             morphLayout.addView(mm);
 
-var mm0 = new android.widget.Button(MainActivity);
+var mm0 = new Button(MainActivity);
             mm0.setText("Blaze");
             mm0.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8503,7 +7333,7 @@ Entity.setRenderType(Player.getEntity(), 18);
             }));
             morphLayout.addView(mm0);
 
-var mm2 = new android.widget.Button(MainActivity);
+var mm2 = new Button(MainActivity);
             mm2.setText("Chicken");
             mm2.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8516,7 +7346,7 @@ Entity.setRenderType(Player.getEntity(), 5);
             }));
             morphLayout.addView(mm2);
 
-var mm3 = new android.widget.Button(MainActivity);
+var mm3 = new Button(MainActivity);
             mm3.setText("Cow");
             mm3.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8529,7 +7359,7 @@ Entity.setRenderType(Player.getEntity(), 6);
             }));
             morphLayout.addView(mm3);
 
-var mm4 = new android.widget.Button(MainActivity);
+var mm4 = new Button(MainActivity);
             mm4.setText("Creeper");
             mm4.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8542,7 +7372,7 @@ Entity.setRenderType(Player.getEntity(), 22);
             }));
             morphLayout.addView(mm4);
 
-var mm5 = new android.widget.Button(MainActivity);
+var mm5 = new Button(MainActivity);
             mm5.setText("Enderman");
             mm5.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8555,7 +7385,7 @@ Entity.setRenderType(Player.getEntity(), 24);
             }));
             morphLayout.addView(mm5);
 
-var mm6 = new android.widget.Button(MainActivity);
+var mm6 = new Button(MainActivity);
             mm6.setText("Ghast");
             mm6.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8569,7 +7399,7 @@ Entity.setRenderType(Player.getEntity(), 17);
             }));
             morphLayout.addView(mm6);
             
-        var mmH = new android.widget.Button(MainActivity);
+        var mmH = new Button(MainActivity);
             mmH.setText("Horse");
             mmH.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8582,7 +7412,7 @@ Entity.setRenderType(Player.getEntity(), 48);
             }));
             morphLayout.addView(mmH);
             
-        var mmH2 = new android.widget.Button(MainActivity);
+        var mmH2 = new Button(MainActivity);
             mmH2.setText("Husk");
             mmH2.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8596,7 +7426,7 @@ if(morphEnhance==true){
             }));
             morphLayout.addView(mmH2);
 
-var mm7 = new android.widget.Button(MainActivity);
+var mm7 = new Button(MainActivity);
             mm7.setText("Iron golem");
             mm7.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8609,7 +7439,7 @@ Entity.setRenderType(Player.getEntity(), 42);
             }));
             morphLayout.addView(mm7);
 
-var mm8 = new android.widget.Button(MainActivity);
+var mm8 = new Button(MainActivity);
             mm8.setText("Magma cube");
             mm8.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8624,7 +7454,7 @@ Entity.setRenderType(Player.getEntity(), 16);
             }));
             morphLayout.addView(mm8);
 
-var mm9 = new android.widget.Button(MainActivity);
+var mm9 = new Button(MainActivity);
             mm9.setText("Ocelot");
             mm9.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8638,7 +7468,7 @@ Entity.setRenderType(Player.getEntity(), 43);
             }));
             morphLayout.addView(mm9);
 
-var mm10 = new android.widget.Button(MainActivity);
+var mm10 = new Button(MainActivity);
             mm10.setText("Pig");
             mm10.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8651,7 +7481,7 @@ Entity.setRenderType(Player.getEntity(), 8);
             }));
             morphLayout.addView(mm10);
             
-            var mmR = new android.widget.Button(MainActivity);
+            var mmR = new Button(MainActivity);
             mmR.setText("Rabbit");
             mmR.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8664,7 +7494,7 @@ Entity.setRenderType(Player.getEntity(), 46);
             }));
             morphLayout.addView(mmR);
 
-var mm11 = new android.widget.Button(MainActivity);
+var mm11 = new Button(MainActivity);
             mm11.setText("Sheep");
             mm11.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8677,7 +7507,7 @@ Entity.setRenderType(Player.getEntity(), 9);
             }));
             morphLayout.addView(mm11);
 
-var mm12 = new android.widget.Button(MainActivity);
+var mm12 = new Button(MainActivity);
             mm12.setText("Silverfish");
             mm12.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8691,7 +7521,7 @@ Entity.setRenderType(Player.getEntity(), 21);
             }));
             morphLayout.addView(mm12);
 
-var mm13 = new android.widget.Button(MainActivity);
+var mm13 = new Button(MainActivity);
             mm13.setText("Skeleton");
             mm13.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8706,7 +7536,7 @@ Entity.setRenderType(Player.getEntity(), 19);
             }));
             morphLayout.addView(mm13);
 
-var mm14 = new android.widget.Button(MainActivity);
+var mm14 = new Button(MainActivity);
             mm14.setText("Slime");
             mm14.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8720,7 +7550,7 @@ Entity.setRenderType(Player.getEntity(), 23);
             }));
             morphLayout.addView(mm14);
 
-var mm15 = new android.widget.Button(MainActivity);
+var mm15 = new Button(MainActivity);
             mm15.setText("Snow golem");
             mm15.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8733,7 +7563,7 @@ Entity.setRenderType(Player.getEntity(), 44);
             }));
             morphLayout.addView(mm15);
             
-        var mmS = new android.widget.Button(MainActivity);
+        var mmS = new Button(MainActivity);
             mmS.setText("Stray");
             mmS.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8747,7 +7577,7 @@ Entity.setRenderType(Player.getEntity(), 55);
             }));
             morphLayout.addView(mmS);
 
-var mm16 = new android.widget.Button(MainActivity);
+var mm16 = new Button(MainActivity);
             mm16.setText("Spider");
             mm16.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8760,7 +7590,7 @@ Entity.setRenderType(Player.getEntity(), 20);
             }));
             morphLayout.addView(mm16);
 
-var mm17 = new android.widget.Button(MainActivity);
+var mm17 = new Button(MainActivity);
             mm17.setText("Squid");
             mm17.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8774,7 +7604,7 @@ Entity.setRenderType(Player.getEntity(), 36);
             }));
             morphLayout.addView(mm17);
 
-var mm18 = new android.widget.Button(MainActivity);
+var mm18 = new Button(MainActivity);
             mm18.setText("Villager");
             mm18.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8787,7 +7617,7 @@ Entity.setRenderType(Player.getEntity(), 12);
             }));
             morphLayout.addView(mm18);
 
-var mm19 = new android.widget.Button(MainActivity);
+var mm19 = new Button(MainActivity);
             mm19.setText("Villager zombie");
             mm19.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8802,7 +7632,7 @@ Entity.setRenderType(Player.getEntity(), 39);
             }));
             morphLayout.addView(mm19);
             
-        var mmW = new android.widget.Button(MainActivity);
+        var mmW = new Button(MainActivity);
             mmW.setText("Witch");
             mmW.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8812,7 +7642,7 @@ Entity.setRenderType(Player.getEntity(), 47);
             }));
             morphLayout.addView(mmW);
 
-var mm20 = new android.widget.Button(MainActivity);
+var mm20 = new Button(MainActivity);
             mm20.setText("Wolf");
             mm20.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8825,7 +7655,7 @@ Entity.setRenderType(Player.getEntity(), 11);
             }));
             morphLayout.addView(mm20);
             
-        var mmW2 = new android.widget.Button(MainActivity);
+        var mmW2 = new Button(MainActivity);
             mmW2.setText("Wither skeleton");
             mmW2.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8840,7 +7670,7 @@ Entity.setRenderType(Player.getEntity(), 19);
             }));
             morphLayout.addView(mmW2);
 
-var mm21 = new android.widget.Button(MainActivity);
+var mm21 = new Button(MainActivity);
             mm21.setText("Zombie");
             mm21.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8855,7 +7685,7 @@ Entity.setRenderType(Player.getEntity(), 14);
             }));
             morphLayout.addView(mm21);
 
-var mm22 = new android.widget.Button(MainActivity);
+var mm22 = new Button(MainActivity);
             mm22.setText("Zombie pigman");
             mm22.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8884,7 +7714,7 @@ morphLayout1.setPadding(20,0,20,0);
     }}));
 }
 		
-var nuke = new android.widget.Button(MainActivity);
+var nuke = new Button(MainActivity);
 nuke.setText("Nuke menu");
 nuke.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")nuke.setText("Vernichtungs menu");
@@ -8908,7 +7738,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             nukeScroll.addView(nukeLayout);
             nukeLayout1.addView(nukeScroll);
             
-            var exit = new android.widget.Button(MainActivity);
+            var exit = new Button(MainActivity);
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -8918,7 +7748,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		nukeLayout.addView(exit);
 		
-            var tn = new android.widget.Button(MainActivity);
+            var tn = new Button(MainActivity);
             tn.setText("Tap nuke: "+(tapnuke?"on":"off"));
             tn.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8934,7 +7764,7 @@ clientMessage(client + "§7Tap nuke is off");
             }));
             nukeLayout.addView(tn);
             
-            var an = new android.widget.Button(MainActivity);
+            var an = new Button(MainActivity);
             an.setText("Auto nuke: "+(autonuke?"on":"off"));
             an.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9058,50 +7888,6 @@ var n11 = new Button(MainActivity);
                 }
             }));
             nukeLayout.addView(cn);
-	
-	function newn() {
-MainActivity.runOnUiThread(new java.lang.Runnable(){
-run: function(){ 
-try{
-newn = new android.widget.PopupWindow();
-var Layerb5 = new android.widget.LinearLayout(MainActivity);
-var nNuke = new android.widget.EditText(MainActivity);
-var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
-
-Dialog.setTitle("Enter nuke amount");
-Dialog.setContentView(Layerb5);
-
-Layerb5.setOrientation(android.widget.LinearLayout.VERTICAL);
-Dialog.show();
-Layerb5.addView(nNuke);
-Layerb5.addView(Exit);
-
-nNuke.setText("");
-nNuke.setHint("Amount");
-Exit.setText("Nuke");
-
-Exit.setOnClickListener(new android.view.View.OnClickListener(){
-onClick: function(view){
-lenuke =nNuke.getText();
-Dialog.dismiss();
-setNuke();
-showMenuBtn();
-}
-});
-
-newn.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-newn.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-newn.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
-} catch (e){
-print("The newn Dialog Is Malfunctioning:"+e);
-}
-}});
-}
-					
-			function setNuke(){
-			   explode(getPlayerX(),getPlayerY(),getPlayerZ(),lenuke);
-			   }
 
             nuke = new PopupWindow(nukeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)nuke.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -9118,7 +7904,7 @@ nukeLayout1.setPadding(20,0,20,0);
     }}));
 }
 		
-var particle = new android.widget.Button(MainActivity);
+var particle = new Button(MainActivity);
 particle.setText("Particle menu");
 particle.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")particle.setText("Partikel menu");
@@ -9142,7 +7928,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             particleScroll.addView(particleLayout);
             particleLayout1.addView(particleScroll);
             
-            var exit = new android.widget.Button(MainActivity);
+            var exit = new Button(MainActivity);
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -9152,7 +7938,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		particleLayout.addView(exit);
 		
-var p1 = new android.widget.Button(MainActivity);
+var p1 = new Button(MainActivity);
             p1.setText("Angry villager: "+(particle1?"on":"off"));
             p1.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9168,7 +7954,7 @@ clientMessage(client + "§7Particle 1 is false");
             }));
             particleLayout.addView(p1);
 
-var p2 = new android.widget.Button(MainActivity);
+var p2 = new Button(MainActivity);
             p2.setText("bubble: "+(particle2?"on":"off"));
             p2.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9184,7 +7970,7 @@ clientMessage(client + "§7Particle 2 is false");
             }));
             particleLayout.addView(p2);
 
-var p3 = new android.widget.Button(MainActivity);
+var p3 = new Button(MainActivity);
             p3.setText("cloud: "+(particle3?"on":"off"));
             p3.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9200,7 +7986,7 @@ clientMessage(client + "§7Particle 3 is false");
             }));
             particleLayout.addView(p3);
 
-var p4 = new android.widget.Button(MainActivity);
+var p4 = new Button(MainActivity);
             p4.setText("crit: "+(particle4?"on":"off"));
             p4.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9216,7 +8002,7 @@ clientMessage(client + "§7Particle 4 is false");
             }));
             particleLayout.addView(p4);
 
-var p5 = new android.widget.Button(MainActivity);
+var p5 = new Button(MainActivity);
             p5.setText("drip lava: "+(particle5?"on":"off"));
             p5.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9232,7 +8018,7 @@ clientMessage(client + "§7Particle 5 is false");
             }));
             particleLayout.addView(p5);
 
-var p6 = new android.widget.Button(MainActivity);
+var p6 = new Button(MainActivity);
             p6.setText("drip water: "+(particle6?"on":"off"));
             p6.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9248,7 +8034,7 @@ clientMessage(client + "§7Particle 6 is false");
             }));
             particleLayout.addView(p6);
 
-var p7 = new android.widget.Button(MainActivity);
+var p7 = new Button(MainActivity);
             p7.setText("enchanting table: "+(particle7?"on":"off"));
             p7.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9264,7 +8050,7 @@ clientMessage(client + "§7Particle 7 is false");
             }));
             particleLayout.addView(p7);
 
-var p8 = new android.widget.Button(MainActivity);
+var p8 = new Button(MainActivity);
             p8.setText("falling dust: "+(particle8?"on":"off"));
             p8.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9280,7 +8066,7 @@ clientMessage(client + "§7Particle 8 is false");
             }));
             particleLayout.addView(p8);
 
-var p9 = new android.widget.Button(MainActivity);
+var p9 = new Button(MainActivity);
             p9.setText("flame: "+(particle9?"on":"off"));
             p9.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9296,7 +8082,7 @@ clientMessage(client + "§7Particle 9 is false");
             }));
             particleLayout.addView(p9);
 
-var p10 = new android.widget.Button(MainActivity);
+var p10 = new Button(MainActivity);
             p10.setText("Happy villager: "+(particle10?"on":"off"));
             p10.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9312,7 +8098,7 @@ clientMessage(client + "§7Particle 10 is false");
             }));
             particleLayout.addView(p10);
 
-var p11 = new android.widget.Button(MainActivity);
+var p11 = new Button(MainActivity);
             p11.setText("heart: "+(particle11?"on":"off"));
             p11.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9328,7 +8114,7 @@ clientMessage(client + "§7Particle 11 is false");
             }));
             particleLayout.addView(p11);
 
-var p12 = new android.widget.Button(MainActivity);
+var p12 = new Button(MainActivity);
             p12.setText("Huge explosion: "+(particle12?"on":"off"));
             p12.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9344,7 +8130,7 @@ clientMessage(client + "§7Particle 12 is false");
             }));
             particleLayout.addView(p12);
 
-var p13 = new android.widget.Button(MainActivity);
+var p13 = new Button(MainActivity);
             p13.setText("Explosion seed: "+(particle13?"on":"off"));
             p13.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9360,7 +8146,7 @@ clientMessage(client + "§7Particle 13 is false");
             }));
             particleLayout.addView(p13);
 
-var p14 = new android.widget.Button(MainActivity);
+var p14 = new Button(MainActivity);
             p14.setText("ink: "+(particle14?"on":"off"));
             p14.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9376,7 +8162,7 @@ clientMessage(client + "§7Particle 14 is false");
             }));
             particleLayout.addView(p14);
 
-var p15 = new android.widget.Button(MainActivity);
+var p15 = new Button(MainActivity);
             p15.setText("Item break: "+(particle15?"on":"off"));
             p15.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9392,7 +8178,7 @@ clientMessage(client + "§7Particle 15 is false");
             }));
             particleLayout.addView(p15);
 
-var p16 = new android.widget.Button(MainActivity);
+var p16 = new Button(MainActivity);
             p16.setText("Lava: "+(particle16?"on":"off"));
             p16.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9408,7 +8194,7 @@ clientMessage(client + "§7Particle 16 is false");
             }));
             particleLayout.addView(p16);
 
-var p17 = new android.widget.Button(MainActivity);
+var p17 = new Button(MainActivity);
             p17.setText("Mob flame: "+(particle17?"on":"off"));
             p17.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9424,7 +8210,7 @@ clientMessage(client + "§7Particle 17 is false");
             }));
             particleLayout.addView(p17);
 
-var p18 = new android.widget.Button(MainActivity);
+var p18 = new Button(MainActivity);
             p18.setText("Note: "+(particle18?"on":"off"));
             p18.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9440,7 +8226,7 @@ clientMessage(client + "§7Particle 18 is false");
             }));
             particleLayout.addView(p18);
 
-var p19 = new android.widget.Button(MainActivity);
+var p19 = new Button(MainActivity);
             p19.setText("Portal: "+(particle19?"on":"off"));
             p19.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9456,7 +8242,7 @@ clientMessage(client + "§7Particle 19 is false");
             }));
             particleLayout.addView(p19);
 
-var p20 = new android.widget.Button(MainActivity);
+var p20 = new Button(MainActivity);
             p20.setText("Rain splash: "+(particle20?"on":"off"));
             p20.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9472,7 +8258,7 @@ clientMessage(client + "§7Particle 20 is false");
             }));
             particleLayout.addView(p20);
 
-var p21 = new android.widget.Button(MainActivity);
+var p21 = new Button(MainActivity);
             p21.setText("Redstone: "+(particle21?"on":"off"));
             p21.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9488,7 +8274,7 @@ clientMessage(client + "§7Particle 21 is false");
             }));
             particleLayout.addView(p21);
 
-var p22 = new android.widget.Button(MainActivity);
+var p22 = new Button(MainActivity);
             p22.setText("Slime: "+(particle22?"on":"off"));
             p22.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9504,7 +8290,7 @@ clientMessage(client + "§7Particle 22 is false");
             }));
             particleLayout.addView(p22);
 
-var p23 = new android.widget.Button(MainActivity);
+var p23 = new Button(MainActivity);
             p23.setText("Smoke: "+(particle23?"on":"off"));
             p23.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9520,7 +8306,7 @@ clientMessage(client + "§7Particle 23 is false");
             }));
             particleLayout.addView(p23);
 
-var p24 = new android.widget.Button(MainActivity);
+var p24 = new Button(MainActivity);
             p24.setText("Snow ball poof: "+(particle24?"on":"off"));
             p24.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9536,7 +8322,7 @@ clientMessage(client + "§7Particle 24 is false");
             }));
             particleLayout.addView(p24);
 
-var p25 = new android.widget.Button(MainActivity);
+var p25 = new Button(MainActivity);
             p25.setText("Spell: "+(particle25?"on":"off"));
             p25.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9552,7 +8338,7 @@ clientMessage(client + "§7Particle 25 is false");
             }));
             particleLayout.addView(p25);
 
-var p26 = new android.widget.Button(MainActivity);
+var p26 = new Button(MainActivity);
             p26.setText("Splash: "+(particle26?"on":"off"));
             p26.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9568,7 +8354,7 @@ clientMessage(client + "§7Particle 26 is false");
             }));
             particleLayout.addView(p26);
 
-var p27 = new android.widget.Button(MainActivity);
+var p27 = new Button(MainActivity);
             p27.setText("Suspended town: "+(particle27?"on":"off"));
             p27.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9584,7 +8370,7 @@ clientMessage(client + "§7Particle 27 is false");
             }));
             particleLayout.addView(p27);
 
-var p28 = new android.widget.Button(MainActivity);
+var p28 = new Button(MainActivity);
             p28.setText("Terrain: "+(particle28?"on":"off"));
             p28.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9600,7 +8386,7 @@ clientMessage(client + "§7Particle 28 is false");
             }));
             particleLayout.addView(p28);
 
-var p29 = new android.widget.Button(MainActivity);
+var p29 = new Button(MainActivity);
             p29.setText("Water wake: "+(particle29?"on":"off"));
             p29.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9616,7 +8402,7 @@ clientMessage(client + "§7Particle 29 is false");
             }));
             particleLayout.addView(p29);
 
-var p30 = new android.widget.Button(MainActivity);
+var p30 = new Button(MainActivity);
             p30.setText("Large explosion: "+(particle30?"on":"off"));
             p30.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9632,7 +8418,7 @@ clientMessage(client + "§7Particle 30 is false");
             }));
             particleLayout.addView(p30);
 
-var p31 = new android.widget.Button(MainActivity);
+var p31 = new Button(MainActivity);
             p31.setText("Spell 2: "+(particle31?"on":"off"));
             p31.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9648,7 +8434,7 @@ clientMessage(client + "§7Particle 31 is false");
             }));
             particleLayout.addView(p31);
 
-var p32 = new android.widget.Button(MainActivity);
+var p32 = new Button(MainActivity);
             p32.setText("Spell 3: "+(particle32?"on":"off"));
             p32.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9679,7 +8465,7 @@ particleLayout1.setPadding(20,0,20,0);
     }}));
 }
 		
-var spawn = new android.widget.Button(MainActivity);
+var spawn = new Button(MainActivity);
 spawn.setText("Spawn menu");
 spawn.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")spawn.setText("Erschaffungs menu");
@@ -9703,7 +8489,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             spawnScroll.addView(spawnLayout);
             spawnLayout1.addView(spawnScroll);
             
-            var exit = new android.widget.Button(MainActivity);
+            var exit = new Button(MainActivity);
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -10097,7 +8883,7 @@ spawnLayout1.setPadding(20,0,20,0);
     }}));
 }
 		
-var speed = new android.widget.Button(MainActivity);
+var speed = new Button(MainActivity);
 speed.setText("Speed menu");
 speed.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")speed.setText("Schnelligkeits menu");
@@ -10121,7 +8907,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             speedScroll.addView(speedLayout);
             speedLayout1.addView(speedScroll);
             
-            var exit = new android.widget.Button(MainActivity);
+            var exit = new Button(MainActivity);
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -10339,50 +9125,6 @@ newspeed();
             }));
             speedLayout.addView(d22);
 
-function newspeed() {
-MainActivity.runOnUiThread(new java.lang.Runnable(){
-run: function(){ 
-try{
-GetText = new android.widget.PopupWindow();
-var Layer8 = new android.widget.LinearLayout(MainActivity);
-var vspee = new android.widget.EditText(MainActivity);
-var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
-
-Dialog.setTitle("Enter custom speed");
-Dialog.setContentView(Layer8);
-
-Layer8.setOrientation(android.widget.LinearLayout.VERTICAL);
-Dialog.show();
-Layer8.addView(vspee);
-Layer8.addView(Exit);
-
-vspee.setText("");
-vspee.setHint("numbers here");
-Exit.setText("done");
-
-Exit.setOnClickListener(new android.view.View.OnClickListener(){
-onClick: function(view){
-nspee =vspee.getText();
-Dialog.dismiss();
-setspeed();
-showMenuBtn();
-}
-});
-
-GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
-} catch (e){
-print("The set speed Dialog Is Malfunctioning:"+e);
-}
-}});
-}
-
-function setspeed(){
-ModPE.setGameSpeed(nspee);
-}
-
             speed = new PopupWindow(speedLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)speed.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
       if(default1==false)speed.setBackgroundDrawable(new ColorDrawable(GUIColor));
@@ -10398,7 +9140,7 @@ speedLayout1.setPadding(20,0,20,0);
     }}));
 }
 		
-var teleport = new android.widget.Button(MainActivity);
+var teleport = new Button(MainActivity);
 teleport.setText("Teleport menu");
 teleport.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")teleport.setText("Teleportierungs menu");
@@ -10422,7 +9164,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             teleportScroll.addView(teleportLayout);
             teleportLayout1.addView(teleportScroll);
             
-            var exit = new android.widget.Button(MainActivity);
+            var exit = new Button(MainActivity);
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -10432,7 +9174,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		teleportLayout.addView(exit);
 		
-		var button = new android.widget.Button(MainActivity);
+		var button = new Button(MainActivity);
             button.setText("Select coords");
             button.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -10485,7 +9227,7 @@ clientMessage(client + "Woah!\n"+"Teleported to: "+getPlayerX()+" "+getPlayerY()
             }));
             teleportLayout.addView(randomtp);
 			
-			var at = new android.widget.Button(MainActivity);
+			var at = new Button(MainActivity);
       at.setText("Tap teleport: "+(taptp?"on":"off"));
 		at.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -10524,63 +9266,8 @@ teleportLayout1.setPadding(20,0,20,0);
             }
     }}));
 }
-
-function Tsele() {
-MainActivity.runOnUiThread(new java.lang.Runnable(){
-run: function(){ 
-try{
-GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(MainActivity);
-var X = new android.widget.EditText(MainActivity);
-var Y = new android.widget.EditText(MainActivity);
-var Z = new android.widget.EditText(MainActivity);
-var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
-
-Dialog.setTitle("Type coords to teleport");
-Dialog.setContentView(Layer);
-
-Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
-Dialog.show();
-Layer.addView(X);
-Layer.addView(Y);
-Layer.addView(Z);
-Layer.addView(Exit);
-
-X.setText("");
-X.setHint("X");
-Y.setText("");
-Y.setHint("Y");
-Z.setText("");
-Z.setHint("Z");
-Exit.setText("Teleport");
-
-Exit.setOnClickListener(new android.view.View.OnClickListener(){
-onClick: function(view){
-px=X.getText();
-py=Y.getText();
-pz=Z.getText();
-Dialog.dismiss();
-set();
-showMenuBtn();
-}
-});
-
-GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
-} catch (e){
-print("The Teleport Dialog Is Malfunctioning:"+e);
-}
-}});
-}
-
-function set() {
-Entity.setPosition(Player.getEntity(), px, py, pz);
-Server.sendChat("/tp " + Player.getName(Player.getEntity()) + space + px + space + py + space + pz);
-}
 		
-var time = new android.widget.Button(MainActivity);
+var time = new Button(MainActivity);
 time.setText("Time menu");
 time.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")time.setText("Zeit menu");
@@ -10604,7 +9291,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             timeScroll.addView(timeLayout);
             timeLayout1.addView(timeScroll);
             
-            var exit = new android.widget.Button(MainActivity);
+            var exit = new Button(MainActivity);
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -10614,7 +9301,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		timeLayout.addView(exit);
 		
-		var aa = new android.widget.Button(MainActivity);
+		var aa = new Button(MainActivity);
             aa.setText("Only day: "+(onlyday?"on":"off"));
             aa.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -10635,7 +9322,7 @@ onlyday = false;
             }));
             timeLayout.addView(aa);
 
-var aa2 = new android.widget.Button(MainActivity);
+var aa2 = new Button(MainActivity);
             aa2.setText("Only night: "+(onlynight?"on":"off"));
             aa2.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -10888,7 +9575,7 @@ timeLayout1.setPadding(20,0,20,0);
     }}));
 }
 		
-var weather = new android.widget.Button(MainActivity);
+var weather = new Button(MainActivity);
 weather.setText("Weather menu");
 weather.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")weather.setText("Wetter menu");
@@ -10912,7 +9599,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             weatherScroll.addView(weatherLayout);
             weatherLayout1.addView(weatherScroll);
             
-            var exit = new android.widget.Button(MainActivity);
+            var exit = new Button(MainActivity);
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -10922,7 +9609,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		weatherLayout.addView(exit);
 		
-		var button = new android.widget.Button(MainActivity);
+		var button = new Button(MainActivity);
             button.setText("Custom weather");
             button.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -10932,7 +9619,7 @@ weather.dismiss();
             }));
             weatherLayout.addView(button);
 			
-	    var button3 = new android.widget.Button(MainActivity);
+	    var button3 = new Button(MainActivity);
             button3.setText("Rain");
             button3.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -10941,7 +9628,7 @@ Level.setRainLevel(1);
             }));
             weatherLayout.addView(button3);
 			
-var button4 = new android.widget.Button(MainActivity);
+var button4 = new Button(MainActivity);
             button4.setText("Lightning");
             button4.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -10950,7 +9637,7 @@ Level.setLightningLevel(1);
             }));
             weatherLayout.addView(button4);
 
-var button2 = new android.widget.Button(MainActivity);
+var button2 = new Button(MainActivity);
             button2.setText("Clear weather");
             button2.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -10974,56 +9661,6 @@ weatherLayout1.setPadding(20,0,20,0);
             }
     }}));
 }
-
-function setDialogW() {
-MainActivity.runOnUiThread(new java.lang.Runnable(){
-run: function(){ 
-try{
-GetText = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(MainActivity);
-var w = new android.widget.EditText(MainActivity);
-var w2 = new android.widget.EditText(MainActivity);
-var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
-
-Dialog.setTitle("Set Weather");
-Dialog.setContentView(Layer);
-
-Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
-Dialog.show();
-Layer.addView(w);
-Layer.addView(w2);
-Layer.addView(Exit);
-
-w.setText("");
-w.setHint("rain/snow = 1");
-w2.setText("");
-w2.setHint("lightning = 1");
-Exit.setText("Set weather");
-
-Exit.setOnClickListener(new android.view.View.OnClickListener(){
-onClick: function(view){
-v=w.getText();
-v2=w2.getText();
-Dialog.dismiss();
-setWeather();
-showMenuBtn();
-}
-});
-
-GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
-} catch (e){
-print("The WS Dialog Is Malfunctioning:"+e);
-}
-}});
-}
-
-function setWeather() {
-Level.setRainLevel(v);
-Level.setLightningLevel(v2);
-}
             
             menu = new PopupWindow(menuLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
            if(default1==true)menu.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -11040,7 +9677,7 @@ menuLayout1.setPadding(20,0,20,0);
             }
     }}));
 }
-        
+
 function serverMessageReceiveHook(str) {
 	ctx.runOnUiThread(new java.lang.Runnable(){
 run: function(){
@@ -11901,6 +10538,1358 @@ var file = new java.io.File( android.os.Environment.getExternalStorageDirectory(
         write.close();
 }
 
+function scc() {
+MainActivity.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+scc = new android.widget.PopupWindow();
+var Layer5 = new android.widget.LinearLayout(MainActivity);
+var sc1 = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new Button(MainActivity);
+
+Dialog.setTitle("Enter website");
+Dialog.setContentView(Layer5);
+
+Layer5.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer5.addView(sc1);
+Layer5.addView(Exit);
+
+sc1.setText("");
+sc1.setHint("https://example.com");
+Exit.setText("View code");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+sc2 =sc1.getText();
+Dialog.dismiss();
+sc3();
+print("Loading web page");
+showMenuBtn();
+}
+});
+
+scc.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+scc.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+scc.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The scc Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+      function sc3()
+      {
+      MainActivity.runOnUiThread(new java.lang.Runnable({run: function(){
+      var webs = new android.webkit.WebView(MainActivity);
+      var webset = webs.getSettings();
+      webset.setJavaScriptEnabled(true);
+      webs.setWebChromeClient(new android.webkit.WebChromeClient());
+      webs.setWebViewClient(new android.webkit.WebViewClient());
+      webs.loadUrl('view-source:' + sc2);
+/*Site URL*/
+      new android.app.AlertDialog.Builder(MainActivity).setView(webs).show();
+      }}));
+      }
+
+function iplu() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+iplu = new android.widget.PopupWindow();
+var Layer4 = new android.widget.LinearLayout(ctx);
+var ip1 = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new Button(ctx);
+
+Dialog.setTitle("Enter IP to trace");
+Dialog.setContentView(Layer4);
+
+Layer4.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer4.addView(ip1);
+Layer4.addView(Exit);
+
+ip1.setText("");
+ip1.setHint("IP address, domain, blank for your IP");
+Exit.setText("Trace");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ip =ip1.getText();
+Dialog.dismiss();
+ip2();
+print("Loading web page");
+showMenuBtn();
+}
+});
+
+iplu.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+iplu.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+iplu.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The IPLU Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+      function ip2()
+      {
+      ctx.runOnUiThread(new java.lang.Runnable({run: function(){
+      var webs = new android.webkit.WebView(ctx);
+      var webset = webs.getSettings();
+      webset.setJavaScriptEnabled(true);
+      webs.setWebChromeClient(new android.webkit.WebChromeClient());
+      webs.setWebViewClient(new android.webkit.WebViewClient());
+      webs.loadUrl('http://ip-api.com/json/' + ip);
+/*Site URL*/
+      new android.app.AlertDialog.Builder(ctx).setView(webs).show();
+      }}));
+      }
+
+function pip() {
+ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+pip = new android.widget.PopupWindow();
+var Layer4 = new android.widget.LinearLayout(ctx);
+var ddip = new android.widget.EditText(ctx);
+var ddip2 = new android.widget.EditText(ctx);
+var Dialog = new android.app.Dialog(ctx);
+var Exit = new Button(ctx);
+
+Dialog.setTitle("Enter server");
+Dialog.setContentView(Layer4);
+
+Layer4.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer4.addView(ddip);
+Layer4.addView(ddip2);
+Layer4.addView(Exit);
+
+ddip.setText("");
+ddip.setHint("IP");
+ddip2.setText("");
+ddip2.setHint("Port");
+Exit.setText("View players");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ply =ddip.getText();
+poy =ddip2.getText();
+Dialog.dismiss();
+goto();
+Toast.makeText(ctx, "AlphaHack: Loading web page", 1).show();
+showMenuBtn();
+}
+});
+
+pip.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+pip.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+pip.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The IP Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function goto()
+      {
+      ctx.runOnUiThread(new java.lang.Runnable({run: function(){
+      var webs = new android.webkit.WebView(ctx);
+      var webset = webs.getSettings();
+      webset.setJavaScriptEnabled(true);
+      webs.setWebChromeClient(new android.webkit.WebChromeClient());
+      webs.setWebViewClient(new android.webkit.WebViewClient());
+      webs.loadUrl('http://mcapi.ca/query/'+ply+':'+poy+'/list');
+/*Site URL*/
+      new android.app.AlertDialog.Builder(ctx).setView(webs).show();
+      }}));
+      }
+
+function spa2() {
+MainActivity.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+new10 = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(MainActivity);
+var m1 = new android.widget.EditText(MainActivity);
+var select1 = new Button(MainActivity);
+var select2 = new Button(MainActivity);
+var select3 = new android.widget.EditText(MainActivity);
+var select4 = new Button(MainActivity);
+var end1 = new Button(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+ 
+Dialog.setTitle("Enter text & select");
+Dialog.setContentView(Layer);
+ 
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+
+Layer.addView(m1);
+m1.setText("AlphaHack!");
+	
+	var doubleBtnS = new android.widget.LinearLayout(MainActivity);
+	    doubleBtnS.setOrientation(0);
+		
+		doubleBtnS.addView(select3);
+	select3.setText("");
+	select3.setHint("Seconds");
+	
+		doubleBtnS.addView(end1);
+            
+            end1.setText("Start spam");
+            end1.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+sec =select3.getText();
+text =m1.getText();
+seconds = sec;
+antispam = true;
+Dialog.dismiss();
+showMenuBtn();
+                }
+            }));
+			
+Layer.addView(doubleBtnS);
+	
+Layer.addView(select1);
+
+Layer.addView(select2);
+
+Layer.addView(select4);
+ 
+            select1.setText("LBSG");
+            select1.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+text =m1.getText();
+seconds = "2000";
+antispam = true;
+Dialog.dismiss();
+showMenuBtn();
+                }
+            }));
+             
+            select2.setText("Mineplex");
+            select2.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+text =m1.getText();
+seconds = "3000";
+antispam = true;
+Dialog.dismiss();
+showMenuBtn();
+                }
+            }));
+            
+            select4.setText("Leet.cc");
+            select4.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+text =m1.getText();
+var seconds = "2500";
+antispam = true;
+Dialog.dismiss();
+showMenuBtn();
+                }
+            }));
+ 
+new10.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+new10.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+new10.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("Bypass error: "+e);
+}
+}});
+}
+
+function spa() {
+MainActivity.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+spa = new android.widget.PopupWindow();
+var Layer6 = new android.widget.LinearLayout(MainActivity);
+var mm = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new Button(MainActivity);
+
+Dialog.setTitle("Enter text for spam");
+Dialog.setContentView(Layer6);
+
+Layer6.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer6.addView(mm);
+Layer6.addView(Exit);
+
+mm.setText("AlphaHack!");
+Exit.setText("Spam");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+text =mm.getText();
+Dialog.dismiss();
+if(autospam2==true)autospam = true;
+}
+});
+
+spa.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+spa.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+spa.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("Spam dialog error:"+e);
+}
+}});
+}
+
+function dig1() {
+MainActivity.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+digg = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(MainActivity);
+var select1 = new Button(MainActivity);
+var select2 = new Button(MainActivity);
+var select3 = new Button(MainActivity);
+var ddf = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new Button(MainActivity);
+ 
+Dialog.setTitle("Select");
+Dialog.setContentView(Layer);
+ 
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+ 
+Layer.addView(select1);
+Layer.addView(select2);
+Layer.addView(Exit);
+ 
+            select1.setText("1 Block");
+            select1.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+ clientMessage(client + "§7Face a block to see!");
+ autodestroy = true;
+ Dialog.dismiss();
+showMenuBtn();
+                }
+            }));
+             
+            select2.setText("More than 1 Block");
+            select2.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+ clientMessage(client + "§7Face a block to see!");
+extraj = true;
+Dialog.dismiss();
+showMenuBtn();
+                }
+            }));
+ 
+digg.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+digg.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+digg.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("Error :"+e);
+}
+}});
+}
+
+function oreDialog() {
+MainActivity.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+orey = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(MainActivity);
+var select1 = new Button(MainActivity);
+var select2 = new Button(MainActivity);
+var select3 = new Button(MainActivity);
+var select4 = new Button(MainActivity);
+var select5 = new Button(MainActivity);
+var select6 = new Button(MainActivity);
+var select7 = new Button(MainActivity);
+var select8 = new Button(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+ 
+Dialog.setTitle("Select ore");
+Dialog.setContentView(Layer);
+ 
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+
+var doubleBtn1 = new android.widget.LinearLayout(MainActivity);
+	    doubleBtn1.setOrientation(0);
+		
+		doubleBtn1.addView(select1);
+
+		doubleBtn1.addView(select2);
+ 
+            select1.setText("Coal ore");
+            select1.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+oreEsp = true;
+oreId = "16";
+var oreId = "16";
+Dialog.dismiss();
+                }
+            }));
+             
+            select2.setText("Iron ore");
+            select2.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+oreEsp = true;
+oreId = "15";
+var oreId = "15";
+Dialog.dismiss();
+                }
+            }));
+			
+			Layer.addView(doubleBtn1);
+			
+			var doubleBtn2 = new android.widget.LinearLayout(MainActivity);
+	    doubleBtn2.setOrientation(0);
+		
+		doubleBtn2.addView(select3);
+
+		doubleBtn2.addView(select4);
+            
+            select3.setText("Gold ore");
+            select3.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+oreEsp = true;
+oreId = "14";
+var oreId = "14";
+Dialog.dismiss();
+                }
+            }));
+            
+            select4.setText("Diamond ore");
+            select4.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+oreEsp = true;
+oreId = "56";
+var oreId = "56";
+Dialog.dismiss();
+                }
+            }));
+			
+			Layer.addView(doubleBtn2);
+			
+			var doubleBtn3 = new android.widget.LinearLayout(MainActivity);
+	    doubleBtn3.setOrientation(0);
+		
+		doubleBtn3.addView(select5);
+
+		doubleBtn3.addView(select6);
+            
+            select5.setText("Redstone ore");
+            select5.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+oreEsp = true;
+oreId = "73";
+var oreId = "73";
+Dialog.dismiss();
+                }
+            }));
+            
+            select6.setText("Lapis ore");
+            select6.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+oreEsp = true;
+oreId = "21";
+var oreId = "21";
+Dialog.dismiss();
+                }
+            }));
+			
+			Layer.addView(doubleBtn3);
+			
+			var doubleBtn4 = new android.widget.LinearLayout(MainActivity);
+	    doubleBtn4.setOrientation(0);
+		
+		doubleBtn4.addView(select7);
+
+		doubleBtn4.addView(select8);
+            
+            select7.setText("Emerald ore");
+            select7.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+oreEsp = true;
+oreId = "129";
+var oreId = "129";
+Dialog.dismiss();
+                }
+            }));
+            
+            select8.setText("Quartz ore");
+            select8.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+oreEsp = true;
+oreId = "153";
+var oreId = "153";
+Dialog.dismiss();
+                }
+            }));
+			
+			Layer.addView(doubleBtn4);
+ 
+orey.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+orey.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+orey.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("Ore error: "+e);
+}
+}});
+}
+
+function new9() {
+MainActivity.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+fov = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(MainActivity);
+var select1 = new Button(MainActivity);
+var select2 = new Button(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+//var Exit = new Button(MainActivity);
+ 
+Dialog.setTitle("Select");
+Dialog.setContentView(Layer);
+ 
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+ 
+Layer.addView(select1);
+
+Layer.addView(select2);
+
+//Layer.addView(Exit);
+ 
+            select1.setText("Use nether block");
+            select1.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+useNether = true;
+if(useNether){
+                Level.setTile(getPlayerX(), getPlayerY() -1, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() +1, getPlayerY() -1, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() -1, getPlayerY() -1, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() +2, getPlayerY() -1, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() -2, getPlayerY() -1, getPlayerZ() -3, 49, 0);
+              
+                Level.setTile(getPlayerX() +2, getPlayerY() +1, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() -2, getPlayerY() +1, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() +2, getPlayerY() +2, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() -2, getPlayerY() +2, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() +2, getPlayerY() +3, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() -2, getPlayerY() +3, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() +2, getPlayerY() +4, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() -2, getPlayerY() +4, getPlayerZ() -3, 49, 0);
+                
+                Level.setTile(getPlayerX(), getPlayerY() +4, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() +1, getPlayerY() +4, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() -1, getPlayerY() +4, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() +2, getPlayerY(), getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() -2, getPlayerY(), getPlayerZ() -3, 49, 0);
+                
+                Level.setTile(getPlayerX(), getPlayerY() +1, getPlayerZ() -3, 90, 0);
+                Level.setTile(getPlayerX() +1, getPlayerY() +1, getPlayerZ() -3, 90, 0);
+                Level.setTile(getPlayerX() -1, getPlayerY() +1, getPlayerZ() -3, 90, 0);
+                
+                 Level.setTile(getPlayerX(), getPlayerY(), getPlayerZ() -3, 90, 0);
+                Level.setTile(getPlayerX() +1, getPlayerY(), getPlayerZ() -3, 90, 0);
+                Level.setTile(getPlayerX() -1, getPlayerY(), getPlayerZ() -3, 90, 0);
+                
+                Level.setTile(getPlayerX(), getPlayerY() +2, getPlayerZ() -3, 90, 0);
+                Level.setTile(getPlayerX() +1, getPlayerY() +2, getPlayerZ() -3, 90, 0);
+                Level.setTile(getPlayerX() -1, getPlayerY() +2, getPlayerZ() -3, 90, 0);
+                
+                Level.setTile(getPlayerX(), getPlayerY() +3, getPlayerZ() -3, 90, 0);
+                Level.setTile(getPlayerX() +1, getPlayerY() +3, getPlayerZ() -3, 90, 0);
+                Level.setTile(getPlayerX() -1, getPlayerY() +3, getPlayerZ() -3, 90, 0);
+                }
+Dialog.dismiss();
+showMenuBtn();
+                }
+            }));
+             
+            select2.setText("Use fire block");
+            select2.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+useFire = true;
+if(useFire){
+                Level.setTile(getPlayerX(), getPlayerY() -1, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() +1, getPlayerY() -1, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() -1, getPlayerY() -1, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() +2, getPlayerY() -1, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() -2, getPlayerY() -1, getPlayerZ() -3, 49, 0);
+              
+                Level.setTile(getPlayerX() +2, getPlayerY() +1, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() -2, getPlayerY() +1, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() +2, getPlayerY() +2, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() -2, getPlayerY() +2, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() +2, getPlayerY() +3, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() -2, getPlayerY() +3, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() +2, getPlayerY() +4, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() -2, getPlayerY() +4, getPlayerZ() -3, 49, 0);
+                
+                Level.setTile(getPlayerX(), getPlayerY() +4, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() +1, getPlayerY() +4, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() -1, getPlayerY() +4, getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() +2, getPlayerY(), getPlayerZ() -3, 49, 0);
+                Level.setTile(getPlayerX() -2, getPlayerY(), getPlayerZ() -3, 49, 0);
+                
+                Level.setTile(getPlayerX(), getPlayerY() +1, getPlayerZ() -3, 51, 0);
+                }
+Dialog.dismiss();
+showMenuBtn();
+                }
+            }));
+
+new9.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+new9.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+new9.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("error: "+e);
+}
+}});
+}
+
+function new3() {
+MainActivity.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+new3 = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(MainActivity);
+var select1 = new Button(MainActivity);
+var select2 = new Button(MainActivity);
+var select3 = new Button(MainActivity);
+var select4 = new Button(MainActivity);
+var Exit = new Button(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+ 
+Dialog.setTitle("Select");
+Dialog.setContentView(Layer);
+ 
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+ 
+Layer.addView(select1);
+
+Layer.addView(select2);
+
+Layer.addView(select3);
+
+Layer.addView(select4);
+
+Layer.addView(Exit);
+ 
+            select1.setText("Lightning");
+            select1.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+ lightning = true;
+if(primedtnt==true)primedtnt = false;
+if(arrow==true)arrow = false;
+if(exporb==true)exporb = false;
+Dialog.dismiss();
+showMenuBtn();
+                }
+            }));
+             
+            select2.setText("Primed tnt");
+            select2.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+ primedtnt = true;
+if(lightning==true)lightning = false;
+if(arrow==true)arrow = false;
+if(exporb==true)exporb = false;
+Dialog.dismiss();
+showMenuBtn();
+                }
+            }));
+			
+			select3.setText("Arrow");
+            select3.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+ arrow = true;
+if(lightning==true)lightning = false;
+if(primedtnt==true)primedtnt = false;
+if(exporb==true)exporb = false;
+Dialog.dismiss();
+showMenuBtn();
+                }
+            }));
+			
+			select4.setText("Exp orb");
+            select4.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+ exporb = true;
+if(lightning==true)lightning = false;
+if(primedtnt==true)primedtnt = false;
+if(arrow==true)arrow = false;
+Dialog.dismiss();
+showMenuBtn();
+                }
+            }));
+	
+Exit.setText("Off");
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ exporb = false;
+ lightning = false;
+ arrow = false;
+ primedtnt = false;
+Dialog.dismiss();
+showMenuBtn();
+}
+});
+ 
+new3.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+new3.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+new3.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("ent spawn Dialog error:"+e);
+}
+}});
+}
+
+function new2() {
+MainActivity.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+new2 = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(MainActivity);
+var select1 = new Button(MainActivity);
+var select2 = new Button(MainActivity);
+var select3 = new Button(MainActivity);
+var ddf = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new Button(MainActivity);
+ 
+Dialog.setTitle("Select");
+Dialog.setContentView(Layer);
+ 
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+ 
+Layer.addView(select1);
+Layer.addView(select2);
+//Layer.addView(select3);
+Layer.addView(ddf);
+Layer.addView(Exit);
+ 
+            select1.setText("Use lava?");
+            select1.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+ clientMessage(client + "§7Face a block to see!");
+ vid = 11;
+grief = true;
+                }
+            }));
+             
+            select2.setText("Use water?");
+            select2.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+ clientMessage(client + "§7Face a block to see!");
+ vid = 8;
+grief = true;
+                }
+            }));
+			
+			ddf.setText("");
+ddf.setHint("Pick item ID");
+			
+			
+Exit.setText("done");
+ 
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ 
+ vid =ddf.getText();
+ grief = true;
+Dialog.dismiss();
+showMenuBtn();
+}
+});
+ 
+new2.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+new2.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+new2.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("Error :"+e);
+}
+}});
+}
+
+function named() {
+MainActivity.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer8 = new android.widget.LinearLayout(MainActivity);
+var ntd = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new Button(MainActivity);
+
+Dialog.setTitle("Enter difficulty");
+Dialog.setContentView(Layer8);
+
+Layer8.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer8.addView(ntd);
+Layer8.addView(Exit);
+
+ntd.setText("");
+ntd.setHint("0 = peaceful, 1 = normal, 2 = medium, 3 = hard");
+Exit.setText("done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+nametd =ntd.getText();
+Dialog.dismiss();
+setdiff();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The setdiff Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function setdiff(){
+Level.setDifficulty(nametd);
+}
+
+function nameMe() {
+MainActivity.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer8 = new android.widget.LinearLayout(MainActivity);
+var nt = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new Button(MainActivity);
+
+Dialog.setTitle("Enter nickname");
+Dialog.setContentView(Layer8);
+
+Layer8.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer8.addView(nt);
+Layer8.addView(Exit);
+
+nt.setText("");
+nt.setHint("New nickname");
+Exit.setText("done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+nametgg =nt.getText();
+Dialog.dismiss();
+setName();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The setName Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function setName(){
+Entity.setNameTag(Player.getEntity(), nametgg);
+Server.sendChat("/nick set " + nametgg);
+}
+
+function block1() {
+MainActivity.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer8 = new android.widget.LinearLayout(MainActivity);
+var bd = new android.widget.EditText(MainActivity);
+var bn = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new Button(MainActivity);
+
+Dialog.setTitle("Set block light");
+Dialog.setContentView(Layer8);
+
+Layer8.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer8.addView(bn);
+Layer8.addView(bd);
+Layer8.addView(Exit);
+
+bd.setText("");
+bd.setHint("Block ID");
+bn.setText("");
+bn.setHint("New light level");
+Exit.setText("done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+idm =bd.getText();
+levelm =bn.getText();
+Dialog.dismiss();
+setLight();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The block L Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function setLight(){
+Block.setLightLevel(idm, levelm);
+}
+
+function block2() {
+MainActivity.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer8 = new android.widget.LinearLayout(MainActivity);
+var bi = new android.widget.EditText(MainActivity);
+var br = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new Button(MainActivity);
+
+Dialog.setTitle("Set block resistance");
+Dialog.setContentView(Layer8);
+
+Layer8.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer8.addView(bi);
+Layer8.addView(br);
+Layer8.addView(Exit);
+
+bi.setText("");
+bi.setHint("Block ID");
+br.setText("");
+br.setHint("Explosion resistance");
+Exit.setText("done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+idb =bi.getText();
+resis =br.getText();
+Dialog.dismiss();
+setResis();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The block R Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function setResis(){
+Block.setExplosionResistance(idb, resis);
+}
+
+function newhealth() {
+MainActivity.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer8 = new android.widget.LinearLayout(MainActivity);
+var enh = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new Button(MainActivity);
+
+Dialog.setTitle("Enter new hearts");
+Dialog.setContentView(Layer8);
+
+Layer8.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer8.addView(enh);
+Layer8.addView(Exit);
+
+enh.setText("");
+enh.setHint("Half heart number here");
+Exit.setText("done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+newheart =enh.getText();
+Dialog.dismiss();
+sethealth();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The set health Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function sethealth(){
+Entity.setMaxHealth(getPlayerEnt(), newheart);
+}
+
+function horsehealth1() {
+MainActivity.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer10 = new android.widget.LinearLayout(MainActivity);
+var eha = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new Button(MainActivity);
+
+Dialog.setTitle("Enter new hearts");
+Dialog.setContentView(Layer10);
+
+Layer10.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer10.addView(eha);
+Layer10.addView(Exit);
+
+eha.setText("");
+eha.setHint("Hearts number here");
+Exit.setText("done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+horseheart =eha.getText();
+Dialog.dismiss();
+clientMessage(client + "Tap mob to change health.");
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The set health Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+		function new4() {
+MainActivity.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+fov = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(MainActivity);
+var select1 = new Button(MainActivity);
+var select2 = new Button(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new Button(MainActivity);
+ 
+Dialog.setTitle("Select");
+Dialog.setContentView(Layer);
+ 
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+ 
+Layer.addView(select1);
+Layer.addView(select2);
+//Layer.addView(Exit);
+ 
+            select1.setText("Child");
+            select1.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+ newage = "-2000";
+ Dialog.dismiss();
+showMenuBtn();
+                }
+            }));
+             
+            select2.setText("Adult");
+            select2.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+ newage = "0";
+ Dialog.dismiss();
+showMenuBtn();
+                }
+            }));
+			
+Exit.setText("done");
+ 
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ 
+Dialog.dismiss();
+showMenuBtn();
+}
+});
+ 
+new3.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+new3.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+new3.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The new Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function XGive() {
+MainActivity.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(MainActivity);
+var XP = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new Button(MainActivity);
+
+Dialog.setTitle("Enter XP Amount");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(XP);
+Layer.addView(Exit);
+
+XP.setText("");
+XP.setHint("EXP");
+Exit.setText("GET exp");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+L=XP.getText();
+Dialog.dismiss();
+XG();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The XP Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function XG() {
+Server.getPort()
+Player.setLevel(Math.round(L));
+if(Server.getPort()!="0")Server.sendChat("/xp " + L + space + Player.getName(Player.getEntity()));
+}
+
+function Give() {
+MainActivity.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(MainActivity);
+var ID = new android.widget.EditText(MainActivity);
+var Amount = new android.widget.EditText(MainActivity);
+var Damage = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new Button(MainActivity);
+
+Dialog.setTitle("Enter ID,Amt,Dmg");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(ID);
+Layer.addView(Amount);
+Layer.addView(Damage);
+Layer.addView(Exit);
+
+ID.setText("");
+ID.setHint("Item ID");
+Amount.setText("");
+Amount.setHint("Item Amount");
+Damage.setText("");
+Damage.setHint("Item Damage");
+Exit.setText("Give items");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+I=ID.getText();
+A=Amount.getText();
+D=Damage.getText();
+Dialog.dismiss();
+give2();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Give Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function give2() {
+Player.addItemInventory(I,A,D);
+Server.sendChat("/give " + Player.getName(Player.getEntity()) + space + I + ":" + D + space + A);
+}
+
+function newn() {
+MainActivity.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+newn = new android.widget.PopupWindow();
+var Layerb5 = new android.widget.LinearLayout(MainActivity);
+var nNuke = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new Button(MainActivity);
+
+Dialog.setTitle("Enter nuke amount");
+Dialog.setContentView(Layerb5);
+
+Layerb5.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layerb5.addView(nNuke);
+Layerb5.addView(Exit);
+
+nNuke.setText("");
+nNuke.setHint("Amount");
+Exit.setText("Nuke");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+lenuke =nNuke.getText();
+Dialog.dismiss();
+setNuke();
+showMenuBtn();
+}
+});
+
+newn.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+newn.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+newn.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The newn Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+					
+			function setNuke(){
+			   explode(getPlayerX(),getPlayerY(),getPlayerZ(),lenuke);
+			   }
+
+function newspeed() {
+MainActivity.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer8 = new android.widget.LinearLayout(MainActivity);
+var vspee = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new Button(MainActivity);
+
+Dialog.setTitle("Enter custom speed");
+Dialog.setContentView(Layer8);
+
+Layer8.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer8.addView(vspee);
+Layer8.addView(Exit);
+
+vspee.setText("");
+vspee.setHint("numbers here");
+Exit.setText("done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+nspee =vspee.getText();
+Dialog.dismiss();
+setspeed();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The set speed Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function setspeed(){
+ModPE.setGameSpeed(nspee);
+}
+
+function Tsele() {
+MainActivity.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(MainActivity);
+var X = new android.widget.EditText(MainActivity);
+var Y = new android.widget.EditText(MainActivity);
+var Z = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new Button(MainActivity);
+
+Dialog.setTitle("Type coords to teleport");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(X);
+Layer.addView(Y);
+Layer.addView(Z);
+Layer.addView(Exit);
+
+X.setText("");
+X.setHint("X");
+Y.setText("");
+Y.setHint("Y");
+Z.setText("");
+Z.setHint("Z");
+Exit.setText("Teleport");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+px=X.getText();
+py=Y.getText();
+pz=Z.getText();
+Dialog.dismiss();
+setTp();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Teleport Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function setTp() {
+Entity.setPosition(Player.getEntity(), px, py, pz);
+Server.sendChat("/tp " + Player.getName(Player.getEntity()) + space + px + space + py + space + pz);
+}
+
 function atact() {
 MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
@@ -12484,3 +12473,4 @@ function rptask() {
     }))
 }
 rptask()
+
