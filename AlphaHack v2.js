@@ -1729,6 +1729,70 @@ dialog.show();
 		});
 		miscLayout.addView(ht4);
 
+var ht5 = new Button(MainActivity);
+		ht5.setText("How to delete pg chests");
+		ht5.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+var alert = new android.app.AlertDialog.Builder(MainActivity); 
+/*alert.setTitle(""); */
+
+var scroll = new android.widget.ScrollView(MainActivity); 
+var layout = new android.widget.LinearLayout(MainActivity); 
+layout.setOrientation(1);
+
+alert.setTitle("How to delete pg chests");
+ alert.setMessage("To delete chests that are locked with /pg command\nPlace water on the block the chest is placed on,\nThen the chest will disappear along with the items inside of the chest.\nThere is no possible way to take the items.-ArceusMatt\n(This may get patched soon last checked was 9/10/2016)");
+
+alert.setPositiveButton("Exit all", new android.content.DialogInterface.OnClickListener(){ 
+  onClick: function(viewarg){
+    
+dialog.dismiss();
+misc.dismiss();
+      }});
+
+alert.setNegativeButton("Back to menu", new android.content.DialogInterface.OnClickListener(){ 
+   onClick: function(viewarg){
+
+dialog.dismiss();
+      }});
+var dialog = alert.create();
+dialog.show();
+			}
+		});
+		miscLayout.addView(ht5);
+		
+var ht6 = new Button(MainActivity);
+		ht6.setText("How to clear players items");
+		ht6.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+var alert = new android.app.AlertDialog.Builder(MainActivity); 
+/*alert.setTitle(""); */
+
+var scroll = new android.widget.ScrollView(MainActivity); 
+var layout = new android.widget.LinearLayout(MainActivity); 
+layout.setOrientation(1);
+
+alert.setTitle("How to clear players items");
+ alert.setMessage("To clear the inventory of a player you'll need AlphaHack\nCheck if a server has 'always spawn' plugin\nIf it does not, go on the server with the players username\nOpen AlphaHack and select 'clear inventory'\nThen when you log off all the items will drop or disappear.-ArceusMatt\n(This may get patched soon last checked was 9/10/2016)");
+
+alert.setPositiveButton("Exit all", new android.content.DialogInterface.OnClickListener(){ 
+  onClick: function(viewarg){
+    
+dialog.dismiss();
+misc.dismiss();
+      }});
+
+alert.setNegativeButton("Back to menu", new android.content.DialogInterface.OnClickListener(){ 
+   onClick: function(viewarg){
+
+dialog.dismiss();
+      }});
+var dialog = alert.create();
+dialog.show();
+			}
+		});
+		miscLayout.addView(ht6);
+
 var cidban = new Button(MainActivity);
             cidban.setText("CID/dev pardon"); 
             cidban.setOnClickListener(new View.OnClickListener({
