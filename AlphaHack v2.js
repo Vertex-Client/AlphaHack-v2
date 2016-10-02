@@ -984,18 +984,17 @@ var urls3 = new Intent(MainActivity);
 	
 	
             var hideAH = new Button(MainActivity);
-            if(hide==false)hideAH.setText("Hide AlphaHack");  
+            hideAH.setText("Hide AlphaHack");  
 	    if(hide==true)hideAH.setText("Unhide AlphaHack"); 
             hideAH.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 hide?hide=false:hide=true;
-hideAH.setText("Unhide AlphaHack");
 if(hide == true){
-
+hideAH.setText("Unhide AlphaHack");
 hide = true;
 }
 if(hide == false){
-
+hideAH.setText("Hide AlphaHack");
 hide = false;
 }
                 }
