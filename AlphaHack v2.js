@@ -60,7 +60,6 @@ var Dialog = android.app.Dialog;
 var WebView = android.webkit.WebView;
 var Alert = android.app.AlertDialog.Builder;
 
-
 //Defines
 //define gui incase of error
 var GUI;
@@ -555,7 +554,6 @@ ModPE.langEdit("container.furnace",viddd + ModPE.getI18n("container.furnace"));
 ModPE.langEdit("container.hopper",viddd + ModPE.getI18n("container.hopper"));
 ModPE.langEdit("container.inventory",viddd + ModPE.getI18n("container.inventory"));
 ModPE.langEdit("container.minecart",viddd + ModPE.getI18n("container.minecart"));
-ModPE.langEdit("container.repair",viddd + ModPE.getI18n("container.repair"));
 ModPE.langEdit("container.stonecutter",viddd + ModPE.getI18n("container.stonecutter"));
 ModPE.langEdit("container.anvil",viddd + ModPE.getI18n("container.anvil"));
 ModPE.langEdit("container.enchantingTable",viddd + ModPE.getI18n("container.enchantingTable"));
@@ -565,6 +563,12 @@ ModPE.langEdit("tile.enchanting_table.name",viddd + ModPE.getI18n("tile.enchanti
 ModPE.langEdit("tile.anvil.name",viddd + ModPE.getI18n("tile.anvil.name"));
 ModPE.langEdit("container.enderchest",viddd + ModPE.getI18n("container.enderchest"));
 ModPE.langEdit("cauldronScreen.header",viddd + ModPE.getI18n("cauldronScreen.header"));
+ModPE.langEdit("externalServerScreen.header",viddd + ModPE.getI18n("externalServerScreen.header"));
+ModPE.langEdit("gui.achievements",viddd + ModPE.getI18n("gui.achievements"));
+ModPE.langEdit("gui.done",viddd + ModPE.getI18n("gui.done"));
+ModPE.langEdit("skins.picker.title",viddd + ModPE.getI18n("skins.picker.title"));
+ModPE.langEdit("skins.picker.accept.button",viddd + ModPE.getI18n("skins.picker.accept.button"));
+ModPE.langEdit("options.title",viddd + ModPE.getI18n("options.title"));
 ModPE.langEdit("death.attack.mob",viddd + ModPE.getI18n("death.attack.mob"));
 ModPE.langEdit("death.attack.fall",viddd + ModPE.getI18n("death.attack.fall"));
 ModPE.langEdit("death.attack.explosion",viddd + ModPE.getI18n("death.attack.explosion"));
