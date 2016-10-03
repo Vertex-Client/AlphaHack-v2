@@ -69,6 +69,7 @@ var menu;
 //define active incase of error
 var active;
 var update;
+var newUpdate;
 //define counting variable
 var num0 = 0;
 //idek
@@ -80,9 +81,9 @@ var text = "AlphαHαck!";
 //define an auto space variable
 var space = " ";
 //define version
-var version = "0.8.4";
+var version = "0.8.2";
 //if version is version change version to beta
-if(version=="0.8.4")version = "Beta";
+if(version=="0.8.2")version = "Beta";
 //tracer define length
 var chestTracersRange = 10;
 //tracer define mode
@@ -423,8 +424,7 @@ function getUpdate(callback){
 var r = new java.lang.Runnable({
         run: function() {
             try {
-                var u = new java.net.URL("https://arceusmatt.github.io/update");
-                var c = u.openConnection();
+                /*var c = u.openConnection();
                 c.setRequestMethod("GET");
                 c.setDoOutput(true);
                 c.connect();
@@ -445,7 +445,18 @@ callback(new Array(update.version));
 }else{
 print("Error");
 callback(new Array("Error"));
-}
+}*/
+		        var u = new java.net.URL("https://raw.githubusercontent.com/ArceusMatt/AlphaHack-v2/master/Version.txt");
+			var update = new java.lang.StringBuilder();
+			var reader = new java.io.BufferedReader(new java.io.InputStreamReader(u.openStream()));
+			var line = "";
+		        while ((line = reader.readLine()) != null) {
+				update.append(line);
+					}
+		        reader.close();
+			newUpdate = update.toString().split("\n");
+		        if(newUpdate!=version)clientMessage("New update test");
+		        if(newUpdate==version)clientMessage("No update test");
                 }catch(e){
                 	
                 clientMessage(e+"");
