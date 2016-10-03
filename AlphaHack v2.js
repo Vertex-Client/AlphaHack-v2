@@ -8945,6 +8945,24 @@ var spawn70 = new Button(MainActivity);
                 }
             }));
             spawnLayout.addView(spawn80);
+	
+	var spawnP = new Button(MainActivity);
+            spawnP.setText("Spawn Player");            
+            spawnP.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 63);
+                }
+            }));
+            spawnLayout.addView(spawnP);
+	
+	var spawnT = new Button(MainActivity);
+            spawnT.setText("Spawn Item");            
+            spawnT.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 64);
+                }
+            }));
+            spawnLayout.addView(spawnT);
 
             spawn = new PopupWindow(spawnLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)spawn.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
