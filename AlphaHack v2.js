@@ -12343,8 +12343,8 @@ function getNearestEntity(maxrange) {
 }
 		}
 
-function crosshairAimAt(ent, pos) {
-							if(ent != null) {
+               function crosshairAimAt(ent, pos) {
+					if(ent != null) {
 				var x = Entity.getX(ent) - getPlayerX();
 				var y = Entity.getY(ent) - getPlayerY();
 				var z = Entity.getZ(ent) - getPlayerZ();
@@ -12545,7 +12545,7 @@ function rptask2() {
  					newX = x + blockX;
   					newY = y + blockY;
   					newZ = z + blockZ;
-					var mobs = Entity.getAll();
+					var mobs = Server.getAllPlayers();
                                         for (var e = 0; e < mobs.length; e++) {
                                         var newX = Entity.getX(mobs[e]) - getPlayerX();
                                         var newY = Entity.getY(mobs[e]) - getPlayerY();
