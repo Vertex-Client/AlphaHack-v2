@@ -80,9 +80,9 @@ var text = "AlphαHαck!";
 //define an auto space variable
 var space = " ";
 //define version
-var version = "0.8.2";
+var version = "0.8.4";
 //if version is version change version to beta
-if(version=="0.8.2")version = "Beta";
+if(version=="0.8.4")version = "Beta";
 //tracer define length
 var chestTracersRange = 10;
 //tracer define mode
@@ -248,6 +248,7 @@ var hitJump = false;
 var nametags = false;
 var attackActions = false;
 var keepHotbar = false;
+var itemIndi = false;
 
 var showActive = false;
 var showActive2 = false;
@@ -2355,17 +2356,28 @@ if(Server.getAddress()=="null" || Server.getPort()=="0")clientMessage(client + "
                 }
             }));
             cheatLayout.addView(svr);
-            
-            var itemInfo = new Button(MainActivity);
-            itemInfo.setText("Item indicator"); 
-            itemInfo.setOnClickListener(new View.OnClickListener({
+	
+	var butfuon1 = new Button(MainActivity);
+butfuon1.setText("Item indicator");
+butfuon1.setTextColor(Color.RED);
+if(itemIndi==true)butfuon1.setTextColor(Color.GREEN);
+            butfuon1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-clientMessage(client + "Item ID: " + Player.getCarriedItem());
-clientMessage(client + "Data / damage: " + Player.getCarriedItemData());
-clientMessage(client + "Amount in hand: " + Player.getCarriedItemCount());
+             itemIndi?itemIndi=false:itemIndi=true;
+butfuon1.setText("Item indicator");
+if(itemIndi== true){
+butfuon1.setTextColor(Color.GREEN);
+clientMessage(client+"Item info on");
+itemIndi= true;
+}
+if(itemIndi== false){
+butfuon1.setTextColor(Color.RED);
+clientMessage(client+"Item info off");
+itemIndi= false;
+}
                 }
             }));
-            cheatLayout.addView(itemInfo);
+            cheatLayout.addView(butfuon1);
 	    
 	    var button4 = new Button(MainActivity);
 button4.setText("Armor indicator");
@@ -2611,8 +2623,8 @@ autodestroy2 = true;
 }
 if(autodestroy2 == false){
 button13.setTextColor(Color.RED);
-if(autodestroy==true)autodestroy = false;
-if(extraj==true)extraj = false;
+autodestroy = false;
+extraj = false;
 autodestroy2 = false;
 }
                 }
@@ -10539,12 +10551,8 @@ if(coords)ModPE.showTipMessage(client + "\nX "+Math.round(getPlayerX())+", Y "+M
 if(armor)ModPE.showTipMessage(client + "\nHead: " + Entity.getArmorDamage(getPlayerEnt(), 0) + " Chest: " + Entity.getArmorDamage(getPlayerEnt(), 1) + " Legs: " + Entity.getArmorDamage(getPlayerEnt(), 2) + " Feet: " + Entity.getArmorDamage(getPlayerEnt(), 3));
 if(autonuke)explode(getPlayerX(),getPlayerY(),getPlayerZ(),5);
 if(grief)Level.setTile(Player.getPointedBlockX(), Player.getPointedBlockY(), Player.getPointedBlockZ(), vid, 0);
-if(getvel){
-ModPE.showTipMessage("VelX: "+Math.round(Entity.getVelX(getPlayerEnt()))+" VelY "+Math.round(Entity.getVelY(getPlayerEnt()))+" VelZ "+Math.round(Entity.getVelZ(getPlayerEnt())));
-}
-if(yawpitch){
-ModPE.showTipMessage("pitch: "+Math.round(getPitch(getPlayerEnt()))+" \nYaw: "+Math.round(getYaw(getPlayerEnt()))+" ");
-}
+if(getvel)ModPE.showTipMessage("VelX: "+Math.round(Entity.getVelX(getPlayerEnt()))+" VelY "+Math.round(Entity.getVelY(getPlayerEnt()))+" VelZ "+Math.round(Entity.getVelZ(getPlayerEnt())));
+if(yawpitch)ModPE.showTipMessage("pitch: "+Math.round(getPitch(getPlayerEnt()))+" \nYaw: "+Math.round(getYaw(getPlayerEnt()))+" ");
 if(airwalk){
 if(Level.getTile(getPlayerX(), getPlayerY() -2, getPlayerZ())=="0" || Level.getTile(getPlayerX(), getPlayerY() -2, getPlayerZ())=="95"){
 	Level.setTile(getPlayerX() +1, getPlayerY() -2, getPlayerZ(), 95, 0);
@@ -10615,6 +10623,7 @@ if (spider && Utils.Player.isCollidedHorizontally()) {
 		}
 	}
 	if(keepHotbar)keepSlot();
+	if(itemIndi)ModPE.showTipMessage(client+"\nHeld: "+Player.getCarriedItem()+":"+Player.getCarriedItemData()+", Amount: "+Player.getCarriedItemCount());
 }
 
 function toDirectionalVector(dir, a, b) {
@@ -10964,6 +10973,9 @@ Layer.addView(Exit);
                 onClick: function(viewarg){
  clientMessage(client + "§7Face a block to see!");
  autodestroy = true;
+if(Level.getGameMode()=="2")vidd=true;
+if(Level.getGameMode()=="1")vidd=false;
+if(Level.getGameMode()=="0")vidd=true;
  Dialog.dismiss();
 showMenuBtn();
                 }
@@ -10974,6 +10986,9 @@ showMenuBtn();
                 onClick: function(viewarg){
  clientMessage(client + "§7Face a block to see!");
 extraj = true;
+if(Level.getGameMode()=="2")vidd=true;
+if(Level.getGameMode()=="1")vidd=false;
+if(Level.getGameMode()=="0")vidd=true;
 Dialog.dismiss();
 showMenuBtn();
                 }
