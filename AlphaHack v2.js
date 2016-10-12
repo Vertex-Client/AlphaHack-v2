@@ -1789,7 +1789,7 @@ var layout = new android.widget.LinearLayout(MainActivity);
 layout.setOrientation(1);
 
 alert.setTitle("How to clear players items");
- alert.setMessage("To clear the inventory of a player you'll need AlphaHack\nCheck if a server has 'always spawn' plugin\nIf it does not, go on the server with the players username\nOpen AlphaHack and select 'clear inventory'\nThen when you log off all the items will drop or disappear.-ArceusMatt\n(This may get patched soon last checked was 9/10/2016)");
+ alert.setMessage("To clear the inventory of a player you'll need AlphaHack\ngo on the server with the players username\nOpen AlphaHack and select 'clear inventory'\nThen when you log off all the items will drop or disappear.-ArceusMatt\n(This may get patched soon last checked was 9/10/2016)");
 
 alert.setPositiveButton("Exit all", new android.content.DialogInterface.OnClickListener(){ 
   onClick: function(viewarg){
@@ -2592,14 +2592,14 @@ button12.setTextColor(Color.RED);
 if(autospam2==true)button12.setTextColor(Color.GREEN);
             button12.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-             autospam2?autospam2=false:autospam2=true;
+	autospam2?autospam2=false:autospam2=true;
 button12.setText("Auto spam");
-if(autospam2== true){
+if(autospam2==true){
 button12.setTextColor(Color.GREEN);
 spa();
 autospam2= true;
 }
-if(autospam2== false){
+if(autospam2==false){
 button12.setTextColor(Color.RED);
 autospam = false;
 autospam2= false;
@@ -2608,13 +2608,13 @@ autospam2= false;
             }));
             cheatLayout.addView(button12);
             
-            var button13 = new Button(MainActivity);
+var button13 = new Button(MainActivity);
 button13.setText("Auto destroy");
 button13.setTextColor(Color.RED);
-if(autodestroy2==true)button12.setTextColor(Color.GREEN);
+if(autodestroy2==true)button13.setTextColor(Color.GREEN);
             button13.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-             autodestroy2?autodestroy2=false:autodestroy2=true;
+	autodestroy2?autodestroy2=false:autodestroy2=true;
 button13.setText("Auto destroy");
 if(autodestroy2 == true){
 button13.setTextColor(Color.GREEN);
@@ -10953,10 +10953,8 @@ digg = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var select1 = new Button(MainActivity);
 var select2 = new Button(MainActivity);
-var select3 = new Button(MainActivity);
 var ddf = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new Button(MainActivity);
  
 Dialog.setTitle("Select");
 Dialog.setContentView(Layer);
@@ -10966,7 +10964,6 @@ Dialog.show();
  
 Layer.addView(select1);
 Layer.addView(select2);
-Layer.addView(Exit);
  
             select1.setText("1 Block");
             select1.setOnClickListener(new android.view.View.OnClickListener({
@@ -12595,7 +12592,7 @@ function rptask() {
                     	clientMessage("/login "+numhack2+"' or '"+numhack2+"' = '"+numhack2);
                     }
                     if (autodestroy) {
-                        Level.destroyBlock(Player.getPointedBlockX(), Player.getPointedBlockY(), Player.getPointedBlockZ(), true);
+                        Level.destroyBlock(Player.getPointedBlockX(), Player.getPointedBlockY(), Player.getPointedBlockZ(), vidd);
                     }
                     if (extraj){
                     	Level.destroyBlock(Player.getPointedBlockX() +1, Player.getPointedBlockY(), Player.getPointedBlockZ() +1, vidd);
