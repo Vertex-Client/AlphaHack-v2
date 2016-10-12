@@ -12550,7 +12550,7 @@ function rptask2() {
                                         var newX = Entity.getX(mobs[e]) - getPlayerX();
                                         var newY = Entity.getY(mobs[e]) - getPlayerY();
                                         var newZ = Entity.getZ(mobs[e]) - getPlayerZ();
-                                        if(Entity.getRenderType(mobs[e]) == 27 || Entity.getEntityTypeId(mobs[e]) == 63 || ){
+                                        if(Entity.getRenderType(mobs[e]) == 27 || Entity.getEntityTypeId(mobs[e]) == 63){
 						AlphaHack.drawTracer(newX, newY, newZ, playerTracersGroundMode=="on"?true:false, playerTracersParticle);
                                         }
                                 }
