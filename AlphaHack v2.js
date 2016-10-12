@@ -17,6 +17,9 @@ var MainActivity = ctx;
 
 //Get language of client side minecraft
 var getLanguage = ModPE.getLanguage();
+/*Thanks to godsoft029 and many others for german translate*/
+/*thanks to MasterProGame & TheNewHEROBRINE for italian translate*/
+
 //get version of client side minecraft
 var getVer = ModPE.getMinecraftVersion();
 
@@ -474,7 +477,7 @@ function newLevel(){
 clientMessage("§2≡≡=======»§a>§9 α §a<§2«======≡≡§f§r");
 clientMessage(client + "\n§aKik§f: ArceusMatt" + "\n" + "§bTwitter§f: @ArceusMatt" + "\n" + "§cGoogle+§f: Arceus matt" + "\n" + "§fYou§4tube§f: Arceus Matt");
 clientMessage("§2≡≡=======»§a>§9 α §a<§2«======≡≡§f§r\n\n");
-getUpdate(function(info){clientMessage("")});
+getUpdate(function(info){});
 }
 
 //change mcpe color text with the remaining text
@@ -955,6 +958,7 @@ group.setOnClickListener(new android.view.View.OnClickListener() {
 
 var settings = new Button(MainActivity);
 settings.setText("Settings");
+	    if(getLanguage=="it_IT")settings.setText("Impostazioni");
 settings.setTextColor(GUIBtns);
 if(mcpetheme==true)settings.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 settings.setOnClickListener(new android.view.View.OnClickListener() {
@@ -4271,6 +4275,7 @@ modLayout1.setPadding(20,0,20,0);
 
 var effect = new Button(MainActivity);
 effect.setText("Effect menu");
+if(getLanguage=="it_IT")effect.setText("Menu effetti");
 effect.setTextColor(GUIBtns);
 if(mcpetheme==true)effect.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 effect.setOnClickListener(new android.view.View.OnClickListener() {
@@ -5663,6 +5668,7 @@ effectLayout1.setPadding(20,0,20,0);
 		
 var enchant = new Button(MainActivity);
 enchant.setText("Enchant menu");
+if(getLanguage=="it_IT")enchant.setText("Menu incantamenti");
 enchant.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")enchant.setText("Verzauberungs menu");
 if(mcpetheme==true)enchant.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
@@ -7130,6 +7136,7 @@ enchantLayout1.setPadding(20,0,20,0);
 		
 var give = new Button(MainActivity);
 give.setText("Give menu");
+if(getLanguage=="it_IT")give.setText("Menu give");
 give.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")give.setText("Geben menu");
 if(mcpetheme==true)give.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
@@ -7327,6 +7334,7 @@ giveLayout1.setPadding(20,0,20,0);
 		
 var morph = new Button(MainActivity);
 morph.setText("Morph menu");
+if(getLanguage=="it_IT")morph.setText("Menu trasformazioni");
 morph.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")morph.setText("Verwandelungs menu");
 if(mcpetheme==true)morph.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
@@ -7806,6 +7814,7 @@ morphLayout1.setPadding(20,0,20,0);
 		
 var nuke = new Button(MainActivity);
 nuke.setText("Nuke menu");
+if(getLanguage=="it_IT")nuke.setText("Menu esplosioni");
 nuke.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")nuke.setText("Vernichtungs menu");
 if(mcpetheme==true)nuke.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
@@ -7996,6 +8005,7 @@ nukeLayout1.setPadding(20,0,20,0);
 		
 var particle = new Button(MainActivity);
 particle.setText("Particle menu");
+if(getLanguage=="it_IT")particle.setText("Menu particelle");
 particle.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")particle.setText("Partikel menu");
 if(mcpetheme==true)particle.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
@@ -8557,6 +8567,7 @@ particleLayout1.setPadding(20,0,20,0);
 		
 var spawn = new Button(MainActivity);
 spawn.setText("Spawn menu");
+if(getLanguage=="it_IT")spawn.setText("Menu spawner");
 spawn.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")spawn.setText("Erschaffungs menu");
 if(mcpetheme==true)spawn.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
@@ -8993,6 +9004,7 @@ spawnLayout1.setPadding(20,0,20,0);
 		
 var speed = new Button(MainActivity);
 speed.setText("Speed menu");
+if(getLanguage=="it_IT")speed.setText("Menu velocita");
 speed.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")speed.setText("Schnelligkeits menu");
 if(mcpetheme==true)speed.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
@@ -9250,6 +9262,7 @@ speedLayout1.setPadding(20,0,20,0);
 		
 var teleport = new Button(MainActivity);
 teleport.setText("Teleport menu");
+if(getLanguage=="it_IT")teleport.setText("Menu teletrasporto");
 teleport.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")teleport.setText("Teleportierungs menu");
 if(mcpetheme==true)teleport.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
@@ -9377,6 +9390,7 @@ teleportLayout1.setPadding(20,0,20,0);
 		
 var time = new Button(MainActivity);
 time.setText("Time menu");
+if(getLanguage=="it_IT")time.setText("Menu tempo");
 time.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")time.setText("Zeit menu");
 if(mcpetheme==true)time.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
@@ -9685,6 +9699,7 @@ timeLayout1.setPadding(20,0,20,0);
 		
 var weather = new Button(MainActivity);
 weather.setText("Weather menu");
+if(getLanguage=="it_IT")weather.setText("Menu del tempo");
 weather.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")weather.setText("Wetter menu");
 if(mcpetheme==true)weather.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
