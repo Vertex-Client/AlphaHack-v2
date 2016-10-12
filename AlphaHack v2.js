@@ -12318,6 +12318,7 @@ function getNearestEntity(maxrange) {
 			var players = Server.getAllPlayers();
 			var small = maxrange;
 			var ent = null;
+	if(mobs!=null && players!=null){
 			for (var i = 0; i < mobs.length; i++) {
 				var x = Entity.getX(mobs[i]) - getPlayerX();
 				var y = Entity.getY(mobs[i]) - getPlayerY();
@@ -12339,6 +12340,7 @@ function getNearestEntity(maxrange) {
 				}
 			}
 			return ent;
+}
 		}
 
 function crosshairAimAt(ent, pos) {
@@ -12545,10 +12547,10 @@ function rptask2() {
   					newZ = z + blockZ;
 					var mobs = Entity.getAll();
                                         for (var e = 0; e < mobs.length; e++) {
-                                        var newX = Entity.getX(mobs[e]);
-                                        var newY = Entity.getY(mobs[e]);
-                                        var newZ = Entity.getZ(mobs[e]);
-                                        if(Entity.getEntityTypeId(mobs[e]) == 27 || Entity.getEntityTypeId(mobs[e]) == 65){
+                                        var newX = Entity.getX(mobs[e]) - getPlayerX();
+                                        var newY = Entity.getY(mobs[e]) - getPlayerY();
+                                        var newZ = Entity.getZ(mobs[e]) - getPlayerZ();
+                                        if(Entity.getRenderType(mobs[e]) == 27 || Entity.getEntityTypeId(mobs[e]) == 63 || ){
 						AlphaHack.drawTracer(newX, newY, newZ, playerTracersGroundMode=="on"?true:false, playerTracersParticle);
                                         }
                                 }
