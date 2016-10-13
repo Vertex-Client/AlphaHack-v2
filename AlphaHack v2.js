@@ -252,6 +252,7 @@ var nametags = false;
 var attackActions = false;
 var keepHotbar = false;
 var itemIndi = false;
+var bhop = false;
 
 var showActive = false;
 var showActive2 = false;
@@ -3675,6 +3676,29 @@ attackActions = false;
                 }
             }));
             cheatLayout.addView(atkact);
+
+var butfuon2 = new Button(MainActivity);
+butfuon2.setText("Bunny hop");
+butfuon2.setTextColor(Color.RED);
+if(bhop==true)butfuon2.setTextColor(Color.GREEN);
+            butfuon2.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             bhop?bhop=false:bhop=true;
+butfuon2.setText("Bunny hop");
+if(bhop== true){
+butfuon2.setTextColor(Color.GREEN);
+clientMessage(client+"Bunny hop on");
+	Toast.makeText(MainActivity, "Credit: Apric0cks from maximus mod!", 1).show();
+bhop= true;
+}
+if(bhop== false){
+butfuon2.setTextColor(Color.RED);
+clientMessage(client+"Bunny hop off");
+bhop= false;
+}
+                }
+            }));
+            cheatLayout.addView(butfuon2);
 
 var exit2 = new Button(MainActivity);
 		exit2.setText("Exit");
@@ -10639,6 +10663,27 @@ if (spider && Utils.Player.isCollidedHorizontally()) {
 	}
 	if(keepHotbar)keepSlot();
 	if(itemIndi)ModPE.showTipMessage(client+"\nHeld: "+Player.getCarriedItem()+":"+Player.getCarriedItemData()+", Amount: "+Player.getCarriedItemCount());
+	if(bhop){
+		if(Entity.getVelX(Player.getEntity())>0.1){
+			if(getTile(Player.getX(), Player.getY()-2 Player.getZ())>0){
+				Entity.setVelY(Player.getEntity(), 0.5)
+			}
+		}
+		if(Entity.getVelX(Player.getEntity())<-0.1){
+			if(getTile(Player.getX(), Player.getY()-2 Player.getZ())>0){
+				Entity.setVelY(Player.getEntity(), 0.5)
+			}
+		}
+		if(Entity.getVelZ(Player.getEntity())>0.1){
+			if(getTile(Player.getX(), Player.getY()-2 Player.getZ())>0){
+				Entity.setVelY(Player.getEntity(), 0.5)
+			}
+		}
+		if(Entity.getVelX(Player.getEntity())<-0.1){
+			if(getTile(Player.getX(), Player.getY()-2 Player.getZ())>0){
+				Entity.setVelY(Player.getEntity(), 0.5)
+			}
+		}
 }
 
 function toDirectionalVector(dir, a, b) {
