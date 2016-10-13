@@ -10665,22 +10665,22 @@ if (spider && Utils.Player.isCollidedHorizontally()) {
 	if(itemIndi)ModPE.showTipMessage(client+"\nHeld: "+Player.getCarriedItem()+":"+Player.getCarriedItemData()+", Amount: "+Player.getCarriedItemCount());
 	if(bhop){
 		if(Entity.getVelX(Player.getEntity())>0.1){
-			if(getTile(Player.getX(), Player.getY()-2 Player.getZ())>0){
+			if(getTile(Player.getX(), Player.getY()-2, Player.getZ())>0){
 				Entity.setVelY(Player.getEntity(), 0.5)
 			}
 		}
 		if(Entity.getVelX(Player.getEntity())<-0.1){
-			if(getTile(Player.getX(), Player.getY()-2 Player.getZ())>0){
+			if(getTile(Player.getX(), Player.getY()-2, Player.getZ())>0){
 				Entity.setVelY(Player.getEntity(), 0.5)
 			}
 		}
 		if(Entity.getVelZ(Player.getEntity())>0.1){
-			if(getTile(Player.getX(), Player.getY()-2 Player.getZ())>0){
+			if(getTile(Player.getX(), Player.getY()-2, Player.getZ())>0){
 				Entity.setVelY(Player.getEntity(), 0.5)
 			}
 		}
 		if(Entity.getVelX(Player.getEntity())<-0.1){
-			if(getTile(Player.getX(), Player.getY()-2 Player.getZ())>0){
+			if(getTile(Player.getX(), Player.getY()-2, Player.getZ())>0){
 				Entity.setVelY(Player.getEntity(), 0.5)
 			}
 		}
