@@ -10684,6 +10684,7 @@ if (spider && Utils.Player.isCollidedHorizontally()) {
 				Entity.setVelY(Player.getEntity(), 0.5)
 			}
 		}
+	}
 }
 
 function toDirectionalVector(dir, a, b) {
