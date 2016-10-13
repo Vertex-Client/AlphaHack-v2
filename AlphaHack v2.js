@@ -934,12 +934,12 @@ if(getLanguage=="en_US")Toast.makeText(MainActivity, "Closed successfully", 1).s
         var line1 = new android.widget.LinearLayout(MainActivity);
 	    line1.setOrientation(0);
 	    
-var title = new TextView(MainActivity);
-            title.setTextSize(15);
-            title.setText("");
-            title.setGravity(Gravity.CENTER);
-            title.setTextColor(GUIName);
-            line1.addView(title);
+var title3 = new TextView(MainActivity);
+            title3.setTextSize(10);
+            title3.setText("hugecraftpe.ml 19130\nplay.castlegames.eu 19132");
+            title3.setGravity(Gravity.CENTER);
+            title3.setTextColor(GUIName);
+            line1.addView(title3);
             
             menuLayout.addView(line1);
 	    
