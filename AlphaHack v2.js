@@ -254,6 +254,7 @@ var attackActions = false;
 var keepHotbar = false;
 var itemIndi = false;
 var bhop = false;
+var alphatext = false;
 
 var showActive = false;
 var showActive2 = false;
@@ -12561,6 +12562,11 @@ function keepSlot(){
 	Player.getCarriedItem();
 	Player.setSelectedSlotId(Player.getCarriedItem());
 }
+
+function replaceAll(search, replacement, str) {
+    var target = str;
+    return target.replace(new RegExp(search, 'g'), replacement);
+};
 
 function toAlphaSpeak(text){
 	var end = text.toUpperCase();
