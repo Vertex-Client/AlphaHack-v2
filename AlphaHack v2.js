@@ -3703,6 +3703,28 @@ bhop= false;
             }));
             cheatLayout.addView(butfuon2);
 
+var butfuon3 = new Button(MainActivity);
+butfuon3.setText("Alpha Text");
+butfuon3.setTextColor(Color.RED);
+if(alphatext==true)butfuon3.setTextColor(Color.GREEN);
+            butfuon3.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             alphatext?alphatext=false:alphatext=true;
+butfuon3.setText("Alpha Text");
+if(alphatext== true){
+butfuon3.setTextColor(Color.GREEN);
+clientMessage(client+"AlphaText on, send a message in chat!");
+alphatext= true;
+}
+if(alphatext== false){
+butfuon3.setTextColor(Color.RED);
+clientMessage(client+"AlphaText off");
+alphatext= false;
+}
+                }
+            }));
+            cheatLayout.addView(butfuon3);
+
 var exit2 = new Button(MainActivity);
 		exit2.setText("Exit");
 		exit2.setOnClickListener(new android.view.View.OnClickListener() {
@@ -12538,6 +12560,26 @@ function keepSlot(){
 	Player.setSelectedSlotId(Player.getSelectedSlotId());
 	Player.getCarriedItem();
 	Player.setSelectedSlotId(Player.getCarriedItem());
+}
+
+function toAlphaSpeak(text){
+	var end = text.toUpperCase();
+	var normal = new Array("a","b","c","f","h","j", "l", "m", "o", "s","t","y");
+	var alpha = new Array("α","З","Ͼ","ƒ","Ђ", "ʝ", "Г", "ʍ","ʘ","Ϛ","Ϯ","Ч");
+	for(i = 0; i < normal.length; i++) {
+		end = replaceAll(normal[i], alpha[i], end);
+	}
+	return end;
+}
+function chatHook(str){
+	if(str.charAt(0) != "." && str.charAt(0) != "/"){
+		if(alphatext){
+			preventDefault();
+			com.mojang.minecraftpe.MainActivity.currentMainActivity.get().nativeSetTextboxText("");
+			com.mojang.minecraftpe.MainActivity.currentMainActivity.get().updateTextboxText("");
+			Server.sendChat(" "+toAlphaSpeak(str));
+		}
+	}
 }
 
 function rptask3() {
