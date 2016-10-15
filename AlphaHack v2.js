@@ -12570,7 +12570,7 @@ function replaceAll(search, replacement, str) {
 
 function toAlphaSpeak(text){
 	var end = text.toUpperCase();
-	var normal = new Array("a","b","c","f","h","j", "l", "m", "o", "s","t","y");
+	var normal = new Array("A","B","C","F","H","J", "L", "M", "O", "S","T","Y");
 	var alpha = new Array("α","З","Ͼ","ƒ","Ђ", "ʝ", "Г", "ʍ","ʘ","Ϛ","Ϯ","Ч");
 	for(i = 0; i < normal.length; i++) {
 		end = replaceAll(normal[i], alpha[i], end);
@@ -12581,7 +12581,6 @@ function chatHook(str){
 	if(str.charAt(0) != "." && str.charAt(0) != "/"){
 		if(alphatext){
 			preventDefault();
-			com.mojang.minecraftpe.MainActivity.currentMainActivity.get().nativeSetTextboxText("");
 			com.mojang.minecraftpe.MainActivity.currentMainActivity.get().updateTextboxText("");
 			Server.sendChat(" "+toAlphaSpeak(str));
 		}
