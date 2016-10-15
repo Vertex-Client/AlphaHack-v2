@@ -256,6 +256,7 @@ var itemIndi = false;
 var bhop = false;
 var alphatext = false;
 var binarytext = false;
+var zalgotext = false;
 
 var showActive = false;
 var showActive2 = false;
@@ -3748,6 +3749,28 @@ binarytext = false;
                 }
             }));
             cheatLayout.addView(butfuon4);
+
+var butfuon5 = new Button(MainActivity);
+butfuon5.setText("Zalgo text");
+butfuon5.setTextColor(Color.RED);
+if(zalgotext==true)butfuon5.setTextColor(Color.GREEN);
+            butfuon5.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             zalgotext?zalgotext=false:zalgotext=true;
+butfuon5.setText("Zalgo text");
+if(zalgotext == true){
+butfuon5.setTextColor(Color.GREEN);
+clientMessage(client+"Zalgo text on");
+zalgotext = true;
+}
+if(zalgotext == false){
+butfuon5.setTextColor(Color.RED);
+clientMessage(client+"Zalgo text off");
+zalgotext = false;
+}
+                }
+            }));
+            cheatLayout.addView(butfuon5);
 
 var exit2 = new Button(MainActivity);
 		exit2.setText("Exit");
@@ -12593,8 +12616,8 @@ function replaceAll(search, replacement, str) {
 /*Thanks to godsoft029 !*/
 function toAlphaSpeak(text){
 	var end = text.toUpperCase();
-	var normal = new Array("A","B","C","F","H","J", "L", "M", "O", "S","T","Y");
-	var alpha = new Array("α","З","Ͼ","ƒ","Ђ", "ʝ", "Г", "ʍ","ʘ","Ϛ","Ϯ","Ч");
+	var normal = new Array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+	var alpha = new Array("α","в","c","∂","є","ƒ","g","н","ι","נ","к","ℓ","м","η","σ","ρ","q","я","ѕ","т","υ","ν","ω","χ","у","z");
 	for(i = 0; i < normal.length; i++) {
 		end = replaceAll(normal[i], alpha[i], end);
 	}
@@ -12609,6 +12632,15 @@ function toBinarySpeak(text){
 	}
 	return end;
 }
+function toZalgoSpeak(text){
+	var end = text.toUpperCase();
+	var normal = new Array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+	var zalgo = new Array("á̡̢","b́͏҉","c̷̨͘","d̨","e̢͘͡", "f̕͘", "g̶̡", "h́̏ͭ̄̚","i̹̞̱͍̪̙̠̳̰","j̧͢͞","k҉","ļ҉͜","m̸̢","n͈̯̱̝̲̯̬̘̭̫̗̭͈͍ͭ̔͐ͫ́̎̀̉̐ͫ̿̚","ó҉","p͆̌̂̿̊̌","q̢͛ͪ̆ͦ̓̏ͮ","r͝͠","s̨","t͠҉̸","u͏͝","v͏҉̨","w̶̡͜","x̟̗̘̗̅ͣ̐̅","y͔͇̠","Z̦͙̯̯͚̱͓̩̬͕̖̰̭͎̐̄̒ͤ͑̎̐̊̓ͥͬ̈́͌͂͊͟");
+	for(i = 0; i < normal.length; i++) {
+		end = replaceAll(normal[i], zalgo[i], end);
+	}
+	return end;
+}
 function chatHook(str){
 	if(str.charAt(0) != "." && str.charAt(0) != "/"){
 		if(alphatext){
@@ -12620,6 +12652,11 @@ function chatHook(str){
 			preventDefault();
 			com.mojang.minecraftpe.MainActivity.currentMainActivity.get().updateTextboxText("");
 			Server.sendChat(" "+toBinarySpeak(str));
+		}
+		if(zalgotext){
+			preventDefault();
+			com.mojang.minecraftpe.MainActivity.currentMainActivity.get().updateTextboxText("");
+			Server.sendChat(" "+toZalgoSpeak(str));
 		}
 	}
 }
