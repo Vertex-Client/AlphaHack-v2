@@ -255,6 +255,7 @@ var keepHotbar = false;
 var itemIndi = false;
 var bhop = false;
 var alphatext = false;
+var binarytext = false;
 
 var showActive = false;
 var showActive2 = false;
@@ -3725,6 +3726,28 @@ alphatext= false;
                 }
             }));
             cheatLayout.addView(butfuon3);
+
+var butfuon4 = new Button(MainActivity);
+butfuon4.setText("Binary text");
+butfuon4.setTextColor(Color.RED);
+if(binarytext==true)butfuon4.setTextColor(Color.GREEN);
+            butfuon4.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             binarytext?binarytext=false:binarytext=true;
+butfuon4.setText("Binary text");
+if(binarytext == true){
+butfuon4.setTextColor(Color.GREEN);
+clientMessage(client+"Binary text on");
+binarytext = true;
+}
+if(binarytext == false){
+butfuon4.setTextColor(Color.RED);
+clientMessage(client+"Binary text off");
+binarytext = false;
+}
+                }
+            }));
+            cheatLayout.addView(butfuon4);
 
 var exit2 = new Button(MainActivity);
 		exit2.setText("Exit");
@@ -12567,7 +12590,7 @@ function replaceAll(search, replacement, str) {
     var target = str;
     return target.replace(new RegExp(search, 'g'), replacement);
 };
-
+/*Thanks to godsoft029 !*/
 function toAlphaSpeak(text){
 	var end = text.toUpperCase();
 	var normal = new Array("A","B","C","F","H","J", "L", "M", "O", "S","T","Y");
@@ -12577,12 +12600,26 @@ function toAlphaSpeak(text){
 	}
 	return end;
 }
+function toBinarySpeak(text){
+	var end = text.toUpperCase();
+	var normal = new Array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+	var binary = new Array("01100001","01100010","01100011","01100100","01100101", "01100110", "01100111", "01101000","01101001","01101010","01101011","01101100","01101101","01101110","01101111","01110000","01110001","01110010","01110011","01110100","01110101","01110110","01110111","01111000","01111001","01111010");
+	for(i = 0; i < normal.length; i++) {
+		end = replaceAll(normal[i], binary[i], end);
+	}
+	return end;
+}
 function chatHook(str){
 	if(str.charAt(0) != "." && str.charAt(0) != "/"){
 		if(alphatext){
 			preventDefault();
 			com.mojang.minecraftpe.MainActivity.currentMainActivity.get().updateTextboxText("");
 			Server.sendChat(" "+toAlphaSpeak(str));
+		}
+		if(binarytext){
+			preventDefault();
+			com.mojang.minecraftpe.MainActivity.currentMainActivity.get().updateTextboxText("");
+			Server.sendChat(" "+toBinarySpeak(str));
 		}
 	}
 }
