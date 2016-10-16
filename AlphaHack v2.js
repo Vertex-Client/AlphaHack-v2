@@ -258,6 +258,9 @@ var alphatext = false;
 var binarytext = false;
 var zalgotext = false;
 var striketext = false;
+var belowblock = false;
+var preventsame = false;
+var hitparticles = false;
 
 var showActive = false;
 var showActive2 = false;
@@ -3802,6 +3805,30 @@ striketext = false;
             }));
             cheatLayout.addView(butfuon6);
 
+
+
+var butfuon8 = new Button(MainActivity);
+butfuon8.setText("Prevent same message");
+butfuon8.setTextColor(Color.RED);
+if(preventsame==true)butfuon8.setTextColor(Color.GREEN);
+            butfuon8.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             preventsame?preventsame=false:preventsame=true;
+butfuon8.setText("Prevent same message");
+if(preventsame == true){
+butfuon8.setTextColor(Color.GREEN);
+clientMessage(client+"Prevent same message on,\nyou can now bypass ChatFilter & ChatDefender");
+preventsame = true;
+}
+if(preventsame == false){
+butfuon8.setTextColor(Color.RED);
+clientMessage(client+"Prevent same message off");
+preventsame = false;
+}
+                }
+            }));       
+            cheatLayout.addView(butfuon8);
+ 
 var exit2 = new Button(MainActivity);
 		exit2.setText("Exit");
 		exit2.setOnClickListener(new android.view.View.OnClickListener() {
@@ -8975,15 +9002,6 @@ var spawn66 = new Button(MainActivity);
                 }
             }));
             spawnLayout.addView(spawn66);
-
-			var spawn67 = new Button(MainActivity);
-            spawn67.setText("Spawn Endermite");            
-            spawn67.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 67);
-                }
-            }));
-            spawnLayout.addView(spawn67);
 			
 			var spawn68 = new Button(MainActivity);
             spawn68.setText("Spawn Guardian");            
@@ -8993,15 +9011,6 @@ var spawn66 = new Button(MainActivity);
                 }
             }));
             spawnLayout.addView(spawn68);
-			
-			var spawn69 = new Button(MainActivity);
-            spawn69.setText("Spawn Shulker");            
-            spawn69.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 69);
-                }
-            }));
-            spawnLayout.addView(spawn69);
 			
 var spawn70 = new Button(MainActivity);
             spawn70.setText("Spawn Horse");            
@@ -12546,7 +12555,7 @@ function getNearestEntity(maxrange) {
   }
   
 function fastEat(){
-var foodArray = [260, 282, 297, 319, 320, 322, 335, 349, 350, 354, 357, 360, 363, 364, 365, 366, 367, 382, 391, 392, 400, 411, 412, 423, 424];
+var foodArray = new Array("260","282","297","319","320","322","335","349","350","354","357","360","363","364","365","366","367","382","391","392","400","411","412","423","424");
 Player.getCarriedItem();
 for(var i = 0; i < foodArray.length; i++){
     if(Player.getCarriedItem()==foodArray[i]){
@@ -12602,7 +12611,6 @@ if(Entity.getHealth(getPlayerEnt())=="3"){
     i++
     if(i=="1"){
         Server.sendChat("/spawn");
-        Server.sendChat("/afk");
     }
 }
 }
@@ -12611,22 +12619,40 @@ function changeSpeedOnBlock(){
     var x = getPlayerX();
     var y = getPlayerY();
     var z = getPlayerZ();
-    var myArray = [30, 79, 88, 174];
-    getTile(x, y -1, z);
-    getTile(x, y -2, z);
-    getTile(x +1, y, z);
-    getTile(x, y, z +1);
-    getTile(x -1, y, z);
-    getTile(x, y, z -1);
-    getTile(x +1, y -1, z);
-    getTile(x, y -1, z +1);
-    getTile(x -1, y -1, z);
-    getTile(x, y -1, z -1);
-    getTile(x +1, y -2, z);
-    getTile(x, y -2, z +1);
-    getTile(x -1, y -2, z);
-    getTile(x, y -2, z -1);
-	/*other*/
+	var myArray = new Array("30","79","88","174");
+	for(var i = 0; i < myArray.length; i++){
+		/*is*/
+    if(getTile(x, y -1, z)==myArray[i])ModPE.setGameSpeed(100);
+    if(getTile(x, y -2, z)==myArray[i])ModPE.setGameSpeed(100);
+    if(getTile(x +1, y, z)==myArray[i])ModPE.setGameSpeed(100);
+    if(getTile(x, y, z +1)==myArray[i])ModPE.setGameSpeed(100);
+    if(getTile(x -1, y, z)==myArray[i])ModPE.setGameSpeed(100);
+    if(getTile(x, y, z -1)==myArray[i])ModPE.setGameSpeed(100);
+    if(getTile(x +1, y -1, z)==myArray[i])ModPE.setGameSpeed(100);
+    if(getTile(x, y -1, z +1)==myArray[i])ModPE.setGameSpeed(100);
+    if(getTile(x -1, y -1, z)==myArray[i])ModPE.setGameSpeed(100);
+    if(getTile(x, y -1, z -1)==myArray[i])ModPE.setGameSpeed(100);
+    if(getTile(x +1, y -2, z)==myArray[i])ModPE.setGameSpeed(100);
+    if(getTile(x, y -2, z +1)==myArray[i])ModPE.setGameSpeed(100);
+    if(getTile(x -1, y -2, z)==myArray[i])ModPE.setGameSpeed(100);
+    if(getTile(x, y -2, z -1)==myArray[i])ModPE.setGameSpeed(100);
+		/*not*/
+     if(getTile(x, y -1, z)!=myArray[i])ModPE.setGameSpeed(20);
+    if(getTile(x, y -2, z)!=myArray[i])ModPE.setGameSpeed(20);
+    if(getTile(x +1, y, z)!=myArray[i])ModPE.setGameSpeed(20);
+    if(getTile(x, y, z +1)!=myArray[i])ModPE.setGameSpeed(20);
+    if(getTile(x -1, y, z)!=myArray[i])ModPE.setGameSpeed(20);
+    if(getTile(x, y, z -1)!=myArray[i])ModPE.setGameSpeed(20);
+    if(getTile(x +1, y -1, z)!=myArray[i])ModPE.setGameSpeed(20);
+    if(getTile(x, y -1, z +1)!=myArray[i])ModPE.setGameSpeed(20);
+    if(getTile(x -1, y -1, z)!=myArray[i])ModPE.setGameSpeed(20);
+    if(getTile(x, y -1, z -1)!=myArray[i])ModPE.setGameSpeed(20);
+    if(getTile(x +1, y -2, z)!=myArray[i])ModPE.setGameSpeed(20);
+    if(getTile(x, y -2, z +1)!=myArray[i])ModPE.setGameSpeed(20);
+    if(getTile(x -1, y -2, z)!=myArray[i])ModPE.setGameSpeed(20);
+    if(getTile(x, y -2, z -1)!=myArray[i])ModPE.setGameSpeed(20);
+	}
+		/*other*/
 	Block.setFriction(79, 0.6000000238418579);
 	Block.setFriction(174, 0.6000000238418579);
 	Block.setFriction(88, 0.6000000238418579);
@@ -12680,6 +12706,15 @@ function toStrikeSpeak(text){
 	}
 	return end;
 }
+function toSwearSpeak(text){
+	var end = text.toUpperCase();
+	var normal = new Array("BITCH","FUCK"); //TODO
+	var swear = new Array("B¡tch","Fuck"); //TODO
+		for(i = 0; i < normal.length; i++) {
+		end = replaceAll(normal[i], swear[i], end);
+	}
+	return end;
+}
 function chatHook(str){
 	if(str.charAt(0) != "." && str.charAt(0) != "/"){
 		if(alphatext){
@@ -12701,6 +12736,17 @@ function chatHook(str){
 			preventDefault();
 			com.mojang.minecraftpe.MainActivity.currentMainActivity.get().updateTextboxText("");
 			Server.sendChat(" "+toStrikeSpeak(str));
+		}
+		if(preventsame){
+			preventDefault();
+			com.mojang.minecraftpe.MainActivity.currentMainActivity.get().updateTextboxText("");
+			var alphabet1 = new Array("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z");
+			var alphabet2 = new Array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+		for(i = 0; i < alphabet1.length; i++) {
+			var x = 0;
+			x++
+		Server.sendChat(""+alphabet1[i]+" "+x+" "+toSwearSpeak(str)+" "+x+" "+alphabet1[i]);
+	}
 		}
 	}
 }
