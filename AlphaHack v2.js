@@ -257,6 +257,7 @@ var bhop = false;
 var alphatext = false;
 var binarytext = false;
 var zalgotext = false;
+var striketext = false;
 
 var showActive = false;
 var showActive2 = false;
@@ -940,11 +941,18 @@ if(getLanguage=="en_US")Toast.makeText(MainActivity, "Closed successfully", 1).s
 	    line1.setOrientation(0);
 	    
 var title3 = new TextView(MainActivity);
-            title3.setTextSize(10);
-            title3.setText("hugecraftpe.ml 19130\nplay.castlegames.eu 19132");
+            title3.setTextSize(15);
+            title3.setText("hugecraftpe.ml 19130");
             title3.setGravity(Gravity.CENTER);
             title3.setTextColor(GUIName);
             line1.addView(title3);
+		
+		var title4 = new TextView(MainActivity);
+            title4.setTextSize(15);
+            title4.setText("play.castlegames.eu 19132");
+            title4.setGravity(Gravity.CENTER);
+            title4.setTextColor(GUIName);
+            line1.addView(title4);
             
             menuLayout.addView(line1);
 	    
@@ -3771,6 +3779,28 @@ zalgotext = false;
                 }
             }));
             cheatLayout.addView(butfuon5);
+
+var butfuon6 = new Button(MainActivity);
+butfuon6.setText("Strike text");
+butfuon6.setTextColor(Color.RED);
+if(striketext==true)butfuon6.setTextColor(Color.GREEN);
+            butfuon6.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             striketext?striketext=false:striketext=true;
+butfuon6.setText("Strike text");
+if(striketext == true){
+butfuon6.setTextColor(Color.GREEN);
+clientMessage(client+"Strike text on");
+striketext = true;
+}
+if(striketext == false){
+butfuon6.setTextColor(Color.RED);
+clientMessage(client+"Strike text off");
+striketext = false;
+}
+                }
+            }));
+            cheatLayout.addView(butfuon6);
 
 var exit2 = new Button(MainActivity);
 		exit2.setText("Exit");
@@ -12641,6 +12671,15 @@ function toZalgoSpeak(text){
 	}
 	return end;
 }
+function toStrikeSpeak(text){
+	var end = text.toUpperCase();
+	var normal = new Array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+	var strike = new Array("a̶","b̶","c̶","d̶","e̶","f̶","g̶","h̶","i̶","j̶","k̶","l̶","m̶","n̶","o̶","p̶","q̶","r̶","s̶","t̶","u̶","v̶","w̶","x̶","y̶","z̶");
+		for(i = 0; i < normal.length; i++) {
+		end = replaceAll(normal[i], strike[i], end);
+	}
+	return end;
+}
 function chatHook(str){
 	if(str.charAt(0) != "." && str.charAt(0) != "/"){
 		if(alphatext){
@@ -12657,6 +12696,11 @@ function chatHook(str){
 			preventDefault();
 			com.mojang.minecraftpe.MainActivity.currentMainActivity.get().updateTextboxText("");
 			Server.sendChat(" "+toZalgoSpeak(str));
+		}
+		if(striketext){
+			preventDefault();
+			com.mojang.minecraftpe.MainActivity.currentMainActivity.get().updateTextboxText("");
+			Server.sendChat(" "+toStrikeSpeak(str));
 		}
 	}
 }
