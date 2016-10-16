@@ -937,27 +937,20 @@ if(getLanguage=="en_US")Toast.makeText(MainActivity, "Closed successfully", 1).s
         if(betaTestMenu==true)betaMenu();
 
         menuLayout.addView(line0);
-            
-        
-            
-        var line1 = new android.widget.LinearLayout(MainActivity);
-	    line1.setOrientation(0);
-	    
-var title3 = new TextView(MainActivity);
+
+           var title3 = new TextView(MainActivity);
             title3.setTextSize(15);
             title3.setText("hugecraftpe.ml 19130");
             title3.setGravity(Gravity.CENTER);
             title3.setTextColor(GUIName);
-            line1.addView(title3);
+            menuLayout.addView(title3);
 		
-		var title4 = new TextView(MainActivity);
+	   var title4 = new TextView(MainActivity);
             title4.setTextSize(15);
             title4.setText("play.castlegames.eu 19132");
             title4.setGravity(Gravity.CENTER);
             title4.setTextColor(GUIName);
-            line1.addView(title4);
-            
-            menuLayout.addView(line1);
+            menuLayout.addView(title4);
 	    
 var group = new Button(MainActivity);
 group.setText("Community");
@@ -2814,7 +2807,7 @@ brightness = true;
 if(brightness == false){
 light.setTextColor(Color.RED);
 
-light = false;
+brightness = false;
 }
                 }
             }));
@@ -2836,7 +2829,7 @@ fasteat = true;
 if(fasteat == false){
 fe1.setTextColor(Color.RED);
 
-fe1 = false;
+fasteat = false;
 }
                 }
             }));
@@ -3817,7 +3810,7 @@ if(preventsame==true)butfuon8.setTextColor(Color.GREEN);
 butfuon8.setText("Prevent same message");
 if(preventsame == true){
 butfuon8.setTextColor(Color.GREEN);
-clientMessage(client+"Prevent same message on,\nyou can now bypass ChatFilter & ChatDefender");
+clientMessage(client+"Prevent same message on,\nyou can now bypass ChatDefender");
 preventsame = true;
 }
 if(preventsame == false){
@@ -12270,98 +12263,7 @@ print("The atact Dialog Is Malfunctioning:"+e);
 }});
 }
 
-function fov() {
-ctx.runOnUiThread(new java.lang.Runnable(){
-run: function(){ 
-try{
-fov = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(ctx);
-var xy = new android.widget.EditText(ctx);
-var fovs = new android.widget.SeekBar(ctx);
-var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
 
-Dialog.setTitle("Slide to edit fov");
-Dialog.setContentView(Layer);
-
-Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
-Dialog.show();
-
-Layer.addView(fovs);
-Layer.addView(Exit);
-
-var fovsProgress = 0;
-      fovs.setMax(10);
-      fovs.setProgress(fovsProgress);
-      fovs.setOnSeekBarChangeListener(new android.widget.SeekBar.OnSeekBarChangeListener()
-      {
-      onStopTrackingTouch: function(view)
-      {
-      fovsProgress=fovs.getProgress();
-      if(fovsProgress==0)
-      {
-      ModPE.resetFov(); fovsProgress=0; (0/10)
-      }
-      if(fovsProgress==1)
-      {
-      ModPE.setFov(10); fovsProgress=1; (1/10)
-      }
-      if(fovsProgress==2)
-      {
-      ModPE.setFov(20); fovsProgress=2; (2/10)
-      }
-      if(fovsProgress==3)
-      {
-      ModPE.setFov(30); fovsProgress=3; (3/10)
-      }
-if(fovsProgress==4)
-{
-ModPE.setFov(40); fovsProgress=4; (4/10)
-}
-if(fovsProgress==5)
-{
-ModPE.setFov(50); fovsProgress=5; (5/10)
-}
-if(fovsProgress==6)
-{
-ModPE.setFov(60); fovsProgress=6; (6/10)
-}
-if(fovsProgress==7)
-{
-ModPE.setFov(70); fovsProgress=7; (7/10)
-}
-if(fovsProgress==8)
-{
-ModPE.setFov(80); fovsProgress=8; (8/10)
-}
-if(fovsProgress==9)
-{
-ModPE.setFov(90); fovsProgress=9; (9/10)
-}
-if(fovsProgress==3)
-{
-ModPE.setFov(100); fovsProgress=10; (10/10)
-}
-      }
-      });
-Exit.setText("done");
-
-Exit.setOnClickListener(new android.view.View.OnClickListener(){
-onClick: function(view){
-
-Dialog.dismiss();
-showMenuBtn();
-}
-});
-
-fov.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-fov.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-fov.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
-} catch (e){
-print("The fov Dialog Is Malfunctioning:"+e);
-}
-}});
-}
 
 function signEditor() {
 ctx.runOnUiThread(new java.lang.Runnable(){
@@ -12393,7 +12295,7 @@ Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
 text4 =xy.getText();
 line4 =xy2.getText();
-Level.setSignText(notex, notey, notez, text4, line4);
+newSignText();
 Dialog.dismiss();
 showMenuBtn();
 }
@@ -12406,6 +12308,10 @@ GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP,
 print("The signer Dialog Is Malfunctioning:"+e);
 }
 }});
+}
+
+function newSignText(){
+Level.setSignText(notex, notey, notez, text4, line4);
 }
 
 function save() {
@@ -12739,13 +12645,10 @@ function chatHook(str){
 		}
 		if(preventsame){
 			preventDefault();
-			com.mojang.minecraftpe.MainActivity.currentMainActivity.get().updateTextboxText("");
 			var alphabet1 = new Array("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z");
 			var alphabet2 = new Array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
 		for(i = 0; i < alphabet1.length; i++) {
-			var x = 0;
-			x++
-		Server.sendChat(""+alphabet1[i]+" "+x+" "+toSwearSpeak(str)+" "+x+" "+alphabet1[i]);
+		Server.sendChat(""+alphabet1[i]+" "+i+" "+str+" "+i+" "+alphabet1[i]);
 	}
 		}
 	}
