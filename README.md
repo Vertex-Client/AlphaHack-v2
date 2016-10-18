@@ -15,18 +15,18 @@ ALPHAHack v2 is a remake of AlphaHack 0.8.1
 </>--------------------</><br />
 <br />
 # Issues & Features:
-- [ ] 0.8.1 Misc incomplete (Missing features)
-- [ ] 0.8.1 Settings incomplete (Missing features & may add more features)
-- [ ] 0.8.2 Online mods incomplete (Mods for servers, needs more features & fixes)
-- [ ] 0.8.2 Offline mods incomplete (Mods for everything else, needs more features & fixes)
-- [ ] 0.8.1 Effect menu incomplete (Needs some testing)
-- [ ] 0.8.1 Enchant menu incomplete (May add more features & needs anti enchant bypass)
-- [ ] 0.8.1 Give menu incomplete (May add more features)
-- [ ] 0.8.1 Morph menu incomplete (May add more features)
-- [x] 0.8.2 Nuke menu
-- [ ] 0.8.1 Particle menu incomplete (Some crashes & may add more features)
+- [ ] 0.8.5 Misc incomplete (Missing features)
+- [ ] 0.8.5 Settings incomplete (Missing features & may add more features)
+- [ ] 0.8.5 Online mods incomplete (Mods for servers, needs more features & fixes)
+- [ ] 0.8.5 Offline mods incomplete (Mods for everything else, needs more features & fixes)
+- [ ] 0.8.5 Effect menu incomplete (Needs some testing)
+- [ ] 0.8.5 Enchant menu incomplete (May add more features & needs anti enchant bypass)
+- [ ] 0.8.5 Give menu incomplete (May add more features)
+- [ ] 0.8.5 Morph menu incomplete (May add more features)
+- [x] 0.8.5 Nuke menu
+- [x] 0.8.5 Particle menu
 - [x] 0.16.0 Spawn menu
-- [x] 0.8.1 Speed menu
-- [ ] 0.8.1 Teleport menu incomplete (Some crashes & may add more features)
-- [ ] 0.8.1 Time menu incomplete (May add more features)
-- [ ] 0.8.1 Weather menu incomplete (May add more features)
+- [x] 0.8.5 Speed menu
+- [ ] 0.8.5 Teleport menu incomplete (Some crashes & may add more features)
+- [x] 0.8.5 Time menu
+- [ ] 0.8.5 Weather menu incomplete (May add more features)
