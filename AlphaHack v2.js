@@ -10041,7 +10041,7 @@ if(particle30)Level.addParticle(ParticleType.largeexplode, x, y, z, 1, 0, 1, 150
 if(particle31)Level.addParticle(ParticleType.spell2, x, y, z, 1, 0, 1, 150);
 if(particle32)Level.addParticle(ParticleType.spell3, x, y, z, 1, 0, 1, 150);
 }
-
+} 
 function instaDestroy(){
 if(instabreak==true)
 	for(i = 0; i < 256; i++){
