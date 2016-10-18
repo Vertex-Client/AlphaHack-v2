@@ -3821,6 +3821,69 @@ preventsame = false;
                 }
             }));       
             cheatLayout.addView(butfuon8);
+
+
+var cc = new Button(MainActivity);
+            cc.setText("Clear your chat");        
+            cc.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+
+clientMessage(" " + "\n" + " ");
+
+clientMessage(" " + "\n" + " ");
+
+clientMessage(" " + "\n" + " ");
+
+clientMessage(" " + "\n" + " ");
+
+clientMessage(" " + "\n" + " ");
+
+clientMessage(" " + "\n" + " ");
+
+clientMessage(" " + "\n" + " ");
+
+clientMessage(" " + "\n" + " ");
+                }
+            }));
+            cheatLayout.addView(cc);
+
+var ui = new Button(MainActivity);
+            ui.setText("Ui Layout Viewer: "+(uirender?"on":"off"));
+            ui.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+uirender?uirender=false:uirender=true;
+ui.setText("Ui Layout Viewer: "+(uirender?"on":"off"));
+if(uirender == true){
+ModPE.setUiRenderDebug(true);
+}
+if(uirender == false){
+ModPE.setUiRenderDebug(false);
+                }
+}
+            }));
+            cheatLayout.addView(ui);
+
+var fovy = new Button(MainActivity);
+            fovy.setText("Fov editor");        
+            fovy.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){ 
+
+fov();
+cheat.dismiss();
+                }
+            }));
+            cheatLayout.addView(fovy);
+			
+		var sbn = new Button(MainActivity);
+            sbn.setText("Set block brightness");        
+            sbn.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){ 
+block1(); 
+cheat.dismiss();
+
+                }
+            }));
+            cheatLayout.addView(sbn);
  
 var exit2 = new Button(MainActivity);
 		exit2.setText("Exit");
