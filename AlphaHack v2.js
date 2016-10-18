@@ -3995,30 +3995,6 @@ var es = new Button(MainActivity);
             }));
             modLayout.addView(es);
 
-var cc = new Button(MainActivity);
-            cc.setText("Clear your chat");        
-            cc.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-
-clientMessage(" " + "\n" + " ");
-
-clientMessage(" " + "\n" + " ");
-
-clientMessage(" " + "\n" + " ");
-
-clientMessage(" " + "\n" + " ");
-
-clientMessage(" " + "\n" + " ");
-
-clientMessage(" " + "\n" + " ");
-
-clientMessage(" " + "\n" + " ");
-
-clientMessage(" " + "\n" + " ");
-                }
-            }));
-            modLayout.addView(cc);
-
 var rr = new Button(MainActivity);
 rr.setText("Reactor time mode: "+(remode?"on":"off"));
 rr.setOnClickListener(new android.view.View.OnClickListener({
@@ -4234,49 +4210,23 @@ killfaura = false;
             }));
             modLayout.addView(kl2);
 
-var ui = new Button(MainActivity);
-            ui.setText("Ui Layout Viewer: "+(uirender?"on":"off"));
-            ui.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
-uirender?uirender=false:uirender=true;
-ui.setText("Ui Layout Viewer: "+(uirender?"on":"off"));
-if(uirender == true){
-ModPE.setUiRenderDebug(true);
-}
-if(uirender == false){
-ModPE.setUiRenderDebug(false);
-                }
-}
-            }));
-            modLayout.addView(ui);
-
 var attd = new Button(MainActivity);
             attd.setText("Set difficulty");        
             attd.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){ 
 named(); 
+			mod.dismiss();
 
                 }
             }));
             modLayout.addView(attd);
-
-var fovy = new Button(MainActivity);
-            fovy.setText("Fov editor");        
-            fovy.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){ 
-
-fov(); 
-
-mod.dismiss();
-                }
-            }));
-            modLayout.addView(fovy);
 
 var att = new Button(MainActivity);
             att.setText("Set nametag");        
             att.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){ 
 nameMe(); 
+			mod.dismiss();
 
                 }
             }));
@@ -4298,21 +4248,12 @@ clientMessage(client + "§7Falcon punch! off");
             }));
             modLayout.addView(fp);
 
-var sbn = new Button(MainActivity);
-            sbn.setText("Set block brightness");        
-            sbn.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){ 
-block1(); 
-
-                }
-            }));
-            modLayout.addView(sbn);
-
 var sbr = new Button(MainActivity);
             sbr.setText("Set block Resistance");        
             sbr.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){ 
 block2(); 
+			mod.dismiss();
 
                 }
             }));
@@ -4341,6 +4282,7 @@ var nh = new Button(MainActivity);
             nh.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){ 
 newhealth(); 
+			mod.dismiss();
 
                 }
             }));
@@ -4354,6 +4296,7 @@ var horse = new Button(MainActivity);
 horse.setText("Set mob health: "+(horsehealth?"on":"off"));
 if(horsehealth == true){
 horsehealth1();
+	mod.dismiss();
 horsehealth = true;
 }
 if(horsehealth == false){
@@ -4393,6 +4336,7 @@ getage = false;
 sage.setText("Set mob age: "+(setage?"on":"off"));
 if(setage == true){
 new4();
+	mod.dismiss();
 setage = true;
 }
 if(setage == false){
@@ -12340,7 +12284,7 @@ Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
 typedFov =fin.getText();
 Dialog.dismiss();
-function startFov();
+startFov();
 showMenuBtn();
 }
 });
@@ -12349,7 +12293,7 @@ GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
-print("The set health Dialog Is Malfunctioning:"+e);
+print("The set fov Dialog:"+e);
 }
 }});
 }
