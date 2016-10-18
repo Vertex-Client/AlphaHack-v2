@@ -8196,6 +8196,30 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 			}
 		});
 		particleLayout.addView(exit);
+	
+	var hitpart = new Button(MainActivity);
+hitpart.setText("Hit particles");
+hitpart.setTextColor(Color.RED);
+if(hitparticles==true)hitpart.setTextColor(Color.GREEN);
+            hitpart.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             hitparticles?hitparticles=false:hitparticles=true;
+hitpart.setText("Hit particles");
+if(hitparticles == true){
+hitpart.setTextColor(Color.GREEN);
+clientMessage(client + "Hit particles enables the selected particle to show when you hit a player~");
+
+hitparticles = true;
+}
+if(hitparticles == false){
+hitpart.setTextColor(Color.RED);
+clientMessage(client + "Hit particles off");
+
+hitparticles = false;
+}
+                }
+            }));
+            particleLayout.addView(hitpart);
 		
 var p1 = new Button(MainActivity);
             p1.setText("Angry villager: "+(particle1?"on":"off"));
@@ -9980,6 +10004,42 @@ if(setage)Entity.setAnimalAge(victim, newage);
 	if(attackActions){
 		if(victim)Server.sendChat(newAction);
 	}
+	if(hitparticles){
+		var x = Entity.getX(victim) - getPlayerX();
+		var y = Entity.getY(victim) - getPlayerY();
+		var z = Entity.getZ(victim) - getPlayerZ();
+		
+		if(particle1)Level.addParticle(ParticleType.angryVillager, x, y, z, 1, 0, 1, 5);
+if(particle2)Level.addParticle(ParticleType.bubble, x, y, z, 1, 0, 1, 150);
+if(particle3)Level.addParticle(ParticleType.cloud, x, y, z, 1, 0, 1, 150);
+if(particle4)Level.addParticle(ParticleType.crit, x, y, z, 1, 0, 1, 50);
+if(particle5)Level.addParticle(ParticleType.dripLava, x, y, z, 1, 0, 1, 150);
+if(particle6)Level.addParticle(ParticleType.dripWater, x, y, z, 1, 0, 1, 150);
+if(particle7)Level.addParticle(ParticleType.enchantmenttable, x, y, z, 1, 0, 1, 150);
+if(particle8)Level.addParticle(ParticleType.fallingDust, x, y, z, 1, 0, 1, 150);
+if(particle9)Level.addParticle(ParticleType.flame, x, y, z, 1, 0, 1, 150);
+if(particle10)Level.addParticle(ParticleType.happyVillager, x, y, z, 1, 0, 1, 50);
+if(particle11)Level.addParticle(ParticleType.heart, x, y, z, 1, 0, 1, 5);
+if(particle12)Level.addParticle(ParticleType.hugeexplosion, x, y, z, 1, 0, 1, 150);
+if(particle13)Level.addParticle(ParticleType.hugeexplosionSeed, x, y, z, 1, 0, 1, 10);
+if(particle14)Level.addParticle(ParticleType.ink, x, y, z, 1, 0, 1, 150);
+if(particle16)Level.addParticle(ParticleType.lava, x, y, z, 1, 0, 1, 150);
+if(particle17)Level.addParticle(ParticleType.mobFlame, x, y, z, 1, 0, 1, 150);
+if(particle18)Level.addParticle(ParticleType.note, x, y, z, 1, 0, 1, 150);
+if(particle19)Level.addParticle(ParticleType.portal, x, y, z, 1, 0, 1, 150);
+if(particle20)Level.addParticle(ParticleType.rainSplash, x, y, z, 1, 0, 1, 150);
+if(particle21)Level.addParticle(ParticleType.redstone, x, y, z, 1, 0, 1, 10);
+if(particle22)Level.addParticle(ParticleType.slime, x, y, z, 1, 0, 1, 150);
+if(particle23)Level.addParticle(ParticleType.smoke, x, y, z, 1, 0, 1, 150);
+if(particle24)Level.addParticle(ParticleType.snowballpoof, x, y, z, 1, 0, 1, 150);
+if(particle25)Level.addParticle(ParticleType.spell, x, y, z, 1, 0, 1, 150);
+if(particle26)Level.addParticle(ParticleType.splash, x, y, z, 1, 0, 1, 150);
+if(particle27)Level.addParticle(ParticleType.suspendedTown, x, y, z, 1, 0, 1, 150);
+if(particle28)Level.addParticle(ParticleType.terrain, x, y, z, 1, 0, 1, 150);
+if(particle29)Level.addParticle(ParticleType.waterWake, x, y, z, 1, 0, 1, 150);
+if(particle30)Level.addParticle(ParticleType.largeexplode, x, y, z, 1, 0, 1, 150);
+if(particle31)Level.addParticle(ParticleType.spell2, x, y, z, 1, 0, 1, 150);
+if(particle32)Level.addParticle(ParticleType.spell3, x, y, z, 1, 0, 1, 150);
 }
 
 function instaDestroy(){
