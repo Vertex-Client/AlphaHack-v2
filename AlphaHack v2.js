@@ -84,9 +84,9 @@ var text = "AlphαHαck!";
 //define an auto space variable
 var space = " ";
 //define version
-var version = "0.8.4";
+var version = "0.8.5";
 //if version is version change version to beta
-if(version=="0.8.4")version = "Beta";
+if(version=="0.8.5")version = "Beta";
 //tracer define length
 var chestTracersRange = 10;
 //tracer define mode
@@ -10063,231 +10063,257 @@ function killing() {
         var mobY = Entity.getY(mobs[a]) - getPlayerY();
         var mobZ = Entity.getZ(mobs[a]) - getPlayerZ();
         if (mobX * mobX + mobY * mobY + mobZ * mobZ <= 20 * 20 && mobs[a] != getPlayerEnt()) {
-            if (Entity.getEntityTypeId(mobs[a]) == 10) {
-                Entity.setHealth(mobs[a], 0)
-            }
+		    if (Entity.getEntityTypeId(mobs[a]) == 10) {
+			Entity.setHealth(mobs[a], 0);
+			}
             if (Entity.getEntityTypeId(mobs[a]) == 11) {
-                Entity.setHealth(mobs[a], 0)
-            }
+			Entity.setHealth(mobs[a], 0);
+			}
             if (Entity.getEntityTypeId(mobs[a]) == 12) {
-                Entity.setHealth(mobs[a], 0)
-            }
+			Entity.setHealth(mobs[a], 0);
+			}
             if (Entity.getEntityTypeId(mobs[a]) == 13) {
-                Entity.setHealth(mobs[a], 0)
-            }
+			Entity.setHealth(mobs[a], 0);
+			}
             if (Entity.getEntityTypeId(mobs[a]) == 14) {
-                Entity.setHealth(mobs[a], 0)
-            }
+			Entity.setHealth(mobs[a], 0);
+			}
             if (Entity.getEntityTypeId(mobs[a]) == 15) {
-                Entity.setHealth(mobs[a], 0)
-            }
+			Entity.setHealth(mobs[a], 0);
+			}
             if (Entity.getEntityTypeId(mobs[a]) == 16) {
-                Entity.setHealth(mobs[a], 0)
-            }
+			Entity.setHealth(mobs[a], 0);
+			}
             if (Entity.getEntityTypeId(mobs[a]) == 17) {
-                Entity.setHealth(mobs[a], 0)
-            }
+			Entity.setHealth(mobs[a], 0);
+			}
             if (Entity.getEntityTypeId(mobs[a]) == 18) {
-                Entity.setHealth(mobs[a], 0)
-            }
+			Entity.setHealth(mobs[a], 0);
+			}
             if (Entity.getEntityTypeId(mobs[a]) == 19) {
-                Entity.setHealth(mobs[a], 0)
-            }
+			Entity.setHealth(mobs[a], 0);
+			}
             if (Entity.getEntityTypeId(mobs[a]) == 20) {
-                Entity.setHealth(mobs[a], 0)
-            }
+			Entity.setHealth(mobs[a], 0);
+			}
             if (Entity.getEntityTypeId(mobs[a]) == 21) {
-                Entity.setHealth(mobs[a], 0)
-            }
+			Entity.setHealth(mobs[a], 0);
+			}
             if (Entity.getEntityTypeId(mobs[a]) == 22) {
-                Entity.setHealth(mobs[a], 0)
-            }
+			Entity.setHealth(mobs[a], 0);
+			}
+			if (Entity.getEntityTypeId(mobs[a]) == 23) {
+			Entity.setHealth(mobs[a], 0);
+			}
 			if (Entity.getEntityTypeId(mobs[a]) == 24) {
-                Entity.setHealth(mobs[a], 0)
-            }
+			Entity.setHealth(mobs[a], 0);
+			}
 			if (Entity.getEntityTypeId(mobs[a]) == 25) {
-                Entity.setHealth(mobs[a], 0)
-            }
+			Entity.setHealth(mobs[a], 0);
+			}
 			if (Entity.getEntityTypeId(mobs[a]) == 26) {
-                Entity.setHealth(mobs[a], 0)
-            }
+			Entity.setHealth(mobs[a], 0);
+			}
 			if (Entity.getEntityTypeId(mobs[a]) == 27) {
-                Entity.setHealth(mobs[a], 0)
-            }
+			Entity.setHealth(mobs[a], 0);
+			}
             if (Entity.getEntityTypeId(mobs[a]) == 32) {
-                Entity.setHealth(mobs[a], 0)
-            }
+			Entity.setHealth(mobs[a], 0);
+			}
             if (Entity.getEntityTypeId(mobs[a]) == 33) {
-                Entity.setHealth(mobs[a], 0)
-            }
+			Entity.setHealth(mobs[a], 0);
+			}
             if (Entity.getEntityTypeId(mobs[a]) == 34) {
-                Entity.setHealth(mobs[a], 0)
-            }
+			Entity.setHealth(mobs[a], 0);
+			}
             if (Entity.getEntityTypeId(mobs[a]) == 35) {
-                Entity.setHealth(mobs[a], 0)
-            }
+			Entity.setHealth(mobs[a], 0);
+			}
             if (Entity.getEntityTypeId(mobs[a]) == 36) {
-                Entity.setHealth(mobs[a], 0)
-            }
+			Entity.setHealth(mobs[a], 0);
+			}
             if (Entity.getEntityTypeId(mobs[a]) == 37) {
-                Entity.setHealth(mobs[a], 0)
-            }
+			Entity.setHealth(mobs[a], 0);
+			}
             if (Entity.getEntityTypeId(mobs[a]) == 38) {
-                Entity.setHealth(mobs[a], 0)
-            }
+			Entity.setHealth(mobs[a], 0);
+			}
             if (Entity.getEntityTypeId(mobs[a]) == 39) {
-                Entity.setHealth(mobs[a], 0)
-            }
+			Entity.setHealth(mobs[a], 0);
+			}
             if (Entity.getEntityTypeId(mobs[a]) == 40) {
-                Entity.setHealth(mobs[a], 0)
-            }
+			Entity.setHealth(mobs[a], 0);
+			}
             if (Entity.getEntityTypeId(mobs[a]) == 41) {
-                Entity.setHealth(mobs[a], 0)
-            }
+			Entity.setHealth(mobs[a], 0);
+			}
             if (Entity.getEntityTypeId(mobs[a]) == 42) {
-                Entity.setHealth(mobs[a], 0)
-            }
+			Entity.setHealth(mobs[a], 0);
+			}
             if (Entity.getEntityTypeId(mobs[a]) == 43) {
-                Entity.setHealth(mobs[a], 0)
-            }
+			Entity.setHealth(mobs[a], 0);
+			}
             if (Entity.getEntityTypeId(mobs[a]) == 44) {
-                Entity.setHealth(mobs[a], 0)
-            }
+			Entity.setHealth(mobs[a], 0);
+			}
             if (Entity.getEntityTypeId(mobs[a]) == 45) {
-                Entity.setHealth(mobs[a], 0)
-            }
+			Entity.setHealth(mobs[a], 0);
+			}
 			if (Entity.getEntityTypeId(mobs[a]) == 46) {
-                Entity.setHealth(mobs[a], 0)
-            }
+			Entity.setHealth(mobs[a], 0);
+			}
 			if (Entity.getEntityTypeId(mobs[a]) == 47) {
-                Entity.setHealth(mobs[a], 0)
-            }
+			Entity.setHealth(mobs[a], 0);
+			}
 			if (Entity.getEntityTypeId(mobs[a]) == 48) {
-                Entity.setHealth(mobs[a], 0)
-            }
-			if (Entity.getEntityTypeId(mobs[a]) == 100) {
-                Entity.setHealth(mobs[a], 0)
-            }
-        }
+			Entity.setHealth(mobs[a], 0);
+			}
+			if (Entity.getEntityTypeId(mobs[a]) == 49) {
+			Entity.setHealth(mobs[a], 0);
+			}
+			if (Entity.getEntityTypeId(mobs[a]) == 50) {
+			Entity.setHealth(mobs[a], 0);
+			}
+			if (Entity.getEntityTypeId(mobs[a]) == 51) {
+			Entity.setHealth(mobs[a], 0);
+			}
+			if (Entity.getEntityTypeId(mobs[a]) == 52) {
+			Entity.setHealth(mobs[a], 0);
+			}
+		
+	   }
     }
 }
 
 function killingf() {
     var mobs = Entity.getAll();
-	var immobile = true;
+		var immobile = true;
 	if(killfaura==false)immobile=false;
     for (var b = 0; b < mobs.length; b++) {
-    	var uuid=mobs[b];
+	var uuid=mobs[b];
         var mobX = Entity.getX(mobs[b]) - getPlayerX();
         var mobY = Entity.getY(mobs[b]) - getPlayerY();
         var mobZ = Entity.getZ(mobs[b]) - getPlayerZ();
         if (mobX * mobX + mobY * mobY + mobZ * mobZ <= 20 * 20 && mobs[b] != getPlayerEnt()) {
-            if (Entity.getEntityTypeId(mobs[b]) == 10) {
-                Entity.setImmobile(uuid,immobile)
-            }
+		    if (Entity.getEntityTypeId(mobs[b]) == 10) {
+			Entity.setImmobile(uuid,immobile);
+			}
             if (Entity.getEntityTypeId(mobs[b]) == 11) {
-                Entity.setImmobile(uuid,immobile)
-            }
+			Entity.setImmobile(uuid,immobile);
+			}
             if (Entity.getEntityTypeId(mobs[b]) == 12) {
-                Entity.setImmobile(uuid,immobile)
-            }
+			Entity.setImmobile(uuid,immobile);
+			}
             if (Entity.getEntityTypeId(mobs[b]) == 13) {
-                Entity.setImmobile(uuid,immobile)
-            }
+			Entity.setImmobile(uuid,immobile);
+			}
             if (Entity.getEntityTypeId(mobs[b]) == 14) {
-                Entity.setImmobile(uuid,immobile)
-            }
+			Entity.setImmobile(uuid,immobile);
+			}
             if (Entity.getEntityTypeId(mobs[b]) == 15) {
-                Entity.setImmobile(uuid,immobile)
-            }
+			Entity.setImmobile(uuid,immobile);
+			}
             if (Entity.getEntityTypeId(mobs[b]) == 16) {
-                Entity.setImmobile(uuid,immobile)
-            }
+			Entity.setImmobile(uuid,immobile);
+			}
             if (Entity.getEntityTypeId(mobs[b]) == 17) {
-                Entity.setImmobile(uuid,immobile)
-            }
+			Entity.setImmobile(uuid,immobile);
+			}
             if (Entity.getEntityTypeId(mobs[b]) == 18) {
-                Entity.setImmobile(uuid,immobile)
-            }
+			Entity.setImmobile(uuid,immobile);
+			}
             if (Entity.getEntityTypeId(mobs[b]) == 19) {
-                Entity.setImmobile(uuid,immobile)
-            }
+			Entity.setImmobile(uuid,immobile);
+			}
             if (Entity.getEntityTypeId(mobs[b]) == 20) {
-                Entity.setImmobile(uuid,immobile)
-            }
+			Entity.setImmobile(uuid,immobile);
+			}
             if (Entity.getEntityTypeId(mobs[b]) == 21) {
-                Entity.setImmobile(uuid,immobile)
-            }
+			Entity.setImmobile(uuid,immobile);
+			}
             if (Entity.getEntityTypeId(mobs[b]) == 22) {
-                Entity.setImmobile(uuid,immobile)
-            }
+			Entity.setImmobile(uuid,immobile);
+			}
+			if (Entity.getEntityTypeId(mobs[b]) == 23) {
+			Entity.setImmobile(uuid,immobile);
+			}
 			if (Entity.getEntityTypeId(mobs[b]) == 24) {
-                Entity.setImmobile(uuid,immobile)
-            }
+			Entity.setImmobile(uuid,immobile);
+			}
 			if (Entity.getEntityTypeId(mobs[b]) == 25) {
-                Entity.setImmobile(uuid,immobile)
-            }
+			Entity.setImmobile(uuid,immobile);
+			}
 			if (Entity.getEntityTypeId(mobs[b]) == 26) {
-                Entity.setImmobile(uuid,immobile)
-            }
+			Entity.setImmobile(uuid,immobile);
+			}
 			if (Entity.getEntityTypeId(mobs[b]) == 27) {
-                Entity.setImmobile(uuid,immobile)
-            }
+			Entity.setImmobile(uuid,immobile);
+			}
             if (Entity.getEntityTypeId(mobs[b]) == 32) {
-                Entity.setImmobile(uuid,immobile)
-            }
+			Entity.setImmobile(uuid,immobile);
+			}
             if (Entity.getEntityTypeId(mobs[b]) == 33) {
-                Entity.setImmobile(uuid,immobile)
-            }
+			Entity.setImmobile(uuid,immobile);
+			}
             if (Entity.getEntityTypeId(mobs[b]) == 34) {
-                Entity.setImmobile(uuid,immobile)
-            }
+			Entity.setImmobile(uuid,immobile);
+			}
             if (Entity.getEntityTypeId(mobs[b]) == 35) {
-                Entity.setImmobile(uuid,immobile)
-            }
+			Entity.setImmobile(uuid,immobile);
+			}
             if (Entity.getEntityTypeId(mobs[b]) == 36) {
-                Entity.setImmobile(uuid,immobile)
-            }
+			Entity.setImmobile(uuid,immobile);
+			}
             if (Entity.getEntityTypeId(mobs[b]) == 37) {
-                Entity.setImmobile(uuid,immobile)
-            }
+			Entity.setImmobile(uuid,immobile);
+			}
             if (Entity.getEntityTypeId(mobs[b]) == 38) {
-                Entity.setImmobile(uuid,immobile)
-            }
+			Entity.setImmobile(uuid,immobile);
+			}
             if (Entity.getEntityTypeId(mobs[b]) == 39) {
-                Entity.setImmobile(uuid,immobile)
-            }
+			Entity.setImmobile(uuid,immobile);
+			}
             if (Entity.getEntityTypeId(mobs[b]) == 40) {
-                Entity.setImmobile(uuid,immobile)
-            }
+			Entity.setImmobile(uuid,immobile);
+			}
             if (Entity.getEntityTypeId(mobs[b]) == 41) {
-                Entity.setImmobile(uuid,immobile)
-            }
+			Entity.setImmobile(uuid,immobile);
+			}
             if (Entity.getEntityTypeId(mobs[b]) == 42) {
-                Entity.setImmobile(uuid,immobile)
-            }
+			Entity.setImmobile(uuid,immobile);
+			}
             if (Entity.getEntityTypeId(mobs[b]) == 43) {
-                Entity.setImmobile(uuid,immobile)
-            }
+			Entity.setImmobile(uuid,immobile);
+			}
             if (Entity.getEntityTypeId(mobs[b]) == 44) {
-                Entity.setImmobile(uuid,immobile)
-            }
+			Entity.setImmobile(uuid,immobile);
+			}
             if (Entity.getEntityTypeId(mobs[b]) == 45) {
-                Entity.setImmobile(uuid,immobile)
-            }
+			Entity.setImmobile(uuid,immobile);
+			}
 			if (Entity.getEntityTypeId(mobs[b]) == 46) {
-                Entity.setImmobile(uuid,immobile)
-            }
+			Entity.setImmobile(uuid,immobile);
+			}
 			if (Entity.getEntityTypeId(mobs[b]) == 47) {
-                Entity.setImmobile(uuid,immobile)
-            }
+			Entity.setImmobile(uuid,immobile);
+			}
 			if (Entity.getEntityTypeId(mobs[b]) == 48) {
-                Entity.setImmobile(uuid,immobile)
-            }
-			if (Entity.getEntityTypeId(mobs[b]) == 100) {
-                Entity.setImmobile(uuid,immobile)
-            }
-        }
+			Entity.setImmobile(uuid,immobile);
+			}
+			if (Entity.getEntityTypeId(mobs[b]) == 49) {
+			Entity.setImmobile(uuid,immobile);
+			}
+			if (Entity.getEntityTypeId(mobs[b]) == 50) {
+			Entity.setImmobile(uuid,immobile);
+			}
+			if (Entity.getEntityTypeId(mobs[b]) == 51) {
+			Entity.setImmobile(uuid,immobile);
+			}
+			if (Entity.getEntityTypeId(mobs[b]) == 52) {
+			Entity.setImmobile(uuid,immobile);
+			}
+		
+	   }
     }
 }
 
@@ -10298,112 +10324,125 @@ function killingd() {
         var mobY = Entity.getY(mobs[c]) - getPlayerY();
         var mobZ = Entity.getZ(mobs[c]) - getPlayerZ();
         if (mobX * mobX + mobY * mobY + mobZ * mobZ <= 20 * 20 && mobs[c] != getPlayerEnt()) {
-            if (Entity.getEntityTypeId(mobs[c]) == 10) {
-                Entity.setFireTicks(mobs[c],5)
-            }
+		    if (Entity.getEntityTypeId(mobs[c]) == 10) {
+			Entity.setFireTicks(mobs[c],5);
+			}
             if (Entity.getEntityTypeId(mobs[c]) == 11) {
-                Entity.setFireTicks(mobs[c],5)
-            }
+			Entity.setFireTicks(mobs[c],5);
+			}
             if (Entity.getEntityTypeId(mobs[c]) == 12) {
-                Entity.setFireTicks(mobs[c],5)
-            }
+			Entity.setFireTicks(mobs[c],5);
+			}
             if (Entity.getEntityTypeId(mobs[c]) == 13) {
-                Entity.setFireTicks(mobs[c],5)
-            }
+			Entity.setFireTicks(mobs[c],5);
+			}
             if (Entity.getEntityTypeId(mobs[c]) == 14) {
-                Entity.setFireTicks(mobs[c],5)
-            }
+			Entity.setFireTicks(mobs[c],5);
+			}
             if (Entity.getEntityTypeId(mobs[c]) == 15) {
-                Entity.setFireTicks(mobs[c],5)
-            }
+			Entity.setFireTicks(mobs[c],5);
+			}
             if (Entity.getEntityTypeId(mobs[c]) == 16) {
-                Entity.setFireTicks(mobs[c],5)
-            }
+			Entity.setFireTicks(mobs[c],5);
+			}
             if (Entity.getEntityTypeId(mobs[c]) == 17) {
-                Entity.setFireTicks(mobs[c],5)
-            }
+			Entity.setFireTicks(mobs[c],5);
+			}
             if (Entity.getEntityTypeId(mobs[c]) == 18) {
-                Entity.setFireTicks(mobs[c],5)
-            }
+			Entity.setFireTicks(mobs[c],5);
+			}
             if (Entity.getEntityTypeId(mobs[c]) == 19) {
-                Entity.setFireTicks(mobs[c],5)
-            }
+			Entity.setFireTicks(mobs[c],5);
+			}
             if (Entity.getEntityTypeId(mobs[c]) == 20) {
-                Entity.setFireTicks(mobs[c],5)
-            }
+			Entity.setFireTicks(mobs[c],5);
+			}
             if (Entity.getEntityTypeId(mobs[c]) == 21) {
-                Entity.setFireTicks(mobs[c],5)
-            }
+			Entity.setFireTicks(mobs[c],5);
+			}
             if (Entity.getEntityTypeId(mobs[c]) == 22) {
-                Entity.setFireTicks(mobs[c],5)
-            }
+			Entity.setFireTicks(mobs[c],5);
+			}
+			if (Entity.getEntityTypeId(mobs[c]) == 23) {
+			Entity.setFireTicks(mobs[c],5);
+			}
 			if (Entity.getEntityTypeId(mobs[c]) == 24) {
-                Entity.setFireTicks(mobs[c],5)
-            }
+			Entity.setFireTicks(mobs[c],5);
+			}
 			if (Entity.getEntityTypeId(mobs[c]) == 25) {
-                Entity.setFireTicks(mobs[c],5)
-            }
+			Entity.setFireTicks(mobs[c],5);
+			}
 			if (Entity.getEntityTypeId(mobs[c]) == 26) {
-                Entity.setFireTicks(mobs[c],5)
-            }
+			Entity.setFireTicks(mobs[c],5);
+			}
 			if (Entity.getEntityTypeId(mobs[c]) == 27) {
-                Entity.setFireTicks(mobs[c],5)
-            }
+			Entity.setFireTicks(mobs[c],5);
+			}
             if (Entity.getEntityTypeId(mobs[c]) == 32) {
-                Entity.setFireTicks(mobs[c],5)
-            }
+			Entity.setFireTicks(mobs[c],5);
+			}
             if (Entity.getEntityTypeId(mobs[c]) == 33) {
-                Entity.setFireTicks(mobs[c],5)
-            }
+			Entity.setFireTicks(mobs[c],5);
+			}
             if (Entity.getEntityTypeId(mobs[c]) == 34) {
-                Entity.setFireTicks(mobs[c],5)
-            }
+			Entity.setFireTicks(mobs[c],5);
+			}
             if (Entity.getEntityTypeId(mobs[c]) == 35) {
-                Entity.setFireTicks(mobs[c],5)
-            }
+			Entity.setFireTicks(mobs[c],5);
+			}
             if (Entity.getEntityTypeId(mobs[c]) == 36) {
-                Entity.setFireTicks(mobs[c],5)
-            }
+			Entity.setFireTicks(mobs[c],5);
+			}
             if (Entity.getEntityTypeId(mobs[c]) == 37) {
-                Entity.setFireTicks(mobs[c],5)
-            }
+			Entity.setFireTicks(mobs[c],5);
+			}
             if (Entity.getEntityTypeId(mobs[c]) == 38) {
-                Entity.setFireTicks(mobs[c],5)
-            }
+			Entity.setFireTicks(mobs[c],5);
+			}
             if (Entity.getEntityTypeId(mobs[c]) == 39) {
-                Entity.setFireTicks(mobs[c],5)
-            }
+			Entity.setFireTicks(mobs[c],5);
+			}
             if (Entity.getEntityTypeId(mobs[c]) == 40) {
-                Entity.setFireTicks(mobs[c],5)
-            }
+			Entity.setFireTicks(mobs[c],5);
+			}
             if (Entity.getEntityTypeId(mobs[c]) == 41) {
-                Entity.setFireTicks(mobs[c],5)
-            }
+			Entity.setFireTicks(mobs[c],5);
+			}
             if (Entity.getEntityTypeId(mobs[c]) == 42) {
-                Entity.setFireTicks(mobs[c],5)
-            }
+			Entity.setFireTicks(mobs[c],5);
+			}
             if (Entity.getEntityTypeId(mobs[c]) == 43) {
-                Entity.setFireTicks(mobs[c],5)
-            }
+			Entity.setFireTicks(mobs[c],5);
+			}
             if (Entity.getEntityTypeId(mobs[c]) == 44) {
-                Entity.setFireTicks(mobs[c],5)
-            }
+			Entity.setFireTicks(mobs[c],5);
+			}
             if (Entity.getEntityTypeId(mobs[c]) == 45) {
-                Entity.setFireTicks(mobs[c],5)
-            }
+			Entity.setFireTicks(mobs[c],5);
+			}
 			if (Entity.getEntityTypeId(mobs[c]) == 46) {
-                Entity.setFireTicks(mobs[c],5)
-            }
+			Entity.setFireTicks(mobs[c],5);
+			}
 			if (Entity.getEntityTypeId(mobs[c]) == 47) {
-                Entity.setFireTicks(mobs[c],5)
-            }
+			Entity.setFireTicks(mobs[c],5);
+			}
 			if (Entity.getEntityTypeId(mobs[c]) == 48) {
-                Entity.setFireTicks(mobs[c],5)
-            }
-			if (Entity.getEntityTypeId(mobs[c]) == 100) {
-                Entity.setFireTicks(mobs[c],5)
-            }
-        }
+			Entity.setFireTicks(mobs[c],5);
+			}
+			if (Entity.getEntityTypeId(mobs[c]) == 49) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+			if (Entity.getEntityTypeId(mobs[c]) == 50) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+			if (Entity.getEntityTypeId(mobs[c]) == 51) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+			if (Entity.getEntityTypeId(mobs[c]) == 52) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+		
+	   }
     }
 }
 
