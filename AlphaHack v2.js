@@ -4267,7 +4267,7 @@ var fovy = new Button(MainActivity);
 
 fov(); 
 
-zmenu.dismiss();
+mod.dismiss();
                 }
             }));
             modLayout.addView(fovy);
@@ -10572,7 +10572,7 @@ function startDestroyBlock(x, y, z, side)
 if(block == true)preventDefault()
 }
 
-function useItem(x, y, z, itemId, blockId, side){
+function useItem(x, y, z, itemId, blockId, side, itemDamage, blockDamage){
 if(deadchat)if(blockId == 63 || blockId == 68){
 	var notex = x;
 	var notey = y;
@@ -12312,6 +12312,50 @@ print("The signer Dialog Is Malfunctioning:"+e);
 
 function newSignText(){
 Level.setSignText(notex, notey, notez, text4, line4);
+}
+
+function fov() {
+MainActivity.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var LayerFov = new android.widget.LinearLayout(MainActivity);
+var fin = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new Button(MainActivity);
+
+Dialog.setTitle("Enter new fov");
+Dialog.setContentView(LayerFov);
+
+LayerFov.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+LayerFov.addView(fin);
+LayerFov.addView(Exit);
+
+fin.setText("");
+fin.setHint("Fov number");
+Exit.setText("done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+typedFov =fin.getText();
+Dialog.dismiss();
+function startFov();
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The set health Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function startFov(){
+ModPE.setFov(typedFov);
 }
 
 function save() {
