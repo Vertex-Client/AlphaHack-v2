@@ -466,16 +466,16 @@ callback(new Array("Error"));
 				update.append(line);
 					}
 		        reader.close();
-			newUpdate = update.toString().split("\n");
+			newUpdate = update.toString();
 		    if(newUpdate!=version){
-			    print("New update");
+			    Toast.makeText(MainActivity, "AlphaHackPE: New update!", 1).show()
 			    startUp();
 		    }
                 }catch(e){
                 	
-                clientMessage(e+"");
+                print(e+"");
                 
-                clientMessage(e.lineNumber);
+                print(e.lineNumber);
                 
                 }
                 }});
@@ -496,7 +496,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             updiaLayout1.addView(updiaScroll);
 			
 			var text1 = new TextView(MainActivity);
-            text1.setText("\n\n\nA new update is available.\nBug fixes, less crashes, new features & more!\nWould you like to update AlphaHack v2?\nCurret version: "+version+", New version: "+newUpdate+"\n");
+            text1.setText("\n\n\nA new update is available.\nBug fixes, less crashes, new features & more!\nWould you like to update AlphaHack v2?\nCurret version: "+version+"\n");
             text1.setTextColor(Color.WHITE);
 			text1.setPadding(10,20,130,20);
             updiaLayout.addView(text1);
@@ -531,9 +531,8 @@ MainActivity.startActivity(urls5);
 			updiaLayout.addView(doubleLayout);
 			
 			            updia = new PopupWindow(updiaLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/1.01, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1.01);
-		   updia.setBackgroundDrawable(new ColorDrawable(Color.BLACK));
 		   var bg = new android.graphics.drawable.GradientDrawable();
-      bg.setColor(Color.TRANSPARENT);
+      bg.setColor(Color.BLACK);
       bg.setStroke(10,Color.BLUE);
 updiaLayout1.setBackgroundDrawable(bg);
 updiaLayout1.setPadding(20,1,20,1);
@@ -543,7 +542,7 @@ updiaLayout1.setPadding(20,1,20,1);
             }
     }}));
 }
-}
+
 
 //run mod message or other on world startup
 function newLevel(){ 
