@@ -467,8 +467,34 @@ callback(new Array("Error"));
 					}
 		        reader.close();
 			newUpdate = update.toString().split("\n");
-		        if(newUpdate!=version)clientMessage("New update test");
-		        if(newUpdate==version)clientMessage("No update test");
+		    if(newUpdate!=version){
+			    print("New update test");
+var alert = new android.app.AlertDialog.Builder(MainActivity); 
+var scroll = new android.widget.ScrollView(MainActivity); 
+var layout = new android.widget.LinearLayout(MainActivity); 
+layout.setOrientation(1);
+
+alert.setTitle("New update");
+ alert.setMessage("A new update to AlphaHack v2 is here!\nUsual Updates Include:\n-Bug fixes, -New features, -Less crashes, -Up to date mods\nJust download the mod and re-enable it.");
+
+alert.setPositiveButton("Later", new android.content.DialogInterface.OnClickListener(){ 
+  onClick: function(viewarg){
+    
+dialog.dismiss();
+	print("The update will remind you next time you open the launcher!");
+      }});
+
+alert.setNegativeButton("Update", new android.content.DialogInterface.OnClickListener(){ 
+   onClick: function(viewarg){
+var urls5 = new Intent(MainActivity);
+	  urls5.setAction(Intent.ACTION_VIEW);
+                    urls5.setData(Uri.parse("https://plus.google.com/communities/103695355587842948163"));
+                    MainActivity.startActivity(urls5);
+dialog.dismiss();
+      }});
+var dialog = alert.create();
+dialog.show();
+		    }
                 }catch(e){
                 	
                 clientMessage(e+"");
@@ -480,13 +506,13 @@ callback(new Array("Error"));
                 var th = new java.lang.Thread(r);
     th.start();
                 }
+getUpdate(function(info){});
 
 //run mod message or other on world startup
 function newLevel(){ 
 clientMessage("§2≡≡=======»§a>§9 α §a<§2«======≡≡§f§r");
 clientMessage(client + "\n§aKik§f: ArceusMatt" + "\n" + "§bTwitter§f: @ArceusMatt" + "\n" + "§cGoogle+§f: Arceus matt" + "\n" + "§fYou§4tube§f: Arceus Matt");
-clientMessage("§2≡≡=======»§a>§9 α §a<§2«======≡≡§f§r\n\n");
-getUpdate(function(info){});
+clientMessage("§2≡≡=======»§a>§9 α §a<§2«======≡≡§f§r\n");
 }
 
 //change mcpe color text with the remaining text
