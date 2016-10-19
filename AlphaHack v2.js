@@ -468,32 +468,8 @@ callback(new Array("Error"));
 		        reader.close();
 			newUpdate = update.toString().split("\n");
 		    if(newUpdate!=version){
-			    print("New update test");
-var alert = new android.app.AlertDialog.Builder(MainActivity); 
-var scroll = new android.widget.ScrollView(MainActivity); 
-var layout = new android.widget.LinearLayout(MainActivity); 
-layout.setOrientation(1);
-
-alert.setTitle("New update");
- alert.setMessage("A new update to AlphaHack v2 is here!\nUsual Updates Include:\n-Bug fixes, -New features, -Less crashes, -Up to date mods\nJust download the mod and re-enable it.");
-
-alert.setPositiveButton("Later", new android.content.DialogInterface.OnClickListener(){ 
-  onClick: function(viewarg){
-    
-dialog.dismiss();
-	print("The update will remind you next time you open the launcher!");
-      }});
-
-alert.setNegativeButton("Update", new android.content.DialogInterface.OnClickListener(){ 
-   onClick: function(viewarg){
-var urls5 = new Intent(MainActivity);
-	  urls5.setAction(Intent.ACTION_VIEW);
-                    urls5.setData(Uri.parse("https://plus.google.com/communities/103695355587842948163"));
-                    MainActivity.startActivity(urls5);
-dialog.dismiss();
-      }});
-var dialog = alert.create();
-dialog.show();
+			    print("New update");
+			    startUp();
 		    }
                 }catch(e){
                 	
@@ -507,6 +483,67 @@ dialog.show();
     th.start();
                 }
 getUpdate(function(info){});
+
+function startUp(){
+MainActivity.runOnUiThread(new Runnable({ run: function(){
+        try{
+            var updiaLayout = new LinearLayout(MainActivity);
+            var updiaScroll = new ScrollView(MainActivity);
+            var updiaLayout1 = new LinearLayout(MainActivity);
+            updiaLayout.setOrientation(1);
+            updiaLayout1.setOrientation(1);
+            updiaScroll.addView(updiaLayout);
+            updiaLayout1.addView(updiaScroll);
+			
+			var text1 = new TextView(MainActivity);
+            text1.setText("\n\n\nA new update is available.\nBug fixes, less crashes, new features & more!\nWould you like to update AlphaHack v2?\nCurret version: "+version+", New version: "+newUpdate+"\n");
+            text1.setTextColor(Color.WHITE);
+			text1.setPadding(10,20,130,20);
+            updiaLayout.addView(text1);
+			
+			var doubleLayout = new LinearLayout(MainActivity);
+			
+			textView1 = new Button(MainActivity);
+			textView1.setText("Later");
+			textView1.setTextColor(Color.BLUE);
+			textView1.setPadding(185,10,185,10);
+			textView1.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				updia.dismiss();
+                }
+            }));
+			doubleLayout.addView(textView1);
+			
+			textView2 = new Button(MainActivity);
+			textView2.setText("Update");
+			textView2.setTextColor(Color.BLUE);
+			textView2.setPadding(185,10,185,10);
+			textView2.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+var urls5 = new Intent(MainActivity);
+urls5.setAction(Intent.ACTION_VIEW);
+urls5.setData(Uri.parse("https://arceusmatt.github.io/alphahack"));
+MainActivity.startActivity(urls5);
+                }
+            }));
+			doubleLayout.addView(textView2);
+			
+			updiaLayout.addView(doubleLayout);
+			
+			            updia = new PopupWindow(updiaLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/1.01, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1.01);
+		   updia.setBackgroundDrawable(new ColorDrawable(Color.BLACK));
+		   var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(Color.TRANSPARENT);
+      bg.setStroke(10,Color.BLUE);
+updiaLayout1.setBackgroundDrawable(bg);
+updiaLayout1.setPadding(20,1,20,1);
+            updia.showAtLocation(MainActivity.getWindow().getDecorView(), Gravity.CENTER | Gravity.CENTER, 0, 0);
+            }catch(error){
+                Toast.makeText(MainActivity, "Update updia, Error: " + error, 1).show();
+            }
+    }}));
+}
+}
 
 //run mod message or other on world startup
 function newLevel(){ 
