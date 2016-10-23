@@ -261,6 +261,7 @@ var striketext = false;
 var belowblock = false;
 var preventsame = false;
 var hitparticles = false;
+var facedInfo = false;
 
 var showActive = false;
 var showActive2 = false;
@@ -808,7 +809,7 @@ aimaura = false;
 			}
 		});
 		activeLayout.addView(a2);
-		
+					 
 		var a3 = new TextView(MainActivity);
             a3.setTextSize(10);
             if(xray==true)a3.setText("X-ray");
@@ -2205,6 +2206,36 @@ exit.setTextColor(Color.RED);
 	    maxHearts.setText("Max hearts: "+Entity.getMaxHealth(getPlayerEnt()));
             maxHearts.setTextColor(Color.WHITE);
             infoLayout.addView(maxHearts);
+		
+		var renderType = new TextView(MainActivity);
+            renderType.setTextSize(15);
+	    renderType.setText("Render type: "+Entity.getRenderType(getPlayerEnt()));
+            renderType.setTextColor(Color.WHITE);
+            infoLayout.addView(renderType);
+		
+		var gameType = new TextView(MainActivity);
+            gameType.setTextSize(15);
+	    gameType.setText("Game mode: "+Level.getGameMode());
+            gameType.setTextColor(Color.WHITE);
+            infoLayout.addView(gameType);
+		
+		var lang = new TextView(MainActivity);
+            lang.setTextSize(15);
+	    lang.setText("Language: "+ModPE.getLanguage());
+            lang.setTextColor(Color.WHITE);
+            infoLayout.addView(lang);
+		
+		var vere = new TextView(MainActivity);
+            vere.setTextSize(15);
+	    vere.setText("Version: "+ModPE.getMinecraftVersion());
+            vere.setTextColor(Color.WHITE);
+            infoLayout.addView(vere);
+		
+		var skin = new TextView(MainActivity);
+            skin.setTextSize(15);
+	    skin.setText("Mob skin: "+Entity.getMobSkin(getPlayerEnt()));
+            skin.setTextColor(Color.WHITE);
+            infoLayout.addView(skin);
 
 info = new PopupWindow(infoLayout1, dip2px(500), dip2px(500));
 
@@ -3946,6 +3977,29 @@ cheat.dismiss();
                 }
             }));
             cheatLayout.addView(sbn);
+
+var info2 = new Button(MainActivity);
+info2.setText("Faced player info");
+info2.setTextColor(Color.RED);
+if(facedInfo==true)info2.setTextColor(Color.GREEN);
+            info2.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             facedInfo?facedInfo=false:facedInfo=true;
+info2.setText("Faced player info");
+if(facedInfo == true){
+info2.setTextColor(Color.GREEN);
+	clientMessage(client + "Face the player to see info!");
+
+facedInfo = true;
+}
+if(facedInfo == false){
+info2.setTextColor(Color.RED);
+
+facedInfo = false;
+}
+                }
+            }));
+            cheatLayout.addView(info2);
  
 var exit2 = new Button(MainActivity);
 		exit2.setText("Exit");
@@ -10968,6 +11022,7 @@ if (spider && Utils.Player.isCollidedHorizontally()) {
 			}
 		}
 	}
+	ModPE.showTipMessage(client + "\nName: "+Player.getName(Player.getPointedEntity())+", RenderType: "+Entity.getRenderType(Player.getPointedEntity())+", Health: "+Entity.getHealth(Player.getPointedEntity())+"/"+Entity.getMaxHealth(Player.getPointedEntity())+"\nHead: "+Entity.getArmorDamage(Player.getPointedEntity(), 0)+", Chest: "+Entity.getArmorDamage(Player.getPointedEntity(), 1)+", Leggings: "+Entity.getArmorDamage(Player.getPointedEntity(), 2)+", Boots: "+Entity.getArmorDamage(Player.getPointedEntity(), 3));
 }
 
 function toDirectionalVector(dir, a, b) {
