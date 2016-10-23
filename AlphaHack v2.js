@@ -261,7 +261,9 @@ var striketext = false;
 var belowblock = false;
 var preventsame = false;
 var hitparticles = false;
+
 var facedInfo = false;
+var tapParti = false;
 
 var showActive = false;
 var showActive2 = false;
@@ -8336,6 +8338,30 @@ hitparticles = false;
                 }
             }));
             particleLayout.addView(hitpart);
+	
+	var parti2l = new Button(MainActivity);
+parti2l.setText("Tap particles");
+parti2l.setTextColor(Color.RED);
+if(tapParti==true)parti2l.setTextColor(Color.GREEN);
+            parti2l.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             tapParti?tapParti=false:tapParti=true;
+parti2l.setText("Tap particles");
+if(tapParti == true){
+parti2l.setTextColor(Color.GREEN);
+clientMessage(client + "Tap particles on, enable a particle!");
+
+tapParti = true;
+}
+if(tapParti == false){
+parti2l.setTextColor(Color.RED);
+clientMessage(client + "Tap particles off");
+
+tapParti = false;
+}
+                }
+            }));
+            particleLayout.addView(parti2l);
 		
 var p1 = new Button(MainActivity);
             p1.setText("Angry villager: "+(particle1?"on":"off"));
@@ -10845,6 +10871,40 @@ Server.sendChat("/tp " + Player.getName(Player.getEntity()) + space + x + space 
 if(tapnuke)explode(x,y,z,5);
 if(tapid)clientMessage(client + "Block ID: "+blockId+" Item ID: "+itemId+"\n"+" X: "+x+" Y: "+y+" Z: "+z);
 if(tapjump)setVelY(getPlayerEnt(),0.5);
+	if(tapParti){
+if(particle1)Level.addParticle(ParticleType.angryVillager, x, y, z, 0, 0, 0, 5);
+if(particle2)Level.addParticle(ParticleType.bubble, x, y, z, 0, 0, 0, 150);
+if(particle3)Level.addParticle(ParticleType.cloud, x, y, z, 0, 0, 0, 150);
+if(particle4)Level.addParticle(ParticleType.crit, x, y, z, 0, 0, 0, 50);
+if(particle5)Level.addParticle(ParticleType.dripLava, x, y, z, 0, 0, 0, 150);
+if(particle6)Level.addParticle(ParticleType.dripWater, x, y, z, 0, 0, 0, 150);
+if(particle7)Level.addParticle(ParticleType.enchantmenttable, x, y, z, 0, 0, 0, 150);
+if(particle8)Level.addParticle(ParticleType.fallingDust, x, y, z, 0, 0, 0, 150);
+if(particle9)Level.addParticle(ParticleType.flame, x, y, z, 0, 0, 0, 150);
+if(particle10)Level.addParticle(ParticleType.happyVillager, x, y, z, 0, 0, 0, 50);
+if(particle11)Level.addParticle(ParticleType.heart, x, y, z, 0, 0, 0, 5);
+if(particle12)Level.addParticle(ParticleType.hugeexplosion, x, y, z, 0, 0, 0, 150);
+if(particle13)Level.addParticle(ParticleType.hugeexplosionSeed, x, y, z, 0, 0, 0, 10);
+if(particle14)Level.addParticle(ParticleType.ink, x, y, z, 0, 0, 0, 150);
+if(particle15)Level.addParticle(ParticleType.itemBreak, x, y, z, 0, 0, 0, 150);
+if(particle16)Level.addParticle(ParticleType.lava, x, y, z, 0, 0, 0, 150);
+if(particle17)Level.addParticle(ParticleType.mobFlame, x, y, z, 0, 0, 0, 150);
+if(particle18)Level.addParticle(ParticleType.note, x, y, z, 0, 0, 0, 150);
+if(particle19)Level.addParticle(ParticleType.portal, x, y, z, 0, 0, 0, 150);
+if(particle20)Level.addParticle(ParticleType.rainSplash, x, y, z, 0, 0, 0, 150);
+if(particle21)Level.addParticle(ParticleType.redstone, x, y, z, 0, 0, 0, 10);
+if(particle22)Level.addParticle(ParticleType.slime, x, y, z, 0, 0, 0, 150);
+if(particle23)Level.addParticle(ParticleType.smoke, x, y, z, 0, 0, 0, 150);
+if(particle24)Level.addParticle(ParticleType.snowballpoof, x, y, z, 0, 0, 0, 150);
+if(particle25)Level.addParticle(ParticleType.spell, x, y, z, 0, 0, 0, 150);
+if(particle26)Level.addParticle(ParticleType.splash, x, y, z, 0, 0, 0, 150);
+if(particle27)Level.addParticle(ParticleType.suspendedTown, x, y, z, 0, 0, 0, 150);
+if(particle28)Level.addParticle(ParticleType.terrain, x, y, z, 0, 0, 0, 150);
+if(particle29)Level.addParticle(ParticleType.waterWake, x, y, z, 0, 0, 0, 150);
+if(particle30)Level.addParticle(ParticleType.largeexplode, x, y, z, 0, 0, 0, 150);
+if(particle31)Level.addParticle(ParticleType.spell2, x, y, z, 0, 0, 0, 150);
+if(particle32)Level.addParticle(ParticleType.spell3, x, y, z, 0, 0, 0, 150);
+}
 }
 
 function modTick(){
@@ -11022,7 +11082,10 @@ if (spider && Utils.Player.isCollidedHorizontally()) {
 			}
 		}
 	}
-	ModPE.showTipMessage(client + "\nName: "+Player.getName(Player.getPointedEntity())+", RenderType: "+Entity.getRenderType(Player.getPointedEntity())+", Health: "+Entity.getHealth(Player.getPointedEntity())+"/"+Entity.getMaxHealth(Player.getPointedEntity())+"\nHead: "+Entity.getArmorDamage(Player.getPointedEntity(), 0)+", Chest: "+Entity.getArmorDamage(Player.getPointedEntity(), 1)+", Leggings: "+Entity.getArmorDamage(Player.getPointedEntity(), 2)+", Boots: "+Entity.getArmorDamage(Player.getPointedEntity(), 3));
+	if(facedInfo){
+		if(Entity.getEntityTypeId(Plyer.getPointedEntity()) != 63)ModPE.showTipMessage(client + "\nName: "+Player.getName(Player.getPointedEntity())+", RenderType: "+Entity.getRenderType(Player.getPointedEntity())+", Health: "+Entity.getHealth(Player.getPointedEntity())+"/"+Entity.getMaxHealth(Player.getPointedEntity())+"");
+		if(Entity.getEntityTypeId(Plyer.getPointedEntity()) == 63)ModPE.showTipMessage(client + "\nName: "+Player.getName(Player.getPointedEntity())+", RenderType: "+Entity.getRenderType(Player.getPointedEntity())+", Health: "+Entity.getHealth(Player.getPointedEntity())+"/"+Entity.getMaxHealth(Player.getPointedEntity())+"\nHead: "+Entity.getArmorDamage(Player.getPointedEntity(), 0)+", Chest: "+Entity.getArmorDamage(Player.getPointedEntity(), 1)+", Leggings: "+Entity.getArmorDamage(Player.getPointedEntity(), 2)+", Boots: "+Entity.getArmorDamage(Player.getPointedEntity(), 3));
+	}
 }
 
 function toDirectionalVector(dir, a, b) {
