@@ -264,6 +264,7 @@ var hitparticles = false;
 
 var facedInfo = false;
 var tapParti = false;
+var hitmorph = false;
 
 var showActive = false;
 var showActive2 = false;
@@ -426,6 +427,13 @@ var GUIStroke11 = Color.GREEN;
 var GUIStroke12 = Color.MAGENTA;
 
 var GUISize = "2";
+
+//fixed color changing menus making on/off buttons look weird;
+var extraBtns = Color.RED;
+var extrabtns2 = Color.GREEN;
+
+var extrabtns3 = Color.BLACK;
+var extrabtns4 = Color.BLUE;
 
 //tracer draw function || variable
 var AlphaHack = {};
@@ -7665,6 +7673,30 @@ morphEnhance = false;
                 }
             }));
             morphLayout.addView(mne);
+	
+	var morphit = new Button(MainActivity);
+morphit.setText("Hit'n'morph");
+morphit.setTextColor(Color.RED);
+if(hitmorph==true)morphit.setTextColor(Color.GREEN);
+            morphit.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             hitmorph?hitmorph=false:hitmorph=true;
+morphit.setText("Hit'n'morph");
+if(hitmorph == true){
+morphit.setTextColor(Color.GREEN);
+clientMessage(client + "Hit'n'morph on, hit a mob to morph!");
+
+hitmorph = true;
+}
+if(hitmorph == false){
+morphit.setTextColor(Color.RED);
+clientMessage(client + "Hit'n'morph off");
+
+hitmorph = false;
+}
+                }
+            }));
+            morphLayout.addView(morphit);
 		
 		var mm1 = new Button(MainActivity);
             mm1.setText("Player");
@@ -10183,6 +10215,7 @@ if(particle30)Level.addParticle(ParticleType.largeexplode, x, y, z, 0, 0, 0, 150
 if(particle31)Level.addParticle(ParticleType.spell2, x, y, z, 0, 0, 0, 150);
 if(particle32)Level.addParticle(ParticleType.spell3, x, y, z, 0, 0, 0, 150);
 }
+	if(hitmorph)Entity.setRenderType(Player.getEntity(), Entity.getRenderType(victim));
 } 
 function instaDestroy(){
 if(instabreak==true)
@@ -12610,6 +12643,7 @@ GetText = new android.widget.PopupWindow();
 var LayerFov = new android.widget.LinearLayout(MainActivity);
 var fin = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
+var reset = new Button(MainActivity);
 var Exit = new Button(MainActivity);
 
 Dialog.setTitle("Enter new fov");
@@ -12618,11 +12652,21 @@ Dialog.setContentView(LayerFov);
 LayerFov.setOrientation(android.widget.LinearLayout.VERTICAL);
 Dialog.show();
 LayerFov.addView(fin);
+LayerFov.addView(reset);
 LayerFov.addView(Exit);
 
 fin.setText("");
 fin.setHint("Fov number");
+reset.setText("reset fov");
 Exit.setText("done");
+	
+reset.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+ModPE.resetFov();
+Dialog.dismiss();
+showMenuBtn();
+}
+});
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
