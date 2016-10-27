@@ -229,14 +229,10 @@ var extraj = false;
 var getvel = false;
 var yawpitch = false;
 var airwalk = false;
-var paimaura = false;
-var maimaura = false;
+var aimaura = false;
 var aim;
 var aimbot = false;
 var aimed = false;
-var aim2;
-var aimbot2 = false;
-var aimed2 = false;
 var changeSpeed = false;
 var brightness = false;
 var lowhealth = false;
@@ -796,16 +792,16 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 			
 	    var a1 = new TextView(MainActivity);
             a1.setTextSize(10);
-            if(paimaura==true)a1.setText("Player aura");
-            if(paimaura==false)a1.setText("");
-	    if(paimaura==false)a1.setTextColor(Color.RED);
-            if(paimaura==true)a1.setTextColor(Color.GREEN);
+            if(aimaura==true)a1.setText("aimaura");
+            if(aimaura==false)a1.setText("");
+	    if(aimaura==false)a1.setTextColor(Color.RED);
+            if(aimaura==true)a1.setTextColor(Color.GREEN);
 			a1.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              a1.setTextColor(Color.RED);
 aimbot = false;
 aimed = false;
-paimaura = false;
+aimaura = false;
 			}
 		});
 		activeLayout.addView(a1);
@@ -2389,59 +2385,32 @@ airwalk = false;
             }));
             cheatLayout.addView(walkonair);
 			
-var killaura1 = new Button(MainActivity);
-killaura1.setText("Player aim aura");
+            var killaura1 = new Button(MainActivity);
+killaura1.setText("Aim aura");
 killaura1.setTextColor(Color.RED);
-if(paimaura==true)killaura1.setTextColor(Color.GREEN);
+if(aimaura==true)killaura1.setTextColor(Color.GREEN);
             killaura1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-             paimaura?paimaura=false:paimaura=true;
-killaura1.setText("Player aim aura");
-if(paimaura == true){
+             aimaura?aimaura=false:aimaura=true;
+killaura1.setText("Aim aura");
+if(aimaura == true){
 killaura1.setTextColor(Color.GREEN);
-clientMessage(client + "Player aim aura on");
+clientMessage(client + "Aim aura on");
 Toast.makeText(MainActivity, "Credit: Firepro9978 from flame client!", 1).show();
 aimbot = true;
 aimed = true;
-paimaura = true;
+aimaura = true;
 }
-if(paimaura == false){
+if(aimaura == false){
 killaura1.setTextColor(Color.RED);
-clientMessage(client + "Player aim aura off");
+clientMessage(client + "Aim aura off");
 aimbot = false;
 aimed = false;
-paimaura = false;
+aimaura = false;
 }
                 }
             }));
             cheatLayout.addView(killaura1);
-	
-	var killaura2 = new Button(MainActivity);
-killaura2.setText("Mob aim aura");
-killaura2.setTextColor(Color.RED);
-if(maimaura==true)killaura2.setTextColor(Color.GREEN);
-            killaura2.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             maimaura?maimaura=false:maimaura=true;
-killaura2.setText("Mob aim aura");
-if(maimaura == true){
-killaura2.setTextColor(Color.GREEN);
-clientMessage(client + "Mob aim aura on");
-Toast.makeText(MainActivity, "Credit: Firepro9978 from flame client!", 1).show();
-aimbot2 = true;
-aimed2 = true;
-maimaura = true;
-}
-if(maimaura == false){
-killaura2.setTextColor(Color.RED);
-clientMessage(client + "Mob aim aura off");
-aimbot2 = false;
-aimed2 = false;
-maimaura = false;
-}
-                }
-            }));
-            cheatLayout.addView(killaura2);
 	    
 	    	    var button2 = new Button(MainActivity);
 button2.setText("X-Ray");
@@ -12807,29 +12776,11 @@ if(TTick==11)TTick = 0;
 }
 
 function getNearestEntity(maxrange) {
+			var mobs = Entity.getAll();
 			var players = Server.getAllPlayers();
 			var small = maxrange;
 			var ent = null;
-	if(players!=null){
-			for (var i = 0; i < players.length; i++) {
-				var x = Entity.getX(players[i]) - getPlayerX();
-				var y = Entity.getY(players[i]) - getPlayerY();
-				var z = Entity.getZ(players[i]) - getPlayerZ();
-				var dist = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2));
-				if (dist < small && dist > 0 && Entity.getHealth(players[i]) >= 1) {
-					small = dist;
-					ent = players[i];
-				}
-			}
-			return ent;
-}
-		}
-
-function getNearestEntity2(maxrange) {
-			var mobs = Entity.getAll();
-			var small = maxrange;
-			var ent = null;
-	if(mobs!=null){
+	if(mobs!=null && players!=null){
 			for (var i = 0; i < mobs.length; i++) {
 				var x = Entity.getX(mobs[i]) - getPlayerX();
 				var y = Entity.getY(mobs[i]) - getPlayerY();
@@ -12838,6 +12789,16 @@ function getNearestEntity2(maxrange) {
 				if (dist < small && dist > 0 && Entity.getEntityTypeId(mobs[i]) <= 63 && Entity.getHealth(mobs[i]) >= 1) {
 					small = dist;
 					ent = mobs[i];
+				}
+			}
+			for (var i = 0; i < players.length; i++) {
+				var x = Entity.getX(players[i]) - getPlayerX();
+				var y = Entity.getY(players[i]) - getPlayerY();
+				var z = Entity.getZ(players[i]) - getPlayerZ();
+				var dist = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2));
+				if (dist < small && dist > 0 && Entity.getHealth(players[i]) >= 1) {
+					small = dist;
+					ent = players[i];
 				}
 			}
 			return ent;
@@ -13214,10 +13175,6 @@ function rptask() {
 			    var ent = getNearestEntity(7);
 			    if(ent != null && Entity.getNameTag(ent) != " " || Entity.getNameTag(ent) != "")crosshairAimAt(ent);
 		    }
-			if(aimbot2){
-				var ent = getNearestEntity(7);
-			    if(ent != null)crosshairAimAt(ent);
-			}
                     if(twerk)twerking();
                     nx = getPlayerX();
                     ny = getPlayerY();
