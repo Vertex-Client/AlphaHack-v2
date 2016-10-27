@@ -796,16 +796,16 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 			
 	    var a1 = new TextView(MainActivity);
             a1.setTextSize(10);
-            if(aimaura==true)a1.setText("AimAura");
-            if(aimaura==false)a1.setText("");
-	    if(aimaura==false)a1.setTextColor(Color.RED);
-            if(aimaura==true)a1.setTextColor(Color.GREEN);
+            if(paimaura==true)a1.setText("Player aura");
+            if(paimaura==false)a1.setText("");
+	    if(paimaura==false)a1.setTextColor(Color.RED);
+            if(paimaura==true)a1.setTextColor(Color.GREEN);
 			a1.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              a1.setTextColor(Color.RED);
 aimbot = false;
 aimed = false;
-aimaura = false;
+paimaura = false;
 			}
 		});
 		activeLayout.addView(a1);
@@ -12791,9 +12791,6 @@ var extraj = false;
 var getvel = false;
 var yawpitch = false;
 var airwalk = false;
-var aimaura = false;
-var aimbot = false;
-var aimed = false;
 var changeSpeed = false;
 }
 
