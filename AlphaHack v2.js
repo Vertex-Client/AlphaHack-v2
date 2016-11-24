@@ -229,10 +229,14 @@ var extraj = false;
 var getvel = false;
 var yawpitch = false;
 var airwalk = false;
-var aimaura = false;
+var paimaura = false;
+var maimaura = false;
 var aim;
 var aimbot = false;
 var aimed = false;
+var aim2;
+var aimbot2 = false;
+var aimed2 = false;
 var changeSpeed = false;
 var brightness = false;
 var lowhealth = false;
@@ -792,16 +796,16 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 			
 	    var a1 = new TextView(MainActivity);
             a1.setTextSize(10);
-            if(aimaura==true)a1.setText("aimaura");
-            if(aimaura==false)a1.setText("");
-	    if(aimaura==false)a1.setTextColor(Color.RED);
-            if(aimaura==true)a1.setTextColor(Color.GREEN);
+            if(paimaura==true)a1.setText("Player aura");
+            if(paimaura==false)a1.setText("");
+	    if(paimaura==false)a1.setTextColor(Color.RED);
+            if(paimaura==true)a1.setTextColor(Color.GREEN);
 			a1.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              a1.setTextColor(Color.RED);
 aimbot = false;
 aimed = false;
-aimaura = false;
+paimaura = false;
 			}
 		});
 		activeLayout.addView(a1);
@@ -2385,32 +2389,59 @@ airwalk = false;
             }));
             cheatLayout.addView(walkonair);
 			
-            var killaura1 = new Button(MainActivity);
-killaura1.setText("Aim aura");
+var killaura1 = new Button(MainActivity);
+killaura1.setText("Player aim aura");
 killaura1.setTextColor(Color.RED);
-if(aimaura==true)killaura1.setTextColor(Color.GREEN);
+if(paimaura==true)killaura1.setTextColor(Color.GREEN);
             killaura1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-             aimaura?aimaura=false:aimaura=true;
-killaura1.setText("Aim aura");
-if(aimaura == true){
+             paimaura?paimaura=false:paimaura=true;
+killaura1.setText("Player aim aura");
+if(paimaura == true){
 killaura1.setTextColor(Color.GREEN);
-clientMessage(client + "Aim aura on");
+clientMessage(client + "Player aim aura on");
 Toast.makeText(MainActivity, "Credit: Firepro9978 from flame client!", 1).show();
 aimbot = true;
 aimed = true;
-aimaura = true;
+paimaura = true;
 }
-if(aimaura == false){
+if(paimaura == false){
 killaura1.setTextColor(Color.RED);
-clientMessage(client + "Aim aura off");
+clientMessage(client + "Player aim aura off");
 aimbot = false;
 aimed = false;
-aimaura = false;
+paimaura = false;
 }
                 }
             }));
             cheatLayout.addView(killaura1);
+	
+	var killaura2 = new Button(MainActivity);
+killaura2.setText("Mob aim aura");
+killaura2.setTextColor(Color.RED);
+if(maimaura==true)killaura2.setTextColor(Color.GREEN);
+            killaura2.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             maimaura?maimaura=false:maimaura=true;
+killaura2.setText("Mob aim aura");
+if(maimaura == true){
+killaura2.setTextColor(Color.GREEN);
+clientMessage(client + "Mob aim aura on");
+Toast.makeText(MainActivity, "Credit: Firepro9978 from flame client!", 1).show();
+aimbot2 = true;
+aimed2 = true;
+maimaura = true;
+}
+if(maimaura == false){
+killaura2.setTextColor(Color.RED);
+clientMessage(client + "Mob aim aura off");
+aimbot2 = false;
+aimed2 = false;
+maimaura = false;
+}
+                }
+            }));
+            cheatLayout.addView(killaura2);
 	    
 	    	    var button2 = new Button(MainActivity);
 button2.setText("X-Ray");
@@ -4079,16 +4110,16 @@ endHack.setText("End portal");
 				Level.setTile(getPlayerX() +1, getPlayerY() -1, getPlayerZ() -4, 120, 4);
 				Level.setTile(getPlayerX() -2, getPlayerY() -1, getPlayerZ() -4, 0, 0);
 				Level.setTile(getPlayerX() +2, getPlayerY() -1, getPlayerZ() -4, 0, 0);
-				/*middle
-				Level.setTile(getPlayerX(), getPlayerY() -1, getPlayerZ() -5, 209, 0);
-				Level.setTile(getPlayerX() -1, getPlayerY() -1, getPlayerZ() -5, 209, 0);
-				Level.setTile(getPlayerX() +1, getPlayerY() -1, getPlayerZ() -5, 209, 0);
-				Level.setTile(getPlayerX(), getPlayerY() -1, getPlayerZ() -6, 209, 0);
-				Level.setTile(getPlayerX() -1, getPlayerY() -1, getPlayerZ() -6, 209, 0);
-				Level.setTile(getPlayerX() +1, getPlayerY() -1, getPlayerZ() -6, 209, 0);
-				Level.setTile(getPlayerX(), getPlayerY() -1, getPlayerZ() -7, 209, 0);
-				Level.setTile(getPlayerX() -1, getPlayerY() -1, getPlayerZ() -7, 209, 0);
-				Level.setTile(getPlayerX() +1, getPlayerY() -1, getPlayerZ() -7, 209, 0);*/
+			/*middle*/
+			Level.setTile(getPlayerX(), getPlayerY() -1, getPlayerZ() -5, 119, 0);
+				Level.setTile(getPlayerX() -1, getPlayerY() -1, getPlayerZ() -5, 119, 0);
+				Level.setTile(getPlayerX() +1, getPlayerY() -1, getPlayerZ() -5, 119, 0);
+				Level.setTile(getPlayerX(), getPlayerY() -1, getPlayerZ() -6, 119, 0);
+				Level.setTile(getPlayerX() -1, getPlayerY() -1, getPlayerZ() -6, 119, 0);
+				Level.setTile(getPlayerX() +1, getPlayerY() -1, getPlayerZ() -6, 119, 0);
+				Level.setTile(getPlayerX(), getPlayerY() -1, getPlayerZ() -7, 119, 0);
+				Level.setTile(getPlayerX() -1, getPlayerY() -1, getPlayerZ() -7, 119, 0);
+				Level.setTile(getPlayerX() +1, getPlayerY() -1, getPlayerZ() -7, 119, 0);
 				/*back*/
 				Level.setTile(getPlayerX(), getPlayerY() -1, getPlayerZ() -8, 120, 4);
 				Level.setTile(getPlayerX() -1, getPlayerY() -1, getPlayerZ() -8, 120, 4);
@@ -9074,6 +9105,15 @@ var spawn11 = new Button(MainActivity);
                 }
             }));
             spawnLayout.addView(spawn22);
+	
+	var spaw28 = new Button(MainActivity);
+            spaw28.setText("Spawn polar bear");
+            spaw28.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 28);
+                }
+            }));
+            spawnLayout.addView(spaw28);
 
 var spawn32 = new Button(MainActivity);
             spawn32.setText("Spawn Zombie");
@@ -9326,6 +9366,33 @@ var spawn70 = new Button(MainActivity);
                 }
             }));
             spawnLayout.addView(spawnT);
+	
+	var spaw54 = new Button(MainActivity);
+            spaw54.setText("Spawn shulker");
+            spaw54.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 54);
+                }
+            }));
+            spawnLayout.addView(spaw54);
+	
+	var spaw55 = new Button(MainActivity);
+            spaw55.setText("Spawn endermite");
+            spaw55.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 55);
+                }
+            }));
+            spawnLayout.addView(spaw55);
+	
+	var spawn53 = new Button(MainActivity);
+            spawn53.setText("Spawn ender dragon");
+            spawn53.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 53);
+                }
+            }));
+            spawnLayout.addView(spawn53);
 
             spawn = new PopupWindow(spawnLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)spawn.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -10216,7 +10283,7 @@ if(particle31)Level.addParticle(ParticleType.spell2, x, y, z, 0, 0, 0, 150);
 if(particle32)Level.addParticle(ParticleType.spell3, x, y, z, 0, 0, 0, 150);
 }
 	if(hitmorph)Entity.setRenderType(Player.getEntity(), Entity.getRenderType(victim));
-} 
+} 
 function instaDestroy(){
 if(instabreak==true)
 	for(i = 0; i < 256; i++){
@@ -12776,21 +12843,10 @@ if(TTick==11)TTick = 0;
 }
 
 function getNearestEntity(maxrange) {
-			var mobs = Entity.getAll();
 			var players = Server.getAllPlayers();
 			var small = maxrange;
 			var ent = null;
-	if(mobs!=null && players!=null){
-			for (var i = 0; i < mobs.length; i++) {
-				var x = Entity.getX(mobs[i]) - getPlayerX();
-				var y = Entity.getY(mobs[i]) - getPlayerY();
-				var z = Entity.getZ(mobs[i]) - getPlayerZ();
-				var dist = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2));
-				if (dist < small && dist > 0 && Entity.getEntityTypeId(mobs[i]) <= 63 && Entity.getHealth(mobs[i]) >= 1) {
-					small = dist;
-					ent = mobs[i];
-				}
-			}
+	if(players!=null){
 			for (var i = 0; i < players.length; i++) {
 				var x = Entity.getX(players[i]) - getPlayerX();
 				var y = Entity.getY(players[i]) - getPlayerY();
@@ -12799,6 +12855,25 @@ function getNearestEntity(maxrange) {
 				if (dist < small && dist > 0 && Entity.getHealth(players[i]) >= 1) {
 					small = dist;
 					ent = players[i];
+				}
+			}
+			return ent;
+}
+		}
+
+function getNearestEntity2(maxrange) {
+			var mobs = Entity.getAll();
+			var small = maxrange;
+			var ent = null;
+	if(mobs!=null){
+			for (var i = 0; i < mobs.length; i++) {
+				var x = Entity.getX(mobs[i]) - getPlayerX();
+				var y = Entity.getY(mobs[i]) - getPlayerY();
+				var z = Entity.getZ(mobs[i]) - getPlayerZ();
+				var dist = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2));
+				if (dist < small && dist > 0 && Entity.getEntityTypeId(mobs[i]) <= 63 && Entity.getHealth(mobs[i]) >= 1) {
+					small = dist;
+					ent = mobs[i];
 				}
 			}
 			return ent;
@@ -13175,6 +13250,10 @@ function rptask() {
 			    var ent = getNearestEntity(7);
 			    if(ent != null && Entity.getNameTag(ent) != " " || Entity.getNameTag(ent) != "")crosshairAimAt(ent);
 		    }
+			if(aimbot2){
+				var ent = getNearestEntity(7);
+			    if(ent != null)crosshairAimAt(ent);
+			}
                     if(twerk)twerking();
                     nx = getPlayerX();
                     ny = getPlayerY();
