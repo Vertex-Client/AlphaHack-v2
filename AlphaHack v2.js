@@ -7763,7 +7763,7 @@ if(morphEnhance==true){
 	Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);
 	Entity.addEffect(getPlayerEnt(), MobEffect.fireResistance, 25*10, 0, false, true);
 }
-Entity.setRenderType(Player.getEntity(), 18);
+Entity.setRenderType(Player.getEntity(), 20);
 /*Entity.setMobSkin(Player.getEntity(),"mob/blaze.png");*/
                 }
             }));
@@ -7802,11 +7802,20 @@ var mm4 = new Button(MainActivity);
 if(morphEnhance==true){
 Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);
 }
-Entity.setRenderType(Player.getEntity(), 22);
+Entity.setRenderType(Player.getEntity(), 24);
 /*Entity.setMobSkin(Player.getEntity(),"mob/creeper.png");*/
                 }
             }));
             morphLayout.addView(mm4);
+	
+	var mn4 = new Button(MainActivity);
+            mn4.setText("Ender dragon");
+            mn4.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Entity.setRenderType(Player.getEntity(), 12);
+                }
+            }));
+            morphLayout.addView(mn4);
 
 var mm5 = new Button(MainActivity);
             mm5.setText("Enderman");
@@ -7815,11 +7824,20 @@ var mm5 = new Button(MainActivity);
 if(morphEnhance==true){
 Entity.setCollisionSize(Player.getEntity(), 0.7, 3, 0.7);
 }
-Entity.setRenderType(Player.getEntity(), 24);
+Entity.setRenderType(Player.getEntity(), 26);
 /*Entity.setMobSkin(Player.getEntity(),"mob/enderman.tga");*/
                 }
             }));
             morphLayout.addView(mm5);
+	
+	var mn1 = new Button(MainActivity);
+            mn1.setText("Endermite");
+            mn1.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Entity.setRenderType(Player.getEntity(), 71);
+                }
+            }));
+            morphLayout.addView(mn1);
 
 var mm6 = new Button(MainActivity);
             mm6.setText("Ghast");
@@ -7829,7 +7847,7 @@ if(morphEnhance==true){
 Entity.setCollisionSize(Player.getEntity(), 4, 4, 4);
 Entity.addEffect(getPlayerEnt(), MobEffect.fireResistance, 25*10, 0, false, true);
 }
-Entity.setRenderType(Player.getEntity(), 17);
+Entity.setRenderType(Player.getEntity(), 19);
 /*Entity.setMobSkin(Player.getEntity(),"mob/ghast.png");*/
                 }
             }));
@@ -7842,7 +7860,7 @@ Entity.setRenderType(Player.getEntity(), 17);
 if(morphEnhance==true){
 	Entity.addEffect(getPlayerEnt(), MobEffect.jump, 25*10, 0, false, true);
 }
-Entity.setRenderType(Player.getEntity(), 48);
+Entity.setRenderType(Player.getEntity(), 54);
 /*Entity.setMobSkin(Player.getEntity(),"mob/horse.png");*/
                 }
             }));
@@ -7856,7 +7874,7 @@ if(morphEnhance==true){
 	Entity.addEffect(getPlayerEnt(), MobEffect.hunger, 25*10, 0, false, true);
 	Entity.addEffect(getPlayerEnt(), MobEffect.movementSlowdown, 25*10, 0, false, true);
 }
-	Entity.setRenderType(Player.getEntity(), 54);
+	Entity.setRenderType(Player.getEntity(), 66);
 /*Entity.setMobSkin(Player.getEntity(),"mob/husk.png");*/
                 }
             }));
@@ -7869,7 +7887,7 @@ var mm7 = new Button(MainActivity);
 if(morphEnhance==true){
 Entity.setCollisionSize(Player.getEntity(), 1, 3, 1);
 }
-Entity.setRenderType(Player.getEntity(), 42);
+Entity.setRenderType(Player.getEntity(), 47);
 /*Entity.setMobSkin(Player.getEntity(),"mob/iron_golem.png");*/
                 }
             }));
@@ -7884,7 +7902,7 @@ Entity.setCollisionSize(Player.getEntity(), 2, 2, 2);
 Entity.addEffect(getPlayerEnt(), MobEffect.fireResistance, 25*10, 0, false, true);
 Entity.addEffect(getPlayerEnt(), MobEffect.jump, 25*10, 0, false, true);
 }
-Entity.setRenderType(Player.getEntity(), 16);
+Entity.setRenderType(Player.getEntity(), 18);
 /*Entity.setMobSkin(Player.getEntity(),"mob/magmacube.png");*/
                 }
             }));
@@ -7898,7 +7916,7 @@ if(morphEnhance==true){
 Entity.setCollisionSize(Player.getEntity(), 0.5, 0.5, 0.5);
 Entity.addEffect(getPlayerEnt(), MobEffect.movementSpeed, 25*10, 0, false, true);
 }
-Entity.setRenderType(Player.getEntity(), 43);
+Entity.setRenderType(Player.getEntity(), 48);
 /*Entity.setMobSkin(Player.getEntity(),"mob/cat/ocelot.png");*/
                 }
             }));
@@ -7916,6 +7934,15 @@ Entity.setRenderType(Player.getEntity(), 8);
                 }
             }));
             morphLayout.addView(mm10);
+	
+	var mn2 = new Button(MainActivity);
+            mn2.setText("Polar bear");
+            mn2.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Entity.setRenderType(Player.getEntity(), 13);
+                }
+            }));
+            morphLayout.addView(mn2);
             
             var mmR = new Button(MainActivity);
             mmR.setText("Rabbit");
@@ -7924,7 +7951,7 @@ Entity.setRenderType(Player.getEntity(), 8);
         if(morphEnhance==true){
         Entity.addEffect(getPlayerEnt(), MobEffect.jump, 25*10, 0, false, true);
         }
-Entity.setRenderType(Player.getEntity(), 46);
+Entity.setRenderType(Player.getEntity(), 52);
 /*Entity.setMobSkin(Player.getEntity(),"mob/rabbit.png");*/
                 }
             }));
@@ -7942,6 +7969,15 @@ Entity.setRenderType(Player.getEntity(), 9);
                 }
             }));
             morphLayout.addView(mm11);
+	
+	var mn3 = new Button(MainActivity);
+            mn3.setText("Shulker");
+            mn3.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Entity.setRenderType(Player.getEntity(), 50);
+                }
+            }));
+            morphLayout.addView(mn3);
 
 var mm12 = new Button(MainActivity);
             mm12.setText("Silverfish");
@@ -7951,7 +7987,7 @@ if(morphEnhance==true){
 Entity.setCollisionSize(Player.getEntity(), 0.3, 0.4, 0.3);
 Entity.addEffect(getPlayerEnt(), MobEffect.nightVision, 25*10, 0, false, true);
 }
-Entity.setRenderType(Player.getEntity(), 21);
+Entity.setRenderType(Player.getEntity(), 23);
 /*Entity.setMobSkin(Player.getEntity(),"mob/silverfish.png");*/
                 }
             }));
@@ -7966,7 +8002,7 @@ Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);
 Entity.addEffect(getPlayerEnt(), MobEffect.hunger, 25*10, 0, false, true);
 Entity.addEffect(getPlayerEnt(), MobEffect.movementSlowdown, 25*10, 0, false, true);
 }
-Entity.setRenderType(Player.getEntity(), 19);
+Entity.setRenderType(Player.getEntity(), 21);
 /*Entity.setMobSkin(Player.getEntity(),"mob/skeleton.png");*/
                 }
             }));
@@ -7980,7 +8016,7 @@ if(morphEnhance==true){
 Entity.setCollisionSize(Player.getEntity(), 2, 2, 2);
 Entity.addEffect(getPlayerEnt(), MobEffect.jump, 25*10, 0, false, true);
 }
-Entity.setRenderType(Player.getEntity(), 23);
+Entity.setRenderType(Player.getEntity(), 25);
 /*Entity.setMobSkin(Player.getEntity(),"mob/slime.png");*/
                 }
             }));
@@ -7993,7 +8029,7 @@ var mm15 = new Button(MainActivity);
 if(morphEnhance==true){
 Entity.setCollisionSize(Player.getEntity(), 0.7, 2, 0.7);
 }
-Entity.setRenderType(Player.getEntity(), 44);
+Entity.setRenderType(Player.getEntity(), 49);
 /*Entity.setMobSkin(Player.getEntity(),"mob/snow_golem.png");*/
                 }
             }));
@@ -8007,7 +8043,7 @@ Entity.setRenderType(Player.getEntity(), 44);
         Entity.addEffect(getPlayerEnt(), MobEffect.hunger, 25*10, 0, false, true);
 	Entity.addEffect(getPlayerEnt(), MobEffect.movementSlowdown, 25*10, 0, false, true);
                 	}
-Entity.setRenderType(Player.getEntity(), 55);
+Entity.setRenderType(Player.getEntity(), 67);
 /*Entity.setMobSkin(Player.getEntity(),"mob/stray.png");*/
                 }
             }));
@@ -8020,7 +8056,7 @@ var mm16 = new Button(MainActivity);
 if(morphEnhance==true){
 Entity.setCollisionSize(Player.getEntity(), 1, 0.4, 1);
 }
-Entity.setRenderType(Player.getEntity(), 20);
+Entity.setRenderType(Player.getEntity(), 22);
 /*Entity.setMobSkin(Player.getEntity(),"mob/spider.tga");*/
                 }
             }));
@@ -8034,7 +8070,7 @@ if(morphEnhance==true){
 Entity.setCollisionSize(Player.getEntity(), 0.5, 0.5, 0.5);
 Entity.addEffect(getPlayerEnt(), MobEffect.waterBreathing, 25*10, 0, false, true);
 }
-Entity.setRenderType(Player.getEntity(), 36);
+Entity.setRenderType(Player.getEntity(), 40);
 /*Entity.setMobSkin(Player.getEntity(),"mob/squid.png");*/
                 }
             }));
@@ -8047,7 +8083,7 @@ var mm18 = new Button(MainActivity);
 if(morphEnhance==true){
 Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);
 }
-Entity.setRenderType(Player.getEntity(), 12);
+Entity.setRenderType(Player.getEntity(), 14);
 /*Entity.setMobSkin(Player.getEntity(),"mob/villager/villager.png");*/
                 }
             }));
@@ -8062,7 +8098,7 @@ Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);
 Entity.addEffect(getPlayerEnt(), MobEffect.hunger, 25*10, 0, false, true);
 Entity.addEffect(getPlayerEnt(), MobEffect.movementSlowdown, 25*10, 0, false, true);
 }
-Entity.setRenderType(Player.getEntity(), 39);
+Entity.setRenderType(Player.getEntity(), 44);
 /*Entity.setMobSkin(Player.getEntity(),"mob/zombieVillager.png");*/
                 }
             }));
@@ -8072,7 +8108,7 @@ Entity.setRenderType(Player.getEntity(), 39);
             mmW.setText("Witch");
             mmW.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-Entity.setRenderType(Player.getEntity(), 47);
+Entity.setRenderType(Player.getEntity(), 53);
 /*Entity.setMobSkin(Player.getEntity(),"mob/witch.png");*/
                 }
             }));
@@ -8090,6 +8126,15 @@ Entity.setRenderType(Player.getEntity(), 11);
                 }
             }));
             morphLayout.addView(mm20);
+	
+	var mn5 = new Button(MainActivity);
+            mn5.setText("Wither");
+            mn5.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Entity.setRenderType(Player.getEntity(), 63);
+                }
+            }));
+            morphLayout.addView(mn5);
             
         var mmW2 = new Button(MainActivity);
             mmW2.setText("Wither skeleton");
@@ -8100,7 +8145,7 @@ Entity.setRenderType(Player.getEntity(), 11);
                 	Entity.addEffect(getPlayerEnt(), MobEffect.hunger, 25*10, 0, false, true);
 	                Entity.addEffect(getPlayerEnt(), MobEffect.movementSlowdown, 25*10, 0, false, true);
                 	}
-Entity.setRenderType(Player.getEntity(), 19);
+Entity.setRenderType(Player.getEntity(), 68);
 /*Entity.setMobSkin(Player.getEntity(),"mob/witherSkeleton.tga");*/
                 }
             }));
@@ -8115,7 +8160,7 @@ Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);
 Entity.addEffect(getPlayerEnt(), MobEffect.hunger, 25*10, 0, false, true);
 Entity.addEffect(getPlayerEnt(), MobEffect.movementSlowdown, 25*10, 0, false, true);
 }
-Entity.setRenderType(Player.getEntity(), 14);
+Entity.setRenderType(Player.getEntity(), 16);
 /*Entity.setMobSkin(Player.getEntity(),"mob/zombie.png");*/
                 }
             }));
@@ -8129,7 +8174,7 @@ if(morphEnhance==true){
 Entity.setCollisionSize(Player.getEntity(), 0.5, 2, 0.5);
 Entity.addEffect(getPlayerEnt(), MobEffect.fireResistance, 25*10, 0, false, true);
 }
-Entity.setRenderType(Player.getEntity(), 15);
+Entity.setRenderType(Player.getEntity(), 17);
 /*Entity.setMobSkin(Player.getEntity(),"mob/pigzombie.png*/
                 }
             }));
