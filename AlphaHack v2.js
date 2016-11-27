@@ -10467,6 +10467,18 @@ function killing() {
 			if (Entity.getEntityTypeId(mobs[a]) == 52) {
 			Entity.setHealth(mobs[a], 0);
 			}
+		if (Entity.getEntityTypeId(mobs[a]) == 28) {
+			Entity.setHealth(mobs[a], 0);
+			}
+			if (Entity.getEntityTypeId(mobs[a]) == 54) {
+			Entity.setHealth(mobs[a], 0);
+			}
+			if (Entity.getEntityTypeId(mobs[a]) == 55) {
+			Entity.setHealth(mobs[a], 0);
+			}
+			if (Entity.getEntityTypeId(mobs[a]) == 53) {
+			Entity.setHealth(mobs[a], 0);
+			}
 		
 	   }
     }
@@ -10599,7 +10611,18 @@ function killingf() {
 			if (Entity.getEntityTypeId(mobs[b]) == 52) {
 			Entity.setImmobile(uuid,immobile);
 			}
-		
+		if (Entity.getEntityTypeId(mobs[b]) == 28) {
+			Entity.setImmobile(uuid,immobile);
+			}
+			if (Entity.getEntityTypeId(mobs[b]) == 54) {
+			Entity.setImmobile(uuid,immobile);
+			}
+			if (Entity.getEntityTypeId(mobs[b]) == 55) {
+			Entity.setImmobile(uuid,immobile);
+			}
+			if (Entity.getEntityTypeId(mobs[b]) == 53) {
+			Entity.setImmobile(uuid,immobile);
+			}
 	   }
     }
 }
@@ -10726,6 +10749,18 @@ function killingd() {
 			Entity.setFireTicks(mobs[c],5);
 			}
 			if (Entity.getEntityTypeId(mobs[c]) == 52) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+		if (Entity.getEntityTypeId(mobs[c]) == 28) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+			if (Entity.getEntityTypeId(mobs[c]) == 54) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+			if (Entity.getEntityTypeId(mobs[c]) == 55) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+			if (Entity.getEntityTypeId(mobs[c]) == 53) {
 			Entity.setFireTicks(mobs[c],5);
 			}
 		
@@ -10936,6 +10971,26 @@ function namedem() {
 			if (Entity.getEntityTypeId(mobs[n]) == 52) {
 			if(Entity.getNameTag(mobs[n]) == ""){
                 Entity.setNameTag(mobs[n], " Wither "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+		if (Entity.getEntityTypeId(mobs[n]) == 28) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Polar bear "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+			if (Entity.getEntityTypeId(mobs[n]) == 54) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Shulker "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+			if (Entity.getEntityTypeId(mobs[n]) == 55) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Endermite "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+			if (Entity.getEntityTypeId(mobs[n]) == 53) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Ender dragon "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
 			}
 		
