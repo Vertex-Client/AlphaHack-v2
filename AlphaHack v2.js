@@ -265,6 +265,7 @@ var striketext = false;
 var belowblock = false;
 var preventsame = false;
 var hitparticles = false;
+var icewalk = false;
 
 var facedInfo = false;
 var tapParti = false;
@@ -4041,6 +4042,28 @@ facedInfo = false;
                 }
             }));
             cheatLayout.addView(info2);
+
+var walkonice = new Button(MainActivity);
+walkonice.setText("Ice walk");
+walkonice.setTextColor(Color.RED);
+if(icewalk==true)walkonice.setTextColor(Color.GREEN);
+            walkonice.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             icewalk?icewalk=false:icewalk=true;
+walkonice.setText("Ice walk");
+if(icewalk == true){
+walkonice.setTextColor(Color.GREEN);
+clientMessage(client + "You may get detected as flying becareful!")
+icewalk = true;
+}
+if(icewalk == false){
+walkonice.setTextColor(Color.RED);
+clientMessage(client + "Ice walk is off")
+icewalk = false;
+}
+                }
+            }));
+            cheatLayout.addView(walkonice);
  
 var exit2 = new Button(MainActivity);
 		exit2.setText("Exit");
@@ -11210,6 +11233,27 @@ if(Level.getTile(getPlayerX(), getPlayerY() -2, getPlayerZ())=="0" || Level.getT
 	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() -2, 95, 0);
 	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() -3, 95, 0);
 	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() -4, 95, 0);
+	}
+}
+	if(icewalk){
+if(Level.getTile(getPlayerX(), getPlayerY() -2, getPlayerZ())!="0" || Level.getTile(getPlayerX(), getPlayerY() -2, getPlayerZ())!="79"){
+	Level.setTile(getPlayerX() +1, getPlayerY() -2, getPlayerZ(), 79, 0);
+	 Level.setTile(getPlayerX() +2, getPlayerY() -2, getPlayerZ(), 79, 0);
+	 Level.setTile(getPlayerX() +3, getPlayerY() -2, getPlayerZ(), 79, 0);
+	 Level.setTile(getPlayerX() +4, getPlayerY() -2, getPlayerZ(), 79, 0);
+	 Level.setTile(getPlayerX() -1, getPlayerY() -2, getPlayerZ(), 79, 0);
+	 Level.setTile(getPlayerX() -2, getPlayerY() -2, getPlayerZ(), 79, 0);
+	 Level.setTile(getPlayerX() -3, getPlayerY() -2, getPlayerZ(), 79, 0);
+	 Level.setTile(getPlayerX() -4, getPlayerY() -2, getPlayerZ(), 79, 0);
+	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ(), 79, 0);
+	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() +1, 79, 0);
+	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() +2, 79, 0);
+	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() +3, 79, 0);
+	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() +4, 79, 0);
+	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() -1, 79, 0);
+	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() -2, 79, 0);
+	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() -3, 79, 0);
+	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() -4, 79, 0);
 	}
 }
 if(changeSpeed==true)changeSpeedOnBlock();
