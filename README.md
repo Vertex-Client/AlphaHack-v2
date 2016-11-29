@@ -22,10 +22,10 @@ ALPHAHack v2 is a remake of AlphaHack 0.8.1
 - [ ] 0.8.5 Effect menu incomplete (Needs some testing)
 - [ ] 0.8.5 Enchant menu incomplete (May add more features & needs anti enchant bypass)
 - [ ] 0.8.5 Give menu incomplete (May add more features)
-- [ ] 0.8.5 Morph menu incomplete (May add more features)
+- [ ] 0.17.0 Morph menu incomplete (May add more features)
 - [x] 0.8.5 Nuke menu
 - [x] 0.8.5 Particle menu
-- [x] 0.16.0 Spawn menu
+- [x] 0.17.0 Spawn menu
 - [x] 0.8.5 Speed menu
 - [ ] 0.8.5 Teleport menu incomplete (Some crashes & may add more features)
 - [x] 0.8.5 Time menu
