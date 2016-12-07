@@ -103,7 +103,7 @@ var offtime = 0;
 //define an empty text variable
 var horseheart = "";
 var newage = "";
-var vid = "11";
+var vid = "";
 var seconds = "1000";
 var numhack = 0;
 //define client name for later use
@@ -562,16 +562,22 @@ updiaLayout1.setPadding(20,1,20,1);
 
 //run mod message or other on world startup
 function newLevel(){ 
-clientMessage("§2≡≡=======»§a>§9 α §a<§2«======≡≡§f§r");
+clientMessage("§2≡≡=======»§a>§9 §a§k§r §a<§2«======≡≡§f§r");
 clientMessage(client + "\n§aKik§f: ArceusMatt" + "\n" + "§bTwitter§f: @ArceusMatt" + "\n" + "§cGoogle+§f: Arceus matt" + "\n" + "§fYou§4tube§f: Arceus Matt");
-clientMessage("§2≡≡=======»§a>§9 α §a<§2«======≡≡§f§r\n");
+clientMessage("§2≡≡=======»§a>§9 §a§k§r §a<§2«======≡≡§f§r\n");
 }
 
 //change mcpe color text with the remaining text
+//they re did the entire paths for files in 0.17 -,-
 ModPE.langEdit("menu.copyright", "AlphαHαckPE");
-ModPE.langEdit("menu.generatingLevel","§l§e" + "Loading...\nFiles, wifi, mods & chunks.");
-ModPE.langEdit("menu.generatingTerrain","§l§e" + "Loading...\nFiles, wifi, mods & chunks.");
-ModPE.langEdit("menu.loadingLevel","§l§e" + "Loading...\nFiles, wifi, mods & chunks.");
+ModPE.langEdit("menu.generatingLevel","Loading... §a§k§r");
+ModPE.langEdit("menu.generatingTerrain","Loading... §a§k§r");
+ModPE.langEdit("menu.loadingLevel","Loading... §a§k§r");
+ModPE.langEdit("progressScreen.generating","Loading... §a§k§r");
+ModPE.langEdit("progressScreen.message.building","Loading... §a§k§r");
+ModPE.langEdit("progressScreen.message.locating","Locating... §a§k§r");
+ModPE.langEdit("selectServer.edit",viddd + ModPE.getI18n("selectServer.edit"));
+ModPE.langEdit("selectServer.deleteButton","§c" + ModPE.getI18n("selectServer.deleteButton"));
 ModPE.langEdit("menu.play",viddd + ModPE.getI18n("menu.play"));
 ModPE.langEdit("menu.options",viddd + ModPE.getI18n("menu.options"));
 ModPE.langEdit("menu.skins",viddd + ModPE.getI18n("menu.skins"));
@@ -681,6 +687,20 @@ ModPE.langEdit("death.attack.player",viddd + ModPE.getI18n("death.attack.player"
 ModPE.langEdit("death.attack.starve",viddd + ModPE.getI18n("death.attack.starve"));
 ModPE.langEdit("death.attack.thorns",viddd + ModPE.getI18n("death.attack.thorns"));
 ModPE.langEdit("death.attack.wither",viddd + ModPE.getI18n("death.attack.wither"));
+ModPE.langEdit("gui.version",viddd + ModPE.getI18n("gui.version"));
+ModPE.langEdit("menu.version",viddd + ModPE.getI18n("menu.version"));
+ModPE.langEdit("pauseScreen.currentWorld",viddd + ModPE.getI18n("pauseScreen.currentWorld"));
+ModPE.langEdit("pauseScreen.ipAddress",viddd + ModPE.getI18n("pauseScreen.ipAddress"));
+ModPE.langEdit("pauseSCreen.betaFeedback",viddd + ModPE.getI18n("pauseScreen.betaFeedback"));
+ModPE.langEdit("death.attack.enderDragon",viddd + ModPE.getI18n("death.attack.enderDragon"));
+ModPE.langEdit("selectWorld.action.editLocal",viddd + ModPE.getI18n("selectWorld.action.editLocal"));
+ModPE.langEdit("selectWorld.action.local",viddd + ModPE.getI18n("selectWorld.action.local"));
+ModPE.langEdit("selectWorld.alwaysDay",viddd + ModPE.getI18n("selectWorld.alwaysDay"));
+ModPE.langEdit("selectWorld.delete",ModPE.getI18n("selectWorld.delete"));
+ModPE.langEdit("selectWorld.game.settings",viddd + ModPE.getI18n("selectWorld.game.settings"));
+ModPE.langEdit("selectWorld.gameMode.creative",viddd + ModPE.getI18n("selectWorld.gameMode.creative"));
+ModPE.langEdit("selectWorld.gameMode.survival",viddd + ModPE.getI18n("selectWorld.gameMode.survival"));
+ModPE.langEdit("selectWorld.advanced",viddd + ModPE.getI18n("selectWorld.advanced"));
 
 //new block destroy time
 var defaultDestroyTime = [
@@ -2474,22 +2494,22 @@ xray = false;
             cheatLayout.addView(button2);
             
             var speedup = new Button(MainActivity);
-speedup.setText("Block speed up");
+speedup.setText("No friction");
 speedup.setTextColor(Color.RED);
 if(changeSpeed==true)speedup.setTextColor(Color.GREEN);
             speedup.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              changeSpeed?changeSpeed=false:changeSpeed=true;
-speedup.setText("Block speed up");
+speedup.setText("No friction");
 if(changeSpeed == true){
 speedup.setTextColor(Color.GREEN);
-clientMessage(client + "Block speed up on,\nThis mod speeds up your game when you are on ice, soul sand etc");
+clientMessage(client + "No friction on,\nThis adds no friction when you're on ice, soul sand etc");
 
 changeSpeed = true;
 }
 if(changeSpeed == false){
 speedup.setTextColor(Color.RED);
-clientMessage(client + "Block speed up off");
+clientMessage(client + "No friction off");
 Block.setShape(30, 0, 0, 0, 1, null, 1);
 changeSpeed = false;
 }
@@ -2971,13 +2991,13 @@ fasteat = false;
             cheatLayout.addView(fe1);
 			
 var afkspawn = new Button(MainActivity);
-afkspawn.setText("Spawn if low health");
+afkspawn.setText("Low health action");
 afkspawn.setTextColor(Color.RED);
 if(lowhealth==true)afkspawn.setTextColor(Color.GREEN);
             afkspawn.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              lowhealth?lowhealth=false:lowhealth=true;
-afkspawn.setText("Spawn if low health");
+afkspawn.setText("Low health action");
 if(lowhealth == true){
 afkspawn.setTextColor(Color.GREEN);
 
@@ -3702,6 +3722,11 @@ tpAura = false;
             }));
             cheatLayout.addView(taura);
 
+/*
+*
+*TODO Better hit behind handle
+*
+*
 var hitme = new Button(MainActivity);
 hitme.setText("Hit behind");
 hitme.setTextColor(Color.RED);
@@ -3725,6 +3750,7 @@ hitBehind = false;
                 }
             }));
             cheatLayout.addView(hitme);
+	    */
 
 var jhit = new Button(MainActivity);
 jhit.setText("Hit'n'jump");
@@ -3784,7 +3810,7 @@ if(keepHotbar==true)keeps.setTextColor(Color.GREEN);
 keeps.setText("Keep hotbar");
 if(keepHotbar == true){
 keeps.setTextColor(Color.GREEN);
-clientMessage(client + "Keep hotbar on");
+clientMessage(client + "Keep hotbar on, \nThis allows you to keep holding an item so it does not fall out of your hotbar.");
 
 keepHotbar = true;
 }
@@ -11200,7 +11226,7 @@ if(onlyday)Level.setTime(0);
 		if(Math.round(getPlayerY())=="-3"){
 			clientMessage(client + "You were at void!");
 			Server.sendChat("/spawn");
-			Entity.setPosition(Player.getEntity(), getPlayerX(), 65, getPlayerZ()+5);
+			Entity.setPosition(Player.getEntity(), getPlayerX(), 70, getPlayerZ()+5);
 		}
 	}
 	if(glide){
@@ -11330,7 +11356,11 @@ if (spider && Utils.Player.isCollidedHorizontally()) {
 	}
 	if(facedInfo){
 		if(Entity.getEntityTypeId(Player.getPointedEntity()) != 63)ModPE.showTipMessage(client + "\nName: "+Player.getName(Player.getPointedEntity())+", RenderType: "+Entity.getRenderType(Player.getPointedEntity())+", Health: "+Entity.getHealth(Player.getPointedEntity())+"/"+Entity.getMaxHealth(Player.getPointedEntity())+"");
-		if(Entity.getEntityTypeId(Player.getPointedEntity()) == 63)ModPE.showTipMessage(client + "\nName: "+Player.getName(Player.getPointedEntity())+", RenderType: "+Entity.getRenderType(Player.getPointedEntity())+", Health: "+Entity.getHealth(Player.getPointedEntity())+"/"+Entity.getMaxHealth(Player.getPointedEntity())+"\nHead: "+Entity.getArmorDamage(Player.getPointedEntity(), 0)+", Chest: "+Entity.getArmorDamage(Player.getPointedEntity(), 1)+", Leggings: "+Entity.getArmorDamage(Player.getPointedEntity(), 2)+", Boots: "+Entity.getArmorDamage(Player.getPointedEntity(), 3));
+		if(Entity.getEntityTypeId(Player.getPointedEntity()) == 63 && Entity.getArmorDamage(Player.getPointedEntity(), 0) != 0 || Entity.getArmorDamage(Player.getPointedEntity(), 1) != 0 || Entity.getArmorDamage(Player.getPointedEntity(), 2) != 0 || Entity.getArmorDamage(Player.getPointedEntity(), 3) != 0){
+			ModPE.showTipMessage(client + "\nName: "+Player.getName(Player.getPointedEntity())+", RenderType: "+Entity.getRenderType(Player.getPointedEntity())+", Health: "+Entity.getHealth(Player.getPointedEntity())+"/"+Entity.getMaxHealth(Player.getPointedEntity())+"\nHead: "+Entity.getArmorDamage(Player.getPointedEntity(), 0)+", Chest: "+Entity.getArmorDamage(Player.getPointedEntity(), 1)+", Leggings: "+Entity.getArmorDamage(Player.getPointedEntity(), 2)+", Boots: "+Entity.getArmorDamage(Player.getPointedEntity(), 3));
+		} else {
+			ModPE.showTipMessage(client + "\nName: "+Player.getName(Player.getPointedEntity())+", RenderType: "+Entity.getRenderType(Player.getPointedEntity())+", Health: "+Entity.getHealth(Player.getPointedEntity())+"/"+Entity.getMaxHealth(Player.getPointedEntity())+"");
+		}
 	}
 }
 
@@ -11859,12 +11889,11 @@ function new9() {
 MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
-fov = new android.widget.PopupWindow();
+new9 = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var select1 = new Button(MainActivity);
 var select2 = new Button(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-//var Exit = new Button(MainActivity);
  
 Dialog.setTitle("Select");
 Dialog.setContentView(Layer);
@@ -11875,9 +11904,7 @@ Dialog.show();
 Layer.addView(select1);
 
 Layer.addView(select2);
-
-//Layer.addView(Exit);
- 
+	
             select1.setText("Use nether block");
             select1.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -12408,7 +12435,7 @@ print("The set health Dialog Is Malfunctioning:"+e);
 MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
-fov = new android.widget.PopupWindow();
+new3 = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var select1 = new Button(MainActivity);
 var select2 = new Button(MainActivity);
