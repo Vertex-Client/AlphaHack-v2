@@ -562,20 +562,20 @@ updiaLayout1.setPadding(20,1,20,1);
 
 //run mod message or other on world startup
 function newLevel(){ 
-clientMessage("§2≡≡=======»§a>§9 §a§k§r §a<§2«======≡≡§f§r");
+clientMessage("§2≡≡=======»§a>§9 §a§kAlpha§r §a<§2«======≡≡§f§r");
 clientMessage(client + "\n§aKik§f: ArceusMatt" + "\n" + "§bTwitter§f: @ArceusMatt" + "\n" + "§cGoogle+§f: Arceus matt" + "\n" + "§fYou§4tube§f: Arceus Matt");
-clientMessage("§2≡≡=======»§a>§9 §a§k§r §a<§2«======≡≡§f§r\n");
+clientMessage("§2≡≡=======»§a>§9 §a§kAlpha§r §a<§2«======≡≡§f§r\n");
 }
 
 //change mcpe color text with the remaining text
 //they re did the entire paths for files in 0.17 -,-
 ModPE.langEdit("menu.copyright", "AlphαHαckPE");
-ModPE.langEdit("menu.generatingLevel","Loading... §a§k§r");
-ModPE.langEdit("menu.generatingTerrain","Loading... §a§k§r");
-ModPE.langEdit("menu.loadingLevel","Loading... §a§k§r");
-ModPE.langEdit("progressScreen.generating","Loading... §a§k§r");
-ModPE.langEdit("progressScreen.message.building","Loading... §a§k§r");
-ModPE.langEdit("progressScreen.message.locating","Locating... §a§k§r");
+ModPE.langEdit("menu.generatingLevel","Loading... §a§kAlpha§r");
+ModPE.langEdit("menu.generatingTerrain","Loading... §a§kAlpha§r");
+ModPE.langEdit("menu.loadingLevel","Loading... §a§kAlpha§r");
+ModPE.langEdit("progressScreen.generating","Loading... §a§kAlpha§r");
+ModPE.langEdit("progressScreen.message.building","Loading... §a§kAlpha§r");
+ModPE.langEdit("progressScreen.message.locating","Locating... §a§kAlpha§r");
 ModPE.langEdit("selectServer.edit",viddd + ModPE.getI18n("selectServer.edit"));
 ModPE.langEdit("selectServer.deleteButton","§c" + ModPE.getI18n("selectServer.deleteButton"));
 ModPE.langEdit("menu.play",viddd + ModPE.getI18n("menu.play"));
@@ -701,6 +701,20 @@ ModPE.langEdit("selectWorld.game.settings",viddd + ModPE.getI18n("selectWorld.ga
 ModPE.langEdit("selectWorld.gameMode.creative",viddd + ModPE.getI18n("selectWorld.gameMode.creative"));
 ModPE.langEdit("selectWorld.gameMode.survival",viddd + ModPE.getI18n("selectWorld.gameMode.survival"));
 ModPE.langEdit("selectWorld.advanced",viddd + ModPE.getI18n("selectWorld.advanced"));
+ModPE.langEdit("playscreen.fileSize.MB",viddd + ModPE.getI18n("playscreen.fileSize.MB"));
+ModPE.langEdit("playscreen.fileSize.GB",viddd + ModPE.getI18n("playscreen.fileSize.GB"));
+ModPE.langEdit("playscreen.lastPlayed.daysAgo",viddd + ModPE.getI18n("playscreen.lastPlayed.daysAgo"));
+ModPE.langEdit("playscreen.lastPlayed.longAgo",viddd + ModPE.getI18n("playscreen.lastPlayed.longAgo"));
+ModPE.langEdit("playscreen.lastPlayed.weeksAgo",viddd + ModPE.getI18n("playscreen.lastPlayed.weeksAgo"));
+ModPE.langEdit("playscreen.lastPlayed.today",viddd + ModPE.getI18n("playscreen.lastPlayed.today"));
+ModPE.langEdit("playscreen.lastPlayed.yesterday",viddd + ModPE.getI18n("playscreen.lastPlayed.yesterday"));
+ModPE.langEdit("options.gamertag",viddd + ModPE.getI18n("options.gamertag"));
+ModPE.langEdit("playscreen.worlds",viddd + ModPE.getI18n("playscreen.worlds"));
+ModPE.langEdit("playscreen.friends",viddd + ModPE.getI18n("playscreen.friends"));
+ModPE.langEdit("playscreen.new",viddd + ModPE.getI18n("playscreen.new"));
+ModPE.langEdit("selectWorld.createNew",viddd + ModPE.getI18n("selectWorld.createNew"));
+ModPE.langEdit("addExternalServerScreen.saveButtonLabel",viddd + ModPE.getI18n("addExternalServerScreen.saveButtonLabel"));
+ModPE.langEdit("addExternalServerScreen.playButtonLabel",viddd + ModPE.getI18n("addExternalServerScreen.playButtonLabel"));
 
 //new block destroy time
 var defaultDestroyTime = [
