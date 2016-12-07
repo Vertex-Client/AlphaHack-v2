@@ -588,7 +588,6 @@ ModPE.langEdit("menu.settings",viddd + ModPE.getI18n("menu.settings"));
 ModPE.langEdit("menu.playdemo",viddd + ModPE.getI18n("menu.playdemo"));
 ModPE.langEdit("menu.resetdemo",viddd + ModPE.getI18n("menu.resetdemo"));
 ModPE.langEdit("menu.returnToGame",viddd + ModPE.getI18n("menu.returnToGame"));
-ModPE.langEdit("menu.resourcepacks",viddd + ModPE.getI18n("menu.resourcepacks"));
 ModPE.langEdit("menu.shareToLan",viddd + ModPE.getI18n("menu.shareToLan"));
 ModPE.langEdit("menu.online",viddd + ModPE.getI18n("menu.online"));
 ModPE.langEdit("menu.realms",viddd + ModPE.getI18n("menu.realms"));
@@ -704,6 +703,7 @@ ModPE.langEdit("playscreen.new",viddd + ModPE.getI18n("playscreen.new"));
 ModPE.langEdit("selectWorld.createNew",viddd + ModPE.getI18n("selectWorld.createNew"));
 ModPE.langEdit("addExternalServerScreen.saveButtonLabel",viddd + ModPE.getI18n("addExternalServerScreen.saveButtonLabel"));
 ModPE.langEdit("addExternalServerScreen.playButtonLabel",viddd + ModPE.getI18n("addExternalServerScreen.playButtonLabel"));
+ModPE.langEdit("addExternalServerScreen.removeButtonLabel",viddd + ModPE.getI18n("addExternalServerScreen.removeButtonLabel"));
 
 //new block destroy time
 var defaultDestroyTime = [
@@ -2971,6 +2971,11 @@ brightness = false;
             }));
             cheatLayout.addView(light);
 			
+	/*
+*
+*TODO: (IMPROVE) food checking
+*
+*
 var fe1 = new Button(MainActivity);
 fe1.setText("Fast eat");
 fe1.setTextColor(Color.RED);
@@ -2992,6 +2997,10 @@ fasteat = false;
                 }
             }));
             cheatLayout.addView(fe1);
+	    
+	    *
+	    *TODO: Add more settings
+	    *
 			
 var afkspawn = new Button(MainActivity);
 afkspawn.setText("Low health action");
@@ -3014,6 +3023,7 @@ afkspawn = false;
                 }
             }));
             cheatLayout.addView(afkspawn);
+	*/
             
             var ecd = new Button(MainActivity);
             ecd.setText("Easy commands");       
