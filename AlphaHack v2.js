@@ -125,6 +125,8 @@ var numhack2 = 0;
 var TTick = 0;
 var hide = false;
 var newAction = "";
+var actionHeart = "";
+var newAction2 = "";
 
 var playerDir = [0, 0, 0];
 var DEG_TO_RAD = Math["PI"] / 180;
@@ -270,6 +272,7 @@ var icewalk = false;
 var facedInfo = false;
 var tapParti = false;
 var hitmorph = false;
+var hitaction2 = false;
 
 var showActive = false;
 var showActive2 = false;
@@ -2997,10 +3000,7 @@ fasteat = false;
                 }
             }));
             cheatLayout.addView(fe1);
-	    
-	    *
-	    *TODO: Add more settings
-	    *
+	    */
 			
 var afkspawn = new Button(MainActivity);
 afkspawn.setText("Low health action");
@@ -3012,7 +3012,7 @@ if(lowhealth==true)afkspawn.setTextColor(Color.GREEN);
 afkspawn.setText("Low health action");
 if(lowhealth == true){
 afkspawn.setTextColor(Color.GREEN);
-
+atact2();
 lowhealth = true;
 }
 if(lowhealth == false){
@@ -3023,7 +3023,6 @@ afkspawn = false;
                 }
             }));
             cheatLayout.addView(afkspawn);
-	*/
             
             var ecd = new Button(MainActivity);
             ecd.setText("Easy commands");       
@@ -11128,7 +11127,6 @@ if(tapdestroy){
 
 if(taptp){
 Entity.setPosition(Player.getEntity(), x, y + 3, z);
-Server.sendChat("/tp " + Player.getName(Player.getEntity()) + space + x + space + y + space + z);
 }
 if(tapnuke)explode(x,y,z,5);
 if(tapid)clientMessage(client + "Block ID: "+blockId+" Item ID: "+itemId+"\n"+" X: "+x+" Y: "+y+" Z: "+z);
@@ -12259,7 +12257,6 @@ print("The setName Dialog Is Malfunctioning:"+e);
 
 function setName(){
 Entity.setNameTag(Player.getEntity(), nametgg);
-Server.sendChat("/nick set " + nametgg);
 }
 
 function block1() {
@@ -12835,7 +12832,49 @@ print("The atact Dialog Is Malfunctioning:"+e);
 }});
 }
 
+function atact2() {
+MainActivity.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+atact = new android.widget.PopupWindow();
+var Layerz8 = new android.widget.LinearLayout(MainActivity);
+var editAtk = new android.widget.EditText(MainActivity);
+var editAtk2 = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
 
+Dialog.setTitle("When dying send...");
+Dialog.setContentView(Layerz8);
+
+Layerz8.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layerz8.addView(editAtk);
+Layerz8.addView(editAtk2);
+Layerz8.addView(Exit);
+
+editAtk.setText("");
+editAtk.setHint("Command or message");
+editAtk2.setText("");
+editAtk2.setHint("Amount of hearts");
+Exit.setText("Set action");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+newAction2 =editAtk.getText();
+actionHeart =editAtk2.getText();
+Dialog.dismiss();
+showMenuBtn();
+}
+});
+
+atact.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+atact.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+atact.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The atact Dialog Is Malfunctioning:"+e);
+}
+}});
+}
 
 function signEditor() {
 ctx.runOnUiThread(new java.lang.Runnable(){
@@ -13145,10 +13184,10 @@ ModPE.resetImages();
 function spawnIfLowHealth(){
     var i = 0;
     Entity.getHealth(getPlayerEnt());
-if(Entity.getHealth(getPlayerEnt())=="3"){
+if(Entity.getHealth(getPlayerEnt())==actionHeart){
     i++
     if(i=="1"){
-        Server.sendChat("/spawn");
+        Server.sendChat(newAction2);
     }
 }
 }
