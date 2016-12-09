@@ -807,6 +807,10 @@ activeView();
 
 //layout to show active variables
 
+/*
+*
+*TODO Improve this in some way.
+*
 function activeView(){
 MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
@@ -990,7 +994,7 @@ active.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
             }
     }}));
-}
+}*/
 
 function mainMenu(){
     MainActivity.runOnUiThread(new Runnable({ run: function(){
@@ -1023,7 +1027,6 @@ function mainMenu(){
             exit.setTextColor(Color.RED);
             exit.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-        activeView();
 menu.dismiss(); 
 showMenuBtn(); 
 if(getLanguage=="en_US")Toast.makeText(MainActivity, "Closed successfully", 1).show();
@@ -1570,6 +1573,16 @@ GUIStroke = GUIStroke12
                 }
             }));
             settingsLayout.addView(b12);
+	
+	var exit2 = new Button(MainActivity);
+		exit2.setText("Exit");
+		exit2.setOnClickListener(new View.OnClickListener() {
+			onClick: function(v){
+             settings.dismiss();
+             showMenuBtn();
+			}
+		});
+		settingsLayout.addView(exit2)
 
             settings = new PopupWindow(settingsLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)settings.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -1978,29 +1991,6 @@ Toast.makeText(MainActivity, "Please avoid ads & adjust your zoom", 1).show();
 			}
 		});
 		miscLayout.addView(aniview);
-		
-	var activeMods = new Button(MainActivity);
-activeMods.setText("Active mods dialog");
-activeMods.setTextColor(Color.RED);
-if(showActive==true)activeMods.setTextColor(Color.GREEN);
-            activeMods.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             showActive?showActive=false:showActive=true;
-activeMods.setText("Active mods dialog");
-if(showActive == true){
-activeMods.setTextColor(Color.GREEN);
-showActive2 = true;
-showActive = true;
-activeView();
-}
-if(showActive == false){
-activeMods.setTextColor(Color.RED);
-showActive2 = false;
-showActive = false;
-}
-                }
-            }));
-            miscLayout.addView(activeMods);
 		
 		function animeView(){
 MainActivity.runOnUiThread(new Runnable({ run: function(){
@@ -2470,7 +2460,7 @@ maimaura = false;
             }));
             cheatLayout.addView(killaura2);
 	    
-	    	    var button2 = new Button(MainActivity);
+var button2 = new Button(MainActivity);
 button2.setText("X-Ray");
 button2.setTextColor(Color.RED);
 if(xray==true)button2.setTextColor(Color.GREEN);
@@ -2528,6 +2518,7 @@ changeSpeed = false;
             svr.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 clientMessage(client + "§lIP:§r " + Server.getAddress() + " §lPort:§r " + Server.getPort());
+			/*no need to do anything with this, it shows server IP:Port anyways incase the user is on a realm.*/
 if(Server.getAddress()=="null" || Server.getPort()=="0")clientMessage(client + "You are not on a server!");
                 }
             }));
@@ -3065,7 +3056,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 			}
 		});
 		cmdLayout.addView(cmd1);
-		
+					 
 		var cmd2 = new Button(MainActivity);
 		cmd2.setText("Survival");
 		cmd2.setOnClickListener(new android.view.View.OnClickListener() {
@@ -3396,7 +3387,7 @@ cmdLayout1.setPadding(20,0,20,0);
     }}));
 }
 
-var oreTrace = new Button(MainActivity);
+/*var oreTrace = new Button(MainActivity);
 oreTrace.setText("Ore ESP");
 oreTrace.setTextColor(Color.RED);
 if(oreEsp2==true)oreTrace.setTextColor(Color.GREEN);
@@ -3442,7 +3433,7 @@ playeresp = false;
 }
                 }
             }));
-            cheatLayout.addView(playerTracer);
+            cheatLayout.addView(playerTracer);*/
             
             var anti2void = new Button(MainActivity);
 anti2void.setText("Anti void");
@@ -13372,7 +13363,10 @@ function rptask2() {
   			}
  		}
                     }
-                    if(oreEsp){
+                    /*
+		    *TODO Fix these :/
+		    *
+		    if(oreEsp){
                 var x = getPlayerX();
  		var y = getPlayerY();
  		var z = getPlayerZ();
@@ -13417,7 +13411,7 @@ function rptask2() {
   			}
  		}
 	}
-                    }
+                    }*/
                     nx = getPlayerX();
                     ny = getPlayerY();
                     nz = getPlayerZ();
@@ -13474,6 +13468,7 @@ function rptask() {
 			    if(ent != null && Entity.getNameTag(ent) != " " || Entity.getNameTag(ent) != "")crosshairAimAt(ent);
 		    }
 			if(aimbot2){
+				/*TODO Moving aim aura*/
 				var ent = getNearestEntity(7);
 			    if(ent != null)crosshairAimAt(ent);
 			}
