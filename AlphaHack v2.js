@@ -127,6 +127,7 @@ var hide = false;
 var newAction = "";
 var actionHeart = "";
 var newAction2 = "";
+var cidm8 = "";
 
 var playerDir = [0, 0, 0];
 var DEG_TO_RAD = Math["PI"] / 180;
@@ -273,6 +274,8 @@ var facedInfo = false;
 var tapParti = false;
 var hitmorph = false;
 var hitaction2 = false;
+var hitrmef = false;
+var onfriction = false;
 
 var showActive = false;
 var showActive2 = false;
@@ -700,8 +703,6 @@ ModPE.langEdit("playscreen.lastPlayed.weeksAgo",viddd + ModPE.getI18n("playscree
 ModPE.langEdit("playscreen.lastPlayed.today",viddd + ModPE.getI18n("playscreen.lastPlayed.today"));
 ModPE.langEdit("playscreen.lastPlayed.yesterday",viddd + ModPE.getI18n("playscreen.lastPlayed.yesterday"));
 ModPE.langEdit("options.gamertag",viddd + ModPE.getI18n("options.gamertag"));
-ModPE.langEdit("playscreen.worlds",viddd + ModPE.getI18n("playscreen.worlds"));
-ModPE.langEdit("playscreen.friends",viddd + ModPE.getI18n("playscreen.friends"));
 ModPE.langEdit("playscreen.new",viddd + ModPE.getI18n("playscreen.new"));
 ModPE.langEdit("selectWorld.createNew",viddd + ModPE.getI18n("selectWorld.createNew"));
 ModPE.langEdit("addExternalServerScreen.saveButtonLabel",viddd + ModPE.getI18n("addExternalServerScreen.saveButtonLabel"));
@@ -782,7 +783,6 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
         if(hide==true)menuBtn.setText("α");
         menuBtn.setOnClickListener(new View.OnClickListener({
             onClick: function(viewarg){
-        active.dismiss();
 mainMenu();
 GUI.dismiss();
 if(getLanguage=="en_US")Toast.makeText(MainActivity, "Scroll down", 1).show();
@@ -803,7 +803,6 @@ if(getLanguage=="es_MX")Toast.makeText(MainActivity, "Baja abajo", 1).show();
     }}));
 }
 showMenuBtn();
-activeView();
 
 //layout to show active variables
 
@@ -1941,6 +1940,38 @@ dialog.show();
 		});
 		miscLayout.addView(ht6);
 
+var ht7 = new Button(MainActivity);
+		ht7.setText("How to get into claim land");
+		ht7.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+var alert = new android.app.AlertDialog.Builder(MainActivity); 
+/*alert.setTitle(""); */
+
+var scroll = new android.widget.ScrollView(MainActivity); 
+var layout = new android.widget.LinearLayout(MainActivity); 
+layout.setOrientation(1);
+
+alert.setTitle("How to get into claim land");
+ alert.setMessage("If you're using AH V2 Open the single player menu\nOnce it's opened turn on grief, pick ID 0\nFace the way you want inside the land then turn it off\nPut blocks behind you then go inside the land and relog.\nOnce you join you should be inside the claimed house/base/land.-ArceusMatt\n(This may get patched soon last checked was 12/10/2016)");
+
+alert.setPositiveButton("Exit all", new android.content.DialogInterface.OnClickListener(){ 
+  onClick: function(viewarg){
+    
+dialog.dismiss();
+misc.dismiss();
+      }});
+
+alert.setNegativeButton("Back to menu", new android.content.DialogInterface.OnClickListener(){ 
+   onClick: function(viewarg){
+
+dialog.dismiss();
+      }});
+var dialog = alert.create();
+dialog.show();
+			}
+		});
+		miscLayout.addView(ht7);
+
 var cidban = new Button(MainActivity);
             cidban.setText("CID/dev pardon"); 
             cidban.setOnClickListener(new View.OnClickListener({
@@ -2066,6 +2097,15 @@ pip();
                 }
             }));
             miscLayout.addView(ip1);
+
+var getCid = new Button(MainActivity);
+            getCid.setText("What's my CID?");
+            getCid.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				getClient();
+                }
+            }));
+            miscLayout.addView(getCid);
 
             misc = new PopupWindow(miscLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)misc.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
@@ -4093,6 +4133,30 @@ icewalk = false;
                 }
             }));
             cheatLayout.addView(walkonice);
+
+var frictme = new Button(MainActivity);
+frictme.setText("Only friction");
+frictme.setTextColor(Color.RED);
+if(onfriction==true)frictme.setTextColor(Color.GREEN);
+            frictme.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             onfriction?onfriction=false:onfriction=true;
+frictme.setText("Only friction");
+if(onfriction == true){
+frictme.setTextColor(Color.GREEN);
+clientMessage(client + "Only friction on");
+
+onfriction = true;
+}
+if(onfriction == false){
+frictme.setTextColor(Color.RED);
+clientMessage(client + "Only friction off");
+
+onfriction = false;
+}
+                }
+            }));
+            cheatLayout.addView(frictme);
  
 var exit2 = new Button(MainActivity);
 		exit2.setText("Exit");
@@ -4268,19 +4332,19 @@ var es = new Button(MainActivity);
             modLayout.addView(es);
 
 var rr = new Button(MainActivity);
-rr.setText("Reactor time mode: "+(remode?"on":"off"));
+rr.setText("Night mode: "+(remode?"on":"off"));
 rr.setOnClickListener(new android.view.View.OnClickListener({
 onClick: function(viewarg){
 remode?remode=false:remode=true;
-rr.setText("Reactor time mode: "+(remode?"on":"off"));
+rr.setText("Night mode: "+(remode?"on":"off"));
 if(remode == true){
-clientMessage(client + "§7Nether reactor time on");
+clientMessage(client + "§7Night mode on");
  setNightMode(true);
 
 remode = true
 }
 if(remode == false){
-clientMessage(client + "§7Nether reactor time off");
+clientMessage(client + "§7Night mode off");
 setNightMode(false);
 
 remode = false
@@ -4679,6 +4743,30 @@ Entity.removeAllEffects(getPlayerEnt());
                 }
             }));
             effectLayout.addView(mov);
+	
+	var rmeft = new Button(MainActivity);
+rmeft.setText("Hit remove effects");
+rmeft.setTextColor(Color.RED);
+if(hitrmef==true)rmeft.setTextColor(Color.GREEN);
+            rmeft.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             hitrmef?hitrmef=false:hitrmef=true;
+rmeft.setText("Hit remove effects");
+if(hitrmef == true){
+rmeft.setTextColor(Color.GREEN);
+clientMessage(client + "Hit remove effects on");
+
+hitrmef = true;
+}
+if(hitrmef == false){
+rmeft.setTextColor(Color.RED);
+clientMessage(client + "Hit remove effects off");
+
+hitrmef = false;
+}
+                }
+            }));
+            effectLayout.addView(rmeft);
 
 var e1 = new Button(MainActivity);
             e1.setText("saturation");
@@ -10380,6 +10468,7 @@ if(particle31)Level.addParticle(ParticleType.spell2, x, y, z, 0, 0, 0, 150);
 if(particle32)Level.addParticle(ParticleType.spell3, x, y, z, 0, 0, 0, 150);
 }
 	if(hitmorph)Entity.setRenderType(Player.getEntity(), Entity.getRenderType(victim));
+	if(hitrmef)Entity.removeAllEffects(victim);
 } 
 function instaDestroy(){
 if(instabreak==true)
@@ -11290,7 +11379,7 @@ if(lowhealth==true)spawnIfLowHealth();
 if(fasteat==true)fastEat();
 if(xray==true)xrayRepeat();
 if (spider && Utils.Player.isCollidedHorizontally()) {
-		if(getTile(Player.getX()+1, Player.getY(), Player.getZ())> 0 || getTile(Player.getX()-1, Player.getY(), Player.getZ())> 0 || getTile(Player.getX(), Player.getY(), Player.getZ()+1)> 0 || getTile(Player.getX(), Player.getY(), Player.getZ()-1)> 0) {
+		if(getTile(Player.getX()+1, Player.getY(), Player.getZ())> 0 || getTile(Player.getX()-1, Player.getY(), Player.getZ())> 0 || getTile(Player.getX(), Player.getY(), Player.getZ()+1)> 0 || getTile(Player.getX(), Player.getY(), Player.getZ()-1)> 0 || getTile(Player.getX()+1, Player.getY(), Player.getZ()-1)> 0 || getTile(Player.getX()-1, Player.getY(), Player.getZ()+1)> 0) {
         setVelY(Player.getEntity(), 0.6);
               }
 	    }
@@ -11337,22 +11426,22 @@ if (spider && Utils.Player.isCollidedHorizontally()) {
 	if(bhop){
 		if(Entity.getVelX(Player.getEntity())>0.1){
 			if(getTile(Player.getX(), Player.getY()-2, Player.getZ())>0){
-				Entity.setVelY(Player.getEntity(), 0.5)
+				Entity.setVelY(Player.getEntity(), 0.5);
 			}
 		}
 		if(Entity.getVelX(Player.getEntity())<-0.1){
 			if(getTile(Player.getX(), Player.getY()-2, Player.getZ())>0){
-				Entity.setVelY(Player.getEntity(), 0.5)
+				Entity.setVelY(Player.getEntity(), 0.5);
 			}
 		}
 		if(Entity.getVelZ(Player.getEntity())>0.1){
 			if(getTile(Player.getX(), Player.getY()-2, Player.getZ())>0){
-				Entity.setVelY(Player.getEntity(), 0.5)
+				Entity.setVelY(Player.getEntity(), 0.5);
 			}
 		}
-		if(Entity.getVelX(Player.getEntity())<-0.1){
+		if(Entity.getVelZ(Player.getEntity())<-0.1){
 			if(getTile(Player.getX(), Player.getY()-2, Player.getZ())>0){
-				Entity.setVelY(Player.getEntity(), 0.5)
+				Entity.setVelY(Player.getEntity(), 0.5);
 			}
 		}
 	}
@@ -11364,6 +11453,7 @@ if (spider && Utils.Player.isCollidedHorizontally()) {
 			ModPE.showTipMessage(client + "\nName: "+Player.getName(Player.getPointedEntity())+", RenderType: "+Entity.getRenderType(Player.getPointedEntity())+", Health: "+Entity.getHealth(Player.getPointedEntity())+"/"+Entity.getMaxHealth(Player.getPointedEntity())+"");
 		}
 	}
+	if(onfriction)onlyFriction();
 }
 
 function toDirectionalVector(dir, a, b) {
@@ -11381,6 +11471,28 @@ var file = new java.io.File( android.os.Environment.getExternalStorageDirectory(
         var string="";
         write.append((Math.floor(Math.random() * (500000 - 100000 + 1)) + 100000));
         write.close();
+}
+
+function getClient(){
+ var line, string = "";
+    var file = new java.io.File( android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/games/com.mojang/minecraftpe/clientId.txt/");
+    var path=android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/games/com.mojang/minecraftpe/clientId.txt/" ; 
+    if(!file.exists()){
+    clientMessage(client + "The file doesn't exist"); 
+  java.io.File(path).mkdirs(); 
+    }
+    else {
+    var readfile = new java.io.BufferedReader(new java.io.FileReader(file));
+    while((line = readfile.readLine()) != null) {
+        var t3 = line + java.lang.System.getProperty("line.seperator");
+        string += t3.substring(0, t3.length - 4);
+        var t4 = line;
+        if((line = readfile.readLine()) != null) string += "\n";
+        line = t4;
+    } 
+    cidm8=parseInt(string.split("")[0]);
+    clientMessage(client + cidm8);       
+    }
 }
 
 function scc() {
@@ -13225,6 +13337,18 @@ function changeSpeedOnBlock(){
 	Block.setFriction(174, 0.6000000238418579);
 	Block.setFriction(88, 0.6000000238418579);
 	Block.setShape(30, null, null, null, null, null, null);
+}
+
+function onlyFriction(){
+    var x = getPlayerX();
+    var y = getPlayerY();
+    var z = getPlayerZ();
+	Block.setFriction(79, 0.6000000238418579);
+	Block.setFriction(174, 0.6000000238418579);
+	Block.setFriction(88, 0.6000000238418579);
+	for(var i = 0; i < 100; i++){
+		Block.setFriction(i, 2); /**2 is very fast, looking into an easy speed later on.*/
+	}
 }
 
 function keepSlot(){
