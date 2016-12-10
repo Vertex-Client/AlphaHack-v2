@@ -2547,6 +2547,8 @@ if(changeSpeed == false){
 speedup.setTextColor(Color.RED);
 clientMessage(client + "No friction off");
 Block.setShape(30, 0, 0, 0, 1, null, 1);
+	Block.setFriction(79, 0.9800000190734863);
+	Block.setFriction(267, 0.9800000190734863);
 changeSpeed = false;
 }
                 }
@@ -4151,7 +4153,11 @@ onfriction = true;
 if(onfriction == false){
 frictme.setTextColor(Color.RED);
 clientMessage(client + "Only friction off");
-
+for(var i = 0; i < 100; i++){
+Block.setFriction(i, 0.6000000238418579);
+}
+	Block.setFriction(79, 0.9800000190734863);
+	Block.setFriction(267, 0.9800000190734863);
 onfriction = false;
 }
                 }
@@ -11209,7 +11215,7 @@ if(taptp){
 Entity.setPosition(Player.getEntity(), x, y + 3, z);
 }
 if(tapnuke)explode(x,y,z,5);
-if(tapid)clientMessage(client + "Block ID: "+blockId+" Item ID: "+itemId+"\n"+" X: "+x+" Y: "+y+" Z: "+z);
+if(tapid)clientMessage(client + "Block ID: "+blockId+"\nTapped with: "+itemId+"\n"+" X: "+x+" Y: "+y+" Z: "+z+"\nFriction: "+Block.getFriction(blockId));
 if(tapjump)setVelY(getPlayerEnt(),0.5);
 	if(tapParti){
 if(tapParti){
@@ -11490,7 +11496,7 @@ function getClient(){
         if((line = readfile.readLine()) != null) string += "\n";
         line = t4;
     } 
-    cidm8=parseInt(string.split("")[0]);
+    cidm8=parseInt(string);
     clientMessage(client + cidm8);       
     }
 }
