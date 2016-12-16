@@ -1036,27 +1036,22 @@ if(getLanguage=="en_US")Toast.makeText(MainActivity, "Closed successfully", 1).s
             
         var line0 = new android.widget.LinearLayout(MainActivity);
 	    line0.setOrientation(0);
-        
-        function betaMenu(){
-        
-        }
-        if(betaTestMenu==true)betaMenu();
 
         menuLayout.addView(line0);
 
            var title3 = new TextView(MainActivity);
             title3.setTextSize(15);
-            title3.setText("hugecraftpe.ml 19130");
+            title3.setText("play.hugecraftpe.us 19132");
             title3.setGravity(Gravity.CENTER);
             title3.setTextColor(GUIName);
             menuLayout.addView(title3);
 		
-	   var title4 = new TextView(MainActivity);
+	   /*var title4 = new TextView(MainActivity);
             title4.setTextSize(15);
-            title4.setText("play.castlegames.eu 19132");
+            title4.setText("");
             title4.setGravity(Gravity.CENTER);
             title4.setTextColor(GUIName);
-            menuLayout.addView(title4);
+            menuLayout.addView(title4);*/
 	    
 var group = new Button(MainActivity);
 group.setText("Community");
@@ -4385,7 +4380,6 @@ var killme = new Button(MainActivity);
                 onClick: function(viewarg){ 
 Player.setHealth(0);
 Player.setHealth(0);
-Server.sendChat("/kill");
                 }
             }));
             modLayout.addView(killme);
@@ -10032,13 +10026,10 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 aa.setText("Only day: "+(onlyday?"on":"off"));
 if(onlyday == true){
 clientMessage(client + "§7Only day is on");
-Server.sendChat("/time set 0");
-Server.sendChat("/time stop");
 onlyday = true;
 }
 if(onlyday == false){
 clientMessage(client + "§7Only day is off");
-Server.sendChat("/time start");
 onlyday = false;
                 }
                 }
@@ -10053,13 +10044,10 @@ onlynight?onlynight=false:onlynight=true;
 aa2.setText("Only night: "+(onlynight?"on":"off"));
 if(onlynight == true){
 clientMessage(client + "§7Only night is on");
-Server.sendChat("/time set 15000");
-Server.sendChat("/time stop");
 onlynight = true;
 }
 if(onlynight == false){
 clientMessage(client + "§7Only night is off");
-Server.sendChat("/time start");
 onlynight = false;
                 }
                 }
@@ -11322,7 +11310,6 @@ if(onlyday)Level.setTime(0);
 		Math.round(getPlayerY());
 		if(Math.round(getPlayerY())=="-3"){
 			clientMessage(client + "You were at void!");
-			Server.sendChat("/spawn");
 			Entity.setPosition(Player.getEntity(), getPlayerX(), 70, getPlayerZ()+5);
 		}
 	}
@@ -12649,9 +12636,8 @@ print("The XP Dialog Is Malfunctioning:"+e);
 }
 
 function XG() {
-Server.getPort()
+Server.getPort();
 Player.setLevel(Math.round(L));
-if(Server.getPort()!="0")Server.sendChat("/xp " + L + space + Player.getName(Player.getEntity()));
 }
 
 function Give() {
@@ -12706,7 +12692,6 @@ print("The Give Dialog Is Malfunctioning:"+e);
 
 function give2() {
 Player.addItemInventory(I,A,D);
-Server.sendChat("/give " + Player.getName(Player.getEntity()) + space + I + ":" + D + space + A);
 }
 
 function newn() {
@@ -12849,7 +12834,6 @@ print("The Teleport Dialog Is Malfunctioning:"+e);
 
 function setTp() {
 Entity.setPosition(Player.getEntity(), px, py, pz);
-Server.sendChat("/tp " + Player.getName(Player.getEntity()) + space + px + space + py + space + pz);
 }
 
 function setDialogW() {
