@@ -18,8 +18,9 @@ var MainActivity = ctx;
 //Get language of client side minecraft
 var getLanguage = ModPE.getLanguage();
 /*Thanks to godsoft029 and many others for german translate*/
-/*thanks to MasterProGame & TheNewHEROBRINE for italian translate*/
-/*thanks to walpo for spanish translate*/
+/*Thanks to MasterProGame & TheNewHEROBRINE for italian translate*/
+/*Thanks to walpo for spanish translate*/
+/*Thanks to johnmacrocraft for korean translate*/
 
 //get version of client side minecraft
 var getVer = ModPE.getMinecraftVersion();
@@ -788,6 +789,7 @@ GUI.dismiss();
 if(getLanguage=="en_US")Toast.makeText(MainActivity, "Scroll down", 1).show();
  if(getLanguage=="de_DE")Toast.makeText(MainActivity, "Scroll nach unten", 1).show();
 if(getLanguage=="es_MX")Toast.makeText(MainActivity, "Baja abajo", 1).show();
+if(getLanguage=="ko_KR")Toast.makeText(MainActivity, "아래를 스크롤", 1).show();
             }
         }));
         layout.addView(menuBtn);
@@ -1030,6 +1032,7 @@ menu.dismiss();
 showMenuBtn(); 
 if(getLanguage=="en_US")Toast.makeText(MainActivity, "Closed successfully", 1).show();
  if(getLanguage=="de_DE")Toast.makeText(MainActivity, "Erfolgreich geschlossen", 1).show();
+if(getLanguage=="ko_KR")Toast.makeText(MainActivity, "성공적으로 닫았습니다", 1).show();
                 }
             }));
             menuLayout.addView(exit);
@@ -1595,6 +1598,7 @@ settingsLayout1.setPadding(20,0,20,0);
 
 var misc = new Button(MainActivity);
 misc.setText("Misc");
+if(getLanguage=="ko_KR")misc.setText("기타");
 misc.setTextColor(GUIBtns);
 if(mcpetheme==true)misc.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 misc.setOnClickListener(new android.view.View.OnClickListener() {
@@ -2119,6 +2123,7 @@ miscLayout1.setPadding(20,0,20,0);
 	    
 var cheats = new Button(MainActivity);
 cheats.setText("Online & offline mods");
+if(getLanguage=="ko_KR")cheats.setText("온라인 모드");
 cheats.setTextColor(GUIBtns);
 if(mcpetheme==true)cheats.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 cheats.setOnClickListener(new android.view.View.OnClickListener() {
@@ -4186,6 +4191,7 @@ cheatLayout1.setPadding(20,0,20,0);
             
 var mods = new Button(MainActivity);
 mods.setText("Single player mods");
+if(getLanguage=="ko_KR")mods.setText("오프라인 모드");
 mods.setTextColor(GUIBtns);
 if(mcpetheme==true)mods.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 mods.setOnClickListener(new android.view.View.OnClickListener() {
@@ -6121,6 +6127,7 @@ var enchant = new Button(MainActivity);
 enchant.setText("Enchant menu");
 if(getLanguage=="it_IT")enchant.setText("Menu incantamenti");
 if(getLanguage=="es_MX")enchant.setText("Menu de experiencia");
+if(getLanguage=="ko_KR")enchant.setText("마법 부여 메뉴");
 enchant.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")enchant.setText("Verzauberungs menu");
 if(mcpetheme==true)enchant.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
@@ -7590,6 +7597,7 @@ var give = new Button(MainActivity);
 give.setText("Give menu");
 if(getLanguage=="it_IT")give.setText("Menu give");
 if(getLanguage=="es_MX")give.setText("Menu de dar");
+if(getLanguage=="ko_KR")give.setText("아이템 주기 메뉴");
 give.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")give.setText("Geben menu");
 if(mcpetheme==true)give.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
@@ -7789,6 +7797,7 @@ var morph = new Button(MainActivity);
 morph.setText("Morph menu");
 if(getLanguage=="it_IT")morph.setText("Menu trasformazioni");
 if(getLanguage=="es_MX")morph.setText("Menu de morph");
+if(getLanguage=="ko_KR")morph.setText("변신 메뉴");
 morph.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")morph.setText("Verwandelungs menu");
 if(mcpetheme==true)morph.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
@@ -8339,6 +8348,7 @@ var nuke = new Button(MainActivity);
 nuke.setText("Nuke menu");
 if(getLanguage=="it_IT")nuke.setText("Menu esplosioni");
 if(getLanguage=="es_MX")nuke.setText("Menu de bomba nuclear");
+if(getLanguage=="ko_KR")nuke.setText("핵폭탄 메뉴");
 nuke.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")nuke.setText("Vernichtungs menu");
 if(mcpetheme==true)nuke.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
@@ -8531,6 +8541,7 @@ var particle = new Button(MainActivity);
 particle.setText("Particle menu");
 if(getLanguage=="it_IT")particle.setText("Menu particelle");
 if(getLanguage=="es_MX")particle.setText("Menu de partícula");
+if(getLanguage=="ko_KR")particle.setText("파티클 메뉴");
 particle.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")particle.setText("Partikel menu");
 if(mcpetheme==true)particle.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
@@ -9142,6 +9153,7 @@ var spawn = new Button(MainActivity);
 spawn.setText("Spawn menu");
 if(getLanguage=="it_IT")spawn.setText("Menu spawner");
 if(getLanguage=="es_MX")spawn.setText("Menu de spawn");
+if(getLanguage=="ko_KR")spawn.setText("생성 메뉴");
 spawn.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")spawn.setText("Erschaffungs menu");
 if(mcpetheme==true)spawn.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
@@ -9598,6 +9610,7 @@ var speed = new Button(MainActivity);
 speed.setText("Speed menu");
 if(getLanguage=="it_IT")speed.setText("Menu velocita");
 if(getLanguage=="es_MX")speed.setText("Menu de velocidad");
+if(getLanguage=="ko_KR")speed.setText("속도 메뉴");
 speed.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")speed.setText("Schnelligkeits menu");
 if(mcpetheme==true)speed.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
@@ -9857,6 +9870,7 @@ var teleport = new Button(MainActivity);
 teleport.setText("Teleport menu");
 if(getLanguage=="it_IT")teleport.setText("Menu teletrasporto");
 if(getLanguage=="es_MX")teleport.setText("Menu de teletransportacion");
+if(getLanguage=="ko_KR")teleport.setText("순간이동 메뉴");
 teleport.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")teleport.setText("Teleportierungs menu");
 if(mcpetheme==true)teleport.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
@@ -9986,6 +10000,7 @@ var time = new Button(MainActivity);
 time.setText("Time menu");
 if(getLanguage=="it_IT")time.setText("Menu tempo");
 if(getLanguage=="es_MX")time.setText("Menu de momento");
+if(getLanguage=="ko_KR")time.setText("시간 메뉴");
 time.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")time.setText("Zeit menu");
 if(mcpetheme==true)time.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
@@ -10290,6 +10305,7 @@ var weather = new Button(MainActivity);
 weather.setText("Weather menu");
 if(getLanguage=="it_IT")weather.setText("Menu del tempo");
 if(getLanguage=="es_MX")weather.setText("Menu de tiempo");
+if(getLanguage=="ko_KR")weather.setText("날씨 메뉴");
 weather.setTextColor(GUIBtns);
 if(getLanguage=="de_DE")weather.setText("Wetter menu");
 if(mcpetheme==true)weather.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
