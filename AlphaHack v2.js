@@ -1041,13 +1041,6 @@ if(getLanguage=="ko_KR")Toast.makeText(MainActivity, "성공적으로 닫았습�
 	    line0.setOrientation(0);
 
         menuLayout.addView(line0);
-
-           var title3 = new TextView(MainActivity);
-            title3.setTextSize(15);
-            title3.setText("play.hugecraftpe.us 19132");
-            title3.setGravity(Gravity.CENTER);
-            title3.setTextColor(GUIName);
-            menuLayout.addView(title3);
 		
 	   /*var title4 = new TextView(MainActivity);
             title4.setTextSize(15);
@@ -1074,6 +1067,7 @@ var settings = new Button(MainActivity);
 settings.setText("Settings");
 	    if(getLanguage=="it_IT")settings.setText("Impostazioni");
 	    if(getLanguage=="es_MX")settings.setText("Configuracion");
+	    if(getLanguage=="ko_KR")settings.setText("설정");
 settings.setTextColor(GUIBtns);
 if(mcpetheme==true)settings.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 settings.setOnClickListener(new android.view.View.OnClickListener() {
@@ -4709,6 +4703,7 @@ var effect = new Button(MainActivity);
 effect.setText("Effect menu");
 if(getLanguage=="it_IT")effect.setText("Menu effetti");
 if(getLanguage=="es_MX")effect.setText("Menu de efectos");
+if(getLanguage=="ko_KR")effect.setText("효과 메뉴");
 effect.setTextColor(GUIBtns);
 if(mcpetheme==true)effect.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 effect.setOnClickListener(new android.view.View.OnClickListener() {
@@ -13595,7 +13590,7 @@ function rptask() {
                     }
                     if(aimbot){
 			    var ent = getNearestEntity(7);
-			    if(ent != null && Entity.getNameTag(ent) != " " || Entity.getNameTag(ent) != "")crosshairAimAt(ent);
+			    if(ent != null)crosshairAimAt(ent);
 		    }
 			if(aimbot2){
 				/*TODO Moving aim aura*/
