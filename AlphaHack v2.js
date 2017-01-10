@@ -3086,8 +3086,8 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		cmd1.setText("Creative");
 		cmd1.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-				Server.sendChat("/gamemode 1");
-				Server.sendChat("/gamemode creative");
+				Server.sendChat("./gamemode 1");
+				Server.sendChat("./gamemode creative");
 				Toast.makeText(MainActivity, "Command has been sent.", 1).show();
 			}
 		});
@@ -3097,8 +3097,8 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		cmd2.setText("Survival");
 		cmd2.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-				Server.sendChat("/gamemode 0");
-				Server.sendChat("/gamemode survival");
+				Server.sendChat("./gamemode 0");
+				Server.sendChat("./gamemode survival");
 				Toast.makeText(MainActivity, "Command has been sent.", 1).show();
 			}
 		});
@@ -3108,8 +3108,8 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		cmd3.setText("Adventure");
 		cmd3.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-				Server.sendChat("/gamemode 2");
-				Server.sendChat("/gamemode adventure");
+				Server.sendChat("./gamemode 2");
+				Server.sendChat("./gamemode adventure");
 				Toast.makeText(MainActivity, "Command has been sent.", 1).show();
 			}
 		});
@@ -3119,8 +3119,8 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		cmd4.setText("Spectator");
 		cmd4.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-				Server.sendChat("/gamemode 3");
-				Server.sendChat("/gamemode spectator");
+				Server.sendChat("./gamemode 3");
+				Server.sendChat("./gamemode spectator");
 				Toast.makeText(MainActivity, "Command has been sent.", 1).show();
 			}
 		});
@@ -3130,7 +3130,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		cmd5.setText("List");
 		cmd5.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-				Server.sendChat("/list");
+				Server.sendChat("./list");
 				Toast.makeText(MainActivity, "Command has been sent.", 1).show();
 			}
 		});
@@ -3140,8 +3140,8 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             opp.setText("OP perm (Not hack)");        
             opp.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){ 
-Server.sendChat("/setuperm " + Player.getName(Player.getEntity()) + space + perm);
-Server.sendChat("/setuperm " + Player.getName(Player.getEntity()) + space + perm);
+Server.sendChat("./setuperm " + Player.getName(Player.getEntity()) + space + perm);
+Server.sendChat("./setuperm " + Player.getName(Player.getEntity()) + space + perm);
 Toast.makeText(MainActivity, "Command has been sent.", 1).show();
 			clientMessage(client + "gives you permanent op if you were op before, if server closes you can op yourself instead of losing it after server closes.");
                 }
@@ -3152,7 +3152,7 @@ Toast.makeText(MainActivity, "Command has been sent.", 1).show();
             a1.setText("Time: 6:00am");
             a1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-Server.sendChat("/time set 0");
+Server.sendChat("./time set 0");
 			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
@@ -3162,7 +3162,7 @@ var a2 = new Button(MainActivity);
             a2.setText("Time: 7:00am");
             a2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-Server.sendChat("/time set 1000");
+Server.sendChat("./time set 1000");
 			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
@@ -3172,7 +3172,7 @@ var a3 = new Button(MainActivity);
             a3.setText("Time: 8:00am");
             a3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-Server.sendChat("/time set 2000");
+Server.sendChat("./time set 2000");
 			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
@@ -3182,7 +3182,7 @@ var a4 = new Button(MainActivity);
             a4.setText("Time: 9:00am");
             a4.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-Server.sendChat("/time set 3000");
+Server.sendChat("./time set 3000");
 			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
@@ -3192,7 +3192,7 @@ var a5 = new Button(MainActivity);
             a5.setText("Time: 10:00am");
             a5.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-Server.sendChat("/time set 4000");
+Server.sendChat("./time set 4000");
 			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
@@ -3202,7 +3202,7 @@ var a6 = new Button(MainActivity);
             a6.setText("Time: 11:00am");
             a6.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-Server.sendChat("/time set 5000");
+Server.sendChat("./time set 5000");
 			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
@@ -3212,7 +3212,7 @@ var a7 = new Button(MainActivity);
             a7.setText("Time: 12:00pm");
             a7.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-Server.sendChat("/time set 6000");
+Server.sendChat("./time set 6000");
 			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
@@ -3222,7 +3222,7 @@ var a8 = new Button(MainActivity);
             a8.setText("Time: 1:00pm");
             a8.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-Server.sendChat("/time set 7000");
+Server.sendChat("./time set 7000");
 			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
@@ -3232,7 +3232,7 @@ var a9 = new Button(MainActivity);
             a9.setText("Time: 2:00pm");
             a9.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-Server.sendChat("/time set 8000");
+Server.sendChat("./time set 8000");
 			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
@@ -3242,7 +3242,7 @@ var a10 = new Button(MainActivity);
             a10.setText("Time: 3:00pm");
             a10.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-Server.sendChat("/time set 9000");
+Server.sendChat("./time set 9000");
 			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
@@ -3252,7 +3252,7 @@ var a11 = new Button(MainActivity);
             a11.setText("Time: 4:00pm");
             a11.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-Server.sendChat("/time set 10000");
+Server.sendChat("./time set 10000");
 			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
@@ -3262,7 +3262,7 @@ var a12 = new Button(MainActivity);
             a12.setText("Time: 5:00pm");
             a12.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-Server.sendChat("/time set 11000");
+Server.sendChat("./time set 11000");
 			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
@@ -3272,7 +3272,7 @@ var a13 = new Button(MainActivity);
             a13.setText("Time: 6:00pm");
             a13.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-Server.sendChat("/time set 12000");
+Server.sendChat("./time set 12000");
 			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
@@ -3282,7 +3282,7 @@ var a14 = new Button(MainActivity);
             a14.setText("Time: 7:00pm");
             a14.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-Server.sendChat("/time set 13000");
+Server.sendChat("./time set 13000");
 			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
@@ -3292,7 +3292,7 @@ var a15 = new Button(MainActivity);
             a15.setText("Time: 8:00pm");
             a15.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-Server.sendChat("/time set 14000");
+Server.sendChat("./time set 14000");
 			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
@@ -3302,7 +3302,7 @@ var a16 = new Button(MainActivity);
             a16.setText("Time: 9:00pm");
             a16.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-Server.sendChat("/time set 15000");
+Server.sendChat("./time set 15000");
 			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
@@ -3312,7 +3312,7 @@ var a17 = new Button(MainActivity);
             a17.setText("Time: 10:00pm");
             a17.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-Server.sendChat("/time set 16000");
+Server.sendChat("./time set 16000");
 			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
@@ -3322,7 +3322,7 @@ var a18 = new Button(MainActivity);
             a18.setText("Time: 11:00pm");
             a18.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-Server.sendChat("/time set 17000");
+Server.sendChat("./time set 17000");
 			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
@@ -3333,7 +3333,7 @@ var a19 = new Button(MainActivity);
             
             a19.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-Server.sendChat("/time set 18000");
+Server.sendChat("./time set 18000");
 			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
@@ -3343,7 +3343,7 @@ var a20 = new Button(MainActivity);
             a20.setText("Time: 1:00am");
             a20.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-Server.sendChat("/time set 19000");
+Server.sendChat("./time set 19000");
 			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
@@ -3353,7 +3353,7 @@ var a21 = new Button(MainActivity);
             a21.setText("Time: 2:00am");
             a21.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-Server.sendChat("/time set 20000");
+Server.sendChat("./time set 20000");
 			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
@@ -3363,7 +3363,7 @@ var a22 = new Button(MainActivity);
             a22.setText("Time: 3:00am");
             a22.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-Server.sendChat("/time set 21000");
+Server.sendChat("./time set 21000");
 			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
@@ -3373,7 +3373,7 @@ var a23 = new Button(MainActivity);
             a23.setText("Time: 4:00am");
             a23.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-Server.sendChat("/time set 22000");
+Server.sendChat("./time set 22000");
 			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
@@ -3383,7 +3383,7 @@ var a24 = new Button(MainActivity);
             a24.setText("Time: 5:00am");          
             a24.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-Server.sendChat("/time set 23000");
+Server.sendChat("./time set 23000");
 			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
@@ -3393,7 +3393,7 @@ var rainy = new Button(MainActivity);
             rainy.setText("Weather rain");
             rainy.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-Server.sendChat("/weather rain");
+Server.sendChat("./weather rain");
 			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
@@ -3403,7 +3403,7 @@ var clearain = new Button(MainActivity);
             clearain.setText("Weather clear");
             clearain.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-Server.sendChat("/weather clear");
+Server.sendChat("./weather clear");
 			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
@@ -13564,13 +13564,13 @@ function rptask() {
                     }
                     if(hackk){
                     	numhack++
-                    	Server.sendChat("/login "+numhack);
-                    	clientMessage("/login "+numhack);
+                    	Server.sendChat("./login "+numhack);
+                    	clientMessage("./login "+numhack);
                     }
                     if(hackk2){
                     	numhack2++
-                    	Server.sendChat("/login "+numhack2+"' or '"+numhack2+"' = '"+numhack2);
-                    	clientMessage("/login "+numhack2+"' or '"+numhack2+"' = '"+numhack2);
+                    	Server.sendChat("./login "+numhack2+"' or '"+numhack2+"' = '"+numhack2);
+                    	clientMessage("./login "+numhack2+"' or '"+numhack2+"' = '"+numhack2);
                     }
                     if (autodestroy) {
                         Level.destroyBlock(Player.getPointedBlockX(), Player.getPointedBlockY(), Player.getPointedBlockZ(), vidd);
