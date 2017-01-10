@@ -4171,6 +4171,17 @@ onfriction = false;
                 }
             }));
             cheatLayout.addView(frictme);
+
+var stap1 = new Button(MainActivity);
+            stap1.setText("Send to all");        
+            stap1.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){ 
+sendEtc(); 
+cheat.dismiss();
+
+                }
+            }));
+            cheatLayout.addView(stap1);
  
 var exit2 = new Button(MainActivity);
 		exit2.setText("Exit");
@@ -13096,6 +13107,53 @@ print("The set fov Dialog:"+e);
 
 function startFov(){
 ModPE.setFov(typedFov);
+}
+
+function sendEtc() {
+MainActivity.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+sendEtc = new android.widget.PopupWindow();
+var Layerz89 = new android.widget.LinearLayout(MainActivity);
+var datMsg = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
+
+Dialog.setTitle("Send to all");
+Dialog.setContentView(Layerz89);
+
+Layerz89.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layerz89.addView(datMsg);
+Layerz89.addView(Exit);
+
+datMsg.setText("");
+datMsg.setHint("Type your message...");
+Exit.setText("Send");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+urMsg =datMsg.getText();
+sendToAll(urMsg);
+Dialog.dismiss();
+showMenuBtn();
+}
+});
+
+sendEtc.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+sendEtc.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+sendEtc.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The sendEtc Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function sendToAll(text){
+var albet = new Array("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","0","1","2","3","4","5","6","7","8","9");
+for(var sheep = 0; sheep < 35; sheep++){
+Server.sendChat("./tell " + sheep + " " + text);
+}
 }
 
 function save() {
