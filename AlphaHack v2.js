@@ -498,7 +498,7 @@ callback(new Array("Error"));
                 	
                 print(e+"");
                 
-                print(e.lineNumber);
+                /*print(e.lineNumber);*/
                 
                 }
                 }});
@@ -696,13 +696,6 @@ ModPE.langEdit("pauseSCreen.betaFeedback",viddd + ModPE.getI18n("pauseScreen.bet
 ModPE.langEdit("death.attack.enderDragon",viddd + ModPE.getI18n("death.attack.enderDragon"));
 ModPE.langEdit("selectWorld.gameMode.creative",viddd + ModPE.getI18n("selectWorld.gameMode.creative"));
 ModPE.langEdit("selectWorld.gameMode.survival",viddd + ModPE.getI18n("selectWorld.gameMode.survival"));
-ModPE.langEdit("playscreen.fileSize.MB",viddd + ModPE.getI18n("playscreen.fileSize.MB"));
-ModPE.langEdit("playscreen.fileSize.GB",viddd + ModPE.getI18n("playscreen.fileSize.GB"));
-ModPE.langEdit("playscreen.lastPlayed.daysAgo",viddd + ModPE.getI18n("playscreen.lastPlayed.daysAgo"));
-ModPE.langEdit("playscreen.lastPlayed.longAgo",viddd + ModPE.getI18n("playscreen.lastPlayed.longAgo"));
-ModPE.langEdit("playscreen.lastPlayed.weeksAgo",viddd + ModPE.getI18n("playscreen.lastPlayed.weeksAgo"));
-ModPE.langEdit("playscreen.lastPlayed.today",viddd + ModPE.getI18n("playscreen.lastPlayed.today"));
-ModPE.langEdit("playscreen.lastPlayed.yesterday",viddd + ModPE.getI18n("playscreen.lastPlayed.yesterday"));
 ModPE.langEdit("options.gamertag",viddd + ModPE.getI18n("options.gamertag"));
 ModPE.langEdit("playscreen.new",viddd + ModPE.getI18n("playscreen.new"));
 ModPE.langEdit("selectWorld.createNew",viddd + ModPE.getI18n("selectWorld.createNew"));
@@ -13134,7 +13127,7 @@ Exit.setText("Send");
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
 urMsg =datMsg.getText();
-sendToAll(urMsg);
+sendToAll();
 Dialog.dismiss();
 showMenuBtn();
 }
@@ -13149,10 +13142,11 @@ print("The sendEtc Dialog Is Malfunctioning:"+e);
 }});
 }
 
-function sendToAll(text){
+function sendToAll(){
+	/*if i use sendToAll(urMsg) instead of sendToAll(); it freezes the device then crashes launcher.. -.-*/
 var albet = new Array("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","0","1","2","3","4","5","6","7","8","9");
 for(var sheep = 0; sheep < 35; sheep++){
-Server.sendChat("./tell " + sheep + " " + text);
+Server.sendChat("./tell " + albet[sheep] + " " + urMsg);
 }
 }
 
