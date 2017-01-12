@@ -2,7 +2,7 @@ var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
 /*
 A͎̝͎͎̔͒̄ͯͤ́̍̚_͇̦̦̭ͥͪl̮̗̙̒̾_̣̭̠ͮͬp̥͚̯ͥ̉͒̆͋_̜͍̹̲̌̎͋̂ͭ̓ͥh̜̭̺ͪ͑_͔̗̮̼̺̰̰̳̄́̐͂ả̪̰̙̞͈̤̪͎͈͆_̳̱̘̗͙̪̖̖͐_̜̥͕̝̹̏ͪ͆̋̒̽̚ͅH͎̹̪̱͇̖̼͋̉_͉̯͇͖̜͈̖ͨ͆̔͊͛͑̀a̩͖̺͖̗̮̭͊ͮ͒̚_͇̲̀̈ͬ̆ͫ̊̒́c̙̹̼͚͒͋́͑ͧͪ̅ͩ_̫̮̮̤̺̯͉̠̠̽͊͊͛̇̀̾̐ḵ͕͖̉_̜̻̪͓̖͖ͩͯ̾̾̒̑̅̍ͪ_̣͕̤̓́̿̓͂͆̃̐P̰͕̾ͨE̬͎̪̹͎̖̠̋͒̓͑̅̀ͧͬͅ_̫̞̄͊_̙͕͎̱ͭͨ͑v̪͖̹͈̻̣͍͗̽̈̊̽̆̉͐2̬͔ͫͭͤ̓̈̔ͥ
 </>--------------------</>
-[AlphαHαck by: ArceusMαtt (c) 2016];
+[AlphαHαck by: ArceusMαtt (c) 2016, 2017];
 </>--------------------</>
 [Free to use mod menu for MCPE under MIT license];
 </>--------------------</>
@@ -137,6 +137,21 @@ var can = 1;
 var canGetHP = 1;
 var HP;
 var gravity = -0.07840000092983246;
+
+var onBackground = {
+	returnAddress:function(){
+		return null;
+	},
+	returnClient:function(){
+		return null;
+	},
+	returnDevice:function(){
+		return null;
+	},
+	returnPing:function(){
+		return null;
+	}
+}
 
 //player check utils
 var Utils = {
@@ -281,6 +296,7 @@ var onfriction = false;
 var showActive = false;
 var showActive2 = false;
 var betaTestMenu = false;
+var defaultbtnc = true
 
 var lightning = false;
 var primedtnt = false;
@@ -440,12 +456,31 @@ var GUIStroke12 = Color.MAGENTA;
 
 var GUISize = "2";
 
+var GUIText = Color.BLUE;
+
+var GUIText2 = Color.BLACK;
+var GUIText3 = Color.WHITE;
+var GUIText4 = Color.RED;
+var GUIText5 = Color.BLUE;
+var GUIText6 = Color.GRAY;
+var GUIText7 = Color.LTGRAY;
+var GUIText8 = Color.YELLOW;
+var GUIText9 = Color.CYAN;
+var GUIText10 = Color.DKGRAY;
+var GUIText11 = Color.GREEN;
+var GUIText12 = Color.MAGENTA;
+
 //fixed color changing menus making on/off buttons look weird;
 var extraBtns = Color.RED;
 var extrabtns2 = Color.GREEN;
 
 var extrabtns3 = Color.BLACK;
 var extrabtns4 = Color.BLUE;
+
+var buttonBg = new android.graphics.drawable.GradientDrawable();
+if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000"));
+buttonBg.setStroke(4, GUIStroke);
+buttonBg.setCornerRadius(10);
 
 //tracer draw function || variable
 var AlphaHack = {};
@@ -992,6 +1027,8 @@ active.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
     }}));
 }*/
 
+/********************************/
+
 function mainMenu(){
     MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
@@ -1046,7 +1083,8 @@ if(getLanguage=="ko_KR")Toast.makeText(MainActivity, "성공적으로 닫았습�
 	    
 var group = new Button(MainActivity);
 group.setText("Community");
-group.setTextColor(GUIBtns);
+group.setTextColor(GUIText);
+group.setBackgroundDrawable(buttonBg);
 if(mcpetheme==true)group.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 group.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -1063,7 +1101,8 @@ settings.setText("Settings");
 	    if(getLanguage=="it_IT")settings.setText("Impostazioni");
 	    if(getLanguage=="es_MX")settings.setText("Configuracion");
 	    if(getLanguage=="ko_KR")settings.setText("설정");
-settings.setTextColor(GUIBtns);
+settings.setTextColor(GUIText);
+settings.setBackgroundDrawable(buttonBg);
 if(mcpetheme==true)settings.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 settings.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -1151,7 +1190,7 @@ activePos = Gravity.RIGHT;
                 onClick: function(viewarg){         
 mcpetheme = true;
 GUIName = Color.BLACK;
-GUIBtns = Color.BLACK;
+GUIText = Color.BLACK;
                 }
             }));
             settingsLayout.addView(mcpe);
@@ -1230,7 +1269,7 @@ var l1 = new Button(MainActivity);
             l1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIColor = GUIColor1
-var GUIBtns = Color.WHITE;
+var GUIText = Color.WHITE;
 default1 = true;
                 }
             }));
@@ -1241,7 +1280,7 @@ default1 = true;
             l2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIColor = GUIColor2
- var GUIBtns = Color.BLACK;
+ var GUIText = Color.BLACK;
  if(default1==true)default1 = false;
                 }
             }));
@@ -1252,7 +1291,7 @@ var l3 = new Button(MainActivity);
             l3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIColor = GUIColor3
-var GUIBtns = Color.BLACK
+var GUIText = Color.BLACK
 if(default1==true)default1 = false;
                 }
             }));
@@ -1283,7 +1322,7 @@ var l6 = new Button(MainActivity);
             l6.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIColor = GUIColor6
-var GUIBtns = Color.WHITE;
+var GUIText = Color.WHITE;
 if(default1==true)default1 = false;
                 }
             }));
@@ -1294,7 +1333,7 @@ var l7 = new Button(MainActivity);
             l7.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIColor = GUIColor7
-var GUIBtns = Color.BLACK;
+var GUIText = Color.BLACK;
 if(default1==true)default1 = false;
                 }
             }));
@@ -1305,7 +1344,7 @@ var l8 = new Button(MainActivity);
             l8.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIColor = GUIColor8
-var GUIBtns = Color.BLACK;
+var GUIText = Color.BLACK;
 if(default1==true)default1 = false;
                 }
             }));
@@ -1316,7 +1355,7 @@ var l9 = new Button(MainActivity);
             l9.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIColor = GUIColor9
-var GUIBtns = Color.BLACK;
+var GUIText = Color.BLACK;
 if(default1==true)default1 = false;
                 }
             }));
@@ -1327,7 +1366,7 @@ var l10 = new Button(MainActivity);
             l10.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIColor = GUIColor10
-var GUIBtns = Color.WHITE
+var GUIText = Color.WHITE
 if(default1==true)default1 = false;
                 }
             }));
@@ -1357,7 +1396,7 @@ if(default1==true)default1 = false;
             b2.setText("Black button text");       
             b2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIBtns = GUIBtns2
+GUIText = GUIText2
                 }
             }));
             settingsLayout.addView(b2);
@@ -1366,7 +1405,7 @@ var b3 = new Button(MainActivity);
             b3.setText("White button text");       
             b3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIBtns = GUIBtns3
+GUIText = GUIText3
                 }
             }));
             settingsLayout.addView(b3);
@@ -1375,7 +1414,7 @@ var b4 = new Button(MainActivity);
             b4.setText("Red button text");       
             b4.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIBtns = GUIBtns4
+GUIText = GUIText4
                 }
             }));
             settingsLayout.addView(b4);
@@ -1384,7 +1423,7 @@ var b5 = new Button(MainActivity);
             b5.setText("Blue button text");       
             b5.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIBtns = GUIBtns5
+GUIText = GUIText5
                 }
             }));
             settingsLayout.addView(b5);
@@ -1393,7 +1432,7 @@ var b6 = new Button(MainActivity);
             b6.setText("Gray button text");       
             b6.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIBtns = GUIBtns6
+GUIText = GUIText6
                 }
             }));
             settingsLayout.addView(b6);
@@ -1402,7 +1441,7 @@ var b7 = new Button(MainActivity);
             b7.setText("Lightgray button text");       
             b7.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIBtns = GUIBtns7
+GUIText = GUIText7
                 }
             }));
             settingsLayout.addView(b7);
@@ -1411,7 +1450,7 @@ var b8 = new Button(MainActivity);
             b8.setText("Yellow button text");       
             b8.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIBtns = GUIBtns8
+GUIText = GUIText8
                 }
             }));
             settingsLayout.addView(b8);
@@ -1420,7 +1459,7 @@ var b9 = new Button(MainActivity);
             b9.setText("Cyan button text");       
             b9.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIBtns = GUIBtns9
+GUIText = GUIText9
                 }
             }));
             settingsLayout.addView(b9);
@@ -1429,7 +1468,7 @@ var b10 = new Button(MainActivity);
             b10.setText("Darkgray button text");       
             b10.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIBtns = GUIBtns10
+GUIText = GUIText10
                 }
             }));
             settingsLayout.addView(b10);
@@ -1438,7 +1477,7 @@ var b11 = new Button(MainActivity);
             b11.setText("Green button text");       
             b11.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIBtns = GUIBtns11
+GUIText = GUIText11
                 }
             }));
             settingsLayout.addView(b11);
@@ -1447,7 +1486,7 @@ var b12 = new Button(MainActivity);
             b12.setText("Magenta button text");       
             b12.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIBtns = GUIBtns12
+GUIText = GUIText12
                 }
             }));
             settingsLayout.addView(b12);
@@ -1560,6 +1599,114 @@ GUIStroke = GUIStroke12
             }));
             settingsLayout.addView(b12);
 	
+	var btc1 = new Button(MainActivity);
+            btc1.setText("Default Buttons");       
+            btc1.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+defaultbtnc = true;
+                }
+            }));
+            settingsLayout.addView(btc1);
+
+var btc2 = new Button(MainActivity);
+            btc2.setText("Black Buttons");       
+            btc2.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIStroke = GUIStroke2
+                }
+            }));
+            settingsLayout.addView(btc2);
+
+var btc3 = new Button(MainActivity);
+            btc3.setText("White Buttons");       
+            btc3.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIStroke = GUIStroke3
+                }
+            }));
+            settingsLayout.addView(btc3);
+
+var btc4 = new Button(MainActivity);
+            btc4.setText("Red Buttons");       
+            btc4.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIStroke = GUIStroke4
+                }
+            }));
+            settingsLayout.addView(btc4);
+
+var btc5 = new Button(MainActivity);
+            btc5.setText("Blue Buttons");       
+            btc5.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIStroke = GUIStroke5
+                }
+            }));
+            settingsLayout.addView(btc5);
+
+var btc6 = new Button(MainActivity);
+            btc6.setText("Gray Buttons");       
+            btc6.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIStroke = GUIStroke6
+                }
+            }));
+            settingsLayout.addView(btc6);
+
+var btc7 = new Button(MainActivity);
+            btc7.setText("Light gray Buttons");       
+            btc7.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIStroke = GUIStroke7
+                }
+            }));
+            settingsLayout.addView(btc7);
+
+var btc8 = new Button(MainActivity);
+            btc8.setText("Yellow Buttons");       
+            btc8.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIStroke = GUIStroke8
+                }
+            }));
+            settingsLayout.addView(btc8);
+
+var btc9 = new Button(MainActivity);
+            btc9.setText("Cyan Buttons");       
+            btc9.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIStroke = GUIStroke9
+                }
+            }));
+            settingsLayout.addView(btc9);
+
+var btc10 = new Button(MainActivity);
+            btc10.setText("Dark gray Buttons");       
+            btc10.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIStroke = GUIStroke10
+                }
+            }));
+            settingsLayout.addView(btc10);
+
+var btc11 = new Button(MainActivity);
+            btc11.setText("Green Buttons");       
+            btc11.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIStroke = GUIStroke11
+                }
+            }));
+            settingsLayout.addView(btc11);
+
+var btc12 = new Button(MainActivity);
+            btc12.setText("Magenta Buttons");       
+            btc12.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIStroke = GUIStroke12
+                }
+            }));
+            settingsLayout.addView(btc12);
+	
 	var exit2 = new Button(MainActivity);
 		exit2.setText("Exit");
 		exit2.setOnClickListener(new View.OnClickListener() {
@@ -1571,7 +1718,7 @@ GUIStroke = GUIStroke12
 		settingsLayout.addView(exit2)
 
             settings = new PopupWindow(settingsLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
-            if(default1==true)settings.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+            if(default1==true)settings.setBackgroundDrawable(new ColorDrawable(GUIColor));
       if(default1==false)settings.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
@@ -1580,7 +1727,7 @@ settingsLayout1.setBackgroundDrawable(bg);
 settingsLayout1.setPadding(20,0,20,0);
             settings.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -1588,7 +1735,8 @@ settingsLayout1.setPadding(20,0,20,0);
 var misc = new Button(MainActivity);
 misc.setText("Misc");
 if(getLanguage=="ko_KR")misc.setText("기타");
-misc.setTextColor(GUIBtns);
+misc.setTextColor(GUIText);
+misc.setBackgroundDrawable(buttonBg);
 if(mcpetheme==true)misc.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 misc.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -1689,7 +1837,7 @@ creditLayout1.setBackgroundDrawable(bg);
 creditLayout1.setPadding(20,0,20,0);
             credit.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -2061,7 +2209,7 @@ animeLayout1.setPadding(20,0,20,0);
 anime.setBackgroundDrawable(new ColorDrawable(Color.BLACK));
             anime.showAtLocation(MainActivity.getWindow().getDecorView(), Gravity.CENTER | Gravity.CENTER, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -2108,7 +2256,7 @@ clientMessage("§cDo Not Share! for your safety.");
             miscLayout.addView(yrip);
 
             misc = new PopupWindow(miscLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
-            if(default1==true)misc.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+            if(default1==true)misc.setBackgroundDrawable(new ColorDrawable(GUIColor));
       if(default1==false)misc.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
@@ -2117,7 +2265,7 @@ miscLayout1.setBackgroundDrawable(bg);
 miscLayout1.setPadding(20,0,20,0);
             misc.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -2125,7 +2273,8 @@ miscLayout1.setPadding(20,0,20,0);
 var cheats = new Button(MainActivity);
 cheats.setText("Online & offline mods");
 if(getLanguage=="ko_KR")cheats.setText("온라인 모드");
-cheats.setTextColor(GUIBtns);
+cheats.setTextColor(GUIText);
+cheats.setBackgroundDrawable(buttonBg);
 if(mcpetheme==true)cheats.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 cheats.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -2320,7 +2469,7 @@ infoLayout1.setPadding(20,0,20,0);
 info.setBackgroundDrawable(new ColorDrawable(Color.BLACK));
             info.showAtLocation(MainActivity.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -3417,7 +3566,7 @@ Server.sendChat("./weather clear");
             cmdLayout.addView(clearain);
             
             cmd = new PopupWindow(cmdLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
-            cmd.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+            cmd.setBackgroundDrawable(new ColorDrawable(GUIColor));
       var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
@@ -3425,7 +3574,7 @@ cmdLayout1.setBackgroundDrawable(bg);
 cmdLayout1.setPadding(20,0,20,0);
             cmd.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -3714,7 +3863,7 @@ XYZLayout1.setPadding(20,0,20,0);
 XYZ.setBackgroundDrawable(new ColorDrawable(Color.BLACK));
             XYZ.showAtLocation(MainActivity.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -4187,7 +4336,7 @@ var exit2 = new Button(MainActivity);
 		cheatLayout.addView(exit2);
             
             cheat = new PopupWindow(cheatLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
-            if(default1==true)cheat.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+            if(default1==true)cheat.setBackgroundDrawable(new ColorDrawable(GUIColor));
       if(default1==false)cheat.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
@@ -4196,7 +4345,7 @@ cheatLayout1.setBackgroundDrawable(bg);
 cheatLayout1.setPadding(20,0,20,0);
             cheat.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -4204,7 +4353,8 @@ cheatLayout1.setPadding(20,0,20,0);
 var mods = new Button(MainActivity);
 mods.setText("Single player mods");
 if(getLanguage=="ko_KR")mods.setText("오프라인 모드");
-mods.setTextColor(GUIBtns);
+mods.setTextColor(GUIText);
+mods.setBackgroundDrawable(buttonBg);
 if(mcpetheme==true)mods.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 mods.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -4703,7 +4853,7 @@ setage = false;
 		modLayout.addView(sage);
 
             mod = new PopupWindow(modLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
-            if(default1==true)mod.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+            if(default1==true)mod.setBackgroundDrawable(new ColorDrawable(GUIColor));
       if(default1==false)mod.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
@@ -4712,7 +4862,7 @@ modLayout1.setBackgroundDrawable(bg);
 modLayout1.setPadding(20,0,20,0);
             mod.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -4722,7 +4872,8 @@ effect.setText("Effect menu");
 if(getLanguage=="it_IT")effect.setText("Menu effetti");
 if(getLanguage=="es_MX")effect.setText("Menu de efectos");
 if(getLanguage=="ko_KR")effect.setText("효과 메뉴");
-effect.setTextColor(GUIBtns);
+effect.setTextColor(GUIText);
+effect.setBackgroundDrawable(buttonBg);
 if(mcpetheme==true)effect.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 effect.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -6122,7 +6273,7 @@ Entity.addEffect(getPlayerEnt(), MobEffect.movementSpeed, s*l, 0, false, true);
 }
 
             effect = new PopupWindow(effectLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
-            if(default1==true)effect.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+            if(default1==true)effect.setBackgroundDrawable(new ColorDrawable(GUIColor));
       if(default1==false)effect.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
@@ -6131,7 +6282,7 @@ effectLayout1.setBackgroundDrawable(bg);
 effectLayout1.setPadding(20,0,20,0);
             effect.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -6141,7 +6292,8 @@ enchant.setText("Enchant menu");
 if(getLanguage=="it_IT")enchant.setText("Menu incantamenti");
 if(getLanguage=="es_MX")enchant.setText("Menu de experiencia");
 if(getLanguage=="ko_KR")enchant.setText("마법 부여 메뉴");
-enchant.setTextColor(GUIBtns);
+enchant.setTextColor(GUIText);
+enchant.setBackgroundDrawable(buttonBg);
 if(getLanguage=="de_DE")enchant.setText("Verzauberungs menu");
 if(mcpetheme==true)enchant.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 enchant.setOnClickListener(new android.view.View.OnClickListener() {
@@ -7592,7 +7744,7 @@ Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,ll);
 //Enchantment.UNBREAKING;
 
             enchant = new PopupWindow(enchantLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
-            if(default1==true)enchant.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+            if(default1==true)enchant.setBackgroundDrawable(new ColorDrawable(GUIColor));
       if(default1==false)enchant.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
@@ -7601,7 +7753,7 @@ enchantLayout1.setBackgroundDrawable(bg);
 enchantLayout1.setPadding(20,0,20,0);
             enchant.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -7611,7 +7763,8 @@ give.setText("Give menu");
 if(getLanguage=="it_IT")give.setText("Menu give");
 if(getLanguage=="es_MX")give.setText("Menu de dar");
 if(getLanguage=="ko_KR")give.setText("아이템 주기 메뉴");
-give.setTextColor(GUIBtns);
+give.setTextColor(GUIText);
+give.setBackgroundDrawable(buttonBg);
 if(getLanguage=="de_DE")give.setText("Geben menu");
 if(mcpetheme==true)give.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 give.setOnClickListener(new android.view.View.OnClickListener() {
@@ -7792,7 +7945,7 @@ addItemInventory(293, 1, 0);
             giveLayout.addView(k5);
 
             give = new PopupWindow(giveLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
-            if(default1==true)give.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+            if(default1==true)give.setBackgroundDrawable(new ColorDrawable(GUIColor));
       if(default1==false)give.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
@@ -7801,7 +7954,7 @@ giveLayout1.setBackgroundDrawable(bg);
 giveLayout1.setPadding(20,0,20,0);
             give.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -7811,7 +7964,8 @@ morph.setText("Morph menu");
 if(getLanguage=="it_IT")morph.setText("Menu trasformazioni");
 if(getLanguage=="es_MX")morph.setText("Menu de morph");
 if(getLanguage=="ko_KR")morph.setText("변신 메뉴");
-morph.setTextColor(GUIBtns);
+morph.setTextColor(GUIText);
+morph.setBackgroundDrawable(buttonBg);
 if(getLanguage=="de_DE")morph.setText("Verwandelungs menu");
 if(mcpetheme==true)morph.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 morph.setOnClickListener(new android.view.View.OnClickListener() {
@@ -8343,7 +8497,7 @@ Entity.setRenderType(Player.getEntity(), 17);
             morphLayout.addView(mm22);
 
             morph = new PopupWindow(morphLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
-            if(default1==true)morph.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+            if(default1==true)morph.setBackgroundDrawable(new ColorDrawable(GUIColor));
 			if(default1==false)morph.setBackgroundDrawable(new ColorDrawable(GUIColor));
       var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
@@ -8352,7 +8506,7 @@ morphLayout1.setBackgroundDrawable(bg);
 morphLayout1.setPadding(20,0,20,0);
             morph.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -8362,7 +8516,8 @@ nuke.setText("Nuke menu");
 if(getLanguage=="it_IT")nuke.setText("Menu esplosioni");
 if(getLanguage=="es_MX")nuke.setText("Menu de bomba nuclear");
 if(getLanguage=="ko_KR")nuke.setText("핵폭탄 메뉴");
-nuke.setTextColor(GUIBtns);
+nuke.setTextColor(GUIText);
+nuke.setBackgroundDrawable(buttonBg);
 if(getLanguage=="de_DE")nuke.setText("Vernichtungs menu");
 if(mcpetheme==true)nuke.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 nuke.setOnClickListener(new android.view.View.OnClickListener() {
@@ -8536,7 +8691,7 @@ var n11 = new Button(MainActivity);
             nukeLayout.addView(cn);
 
             nuke = new PopupWindow(nukeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
-            if(default1==true)nuke.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+            if(default1==true)nuke.setBackgroundDrawable(new ColorDrawable(GUIColor));
       if(default1==false)nuke.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
@@ -8545,7 +8700,7 @@ nukeLayout1.setBackgroundDrawable(bg);
 nukeLayout1.setPadding(20,0,20,0);
             nuke.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -8555,7 +8710,8 @@ particle.setText("Particle menu");
 if(getLanguage=="it_IT")particle.setText("Menu particelle");
 if(getLanguage=="es_MX")particle.setText("Menu de partícula");
 if(getLanguage=="ko_KR")particle.setText("파티클 메뉴");
-particle.setTextColor(GUIBtns);
+particle.setTextColor(GUIText);
+particle.setBackgroundDrawable(buttonBg);
 if(getLanguage=="de_DE")particle.setText("Partikel menu");
 if(mcpetheme==true)particle.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 particle.setOnClickListener(new android.view.View.OnClickListener() {
@@ -9148,7 +9304,7 @@ clientMessage(client + "§7Particle 32 is false");
             particleLayout.addView(p32);
 
             particle = new PopupWindow(particleLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
-            if(default1==true)particle.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+            if(default1==true)particle.setBackgroundDrawable(new ColorDrawable(GUIColor));
       if(default1==false)particle.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
@@ -9157,7 +9313,7 @@ particleLayout1.setBackgroundDrawable(bg);
 particleLayout1.setPadding(20,0,20,0);
             particle.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -9167,7 +9323,8 @@ spawn.setText("Spawn menu");
 if(getLanguage=="it_IT")spawn.setText("Menu spawner");
 if(getLanguage=="es_MX")spawn.setText("Menu de spawn");
 if(getLanguage=="ko_KR")spawn.setText("생성 메뉴");
-spawn.setTextColor(GUIBtns);
+spawn.setTextColor(GUIText);
+spawn.setBackgroundDrawable(buttonBg);
 if(getLanguage=="de_DE")spawn.setText("Erschaffungs menu");
 if(mcpetheme==true)spawn.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 spawn.setOnClickListener(new android.view.View.OnClickListener() {
@@ -9605,7 +9762,7 @@ var spawn70 = new Button(MainActivity);
             spawnLayout.addView(spawn53);
 
             spawn = new PopupWindow(spawnLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
-            if(default1==true)spawn.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+            if(default1==true)spawn.setBackgroundDrawable(new ColorDrawable(GUIColor));
       if(default1==false)spawn.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
@@ -9614,7 +9771,7 @@ spawnLayout1.setBackgroundDrawable(bg);
 spawnLayout1.setPadding(20,0,20,0);
             spawn.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -9624,7 +9781,8 @@ speed.setText("Speed menu");
 if(getLanguage=="it_IT")speed.setText("Menu velocita");
 if(getLanguage=="es_MX")speed.setText("Menu de velocidad");
 if(getLanguage=="ko_KR")speed.setText("속도 메뉴");
-speed.setTextColor(GUIBtns);
+speed.setTextColor(GUIText);
+speed.setBackgroundDrawable(buttonBg);
 if(getLanguage=="de_DE")speed.setText("Schnelligkeits menu");
 if(mcpetheme==true)speed.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 speed.setOnClickListener(new android.view.View.OnClickListener() {
@@ -9865,7 +10023,7 @@ newspeed();
             speedLayout.addView(d22);
 
             speed = new PopupWindow(speedLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
-            if(default1==true)speed.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+            if(default1==true)speed.setBackgroundDrawable(new ColorDrawable(GUIColor));
       if(default1==false)speed.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
@@ -9874,7 +10032,7 @@ speedLayout1.setBackgroundDrawable(bg);
 speedLayout1.setPadding(20,0,20,0);
             speed.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -9884,7 +10042,8 @@ teleport.setText("Teleport menu");
 if(getLanguage=="it_IT")teleport.setText("Menu teletrasporto");
 if(getLanguage=="es_MX")teleport.setText("Menu de teletransportacion");
 if(getLanguage=="ko_KR")teleport.setText("순간이동 메뉴");
-teleport.setTextColor(GUIBtns);
+teleport.setTextColor(GUIText);
+teleport.setBackgroundDrawable(buttonBg);
 if(getLanguage=="de_DE")teleport.setText("Teleportierungs menu");
 if(mcpetheme==true)teleport.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 teleport.setOnClickListener(new android.view.View.OnClickListener() {
@@ -9995,7 +10154,7 @@ taptp = false;
 		teleportLayout.addView(et);
 
             teleport = new PopupWindow(teleportLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
-            if(default1==true)teleport.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+            if(default1==true)teleport.setBackgroundDrawable(new ColorDrawable(GUIColor));
       if(default1==false)teleport.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
@@ -10004,7 +10163,7 @@ teleportLayout1.setBackgroundDrawable(bg);
 teleportLayout1.setPadding(20,0,20,0);
             teleport.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -10014,7 +10173,8 @@ time.setText("Time menu");
 if(getLanguage=="it_IT")time.setText("Menu tempo");
 if(getLanguage=="es_MX")time.setText("Menu de momento");
 if(getLanguage=="ko_KR")time.setText("시간 메뉴");
-time.setTextColor(GUIBtns);
+time.setTextColor(GUIText);
+time.setBackgroundDrawable(buttonBg);
 if(getLanguage=="de_DE")time.setText("Zeit menu");
 if(mcpetheme==true)time.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 time.setOnClickListener(new android.view.View.OnClickListener() {
@@ -10300,7 +10460,7 @@ Level.setTime(23000);
             timeLayout.addView(a24);
 
             time = new PopupWindow(timeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
-            if(default1==true)time.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+            if(default1==true)time.setBackgroundDrawable(new ColorDrawable(GUIColor));
       if(default1==false)time.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
@@ -10309,7 +10469,7 @@ timeLayout1.setBackgroundDrawable(bg);
 timeLayout1.setPadding(20,0,20,0);
             time.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -10319,7 +10479,8 @@ weather.setText("Weather menu");
 if(getLanguage=="it_IT")weather.setText("Menu del tempo");
 if(getLanguage=="es_MX")weather.setText("Menu de tiempo");
 if(getLanguage=="ko_KR")weather.setText("날씨 메뉴");
-weather.setTextColor(GUIBtns);
+weather.setTextColor(GUIText);
+weather.setBackgroundDrawable(buttonBg);
 if(getLanguage=="de_DE")weather.setText("Wetter menu");
 if(mcpetheme==true)weather.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 weather.setOnClickListener(new android.view.View.OnClickListener() {
@@ -10390,7 +10551,7 @@ Level.setLightningLevel(0);
             weatherLayout.addView(button2);
 
             weather = new PopupWindow(weatherLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
-            if(default1==true)weather.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+            if(default1==true)weather.setBackgroundDrawable(new ColorDrawable(GUIColor));
       if(default1==false)weather.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
@@ -10399,13 +10560,13 @@ weatherLayout1.setBackgroundDrawable(bg);
 weatherLayout1.setPadding(20,0,20,0);
             weather.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
             
             menu = new PopupWindow(menuLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
-           if(default1==true)menu.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#93000000")));
+           if(default1==true)menu.setBackgroundDrawable(new ColorDrawable(GUIColor));
            if(mcpetheme==true)menu.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#94857f")));
 		   if(default1==false)menu.setBackgroundDrawable(new ColorDrawable(GUIColor));
 		   var bg = new android.graphics.drawable.GradientDrawable();
@@ -10415,10 +10576,12 @@ menuLayout1.setBackgroundDrawable(bg);
 menuLayout1.setPadding(20,0,20,0);
             menu.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
+                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
+
+/********************************/
 
 function serverMessageReceiveHook(str) {
 	ctx.runOnUiThread(new java.lang.Runnable(){
@@ -13674,3 +13837,5 @@ function rptask() {
     }))
 }
 rptask()
+
+
