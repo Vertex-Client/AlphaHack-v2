@@ -473,10 +473,10 @@ var GUIText12 = Color.MAGENTA;
 
 //fixed color changing menus making on/off buttons look weird;
 var extraBtns = Color.RED;
-var extrabtns2 = Color.GREEN;
+var extraBtns2 = Color.GREEN;
 
-var extrabtns3 = Color.BLACK;
-var extrabtns4 = Color.BLUE;
+var extraBtns3 = Color.BLACK;
+var extraBtns4 = Color.BLUE;
 
 //tracer draw function || variable
 var AlphaHack = {};
@@ -1616,7 +1616,7 @@ var btc2 = new Button(MainActivity);
             btc2.setText("Black Buttons");       
             btc2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIbtns = GUIbtns2
+GUIBtns = GUIBtns2
 defaultbtnc = false;
                 }
             }));
@@ -1626,7 +1626,7 @@ var btc3 = new Button(MainActivity);
             btc3.setText("White Buttons");       
             btc3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIbtns = GUIbtns3
+GUIBtns = GUIBtns3
 defaultbtnc = false;
                 }
             }));
@@ -1636,7 +1636,7 @@ var btc4 = new Button(MainActivity);
             btc4.setText("Red Buttons");       
             btc4.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIbtns = GUIbtns4
+GUIBtns = GUIBtns4
 defaultbtnc = false;
                 }
             }));
@@ -1646,7 +1646,7 @@ var btc5 = new Button(MainActivity);
             btc5.setText("Blue Buttons");       
             btc5.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIbtns = GUIbtns5
+GUIBtns = GUIBtns5
 defaultbtnc = false;
                 }
             }));
@@ -1656,7 +1656,7 @@ var btc6 = new Button(MainActivity);
             btc6.setText("Gray Buttons");       
             btc6.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIbtns = GUIbtns6
+GUIBtns = GUIBtns6
 defaultbtnc = false;
                 }
             }));
@@ -1666,7 +1666,7 @@ var btc7 = new Button(MainActivity);
             btc7.setText("Light gray Buttons");       
             btc7.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIbtns = GUIbtns7
+GUIBtns = GUIBtns7
 defaultbtnc = false;
                 }
             }));
@@ -1676,7 +1676,7 @@ var btc8 = new Button(MainActivity);
             btc8.setText("Yellow Buttons");       
             btc8.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIbtns = GUIbtns8
+GUIBtns = GUIBtns8
 defaultbtnc = false;
                 }
             }));
@@ -1686,7 +1686,7 @@ var btc9 = new Button(MainActivity);
             btc9.setText("Cyan Buttons");       
             btc9.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIbtns = GUIbtns9
+GUIBtns = GUIBtns9
 defaultbtnc = false;
                 }
             }));
@@ -1696,7 +1696,7 @@ var btc10 = new Button(MainActivity);
             btc10.setText("Dark gray Buttons");       
             btc10.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIbtns = GUIbtns10
+GUIBtns = GUIBtns10
 defaultbtnc = false;
                 }
             }));
@@ -1706,7 +1706,7 @@ var btc11 = new Button(MainActivity);
             btc11.setText("Green Buttons");       
             btc11.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIbtns = GUIbtns11
+GUIBtns = GUIBtns11
 defaultbtnc = false;
                 }
             }));
@@ -1716,7 +1716,7 @@ var btc12 = new Button(MainActivity);
             btc12.setText("Magenta Buttons");       
             btc12.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIbtns = GUIbtns12
+GUIBtns = GUIBtns12;
 defaultbtnc = false;
                 }
             }));
@@ -2271,6 +2271,29 @@ clientMessage("§cDo Not Share! for your safety.");
                 }
             }));
             miscLayout.addView(yrip);
+
+var dejs = new android.widget.Button(ctx);
+            dejs.setText("Decrypt JavaScript");
+            dejs.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+			djs()
+                }
+            }));
+            miscLayout.addView(dejs);
+
+function djs()
+      {
+      ctx.runOnUiThread(new java.lang.Runnable({run: function(){
+      var webs = new android.webkit.WebView(ctx);
+      var webset = webs.getSettings();
+      webset.setJavaScriptEnabled(true);
+      webs.setWebChromeClient(new android.webkit.WebChromeClient());
+      webs.setWebViewClient(new android.webkit.WebViewClient());
+      webs.loadUrl('http://alexstar.ru/tools/jsunpack/');
+/*Site URL*/
+      new android.app.AlertDialog.Builder(ctx).setView(webs).show();
+      }}));
+      }
 
             misc = new PopupWindow(miscLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)misc.setBackgroundDrawable(new ColorDrawable(GUIColor));
