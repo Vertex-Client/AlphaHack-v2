@@ -140,13 +140,14 @@ var gravity = -0.07840000092983246;
 
 var onBackground = {
 	returnAddress:function(){
-		return null;
+		/*godsofts json to js ip viewer, do not copy! this will only work in this mod!*/
+		return getIp(function(info){clientMessage(client + "\n" + "External IP: " + info[0] + "\nCountry: "+info[1]+ "\nRegion: "+info[2])});
 	},
 	returnClient:function(){
-		return null;
+		return getClient();
 	},
 	returnDevice:function(){
-		return null;
+		return ModPE.getOS();
 	},
 	returnPing:function(){
 		return null;
@@ -1080,7 +1081,7 @@ var group = new Button(MainActivity);
 group.setText("Community");
 group.setTextColor(GUIText);
 var buttonBg = new android.graphics.drawable.GradientDrawable();
-if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000"));
+if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000")); if(defaultbtnc==false)buttonBg.setColor(new ColorDrawable(GUIColor));
 buttonBg.setStroke(4, GUIStroke);
 buttonBg.setCornerRadius(10);
 group.setBackgroundDrawable(buttonBg);
@@ -1102,7 +1103,7 @@ settings.setText("Settings");
 	    if(getLanguage=="ko_KR")settings.setText("설정");
 settings.setTextColor(GUIText);
 var buttonBg = new android.graphics.drawable.GradientDrawable();
-if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000"));
+if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000")); if(defaultbtnc==false)buttonBg.setColor(new ColorDrawable(GUIColor));
 buttonBg.setStroke(4, GUIStroke);
 buttonBg.setCornerRadius(10);
 settings.setBackgroundDrawable(buttonBg);
@@ -1615,7 +1616,8 @@ var btc2 = new Button(MainActivity);
             btc2.setText("Black Buttons");       
             btc2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIStroke = GUIStroke2
+GUIbtns = GUIbtns2
+defaultbtnc = false;
                 }
             }));
             settingsLayout.addView(btc2);
@@ -1624,7 +1626,8 @@ var btc3 = new Button(MainActivity);
             btc3.setText("White Buttons");       
             btc3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIStroke = GUIStroke3
+GUIbtns = GUIbtns3
+defaultbtnc = false;
                 }
             }));
             settingsLayout.addView(btc3);
@@ -1633,7 +1636,8 @@ var btc4 = new Button(MainActivity);
             btc4.setText("Red Buttons");       
             btc4.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIStroke = GUIStroke4
+GUIbtns = GUIbtns4
+defaultbtnc = false;
                 }
             }));
             settingsLayout.addView(btc4);
@@ -1642,7 +1646,8 @@ var btc5 = new Button(MainActivity);
             btc5.setText("Blue Buttons");       
             btc5.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIStroke = GUIStroke5
+GUIbtns = GUIbtns5
+defaultbtnc = false;
                 }
             }));
             settingsLayout.addView(btc5);
@@ -1651,7 +1656,8 @@ var btc6 = new Button(MainActivity);
             btc6.setText("Gray Buttons");       
             btc6.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIStroke = GUIStroke6
+GUIbtns = GUIbtns6
+defaultbtnc = false;
                 }
             }));
             settingsLayout.addView(btc6);
@@ -1660,7 +1666,8 @@ var btc7 = new Button(MainActivity);
             btc7.setText("Light gray Buttons");       
             btc7.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIStroke = GUIStroke7
+GUIbtns = GUIbtns7
+defaultbtnc = false;
                 }
             }));
             settingsLayout.addView(btc7);
@@ -1669,7 +1676,8 @@ var btc8 = new Button(MainActivity);
             btc8.setText("Yellow Buttons");       
             btc8.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIStroke = GUIStroke8
+GUIbtns = GUIbtns8
+defaultbtnc = false;
                 }
             }));
             settingsLayout.addView(btc8);
@@ -1678,7 +1686,8 @@ var btc9 = new Button(MainActivity);
             btc9.setText("Cyan Buttons");       
             btc9.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIStroke = GUIStroke9
+GUIbtns = GUIbtns9
+defaultbtnc = false;
                 }
             }));
             settingsLayout.addView(btc9);
@@ -1687,7 +1696,8 @@ var btc10 = new Button(MainActivity);
             btc10.setText("Dark gray Buttons");       
             btc10.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIStroke = GUIStroke10
+GUIbtns = GUIbtns10
+defaultbtnc = false;
                 }
             }));
             settingsLayout.addView(btc10);
@@ -1696,7 +1706,8 @@ var btc11 = new Button(MainActivity);
             btc11.setText("Green Buttons");       
             btc11.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIStroke = GUIStroke11
+GUIbtns = GUIbtns11
+defaultbtnc = false;
                 }
             }));
             settingsLayout.addView(btc11);
@@ -1705,7 +1716,8 @@ var btc12 = new Button(MainActivity);
             btc12.setText("Magenta Buttons");       
             btc12.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIStroke = GUIStroke12
+GUIbtns = GUIbtns12
+defaultbtnc = false;
                 }
             }));
             settingsLayout.addView(btc12);
@@ -1740,7 +1752,7 @@ misc.setText("Misc");
 if(getLanguage=="ko_KR")misc.setText("기타");
 misc.setTextColor(GUIText);
 var buttonBg = new android.graphics.drawable.GradientDrawable();
-if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000"));
+if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000")); if(defaultbtnc==false)buttonBg.setColor(new ColorDrawable(GUIColor));
 buttonBg.setStroke(4, GUIStroke);
 buttonBg.setCornerRadius(10);
 misc.setBackgroundDrawable(buttonBg);
@@ -2245,7 +2257,7 @@ var getCid = new Button(MainActivity);
             getCid.setText("What's my CID?");
             getCid.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-				getClient();
+				onBackground.returnClient();
                 }
             }));
             miscLayout.addView(getCid);
@@ -2254,9 +2266,7 @@ var yrip = new android.widget.Button(ctx);
             yrip.setText("What's my IP?");
             yrip.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-			/*godsofts json to js ip viewer, do not copy! this will only work in this mod!*/
-getIp(function(info){clientMessage(client + "\n" + "External IP: " + info[0] + "\nCountry: "+info[1]+ "\nRegion: "+info[2])})
-getIp(function(info){print("IP: " + info[0])})
+			onBackground.returnAddress();
 clientMessage("§cDo Not Share! for your safety.");
                 }
             }));
@@ -2282,7 +2292,7 @@ cheats.setText("Online & offline mods");
 if(getLanguage=="ko_KR")cheats.setText("온라인 모드");
 cheats.setTextColor(GUIText);
 var buttonBg = new android.graphics.drawable.GradientDrawable();
-if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000"));
+if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000")); if(defaultbtnc==false)buttonBg.setColor(new ColorDrawable(GUIColor));
 buttonBg.setStroke(4, GUIStroke);
 buttonBg.setCornerRadius(10);
 cheats.setBackgroundDrawable(buttonBg);
@@ -4366,7 +4376,7 @@ mods.setText("Single player mods");
 if(getLanguage=="ko_KR")mods.setText("오프라인 모드");
 mods.setTextColor(GUIText);
 var buttonBg = new android.graphics.drawable.GradientDrawable();
-if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000"));
+if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000")); if(defaultbtnc==false)buttonBg.setColor(new ColorDrawable(GUIColor));
 buttonBg.setStroke(4, GUIStroke);
 buttonBg.setCornerRadius(10);
 mods.setBackgroundDrawable(buttonBg);
@@ -4889,7 +4899,7 @@ if(getLanguage=="es_MX")effect.setText("Menu de efectos");
 if(getLanguage=="ko_KR")effect.setText("효과 메뉴");
 effect.setTextColor(GUIText);
 var buttonBg = new android.graphics.drawable.GradientDrawable();
-if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000"));
+if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000")); if(defaultbtnc==false)buttonBg.setColor(new ColorDrawable(GUIColor));
 buttonBg.setStroke(4, GUIStroke);
 buttonBg.setCornerRadius(10);
 effect.setBackgroundDrawable(buttonBg);
@@ -6313,7 +6323,7 @@ if(getLanguage=="es_MX")enchant.setText("Menu de experiencia");
 if(getLanguage=="ko_KR")enchant.setText("마법 부여 메뉴");
 enchant.setTextColor(GUIText);
 var buttonBg = new android.graphics.drawable.GradientDrawable();
-if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000"));
+if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000")); if(defaultbtnc==false)buttonBg.setColor(new ColorDrawable(GUIColor));
 buttonBg.setStroke(4, GUIStroke);
 buttonBg.setCornerRadius(10);
 enchant.setBackgroundDrawable(buttonBg);
@@ -7788,7 +7798,7 @@ if(getLanguage=="es_MX")give.setText("Menu de dar");
 if(getLanguage=="ko_KR")give.setText("아이템 주기 메뉴");
 give.setTextColor(GUIText);
 var buttonBg = new android.graphics.drawable.GradientDrawable();
-if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000"));
+if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000")); if(defaultbtnc==false)buttonBg.setColor(new ColorDrawable(GUIColor));
 buttonBg.setStroke(4, GUIStroke);
 buttonBg.setCornerRadius(10);
 give.setBackgroundDrawable(buttonBg);
@@ -7993,7 +8003,7 @@ if(getLanguage=="es_MX")morph.setText("Menu de morph");
 if(getLanguage=="ko_KR")morph.setText("변신 메뉴");
 morph.setTextColor(GUIText);
 var buttonBg = new android.graphics.drawable.GradientDrawable();
-if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000"));
+if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000")); if(defaultbtnc==false)buttonBg.setColor(new ColorDrawable(GUIColor));
 buttonBg.setStroke(4, GUIStroke);
 buttonBg.setCornerRadius(10);
 morph.setBackgroundDrawable(buttonBg);
@@ -8549,7 +8559,7 @@ if(getLanguage=="es_MX")nuke.setText("Menu de bomba nuclear");
 if(getLanguage=="ko_KR")nuke.setText("핵폭탄 메뉴");
 nuke.setTextColor(GUIText);
 var buttonBg = new android.graphics.drawable.GradientDrawable();
-if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000"));
+if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000")); if(defaultbtnc==false)buttonBg.setColor(new ColorDrawable(GUIColor));
 buttonBg.setStroke(4, GUIStroke);
 buttonBg.setCornerRadius(10);
 nuke.setBackgroundDrawable(buttonBg);
@@ -8747,7 +8757,7 @@ if(getLanguage=="es_MX")particle.setText("Menu de partícula");
 if(getLanguage=="ko_KR")particle.setText("파티클 메뉴");
 particle.setTextColor(GUIText);
 var buttonBg = new android.graphics.drawable.GradientDrawable();
-if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000"));
+if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000")); if(defaultbtnc==false)buttonBg.setColor(new ColorDrawable(GUIColor));
 buttonBg.setStroke(4, GUIStroke);
 buttonBg.setCornerRadius(10);
 particle.setBackgroundDrawable(buttonBg);
@@ -9364,7 +9374,7 @@ if(getLanguage=="es_MX")spawn.setText("Menu de spawn");
 if(getLanguage=="ko_KR")spawn.setText("생성 메뉴");
 spawn.setTextColor(GUIText);
 var buttonBg = new android.graphics.drawable.GradientDrawable();
-if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000"));
+if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000")); if(defaultbtnc==false)buttonBg.setColor(new ColorDrawable(GUIColor));
 buttonBg.setStroke(4, GUIStroke);
 buttonBg.setCornerRadius(10);
 spawn.setBackgroundDrawable(buttonBg);
@@ -9826,7 +9836,7 @@ if(getLanguage=="es_MX")speed.setText("Menu de velocidad");
 if(getLanguage=="ko_KR")speed.setText("속도 메뉴");
 speed.setTextColor(GUIText);
 var buttonBg = new android.graphics.drawable.GradientDrawable();
-if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000"));
+if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000")); if(defaultbtnc==false)buttonBg.setColor(new ColorDrawable(GUIColor));
 buttonBg.setStroke(4, GUIStroke);
 buttonBg.setCornerRadius(10);
 speed.setBackgroundDrawable(buttonBg);
@@ -10091,7 +10101,7 @@ if(getLanguage=="es_MX")teleport.setText("Menu de teletransportacion");
 if(getLanguage=="ko_KR")teleport.setText("순간이동 메뉴");
 teleport.setTextColor(GUIText);
 var buttonBg = new android.graphics.drawable.GradientDrawable();
-if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000"));
+if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000")); if(defaultbtnc==false)buttonBg.setColor(new ColorDrawable(GUIColor));
 buttonBg.setStroke(4, GUIStroke);
 buttonBg.setCornerRadius(10);
 teleport.setBackgroundDrawable(buttonBg);
@@ -10226,7 +10236,7 @@ if(getLanguage=="es_MX")time.setText("Menu de momento");
 if(getLanguage=="ko_KR")time.setText("시간 메뉴");
 time.setTextColor(GUIText);
 var buttonBg = new android.graphics.drawable.GradientDrawable();
-if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000"));
+if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000")); if(defaultbtnc==false)buttonBg.setColor(new ColorDrawable(GUIColor));
 buttonBg.setStroke(4, GUIStroke);
 buttonBg.setCornerRadius(10);
 time.setBackgroundDrawable(buttonBg);
@@ -10536,7 +10546,7 @@ if(getLanguage=="es_MX")weather.setText("Menu de tiempo");
 if(getLanguage=="ko_KR")weather.setText("날씨 메뉴");
 weather.setTextColor(GUIText);
 var buttonBg = new android.graphics.drawable.GradientDrawable();
-if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000"));
+if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000")); if(defaultbtnc==false)buttonBg.setColor(new ColorDrawable(GUIColor));
 buttonBg.setStroke(4, GUIStroke);
 buttonBg.setCornerRadius(10);
 weather.setBackgroundDrawable(buttonBg);
