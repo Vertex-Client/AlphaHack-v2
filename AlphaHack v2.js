@@ -129,6 +129,8 @@ var newAction = "";
 var actionHeart = "";
 var newAction2 = "";
 var cidm8 = "";
+var jumpheight = '5';
+var aimrange = '7';
 
 var playerDir = [0, 0, 0];
 var DEG_TO_RAD = Math["PI"] / 180;
@@ -1167,6 +1169,24 @@ hide = false;
                 }
             }));
             settingsLayout.addView(hideAH);
+	
+	var heset = new Button(MainActivity);
+            heset.setText("Height for HigherJumps");       
+            heset.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+				heightset();
+                }
+            }));
+            settingsLayout.addView(heset);
+	
+	var rangset = new Button(MainActivity);
+            rangset.setText("Range for aimaura");       
+            rangset.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+				rangeset();
+                }
+            }));
+            settingsLayout.addView(rangset);
 			
 			var posright = new Button(MainActivity);
             posright.setText("Button right");       
@@ -11662,10 +11682,10 @@ if (spider && Utils.Player.isCollidedHorizontally()) {
 	    }
 	    if(jump) {
 		if(Entity.getVelY(getPlayerEnt())< -0.1) {
-			setVelY(getPlayerEnt(),-0.5);
+			setVelY(getPlayerEnt(),'-' + 0 + '.' + jumpheight);
 		}
 		if(Entity.getVelY(getPlayerEnt())< 0.35 && Entity.getVelY(getPlayerEnt())> 0.2 && can==1 && canGetHP==1) {
-			setVelY(getPlayerEnt(), 0.6);
+			setVelY(getPlayerEnt(), 0 + '.' + jumpheight);
 			can = 2;
 			HP = Entity.getHealth(getPlayerEnt());
 			canGetHP = 0;
@@ -13405,6 +13425,86 @@ Server.sendChat("./tell " + albet[sheep] + " " + urMsg);
 }
 }
 
+function rangeset() {
+MainActivity.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(MainActivity);
+var rang = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new Button(MainActivity);
+
+Dialog.setTitle("Aimaura range");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(rang);
+Layer.addView(Exit);
+
+rang.setText("");
+rang.setHint("Range...");
+Exit.setText("Save");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+aimrange=rang.getText();
+Dialog.dismiss();
+
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The range Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function heightset() {
+MainActivity.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(MainActivity);
+var height = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new Button(MainActivity);
+
+Dialog.setTitle("Jump Height");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(height);
+Layer.addView(Exit);
+
+height.setText("");
+height.setHint("Height...");
+Exit.setText("Save");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+jumpheight=height.getText();
+Dialog.dismiss();
+
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The heighte Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
 function save() {
         var file = new java.io.File( android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/homes/", "home " + Level.getWorldDir() + ".txt/");
         var path=android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/homes/" ; 
@@ -13910,12 +14010,12 @@ function rptask() {
 	Level.destroyBlock(Player.getPointedBlockX() -4, Player.getPointedBlockY(), Player.getPointedBlockZ() -4, vidd);
                     }
                     if(aimbot){
-			    var ent = getNearestEntity(7);
+			    var ent = getNearestEntity(aimrange);
 			    if(ent != null)crosshairAimAt(ent);
 		    }
 			if(aimbot2){
 				/*TODO Moving aim aura*/
-				var ent = getNearestEntity(7);
+				var ent = getNearestEntity(aimrange);
 			    if(ent != null)crosshairAimAt(ent);
 			}
                     if(twerk)twerking();
