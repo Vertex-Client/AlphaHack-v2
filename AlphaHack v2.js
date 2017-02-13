@@ -2304,7 +2304,6 @@ showMenuBtn();
       webset.setJavaScriptEnabled(true);
       webs.setWebChromeClient(new android.webkit.WebChromeClient());
       webs.setWebViewClient(new android.webkit.WebViewClient());
-      /*webset.setUserAgentString(userAgent);*/
       	webset.setSupportZoom(true);
       	webset.setBuiltInZoomControls(true);
       	webset.setDisplayZoomControls(false);
