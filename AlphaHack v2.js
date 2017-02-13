@@ -649,7 +649,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 			webset.setJavaScriptCanOpenWindowsAutomatically(false);
 			webset.setSupportZoom(true);
 			webset.setBuiltInZoomControls(true);
-			webset.setDisplayZoomControls(true);
+			webset.setDisplayZoomControls(false);
 			webset.setGeolocationEnabled(false);
 			webset.setJavaScriptEnabled(true);
 			webset.setSavePassword(false);
@@ -2322,7 +2322,7 @@ anime.setBackgroundDrawable(new ColorDrawable(Color.BLACK));
     }}));
 }*/
 
-var ip0 = new styleButton(ctx);
+var ip0 = new styleButton();
             ip0.setText("IP lookup");
             ip0.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -2332,7 +2332,7 @@ iplu();
             }));
             miscLayout.addView(ip0);
       
-      var ip1 = new styleButton(ctx);
+      var ip1 = new styleButton();
             ip1.setText("Players list");
             ip1.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -2351,7 +2351,7 @@ var getCid = new styleButton();
             }));
             miscLayout.addView(getCid);
 
-var yrip = new android.widget.Button(ctx);
+var yrip = new styleButton();
             yrip.setText("What's my IP?");
             yrip.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -2361,7 +2361,7 @@ clientMessage("§cDo Not Share! for your safety.");
             }));
             miscLayout.addView(yrip);
 
-var dejs = new android.widget.Button(ctx);
+var dejs = new styleButton();
             dejs.setText("Decrypt JavaScript");
             dejs.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
