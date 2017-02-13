@@ -117,7 +117,7 @@ var modpeFolder = ctx.getDir("ModPE", 0);
 var modpeFile = new java.io.File(modpeFolder, "AlphaHack v2.js");
 //define op perm
 var perm = "*";
-//define something
+//strings
 var notex;
 var notey;
 var notez;
@@ -131,6 +131,7 @@ var newAction2 = "";
 var cidm8 = "";
 var jumpheight = '5';
 var aimrange = '7';
+var rainId = '';
 
 var playerDir = [0, 0, 0];
 var DEG_TO_RAD = Math["PI"] / 180;
@@ -215,7 +216,7 @@ var Utils = {
 	}
 };
 
-//define on or off variables
+//booleans
 var liquidwalk = false;
 var xray = false;
 var ttot = false;
@@ -295,6 +296,8 @@ var hitmorph = false;
 var hitaction2 = false;
 var hitrmef = false;
 var onfriction = false;
+var itemrain = false;
+var rainitem = false;
 
 var showActive = false;
 var showActive2 = false;
@@ -10639,6 +10642,29 @@ Level.setLightningLevel(0);
                 }
             }));
             weatherLayout.addView(button2);
+	
+	var itembutton = new styleButton();
+itembutton.setText("Item rain");
+itembutton.setTextColor(Color.RED);
+if(itemrain==true)itembutton.setTextColor(Color.GREEN);
+            itembutton.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             itemrain?itemrain=false:itemrain=true;
+itembutton.setText("Item rain");
+if(itemrain == true){
+itembutton.setTextColor(Color.GREEN);
+itementer();
+itemrain = true;
+}
+if(itemrain == false){
+itembutton.setTextColor(Color.RED);
+clientMessage(client+"Item rain off");
+itemrain = false;
+rainitem = false;
+}
+                }
+            }));
+            weatherLayout.addView(itembutton);
 
             weather = new PopupWindow(weatherLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)weather.setBackgroundDrawable(new ColorDrawable(GUIColor));
@@ -11729,6 +11755,39 @@ if (spider && Utils.Player.isCollidedHorizontally()) {
 		}
 	}
 	if(onfriction)onlyFriction();
+	if(rainitem==true){
+Level.dropItem(getPlayerX(),getPlayerY()+13,getPlayerZ(),0,rainId,1);
+Level.dropItem(getPlayerX()+1,getPlayerY()+13,getPlayerZ(),0,rainId,1);
+Level.dropItem(getPlayerX()+2,getPlayerY()+13,getPlayerZ(),0,rainId,1);
+Level.dropItem(getPlayerX()+3,getPlayerY()+13,getPlayerZ(),0,rainId,1);
+Level.dropItem(getPlayerX()+4,getPlayerY()+13,getPlayerZ(),0,rainId,1);
+Level.dropItem(getPlayerX()+5,getPlayerY()+13,getPlayerZ(),0,rainId,1);
+Level.dropItem(getPlayerX(),getPlayerY()+13,getPlayerZ()+1,0,rainId,1);
+Level.dropItem(getPlayerX(),getPlayerY()+13,getPlayerZ()+2,0,rainId,1);
+Level.dropItem(getPlayerX(),getPlayerY()+13,getPlayerZ()+3,0,rainId,1);
+Level.dropItem(getPlayerX(),getPlayerY()+13,getPlayerZ()+4,0,rainId,1);
+Level.dropItem(getPlayerX(),getPlayerY()+13,getPlayerZ()+5,0,rainId,1);
+Level.dropItem(getPlayerX()+1,getPlayerY()+13,getPlayerZ()+1,0,rainId,1);
+Level.dropItem(getPlayerX()+2,getPlayerY()+13,getPlayerZ()+2,0,rainId,1);
+Level.dropItem(getPlayerX()+3,getPlayerY()+13,getPlayerZ()+3,0,rainId,1);
+Level.dropItem(getPlayerX()+4,getPlayerY()+13,getPlayerZ()+4,0,rainId,1);
+Level.dropItem(getPlayerX()+5,getPlayerY()+13,getPlayerZ()+5,0,rainId,1);
+Level.dropItem(getPlayerX()-1,getPlayerY()+13,getPlayerZ()-1,0,rainId,1);
+Level.dropItem(getPlayerX()-2,getPlayerY()+13,getPlayerZ()-2,0,rainId,1);
+Level.dropItem(getPlayerX()-3,getPlayerY()+13,getPlayerZ()-3,0,rainId,1);
+Level.dropItem(getPlayerX()-4,getPlayerY()+13,getPlayerZ()-4,0,rainId,1);
+Level.dropItem(getPlayerX()-5,getPlayerY()+13,getPlayerZ()-5,0,rainId,1);
+Level.dropItem(getPlayerX()-1,getPlayerY()+13,getPlayerZ()+1,0,rainId,1);
+Level.dropItem(getPlayerX()-2,getPlayerY()+13,getPlayerZ()+2,0,rainId,1);
+Level.dropItem(getPlayerX()-3,getPlayerY()+13,getPlayerZ()+3,0,rainId,1);
+Level.dropItem(getPlayerX()-4,getPlayerY()+13,getPlayerZ()+4,0,rainId,1);
+Level.dropItem(getPlayerX()-5,getPlayerY()+13,getPlayerZ()+5,0,rainId,1);
+Level.dropItem(getPlayerX()+1,getPlayerY()+13,getPlayerZ()-1,0,rainId,1);
+Level.dropItem(getPlayerX()+2,getPlayerY()+13,getPlayerZ()-2,0,rainId,1);
+Level.dropItem(getPlayerX()+3,getPlayerY()+13,getPlayerZ()-3,0,rainId,1);
+Level.dropItem(getPlayerX()+4,getPlayerY()+13,getPlayerZ()-4,0,rainId,1);
+Level.dropItem(getPlayerX()+5,getPlayerY()+13,getPlayerZ()-5,0,rainId,1);
+}
 }
 
 function toDirectionalVector(dir, a, b) {
@@ -13479,6 +13538,46 @@ GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("The heighte Dialog Is Malfunctioning:"+e);
+}
+}});
+}
+
+function itementer() {
+MainActivity.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(MainActivity);
+var item = new android.widget.EditText(MainActivity);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new android.widget.Button(MainActivity);
+
+Dialog.setTitle("Item ID");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(item);
+Layer.addView(Exit);
+
+item.setText("");
+item.setHint("Item id...");
+Exit.setText("Rain");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+rainId=item.getText();
+Dialog.dismiss();
+rainitem = true;
+showMenuBtn();
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The iteme Dialog Is Malfunctioning:"+e);
 }
 }});
 }
