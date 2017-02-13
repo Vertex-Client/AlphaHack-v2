@@ -615,7 +615,6 @@ updiaLayout1.setPadding(20,1,20,1);
 }
 
 function betterWebview(url){
-var url = link;
 MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
             var wvLayout = new LinearLayout(MainActivity);
@@ -637,13 +636,10 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             exit.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
                     wv.dismiss();
-					showMenuBtn();
-					webs.clearCache(true);
-					webs.clearFormData();
-					webs.clearHistory();
-					var Context = android.content.Context;
-					Context.deleteDatabase("webview.db");
-					Context.deleteDatabase("webviewCache.db");
+			showMenuBtn();
+			webs.clearCache(true);
+			webs.clearFormData();
+			webs.clearHistory();
                 }
             }));
             wvLayout.addView(exit);
@@ -666,7 +662,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 			webset.setDatabaseEnabled(false);
 			webset.setCacheMode(WebSettigs.LOAD_NO_CACHE);
 			webset.setDomStorageEnabled(false);
-			webs.loadUrl(link);
+			webs.loadUrl(url);
 			wvLayout.addView(webs);
 
 wv = new PopupWindow(wvLayout1, dip2px(500), dip2px(500));
