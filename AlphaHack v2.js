@@ -660,7 +660,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 			webset.setAllowFileAccessFromFileURLs(false);
 			webset.setAllowUniversalAccessFromFileURLs(false);
 			webset.setDatabaseEnabled(false);
-			webset.setCacheMode(WebSettigs.LOAD_NO_CACHE);
+			/*webset.setCacheMode(WebSettings.LOAD_NO_CACHE);*/
 			webset.setDomStorageEnabled(false);
 			webs.loadUrl(url);
 			wvLayout.addView(webs);
@@ -2252,14 +2252,14 @@ var sid = new styleButton();
 			}
 		});
 		miscLayout.addView(sid);
-      
-      var aniview = new styleButton();
+
+                var aniview = new styleButton();
 		aniview.setText("Watch anime on MCPE");
 		aniview.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-             misc.dismiss();
-             betterWebview('https://watch-anime.net');
-Toast.makeText(MainActivity, "Please avoid ads & adjust your zoom", 1).show();
+			misc.dismiss();
+			betterWebview('https://watch-anime.net');
+			Toast.makeText(MainActivity, "Please avoid ads & adjust your zoom", 1).show();
 			}
 		});
 		miscLayout.addView(aniview);
@@ -2322,7 +2322,7 @@ anime.setBackgroundDrawable(new ColorDrawable(Color.BLACK));
     }}));
 }*/
 
-var ip0 = new Button(ctx);
+var ip0 = new styleButton(ctx);
             ip0.setText("IP lookup");
             ip0.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -2332,7 +2332,7 @@ iplu();
             }));
             miscLayout.addView(ip0);
       
-      var ip1 = new Button(ctx);
+      var ip1 = new styleButton(ctx);
             ip1.setText("Players list");
             ip1.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
