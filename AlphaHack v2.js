@@ -459,7 +459,7 @@ var GUIStroke12 = Color.MAGENTA;
 
 var GUISize = "2";
 
-var GUIText = Color.BLUE;
+var GUIText = Color.WHITE;
 
 var GUIText2 = Color.BLACK;
 var GUIText3 = Color.WHITE;
@@ -614,6 +614,75 @@ updiaLayout1.setPadding(20,1,20,1);
     }}));
 }
 
+function betterWebview(url){
+var url = link;
+MainActivity.runOnUiThread(new Runnable({ run: function(){
+        try{
+            var wvLayout = new LinearLayout(MainActivity);
+            var wvScroll = new ScrollView(MainActivity);
+            var wvLayout1 = new LinearLayout(MainActivity);
+            wvLayout.setOrientation(1);
+            wvLayout1.setOrientation(1);
+            wvScroll.addView(wvLayout);
+            wvLayout1.addView(wvScroll);
+			
+			var webs = new android.webkit.WebView(MainActivity);
+			webs.setWebChromeClient(new android.webkit.WebChromeClient());
+			webs.setWebViewClient(new android.webkit.WebViewClient());
+			webs.setScrollBarStyle(webs.SCROLLBARS_INSIDE_OVERLAY);
+			
+			var exit = new styleButton();
+            exit.setText("Exit");
+			exit.setTextColor(Color.RED);
+            exit.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    wv.dismiss();
+					showMenuBtn();
+					webs.clearCache(true);
+					webs.clearFormData();
+					webs.clearHistory();
+					var Context = android.content.Context;
+					Context.deleteDatabase("webview.db");
+					Context.deleteDatabase("webviewCache.db");
+                }
+            }));
+            wvLayout.addView(exit);
+            
+			var webset = webs.getSettings();
+			webset.setLoadsImagesAutomatically(true);
+			webset.setJavaScriptCanOpenWindowsAutomatically(false);
+			webset.setSupportZoom(true);
+			webset.setBuiltInZoomControls(true);
+			webset.setDisplayZoomControls(true);
+			webset.setGeolocationEnabled(false);
+			webset.setJavaScriptEnabled(true);
+			webset.setSavePassword(false);
+			webset.setAppCacheEnabled(false);
+			webset.setUserAgentString(webset.getUserAgentString());
+			webset.setAllowContentAccess(false);
+			webset.setAllowFileAccess(false);
+			webset.setAllowFileAccessFromFileURLs(false);
+			webset.setAllowUniversalAccessFromFileURLs(false);
+			webset.setDatabaseEnabled(false);
+			webset.setCacheMode(WebSettigs.LOAD_NO_CACHE);
+			webset.setDomStorageEnabled(false);
+			webs.loadUrl(link);
+			wvLayout.addView(webs);
+
+wv = new PopupWindow(wvLayout1, dip2px(500), dip2px(500));
+wv = new PopupWindow(wvLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/1.4, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1.3);
+	  var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(Color.TRANSPARENT);
+      bg.setStroke(10,GUIStroke);
+wvLayout1.setBackgroundDrawable(bg);
+wvLayout1.setPadding(20,0,20,0);
+wv.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            wv.showAtLocation(MainActivity.getWindow().getDecorView(), Gravity.CENTER | Gravity.CENTER, 0, 0);
+            }catch(error){
+                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
+            }
+    }}));
+}
 
 //run mod message or other on world startup
 function newLevel(){ 
@@ -2193,12 +2262,16 @@ var sid = new styleButton();
 		aniview.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              misc.dismiss();
-             animeView();
+             betterWebview('https://watch-anime.net');
 Toast.makeText(MainActivity, "Please avoid ads & adjust your zoom", 1).show();
 			}
 		});
 		miscLayout.addView(aniview);
 		
+		/*
+		*
+		*added a new webview
+		*
 		function animeView(){
 MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
@@ -2252,7 +2325,7 @@ anime.setBackgroundDrawable(new ColorDrawable(Color.BLACK));
                 Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
-}
+}*/
 
 var ip0 = new Button(ctx);
             ip0.setText("IP lookup");
@@ -2297,7 +2370,7 @@ var dejs = new android.widget.Button(ctx);
             dejs.setText("Decrypt JavaScript");
             dejs.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-			djs()
+			betterWebview('http://alexstar.ru/tools/jsunpack/');
                 }
             }));
             miscLayout.addView(dejs);
@@ -7856,7 +7929,7 @@ var button90 = new styleButton();
             button90.setText("Item ID list");
             button90.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-idList(); 
+				betterWebview('https://arceusmatt.github.io/minecraftid.html');
                 }
             }));
             giveLayout.addView(button90);
@@ -11728,7 +11801,7 @@ Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
 sc2 =sc1.getText();
 Dialog.dismiss();
-sc3();
+betterWebview('view-source:' + sc2);
 print("Loading web page");
 showMenuBtn();
 }
@@ -11783,7 +11856,7 @@ Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
 ip =ip1.getText();
 Dialog.dismiss();
-ip2();
+betterWebview('http://ip-api.com/json/' + ip);
 print("Loading web page");
 showMenuBtn();
 }
@@ -11843,7 +11916,7 @@ onClick: function(view){
 ply =ddip.getText();
 poy =ddip2.getText();
 Dialog.dismiss();
-goto();
+betterWebview('http://mcapi.ca/query/'+ply+':'+poy+'/list');
 Toast.makeText(ctx, "AlphaHack: Loading web page", 1).show();
 showMenuBtn();
 }
