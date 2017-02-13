@@ -480,6 +480,21 @@ var extraBtns2 = Color.GREEN;
 var extraBtns3 = Color.BLACK;
 var extraBtns4 = Color.BLUE;
 
+function styleButton(){
+/*thanks godsoft029 for working on this with me.*/
+let button = new android.widget.Button(ctx);
+button.setTextColor(GUIText);
+/*button.setFocusableInTouch(true);*/
+if(mcpetheme==true)button.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+var buttonBg = new android.graphics.drawable.GradientDrawable();
+if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000"));
+if(defaultbtnc==false)buttonBg.setColor(GUIBtns);
+buttonBg.setStroke(4, GUIStroke);
+buttonBg.setCornerRadius(10);
+button.setBackgroundDrawable(buttonBg);
+return button;
+}
+
 //tracer draw function || variable
 var AlphaHack = {};
 AlphaHack.drawTracer = function(x, y, z, groundMode, particleName) {
@@ -559,7 +574,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 			
 			var doubleLayout = new LinearLayout(MainActivity);
 			
-			textView1 = new Button(MainActivity);
+			textView1 = new styleButton();
 			textView1.setText("Later");
 			textView1.setTextColor(Color.BLUE);
 			textView1.setPadding(185,10,185,10);
@@ -570,7 +585,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             }));
 			doubleLayout.addView(textView1);
 			
-			textView2 = new Button(MainActivity);
+			textView2 = new styleButton();
 			textView2.setText("Update");
 			textView2.setTextColor(Color.BLUE);
 			textView2.setPadding(185,10,185,10);
@@ -1052,7 +1067,7 @@ function mainMenu(){
             title2.setTextColor(GUIName);
             menuLayout.addView(title2);
             
-            var exit = new Button(MainActivity);
+            var exit = new styleButton();
             exit.setText("Exit AlphαHαck");
             if(mcpetheme==true)exit.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
             exit.setTextColor(Color.RED);
@@ -1079,7 +1094,7 @@ if(getLanguage=="ko_KR")Toast.makeText(MainActivity, "성공적으로 닫았습�
             title4.setTextColor(GUIName);
             menuLayout.addView(title4);*/
 	    
-var group = new Button(MainActivity);
+var group = new styleButton();
 group.setText("Community");
 group.setTextColor(GUIText);
 var buttonBg = new android.graphics.drawable.GradientDrawable();
@@ -1098,18 +1113,11 @@ group.setOnClickListener(new android.view.View.OnClickListener() {
 		});
 		menuLayout.addView(group);
 
-var settings = new Button(MainActivity);
+var settings = new styleButton();
 settings.setText("Settings");
 	    if(getLanguage=="it_IT")settings.setText("Impostazioni");
 	    if(getLanguage=="es_MX")settings.setText("Configuracion");
 	    if(getLanguage=="ko_KR")settings.setText("설정");
-settings.setTextColor(GUIText);
-var buttonBg = new android.graphics.drawable.GradientDrawable();
-if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000")); if(defaultbtnc==false)buttonBg.setColor(GUIBtns);
-buttonBg.setStroke(4, GUIStroke);
-buttonBg.setCornerRadius(10);
-settings.setBackgroundDrawable(buttonBg);
-if(mcpetheme==true)settings.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 settings.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              settings_menu();
@@ -1129,7 +1137,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             settingsScroll.addView(settingsLayout);
             settingsLayout1.addView(settingsScroll);
             
-                var exit = new Button(MainActivity);
+                var exit = new styleButton();
 		exit.setText("Exit");
 		exit.setOnClickListener(new View.OnClickListener() {
 			onClick: function(v){
@@ -1139,7 +1147,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		settingsLayout.addView(exit);
 		
-	    var link = new Button(MainActivity);
+	    var link = new styleButton();
             link.setText("Download link");       
             link.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1152,7 +1160,7 @@ var urls3 = new Intent(MainActivity);
             settingsLayout.addView(link);
 	
 	
-            var hideAH = new Button(MainActivity);
+            var hideAH = new styleButton();
             hideAH.setText("Hide AlphaHack");  
 	    if(hide==true)hideAH.setText("Unhide AlphaHack"); 
             hideAH.setOnClickListener(new View.OnClickListener({
@@ -1170,7 +1178,7 @@ hide = false;
             }));
             settingsLayout.addView(hideAH);
 	
-	var heset = new Button(MainActivity);
+	var heset = new styleButton();
             heset.setText("Height for HigherJumps");       
             heset.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1179,7 +1187,7 @@ hide = false;
             }));
             settingsLayout.addView(heset);
 	
-	var rangset = new Button(MainActivity);
+	var rangset = new styleButton();
             rangset.setText("Range for aimaura");       
             rangset.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1188,7 +1196,7 @@ hide = false;
             }));
             settingsLayout.addView(rangset);
 			
-			var posright = new Button(MainActivity);
+			var posright = new styleButton();
             posright.setText("Button right");       
             posright.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1198,7 +1206,7 @@ activePos = Gravity.LEFT;
             }));
             settingsLayout.addView(posright);
 
-            var posleft = new Button(MainActivity);
+            var posleft = new styleButton();
             posleft.setText("Button left");       
             posleft.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1208,7 +1216,7 @@ activePos = Gravity.RIGHT;
             }));
             settingsLayout.addView(posleft);
 	
-            var mcpe = new Button(MainActivity);
+            var mcpe = new styleButton();
             mcpe.setText("MCPE menu theme");       
             mcpe.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1219,7 +1227,7 @@ GUIText = Color.BLACK;
             }));
             settingsLayout.addView(mcpe);
 		
-		var g1 = new Button(MainActivity);
+		var g1 = new styleButton();
             g1.setText("Menu center");       
             g1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1230,7 +1238,7 @@ GUIPos3 = Gravity.CENTER;
             }));
             settingsLayout.addView(g1);
 
-var g2 = new Button(MainActivity);
+var g2 = new styleButton();
             g2.setText("Menu right");       
             g2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1241,7 +1249,7 @@ GUIPos3 = Gravity.RIGHT;
             }));
             settingsLayout.addView(g2);
 
-var g3 = new Button(MainActivity);
+var g3 = new styleButton();
             g3.setText("Menu left");       
             g3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1252,7 +1260,7 @@ GUIPos3 = Gravity.LEFT;
             }));
             settingsLayout.addView(g3);
 			
-			var gs0 = new Button(MainActivity);
+			var gs0 = new styleButton();
             gs0.setText("Menu Size 1");       
             gs0.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1261,7 +1269,7 @@ GUISize = 4;
             }));
             settingsLayout.addView(gs0);
 
-var gs1 = new Button(MainActivity);
+var gs1 = new styleButton();
             gs1.setText("Menu Size 2");       
             gs1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1270,7 +1278,7 @@ GUISize = 3;
             }));
             settingsLayout.addView(gs1);
 
-var gs2 = new Button(MainActivity);
+var gs2 = new styleButton();
             gs2.setText("Menu Size normal");       
             gs2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1279,7 +1287,7 @@ GUISize = 2;
             }));
             settingsLayout.addView(gs2);
 
-var gs3 = new Button(MainActivity);
+var gs3 = new styleButton();
             gs3.setText("Menu Size 3");       
             gs3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1288,7 +1296,7 @@ GUISize = 1;
             }));
             settingsLayout.addView(gs3);
             
-var l1 = new Button(MainActivity);
+var l1 = new styleButton();
             l1.setText("Default Menu");       
             l1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1299,7 +1307,7 @@ default1 = true;
             }));
             settingsLayout.addView(l1);
             
-            var l2 = new Button(MainActivity);
+            var l2 = new styleButton();
             l2.setText("Black Menu");       
             l2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1310,7 +1318,7 @@ GUIColor = GUIColor2
             }));
             settingsLayout.addView(l2);
 
-var l3 = new Button(MainActivity);
+var l3 = new styleButton();
             l3.setText("White Menu");       
             l3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1321,7 +1329,7 @@ if(default1==true)default1 = false;
             }));
             settingsLayout.addView(l3);
 
-var l4 = new Button(MainActivity);
+var l4 = new styleButton();
             l4.setText("Red Menu");       
             l4.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1331,7 +1339,7 @@ if(default1==true)default1 = false;
             }));
             settingsLayout.addView(l4);
 
-var l5 = new Button(MainActivity);
+var l5 = new styleButton();
             l5.setText("Blue Menu");       
             l5.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1341,7 +1349,7 @@ if(default1==true)default1 = false;
             }));
             settingsLayout.addView(l5);
 
-var l6 = new Button(MainActivity);
+var l6 = new styleButton();
             l6.setText("Gray Menu");       
             l6.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1352,7 +1360,7 @@ if(default1==true)default1 = false;
             }));
             settingsLayout.addView(l6);
 
-var l7 = new Button(MainActivity);
+var l7 = new styleButton();
             l7.setText("Light gray Menu");       
             l7.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1363,7 +1371,7 @@ if(default1==true)default1 = false;
             }));
             settingsLayout.addView(l7);
 
-var l8 = new Button(MainActivity);
+var l8 = new styleButton();
             l8.setText("Yellow Menu");       
             l8.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1374,7 +1382,7 @@ if(default1==true)default1 = false;
             }));
             settingsLayout.addView(l8);
 
-var l9 = new Button(MainActivity);
+var l9 = new styleButton();
             l9.setText("Cyan Menu");       
             l9.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1385,7 +1393,7 @@ if(default1==true)default1 = false;
             }));
             settingsLayout.addView(l9);
 
-var l10 = new Button(MainActivity);
+var l10 = new styleButton();
             l10.setText("Dark gray Menu");       
             l10.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1396,7 +1404,7 @@ if(default1==true)default1 = false;
             }));
             settingsLayout.addView(l10);
 
-var l11 = new Button(MainActivity);
+var l11 = new styleButton();
             l11.setText("Green Menu");       
             l11.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1406,7 +1414,7 @@ if(default1==true)default1 = false;
             }));
             settingsLayout.addView(l11);
 
-var l12 = new Button(MainActivity);
+var l12 = new styleButton();
             l12.setText("Magenta Menu");       
             l12.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1416,7 +1424,7 @@ if(default1==true)default1 = false;
             }));
             settingsLayout.addView(l12);
             
-        var b2 = new Button(MainActivity);
+        var b2 = new styleButton();
             b2.setText("Black button text");       
             b2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1425,7 +1433,7 @@ GUIText = GUIText2
             }));
             settingsLayout.addView(b2);
 
-var b3 = new Button(MainActivity);
+var b3 = new styleButton();
             b3.setText("White button text");       
             b3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1434,7 +1442,7 @@ GUIText = GUIText3
             }));
             settingsLayout.addView(b3);
 
-var b4 = new Button(MainActivity);
+var b4 = new styleButton();
             b4.setText("Red button text");       
             b4.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1443,7 +1451,7 @@ GUIText = GUIText4
             }));
             settingsLayout.addView(b4);
 
-var b5 = new Button(MainActivity);
+var b5 = new styleButton();
             b5.setText("Blue button text");       
             b5.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1452,7 +1460,7 @@ GUIText = GUIText5
             }));
             settingsLayout.addView(b5);
 
-var b6 = new Button(MainActivity);
+var b6 = new styleButton();
             b6.setText("Gray button text");       
             b6.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1461,7 +1469,7 @@ GUIText = GUIText6
             }));
             settingsLayout.addView(b6);
 
-var b7 = new Button(MainActivity);
+var b7 = new styleButton();
             b7.setText("Lightgray button text");       
             b7.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1470,7 +1478,7 @@ GUIText = GUIText7
             }));
             settingsLayout.addView(b7);
 
-var b8 = new Button(MainActivity);
+var b8 = new styleButton();
             b8.setText("Yellow button text");       
             b8.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1479,7 +1487,7 @@ GUIText = GUIText8
             }));
             settingsLayout.addView(b8);
 
-var b9 = new Button(MainActivity);
+var b9 = new styleButton();
             b9.setText("Cyan button text");       
             b9.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1488,7 +1496,7 @@ GUIText = GUIText9
             }));
             settingsLayout.addView(b9);
 
-var b10 = new Button(MainActivity);
+var b10 = new styleButton();
             b10.setText("Darkgray button text");       
             b10.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1497,7 +1505,7 @@ GUIText = GUIText10
             }));
             settingsLayout.addView(b10);
 
-var b11 = new Button(MainActivity);
+var b11 = new styleButton();
             b11.setText("Green button text");       
             b11.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1506,7 +1514,7 @@ GUIText = GUIText11
             }));
             settingsLayout.addView(b11);
 
-var b12 = new Button(MainActivity);
+var b12 = new styleButton();
             b12.setText("Magenta button text");       
             b12.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1515,7 +1523,7 @@ GUIText = GUIText12
             }));
             settingsLayout.addView(b12);
             
-            var b1 = new Button(MainActivity);
+            var b1 = new styleButton();
             b1.setText("Default outline");       
             b1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1524,7 +1532,7 @@ GUIStroke = GUIStroke1
             }));
             settingsLayout.addView(b1);
 
-var b2 = new Button(MainActivity);
+var b2 = new styleButton();
             b2.setText("Black Outline");       
             b2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1533,7 +1541,7 @@ GUIStroke = GUIStroke2
             }));
             settingsLayout.addView(b2);
 
-var b3 = new Button(MainActivity);
+var b3 = new styleButton();
             b3.setText("White Outline");       
             b3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1542,7 +1550,7 @@ GUIStroke = GUIStroke3
             }));
             settingsLayout.addView(b3);
 
-var b4 = new Button(MainActivity);
+var b4 = new styleButton();
             b4.setText("Red Outline");       
             b4.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1551,7 +1559,7 @@ GUIStroke = GUIStroke4
             }));
             settingsLayout.addView(b4);
 
-var b5 = new Button(MainActivity);
+var b5 = new styleButton();
             b5.setText("Blue Outline");       
             b5.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1560,7 +1568,7 @@ GUIStroke = GUIStroke5
             }));
             settingsLayout.addView(b5);
 
-var b6 = new Button(MainActivity);
+var b6 = new styleButton();
             b6.setText("Gray Outline");       
             b6.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1569,7 +1577,7 @@ GUIStroke = GUIStroke6
             }));
             settingsLayout.addView(b6);
 
-var b7 = new Button(MainActivity);
+var b7 = new styleButton();
             b7.setText("Light gray Outline");       
             b7.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1578,7 +1586,7 @@ GUIStroke = GUIStroke7
             }));
             settingsLayout.addView(b7);
 
-var b8 = new Button(MainActivity);
+var b8 = new styleButton();
             b8.setText("Yellow Outline");       
             b8.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1587,7 +1595,7 @@ GUIStroke = GUIStroke8
             }));
             settingsLayout.addView(b8);
 
-var b9 = new Button(MainActivity);
+var b9 = new styleButton();
             b9.setText("Cyan Outline");       
             b9.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1596,7 +1604,7 @@ GUIStroke = GUIStroke9
             }));
             settingsLayout.addView(b9);
 
-var b10 = new Button(MainActivity);
+var b10 = new styleButton();
             b10.setText("Dark gray Outline");       
             b10.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1605,7 +1613,7 @@ GUIStroke = GUIStroke10
             }));
             settingsLayout.addView(b10);
 
-var b11 = new Button(MainActivity);
+var b11 = new styleButton();
             b11.setText("Green Outline");       
             b11.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1614,7 +1622,7 @@ GUIStroke = GUIStroke11
             }));
             settingsLayout.addView(b11);
 
-var b12 = new Button(MainActivity);
+var b12 = new styleButton();
             b12.setText("Magenta Outline");       
             b12.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1623,7 +1631,7 @@ GUIStroke = GUIStroke12
             }));
             settingsLayout.addView(b12);
 	
-	var btc1 = new Button(MainActivity);
+	var btc1 = new styleButton();
             btc1.setText("Default Buttons");       
             btc1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1632,7 +1640,7 @@ defaultbtnc = true;
             }));
             settingsLayout.addView(btc1);
 
-var btc2 = new Button(MainActivity);
+var btc2 = new styleButton();
             btc2.setText("Black Buttons");       
             btc2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1642,7 +1650,7 @@ defaultbtnc = false;
             }));
             settingsLayout.addView(btc2);
 
-var btc3 = new Button(MainActivity);
+var btc3 = new styleButton();
             btc3.setText("White Buttons");       
             btc3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1652,7 +1660,7 @@ defaultbtnc = false;
             }));
             settingsLayout.addView(btc3);
 
-var btc4 = new Button(MainActivity);
+var btc4 = new styleButton();
             btc4.setText("Red Buttons");       
             btc4.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1662,7 +1670,7 @@ defaultbtnc = false;
             }));
             settingsLayout.addView(btc4);
 
-var btc5 = new Button(MainActivity);
+var btc5 = new styleButton();
             btc5.setText("Blue Buttons");       
             btc5.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1672,7 +1680,7 @@ defaultbtnc = false;
             }));
             settingsLayout.addView(btc5);
 
-var btc6 = new Button(MainActivity);
+var btc6 = new styleButton();
             btc6.setText("Gray Buttons");       
             btc6.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1682,7 +1690,7 @@ defaultbtnc = false;
             }));
             settingsLayout.addView(btc6);
 
-var btc7 = new Button(MainActivity);
+var btc7 = new styleButton();
             btc7.setText("Light gray Buttons");       
             btc7.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1692,7 +1700,7 @@ defaultbtnc = false;
             }));
             settingsLayout.addView(btc7);
 
-var btc8 = new Button(MainActivity);
+var btc8 = new styleButton();
             btc8.setText("Yellow Buttons");       
             btc8.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1702,7 +1710,7 @@ defaultbtnc = false;
             }));
             settingsLayout.addView(btc8);
 
-var btc9 = new Button(MainActivity);
+var btc9 = new styleButton();
             btc9.setText("Cyan Buttons");       
             btc9.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1712,7 +1720,7 @@ defaultbtnc = false;
             }));
             settingsLayout.addView(btc9);
 
-var btc10 = new Button(MainActivity);
+var btc10 = new styleButton();
             btc10.setText("Dark gray Buttons");       
             btc10.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1722,7 +1730,7 @@ defaultbtnc = false;
             }));
             settingsLayout.addView(btc10);
 
-var btc11 = new Button(MainActivity);
+var btc11 = new styleButton();
             btc11.setText("Green Buttons");       
             btc11.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1732,7 +1740,7 @@ defaultbtnc = false;
             }));
             settingsLayout.addView(btc11);
 
-var btc12 = new Button(MainActivity);
+var btc12 = new styleButton();
             btc12.setText("Magenta Buttons");       
             btc12.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -1742,7 +1750,7 @@ defaultbtnc = false;
             }));
             settingsLayout.addView(btc12);
 	
-	var exit2 = new Button(MainActivity);
+	var exit2 = new styleButton();
 		exit2.setText("Exit");
 		exit2.setOnClickListener(new View.OnClickListener() {
 			onClick: function(v){
@@ -1767,16 +1775,9 @@ settingsLayout1.setPadding(20,0,20,0);
     }}));
 }
 
-var misc = new Button(MainActivity);
+var misc = new styleButton();
 misc.setText("Misc");
 if(getLanguage=="ko_KR")misc.setText("기타");
-misc.setTextColor(GUIText);
-var buttonBg = new android.graphics.drawable.GradientDrawable();
-if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000")); if(defaultbtnc==false)buttonBg.setColor(GUIBtns);
-buttonBg.setStroke(4, GUIStroke);
-buttonBg.setCornerRadius(10);
-misc.setBackgroundDrawable(buttonBg);
-if(mcpetheme==true)misc.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 misc.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              misc_menu();
@@ -1796,7 +1797,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             miscScroll.addView(miscLayout);
             miscLayout1.addView(miscScroll);
             
-            var exit = new Button(MainActivity);
+            var exit = new styleButton();
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -1806,7 +1807,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		miscLayout.addView(exit);
 		
-		var credits = new Button(MainActivity);
+		var credits = new styleButton();
 		credits.setText("Credits");
 		credits.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -1827,7 +1828,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             creditScroll.addView(creditLayout);
             creditLayout1.addView(creditScroll);
 
-			var exit = new Button(MainActivity);
+			var exit = new styleButton();
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -1881,7 +1882,7 @@ creditLayout1.setPadding(20,0,20,0);
     }}));
 }
 
-var pass = new Button(MainActivity);
+var pass = new styleButton();
 		pass.setText("Brute force (Numbers)");
 		pass.setTextColor(Color.RED);
 if(hackk==true)pass.setTextColor(Color.GREEN);
@@ -1902,7 +1903,7 @@ hackk = false;
 		});
 		miscLayout.addView(pass);
 		
-		var pass2 = new Button(MainActivity);
+		var pass2 = new styleButton();
 		pass2.setText("SQL Inject (Numbers)");
 		pass2.setTextColor(Color.RED);
 if(hackk2==true)pass2.setTextColor(Color.GREEN);
@@ -1923,7 +1924,7 @@ hackk2 = false;
 		});
 		miscLayout.addView(pass2);
 		
-		var ht1 = new Button(MainActivity);
+		var ht1 = new styleButton();
 		ht1.setText("How to bypass ban");
 		ht1.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -1955,7 +1956,7 @@ dialog.show();
 		});
 		miscLayout.addView(ht1);
 
-var ht2 = new Button(MainActivity);
+var ht2 = new styleButton();
 		ht2.setText("How to bypass ip ban");
 		ht2.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -1987,7 +1988,7 @@ dialog.show();
 		});
 		miscLayout.addView(ht2);
 
-var ht3 = new Button(MainActivity);
+var ht3 = new styleButton();
 		ht3.setText("How to bypass CID/devban");
 		ht3.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -2019,7 +2020,7 @@ dialog.show();
 		});
 		miscLayout.addView(ht3);
 		
-		var ht4 = new Button(MainActivity);
+		var ht4 = new styleButton();
 		ht4.setText("How to bypass Alias");
 		ht4.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -2051,7 +2052,7 @@ dialog.show();
 		});
 		miscLayout.addView(ht4);
 
-var ht5 = new Button(MainActivity);
+var ht5 = new styleButton();
 		ht5.setText("How to delete pg chests");
 		ht5.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -2083,7 +2084,7 @@ dialog.show();
 		});
 		miscLayout.addView(ht5);
 		
-var ht6 = new Button(MainActivity);
+var ht6 = new styleButton();
 		ht6.setText("How to clear players items");
 		ht6.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -2115,7 +2116,7 @@ dialog.show();
 		});
 		miscLayout.addView(ht6);
 
-var ht7 = new Button(MainActivity);
+var ht7 = new styleButton();
 		ht7.setText("How to get into claim land");
 		ht7.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -2147,7 +2148,7 @@ dialog.show();
 		});
 		miscLayout.addView(ht7);
 
-var cidban = new Button(MainActivity);
+var cidban = new styleButton();
             cidban.setText("CID/dev pardon"); 
             cidban.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -2159,7 +2160,7 @@ Toast.makeText(MainActivity, "You will crash & be unbanned!", 1).show();
             }));
             miscLayout.addView(cidban);
             
-            var sit = new Button(MainActivity);
+            var sit = new styleButton();
 		sit.setText("Image lookup");
 		sit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -2177,7 +2178,7 @@ web3();
                     MainActivity.startActivity(urls2);
       }
 
-var sid = new Button(MainActivity);
+var sid = new styleButton();
 		sid.setText("View website code");
 		sid.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -2187,7 +2188,7 @@ var sid = new Button(MainActivity);
 		});
 		miscLayout.addView(sid);
       
-      var aniview = new Button(MainActivity);
+      var aniview = new styleButton();
 		aniview.setText("Watch anime on MCPE");
 		aniview.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -2212,7 +2213,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             animeScroll.addView(animeLayout);
             animeLayout1.addView(animeScroll);
 
-var exit = new Button(MainActivity);
+var exit = new styleButton();
             exit.setText("Exit");
 exit.setTextColor(Color.RED);
             exit.setOnClickListener(new View.OnClickListener({
@@ -2273,7 +2274,7 @@ pip();
             }));
             miscLayout.addView(ip1);
 
-var getCid = new Button(MainActivity);
+var getCid = new styleButton();
             getCid.setText("What's my CID?");
             getCid.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -2330,16 +2331,9 @@ miscLayout1.setPadding(20,0,20,0);
     }}));
 }
 	    
-var cheats = new Button(MainActivity);
+var cheats = new styleButton();
 cheats.setText("Online & offline mods");
 if(getLanguage=="ko_KR")cheats.setText("온라인 모드");
-cheats.setTextColor(GUIText);
-var buttonBg = new android.graphics.drawable.GradientDrawable();
-if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000")); if(defaultbtnc==false)buttonBg.setColor(GUIBtns);
-buttonBg.setStroke(4, GUIStroke);
-buttonBg.setCornerRadius(10);
-cheats.setBackgroundDrawable(buttonBg);
-if(mcpetheme==true)cheats.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 cheats.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              cheat_menu();
@@ -2359,7 +2353,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             cheatScroll.addView(cheatLayout);
             cheatLayout1.addView(cheatScroll);
             
-            var exit = new Button(MainActivity);
+            var exit = new styleButton();
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -2369,7 +2363,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		cheatLayout.addView(exit);
 		
-		var bypass1 = new Button(MainActivity);
+		var bypass1 = new styleButton();
 bypass1.setText("Anti-spam bypass");
 bypass1.setTextColor(Color.RED);
 if(antispam2==true)bypass1.setTextColor(Color.GREEN);
@@ -2391,7 +2385,7 @@ antispam2 = false;
             }));
             cheatLayout.addView(bypass1);
 
-var info = new Button(MainActivity);
+var info = new styleButton();
             info.setText("Game info");
             info.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -2418,7 +2412,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             infoScroll.addView(infoLayout);
             infoLayout1.addView(infoScroll);
 
-var exit = new Button(MainActivity);
+var exit = new styleButton();
             exit.setText("Exit");
 exit.setTextColor(Color.RED);
             exit.setOnClickListener(new View.OnClickListener({
@@ -2431,7 +2425,7 @@ exit.setTextColor(Color.RED);
             }));
             infoLayout.addView(exit);
 			
-            var refresh = new Button(MainActivity);
+            var refresh = new styleButton();
             refresh.setText("Refresh");
             refresh.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -2538,7 +2532,7 @@ info.setBackgroundDrawable(new ColorDrawable(Color.BLACK));
     }}));
 }
 	    
-	    var button1 = new Button(MainActivity);
+	    var button1 = new styleButton();
 button1.setText("Walk on liquid");
 button1.setTextColor(Color.RED);
 if(liquidwalk==true)button1.setTextColor(Color.GREEN);
@@ -2571,7 +2565,7 @@ liquidwalk = false;
             }));
             cheatLayout.addView(button1);
             
-            var creative = new Button(MainActivity);
+            var creative = new styleButton();
             creative.setText("Creative");        
             creative.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -2582,7 +2576,7 @@ clientMessage(client + "§7Your gamemode was updated to creative mode!");
             }));
             cheatLayout.addView(creative);
             
-            var survival = new Button(MainActivity);
+            var survival = new styleButton();
             survival.setText("Survival");
             survival.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -2593,7 +2587,7 @@ clientMessage(client + "§7Your gamemode was updated to survival mode!");
             }));
             cheatLayout.addView(survival);
             
-            var adventure = new Button(MainActivity);
+            var adventure = new styleButton();
             adventure.setText("Adventure");       
             adventure.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -2604,7 +2598,7 @@ clientMessage(client + "§7Your gamemode was updated to adventure mode!");
             }));
             cheatLayout.addView(adventure);
             
-            var spectator = new Button(MainActivity);
+            var spectator = new styleButton();
             spectator.setText("Spectator");     
             spectator.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -2615,7 +2609,7 @@ clientMessage(client + "§7Your gamemode was updated to spectator mode!");
             }));
             cheatLayout.addView(spectator);
             
-            var button6 = new Button(MainActivity);
+            var button6 = new styleButton();
 button6.setText("Glide");
 button6.setTextColor(Color.RED);
 if(glide==true)button6.setTextColor(Color.GREEN);
@@ -2637,7 +2631,7 @@ glide = false;
             }));
             cheatLayout.addView(button6);
             
-            var walkonair = new Button(MainActivity);
+            var walkonair = new styleButton();
 walkonair.setText("Walk on air");
 walkonair.setTextColor(Color.RED);
 if(airwalk==true)walkonair.setTextColor(Color.GREEN);
@@ -2660,7 +2654,7 @@ airwalk = false;
             }));
             cheatLayout.addView(walkonair);
 			
-var killaura1 = new Button(MainActivity);
+var killaura1 = new styleButton();
 killaura1.setText("Player aim aura");
 killaura1.setTextColor(Color.RED);
 if(paimaura==true)killaura1.setTextColor(Color.GREEN);
@@ -2687,7 +2681,7 @@ paimaura = false;
             }));
             cheatLayout.addView(killaura1);
 	
-	var killaura2 = new Button(MainActivity);
+	var killaura2 = new styleButton();
 killaura2.setText("Mob aim aura");
 killaura2.setTextColor(Color.RED);
 if(maimaura==true)killaura2.setTextColor(Color.GREEN);
@@ -2714,7 +2708,7 @@ maimaura = false;
             }));
             cheatLayout.addView(killaura2);
 	    
-var button2 = new Button(MainActivity);
+var button2 = new styleButton();
 button2.setText("X-Ray");
 button2.setTextColor(Color.RED);
 if(xray==true)button2.setTextColor(Color.GREEN);
@@ -2743,7 +2737,7 @@ xray = false;
             }));
             cheatLayout.addView(button2);
             
-            var speedup = new Button(MainActivity);
+            var speedup = new styleButton();
 speedup.setText("No friction");
 speedup.setTextColor(Color.RED);
 if(changeSpeed==true)speedup.setTextColor(Color.GREEN);
@@ -2769,7 +2763,7 @@ changeSpeed = false;
             }));
             cheatLayout.addView(speedup);
             
-            var svr = new Button(MainActivity);
+            var svr = new styleButton();
             svr.setText("Server IP:Port");
             svr.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -2780,7 +2774,7 @@ if(Server.getAddress()=="null" || Server.getPort()=="0")clientMessage(client + "
             }));
             cheatLayout.addView(svr);
 	
-	var butfuon1 = new Button(MainActivity);
+	var butfuon1 = new styleButton();
 butfuon1.setText("Item indicator");
 butfuon1.setTextColor(Color.RED);
 if(itemIndi==true)butfuon1.setTextColor(Color.GREEN);
@@ -2802,7 +2796,7 @@ itemIndi= false;
             }));
             cheatLayout.addView(butfuon1);
 	    
-	    var button4 = new Button(MainActivity);
+	    var button4 = new styleButton();
 button4.setText("Armor indicator");
 button4.setTextColor(Color.RED);
 if(armor==true)button4.setTextColor(Color.GREEN);
@@ -2826,7 +2820,7 @@ armor = false;
             }));
             cheatLayout.addView(button4);
             
-            var button5 = new Button(MainActivity);
+            var button5 = new styleButton();
 button5.setText("Coordinates");
 button5.setTextColor(Color.RED);
 if(coords==true)button5.setTextColor(Color.GREEN);
@@ -2850,7 +2844,7 @@ coords = false;
             }));
             cheatLayout.addView(button5);
             
-            var seevel = new Button(MainActivity);
+            var seevel = new styleButton();
 seevel.setText("Velocity indicator");
 seevel.setTextColor(Color.RED);
 if(getvel==true)seevel.setTextColor(Color.GREEN);
@@ -2874,7 +2868,7 @@ getvel = false;
             }));
             cheatLayout.addView(seevel);
             
-            var seeyaw = new Button(MainActivity);
+            var seeyaw = new styleButton();
 seeyaw.setText("Pitch & yaw");
 seeyaw.setTextColor(Color.RED);
 if(yawpitch==true)seeyaw.setTextColor(Color.GREEN);
@@ -2898,7 +2892,7 @@ yawpitch = false;
             }));
             cheatLayout.addView(seeyaw);
             
-            var button7 = new Button(MainActivity);
+            var button7 = new styleButton();
 button7.setText("Text to toast");
 button7.setTextColor(Color.RED);
 if(ttot==true)button7.setTextColor(Color.GREEN);
@@ -2920,7 +2914,7 @@ ttot = false;
             }));
             cheatLayout.addView(button7);
             
-            var button8 = new Button(MainActivity);
+            var button8 = new styleButton();
 button8.setText("Anti break");
 button8.setTextColor(Color.RED);
 if(block==true)button8.setTextColor(Color.GREEN);
@@ -2942,7 +2936,7 @@ block = false;
             }));
             cheatLayout.addView(button8);
 	    
-	    var button9 = new Button(MainActivity);
+	    var button9 = new styleButton();
 button9.setText("Tap spam");
 button9.setTextColor(Color.RED);
 if(tapspam==true)button9.setTextColor(Color.GREEN);
@@ -2965,7 +2959,7 @@ tapspam = false;
             }));
             cheatLayout.addView(button9);
             
-            var button10 = new Button(MainActivity);
+            var button10 = new styleButton();
 button10.setText("Tap destroy");
 button10.setTextColor(Color.RED);
 if(tapdestroy==true)button10.setTextColor(Color.GREEN);
@@ -2987,7 +2981,7 @@ tapdestroy = false;
             }));
             cheatLayout.addView(button10);
             
-            var button11 = new Button(MainActivity);
+            var button11 = new styleButton();
 button11.setText("Storage ESP");
 button11.setTextColor(Color.RED);
 if(chestesp==true)button11.setTextColor(Color.GREEN);
@@ -3009,7 +3003,7 @@ chestesp = false;
             }));
             cheatLayout.addView(button11);
             
-var button12 = new Button(MainActivity);
+var button12 = new styleButton();
 button12.setText("Auto spam");
 button12.setTextColor(Color.RED);
 if(autospam2==true)button12.setTextColor(Color.GREEN);
@@ -3031,7 +3025,7 @@ autospam2= false;
             }));
             cheatLayout.addView(button12);
             
-var button13 = new Button(MainActivity);
+var button13 = new styleButton();
 button13.setText("Auto destroy");
 button13.setTextColor(Color.RED);
 if(autodestroy2==true)button13.setTextColor(Color.GREEN);
@@ -3054,7 +3048,7 @@ autodestroy2 = false;
             }));
             cheatLayout.addView(button13);
             
-            var taptoid = new Button(MainActivity);
+            var taptoid = new styleButton();
 taptoid.setText("Tap block for ID");
 taptoid.setTextColor(Color.RED);
 if(tapid==true)taptoid.setTextColor(Color.GREEN);
@@ -3076,7 +3070,7 @@ tapid = false;
             }));
             cheatLayout.addView(taptoid);
             
-            var kjump = new Button(MainActivity);
+            var kjump = new styleButton();
             kjump.setText("Infinite jump: "+(jump?"on":"off"));
             kjump.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -3094,7 +3088,7 @@ jump = false;
             }));
             cheatLayout.addView(kjump);
             
-            var nowall = new Button(MainActivity);
+            var nowall = new styleButton();
             nowall.setText("No clip: "+(noclip?"on":"off"));
             nowall.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -3174,7 +3168,7 @@ noclip = false;
             }));
             cheatLayout.addView(nowall);
             
-            var online = new Button(MainActivity);
+            var online = new styleButton();
 online.setText("Players online");
             online.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -3186,7 +3180,7 @@ for (var i = 0; i < b_x023489a.length; i++) {
             }));
             cheatLayout.addView(online);
             
-            var barrier = new Button(MainActivity);
+            var barrier = new styleButton();
 barrier.setText("Nullify barriers");
             barrier.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -3199,7 +3193,7 @@ clientMessage(client + "Any barriers have been nullifed.");
             }));
             cheatLayout.addView(barrier);
             
-            var light = new Button(MainActivity);
+            var light = new styleButton();
 light.setText("Brightness");
 light.setTextColor(Color.RED);
 if(brightness==true)light.setTextColor(Color.GREEN);
@@ -3226,7 +3220,7 @@ brightness = false;
 *TODO: (IMPROVE) food checking
 *
 *
-var fe1 = new Button(MainActivity);
+var fe1 = new styleButton();
 fe1.setText("Fast eat");
 fe1.setTextColor(Color.RED);
 if(fasteat==true)fe1.setTextColor(Color.GREEN);
@@ -3249,7 +3243,7 @@ fasteat = false;
             cheatLayout.addView(fe1);
 	    */
 			
-var afkspawn = new Button(MainActivity);
+var afkspawn = new styleButton();
 afkspawn.setText("Low health action");
 afkspawn.setTextColor(Color.RED);
 if(lowhealth==true)afkspawn.setTextColor(Color.GREEN);
@@ -3271,7 +3265,7 @@ afkspawn = false;
             }));
             cheatLayout.addView(afkspawn);
             
-            var ecd = new Button(MainActivity);
+            var ecd = new styleButton();
             ecd.setText("Easy commands");       
             ecd.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -3292,7 +3286,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             cmdScroll.addView(cmdLayout);
             cmdLayout1.addView(cmdScroll);
             
-            var exit = new Button(MainActivity);
+            var exit = new styleButton();
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -3302,7 +3296,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		cmdLayout.addView(exit);
 		
-		var cmd1 = new Button(MainActivity);
+		var cmd1 = new styleButton();
 		cmd1.setText("Creative");
 		cmd1.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -3313,7 +3307,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		cmdLayout.addView(cmd1);
 					 
-		var cmd2 = new Button(MainActivity);
+		var cmd2 = new styleButton();
 		cmd2.setText("Survival");
 		cmd2.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -3324,7 +3318,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		cmdLayout.addView(cmd2);
 		
-		var cmd3 = new Button(MainActivity);
+		var cmd3 = new styleButton();
 		cmd3.setText("Adventure");
 		cmd3.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -3335,7 +3329,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		cmdLayout.addView(cmd3);
 		
-		var cmd4 = new Button(MainActivity);
+		var cmd4 = new styleButton();
 		cmd4.setText("Spectator");
 		cmd4.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -3346,7 +3340,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		cmdLayout.addView(cmd4);
 		
-		var cmd5 = new Button(MainActivity);
+		var cmd5 = new styleButton();
 		cmd5.setText("List");
 		cmd5.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -3356,7 +3350,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		cmdLayout.addView(cmd5);
 		
-	    var opp = new Button(MainActivity);
+	    var opp = new styleButton();
             opp.setText("OP perm (Not hack)");        
             opp.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){ 
@@ -3368,7 +3362,7 @@ Toast.makeText(MainActivity, "Command has been sent.", 1).show();
             }));
             cmdLayout.addView(opp);
             
-            var a1 = new Button(MainActivity);
+            var a1 = new styleButton();
             a1.setText("Time: 6:00am");
             a1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -3378,7 +3372,7 @@ Server.sendChat("./time set 0");
             }));
             cmdLayout.addView(a1);
 
-var a2 = new Button(MainActivity);
+var a2 = new styleButton();
             a2.setText("Time: 7:00am");
             a2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -3388,7 +3382,7 @@ Server.sendChat("./time set 1000");
             }));
             cmdLayout.addView(a2);
 
-var a3 = new Button(MainActivity);
+var a3 = new styleButton();
             a3.setText("Time: 8:00am");
             a3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -3398,7 +3392,7 @@ Server.sendChat("./time set 2000");
             }));
             cmdLayout.addView(a3);
 
-var a4 = new Button(MainActivity);
+var a4 = new styleButton();
             a4.setText("Time: 9:00am");
             a4.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -3408,7 +3402,7 @@ Server.sendChat("./time set 3000");
             }));
             cmdLayout.addView(a4);
 
-var a5 = new Button(MainActivity);
+var a5 = new styleButton();
             a5.setText("Time: 10:00am");
             a5.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -3418,7 +3412,7 @@ Server.sendChat("./time set 4000");
             }));
             cmdLayout.addView(a5);
 
-var a6 = new Button(MainActivity);
+var a6 = new styleButton();
             a6.setText("Time: 11:00am");
             a6.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -3428,7 +3422,7 @@ Server.sendChat("./time set 5000");
             }));
             cmdLayout.addView(a6);
 
-var a7 = new Button(MainActivity);
+var a7 = new styleButton();
             a7.setText("Time: 12:00pm");
             a7.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -3438,7 +3432,7 @@ Server.sendChat("./time set 6000");
             }));
             cmdLayout.addView(a7);
 
-var a8 = new Button(MainActivity);
+var a8 = new styleButton();
             a8.setText("Time: 1:00pm");
             a8.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -3448,7 +3442,7 @@ Server.sendChat("./time set 7000");
             }));
             cmdLayout.addView(a8);
 
-var a9 = new Button(MainActivity);
+var a9 = new styleButton();
             a9.setText("Time: 2:00pm");
             a9.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -3458,7 +3452,7 @@ Server.sendChat("./time set 8000");
             }));
             cmdLayout.addView(a9);
 
-var a10 = new Button(MainActivity);
+var a10 = new styleButton();
             a10.setText("Time: 3:00pm");
             a10.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -3468,7 +3462,7 @@ Server.sendChat("./time set 9000");
             }));
             cmdLayout.addView(a10);
 
-var a11 = new Button(MainActivity);
+var a11 = new styleButton();
             a11.setText("Time: 4:00pm");
             a11.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -3478,7 +3472,7 @@ Server.sendChat("./time set 10000");
             }));
             cmdLayout.addView(a11);
 
-var a12 = new Button(MainActivity);
+var a12 = new styleButton();
             a12.setText("Time: 5:00pm");
             a12.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -3488,7 +3482,7 @@ Server.sendChat("./time set 11000");
             }));
             cmdLayout.addView(a12);
 
-var a13 = new Button(MainActivity);
+var a13 = new styleButton();
             a13.setText("Time: 6:00pm");
             a13.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -3498,7 +3492,7 @@ Server.sendChat("./time set 12000");
             }));
             cmdLayout.addView(a13);
 
-var a14 = new Button(MainActivity);
+var a14 = new styleButton();
             a14.setText("Time: 7:00pm");
             a14.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -3508,7 +3502,7 @@ Server.sendChat("./time set 13000");
             }));
             cmdLayout.addView(a14);
 
-var a15 = new Button(MainActivity);
+var a15 = new styleButton();
             a15.setText("Time: 8:00pm");
             a15.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -3518,7 +3512,7 @@ Server.sendChat("./time set 14000");
             }));
             cmdLayout.addView(a15);
 
-var a16 = new Button(MainActivity);
+var a16 = new styleButton();
             a16.setText("Time: 9:00pm");
             a16.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -3528,7 +3522,7 @@ Server.sendChat("./time set 15000");
             }));
             cmdLayout.addView(a16);
 
-var a17 = new Button(MainActivity);
+var a17 = new styleButton();
             a17.setText("Time: 10:00pm");
             a17.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -3538,7 +3532,7 @@ Server.sendChat("./time set 16000");
             }));
             cmdLayout.addView(a17);
 
-var a18 = new Button(MainActivity);
+var a18 = new styleButton();
             a18.setText("Time: 11:00pm");
             a18.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -3548,7 +3542,7 @@ Server.sendChat("./time set 17000");
             }));
             cmdLayout.addView(a18);
 
-var a19 = new Button(MainActivity);
+var a19 = new styleButton();
             a19.setText("Time: 12:00am");
             
             a19.setOnClickListener(new View.OnClickListener({
@@ -3559,7 +3553,7 @@ Server.sendChat("./time set 18000");
             }));
             cmdLayout.addView(a19);
 
-var a20 = new Button(MainActivity);
+var a20 = new styleButton();
             a20.setText("Time: 1:00am");
             a20.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -3569,7 +3563,7 @@ Server.sendChat("./time set 19000");
             }));
             cmdLayout.addView(a20);
 
-var a21 = new Button(MainActivity);
+var a21 = new styleButton();
             a21.setText("Time: 2:00am");
             a21.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -3579,7 +3573,7 @@ Server.sendChat("./time set 20000");
             }));
             cmdLayout.addView(a21);
 
-var a22 = new Button(MainActivity);
+var a22 = new styleButton();
             a22.setText("Time: 3:00am");
             a22.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -3589,7 +3583,7 @@ Server.sendChat("./time set 21000");
             }));
             cmdLayout.addView(a22);
 
-var a23 = new Button(MainActivity);
+var a23 = new styleButton();
             a23.setText("Time: 4:00am");
             a23.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -3599,7 +3593,7 @@ Server.sendChat("./time set 22000");
             }));
             cmdLayout.addView(a23);
 
-var a24 = new Button(MainActivity);
+var a24 = new styleButton();
             a24.setText("Time: 5:00am");          
             a24.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -3609,7 +3603,7 @@ Server.sendChat("./time set 23000");
             }));
             cmdLayout.addView(a24);
 
-var rainy = new Button(MainActivity);
+var rainy = new styleButton();
             rainy.setText("Weather rain");
             rainy.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -3619,7 +3613,7 @@ Server.sendChat("./weather rain");
             }));
             cmdLayout.addView(rainy);
 			
-var clearain = new Button(MainActivity);
+var clearain = new styleButton();
             clearain.setText("Weather clear");
             clearain.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -3643,7 +3637,7 @@ cmdLayout1.setPadding(20,0,20,0);
     }}));
 }
 
-/*var oreTrace = new Button(MainActivity);
+/*var oreTrace = new styleButton();
 oreTrace.setText("Ore ESP");
 oreTrace.setTextColor(Color.RED);
 if(oreEsp2==true)oreTrace.setTextColor(Color.GREEN);
@@ -3667,7 +3661,7 @@ oreEsp2 = false;
             }));
             cheatLayout.addView(oreTrace);
 			
-var playerTracer = new Button(MainActivity);
+var playerTracer = new styleButton();
 playerTracer.setText("Player ESP");
 playerTracer.setTextColor(Color.RED);
 if(playeresp==true)playerTracer.setTextColor(Color.GREEN);
@@ -3691,7 +3685,7 @@ playeresp = false;
             }));
             cheatLayout.addView(playerTracer);*/
             
-            var anti2void = new Button(MainActivity);
+            var anti2void = new styleButton();
 anti2void.setText("Anti void");
 anti2void.setTextColor(Color.RED);
 if(antivoid==true)anti2void.setTextColor(Color.GREEN);
@@ -3713,7 +3707,7 @@ antivoid = false;
             }));
             cheatLayout.addView(anti2void);
 			
-var zmmm = new Button(MainActivity);
+var zmmm = new styleButton();
       zmmm.setText("Instant break");
 zmmm.setTextColor(Color.RED);
 if(instabreak==true)zmmm.setTextColor(Color.GREEN);
@@ -3735,7 +3729,7 @@ defaultDestroy();
 		});
 		cheatLayout.addView(zmmm);
 		
-		var tju = new Button(MainActivity);
+		var tju = new styleButton();
 tju.setText("Tap jump");
 tju.setTextColor(Color.RED);
 if(tapjump==true)tju.setTextColor(Color.GREEN);
@@ -3759,7 +3753,7 @@ tapjump = false;
             }));
             cheatLayout.addView(tju);
             
-            var spiderman = new Button(MainActivity);
+            var spiderman = new styleButton();
 spiderman.setText("Spider");
 spiderman.setTextColor(Color.RED);
 if(spider==true)spiderman.setTextColor(Color.GREEN);
@@ -3784,7 +3778,7 @@ spider = false;
             }));
             cheatLayout.addView(spiderman);
             
-            var jumps = new Button(MainActivity);
+            var jumps = new styleButton();
 jumps.setText("Higher jumps");
 jumps.setTextColor(Color.RED);
 if(jump==true)jumps.setTextColor(Color.GREEN);
@@ -3808,7 +3802,7 @@ jump = false;
             }));
             cheatLayout.addView(jumps);
             
-            var autow = new Button(MainActivity);
+            var autow = new styleButton();
 autow.setText("Auto walk");
 autow.setTextColor(Color.RED);
 if(autowalk==true)autow.setTextColor(Color.GREEN);
@@ -3832,7 +3826,7 @@ autowalk = false;
             }));
             cheatLayout.addView(autow);
             
-            var xz = new Button(MainActivity);
+            var xz = new styleButton();
             xz.setText("Other XYZ");
             xz.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -3859,7 +3853,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             XYZScroll.addView(XYZLayout);
             XYZLayout1.addView(XYZScroll);
 
-var exit = new Button(MainActivity);
+var exit = new styleButton();
             exit.setText("Exit");
 exit.setTextColor(Color.RED);
             exit.setOnClickListener(new View.OnClickListener({
@@ -3872,7 +3866,7 @@ exit.setTextColor(Color.RED);
             }));
             XYZLayout.addView(exit);
 			
-            var refresh = new Button(MainActivity);
+            var refresh = new styleButton();
             refresh.setText("Refresh");
             refresh.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -3932,7 +3926,7 @@ XYZ.setBackgroundDrawable(new ColorDrawable(Color.BLACK));
     }}));
 }
 
-var twek = new Button(MainActivity);
+var twek = new styleButton();
 twek.setText("Twerk");
 twek.setTextColor(Color.RED);
 if(twerk==true)twek.setTextColor(Color.GREEN);
@@ -3956,7 +3950,7 @@ twerk = false;
             }));
             cheatLayout.addView(twek);
 
-var taura = new Button(MainActivity);
+var taura = new styleButton();
 taura.setText("TP Aura");
 taura.setTextColor(Color.RED);
 if(tpAura==true)taura.setTextColor(Color.GREEN);
@@ -3986,7 +3980,7 @@ tpAura = false;
 *TODO Better hit behind handle
 *
 *
-var hitme = new Button(MainActivity);
+var hitme = new styleButton();
 hitme.setText("Hit behind");
 hitme.setTextColor(Color.RED);
 if(hitBehind==true)hitme.setTextColor(Color.GREEN);
@@ -4011,7 +4005,7 @@ hitBehind = false;
             cheatLayout.addView(hitme);
 	    */
 
-var jhit = new Button(MainActivity);
+var jhit = new styleButton();
 jhit.setText("Hit'n'jump");
 jhit.setTextColor(Color.RED);
 if(hitJump==true)jhit.setTextColor(Color.GREEN);
@@ -4035,7 +4029,7 @@ hitJump = false;
             }));
             cheatLayout.addView(jhit);
 
-var nameit = new Button(MainActivity);
+var nameit = new styleButton();
 nameit.setText("Mob nametags");
 nameit.setTextColor(Color.RED);
 if(nametags==true)nameit.setTextColor(Color.GREEN);
@@ -4059,7 +4053,7 @@ nametags = false;
             }));
             cheatLayout.addView(nameit);
 
-var keeps = new Button(MainActivity);
+var keeps = new styleButton();
 keeps.setText("Keep hotbar");
 keeps.setTextColor(Color.RED);
 if(keepHotbar==true)keeps.setTextColor(Color.GREEN);
@@ -4083,7 +4077,7 @@ keepHotbar = false;
             }));
             cheatLayout.addView(keeps);
 
-var atkact = new Button(MainActivity);
+var atkact = new styleButton();
 atkact.setText("Attack action");
 atkact.setTextColor(Color.RED);
 if(attackActions==true)atkact.setTextColor(Color.GREEN);
@@ -4107,7 +4101,7 @@ attackActions = false;
             }));
             cheatLayout.addView(atkact);
 
-var butfuon2 = new Button(MainActivity);
+var butfuon2 = new styleButton();
 butfuon2.setText("Bunny hop");
 butfuon2.setTextColor(Color.RED);
 if(bhop==true)butfuon2.setTextColor(Color.GREEN);
@@ -4130,7 +4124,7 @@ bhop= false;
             }));
             cheatLayout.addView(butfuon2);
 
-var butfuon3 = new Button(MainActivity);
+var butfuon3 = new styleButton();
 butfuon3.setText("Alpha Text");
 butfuon3.setTextColor(Color.RED);
 if(alphatext==true)butfuon3.setTextColor(Color.GREEN);
@@ -4152,7 +4146,7 @@ alphatext= false;
             }));
             cheatLayout.addView(butfuon3);
 
-var butfuon4 = new Button(MainActivity);
+var butfuon4 = new styleButton();
 butfuon4.setText("Binary text");
 butfuon4.setTextColor(Color.RED);
 if(binarytext==true)butfuon4.setTextColor(Color.GREEN);
@@ -4174,7 +4168,7 @@ binarytext = false;
             }));
             cheatLayout.addView(butfuon4);
 
-var butfuon5 = new Button(MainActivity);
+var butfuon5 = new styleButton();
 butfuon5.setText("Zalgo text");
 butfuon5.setTextColor(Color.RED);
 if(zalgotext==true)butfuon5.setTextColor(Color.GREEN);
@@ -4196,7 +4190,7 @@ zalgotext = false;
             }));
             cheatLayout.addView(butfuon5);
 
-var butfuon6 = new Button(MainActivity);
+var butfuon6 = new styleButton();
 butfuon6.setText("Strike text");
 butfuon6.setTextColor(Color.RED);
 if(striketext==true)butfuon6.setTextColor(Color.GREEN);
@@ -4220,7 +4214,7 @@ striketext = false;
 
 
 
-var butfuon8 = new Button(MainActivity);
+var butfuon8 = new styleButton();
 butfuon8.setText("Prevent same message");
 butfuon8.setTextColor(Color.RED);
 if(preventsame==true)butfuon8.setTextColor(Color.GREEN);
@@ -4243,7 +4237,7 @@ preventsame = false;
             cheatLayout.addView(butfuon8);
 
 
-var cc = new Button(MainActivity);
+var cc = new styleButton();
             cc.setText("Clear your chat");        
             cc.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -4267,7 +4261,7 @@ clientMessage(" " + "\n" + " ");
             }));
             cheatLayout.addView(cc);
 
-var ui = new Button(MainActivity);
+var ui = new styleButton();
             ui.setText("Ui Layout Viewer: "+(uirender?"on":"off"));
             ui.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -4283,7 +4277,7 @@ ModPE.setUiRenderDebug(false);
             }));
             cheatLayout.addView(ui);
 
-var fovy = new Button(MainActivity);
+var fovy = new styleButton();
             fovy.setText("Fov editor");        
             fovy.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){ 
@@ -4294,7 +4288,7 @@ cheat.dismiss();
             }));
             cheatLayout.addView(fovy);
 			
-		var sbn = new Button(MainActivity);
+		var sbn = new styleButton();
             sbn.setText("Set block brightness");        
             sbn.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){ 
@@ -4305,7 +4299,7 @@ cheat.dismiss();
             }));
             cheatLayout.addView(sbn);
 
-var info2 = new Button(MainActivity);
+var info2 = new styleButton();
 info2.setText("Faced player info");
 info2.setTextColor(Color.RED);
 if(facedInfo==true)info2.setTextColor(Color.GREEN);
@@ -4328,7 +4322,7 @@ facedInfo = false;
             }));
             cheatLayout.addView(info2);
 
-var walkonice = new Button(MainActivity);
+var walkonice = new styleButton();
 walkonice.setText("Ice walk");
 walkonice.setTextColor(Color.RED);
 if(icewalk==true)walkonice.setTextColor(Color.GREEN);
@@ -4350,7 +4344,7 @@ icewalk = false;
             }));
             cheatLayout.addView(walkonice);
 
-var frictme = new Button(MainActivity);
+var frictme = new styleButton();
 frictme.setText("Only friction");
 frictme.setTextColor(Color.RED);
 if(onfriction==true)frictme.setTextColor(Color.GREEN);
@@ -4378,7 +4372,7 @@ onfriction = false;
             }));
             cheatLayout.addView(frictme);
 
-var stap1 = new Button(MainActivity);
+var stap1 = new styleButton();
             stap1.setText("Send to all");        
             stap1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){ 
@@ -4389,7 +4383,7 @@ cheat.dismiss();
             }));
             cheatLayout.addView(stap1);
  
-var exit2 = new Button(MainActivity);
+var exit2 = new styleButton();
 		exit2.setText("Exit");
 		exit2.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -4414,16 +4408,9 @@ cheatLayout1.setPadding(20,0,20,0);
     }}));
 }
             
-var mods = new Button(MainActivity);
+var mods = new styleButton();
 mods.setText("Single player mods");
 if(getLanguage=="ko_KR")mods.setText("오프라인 모드");
-mods.setTextColor(GUIText);
-var buttonBg = new android.graphics.drawable.GradientDrawable();
-if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000")); if(defaultbtnc==false)buttonBg.setColor(GUIBtns);
-buttonBg.setStroke(4, GUIStroke);
-buttonBg.setCornerRadius(10);
-mods.setBackgroundDrawable(buttonBg);
-if(mcpetheme==true)mods.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 mods.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              mod_menu();
@@ -4443,7 +4430,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             modScroll.addView(modLayout);
             modLayout1.addView(modScroll);
             
-            var exit = new Button(MainActivity);
+            var exit = new styleButton();
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -4453,7 +4440,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		modLayout.addView(exit);
 		
-		var endHack = new Button(MainActivity);
+		var endHack = new styleButton();
 endHack.setText("End portal");
             endHack.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -4490,7 +4477,7 @@ endHack.setText("End portal");
             }));
             modLayout.addView(endHack);
 		
-		var portal = new Button(MainActivity);
+		var portal = new styleButton();
 portal.setText("Nether portal");
             portal.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -4499,7 +4486,7 @@ portal.setText("Nether portal");
             }));
             modLayout.addView(portal);
 		
-		var button13 = new Button(MainActivity);
+		var button13 = new styleButton();
 button13.setText("Sugar farm");
             button13.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -4520,7 +4507,7 @@ button13.setText("Sugar farm");
             }));
             modLayout.addView(button13);
             
-            var button14 = new Button(MainActivity);
+            var button14 = new styleButton();
 button14.setText("Wheat farm");
             button14.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -4537,7 +4524,7 @@ button14.setText("Wheat farm");
             }));
             modLayout.addView(button14);
 
-var df = new Button(MainActivity);
+var df = new styleButton();
       df.setText("Disable up/down fly: "+(nofly?"on":"off"));
 		df.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -4559,7 +4546,7 @@ nofly = false;
 		});
 		modLayout.addView(df);
 
-var es = new Button(MainActivity);
+var es = new styleButton();
             es.setText("Entity spawner");        
             es.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -4568,7 +4555,7 @@ var es = new Button(MainActivity);
             }));
             modLayout.addView(es);
 
-var rr = new Button(MainActivity);
+var rr = new styleButton();
 rr.setText("Night mode: "+(remode?"on":"off"));
 rr.setOnClickListener(new android.view.View.OnClickListener({
 onClick: function(viewarg){
@@ -4590,7 +4577,7 @@ remode = false
 }));
 modLayout.addView(rr);
 
-var cs = new Button(MainActivity);
+var cs = new styleButton();
       cs.setText("Sign Editor: "+(deadchat?"on":"off"));
 		cs.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -4610,7 +4597,7 @@ deadchat = false;
 		});
 		modLayout.addView(cs);
 
-var killme = new Button(MainActivity);
+var killme = new styleButton();
             killme.setText("Kill yourself");        
             killme.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){ 
@@ -4620,7 +4607,7 @@ Player.setHealth(0);
             }));
             modLayout.addView(killme);
 
-var hea = new Button(MainActivity);
+var hea = new styleButton();
       hea.setText("Heal hearts");
 		hea.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -4630,7 +4617,7 @@ var hea = new Button(MainActivity);
 		});
 		modLayout.addView(hea);
 
-var hun = new Button(MainActivity);
+var hun = new styleButton();
       hun.setText("Heal hunger");
 		hun.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -4640,7 +4627,7 @@ var hun = new Button(MainActivity);
 		});
 		modLayout.addView(hun);
 
-var mm = new Button(MainActivity);
+var mm = new styleButton();
       mm.setText("Anti health: "+(stackheart?"on":"off"));
 		mm.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){         stackheart?stackheart=false:stackheart=true;
@@ -4658,7 +4645,7 @@ stackheart = false;
 		});
 		modLayout.addView(mm);
 
-var mm2 = new Button(MainActivity);
+var mm2 = new styleButton();
 mm2.setText("Anti hunger: "+(infhun?"on":"off"));
 mm2.setOnClickListener(new android.view.View.OnClickListener({
 onClick: function(viewarg){
@@ -4675,7 +4662,7 @@ Player.setHunger(20);
             }));
             modLayout.addView(mm2);
 
-var zm = new Button(MainActivity);
+var zm = new styleButton();
       zm.setText("1 hit kill: "+(instakilled?"on":"off"));
 		zm.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){         instakilled?instakilled=false:instakilled=true;
@@ -4692,7 +4679,7 @@ instakilled = false;
 		});
 		modLayout.addView(zm);
 
-var zmm = new Button(MainActivity);
+var zmm = new styleButton();
       zmm.setText("Ride mobs: "+(saddle?"on":"off"));
 		zmm.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -4711,7 +4698,7 @@ saddle = false;
 		});
 		modLayout.addView(zmm);
 
-var f = new Button(MainActivity);
+var f = new styleButton();
             f.setText("Fly in survival: "+(fch?"on":"off"));
             f.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -4729,7 +4716,7 @@ Player.setCanFly(0);
             }));
             modLayout.addView(f);
 
-var g = new Button(MainActivity);
+var g = new styleButton();
             g.setText("Grief: "+(grief?"on":"off"));
             g.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -4746,7 +4733,7 @@ grief = false;
             }));
             modLayout.addView(g);
 
-var kl = new Button(MainActivity);
+var kl = new styleButton();
             kl.setText("KillAura: "+(killaura?"on":"off"));
             kl.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -4764,7 +4751,7 @@ killaura = false;
             }));
             modLayout.addView(kl);
 
-var kl2 = new Button(MainActivity);
+var kl2 = new styleButton();
             kl2.setText("FreezeAura: "+(killfaura?"on":"off"));
             kl2.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -4782,7 +4769,7 @@ killfaura = false;
             }));
             modLayout.addView(kl2);
 
-var attd = new Button(MainActivity);
+var attd = new styleButton();
             attd.setText("Set difficulty");        
             attd.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){ 
@@ -4793,7 +4780,7 @@ named();
             }));
             modLayout.addView(attd);
 
-var att = new Button(MainActivity);
+var att = new styleButton();
             att.setText("Set nametag");        
             att.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){ 
@@ -4804,7 +4791,7 @@ nameMe();
             }));
             modLayout.addView(att);
 
-var fp = new Button(MainActivity);
+var fp = new styleButton();
             fp.setText("Fire punch: "+(firepunch?"on":"off"));
             fp.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -4820,7 +4807,7 @@ clientMessage(client + "§7Falcon punch! off");
             }));
             modLayout.addView(fp);
 
-var sbr = new Button(MainActivity);
+var sbr = new styleButton();
             sbr.setText("Set block Resistance");        
             sbr.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){ 
@@ -4831,7 +4818,7 @@ block2();
             }));
             modLayout.addView(sbr);
 
-var saysome = new Button(MainActivity);
+var saysome = new styleButton();
             saysome.setText("BurnAura: "+(killdaura?"on":"off"));
             saysome.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -4849,7 +4836,7 @@ killdaura = false;
             }));
             modLayout.addView(saysome);
 
-var nh = new Button(MainActivity);
+var nh = new styleButton();
             nh.setText("Add more hearts");        
             nh.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){ 
@@ -4860,7 +4847,7 @@ newhealth();
             }));
             modLayout.addView(nh);
 
-var horse = new Button(MainActivity);
+var horse = new styleButton();
       horse.setText("Set mob health: "+(horsehealth?"on":"off"));
 		horse.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -4880,7 +4867,7 @@ horsehealth = false;
 		});
 		modLayout.addView(horse);
 
-var gage = new Button(MainActivity);
+var gage = new styleButton();
       gage.setText("Get mob age: "+(getage?"on":"off"));
 		gage.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -4900,7 +4887,7 @@ getage = false;
 		});
 		modLayout.addView(gage);
 		
-		var sage = new Button(MainActivity);
+		var sage = new styleButton();
       sage.setText("Set mob age: "+(setage?"on":"off"));
 		sage.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -4935,18 +4922,11 @@ modLayout1.setPadding(20,0,20,0);
     }}));
 }
 
-var effect = new Button(MainActivity);
+var effect = new styleButton();
 effect.setText("Effect menu");
 if(getLanguage=="it_IT")effect.setText("Menu effetti");
 if(getLanguage=="es_MX")effect.setText("Menu de efectos");
 if(getLanguage=="ko_KR")effect.setText("효과 메뉴");
-effect.setTextColor(GUIText);
-var buttonBg = new android.graphics.drawable.GradientDrawable();
-if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000")); if(defaultbtnc==false)buttonBg.setColor(GUIBtns);
-buttonBg.setStroke(4, GUIStroke);
-buttonBg.setCornerRadius(10);
-effect.setBackgroundDrawable(buttonBg);
-if(mcpetheme==true)effect.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 effect.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              effect_menu();
@@ -4966,7 +4946,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             effectScroll.addView(effectLayout);
             effectLayout1.addView(effectScroll);
             
-            var exit = new Button(MainActivity);
+            var exit = new styleButton();
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -4976,7 +4956,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		effectLayout.addView(exit);
 		
-		var mov = new Button(MainActivity);
+		var mov = new styleButton();
             mov.setText("Remove all effect");
             mov.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -4986,7 +4966,7 @@ Entity.removeAllEffects(getPlayerEnt());
             }));
             effectLayout.addView(mov);
 	
-	var rmeft = new Button(MainActivity);
+	var rmeft = new styleButton();
 rmeft.setText("Hit remove effects");
 rmeft.setTextColor(Color.RED);
 if(hitrmef==true)rmeft.setTextColor(Color.GREEN);
@@ -5010,7 +4990,7 @@ hitrmef = false;
             }));
             effectLayout.addView(rmeft);
 
-var e1 = new Button(MainActivity);
+var e1 = new styleButton();
             e1.setText("saturation");
             e1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -5028,7 +5008,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -5068,7 +5048,7 @@ function inn1() {
 Entity.addEffect(getPlayerEnt(), MobEffect.saturation, s*l, 0, false, true);
 }
             
-            var e2 = new Button(MainActivity);
+            var e2 = new styleButton();
             e2.setText("Absorption");
             e2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -5086,7 +5066,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -5126,7 +5106,7 @@ function inn2() {
 Entity.addEffect(getPlayerEnt(), MobEffect.absorption, s*l, 0, false, true);
 }
 
-var e3 = new Button(MainActivity);
+var e3 = new styleButton();
             e3.setText("Health boost");
             e3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -5144,7 +5124,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -5184,7 +5164,7 @@ function inn3() {
 Entity.addEffect(getPlayerEnt(), MobEffect.healthBoost, s*l, 0, false, true);
 }
 
-var e4 = new Button(MainActivity);
+var e4 = new styleButton();
             e4.setText("Wither");
             e4.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -5202,7 +5182,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -5242,7 +5222,7 @@ function inn4() {
 Entity.addEffect(getPlayerEnt(), MobEffect.wither, s*l, 0, false, true);
 }
             
-            var e5 = new Button(MainActivity);
+            var e5 = new styleButton();
             e5.setText("Poison");
             e5.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -5260,7 +5240,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -5300,7 +5280,7 @@ function inn5() {
 Entity.addEffect(getPlayerEnt(), MobEffect.poison, s*l, 0, false, true);
 }
 
-var e6 = new Button(MainActivity);
+var e6 = new styleButton();
             e6.setText("Weakness");
             e6.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -5318,7 +5298,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -5358,7 +5338,7 @@ function inn6() {
 Entity.addEffect(getPlayerEnt(), MobEffect.weakness, s*l, 0, false, true);
 }
 
-var e7 = new Button(MainActivity);
+var e7 = new styleButton();
             e7.setText("Hunger");
             e7.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -5376,7 +5356,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -5416,7 +5396,7 @@ function inn7() {
 Entity.addEffect(getPlayerEnt(), MobEffect.hunger, s*l, 0, false, true);
 }
 
-var e8 = new Button(MainActivity);
+var e8 = new styleButton();
             e8.setText("Night vision");
             e8.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -5434,7 +5414,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -5474,7 +5454,7 @@ function inn8() {
 Entity.addEffect(getPlayerEnt(), MobEffect.nightVision, s*l, 0, false, true);
 }
 
-var e9 = new Button(MainActivity);
+var e9 = new styleButton();
             e9.setText("Blindness");
             e9.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -5492,7 +5472,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -5532,7 +5512,7 @@ function inn9() {
 Entity.addEffect(getPlayerEnt(), MobEffect.blindness, s*l, 0, false, true);
 }
 
-var e10 = new Button(MainActivity);
+var e10 = new styleButton();
             e10.setText("Invisibility");
             e10.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -5550,7 +5530,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -5590,7 +5570,7 @@ function inn10() {
 Entity.addEffect(getPlayerEnt(), MobEffect.invisibility, s*l, 0, false, true);
 }
 
-var e11 = new Button(MainActivity);
+var e11 = new styleButton();
             e11.setText("Water breathing");
             e11.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -5608,7 +5588,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -5648,7 +5628,7 @@ function inn11() {
 Entity.addEffect(getPlayerEnt(), MobEffect.waterBreathing, s*l, 0, false, true);
 }
 
-var e12 = new Button(MainActivity);
+var e12 = new styleButton();
             e12.setText("Fire resistance");
             e12.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -5666,7 +5646,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -5706,7 +5686,7 @@ function inn12() {
 Entity.addEffect(getPlayerEnt(), MobEffect.fireResistance, s*l, 0, false, true);
 }
 
-var e13 = new Button(MainActivity);
+var e13 = new styleButton();
             e13.setText("Resistance");
             e13.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -5724,7 +5704,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -5764,7 +5744,7 @@ function inn13() {
 Entity.addEffect(getPlayerEnt(), MobEffect.damageResistance, s*l, 0, false, true);
 }
 
-var e14 = new Button(MainActivity);
+var e14 = new styleButton();
             e14.setText("Regeneration");
             e14.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -5782,7 +5762,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -5822,7 +5802,7 @@ function inn14() {
 Entity.addEffect(getPlayerEnt(), MobEffect.regeneration, s*l, 0, false, true);
 }
 
-var e15 = new Button(MainActivity);
+var e15 = new styleButton();
             e15.setText("Nausea");
             e15.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -5840,7 +5820,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -5880,7 +5860,7 @@ function inn15() {
 Entity.addEffect(getPlayerEnt(), MobEffect.confusion, s*l, 0, false, true);
 }
 
-var e16 = new Button(MainActivity);
+var e16 = new styleButton();
             e16.setText("Jump boost");
             e16.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -5898,7 +5878,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -5938,7 +5918,7 @@ function inn16() {
 Entity.addEffect(getPlayerEnt(), MobEffect.jump, s*l, 0, false, true);
 }
 
-var e17 = new Button(MainActivity);
+var e17 = new styleButton();
             e17.setText("harm");
             e17.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -5956,7 +5936,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -5996,7 +5976,7 @@ function inn17() {
 Entity.addEffect(getPlayerEnt(), MobEffect.harm, s*l, 0, false, true);
 }
 
-var e18 = new Button(MainActivity);
+var e18 = new styleButton();
             e18.setText("heal");
             e18.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -6014,7 +5994,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -6054,7 +6034,7 @@ function inn18() {
 Entity.addEffect(getPlayerEnt(), MobEffect.heal, s*l, 0, false, true);
 }
 
-var e19 = new Button(MainActivity);
+var e19 = new styleButton();
             e19.setText("Strength");
             e19.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -6072,7 +6052,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -6112,7 +6092,7 @@ function inn19() {
 Entity.addEffect(getPlayerEnt(), MobEffect.damageBoost, s*l, 0, false, true);
 }
 
-var e20 = new Button(MainActivity);
+var e20 = new styleButton();
             e20.setText("Mining fatigue");
             e20.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -6130,7 +6110,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -6170,7 +6150,7 @@ function inn20() {
 Entity.addEffect(getPlayerEnt(), MobEffect.digSlowdown, s*l, 0, false, true);
 }
 
-var e21 = new Button(MainActivity);
+var e21 = new styleButton();
             e21.setText("Haste");
             e21.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -6188,7 +6168,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -6228,7 +6208,7 @@ function inn21() {
 Entity.addEffect(getPlayerEnt(), MobEffect.digSpeed, s*l, 0, false, true);
 }
 
-var e22 = new Button(MainActivity);
+var e22 = new styleButton();
             e22.setText("Slowness");
             e22.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -6246,7 +6226,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -6286,7 +6266,7 @@ function inn22() {
 Entity.addEffect(getPlayerEnt(), MobEffect.movementSlowdown, s*l, 0, false, true);
 }
 
-var e23 = new Button(MainActivity);
+var e23 = new styleButton();
             e23.setText("Speed boost");
             e23.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -6304,7 +6284,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -6359,19 +6339,12 @@ effectLayout1.setPadding(20,0,20,0);
     }}));
 }
 		
-var enchant = new Button(MainActivity);
+var enchant = new styleButton();
 enchant.setText("Enchant menu");
 if(getLanguage=="it_IT")enchant.setText("Menu incantamenti");
 if(getLanguage=="es_MX")enchant.setText("Menu de experiencia");
 if(getLanguage=="ko_KR")enchant.setText("마법 부여 메뉴");
-enchant.setTextColor(GUIText);
-var buttonBg = new android.graphics.drawable.GradientDrawable();
-if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000")); if(defaultbtnc==false)buttonBg.setColor(GUIBtns);
-buttonBg.setStroke(4, GUIStroke);
-buttonBg.setCornerRadius(10);
-enchant.setBackgroundDrawable(buttonBg);
 if(getLanguage=="de_DE")enchant.setText("Verzauberungs menu");
-if(mcpetheme==true)enchant.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 enchant.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              enchant_menu();
@@ -6391,7 +6364,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             enchantScroll.addView(enchantLayout);
             enchantLayout1.addView(enchantScroll);
             
-            var exit = new Button(MainActivity);
+            var exit = new styleButton();
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -6401,7 +6374,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		enchantLayout.addView(exit);
 		
-		var button = new Button(MainActivity);
+		var button = new styleButton();
             button.setText("Add experience");
             button.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -6411,7 +6384,7 @@ enchant.dismiss();
             }));
             enchantLayout.addView(button);
 
-var god1 = new Button(MainActivity);
+var god1 = new styleButton();
             god1.setText("God sword");
             god1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -6431,7 +6404,7 @@ Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,tysplvl);
 		    Player.setItemCustomName(Player.getSelectedSlotId(), "God sword");
             }
             
-        var god2 = new Button(MainActivity);
+        var god2 = new styleButton();
             god2.setText("God pickaxe");
             god2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -6450,7 +6423,7 @@ Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,tysplvl);
 		    Player.setItemCustomName(Player.getSelectedSlotId(), "God pickaxe");
             }
 			
-var god3 = new Button(MainActivity);
+var god3 = new styleButton();
             god3.setText("God armor");
             god3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -6468,7 +6441,7 @@ Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,tysplvl);
 		    Player.setItemCustomName(Player.getSelectedSlotId(), "God armor");
             }
 
-var ena = new Button(MainActivity);
+var ena = new styleButton();
             ena.setText("Aqua Affinity");
             ena.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -6485,7 +6458,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -6521,7 +6494,7 @@ function add1() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.AQUA_AFFINITY,ll);
 }
 
-var enb = new Button(MainActivity);
+var enb = new styleButton();
             enb.setText("Bane Of Athropods");
             enb.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -6538,7 +6511,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -6574,7 +6547,7 @@ function add2() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.BANE_OF_ARTHROPODS,ll);
 }
 
-var enc = new Button(MainActivity);
+var enc = new styleButton();
             enc.setText("Blast Protection");
             enc.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -6591,7 +6564,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -6627,7 +6600,7 @@ function add3() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.BLAST_PROTECTION,ll);
 }
 
-var enf = new Button(MainActivity);
+var enf = new styleButton();
             enf.setText("Depth Strider");
             enf.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -6644,7 +6617,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -6680,7 +6653,7 @@ function add5() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.DEPTH_STRIDER,ll);
 }
 
-var ene = new Button(MainActivity);
+var ene = new styleButton();
             ene.setText("Efficiency");
             ene.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -6697,7 +6670,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -6733,7 +6706,7 @@ function add6() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.EFFICIENCY,ll);
 }
 
-var eng = new Button(MainActivity);
+var eng = new styleButton();
             eng.setText("Feather Falling");
             eng.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -6750,7 +6723,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -6786,7 +6759,7 @@ function add7() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.FEATHER_FALLING,ll);
 }
 
-var enh = new Button(MainActivity);
+var enh = new styleButton();
             enh.setText("Fire Aspect");
             enh.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -6803,7 +6776,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -6839,7 +6812,7 @@ function add8() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.FIRE_ASPECT,ll);
 }
 
-var eni = new Button(MainActivity);
+var eni = new styleButton();
             eni.setText("Fire Protection");
             eni.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -6856,7 +6829,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -6892,7 +6865,7 @@ function add9() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.FIRE_PROTECTION,ll);
 }
 
-var enj = new Button(MainActivity);
+var enj = new styleButton();
             enj.setText("Flame");
             enj.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -6909,7 +6882,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -6945,7 +6918,7 @@ function add10() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.FLAME,ll);
 }
 
-var enk = new Button(MainActivity);
+var enk = new styleButton();
             enk.setText("Fortune");
             enk.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -6962,7 +6935,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -6998,7 +6971,7 @@ function add11() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.FORTUNE,ll);
 }
 
-var enl = new Button(MainActivity);
+var enl = new styleButton();
             enl.setText("Infinity");
             enl.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -7015,7 +6988,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -7051,7 +7024,7 @@ function add12() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.INFINITY,ll);
 }
 
-var enm = new Button(MainActivity);
+var enm = new styleButton();
             enm.setText("Knockback");
             enm.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -7068,7 +7041,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -7104,7 +7077,7 @@ function add13() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.KNOCKBACK,ll);
 }
 
-var enn = new Button(MainActivity);
+var enn = new styleButton();
             enn.setText("Looting");
             enn.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -7121,7 +7094,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -7157,7 +7130,7 @@ function add14() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.LOOTING,ll);
 }
 
-var eno = new Button(MainActivity);
+var eno = new styleButton();
             eno.setText("Luck of the sea");
             eno.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -7174,7 +7147,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -7210,7 +7183,7 @@ function add15() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.LUCK_OF_THE_SEA,ll);
 }
 
-var enp = new Button(MainActivity);
+var enp = new styleButton();
             enp.setText("Lure");
             enp.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -7227,7 +7200,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -7263,7 +7236,7 @@ function add16() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.LURE,ll);
 }
 
-var enq = new Button(MainActivity);
+var enq = new styleButton();
             enq.setText("Power");
             enq.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -7280,7 +7253,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -7316,7 +7289,7 @@ function add17() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.POWER,ll);
 }
 
-var enr = new Button(MainActivity);
+var enr = new styleButton();
             enr.setText("Projectile protection");
             enr.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -7333,7 +7306,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -7369,7 +7342,7 @@ function add18() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.PROJECTILE_PROTECTION,ll);
 }
 
-var ens = new Button(MainActivity);
+var ens = new styleButton();
             ens.setText("Protection");
             ens.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -7386,7 +7359,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -7422,7 +7395,7 @@ function add19() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.PROTECTION,ll);
 }
 
-var ent = new Button(MainActivity);
+var ent = new styleButton();
             ent.setText("Punch");
             ent.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -7439,7 +7412,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -7475,7 +7448,7 @@ function add20() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.PUNCH,ll);
 }
 
-var enu = new Button(MainActivity);
+var enu = new styleButton();
             enu.setText("Respiration");
             enu.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -7492,7 +7465,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -7528,7 +7501,7 @@ function add21() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.RESPIRATION,ll);
 }
 
-var env = new Button(MainActivity);
+var env = new styleButton();
             env.setText("Sharpness");
             env.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -7545,7 +7518,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -7581,7 +7554,7 @@ function add22() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.SHARPNESS,ll);
 }
 
-var enw = new Button(MainActivity);
+var enw = new styleButton();
             enw.setText("Silk touch");
             enw.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -7598,7 +7571,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -7634,7 +7607,7 @@ function add23() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.SILK_TOUCH,ll);
 }
 
-var enx = new Button(MainActivity);
+var enx = new styleButton();
             enx.setText("Smite");
             enx.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -7651,7 +7624,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -7687,7 +7660,7 @@ function add24() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.SMITE,ll);
 }
 
-var eny = new Button(MainActivity);
+var eny = new styleButton();
             eny.setText("Thorns");
             eny.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -7704,7 +7677,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -7740,7 +7713,7 @@ function add25() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.THORNS,ll);
 }
 
-var enz = new Button(MainActivity);
+var enz = new styleButton();
             enz.setText("Unbreaking");
             enz.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -7757,7 +7730,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -7834,19 +7807,12 @@ enchantLayout1.setPadding(20,0,20,0);
     }}));
 }
 		
-var give = new Button(MainActivity);
+var give = new styleButton();
 give.setText("Give menu");
 if(getLanguage=="it_IT")give.setText("Menu give");
 if(getLanguage=="es_MX")give.setText("Menu de dar");
 if(getLanguage=="ko_KR")give.setText("아이템 주기 메뉴");
-give.setTextColor(GUIText);
-var buttonBg = new android.graphics.drawable.GradientDrawable();
-if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000")); if(defaultbtnc==false)buttonBg.setColor(GUIBtns);
-buttonBg.setStroke(4, GUIStroke);
-buttonBg.setCornerRadius(10);
-give.setBackgroundDrawable(buttonBg);
 if(getLanguage=="de_DE")give.setText("Geben menu");
-if(mcpetheme==true)give.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 give.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              give_menu();
@@ -7866,7 +7832,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             giveScroll.addView(giveLayout);
             giveLayout1.addView(giveScroll);
             
-            var exit = new Button(MainActivity);
+            var exit = new styleButton();
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -7876,7 +7842,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		giveLayout.addView(exit);
 		
-		var button = new Button(MainActivity);
+		var button = new styleButton();
             button.setText("Custom Give");
             button.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7886,7 +7852,7 @@ give.dismiss();
             }));
             giveLayout.addView(button);
 
-var button90 = new Button(MainActivity);
+var button90 = new styleButton();
             button90.setText("Item ID list");
             button90.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7909,7 +7875,7 @@ function idList()
       }}));
       }
 
-var butto = new Button(MainActivity);
+var butto = new styleButton();
             butto.setText("Special creative inventory");
             butto.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7922,7 +7888,7 @@ if(j==900)clientMessage(client + "§7Done, all items added.");
             }));
             giveLayout.addView(butto);
 
-var clear = new Button(MainActivity);
+var clear = new styleButton();
             clear.setText("Clear inventory");        
             clear.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){ 
@@ -7934,7 +7900,7 @@ for(var k = 0; k < 50; k++){
             }));
             giveLayout.addView(clear);
 
-var k1 = new Button(MainActivity);
+var k1 = new styleButton();
             k1.setText("Leather kit");
             k1.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7952,7 +7918,7 @@ addItemInventory(290, 1, 0);
             }));
             giveLayout.addView(k1);
 
-var k2 = new Button(MainActivity);
+var k2 = new styleButton();
             k2.setText("Chain kit");
             k2.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7970,7 +7936,7 @@ addItemInventory(291, 1, 0);
             }));
             giveLayout.addView(k2);
 
-var k3 = new Button(MainActivity);
+var k3 = new styleButton();
             k3.setText("Iron kit");
             k3.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -7988,7 +7954,7 @@ addItemInventory(292, 1, 0);
             }));
             giveLayout.addView(k3);
 
-var k4 = new Button(MainActivity);
+var k4 = new styleButton();
             k4.setText("Gold kit");
             k4.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8006,7 +7972,7 @@ addItemInventory(294, 1, 0);
             }));
             giveLayout.addView(k4);
 
-var k5 = new Button(MainActivity);
+var k5 = new styleButton();
             k5.setText("Diamond kit");
             k5.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8039,19 +8005,12 @@ giveLayout1.setPadding(20,0,20,0);
     }}));
 }
 		
-var morph = new Button(MainActivity);
+var morph = new styleButton();
 morph.setText("Morph menu");
 if(getLanguage=="it_IT")morph.setText("Menu trasformazioni");
 if(getLanguage=="es_MX")morph.setText("Menu de morph");
 if(getLanguage=="ko_KR")morph.setText("변신 메뉴");
-morph.setTextColor(GUIText);
-var buttonBg = new android.graphics.drawable.GradientDrawable();
-if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000")); if(defaultbtnc==false)buttonBg.setColor(GUIBtns);
-buttonBg.setStroke(4, GUIStroke);
-buttonBg.setCornerRadius(10);
-morph.setBackgroundDrawable(buttonBg);
 if(getLanguage=="de_DE")morph.setText("Verwandelungs menu");
-if(mcpetheme==true)morph.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 morph.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              morph_menu();
@@ -8071,7 +8030,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             morphScroll.addView(morphLayout);
             morphLayout1.addView(morphScroll);
             
-            var exit = new Button(MainActivity);
+            var exit = new styleButton();
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -8081,7 +8040,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		morphLayout.addView(exit);
 		
-		var mne = new Button(MainActivity);
+		var mne = new styleButton();
 mne.setText("Morph enhance");
 mne.setTextColor(Color.RED);
 if(morphEnhance==true)mne.setTextColor(Color.GREEN);
@@ -8105,7 +8064,7 @@ morphEnhance = false;
             }));
             morphLayout.addView(mne);
 	
-	var morphit = new Button(MainActivity);
+	var morphit = new styleButton();
 morphit.setText("Hit'n'morph");
 morphit.setTextColor(Color.RED);
 if(hitmorph==true)morphit.setTextColor(Color.GREEN);
@@ -8129,7 +8088,7 @@ hitmorph = false;
             }));
             morphLayout.addView(morphit);
 		
-		var mm1 = new Button(MainActivity);
+		var mm1 = new styleButton();
             mm1.setText("Player");
             mm1.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8142,7 +8101,7 @@ Entity.setRenderType(Player.getEntity(), 27);
             }));
             morphLayout.addView(mm1);
 
-var mm = new Button(MainActivity);
+var mm = new styleButton();
             mm.setText("Bat");
             mm.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8155,7 +8114,7 @@ Entity.setRenderType(Player.getEntity(), 10);
             }));
             morphLayout.addView(mm);
 
-var mm0 = new Button(MainActivity);
+var mm0 = new styleButton();
             mm0.setText("Blaze");
             mm0.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8169,7 +8128,7 @@ Entity.setRenderType(Player.getEntity(), 20);
             }));
             morphLayout.addView(mm0);
 
-var mm2 = new Button(MainActivity);
+var mm2 = new styleButton();
             mm2.setText("Chicken");
             mm2.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8182,7 +8141,7 @@ Entity.setRenderType(Player.getEntity(), 5);
             }));
             morphLayout.addView(mm2);
 
-var mm3 = new Button(MainActivity);
+var mm3 = new styleButton();
             mm3.setText("Cow");
             mm3.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8195,7 +8154,7 @@ Entity.setRenderType(Player.getEntity(), 6);
             }));
             morphLayout.addView(mm3);
 
-var mm4 = new Button(MainActivity);
+var mm4 = new styleButton();
             mm4.setText("Creeper");
             mm4.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8208,7 +8167,7 @@ Entity.setRenderType(Player.getEntity(), 24);
             }));
             morphLayout.addView(mm4);
 	
-	var mn4 = new Button(MainActivity);
+	var mn4 = new styleButton();
             mn4.setText("Ender dragon");
             mn4.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8217,7 +8176,7 @@ Entity.setRenderType(Player.getEntity(), 12);
             }));
             morphLayout.addView(mn4);
 
-var mm5 = new Button(MainActivity);
+var mm5 = new styleButton();
             mm5.setText("Enderman");
             mm5.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8230,7 +8189,7 @@ Entity.setRenderType(Player.getEntity(), 26);
             }));
             morphLayout.addView(mm5);
 	
-	var mn1 = new Button(MainActivity);
+	var mn1 = new styleButton();
             mn1.setText("Endermite");
             mn1.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8239,7 +8198,7 @@ Entity.setRenderType(Player.getEntity(), 71);
             }));
             morphLayout.addView(mn1);
 
-var mm6 = new Button(MainActivity);
+var mm6 = new styleButton();
             mm6.setText("Ghast");
             mm6.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8253,7 +8212,7 @@ Entity.setRenderType(Player.getEntity(), 19);
             }));
             morphLayout.addView(mm6);
             
-        var mmH = new Button(MainActivity);
+        var mmH = new styleButton();
             mmH.setText("Horse");
             mmH.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8266,7 +8225,7 @@ Entity.setRenderType(Player.getEntity(), 54);
             }));
             morphLayout.addView(mmH);
             
-        var mmH2 = new Button(MainActivity);
+        var mmH2 = new styleButton();
             mmH2.setText("Husk");
             mmH2.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8280,7 +8239,7 @@ if(morphEnhance==true){
             }));
             morphLayout.addView(mmH2);
 
-var mm7 = new Button(MainActivity);
+var mm7 = new styleButton();
             mm7.setText("Iron golem");
             mm7.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8293,7 +8252,7 @@ Entity.setRenderType(Player.getEntity(), 47);
             }));
             morphLayout.addView(mm7);
 
-var mm8 = new Button(MainActivity);
+var mm8 = new styleButton();
             mm8.setText("Magma cube");
             mm8.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8308,7 +8267,7 @@ Entity.setRenderType(Player.getEntity(), 18);
             }));
             morphLayout.addView(mm8);
 
-var mm9 = new Button(MainActivity);
+var mm9 = new styleButton();
             mm9.setText("Ocelot");
             mm9.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8322,7 +8281,7 @@ Entity.setRenderType(Player.getEntity(), 48);
             }));
             morphLayout.addView(mm9);
 
-var mm10 = new Button(MainActivity);
+var mm10 = new styleButton();
             mm10.setText("Pig");
             mm10.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8335,7 +8294,7 @@ Entity.setRenderType(Player.getEntity(), 8);
             }));
             morphLayout.addView(mm10);
 	
-	var mn2 = new Button(MainActivity);
+	var mn2 = new styleButton();
             mn2.setText("Polar bear");
             mn2.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8344,7 +8303,7 @@ Entity.setRenderType(Player.getEntity(), 13);
             }));
             morphLayout.addView(mn2);
             
-            var mmR = new Button(MainActivity);
+            var mmR = new styleButton();
             mmR.setText("Rabbit");
             mmR.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8357,7 +8316,7 @@ Entity.setRenderType(Player.getEntity(), 52);
             }));
             morphLayout.addView(mmR);
 
-var mm11 = new Button(MainActivity);
+var mm11 = new styleButton();
             mm11.setText("Sheep");
             mm11.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8370,7 +8329,7 @@ Entity.setRenderType(Player.getEntity(), 9);
             }));
             morphLayout.addView(mm11);
 	
-	var mn3 = new Button(MainActivity);
+	var mn3 = new styleButton();
             mn3.setText("Shulker");
             mn3.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8379,7 +8338,7 @@ Entity.setRenderType(Player.getEntity(), 50);
             }));
             morphLayout.addView(mn3);
 
-var mm12 = new Button(MainActivity);
+var mm12 = new styleButton();
             mm12.setText("Silverfish");
             mm12.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8393,7 +8352,7 @@ Entity.setRenderType(Player.getEntity(), 23);
             }));
             morphLayout.addView(mm12);
 
-var mm13 = new Button(MainActivity);
+var mm13 = new styleButton();
             mm13.setText("Skeleton");
             mm13.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8408,7 +8367,7 @@ Entity.setRenderType(Player.getEntity(), 21);
             }));
             morphLayout.addView(mm13);
 
-var mm14 = new Button(MainActivity);
+var mm14 = new styleButton();
             mm14.setText("Slime");
             mm14.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8422,7 +8381,7 @@ Entity.setRenderType(Player.getEntity(), 25);
             }));
             morphLayout.addView(mm14);
 
-var mm15 = new Button(MainActivity);
+var mm15 = new styleButton();
             mm15.setText("Snow golem");
             mm15.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8435,7 +8394,7 @@ Entity.setRenderType(Player.getEntity(), 49);
             }));
             morphLayout.addView(mm15);
             
-        var mmS = new Button(MainActivity);
+        var mmS = new styleButton();
             mmS.setText("Stray");
             mmS.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8449,7 +8408,7 @@ Entity.setRenderType(Player.getEntity(), 67);
             }));
             morphLayout.addView(mmS);
 
-var mm16 = new Button(MainActivity);
+var mm16 = new styleButton();
             mm16.setText("Spider");
             mm16.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8462,7 +8421,7 @@ Entity.setRenderType(Player.getEntity(), 22);
             }));
             morphLayout.addView(mm16);
 
-var mm17 = new Button(MainActivity);
+var mm17 = new styleButton();
             mm17.setText("Squid");
             mm17.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8476,7 +8435,7 @@ Entity.setRenderType(Player.getEntity(), 40);
             }));
             morphLayout.addView(mm17);
 
-var mm18 = new Button(MainActivity);
+var mm18 = new styleButton();
             mm18.setText("Villager");
             mm18.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8489,7 +8448,7 @@ Entity.setRenderType(Player.getEntity(), 14);
             }));
             morphLayout.addView(mm18);
 
-var mm19 = new Button(MainActivity);
+var mm19 = new styleButton();
             mm19.setText("Villager zombie");
             mm19.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8504,7 +8463,7 @@ Entity.setRenderType(Player.getEntity(), 44);
             }));
             morphLayout.addView(mm19);
             
-        var mmW = new Button(MainActivity);
+        var mmW = new styleButton();
             mmW.setText("Witch");
             mmW.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8514,7 +8473,7 @@ Entity.setRenderType(Player.getEntity(), 53);
             }));
             morphLayout.addView(mmW);
 
-var mm20 = new Button(MainActivity);
+var mm20 = new styleButton();
             mm20.setText("Wolf");
             mm20.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8527,7 +8486,7 @@ Entity.setRenderType(Player.getEntity(), 11);
             }));
             morphLayout.addView(mm20);
 	
-	var mn5 = new Button(MainActivity);
+	var mn5 = new styleButton();
             mn5.setText("Wither");
             mn5.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8536,7 +8495,7 @@ Entity.setRenderType(Player.getEntity(), 63);
             }));
             morphLayout.addView(mn5);
             
-        var mmW2 = new Button(MainActivity);
+        var mmW2 = new styleButton();
             mmW2.setText("Wither skeleton");
             mmW2.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8551,7 +8510,7 @@ Entity.setRenderType(Player.getEntity(), 68);
             }));
             morphLayout.addView(mmW2);
 
-var mm21 = new Button(MainActivity);
+var mm21 = new styleButton();
             mm21.setText("Zombie");
             mm21.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8566,7 +8525,7 @@ Entity.setRenderType(Player.getEntity(), 16);
             }));
             morphLayout.addView(mm21);
 
-var mm22 = new Button(MainActivity);
+var mm22 = new styleButton();
             mm22.setText("Zombie pigman");
             mm22.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8595,19 +8554,12 @@ morphLayout1.setPadding(20,0,20,0);
     }}));
 }
 		
-var nuke = new Button(MainActivity);
+var nuke = new styleButton();
 nuke.setText("Nuke menu");
 if(getLanguage=="it_IT")nuke.setText("Menu esplosioni");
 if(getLanguage=="es_MX")nuke.setText("Menu de bomba nuclear");
 if(getLanguage=="ko_KR")nuke.setText("핵폭탄 메뉴");
-nuke.setTextColor(GUIText);
-var buttonBg = new android.graphics.drawable.GradientDrawable();
-if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000")); if(defaultbtnc==false)buttonBg.setColor(GUIBtns);
-buttonBg.setStroke(4, GUIStroke);
-buttonBg.setCornerRadius(10);
-nuke.setBackgroundDrawable(buttonBg);
 if(getLanguage=="de_DE")nuke.setText("Vernichtungs menu");
-if(mcpetheme==true)nuke.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 nuke.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              nuke_menu();
@@ -8627,7 +8579,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             nukeScroll.addView(nukeLayout);
             nukeLayout1.addView(nukeScroll);
             
-            var exit = new Button(MainActivity);
+            var exit = new styleButton();
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -8637,7 +8589,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		nukeLayout.addView(exit);
 		
-            var tn = new Button(MainActivity);
+            var tn = new styleButton();
             tn.setText("Tap nuke: "+(tapnuke?"on":"off"));
             tn.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8653,7 +8605,7 @@ clientMessage(client + "§7Tap nuke is off");
             }));
             nukeLayout.addView(tn);
             
-            var an = new Button(MainActivity);
+            var an = new styleButton();
             an.setText("Auto nuke: "+(autonuke?"on":"off"));
             an.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8669,7 +8621,7 @@ clientMessage(client + "§7Auto nuke is off");
             }));
             nukeLayout.addView(an);
 		
-		var n1 = new Button(MainActivity);
+		var n1 = new styleButton();
             n1.setText("Nuke 1%");  
             n1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8678,7 +8630,7 @@ clientMessage(client + "§7Auto nuke is off");
             }));
             nukeLayout.addView(n1);
 
-     var n2 = new Button(MainActivity);
+     var n2 = new styleButton();
             n2.setText("Nuke 5%");
             n2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8687,7 +8639,7 @@ clientMessage(client + "§7Auto nuke is off");
             }));
             nukeLayout.addView(n2);
 
-var n3 = new Button(MainActivity);
+var n3 = new styleButton();
             n3.setText("Nuke 10%");
             n3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8696,7 +8648,7 @@ var n3 = new Button(MainActivity);
             }));
             nukeLayout.addView(n3);
 
-var n4 = new Button(MainActivity);
+var n4 = new styleButton();
             n4.setText("Nuke 15%");
             n4.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8705,7 +8657,7 @@ var n4 = new Button(MainActivity);
             }));
             nukeLayout.addView(n4);
 
-var n5 = new Button(MainActivity);
+var n5 = new styleButton();
             n5.setText("Nuke 20%");
             n5.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8714,7 +8666,7 @@ var n5 = new Button(MainActivity);
             }));
             nukeLayout.addView(n5);
 
-var n6 = new Button(MainActivity);
+var n6 = new styleButton();
             n6.setText("Nuke 25%");
             n6.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8723,7 +8675,7 @@ var n6 = new Button(MainActivity);
             }));
             nukeLayout.addView(n6);
 
-var n7 = new Button(MainActivity);
+var n7 = new styleButton();
             n7.setText("Nuke 30%");
             n7.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8732,7 +8684,7 @@ var n7 = new Button(MainActivity);
             }));
             nukeLayout.addView(n7);
 
-var n8 = new Button(MainActivity);
+var n8 = new styleButton();
             n8.setText("Nuke 35%");
             n8.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8741,7 +8693,7 @@ var n8 = new Button(MainActivity);
             }));
             nukeLayout.addView(n8);
 
-var n9 = new Button(MainActivity);
+var n9 = new styleButton();
             n9.setText("Nuke 40%");
             n9.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8750,7 +8702,7 @@ var n9 = new Button(MainActivity);
             }));
             nukeLayout.addView(n9);
 
-var n10 = new Button(MainActivity);
+var n10 = new styleButton();
             n10.setText("Nuke 45%");
             n10.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8759,7 +8711,7 @@ var n10 = new Button(MainActivity);
             }));
             nukeLayout.addView(n10);
 
-var n11 = new Button(MainActivity);
+var n11 = new styleButton();
             n11.setText("Nuke 50%");
             n11.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8768,7 +8720,7 @@ var n11 = new Button(MainActivity);
             }));
             nukeLayout.addView(n11);
 	
-	var cn = new Button(MainActivity);
+	var cn = new styleButton();
             cn.setText("Custom nuke");
             cn.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -8793,19 +8745,12 @@ nukeLayout1.setPadding(20,0,20,0);
     }}));
 }
 		
-var particle = new Button(MainActivity);
+var particle = new styleButton();
 particle.setText("Particle menu");
 if(getLanguage=="it_IT")particle.setText("Menu particelle");
 if(getLanguage=="es_MX")particle.setText("Menu de partícula");
 if(getLanguage=="ko_KR")particle.setText("파티클 메뉴");
-particle.setTextColor(GUIText);
-var buttonBg = new android.graphics.drawable.GradientDrawable();
-if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000")); if(defaultbtnc==false)buttonBg.setColor(GUIBtns);
-buttonBg.setStroke(4, GUIStroke);
-buttonBg.setCornerRadius(10);
-particle.setBackgroundDrawable(buttonBg);
 if(getLanguage=="de_DE")particle.setText("Partikel menu");
-if(mcpetheme==true)particle.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 particle.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              particle_menu();
@@ -8825,7 +8770,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             particleScroll.addView(particleLayout);
             particleLayout1.addView(particleScroll);
             
-            var exit = new Button(MainActivity);
+            var exit = new styleButton();
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -8835,7 +8780,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		particleLayout.addView(exit);
 	
-	var hitpart = new Button(MainActivity);
+	var hitpart = new styleButton();
 hitpart.setText("Hit particles");
 hitpart.setTextColor(Color.RED);
 if(hitparticles==true)hitpart.setTextColor(Color.GREEN);
@@ -8859,7 +8804,7 @@ hitparticles = false;
             }));
             particleLayout.addView(hitpart);
 	
-	var parti2l = new Button(MainActivity);
+	var parti2l = new styleButton();
 parti2l.setText("Tap particles");
 parti2l.setTextColor(Color.RED);
 if(tapParti==true)parti2l.setTextColor(Color.GREEN);
@@ -8883,7 +8828,7 @@ tapParti = false;
             }));
             particleLayout.addView(parti2l);
 		
-var p1 = new Button(MainActivity);
+var p1 = new styleButton();
             p1.setText("Angry villager: "+(particle1?"on":"off"));
             p1.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8899,7 +8844,7 @@ clientMessage(client + "§7Particle 1 is false");
             }));
             particleLayout.addView(p1);
 
-var p2 = new Button(MainActivity);
+var p2 = new styleButton();
             p2.setText("bubble: "+(particle2?"on":"off"));
             p2.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8915,7 +8860,7 @@ clientMessage(client + "§7Particle 2 is false");
             }));
             particleLayout.addView(p2);
 
-var p3 = new Button(MainActivity);
+var p3 = new styleButton();
             p3.setText("cloud: "+(particle3?"on":"off"));
             p3.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8931,7 +8876,7 @@ clientMessage(client + "§7Particle 3 is false");
             }));
             particleLayout.addView(p3);
 
-var p4 = new Button(MainActivity);
+var p4 = new styleButton();
             p4.setText("crit: "+(particle4?"on":"off"));
             p4.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8947,7 +8892,7 @@ clientMessage(client + "§7Particle 4 is false");
             }));
             particleLayout.addView(p4);
 
-var p5 = new Button(MainActivity);
+var p5 = new styleButton();
             p5.setText("drip lava: "+(particle5?"on":"off"));
             p5.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8963,7 +8908,7 @@ clientMessage(client + "§7Particle 5 is false");
             }));
             particleLayout.addView(p5);
 
-var p6 = new Button(MainActivity);
+var p6 = new styleButton();
             p6.setText("drip water: "+(particle6?"on":"off"));
             p6.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8979,7 +8924,7 @@ clientMessage(client + "§7Particle 6 is false");
             }));
             particleLayout.addView(p6);
 
-var p7 = new Button(MainActivity);
+var p7 = new styleButton();
             p7.setText("enchanting table: "+(particle7?"on":"off"));
             p7.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -8995,7 +8940,7 @@ clientMessage(client + "§7Particle 7 is false");
             }));
             particleLayout.addView(p7);
 
-var p8 = new Button(MainActivity);
+var p8 = new styleButton();
             p8.setText("falling dust: "+(particle8?"on":"off"));
             p8.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9011,7 +8956,7 @@ clientMessage(client + "§7Particle 8 is false");
             }));
             particleLayout.addView(p8);
 
-var p9 = new Button(MainActivity);
+var p9 = new styleButton();
             p9.setText("flame: "+(particle9?"on":"off"));
             p9.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9027,7 +8972,7 @@ clientMessage(client + "§7Particle 9 is false");
             }));
             particleLayout.addView(p9);
 
-var p10 = new Button(MainActivity);
+var p10 = new styleButton();
             p10.setText("Happy villager: "+(particle10?"on":"off"));
             p10.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9043,7 +8988,7 @@ clientMessage(client + "§7Particle 10 is false");
             }));
             particleLayout.addView(p10);
 
-var p11 = new Button(MainActivity);
+var p11 = new styleButton();
             p11.setText("heart: "+(particle11?"on":"off"));
             p11.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9059,7 +9004,7 @@ clientMessage(client + "§7Particle 11 is false");
             }));
             particleLayout.addView(p11);
 
-var p12 = new Button(MainActivity);
+var p12 = new styleButton();
             p12.setText("Huge explosion: "+(particle12?"on":"off"));
             p12.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9075,7 +9020,7 @@ clientMessage(client + "§7Particle 12 is false");
             }));
             particleLayout.addView(p12);
 
-var p13 = new Button(MainActivity);
+var p13 = new styleButton();
             p13.setText("Explosion seed: "+(particle13?"on":"off"));
             p13.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9091,7 +9036,7 @@ clientMessage(client + "§7Particle 13 is false");
             }));
             particleLayout.addView(p13);
 
-var p14 = new Button(MainActivity);
+var p14 = new styleButton();
             p14.setText("ink: "+(particle14?"on":"off"));
             p14.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9107,7 +9052,7 @@ clientMessage(client + "§7Particle 14 is false");
             }));
             particleLayout.addView(p14);
 
-var p15 = new Button(MainActivity);
+var p15 = new styleButton();
             p15.setText("Item break: "+(particle15?"on":"off"));
             p15.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9123,7 +9068,7 @@ clientMessage(client + "§7Particle 15 is false");
             }));
             particleLayout.addView(p15);
 
-var p16 = new Button(MainActivity);
+var p16 = new styleButton();
             p16.setText("Lava: "+(particle16?"on":"off"));
             p16.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9139,7 +9084,7 @@ clientMessage(client + "§7Particle 16 is false");
             }));
             particleLayout.addView(p16);
 
-var p17 = new Button(MainActivity);
+var p17 = new styleButton();
             p17.setText("Mob flame: "+(particle17?"on":"off"));
             p17.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9155,7 +9100,7 @@ clientMessage(client + "§7Particle 17 is false");
             }));
             particleLayout.addView(p17);
 
-var p18 = new Button(MainActivity);
+var p18 = new styleButton();
             p18.setText("Note: "+(particle18?"on":"off"));
             p18.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9171,7 +9116,7 @@ clientMessage(client + "§7Particle 18 is false");
             }));
             particleLayout.addView(p18);
 
-var p19 = new Button(MainActivity);
+var p19 = new styleButton();
             p19.setText("Portal: "+(particle19?"on":"off"));
             p19.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9187,7 +9132,7 @@ clientMessage(client + "§7Particle 19 is false");
             }));
             particleLayout.addView(p19);
 
-var p20 = new Button(MainActivity);
+var p20 = new styleButton();
             p20.setText("Rain splash: "+(particle20?"on":"off"));
             p20.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9203,7 +9148,7 @@ clientMessage(client + "§7Particle 20 is false");
             }));
             particleLayout.addView(p20);
 
-var p21 = new Button(MainActivity);
+var p21 = new styleButton();
             p21.setText("Redstone: "+(particle21?"on":"off"));
             p21.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9219,7 +9164,7 @@ clientMessage(client + "§7Particle 21 is false");
             }));
             particleLayout.addView(p21);
 
-var p22 = new Button(MainActivity);
+var p22 = new styleButton();
             p22.setText("Slime: "+(particle22?"on":"off"));
             p22.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9235,7 +9180,7 @@ clientMessage(client + "§7Particle 22 is false");
             }));
             particleLayout.addView(p22);
 
-var p23 = new Button(MainActivity);
+var p23 = new styleButton();
             p23.setText("Smoke: "+(particle23?"on":"off"));
             p23.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9251,7 +9196,7 @@ clientMessage(client + "§7Particle 23 is false");
             }));
             particleLayout.addView(p23);
 
-var p24 = new Button(MainActivity);
+var p24 = new styleButton();
             p24.setText("Snow ball poof: "+(particle24?"on":"off"));
             p24.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9267,7 +9212,7 @@ clientMessage(client + "§7Particle 24 is false");
             }));
             particleLayout.addView(p24);
 
-var p25 = new Button(MainActivity);
+var p25 = new styleButton();
             p25.setText("Spell: "+(particle25?"on":"off"));
             p25.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9283,7 +9228,7 @@ clientMessage(client + "§7Particle 25 is false");
             }));
             particleLayout.addView(p25);
 
-var p26 = new Button(MainActivity);
+var p26 = new styleButton();
             p26.setText("Splash: "+(particle26?"on":"off"));
             p26.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9299,7 +9244,7 @@ clientMessage(client + "§7Particle 26 is false");
             }));
             particleLayout.addView(p26);
 
-var p27 = new Button(MainActivity);
+var p27 = new styleButton();
             p27.setText("Suspended town: "+(particle27?"on":"off"));
             p27.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9315,7 +9260,7 @@ clientMessage(client + "§7Particle 27 is false");
             }));
             particleLayout.addView(p27);
 
-var p28 = new Button(MainActivity);
+var p28 = new styleButton();
             p28.setText("Terrain: "+(particle28?"on":"off"));
             p28.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9331,7 +9276,7 @@ clientMessage(client + "§7Particle 28 is false");
             }));
             particleLayout.addView(p28);
 
-var p29 = new Button(MainActivity);
+var p29 = new styleButton();
             p29.setText("Water wake: "+(particle29?"on":"off"));
             p29.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9347,7 +9292,7 @@ clientMessage(client + "§7Particle 29 is false");
             }));
             particleLayout.addView(p29);
 
-var p30 = new Button(MainActivity);
+var p30 = new styleButton();
             p30.setText("Large explosion: "+(particle30?"on":"off"));
             p30.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9363,7 +9308,7 @@ clientMessage(client + "§7Particle 30 is false");
             }));
             particleLayout.addView(p30);
 
-var p31 = new Button(MainActivity);
+var p31 = new styleButton();
             p31.setText("Spell 2: "+(particle31?"on":"off"));
             p31.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9379,7 +9324,7 @@ clientMessage(client + "§7Particle 31 is false");
             }));
             particleLayout.addView(p31);
 
-var p32 = new Button(MainActivity);
+var p32 = new styleButton();
             p32.setText("Spell 3: "+(particle32?"on":"off"));
             p32.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -9410,19 +9355,12 @@ particleLayout1.setPadding(20,0,20,0);
     }}));
 }
 		
-var spawn = new Button(MainActivity);
+var spawn = new styleButton();
 spawn.setText("Spawn menu");
 if(getLanguage=="it_IT")spawn.setText("Menu spawner");
 if(getLanguage=="es_MX")spawn.setText("Menu de spawn");
 if(getLanguage=="ko_KR")spawn.setText("생성 메뉴");
-spawn.setTextColor(GUIText);
-var buttonBg = new android.graphics.drawable.GradientDrawable();
-if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000")); if(defaultbtnc==false)buttonBg.setColor(GUIBtns);
-buttonBg.setStroke(4, GUIStroke);
-buttonBg.setCornerRadius(10);
-spawn.setBackgroundDrawable(buttonBg);
 if(getLanguage=="de_DE")spawn.setText("Erschaffungs menu");
-if(mcpetheme==true)spawn.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 spawn.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              spawn_menu();
@@ -9442,7 +9380,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             spawnScroll.addView(spawnLayout);
             spawnLayout1.addView(spawnScroll);
             
-            var exit = new Button(MainActivity);
+            var exit = new styleButton();
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -9452,7 +9390,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		spawnLayout.addView(exit);
 		
-		var spawn10 = new Button(MainActivity);
+		var spawn10 = new styleButton();
             spawn10.setText("Spawn Chicken");      
             spawn10.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9461,7 +9399,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             }));
             spawnLayout.addView(spawn10);
 
-var spawn11 = new Button(MainActivity);
+var spawn11 = new styleButton();
             spawn11.setText("Spawn Cow");
             spawn11.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9470,7 +9408,7 @@ var spawn11 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn11);
             
-            var spawn12 = new Button(MainActivity);
+            var spawn12 = new styleButton();
             spawn12.setText("Spawn Pig");
             spawn12.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9479,7 +9417,7 @@ var spawn11 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn12);
             
-            var spawn13 = new Button(MainActivity);
+            var spawn13 = new styleButton();
             spawn13.setText("Spawn Sheep");
             spawn13.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9488,7 +9426,7 @@ var spawn11 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn13);
             
-            var spawn14 = new Button(MainActivity);
+            var spawn14 = new styleButton();
             spawn14.setText("Spawn Wolf");
             spawn14.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9497,7 +9435,7 @@ var spawn11 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn14);
             
-            var spawn15 = new Button(MainActivity);
+            var spawn15 = new styleButton();
             spawn15.setText("Spawn Villager");
             spawn15.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9506,7 +9444,7 @@ var spawn11 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn15);
             
-            var spawn16 = new Button(MainActivity);
+            var spawn16 = new styleButton();
             spawn16.setText("Spawn Mushrom cow");
             spawn16.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9515,7 +9453,7 @@ var spawn11 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn16);
             
-            var spawn17 = new Button(MainActivity);
+            var spawn17 = new styleButton();
             spawn17.setText("Spawn Squid");
             spawn17.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9524,7 +9462,7 @@ var spawn11 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn17);
             
-            var spawn18 = new Button(MainActivity);
+            var spawn18 = new styleButton();
             spawn18.setText("Spawn Rabbit");
             spawn18.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9533,7 +9471,7 @@ var spawn11 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn18);
             
-            var spawn19 = new Button(MainActivity);
+            var spawn19 = new styleButton();
             spawn19.setText("Spawn Bat");
             spawn19.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9542,7 +9480,7 @@ var spawn11 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn19);
             
-            var spawn20 = new Button(MainActivity);
+            var spawn20 = new styleButton();
             spawn20.setText("Spawn Iron golem");
             spawn20.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9551,7 +9489,7 @@ var spawn11 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn20);
             
-            var spawn21 = new Button(MainActivity);
+            var spawn21 = new styleButton();
             spawn21.setText("Spawn Snow golem");
             spawn21.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9560,7 +9498,7 @@ var spawn11 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn21);
             
-            var spawn22 = new Button(MainActivity);
+            var spawn22 = new styleButton();
             spawn22.setText("Spawn Ocelot");
             spawn22.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9569,7 +9507,7 @@ var spawn11 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn22);
 	
-	var spaw28 = new Button(MainActivity);
+	var spaw28 = new styleButton();
             spaw28.setText("Spawn polar bear");
             spaw28.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9578,7 +9516,7 @@ var spawn11 = new Button(MainActivity);
             }));
             spawnLayout.addView(spaw28);
 
-var spawn32 = new Button(MainActivity);
+var spawn32 = new styleButton();
             spawn32.setText("Spawn Zombie");
             spawn32.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9587,7 +9525,7 @@ var spawn32 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn32);
 
-var spawn33 = new Button(MainActivity);
+var spawn33 = new styleButton();
             spawn33.setText("Spawn Creeper");
             spawn33.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9596,7 +9534,7 @@ var spawn33 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn33);
 
-var spawn34 = new Button(MainActivity);
+var spawn34 = new styleButton();
             spawn34.setText("Spawn Skeleton");
             spawn34.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9605,7 +9543,7 @@ var spawn34 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn34);
             
-            var spawn35 = new Button(MainActivity);
+            var spawn35 = new styleButton();
             spawn35.setText("Spawn Spider");
             spawn35.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9614,7 +9552,7 @@ var spawn34 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn35);
             
-            var spawn36 = new Button(MainActivity);
+            var spawn36 = new styleButton();
             spawn36.setText("Spawn Zombie pigman");
             spawn36.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9623,7 +9561,7 @@ var spawn34 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn36);
             
-            var spawn37 = new Button(MainActivity);
+            var spawn37 = new styleButton();
             spawn37.setText("Spawn Slime");
             spawn37.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9632,7 +9570,7 @@ var spawn34 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn37);
             
-            var spawn38 = new Button(MainActivity);
+            var spawn38 = new styleButton();
             spawn38.setText("Spawn Enderman");     
             spawn38.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9641,7 +9579,7 @@ var spawn34 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn38);
             
-            var spawn39 = new Button(MainActivity);
+            var spawn39 = new styleButton();
             spawn39.setText("Spawn Silverfish");
             spawn39.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9650,7 +9588,7 @@ var spawn34 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn39);
 
-var spawn40 = new Button(MainActivity);
+var spawn40 = new styleButton();
             spawn40.setText("Spawn Cave spider"); 
             spawn40.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9659,7 +9597,7 @@ var spawn40 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn40);
 
-var spawn41 = new Button(MainActivity);
+var spawn41 = new styleButton();
             spawn41.setText("Spawn Ghast");      
             spawn41.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9668,7 +9606,7 @@ var spawn41 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn41);
 
-var spawn42 = new Button(MainActivity);
+var spawn42 = new styleButton();
             spawn42.setText("Spawn Magma cube");
             spawn42.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9677,7 +9615,7 @@ var spawn42 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn42);
 
-var spawn43 = new Button(MainActivity);
+var spawn43 = new styleButton();
             spawn43.setText("Spawn Blaze");       
             spawn43.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9686,7 +9624,7 @@ var spawn43 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn43);
 
-var spawn44 = new Button(MainActivity);
+var spawn44 = new styleButton();
             spawn44.setText("Spawn Zombie villager");
             spawn44.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9695,7 +9633,7 @@ var spawn44 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn44);
 
-var spawn66 = new Button(MainActivity);
+var spawn66 = new styleButton();
             spawn66.setText("Spawn Witch");            
             spawn66.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9704,7 +9642,7 @@ var spawn66 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn66);
 			
-			var spawn68 = new Button(MainActivity);
+			var spawn68 = new styleButton();
             spawn68.setText("Spawn Guardian");            
             spawn68.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9713,7 +9651,7 @@ var spawn66 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn68);
 			
-var spawn70 = new Button(MainActivity);
+var spawn70 = new styleButton();
             spawn70.setText("Spawn Horse");            
             spawn70.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9722,7 +9660,7 @@ var spawn70 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn70);
 			
-			var spawn71 = new Button(MainActivity);
+			var spawn71 = new styleButton();
             spawn71.setText("Spawn Donkey");            
             spawn71.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9731,7 +9669,7 @@ var spawn70 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn71);
 			
-			var spawn72 = new Button(MainActivity);
+			var spawn72 = new styleButton();
             spawn72.setText("Spawn Mule");            
             spawn72.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9740,7 +9678,7 @@ var spawn70 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn72);
 			
-			var spawn73 = new Button(MainActivity);
+			var spawn73 = new styleButton();
             spawn73.setText("Spawn Skeleton Horse");            
             spawn73.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9749,7 +9687,7 @@ var spawn70 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn73);
 			
-			var spawn74 = new Button(MainActivity);
+			var spawn74 = new styleButton();
             spawn74.setText("Spawn Zombie Horse");            
             spawn74.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9758,7 +9696,7 @@ var spawn70 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn74);
 			
-			var spawn75 = new Button(MainActivity);
+			var spawn75 = new styleButton();
             spawn75.setText("Spawn Wither skeleton");            
             spawn75.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9767,7 +9705,7 @@ var spawn70 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn75);
 			
-			var spawn76 = new Button(MainActivity);
+			var spawn76 = new styleButton();
             spawn76.setText("Spawn Stray");            
             spawn76.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9776,7 +9714,7 @@ var spawn70 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn76);
 			
-	    var spawn77 = new Button(MainActivity);
+	    var spawn77 = new styleButton();
             spawn77.setText("Spawn Husk");            
             spawn77.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9785,7 +9723,7 @@ var spawn70 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn77);
             
-            var spawn78 = new Button(MainActivity);
+            var spawn78 = new styleButton();
             spawn78.setText("Spawn Elder guardian");            
             spawn78.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9794,7 +9732,7 @@ var spawn70 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn78);
             
-            var spawn79 = new Button(MainActivity);
+            var spawn79 = new styleButton();
             spawn79.setText("Spawn Wither");            
             spawn79.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9803,7 +9741,7 @@ var spawn70 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn79);
             
-            var spawn80 = new Button(MainActivity);
+            var spawn80 = new styleButton();
             spawn80.setText("Spawn NPC");            
             spawn80.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9812,7 +9750,7 @@ var spawn70 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawn80);
 	
-	var spawnP = new Button(MainActivity);
+	var spawnP = new styleButton();
             spawnP.setText("Spawn Player");            
             spawnP.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9821,7 +9759,7 @@ var spawn70 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawnP);
 	
-	var spawnT = new Button(MainActivity);
+	var spawnT = new styleButton();
             spawnT.setText("Spawn Item");            
             spawnT.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9830,7 +9768,7 @@ var spawn70 = new Button(MainActivity);
             }));
             spawnLayout.addView(spawnT);
 	
-	var spaw54 = new Button(MainActivity);
+	var spaw54 = new styleButton();
             spaw54.setText("Spawn shulker");
             spaw54.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9839,7 +9777,7 @@ var spawn70 = new Button(MainActivity);
             }));
             spawnLayout.addView(spaw54);
 	
-	var spaw55 = new Button(MainActivity);
+	var spaw55 = new styleButton();
             spaw55.setText("Spawn endermite");
             spaw55.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9848,7 +9786,7 @@ var spawn70 = new Button(MainActivity);
             }));
             spawnLayout.addView(spaw55);
 	
-	var spawn53 = new Button(MainActivity);
+	var spawn53 = new styleButton();
             spawn53.setText("Spawn ender dragon");
             spawn53.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -9872,19 +9810,12 @@ spawnLayout1.setPadding(20,0,20,0);
     }}));
 }
 		
-var speed = new Button(MainActivity);
+var speed = new styleButton();
 speed.setText("Speed menu");
 if(getLanguage=="it_IT")speed.setText("Menu velocita");
 if(getLanguage=="es_MX")speed.setText("Menu de velocidad");
 if(getLanguage=="ko_KR")speed.setText("속도 메뉴");
-speed.setTextColor(GUIText);
-var buttonBg = new android.graphics.drawable.GradientDrawable();
-if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000")); if(defaultbtnc==false)buttonBg.setColor(GUIBtns);
-buttonBg.setStroke(4, GUIStroke);
-buttonBg.setCornerRadius(10);
-speed.setBackgroundDrawable(buttonBg);
 if(getLanguage=="de_DE")speed.setText("Schnelligkeits menu");
-if(mcpetheme==true)speed.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 speed.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              speed_menu();
@@ -9904,7 +9835,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             speedScroll.addView(speedLayout);
             speedLayout1.addView(speedScroll);
             
-            var exit = new Button(MainActivity);
+            var exit = new styleButton();
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -9914,7 +9845,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		speedLayout.addView(exit);
 		
-		var d1 = new Button(MainActivity);
+		var d1 = new styleButton();
             d1.setText("Normal speed");       
             d1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -9923,7 +9854,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             }));
             speedLayout.addView(d1);
 			
-			var d0 = new Button(MainActivity);
+			var d0 = new styleButton();
             d0.setText("Speed 0%");       
             d0.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -9932,7 +9863,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             }));
             speedLayout.addView(d0);
             
-            var d2 = new Button(MainActivity);
+            var d2 = new styleButton();
             d2.setText("Speed 5%");       
             d2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -9941,7 +9872,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             }));
             speedLayout.addView(d2);
             
-            var d3 = new Button(MainActivity);
+            var d3 = new styleButton();
             d3.setText("Speed 10%");       
             d3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -9950,7 +9881,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             }));
             speedLayout.addView(d3);
             
-            var d4 = new Button(MainActivity);
+            var d4 = new styleButton();
             d4.setText("Speed 15%");       
             d4.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -9959,7 +9890,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             }));
             speedLayout.addView(d4);
             
-            var d5 = new Button(MainActivity);
+            var d5 = new styleButton();
             d5.setText("Speed 20%");       
             d5.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -9968,7 +9899,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             }));
             speedLayout.addView(d5);
             
-            var d6 = new Button(MainActivity);
+            var d6 = new styleButton();
             d6.setText("Speed 25%");       
             d6.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -9977,7 +9908,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             }));
             speedLayout.addView(d6);
             
-            var d7 = new Button(MainActivity);
+            var d7 = new styleButton();
             d7.setText("Speed 30%");       
             d7.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -9986,7 +9917,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             }));
             speedLayout.addView(d7);
             
-            var d8 = new Button(MainActivity);
+            var d8 = new styleButton();
             d8.setText("Speed 35%");       
             d8.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -9995,7 +9926,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             }));
             speedLayout.addView(d8);
             
-            var d9 = new Button(MainActivity);
+            var d9 = new styleButton();
             d9.setText("Speed 40%");       
             d9.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -10004,7 +9935,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             }));
             speedLayout.addView(d9);
 
-var d10 = new Button(MainActivity);
+var d10 = new styleButton();
             d10.setText("Speed 45%");       
             d10.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -10013,7 +9944,7 @@ var d10 = new Button(MainActivity);
             }));
             speedLayout.addView(d10);
 
-var d11 = new Button(MainActivity);
+var d11 = new styleButton();
             d11.setText("Speed 50%");       
             d11.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -10022,7 +9953,7 @@ var d11 = new Button(MainActivity);
             }));
             speedLayout.addView(d11);
 
-var d12 = new Button(MainActivity);
+var d12 = new styleButton();
             d12.setText("Speed 55%");       
             d12.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -10031,7 +9962,7 @@ var d12 = new Button(MainActivity);
             }));
             speedLayout.addView(d12);
 
-var d13 = new Button(MainActivity);
+var d13 = new styleButton();
             d13.setText("Speed 60%");       
             d13.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -10040,7 +9971,7 @@ var d13 = new Button(MainActivity);
             }));
             speedLayout.addView(d13);
 
-var d14 = new Button(MainActivity);
+var d14 = new styleButton();
             d14.setText("Speed 65%");       
             d14.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -10049,7 +9980,7 @@ var d14 = new Button(MainActivity);
             }));
             speedLayout.addView(d14);
 
-var d15 = new Button(MainActivity);
+var d15 = new styleButton();
             d15.setText("Speed 70%");       
             d15.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -10058,7 +9989,7 @@ var d15 = new Button(MainActivity);
             }));
             speedLayout.addView(d15);
 
-var d16 = new Button(MainActivity);
+var d16 = new styleButton();
             d16.setText("Speed 75%");       
             d16.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -10067,7 +9998,7 @@ var d16 = new Button(MainActivity);
             }));
             speedLayout.addView(d16);
 
-var d17 = new Button(MainActivity);
+var d17 = new styleButton();
             d17.setText("Speed 80%");       
             d17.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -10076,7 +10007,7 @@ var d17 = new Button(MainActivity);
             }));
             speedLayout.addView(d17);
 
-var d18 = new Button(MainActivity);
+var d18 = new styleButton();
             d18.setText("Speed 85%");       
             d18.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -10085,7 +10016,7 @@ var d18 = new Button(MainActivity);
             }));
             speedLayout.addView(d18);
 
-var d19 = new Button(MainActivity);
+var d19 = new styleButton();
             d19.setText("Speed 90%");       
             d19.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -10094,7 +10025,7 @@ var d19 = new Button(MainActivity);
             }));
             speedLayout.addView(d19);
 
-var d20 = new Button(MainActivity);
+var d20 = new styleButton();
             d20.setText("Speed 95%");       
             d20.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -10103,7 +10034,7 @@ var d20 = new Button(MainActivity);
             }));
             speedLayout.addView(d20);
 
-var d21 = new Button(MainActivity);
+var d21 = new styleButton();
             d21.setText("Speed 100%");       
             d21.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -10112,7 +10043,7 @@ var d21 = new Button(MainActivity);
             }));
             speedLayout.addView(d21);
 			
-			var d22 = new Button(MainActivity);
+			var d22 = new styleButton();
             d22.setText("Custom speed");        
             d22.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){ 
@@ -10137,19 +10068,12 @@ speedLayout1.setPadding(20,0,20,0);
     }}));
 }
 		
-var teleport = new Button(MainActivity);
+var teleport = new styleButton();
 teleport.setText("Teleport menu");
 if(getLanguage=="it_IT")teleport.setText("Menu teletrasporto");
 if(getLanguage=="es_MX")teleport.setText("Menu de teletransportacion");
 if(getLanguage=="ko_KR")teleport.setText("순간이동 메뉴");
-teleport.setTextColor(GUIText);
-var buttonBg = new android.graphics.drawable.GradientDrawable();
-if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000")); if(defaultbtnc==false)buttonBg.setColor(GUIBtns);
-buttonBg.setStroke(4, GUIStroke);
-buttonBg.setCornerRadius(10);
-teleport.setBackgroundDrawable(buttonBg);
 if(getLanguage=="de_DE")teleport.setText("Teleportierungs menu");
-if(mcpetheme==true)teleport.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 teleport.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              teleport_menu();
@@ -10169,7 +10093,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             teleportScroll.addView(teleportLayout);
             teleportLayout1.addView(teleportScroll);
             
-            var exit = new Button(MainActivity);
+            var exit = new styleButton();
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -10179,7 +10103,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		teleportLayout.addView(exit);
 		
-		var button = new Button(MainActivity);
+		var button = new styleButton();
             button.setText("Select coords");
             button.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -10189,7 +10113,7 @@ teleport.dismiss();
             }));
             teleportLayout.addView(button);
 
-var Uspawn = new Button(MainActivity);
+var Uspawn = new styleButton();
             Uspawn.setText("Set home");       
             Uspawn.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -10202,7 +10126,7 @@ clientMessage(client + "§7Home set to: " + Math.round(xhome) + ", " + Math.roun
             }));
             teleportLayout.addView(Uspawn);
 
-var Rspawn = new Button(MainActivity);
+var Rspawn = new styleButton();
             Rspawn.setText("Return to home");       
             Rspawn.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -10212,7 +10136,7 @@ clientMessage(client + "§7Returning to your saved home file");
             }));
             teleportLayout.addView(Rspawn);
 
-var sspawn = new Button(MainActivity);
+var sspawn = new styleButton();
             sspawn.setText("Set spawn");       
             sspawn.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -10222,7 +10146,7 @@ clientMessage(client + "§7Spawn set to " + Math.round(getPlayerX()) + ", " + Ma
             }));
             teleportLayout.addView(sspawn);
 			
-			var randomtp = new Button(MainActivity);
+			var randomtp = new styleButton();
             randomtp.setText("Random TP");       
             randomtp.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -10232,7 +10156,7 @@ clientMessage(client + "Woah!\n"+"Teleported to: "+getPlayerX()+" "+getPlayerY()
             }));
             teleportLayout.addView(randomtp);
 			
-			var at = new Button(MainActivity);
+			var at = new styleButton();
       at.setText("Tap teleport: "+(taptp?"on":"off"));
 		at.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -10272,19 +10196,12 @@ teleportLayout1.setPadding(20,0,20,0);
     }}));
 }
 		
-var time = new Button(MainActivity);
+var time = new styleButton();
 time.setText("Time menu");
 if(getLanguage=="it_IT")time.setText("Menu tempo");
 if(getLanguage=="es_MX")time.setText("Menu de momento");
 if(getLanguage=="ko_KR")time.setText("시간 메뉴");
-time.setTextColor(GUIText);
-var buttonBg = new android.graphics.drawable.GradientDrawable();
-if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000")); if(defaultbtnc==false)buttonBg.setColor(GUIBtns);
-buttonBg.setStroke(4, GUIStroke);
-buttonBg.setCornerRadius(10);
-time.setBackgroundDrawable(buttonBg);
 if(getLanguage=="de_DE")time.setText("Zeit menu");
-if(mcpetheme==true)time.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 time.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              time_menu();
@@ -10304,7 +10221,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             timeScroll.addView(timeLayout);
             timeLayout1.addView(timeScroll);
             
-            var exit = new Button(MainActivity);
+            var exit = new styleButton();
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -10314,7 +10231,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		timeLayout.addView(exit);
 		
-		var aa = new Button(MainActivity);
+		var aa = new styleButton();
             aa.setText("Only day: "+(onlyday?"on":"off"));
             aa.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -10332,7 +10249,7 @@ onlyday = false;
             }));
             timeLayout.addView(aa);
 
-var aa2 = new Button(MainActivity);
+var aa2 = new styleButton();
             aa2.setText("Only night: "+(onlynight?"on":"off"));
             aa2.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -10350,7 +10267,7 @@ onlynight = false;
             }));
             timeLayout.addView(aa2);
 
-var a1 = new Button(MainActivity);
+var a1 = new styleButton();
             a1.setText("Time: 6:00am");
             a1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -10359,7 +10276,7 @@ Level.setTime(0);
             }));
             timeLayout.addView(a1);
 
-var a2 = new Button(MainActivity);
+var a2 = new styleButton();
             a2.setText("Time: 7:00am");
             a2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -10368,7 +10285,7 @@ Level.setTime(1000);
             }));
             timeLayout.addView(a2);
 
-var a3 = new Button(MainActivity);
+var a3 = new styleButton();
             a3.setText("Time: 8:00am");
             a3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -10377,7 +10294,7 @@ Level.setTime(2000);
             }));
             timeLayout.addView(a3);
 
-var a4 = new Button(MainActivity);
+var a4 = new styleButton();
             a4.setText("Time: 9:00am");
             a4.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -10386,7 +10303,7 @@ Level.setTime(3000);
             }));
             timeLayout.addView(a4);
 
-var a5 = new Button(MainActivity);
+var a5 = new styleButton();
             a5.setText("Time: 10:00am");
             a5.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -10395,7 +10312,7 @@ Level.setTime(4000);
             }));
             timeLayout.addView(a5);
 
-var a6 = new Button(MainActivity);
+var a6 = new styleButton();
             a6.setText("Time: 11:00am");
             a6.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -10404,7 +10321,7 @@ Level.setTime(5000);
             }));
             timeLayout.addView(a6);
 
-var a7 = new Button(MainActivity);
+var a7 = new styleButton();
             a7.setText("Time: 12:00pm");
             a7.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -10413,7 +10330,7 @@ Level.setTime(6000);
             }));
             timeLayout.addView(a7);
 
-var a8 = new Button(MainActivity);
+var a8 = new styleButton();
             a8.setText("Time: 1:00pm");
             a8.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -10422,7 +10339,7 @@ Level.setTime(7000);
             }));
             timeLayout.addView(a8);
 
-var a9 = new Button(MainActivity);
+var a9 = new styleButton();
             a9.setText("Time: 2:00pm");
             a9.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -10431,7 +10348,7 @@ Level.setTime(8000);
             }));
             timeLayout.addView(a9);
 
-var a10 = new Button(MainActivity);
+var a10 = new styleButton();
             a10.setText("Time: 3:00pm");
             a10.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -10440,7 +10357,7 @@ Level.setTime(9000);
             }));
             timeLayout.addView(a10);
 
-var a11 = new Button(MainActivity);
+var a11 = new styleButton();
             a11.setText("Time: 4:00pm");
             a11.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -10449,7 +10366,7 @@ Level.setTime(10000);
             }));
             timeLayout.addView(a11);
 
-var a12 = new Button(MainActivity);
+var a12 = new styleButton();
             a12.setText("Time: 5:00pm");
             a12.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -10458,7 +10375,7 @@ Level.setTime(11000);
             }));
             timeLayout.addView(a12);
 
-var a13 = new Button(MainActivity);
+var a13 = new styleButton();
             a13.setText("Time: 6:00pm");
             a13.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -10467,7 +10384,7 @@ Level.setTime(12000);
             }));
             timeLayout.addView(a13);
 
-var a14 = new Button(MainActivity);
+var a14 = new styleButton();
             a14.setText("Time: 7:00pm");
             a14.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -10476,7 +10393,7 @@ Level.setTime(13000);
             }));
             timeLayout.addView(a14);
 
-var a15 = new Button(MainActivity);
+var a15 = new styleButton();
             a15.setText("Time: 8:00pm");
             a15.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -10485,7 +10402,7 @@ Level.setTime(14000);
             }));
             timeLayout.addView(a15);
 
-var a16 = new Button(MainActivity);
+var a16 = new styleButton();
             a16.setText("Time: 9:00pm");
             a16.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -10494,7 +10411,7 @@ Level.setTime(15000);
             }));
             timeLayout.addView(a16);
 
-var a17 = new Button(MainActivity);
+var a17 = new styleButton();
             a17.setText("Time: 10:00pm");
             a17.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -10503,7 +10420,7 @@ Level.setTime(16000);
             }));
             timeLayout.addView(a17);
 
-var a18 = new Button(MainActivity);
+var a18 = new styleButton();
             a18.setText("Time: 11:00pm");
             a18.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -10512,7 +10429,7 @@ Level.setTime(17000);
             }));
             timeLayout.addView(a18);
 
-var a19 = new Button(MainActivity);
+var a19 = new styleButton();
             a19.setText("Time: 12:00am");
             
             a19.setOnClickListener(new View.OnClickListener({
@@ -10522,7 +10439,7 @@ Level.setTime(18000);
             }));
             timeLayout.addView(a19);
 
-var a20 = new Button(MainActivity);
+var a20 = new styleButton();
             a20.setText("Time: 1:00am");
             a20.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -10531,7 +10448,7 @@ Level.setTime(19000);
             }));
             timeLayout.addView(a20);
 
-var a21 = new Button(MainActivity);
+var a21 = new styleButton();
             a21.setText("Time: 2:00am");
             a21.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -10540,7 +10457,7 @@ Level.setTime(20000);
             }));
             timeLayout.addView(a21);
 
-var a22 = new Button(MainActivity);
+var a22 = new styleButton();
             a22.setText("Time: 3:00am");
             a22.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -10549,7 +10466,7 @@ Level.setTime(21000);
             }));
             timeLayout.addView(a22);
 
-var a23 = new Button(MainActivity);
+var a23 = new styleButton();
             a23.setText("Time: 4:00am");
             a23.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -10558,7 +10475,7 @@ Level.setTime(22000);
             }));
             timeLayout.addView(a23);
 
-var a24 = new Button(MainActivity);
+var a24 = new styleButton();
             a24.setText("Time: 5:00am");          
             a24.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
@@ -10582,19 +10499,12 @@ timeLayout1.setPadding(20,0,20,0);
     }}));
 }
 		
-var weather = new Button(MainActivity);
+var weather = new styleButton();
 weather.setText("Weather menu");
 if(getLanguage=="it_IT")weather.setText("Menu del tempo");
 if(getLanguage=="es_MX")weather.setText("Menu de tiempo");
 if(getLanguage=="ko_KR")weather.setText("날씨 메뉴");
-weather.setTextColor(GUIText);
-var buttonBg = new android.graphics.drawable.GradientDrawable();
-if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000")); if(defaultbtnc==false)buttonBg.setColor(GUIBtns);
-buttonBg.setStroke(4, GUIStroke);
-buttonBg.setCornerRadius(10);
-weather.setBackgroundDrawable(buttonBg);
 if(getLanguage=="de_DE")weather.setText("Wetter menu");
-if(mcpetheme==true)weather.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 weather.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              weather_menu();
@@ -10614,7 +10524,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             weatherScroll.addView(weatherLayout);
             weatherLayout1.addView(weatherScroll);
             
-            var exit = new Button(MainActivity);
+            var exit = new styleButton();
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -10624,7 +10534,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		weatherLayout.addView(exit);
 		
-		var button = new Button(MainActivity);
+		var button = new styleButton();
             button.setText("Custom weather");
             button.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -10634,7 +10544,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             }));
             weatherLayout.addView(button);
 			
-	    var button3 = new Button(MainActivity);
+	    var button3 = new styleButton();
             button3.setText("Rain");
             button3.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -10643,7 +10553,7 @@ Level.setRainLevel(1);
             }));
             weatherLayout.addView(button3);
 			
-var button4 = new Button(MainActivity);
+var button4 = new styleButton();
             button4.setText("Lightning");
             button4.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -10652,7 +10562,7 @@ Level.setLightningLevel(1);
             }));
             weatherLayout.addView(button4);
 
-var button2 = new Button(MainActivity);
+var button2 = new styleButton();
             button2.setText("Clear weather");
             button2.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -11800,7 +11710,7 @@ scc = new android.widget.PopupWindow();
 var Layer5 = new android.widget.LinearLayout(MainActivity);
 var sc1 = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new Button(MainActivity);
+var Exit = new android.widget.Button(MainActivity);;
 
 Dialog.setTitle("Enter website");
 Dialog.setContentView(Layer5);
@@ -11969,11 +11879,11 @@ try{
 new10 = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var m1 = new android.widget.EditText(MainActivity);
-var select1 = new Button(MainActivity);
-var select2 = new Button(MainActivity);
+var select1 = new android.widget.Button(MainActivity);;
+var select2 = new android.widget.Button(MainActivity);;
 var select3 = new android.widget.EditText(MainActivity);
-var select4 = new Button(MainActivity);
-var end1 = new Button(MainActivity);
+var select4 = new android.widget.Button(MainActivity);;
+var end1 = new android.widget.Button(MainActivity);;
 var Dialog = new android.app.Dialog(MainActivity);
  
 Dialog.setTitle("Enter text & select");
@@ -12064,7 +11974,7 @@ spa = new android.widget.PopupWindow();
 var Layer6 = new android.widget.LinearLayout(MainActivity);
 var mm = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new Button(MainActivity);
+var Exit = new android.widget.Button(MainActivity);;
 
 Dialog.setTitle("Enter text for spam");
 Dialog.setContentView(Layer6);
@@ -12100,8 +12010,8 @@ run: function(){
 try{
 digg = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var select1 = new Button(MainActivity);
-var select2 = new Button(MainActivity);
+var select1 = new android.widget.Button(MainActivity);;
+var select2 = new android.widget.Button(MainActivity);;
 var ddf = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
  
@@ -12155,14 +12065,14 @@ run: function(){
 try{
 orey = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var select1 = new Button(MainActivity);
-var select2 = new Button(MainActivity);
-var select3 = new Button(MainActivity);
-var select4 = new Button(MainActivity);
-var select5 = new Button(MainActivity);
-var select6 = new Button(MainActivity);
-var select7 = new Button(MainActivity);
-var select8 = new Button(MainActivity);
+var select1 = new android.widget.Button(MainActivity);;
+var select2 = new android.widget.Button(MainActivity);;
+var select3 = new android.widget.Button(MainActivity);;
+var select4 = new android.widget.Button(MainActivity);;
+var select5 = new android.widget.Button(MainActivity);;
+var select6 = new android.widget.Button(MainActivity);;
+var select7 = new android.widget.Button(MainActivity);;
+var select8 = new android.widget.Button(MainActivity);;
 var Dialog = new android.app.Dialog(MainActivity);
  
 Dialog.setTitle("Select ore");
@@ -12302,8 +12212,8 @@ run: function(){
 try{
 new9 = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var select1 = new Button(MainActivity);
-var select2 = new Button(MainActivity);
+var select1 = new android.widget.Button(MainActivity);;
+var select2 = new android.widget.Button(MainActivity);;
 var Dialog = new android.app.Dialog(MainActivity);
  
 Dialog.setTitle("Select");
@@ -12411,11 +12321,11 @@ run: function(){
 try{
 new3 = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var select1 = new Button(MainActivity);
-var select2 = new Button(MainActivity);
-var select3 = new Button(MainActivity);
-var select4 = new Button(MainActivity);
-var Exit = new Button(MainActivity);
+var select1 = new android.widget.Button(MainActivity);;
+var select2 = new android.widget.Button(MainActivity);;
+var select3 = new android.widget.Button(MainActivity);;
+var select4 = new android.widget.Button(MainActivity);;
+var Exit = new android.widget.Button(MainActivity);;
 var Dialog = new android.app.Dialog(MainActivity);
  
 Dialog.setTitle("Select");
@@ -12509,12 +12419,12 @@ run: function(){
 try{
 new2 = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var select1 = new Button(MainActivity);
-var select2 = new Button(MainActivity);
-var select3 = new Button(MainActivity);
+var select1 = new android.widget.Button(MainActivity);;
+var select2 = new android.widget.Button(MainActivity);;
+var select3 = new android.widget.Button(MainActivity);;
 var ddf = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new Button(MainActivity);
+var Exit = new android.widget.Button(MainActivity);;
  
 Dialog.setTitle("Select");
 Dialog.setContentView(Layer);
@@ -12579,7 +12489,7 @@ GetText = new android.widget.PopupWindow();
 var Layer8 = new android.widget.LinearLayout(MainActivity);
 var ntd = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new Button(MainActivity);
+var Exit = new android.widget.Button(MainActivity);;
 
 Dialog.setTitle("Enter difficulty");
 Dialog.setContentView(Layer8);
@@ -12623,7 +12533,7 @@ GetText = new android.widget.PopupWindow();
 var Layer8 = new android.widget.LinearLayout(MainActivity);
 var nt = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new Button(MainActivity);
+var Exit = new android.widget.Button(MainActivity);;
 
 Dialog.setTitle("Enter nickname");
 Dialog.setContentView(Layer8);
@@ -12668,7 +12578,7 @@ var Layer8 = new android.widget.LinearLayout(MainActivity);
 var bd = new android.widget.EditText(MainActivity);
 var bn = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new Button(MainActivity);
+var Exit = new android.widget.Button(MainActivity);;
 
 Dialog.setTitle("Set block light");
 Dialog.setContentView(Layer8);
@@ -12717,7 +12627,7 @@ var Layer8 = new android.widget.LinearLayout(MainActivity);
 var bi = new android.widget.EditText(MainActivity);
 var br = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new Button(MainActivity);
+var Exit = new android.widget.Button(MainActivity);;
 
 Dialog.setTitle("Set block resistance");
 Dialog.setContentView(Layer8);
@@ -12765,7 +12675,7 @@ GetText = new android.widget.PopupWindow();
 var Layer8 = new android.widget.LinearLayout(MainActivity);
 var enh = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new Button(MainActivity);
+var Exit = new android.widget.Button(MainActivity);;
 
 Dialog.setTitle("Enter new hearts");
 Dialog.setContentView(Layer8);
@@ -12809,7 +12719,7 @@ GetText = new android.widget.PopupWindow();
 var Layer10 = new android.widget.LinearLayout(MainActivity);
 var eha = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new Button(MainActivity);
+var Exit = new android.widget.Button(MainActivity);;
 
 Dialog.setTitle("Enter new hearts");
 Dialog.setContentView(Layer10);
@@ -12847,10 +12757,10 @@ run: function(){
 try{
 new3 = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var select1 = new Button(MainActivity);
-var select2 = new Button(MainActivity);
+var select1 = new android.widget.Button(MainActivity);;
+var select2 = new android.widget.Button(MainActivity);;
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new Button(MainActivity);
+var Exit = new android.widget.Button(MainActivity);;
  
 Dialog.setTitle("Select");
 Dialog.setContentView(Layer);
@@ -12907,7 +12817,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var XP = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new Button(MainActivity);
+var Exit = new android.widget.Button(MainActivity);;
 
 Dialog.setTitle("Enter XP Amount");
 Dialog.setContentView(Layer);
@@ -12954,7 +12864,7 @@ var ID = new android.widget.EditText(MainActivity);
 var Amount = new android.widget.EditText(MainActivity);
 var Damage = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new Button(MainActivity);
+var Exit = new android.widget.Button(MainActivity);;
 
 Dialog.setTitle("Enter ID,Amt,Dmg");
 Dialog.setContentView(Layer);
@@ -13006,7 +12916,7 @@ newn = new android.widget.PopupWindow();
 var Layerb5 = new android.widget.LinearLayout(MainActivity);
 var nNuke = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new Button(MainActivity);
+var Exit = new android.widget.Button(MainActivity);;
 
 Dialog.setTitle("Enter nuke amount");
 Dialog.setContentView(Layerb5);
@@ -13050,7 +12960,7 @@ GetText = new android.widget.PopupWindow();
 var Layer8 = new android.widget.LinearLayout(MainActivity);
 var vspee = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new Button(MainActivity);
+var Exit = new android.widget.Button(MainActivity);;
 
 Dialog.setTitle("Enter custom speed");
 Dialog.setContentView(Layer8);
@@ -13096,7 +13006,7 @@ var X = new android.widget.EditText(MainActivity);
 var Y = new android.widget.EditText(MainActivity);
 var Z = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new Button(MainActivity);
+var Exit = new android.widget.Button(MainActivity);;
 
 Dialog.setTitle("Type coords to teleport");
 Dialog.setContentView(Layer);
@@ -13149,7 +13059,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var w = new android.widget.EditText(MainActivity);
 var w2 = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new Button(MainActivity);
+var Exit = new android.widget.Button(MainActivity);;
 
 Dialog.setTitle("Set Weather");
 Dialog.setContentView(Layer);
@@ -13198,7 +13108,7 @@ atact = new android.widget.PopupWindow();
 var Layerb4 = new android.widget.LinearLayout(MainActivity);
 var editAtk = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.android.widget.Button(MainActivity);;
 
 Dialog.setTitle("When attacking send...");
 Dialog.setContentView(Layerb4);
@@ -13238,7 +13148,7 @@ var Layerz8 = new android.widget.LinearLayout(MainActivity);
 var editAtk = new android.widget.EditText(MainActivity);
 var editAtk2 = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.android.widget.Button(MainActivity);;
 
 Dialog.setTitle("When dying send...");
 Dialog.setContentView(Layerz8);
@@ -13330,8 +13240,8 @@ GetText = new android.widget.PopupWindow();
 var LayerFov = new android.widget.LinearLayout(MainActivity);
 var fin = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var reset = new Button(MainActivity);
-var Exit = new Button(MainActivity);
+var reset = new android.widget.Button(MainActivity);;
+var Exit = new android.widget.Button(MainActivity);;
 
 Dialog.setTitle("Enter new fov");
 Dialog.setContentView(LayerFov);
@@ -13385,7 +13295,7 @@ sendEtc = new android.widget.PopupWindow();
 var Layerz89 = new android.widget.LinearLayout(MainActivity);
 var datMsg = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new android.widget.android.widget.Button(MainActivity);;
 
 Dialog.setTitle("Send to all");
 Dialog.setContentView(Layerz89);
@@ -13433,7 +13343,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var rang = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new Button(MainActivity);
+var Exit = new android.widget.Button(MainActivity);;
 
 Dialog.setTitle("Aimaura range");
 Dialog.setContentView(Layer);
@@ -13473,7 +13383,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var height = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new Button(MainActivity);
+var Exit = new android.widget.Button(MainActivity);;
 
 Dialog.setTitle("Jump Height");
 Dialog.setContentView(Layer);
