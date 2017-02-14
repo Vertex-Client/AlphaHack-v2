@@ -5,7 +5,7 @@ ALPHAHack v2 is a remake of AlphaHack 0.8.1
 <br />
 # Info
 </>--------------------</><br />
-[AlphαHαck by: ArceusMαtt (c) 2016];<br />
+[AlphαHαck by: ArceusMαtt (c) 2016, 2017];<br />
 </>--------------------</><br />
 [Free to use mod menu for MCPE under MIT license];<br />
 </>--------------------</><br />
@@ -29,4 +29,4 @@ ALPHAHack v2 is a remake of AlphaHack 0.8.1
 - [x] 0.8.5 Speed menu
 - [ ] 0.8.5 Teleport menu incomplete (Some crashes & may add more features)
 - [x] 0.8.5 Time menu
-- [ ] 0.8.5 Weather menu incomplete (May add more features)
+- [x] 0.8.5 Weather menu incomplete (May add more features)
