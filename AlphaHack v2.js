@@ -669,7 +669,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 			wvLayout.addView(webs);
 
 wv = new PopupWindow(wvLayout1, dip2px(500), dip2px(500));
-wv = new PopupWindow(wvLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/1.4, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1.3);
+wv = new PopupWindow(wvLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/0, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/0);
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
@@ -11756,37 +11756,19 @@ if (spider && Utils.Player.isCollidedHorizontally()) {
 	}
 	if(onfriction)onlyFriction();
 	if(rainitem==true){
-Level.dropItem(getPlayerX(),getPlayerY()+13,getPlayerZ(),0,rainId,1);
-Level.dropItem(getPlayerX()+1,getPlayerY()+13,getPlayerZ(),0,rainId,1);
-Level.dropItem(getPlayerX()+2,getPlayerY()+13,getPlayerZ(),0,rainId,1);
-Level.dropItem(getPlayerX()+3,getPlayerY()+13,getPlayerZ(),0,rainId,1);
-Level.dropItem(getPlayerX()+4,getPlayerY()+13,getPlayerZ(),0,rainId,1);
-Level.dropItem(getPlayerX()+5,getPlayerY()+13,getPlayerZ(),0,rainId,1);
-Level.dropItem(getPlayerX(),getPlayerY()+13,getPlayerZ()+1,0,rainId,1);
-Level.dropItem(getPlayerX(),getPlayerY()+13,getPlayerZ()+2,0,rainId,1);
-Level.dropItem(getPlayerX(),getPlayerY()+13,getPlayerZ()+3,0,rainId,1);
-Level.dropItem(getPlayerX(),getPlayerY()+13,getPlayerZ()+4,0,rainId,1);
-Level.dropItem(getPlayerX(),getPlayerY()+13,getPlayerZ()+5,0,rainId,1);
-Level.dropItem(getPlayerX()+1,getPlayerY()+13,getPlayerZ()+1,0,rainId,1);
-Level.dropItem(getPlayerX()+2,getPlayerY()+13,getPlayerZ()+2,0,rainId,1);
-Level.dropItem(getPlayerX()+3,getPlayerY()+13,getPlayerZ()+3,0,rainId,1);
-Level.dropItem(getPlayerX()+4,getPlayerY()+13,getPlayerZ()+4,0,rainId,1);
-Level.dropItem(getPlayerX()+5,getPlayerY()+13,getPlayerZ()+5,0,rainId,1);
-Level.dropItem(getPlayerX()-1,getPlayerY()+13,getPlayerZ()-1,0,rainId,1);
-Level.dropItem(getPlayerX()-2,getPlayerY()+13,getPlayerZ()-2,0,rainId,1);
-Level.dropItem(getPlayerX()-3,getPlayerY()+13,getPlayerZ()-3,0,rainId,1);
-Level.dropItem(getPlayerX()-4,getPlayerY()+13,getPlayerZ()-4,0,rainId,1);
-Level.dropItem(getPlayerX()-5,getPlayerY()+13,getPlayerZ()-5,0,rainId,1);
-Level.dropItem(getPlayerX()-1,getPlayerY()+13,getPlayerZ()+1,0,rainId,1);
-Level.dropItem(getPlayerX()-2,getPlayerY()+13,getPlayerZ()+2,0,rainId,1);
-Level.dropItem(getPlayerX()-3,getPlayerY()+13,getPlayerZ()+3,0,rainId,1);
-Level.dropItem(getPlayerX()-4,getPlayerY()+13,getPlayerZ()+4,0,rainId,1);
-Level.dropItem(getPlayerX()-5,getPlayerY()+13,getPlayerZ()+5,0,rainId,1);
-Level.dropItem(getPlayerX()+1,getPlayerY()+13,getPlayerZ()-1,0,rainId,1);
-Level.dropItem(getPlayerX()+2,getPlayerY()+13,getPlayerZ()-2,0,rainId,1);
-Level.dropItem(getPlayerX()+3,getPlayerY()+13,getPlayerZ()-3,0,rainId,1);
-Level.dropItem(getPlayerX()+4,getPlayerY()+13,getPlayerZ()-4,0,rainId,1);
-Level.dropItem(getPlayerX()+5,getPlayerY()+13,getPlayerZ()-5,0,rainId,1);
+Level.dropItem(getPlayerX(),getPlayerY()+11,getPlayerZ(),0,rainId,1);
+Level.dropItem(getPlayerX()+3,getPlayerY()+11,getPlayerZ(),0,rainId,1);
+Level.dropItem(getPlayerX()+7,getPlayerY()+11,getPlayerZ(),0,rainId,1);
+Level.dropItem(getPlayerX(),getPlayerY()+11,getPlayerZ()+3,0,rainId,1);
+Level.dropItem(getPlayerX(),getPlayerY()+11,getPlayerZ()+7,0,rainId,1);
+Level.dropItem(getPlayerX()+3,getPlayerY()+11,getPlayerZ()+3,0,rainId,1);
+Level.dropItem(getPlayerX()+7,getPlayerY()+11,getPlayerZ()+7,0,rainId,1);
+Level.dropItem(getPlayerX()-3,getPlayerY()+11,getPlayerZ()-3,0,rainId,1);
+Level.dropItem(getPlayerX()-7,getPlayerY()+11,getPlayerZ()-7,0,rainId,1);
+Level.dropItem(getPlayerX()-3,getPlayerY()+11,getPlayerZ()+3,0,rainId,1);
+Level.dropItem(getPlayerX()-7,getPlayerY()+11,getPlayerZ()+7,0,rainId,1);
+Level.dropItem(getPlayerX()+3,getPlayerY()+11,getPlayerZ()-3,0,rainId,1);
+Level.dropItem(getPlayerX()+7,getPlayerY()+11,getPlayerZ()-7,0,rainId,1);
 }
 }
 
