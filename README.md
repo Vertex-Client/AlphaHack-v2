@@ -15,18 +15,18 @@ ALPHAHack v2 is a remake of AlphaHack 0.8.1
 </>--------------------</><br />
 <br />
 # Issues & Features:
-- [ ] 0.8.5 Misc incomplete (Missing features)
-- [ ] 0.8.5 Settings incomplete (Missing features & may add more features)
-- [ ] 0.8.5 Online mods incomplete (Mods for servers, needs more features & fixes)
-- [ ] 0.8.5 Offline mods incomplete (Mods for everything else, needs more features & fixes)
-- [ ] 0.8.5 Effect menu incomplete (Needs some testing)
-- [ ] 0.8.5 Enchant menu incomplete (May add more features & needs anti enchant bypass)
-- [ ] 0.8.5 Give menu incomplete (May add more features)
-- [ ] 0.17.0 Morph menu incomplete (May add more features)
+- [x] 0.8.5 Misc
+- [x] 0.8.5 Settings
+- [x] 0.8.5 Online mods
+- [x] 0.8.5 Offline mods incomplete
+- [x] 0.8.5 Effect menu
+- [x] 0.8.5 Enchant menu
+- [x] 0.8.5 Give menu
+- [ ] 0.17.0 Morph menu (Render ID of mobs seem to change);
 - [x] 0.8.5 Nuke menu
 - [x] 0.8.5 Particle menu
-- [x] 0.17.0 Spawn menu
+- [ ] 0.17.0 Spawn menu (Spawn eggs damage/data/ID seem to change);
 - [x] 0.8.5 Speed menu
-- [ ] 0.8.5 Teleport menu incomplete (Some crashes & may add more features)
+- [x] 0.8.5 Teleport menu
 - [x] 0.8.5 Time menu
-- [x] 0.8.5 Weather menu incomplete (May add more features)
+- [x] 0.8.5 Weather menu
