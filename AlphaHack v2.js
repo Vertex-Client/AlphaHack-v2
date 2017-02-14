@@ -298,6 +298,7 @@ var hitrmef = false;
 var onfriction = false;
 var itemrain = false;
 var rainitem = false;
+var doubledrop = false;
 
 var showActive = false;
 var showActive2 = false;
@@ -627,11 +628,14 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             wvLayout1.setOrientation(1);
             wvScroll.addView(wvLayout);
             wvLayout1.addView(wvScroll);
-			
-			var webs = new android.webkit.WebView(MainActivity);
-			webs.setWebChromeClient(new android.webkit.WebChromeClient());
-			webs.setWebViewClient(new android.webkit.WebViewClient());
-			webs.setScrollBarStyle(webs.SCROLLBARS_INSIDE_OVERLAY);
+		
+		var webs = new android.webkit.WebView(MainActivity);
+		webs.setWebChromeClient(new android.webkit.WebChromeClient());
+		webs.setWebViewClient(new android.webkit.WebViewClient());
+		webs.setScrollBarStyle(webs.SCROLLBARS_INSIDE_OVERLAY);
+		webs.requestFocus(webs.FOCUS_DOWN);
+		webs.requestFocusFromTouch();
+		
 			
 			var exit = new styleButton();
             exit.setText("Exit");
@@ -669,7 +673,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 			wvLayout.addView(webs);
 
 wv = new PopupWindow(wvLayout1, dip2px(500), dip2px(500));
-wv = new PopupWindow(wvLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/0, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/0);
+wv = new PopupWindow(wvLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/1, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1);
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
@@ -2369,6 +2373,7 @@ var dejs = new styleButton();
             dejs.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 			betterWebview('http://alexstar.ru/tools/jsunpack/');
+			misc.dismiss();
                 }
             }));
             miscLayout.addView(dejs);
@@ -4453,6 +4458,28 @@ cheat.dismiss();
                 }
             }));
             cheatLayout.addView(stap1);
+
+var dropbutton = new styleButton(MainActivity);
+dropbutton.setText("Double drops");
+dropbutton.setTextColor(Color.RED);
+if(doubledrop==true)dropbutton.setTextColor(Color.GREEN);
+            dropbutton.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             doubledrop?doubledrop=false:doubledrop=true;
+dropbutton.setText("Double drops");
+if(doubledrop == true){
+dropbutton.setTextColor(Color.GREEN);
+clientMessage(client+"Double drops on\nThis allows you to pick up x2 the amount of the item you placed or broke.");
+doubledrop = true;
+}
+if(doubledrop == false){
+dropbutton.setTextColor(Color.RED);
+clientMessage(client+"Double drops off");
+doubledrop = false;
+}
+                }
+            }));
+            cheatLayout.addView(dropbutton);
  
 var exit2 = new styleButton();
 		exit2.setText("Exit");
@@ -11456,6 +11483,10 @@ if(Entity.getEntityTypeId(players[p]) == 63){
 function destroyBlock(x, y, z, side)
 {
 if(block == true)preventDefault();
+	if(doubledrop == true){
+		var broke = Level.getTile(x, y, z);
+		Level.dropItem(x,y,z,0,broke,broke * 2);
+	}
 }
 
 function startDestroyBlock(x, y, z, side)
