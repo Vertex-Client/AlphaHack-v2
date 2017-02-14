@@ -6492,6 +6492,7 @@ var god1 = new styleButton();
             enchantLayout.addView(god1);
             
             function godsword(){
+		    if(Player.getSelectedSlotId() != null){
             	var tysplvl = "29000";
 Player.enchant(Player.getSelectedSlotId(), Enchantment.FIRE_ASPECT,tysplvl);
 Player.enchant(Player.getSelectedSlotId(), Enchantment.KNOCKBACK,tysplvl);
@@ -6500,6 +6501,7 @@ Player.enchant(Player.getSelectedSlotId(), Enchantment.SHARPNESS,tysplvl);
 Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,tysplvl);
 		    Player.setLevel(Math.round(tysplvl));
 		    Player.setItemCustomName(Player.getSelectedSlotId(), "God sword");
+		    }
             }
             
         var god2 = new styleButton();
@@ -6512,6 +6514,7 @@ Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,tysplvl);
             enchantLayout.addView(god2);
             
             function godpickaxe(){
+		    if(Player.getSelectedSlotId() != null){
             	var tysplvl = "29000";
 		var fortuneLvl = "80";
 Player.enchant(Player.getSelectedSlotId(), Enchantment.EFFICIENCY,tysplvl);
@@ -6519,6 +6522,50 @@ Player.enchant(Player.getSelectedSlotId(), Enchantment.FORTUNE,fortuneLvl);
 Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,tysplvl);
 		    Player.setLevel(Math.round(tysplvl));
 		    Player.setItemCustomName(Player.getSelectedSlotId(), "God pickaxe");
+		    }
+            }
+	
+	var god4 = new styleButton();
+            god4.setText("God axe");
+            god4.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                godaxe()	
+                }
+            }));
+            enchantLayout.addView(god4);
+            
+            function godaxe(){
+		    if(Player.getSelectedSlotId() != null){
+            	var tysplvl = "29000";
+		var fortuneLvl = "80";
+Player.enchant(Player.getSelectedSlotId(), Enchantment.EFFICIENCY,tysplvl);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.FORTUNE,fortuneLvl);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,tysplvl);
+		    Player.setLevel(Math.round(tysplvl));
+		    Player.setItemCustomName(Player.getSelectedSlotId(), "God axe");
+		    }
+            }
+	
+	var god5 = new styleButton();
+            god5.setText("God bow");
+            god5.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                godaxe()	
+                }
+            }));
+            enchantLayout.addView(god5);
+            
+            function godbow(){
+		    if(Player.getSelectedSlotId() != null){
+            	var tysplvl = "29000";
+		var flamelvl = '80';
+Player.enchant(Player.getSelectedSlotId(), Enchantment.FLAME,flamelvl);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.PUNCH,tysplvl);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.INFINITY,tysplvl);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,tysplvl);
+		    Player.setLevel(Math.round(tysplvl));
+		    Player.setItemCustomName(Player.getSelectedSlotId(), "God bow");
+		    }
             }
 			
 var god3 = new styleButton();
@@ -6531,13 +6578,52 @@ var god3 = new styleButton();
             enchantLayout.addView(god3);
             
             function godarmor(){
+		    if(Player.getSelectedSlotId() != null){
             	var tysplvl = "29000";
 Player.enchant(Player.getSelectedSlotId(), Enchantment.PROTECTION,tysplvl);
 Player.enchant(Player.getSelectedSlotId(), Enchantment.THORNS,tysplvl);
 Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,tysplvl);
 		    Player.setLevel(Math.round(tysplvl));
 		    Player.setItemCustomName(Player.getSelectedSlotId(), "God armor");
-            }
+		    }
+		    
+	    }
+	
+	var wearing = new Button(MainActivity);
+            wearing.setText("God armor (wearing)");
+            wearing.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				wearGodArmor()
+                }
+            }));
+            enchantLayout.addView(wearing);
+	
+	function wearGodArmor(){
+		if(Player.getArmorSlot(0) != null){
+				Player.enchant(Player.getArmorSlot(0), Enchantment.PROTECTION,tysplvl);
+				Player.enchant(Player.getArmorSlot(0), Enchantment.THORNS,tysplvl);
+				Player.enchant(Player.getArmorSlot(0), Enchantment.UNBREAKING,tysplvl);
+				Player.setItemCustomName(Player.getArmorSlot(0), "God armor");
+				}
+				if(Player.getArmorSlot(1) != null){
+				Player.enchant(Player.getArmorSlot(1), Enchantment.PROTECTION,tysplvl);
+				Player.enchant(Player.getArmorSlot(1), Enchantment.THORNS,tysplvl);
+				Player.enchant(Player.getArmorSlot(1), Enchantment.UNBREAKING,tysplvl);
+				Player.setItemCustomName(Player.getArmorSlot(1), "God armor");
+				}
+				if(Player.getArmorSlot(2) != null){
+				Player.enchant(Player.getArmorSlot(2), Enchantment.PROTECTION,tysplvl);
+				Player.enchant(Player.getArmorSlot(2), Enchantment.THORNS,tysplvl);
+				Player.enchant(Player.getArmorSlot(2), Enchantment.UNBREAKING,tysplvl);
+				Player.setItemCustomName(Player.getArmorSlot(2), "God armor");
+				}
+				if(Player.getArmorSlot(3) != null){
+				Player.enchant(Player.getArmorSlot(3), Enchantment.PROTECTION,tysplvl);
+				Player.enchant(Player.getArmorSlot(3), Enchantment.THORNS,tysplvl);
+				Player.enchant(Player.getArmorSlot(3), Enchantment.UNBREAKING,tysplvl);
+				Player.setItemCustomName(Player.getArmorSlot(3), "God armor");
+				}
+	}
 
 var ena = new styleButton();
             ena.setText("Aqua Affinity");
@@ -7955,6 +8041,7 @@ var button90 = new styleButton();
             button90.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 				betterWebview('https://arceusmatt.github.io/minecraftid.html');
+			give.dismiss();
                 }
             }));
             giveLayout.addView(button90);
