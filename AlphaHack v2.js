@@ -299,6 +299,7 @@ var onfriction = false;
 var itemrain = false;
 var rainitem = false;
 var doubledrop = false;
+var censorbypass = false;
 
 var showActive = false;
 var showActive2 = false;
@@ -4346,8 +4347,6 @@ striketext = false;
             }));
             cheatLayout.addView(butfuon6);
 
-
-
 var butfuon8 = new styleButton();
 butfuon8.setText("Prevent same message");
 butfuon8.setTextColor(Color.RED);
@@ -4466,6 +4465,28 @@ cheat.dismiss();
                 }
             }));
             cheatLayout.addView(stap1);
+
+var censor = new styleButton();
+censor.setText("Swear censor bypass");
+censor.setTextColor(Color.RED);
+if(censorbypass==true)censor.setTextColor(Color.GREEN);
+            censor.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             censorbypass?censorbypass=false:censorbypass=true;
+censor.setText("Swear censor bypass");
+if(censorbypass == true){
+censor.setTextColor(Color.GREEN);
+clientMessage(client+"Swear censor bypass on");
+censorbypass = true;
+}
+if(censorbypass == false){
+censor.setTextColor(Color.RED);
+clientMessage(client+"Swear censor bypass off");
+censorbypass = false;
+}
+                }
+            }));
+            cheatLayout.addView(censor);
 
 	/*
 *
@@ -14108,8 +14129,8 @@ function toStrikeSpeak(text){
 }
 function toSwearSpeak(text){
 	var end = text.toUpperCase();
-	var normal = new Array("BITCH","FUCK"); //TODO
-	var swear = new Array("B¡tch","Fuck"); //TODO
+	var normal = new Array("BITCH","FUCK","SHIT","CUNT","ASS","DICK","PISS","DAMN","PUSSY","COCK"); //TODO
+	var swear = new Array("B¡tсћ","Fцсҝ","Sɦіt","Cцɲt","Asʂ","Dіcҝ","P¡ʂs","Damɲ","Pцsʂy","Cоҫҝ"); //TODO
 		for(i = 0; i < normal.length; i++) {
 		end = replaceAll(normal[i], swear[i], end);
 	}
@@ -14136,6 +14157,11 @@ function chatHook(str){
 			preventDefault();
 			com.mojang.minecraftpe.MainActivity.currentMainActivity.get().updateTextboxText("");
 			Server.sendChat(" "+toStrikeSpeak(str));
+		}
+		if(censorbypass){
+			preventDefault();
+			com.mojang.minecraftpe.MainActivity.currentMainActivity.get().updateTextboxText("");
+			Server.sendChat(" "+toSwearSpeak(str));
 		}
 		if(preventsame){
 			preventDefault();
