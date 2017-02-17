@@ -2439,7 +2439,817 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		cheatLayout.addView(exit);
 		
-		var bypass1 = new styleButton();
+		var combat1 = new TextView(MainActivity);
+            combat1.setText("Combat");
+            combat1.setTextColor(Color.BLACK);
+			var textviewBg = new android.graphics.drawable.GradientDrawable();
+			textviewBg.setColor(Color.WHITE);
+			combat1.setBackgroundDrawable(textviewBg);
+            cheatLayout.addView(combat1);
+			
+			var killaura1 = new styleButton();
+killaura1.setText("Player aim aura");
+killaura1.setTextColor(Color.RED);
+if(paimaura==true)killaura1.setTextColor(Color.GREEN);
+            killaura1.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             paimaura?paimaura=false:paimaura=true;
+killaura1.setText("Player aim aura");
+if(paimaura == true){
+killaura1.setTextColor(Color.GREEN);
+clientMessage(client + "Player aim aura on");
+Toast.makeText(MainActivity, "Credit: Firepro9978 from flame client!", 1).show();
+aimbot = true;
+aimed = true;
+paimaura = true;
+}
+if(paimaura == false){
+killaura1.setTextColor(Color.RED);
+clientMessage(client + "Player aim aura off");
+aimbot = false;
+aimed = false;
+paimaura = false;
+}
+                }
+            }));
+            cheatLayout.addView(killaura1);
+	
+	var killaura2 = new styleButton();
+killaura2.setText("Mob aim aura");
+killaura2.setTextColor(Color.RED);
+if(maimaura==true)killaura2.setTextColor(Color.GREEN);
+            killaura2.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             maimaura?maimaura=false:maimaura=true;
+killaura2.setText("Mob aim aura");
+if(maimaura == true){
+killaura2.setTextColor(Color.GREEN);
+clientMessage(client + "Mob aim aura on");
+Toast.makeText(MainActivity, "Credit: Firepro9978 from flame client!", 1).show();
+aimbot2 = true;
+aimed2 = true;
+maimaura = true;
+}
+if(maimaura == false){
+killaura2.setTextColor(Color.RED);
+clientMessage(client + "Mob aim aura off");
+aimbot2 = false;
+aimed2 = false;
+maimaura = false;
+}
+                }
+            }));
+            cheatLayout.addView(killaura2);
+
+var jhit = new styleButton();
+jhit.setText("Hit'n'jump");
+jhit.setTextColor(Color.RED);
+if(hitJump==true)jhit.setTextColor(Color.GREEN);
+            jhit.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             hitJump?hitJump=false:hitJump=true;
+jhit.setText("Hit'n'jump");
+if(hitJump == true){
+jhit.setTextColor(Color.GREEN);
+clientMessage(client + "Hit'n'jump on");
+
+hitJump = true;
+}
+if(hitJump == false){
+jhit.setTextColor(Color.RED);
+clientMessage(client + "Hit'n'jump off");
+
+hitJump = false;
+}
+                }
+            }));
+            cheatLayout.addView(jhit);
+			
+var afkspawn = new styleButton();
+afkspawn.setText("Low health action");
+afkspawn.setTextColor(Color.RED);
+if(lowhealth==true)afkspawn.setTextColor(Color.GREEN);
+            afkspawn.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             lowhealth?lowhealth=false:lowhealth=true;
+afkspawn.setText("Low health action");
+if(lowhealth == true){
+afkspawn.setTextColor(Color.GREEN);
+atact2();
+lowhealth = true;
+}
+if(lowhealth == false){
+afkspawn.setTextColor(Color.RED);
+
+afkspawn = false;
+}
+                }
+            }));
+            cheatLayout.addView(afkspawn);
+			
+var atkact = new styleButton();
+atkact.setText("Attack action");
+atkact.setTextColor(Color.RED);
+if(attackActions==true)atkact.setTextColor(Color.GREEN);
+            atkact.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             attackActions?attackActions=false:attackActions=true;
+atkact.setText("Attack action");
+if(attackActions == true){
+atkact.setTextColor(Color.GREEN);
+clientMessage(client + "Attack action on");
+atact();
+attackActions = true;
+}
+if(attackActions == false){
+atkact.setTextColor(Color.RED);
+clientMessage(client + "Attack action off");
+
+attackActions = false;
+}
+                }
+            }));
+            cheatLayout.addView(atkact);
+			
+			var hacks1 = new TextView(MainActivity);
+            hacks1.setText("Hacks");
+            hacks1.setTextColor(Color.BLACK);
+			var textviewBg = new android.graphics.drawable.GradientDrawable();
+			textviewBg.setColor(Color.WHITE);
+			hacks1.setBackgroundDrawable(textviewBg);
+            cheatLayout.addView(hacks1);
+			
+			var button1 = new styleButton();
+button1.setText("Walk on liquid");
+button1.setTextColor(Color.RED);
+if(liquidwalk==true)button1.setTextColor(Color.GREEN);
+            button1.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             liquidwalk?liquidwalk=false:liquidwalk=true;
+button1.setText("Walk on liquid");
+if(liquidwalk == true){
+button1.setTextColor(Color.GREEN);
+Toast.makeText(MainActivity, "Credit: GodSoft029!", 1).show();
+Block.setShape(8, 0, 0, 0, 1, 0.6, 1);
+Block.setShape(9, 0, 0, 0, 1, 0.6, 1);
+Block.setShape(10, 0, 0, 0, 1, 0.6, 1);
+Block.setShape(11, 0, 0, 0, 1, 0.6, 1);
+Block.defineBlock(8, "Water", [["still_water", 0]], 8, false, 4);
+Block.defineBlock(9, "Stationary Water", [["still_water", 0]], 9, false, 4);
+Block.defineBlock(10, "Lava", [["still_lava", 0]], 10, false, 4);
+Block.defineBlock(11, "Stationary Lava", [["still_lava", 0]], 11, false, 4);
+liquidwalk = true;
+}
+if(liquidwalk == false){
+button1.setTextColor(Color.RED);
+Block.setShape(8, null, null, null, null, null, null);
+Block.setShape(9, null, null, null, null, null, null);
+Block.setShape(10, null, null, null, null, null, null);
+Block.setShape(11, null, null, null, null, null, null);
+liquidwalk = false;
+}
+                }
+            }));
+            cheatLayout.addView(button1);
+            
+            var creative = new styleButton();
+            creative.setText("Creative");        
+            creative.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.setGameMode(1);
+                    Player.setCanFly(true);
+clientMessage(client + "§7Your gamemode was updated to creative mode!");
+                }
+            }));
+            cheatLayout.addView(creative);
+            
+            var survival = new styleButton();
+            survival.setText("Survival");
+            survival.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.setGameMode(0);
+                    Player.setCanFly(false);
+clientMessage(client + "§7Your gamemode was updated to survival mode!");
+                }
+            }));
+            cheatLayout.addView(survival);
+            
+            var adventure = new styleButton();
+            adventure.setText("Adventure");       
+            adventure.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.setGameMode(2);
+                    Player.setCanFly(false);
+clientMessage(client + "§7Your gamemode was updated to adventure mode!");
+                }
+            }));
+            cheatLayout.addView(adventure);
+            
+            var spectator = new styleButton();
+            spectator.setText("Spectator");     
+            spectator.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.setGameMode(3);
+                    Player.setCanFly(true);
+clientMessage(client + "§7Your gamemode was updated to spectator mode!");
+                }
+            }));
+            cheatLayout.addView(spectator);
+            
+            var button6 = new styleButton();
+button6.setText("Glide");
+button6.setTextColor(Color.RED);
+if(glide==true)button6.setTextColor(Color.GREEN);
+            button6.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             glide?glide=false:glide=true;
+button6.setText("Glide");
+if(glide == true){
+button6.setTextColor(Color.GREEN);
+Toast.makeText(MainActivity, "Credit: Apric0cks from maximus mod!", 1).show();
+glide = true;
+}
+if(glide == false){
+button6.setTextColor(Color.RED);
+
+glide = false;
+}
+                }
+            }));
+            cheatLayout.addView(button6);
+            
+            var walkonair = new styleButton();
+walkonair.setText("Walk on air");
+walkonair.setTextColor(Color.RED);
+if(airwalk==true)walkonair.setTextColor(Color.GREEN);
+            walkonair.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             airwalk?airwalk=false:airwalk=true;
+walkonair.setText("Walk on air");
+if(airwalk == true){
+walkonair.setTextColor(Color.GREEN);
+Block.setShape(95, 0, 0, 0, 1, 1, 1);
+clientMessage(client + "You may get detected as flying becareful!")
+airwalk = true;
+}
+if(airwalk == false){
+walkonair.setTextColor(Color.RED);
+clientMessage(client + "Walk on air is off")
+airwalk = false;
+}
+                }
+            }));
+            cheatLayout.addView(walkonair);
+			
+var button2 = new styleButton();
+button2.setText("X-Ray");
+button2.setTextColor(Color.RED);
+if(xray==true)button2.setTextColor(Color.GREEN);
+            button2.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             xray?xray=false:xray=true;
+button2.setText("X-Ray");
+if(xray == true){
+button2.setTextColor(Color.GREEN);
+clientMessage(client + "You may crash!\nchange on/off fancy graphics for better view.\nAlso try relogging from the world.");
+
+xray = true;
+}
+if(xray == false){
+button2.setTextColor(Color.RED);
+num0++
+Block.setRenderLayer(1,num0);
+Block.setRenderLayer(2,num0);
+Block.setRenderLayer(3,num0);
+Block.setRenderLayer(12,num0);
+Block.setRenderLayer(24,num0);
+Block.setRenderLayer(78,num0);
+xray = false;
+}
+                }
+            }));
+            cheatLayout.addView(button2);
+            
+            var speedup = new styleButton();
+speedup.setText("No friction");
+speedup.setTextColor(Color.RED);
+if(changeSpeed==true)speedup.setTextColor(Color.GREEN);
+            speedup.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             changeSpeed?changeSpeed=false:changeSpeed=true;
+speedup.setText("No friction");
+if(changeSpeed == true){
+speedup.setTextColor(Color.GREEN);
+clientMessage(client + "No friction on,\nThis adds no friction when you're on ice, soul sand etc");
+
+changeSpeed = true;
+}
+if(changeSpeed == false){
+speedup.setTextColor(Color.RED);
+clientMessage(client + "No friction off");
+Block.setShape(30, 0, 0, 0, 1, null, 1);
+	Block.setFriction(79, 0.9800000190734863);
+	Block.setFriction(267, 0.9800000190734863);
+changeSpeed = false;
+}
+                }
+            }));
+            cheatLayout.addView(speedup);
+			
+var button8 = new styleButton();
+button8.setText("Anti break");
+button8.setTextColor(Color.RED);
+if(block==true)button8.setTextColor(Color.GREEN);
+            button8.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             block?block=false:block=true;
+button8.setText("Anti break");
+if(block == true){
+button8.setTextColor(Color.GREEN);
+Toast.makeText(MainActivity, "Credit: Johnmacrocraft!", 1).show();
+block = true;
+}
+if(block == false){
+button8.setTextColor(Color.RED);
+
+block = false;
+}
+                }
+            }));
+            cheatLayout.addView(button8);
+			
+            var button10 = new styleButton();
+button10.setText("Tap destroy");
+button10.setTextColor(Color.RED);
+if(tapdestroy==true)button10.setTextColor(Color.GREEN);
+            button10.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             tapdestroy?tapdestroy=false:tapdestroy=true;
+button10.setText("Tap destroy");
+if(tapdestroy == true){
+button10.setTextColor(Color.GREEN);
+
+tapdestroy = true;
+}
+if(tapdestroy == false){
+button10.setTextColor(Color.RED);
+
+tapdestroy = false;
+}
+                }
+            }));
+            cheatLayout.addView(button10);
+			
+            var button11 = new styleButton();
+button11.setText("Storage ESP");
+button11.setTextColor(Color.RED);
+if(chestesp==true)button11.setTextColor(Color.GREEN);
+            button11.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             chestesp?chestesp=false:chestesp=true;
+button11.setText("Storage ESP");
+if(chestesp == true){
+button11.setTextColor(Color.GREEN);
+Toast.makeText(MainActivity, "Credit: Vertex Client team!", 1).show();
+chestesp = true;
+}
+if(chestesp == false){
+button11.setTextColor(Color.RED);
+
+chestesp = false;
+}
+                }
+            }));
+            cheatLayout.addView(button11);
+			
+var button13 = new styleButton();
+button13.setText("Auto destroy");
+button13.setTextColor(Color.RED);
+if(autodestroy2==true)button13.setTextColor(Color.GREEN);
+            button13.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+	autodestroy2?autodestroy2=false:autodestroy2=true;
+button13.setText("Auto destroy");
+if(autodestroy2 == true){
+button13.setTextColor(Color.GREEN);
+dig1();
+autodestroy2 = true;
+}
+if(autodestroy2 == false){
+button13.setTextColor(Color.RED);
+autodestroy = false;
+extraj = false;
+autodestroy2 = false;
+}
+                }
+            }));
+            cheatLayout.addView(button13);
+			
+            var kjump = new styleButton();
+            kjump.setText("Infinite jump: "+(jump?"on":"off"));
+            kjump.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+jump?jump=false:jump=true;
+kjump.setText("Infinite jump: "+(jump?"on":"off"));
+if(jump == true){
+clientMessage(client + "§7");
+jump = true;
+}
+if(jump == false){
+clientMessage(client + "§7");
+jump = false;
+                }
+}
+            }));
+            cheatLayout.addView(kjump);
+            
+            var nowall = new styleButton();
+            nowall.setText("No clip: "+(noclip?"on":"off"));
+            nowall.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+noclip?noclip=false:noclip=true;
+nowall.setText("No clip: "+(noclip?"on":"off"));
+if(noclip == true){
+clientMessage(client + "§7No clip / walk through walls on");
+
+Block.setShape(4, null, null, null, null, null, null);
+Block.setShape(5, null, null, null, null, null, null);
+Block.setShape(17, null, null, null, null, null, null);
+Block.setShape(3, null, null, null, null, null, null);
+
+Block.setShape(24, null, null, null, null, null, null);
+Block.setShape(3, null, null, null, null, null, null);
+Block.setShape(41, null, null, null, null, null, null);
+Block.setShape(42, null, null, null, null, null, null);
+Block.setShape(45, null, null, null, null, null, null);
+Block.setShape(49, null, null, null, null, null, null);
+Block.setShape(48, null, null, null, null, null, null);
+Block.setShape(47, null, null, null, null, null, null);
+
+Block.setShape(57, null, null, null, null, null, null);
+Block.setShape(8, null, null, null, null, null, null);
+Block.setShape(98, null, null, null, null, null, null);
+Block.setShape(1, null, null, null, null, null, null);
+Block.setShape(112, null, null, null, null, null, null);
+Block.setShape(133, null, null, null, null, null, null);
+Block.setShape(7, null, null, null, null, null, null);
+
+Block.setShape(155, null, null, null, null, null, null);
+Block.setShape(179, null, null, null, null, null, null);
+Block.setShape(188, null, null, null, null, null, null);
+Block.setShape(189, null, null, null, null, null, null);
+Block.setShape(19, null, null, null, null, null, null);
+Block.setShape(191, null, null, null, null, null, null);
+Block.setShape(192, null, null, null, null, null, null);
+
+noclip = true;
+}
+if(noclip == false){
+clientMessage(client + "§7No clip / walk through walls off");
+
+Block.setShape(4, 0, 0, 0, 1, 1, 1);
+Block.setShape(5, 0, 0, 0, 1, 1, 1);
+Block.setShape(17, 0, 0, 0, 1, 1, 1);
+Block.setShape(3, 0, 0, 0, 1, 1, 1);
+
+Block.setShape(24, 0, 0, 0, 1, 1, 1);
+Block.setShape(21, 0, 0, 0, 1, 1, 1);
+Block.setShape(41, 0, 0, 0, 1, 1, 1);
+Block.setShape(42, 0, 0, 0, 1, 1, 1);
+Block.setShape(45, 0, 0, 0, 1, 1, 1);
+Block.setShape(49, 0, 0, 0, 1, 1, 1);
+Block.setShape(48, 0, 0, 0, 1, 1, 1);
+Block.setShape(47, 0, 0, 0, 1, 1, 1);
+
+Block.setShape(57, 0, 0, 0, 1, 1, 1);
+Block.setShape(81, 0, 0, 0, 1, 1, 1);
+Block.setShape(98, 0, 0, 0, 1, 1, 1);
+Block.setShape(111, 0, 0, 0, 1, 1, 1);
+Block.setShape(112, 0, 0, 0, 1, 1, 1);
+Block.setShape(133, 0, 0, 0, 1, 1, 1);
+Block.setShape(7, 0, 0, 0, 1, 1, 1);
+
+Block.setShape(155, 0, 0, 0, 1, 1, 1);
+Block.setShape(179, 0, 0, 0, 1, 1, 1);
+Block.setShape(188, 0, 0, 0, 1, 1, 1);
+Block.setShape(189, 0, 0, 0, 1, 1, 1);
+Block.setShape(191, 0, 0, 0, 1, 1, 1);
+Block.setShape(191, 0, 0, 0, 1, 1, 1);
+Block.setShape(192, 0, 0, 0, 1, 1, 1);
+
+noclip = false;
+                }
+}
+            }));
+            cheatLayout.addView(nowall);
+			
+            var barrier = new styleButton();
+barrier.setText("Nullify barriers");
+            barrier.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+Block.setShape(0, null, null, null, null, null, null);
+Block.setShape(65, null, null, null, null, null, null);
+Block.setShape(95, null, null, null, null, null, null);
+Block.setShape(255, null, null, null, null, null, null);
+clientMessage(client + "Any barriers have been nullifed.");
+                }
+            }));
+            cheatLayout.addView(barrier);
+            
+            var light = new styleButton();
+light.setText("Brightness");
+light.setTextColor(Color.RED);
+if(brightness==true)light.setTextColor(Color.GREEN);
+            light.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             brightness?brightness=false:brightness=true;
+light.setText("Brightness");
+if(brightness == true){
+light.setTextColor(Color.GREEN);
+
+brightness = true;
+}
+if(brightness == false){
+light.setTextColor(Color.RED);
+
+brightness = false;
+}
+                }
+            }));
+            cheatLayout.addView(light);
+			
+            var anti2void = new styleButton();
+anti2void.setText("Anti void");
+anti2void.setTextColor(Color.RED);
+if(antivoid==true)anti2void.setTextColor(Color.GREEN);
+            anti2void.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             antivoid?antivoid=false:antivoid=true;
+anti2void.setText("Anti void");
+if(antivoid == true){
+anti2void.setTextColor(Color.GREEN);
+
+antivoid = true;
+}
+if(antivoid == false){
+anti2void.setTextColor(Color.RED);
+
+antivoid = false;
+}
+                }
+            }));
+            cheatLayout.addView(anti2void);
+			
+var zmmm = new styleButton();
+      zmmm.setText("Instant break");
+zmmm.setTextColor(Color.RED);
+if(instabreak==true)zmmm.setTextColor(Color.GREEN);
+		zmmm.setOnClickListener(new android.view.View.OnClickListener() {
+		 onClick: function(v){
+ instabreak?instabreak=false:instabreak=true;
+zmmm.setText("Instant break");
+if(instabreak == true){
+zmmm.setTextColor(Color.GREEN);
+instaDestroy();
+clientMessage(client + "§7Instant break is on");
+}
+if(instabreak == false){
+zmmm.setTextColor(Color.RED);
+clientMessage(client + "§7Instant break is off");
+defaultDestroy();
+                }
+			}
+		});
+		cheatLayout.addView(zmmm);
+		
+		var tju = new styleButton();
+tju.setText("Tap jump");
+tju.setTextColor(Color.RED);
+if(tapjump==true)tju.setTextColor(Color.GREEN);
+            tju.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             tapjump?tapjump=false:tapjump=true;
+tju.setText("Tap jump");
+if(tapjump == true){
+tju.setTextColor(Color.GREEN);
+clientMessage(client + "Tap jump on\nTap ground to jump!");
+
+tapjump = true;
+}
+if(tapjump == false){
+tju.setTextColor(Color.RED);
+clientMessage(client + "Tap jump is off");
+
+tapjump = false;
+}
+                }
+            }));
+            cheatLayout.addView(tju);
+            
+            var spiderman = new styleButton();
+spiderman.setText("Spider");
+spiderman.setTextColor(Color.RED);
+if(spider==true)spiderman.setTextColor(Color.GREEN);
+            spiderman.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             spider?spider=false:spider=true;
+spiderman.setText("Spider");
+if(spider == true){
+spiderman.setTextColor(Color.GREEN);
+clientMessage(client + "Spider on");
+Toast.makeText(MainActivity, "Credit: Firepro9978 from VoidClient!", 1).show();
+Utils.Player.isCollidedHorizontally();
+spider = true;
+}
+if(spider == false){
+spiderman.setTextColor(Color.RED);
+clientMessage(client + "Spider off");
+
+spider = false;
+}
+                }
+            }));
+            cheatLayout.addView(spiderman);
+            
+            var jumps = new styleButton();
+jumps.setText("Higher jumps");
+jumps.setTextColor(Color.RED);
+if(jump==true)jumps.setTextColor(Color.GREEN);
+            jumps.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             jump?jump=false:jump=true;
+jumps.setText("Higher jumps");
+if(jump == true){
+jumps.setTextColor(Color.GREEN);
+clientMessage(client + "Higher jumps on");
+
+jump = true;
+}
+if(jump == false){
+jumps.setTextColor(Color.RED);
+clientMessage(client + "Higher jumps off");
+
+jump = false;
+}
+                }
+            }));
+            cheatLayout.addView(jumps);
+            
+            var autow = new styleButton();
+autow.setText("Auto walk");
+autow.setTextColor(Color.RED);
+if(autowalk==true)autow.setTextColor(Color.GREEN);
+            autow.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             autowalk?autowalk=false:autowalk=true;
+autow.setText("Auto walk");
+if(autowalk == true){
+autow.setTextColor(Color.GREEN);
+clientMessage(client + "Auto walk on");
+
+autowalk = true;
+}
+if(autowalk == false){
+autow.setTextColor(Color.RED);
+clientMessage(client + "Auto walk off");
+
+autowalk = false;
+}
+                }
+            }));
+            cheatLayout.addView(autow);
+			
+var twek = new styleButton();
+twek.setText("Twerk");
+twek.setTextColor(Color.RED);
+if(twerk==true)twek.setTextColor(Color.GREEN);
+            twek.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             twerk?twerk=false:twerk=true;
+twek.setText("Twerk");
+if(twerk == true){
+twek.setTextColor(Color.GREEN);
+clientMessage(client + "Auto twerk on");
+
+twerk = true;
+}
+if(twerk == false){
+twek.setTextColor(Color.RED);
+clientMessage(client + "Auto twerk off");
+
+twerk = false;
+}
+                }
+            }));
+            cheatLayout.addView(twek);
+
+var taura = new styleButton();
+taura.setText("TP Aura");
+taura.setTextColor(Color.RED);
+if(tpAura==true)taura.setTextColor(Color.GREEN);
+            taura.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             tpAura?tpAura=false:tpAura=true;
+taura.setText("TP Aura");
+if(tpAura == true){
+taura.setTextColor(Color.GREEN);
+clientMessage(client + "TP Aura on");
+Toast.makeText(MainActivity, "Credit: Apric0cks for the idea!", 1).show();
+
+tpAura = true;
+}
+if(tpAura == false){
+taura.setTextColor(Color.RED);
+clientMessage(client + "TP Aura off");
+
+tpAura = false;
+}
+                }
+            }));
+            cheatLayout.addView(taura);
+			
+var butfuon2 = new styleButton();
+butfuon2.setText("Bunny hop");
+butfuon2.setTextColor(Color.RED);
+if(bhop==true)butfuon2.setTextColor(Color.GREEN);
+            butfuon2.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             bhop?bhop=false:bhop=true;
+butfuon2.setText("Bunny hop");
+if(bhop== true){
+butfuon2.setTextColor(Color.GREEN);
+clientMessage(client+"Bunny hop on");
+	Toast.makeText(MainActivity, "Credit: Apric0cks from maximus mod!", 1).show();
+bhop= true;
+}
+if(bhop== false){
+butfuon2.setTextColor(Color.RED);
+clientMessage(client+"Bunny hop off");
+bhop= false;
+}
+                }
+            }));
+            cheatLayout.addView(butfuon2);
+			
+var walkonice = new styleButton();
+walkonice.setText("Ice walk");
+walkonice.setTextColor(Color.RED);
+if(icewalk==true)walkonice.setTextColor(Color.GREEN);
+            walkonice.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             icewalk?icewalk=false:icewalk=true;
+walkonice.setText("Ice walk");
+if(icewalk == true){
+walkonice.setTextColor(Color.GREEN);
+clientMessage(client + "You may get detected as flying becareful!")
+icewalk = true;
+}
+if(icewalk == false){
+walkonice.setTextColor(Color.RED);
+clientMessage(client + "Ice walk is off")
+icewalk = false;
+}
+                }
+            }));
+            cheatLayout.addView(walkonice);
+
+var frictme = new styleButton();
+frictme.setText("Only friction");
+frictme.setTextColor(Color.RED);
+if(onfriction==true)frictme.setTextColor(Color.GREEN);
+            frictme.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             onfriction?onfriction=false:onfriction=true;
+frictme.setText("Only friction");
+if(onfriction == true){
+frictme.setTextColor(Color.GREEN);
+clientMessage(client + "Only friction on");
+
+onfriction = true;
+}
+if(onfriction == false){
+frictme.setTextColor(Color.RED);
+clientMessage(client + "Only friction off");
+for(var i = 0; i < 100; i++){
+Block.setFriction(i, 0.6000000238418579);
+}
+	Block.setFriction(79, 0.9800000190734863);
+	Block.setFriction(267, 0.9800000190734863);
+onfriction = false;
+}
+                }
+            }));
+            cheatLayout.addView(frictme);
+			
+			var misc1 = new TextView(MainActivity);
+            misc1.setText("Misc");
+            misc1.setTextColor(Color.BLACK);
+			var textviewBg = new android.graphics.drawable.GradientDrawable();
+			textviewBg.setColor(Color.WHITE);
+			misc1.setBackgroundDrawable(textviewBg);
+            cheatLayout.addView(misc1);
+			
+					var bypass1 = new styleButton();
 bypass1.setText("Anti-spam bypass");
 bypass1.setTextColor(Color.RED);
 if(antispam2==true)bypass1.setTextColor(Color.GREEN);
@@ -2460,6 +3270,52 @@ antispam2 = false;
                 }
             }));
             cheatLayout.addView(bypass1);
+			
+	    var button9 = new styleButton();
+button9.setText("Tap spam");
+button9.setTextColor(Color.RED);
+if(tapspam==true)button9.setTextColor(Color.GREEN);
+            button9.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             tapspam?tapspam=false:tapspam=true;
+button9.setText("Tap spam");
+if(tapspam == true){
+button9.setTextColor(Color.GREEN);
+spa();
+tapspam = true;
+}
+if(tapspam == false){
+button9.setTextColor(Color.RED);
+autospam = false;
+autospam2 = false;
+tapspam = false;
+}
+                }
+            }));
+            cheatLayout.addView(button9);
+
+			
+var button12 = new styleButton();
+button12.setText("Auto spam");
+button12.setTextColor(Color.RED);
+if(autospam2==true)button12.setTextColor(Color.GREEN);
+            button12.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+	autospam2?autospam2=false:autospam2=true;
+button12.setText("Auto spam");
+if(autospam2==true){
+button12.setTextColor(Color.GREEN);
+spa();
+autospam2= true;
+}
+if(autospam2==false){
+button12.setTextColor(Color.RED);
+autospam = false;
+autospam2= false;
+}
+                }
+            }));
+            cheatLayout.addView(button12);
 
 var info = new styleButton();
             info.setText("Game info");
@@ -2607,239 +3463,8 @@ info.setBackgroundDrawable(new ColorDrawable(Color.BLACK));
             }
     }}));
 }
-	    
-	    var button1 = new styleButton();
-button1.setText("Walk on liquid");
-button1.setTextColor(Color.RED);
-if(liquidwalk==true)button1.setTextColor(Color.GREEN);
-            button1.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             liquidwalk?liquidwalk=false:liquidwalk=true;
-button1.setText("Walk on liquid");
-if(liquidwalk == true){
-button1.setTextColor(Color.GREEN);
-Toast.makeText(MainActivity, "Credit: GodSoft029!", 1).show();
-Block.setShape(8, 0, 0, 0, 1, 0.6, 1);
-Block.setShape(9, 0, 0, 0, 1, 0.6, 1);
-Block.setShape(10, 0, 0, 0, 1, 0.6, 1);
-Block.setShape(11, 0, 0, 0, 1, 0.6, 1);
-Block.defineBlock(8, "Water", [["still_water", 0]], 8, false, 4);
-Block.defineBlock(9, "Stationary Water", [["still_water", 0]], 9, false, 4);
-Block.defineBlock(10, "Lava", [["still_lava", 0]], 10, false, 4);
-Block.defineBlock(11, "Stationary Lava", [["still_lava", 0]], 11, false, 4);
-liquidwalk = true;
-}
-if(liquidwalk == false){
-button1.setTextColor(Color.RED);
-Block.setShape(8, null, null, null, null, null, null);
-Block.setShape(9, null, null, null, null, null, null);
-Block.setShape(10, null, null, null, null, null, null);
-Block.setShape(11, null, null, null, null, null, null);
-liquidwalk = false;
-}
-                }
-            }));
-            cheatLayout.addView(button1);
-            
-            var creative = new styleButton();
-            creative.setText("Creative");        
-            creative.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-                    Level.setGameMode(1);
-                    Player.setCanFly(true);
-clientMessage(client + "§7Your gamemode was updated to creative mode!");
-                }
-            }));
-            cheatLayout.addView(creative);
-            
-            var survival = new styleButton();
-            survival.setText("Survival");
-            survival.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-                    Level.setGameMode(0);
-                    Player.setCanFly(false);
-clientMessage(client + "§7Your gamemode was updated to survival mode!");
-                }
-            }));
-            cheatLayout.addView(survival);
-            
-            var adventure = new styleButton();
-            adventure.setText("Adventure");       
-            adventure.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-                    Level.setGameMode(2);
-                    Player.setCanFly(false);
-clientMessage(client + "§7Your gamemode was updated to adventure mode!");
-                }
-            }));
-            cheatLayout.addView(adventure);
-            
-            var spectator = new styleButton();
-            spectator.setText("Spectator");     
-            spectator.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-                    Level.setGameMode(3);
-                    Player.setCanFly(true);
-clientMessage(client + "§7Your gamemode was updated to spectator mode!");
-                }
-            }));
-            cheatLayout.addView(spectator);
-            
-            var button6 = new styleButton();
-button6.setText("Glide");
-button6.setTextColor(Color.RED);
-if(glide==true)button6.setTextColor(Color.GREEN);
-            button6.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             glide?glide=false:glide=true;
-button6.setText("Glide");
-if(glide == true){
-button6.setTextColor(Color.GREEN);
-Toast.makeText(MainActivity, "Credit: Apric0cks from maximus mod!", 1).show();
-glide = true;
-}
-if(glide == false){
-button6.setTextColor(Color.RED);
 
-glide = false;
-}
-                }
-            }));
-            cheatLayout.addView(button6);
-            
-            var walkonair = new styleButton();
-walkonair.setText("Walk on air");
-walkonair.setTextColor(Color.RED);
-if(airwalk==true)walkonair.setTextColor(Color.GREEN);
-            walkonair.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             airwalk?airwalk=false:airwalk=true;
-walkonair.setText("Walk on air");
-if(airwalk == true){
-walkonair.setTextColor(Color.GREEN);
-Block.setShape(95, 0, 0, 0, 1, 1, 1);
-clientMessage(client + "You may get detected as flying becareful!")
-airwalk = true;
-}
-if(airwalk == false){
-walkonair.setTextColor(Color.RED);
-clientMessage(client + "Walk on air is off")
-airwalk = false;
-}
-                }
-            }));
-            cheatLayout.addView(walkonair);
-			
-var killaura1 = new styleButton();
-killaura1.setText("Player aim aura");
-killaura1.setTextColor(Color.RED);
-if(paimaura==true)killaura1.setTextColor(Color.GREEN);
-            killaura1.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             paimaura?paimaura=false:paimaura=true;
-killaura1.setText("Player aim aura");
-if(paimaura == true){
-killaura1.setTextColor(Color.GREEN);
-clientMessage(client + "Player aim aura on");
-Toast.makeText(MainActivity, "Credit: Firepro9978 from flame client!", 1).show();
-aimbot = true;
-aimed = true;
-paimaura = true;
-}
-if(paimaura == false){
-killaura1.setTextColor(Color.RED);
-clientMessage(client + "Player aim aura off");
-aimbot = false;
-aimed = false;
-paimaura = false;
-}
-                }
-            }));
-            cheatLayout.addView(killaura1);
-	
-	var killaura2 = new styleButton();
-killaura2.setText("Mob aim aura");
-killaura2.setTextColor(Color.RED);
-if(maimaura==true)killaura2.setTextColor(Color.GREEN);
-            killaura2.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             maimaura?maimaura=false:maimaura=true;
-killaura2.setText("Mob aim aura");
-if(maimaura == true){
-killaura2.setTextColor(Color.GREEN);
-clientMessage(client + "Mob aim aura on");
-Toast.makeText(MainActivity, "Credit: Firepro9978 from flame client!", 1).show();
-aimbot2 = true;
-aimed2 = true;
-maimaura = true;
-}
-if(maimaura == false){
-killaura2.setTextColor(Color.RED);
-clientMessage(client + "Mob aim aura off");
-aimbot2 = false;
-aimed2 = false;
-maimaura = false;
-}
-                }
-            }));
-            cheatLayout.addView(killaura2);
-	    
-var button2 = new styleButton();
-button2.setText("X-Ray");
-button2.setTextColor(Color.RED);
-if(xray==true)button2.setTextColor(Color.GREEN);
-            button2.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             xray?xray=false:xray=true;
-button2.setText("X-Ray");
-if(xray == true){
-button2.setTextColor(Color.GREEN);
-clientMessage(client + "You may crash!\nchange on/off fancy graphics for better view.\nAlso try relogging from the world.");
-
-xray = true;
-}
-if(xray == false){
-button2.setTextColor(Color.RED);
-num0++
-Block.setRenderLayer(1,num0);
-Block.setRenderLayer(2,num0);
-Block.setRenderLayer(3,num0);
-Block.setRenderLayer(12,num0);
-Block.setRenderLayer(24,num0);
-Block.setRenderLayer(78,num0);
-xray = false;
-}
-                }
-            }));
-            cheatLayout.addView(button2);
-            
-            var speedup = new styleButton();
-speedup.setText("No friction");
-speedup.setTextColor(Color.RED);
-if(changeSpeed==true)speedup.setTextColor(Color.GREEN);
-            speedup.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             changeSpeed?changeSpeed=false:changeSpeed=true;
-speedup.setText("No friction");
-if(changeSpeed == true){
-speedup.setTextColor(Color.GREEN);
-clientMessage(client + "No friction on,\nThis adds no friction when you're on ice, soul sand etc");
-
-changeSpeed = true;
-}
-if(changeSpeed == false){
-speedup.setTextColor(Color.RED);
-clientMessage(client + "No friction off");
-Block.setShape(30, 0, 0, 0, 1, null, 1);
-	Block.setFriction(79, 0.9800000190734863);
-	Block.setFriction(267, 0.9800000190734863);
-changeSpeed = false;
-}
-                }
-            }));
-            cheatLayout.addView(speedup);
-            
-            var svr = new styleButton();
+var svr = new styleButton();
             svr.setText("Server IP:Port");
             svr.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
@@ -2989,141 +3614,7 @@ ttot = false;
                 }
             }));
             cheatLayout.addView(button7);
-            
-            var button8 = new styleButton();
-button8.setText("Anti break");
-button8.setTextColor(Color.RED);
-if(block==true)button8.setTextColor(Color.GREEN);
-            button8.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             block?block=false:block=true;
-button8.setText("Anti break");
-if(block == true){
-button8.setTextColor(Color.GREEN);
-Toast.makeText(MainActivity, "Credit: Johnmacrocraft!", 1).show();
-block = true;
-}
-if(block == false){
-button8.setTextColor(Color.RED);
-
-block = false;
-}
-                }
-            }));
-            cheatLayout.addView(button8);
-	    
-	    var button9 = new styleButton();
-button9.setText("Tap spam");
-button9.setTextColor(Color.RED);
-if(tapspam==true)button9.setTextColor(Color.GREEN);
-            button9.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             tapspam?tapspam=false:tapspam=true;
-button9.setText("Tap spam");
-if(tapspam == true){
-button9.setTextColor(Color.GREEN);
-spa();
-tapspam = true;
-}
-if(tapspam == false){
-button9.setTextColor(Color.RED);
-autospam = false;
-autospam2 = false;
-tapspam = false;
-}
-                }
-            }));
-            cheatLayout.addView(button9);
-            
-            var button10 = new styleButton();
-button10.setText("Tap destroy");
-button10.setTextColor(Color.RED);
-if(tapdestroy==true)button10.setTextColor(Color.GREEN);
-            button10.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             tapdestroy?tapdestroy=false:tapdestroy=true;
-button10.setText("Tap destroy");
-if(tapdestroy == true){
-button10.setTextColor(Color.GREEN);
-
-tapdestroy = true;
-}
-if(tapdestroy == false){
-button10.setTextColor(Color.RED);
-
-tapdestroy = false;
-}
-                }
-            }));
-            cheatLayout.addView(button10);
-            
-            var button11 = new styleButton();
-button11.setText("Storage ESP");
-button11.setTextColor(Color.RED);
-if(chestesp==true)button11.setTextColor(Color.GREEN);
-            button11.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             chestesp?chestesp=false:chestesp=true;
-button11.setText("Storage ESP");
-if(chestesp == true){
-button11.setTextColor(Color.GREEN);
-Toast.makeText(MainActivity, "Credit: Vertex Client team!", 1).show();
-chestesp = true;
-}
-if(chestesp == false){
-button11.setTextColor(Color.RED);
-
-chestesp = false;
-}
-                }
-            }));
-            cheatLayout.addView(button11);
-            
-var button12 = new styleButton();
-button12.setText("Auto spam");
-button12.setTextColor(Color.RED);
-if(autospam2==true)button12.setTextColor(Color.GREEN);
-            button12.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-	autospam2?autospam2=false:autospam2=true;
-button12.setText("Auto spam");
-if(autospam2==true){
-button12.setTextColor(Color.GREEN);
-spa();
-autospam2= true;
-}
-if(autospam2==false){
-button12.setTextColor(Color.RED);
-autospam = false;
-autospam2= false;
-}
-                }
-            }));
-            cheatLayout.addView(button12);
-            
-var button13 = new styleButton();
-button13.setText("Auto destroy");
-button13.setTextColor(Color.RED);
-if(autodestroy2==true)button13.setTextColor(Color.GREEN);
-            button13.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-	autodestroy2?autodestroy2=false:autodestroy2=true;
-button13.setText("Auto destroy");
-if(autodestroy2 == true){
-button13.setTextColor(Color.GREEN);
-dig1();
-autodestroy2 = true;
-}
-if(autodestroy2 == false){
-button13.setTextColor(Color.RED);
-autodestroy = false;
-extraj = false;
-autodestroy2 = false;
-}
-                }
-            }));
-            cheatLayout.addView(button13);
-            
+			
             var taptoid = new styleButton();
 taptoid.setText("Tap block for ID");
 taptoid.setTextColor(Color.RED);
@@ -3145,105 +3636,7 @@ tapid = false;
                 }
             }));
             cheatLayout.addView(taptoid);
-            
-            var kjump = new styleButton();
-            kjump.setText("Infinite jump: "+(jump?"on":"off"));
-            kjump.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
-jump?jump=false:jump=true;
-kjump.setText("Infinite jump: "+(jump?"on":"off"));
-if(jump == true){
-clientMessage(client + "§7");
-jump = true;
-}
-if(jump == false){
-clientMessage(client + "§7");
-jump = false;
-                }
-}
-            }));
-            cheatLayout.addView(kjump);
-            
-            var nowall = new styleButton();
-            nowall.setText("No clip: "+(noclip?"on":"off"));
-            nowall.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
-noclip?noclip=false:noclip=true;
-nowall.setText("No clip: "+(noclip?"on":"off"));
-if(noclip == true){
-clientMessage(client + "§7No clip / walk through walls on");
-
-Block.setShape(4, null, null, null, null, null, null);
-Block.setShape(5, null, null, null, null, null, null);
-Block.setShape(17, null, null, null, null, null, null);
-Block.setShape(3, null, null, null, null, null, null);
-
-Block.setShape(24, null, null, null, null, null, null);
-Block.setShape(3, null, null, null, null, null, null);
-Block.setShape(41, null, null, null, null, null, null);
-Block.setShape(42, null, null, null, null, null, null);
-Block.setShape(45, null, null, null, null, null, null);
-Block.setShape(49, null, null, null, null, null, null);
-Block.setShape(48, null, null, null, null, null, null);
-Block.setShape(47, null, null, null, null, null, null);
-
-Block.setShape(57, null, null, null, null, null, null);
-Block.setShape(8, null, null, null, null, null, null);
-Block.setShape(98, null, null, null, null, null, null);
-Block.setShape(1, null, null, null, null, null, null);
-Block.setShape(112, null, null, null, null, null, null);
-Block.setShape(133, null, null, null, null, null, null);
-Block.setShape(7, null, null, null, null, null, null);
-
-Block.setShape(155, null, null, null, null, null, null);
-Block.setShape(179, null, null, null, null, null, null);
-Block.setShape(188, null, null, null, null, null, null);
-Block.setShape(189, null, null, null, null, null, null);
-Block.setShape(19, null, null, null, null, null, null);
-Block.setShape(191, null, null, null, null, null, null);
-Block.setShape(192, null, null, null, null, null, null);
-
-noclip = true;
-}
-if(noclip == false){
-clientMessage(client + "§7No clip / walk through walls off");
-
-Block.setShape(4, 0, 0, 0, 1, 1, 1);
-Block.setShape(5, 0, 0, 0, 1, 1, 1);
-Block.setShape(17, 0, 0, 0, 1, 1, 1);
-Block.setShape(3, 0, 0, 0, 1, 1, 1);
-
-Block.setShape(24, 0, 0, 0, 1, 1, 1);
-Block.setShape(21, 0, 0, 0, 1, 1, 1);
-Block.setShape(41, 0, 0, 0, 1, 1, 1);
-Block.setShape(42, 0, 0, 0, 1, 1, 1);
-Block.setShape(45, 0, 0, 0, 1, 1, 1);
-Block.setShape(49, 0, 0, 0, 1, 1, 1);
-Block.setShape(48, 0, 0, 0, 1, 1, 1);
-Block.setShape(47, 0, 0, 0, 1, 1, 1);
-
-Block.setShape(57, 0, 0, 0, 1, 1, 1);
-Block.setShape(81, 0, 0, 0, 1, 1, 1);
-Block.setShape(98, 0, 0, 0, 1, 1, 1);
-Block.setShape(111, 0, 0, 0, 1, 1, 1);
-Block.setShape(112, 0, 0, 0, 1, 1, 1);
-Block.setShape(133, 0, 0, 0, 1, 1, 1);
-Block.setShape(7, 0, 0, 0, 1, 1, 1);
-
-Block.setShape(155, 0, 0, 0, 1, 1, 1);
-Block.setShape(179, 0, 0, 0, 1, 1, 1);
-Block.setShape(188, 0, 0, 0, 1, 1, 1);
-Block.setShape(189, 0, 0, 0, 1, 1, 1);
-Block.setShape(191, 0, 0, 0, 1, 1, 1);
-Block.setShape(191, 0, 0, 0, 1, 1, 1);
-Block.setShape(192, 0, 0, 0, 1, 1, 1);
-
-noclip = false;
-                }
-}
-            }));
-            cheatLayout.addView(nowall);
-            
+			
             var online = new styleButton();
 online.setText("Players online");
             online.setOnClickListener(new View.OnClickListener({
@@ -3255,92 +3648,7 @@ for (var i = 0; i < b_x023489a.length; i++) {
                 }
             }));
             cheatLayout.addView(online);
-            
-            var barrier = new styleButton();
-barrier.setText("Nullify barriers");
-            barrier.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-Block.setShape(0, null, null, null, null, null, null);
-Block.setShape(65, null, null, null, null, null, null);
-Block.setShape(95, null, null, null, null, null, null);
-Block.setShape(255, null, null, null, null, null, null);
-clientMessage(client + "Any barriers have been nullifed.");
-                }
-            }));
-            cheatLayout.addView(barrier);
-            
-            var light = new styleButton();
-light.setText("Brightness");
-light.setTextColor(Color.RED);
-if(brightness==true)light.setTextColor(Color.GREEN);
-            light.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             brightness?brightness=false:brightness=true;
-light.setText("Brightness");
-if(brightness == true){
-light.setTextColor(Color.GREEN);
-
-brightness = true;
-}
-if(brightness == false){
-light.setTextColor(Color.RED);
-
-brightness = false;
-}
-                }
-            }));
-            cheatLayout.addView(light);
 			
-	/*
-*
-*TODO: (IMPROVE) food checking
-*
-*
-var fe1 = new styleButton();
-fe1.setText("Fast eat");
-fe1.setTextColor(Color.RED);
-if(fasteat==true)fe1.setTextColor(Color.GREEN);
-            fe1.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             fasteat?fasteat=false:fasteat=true;
-fe1.setText("Fast eat");
-if(fasteat == true){
-fe1.setTextColor(Color.GREEN);
-
-fasteat = true;
-}
-if(fasteat == false){
-fe1.setTextColor(Color.RED);
-
-fasteat = false;
-}
-                }
-            }));
-            cheatLayout.addView(fe1);
-	    */
-			
-var afkspawn = new styleButton();
-afkspawn.setText("Low health action");
-afkspawn.setTextColor(Color.RED);
-if(lowhealth==true)afkspawn.setTextColor(Color.GREEN);
-            afkspawn.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             lowhealth?lowhealth=false:lowhealth=true;
-afkspawn.setText("Low health action");
-if(lowhealth == true){
-afkspawn.setTextColor(Color.GREEN);
-atact2();
-lowhealth = true;
-}
-if(lowhealth == false){
-afkspawn.setTextColor(Color.RED);
-
-afkspawn = false;
-}
-                }
-            }));
-            cheatLayout.addView(afkspawn);
-            
             var ecd = new styleButton();
             ecd.setText("Easy commands");       
             ecd.setOnClickListener(new View.OnClickListener({
@@ -3713,195 +4021,6 @@ cmdLayout1.setPadding(20,0,20,0);
     }}));
 }
 
-/*var oreTrace = new styleButton();
-oreTrace.setText("Ore ESP");
-oreTrace.setTextColor(Color.RED);
-if(oreEsp2==true)oreTrace.setTextColor(Color.GREEN);
-            oreTrace.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             oreEsp2?oreEsp2=false:oreEsp2=true;
-oreTrace.setText("Ore ESP");
-if(oreEsp2 == true){
-oreTrace.setTextColor(Color.GREEN);
-clientMessage(client + "Ore ESP on");
-oreDialog();
-oreEsp2 = true;
-}
-if(oreEsp2 == false){
-oreTrace.setTextColor(Color.RED);
-clientMessage(client + "Ore ESP off");
-oreEsp = false;
-oreEsp2 = false;
-}
-                }
-            }));
-            cheatLayout.addView(oreTrace);
-			
-var playerTracer = new styleButton();
-playerTracer.setText("Player ESP");
-playerTracer.setTextColor(Color.RED);
-if(playeresp==true)playerTracer.setTextColor(Color.GREEN);
-            playerTracer.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             playeresp?playeresp=false:playeresp=true;
-playerTracer.setText("Player ESP");
-if(playeresp == true){
-playerTracer.setTextColor(Color.GREEN);
-clientMessage(client + "Player esp on");
-
-playeresp = true;
-}
-if(playeresp == false){
-playerTracer.setTextColor(Color.RED);
-clientMessage(client + "Player esp off");
-
-playeresp = false;
-}
-                }
-            }));
-            cheatLayout.addView(playerTracer);*/
-            
-            var anti2void = new styleButton();
-anti2void.setText("Anti void");
-anti2void.setTextColor(Color.RED);
-if(antivoid==true)anti2void.setTextColor(Color.GREEN);
-            anti2void.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             antivoid?antivoid=false:antivoid=true;
-anti2void.setText("Anti void");
-if(antivoid == true){
-anti2void.setTextColor(Color.GREEN);
-
-antivoid = true;
-}
-if(antivoid == false){
-anti2void.setTextColor(Color.RED);
-
-antivoid = false;
-}
-                }
-            }));
-            cheatLayout.addView(anti2void);
-			
-var zmmm = new styleButton();
-      zmmm.setText("Instant break");
-zmmm.setTextColor(Color.RED);
-if(instabreak==true)zmmm.setTextColor(Color.GREEN);
-		zmmm.setOnClickListener(new android.view.View.OnClickListener() {
-		 onClick: function(v){
- instabreak?instabreak=false:instabreak=true;
-zmmm.setText("Instant break");
-if(instabreak == true){
-zmmm.setTextColor(Color.GREEN);
-instaDestroy();
-clientMessage(client + "§7Instant break is on");
-}
-if(instabreak == false){
-zmmm.setTextColor(Color.RED);
-clientMessage(client + "§7Instant break is off");
-defaultDestroy();
-                }
-			}
-		});
-		cheatLayout.addView(zmmm);
-		
-		var tju = new styleButton();
-tju.setText("Tap jump");
-tju.setTextColor(Color.RED);
-if(tapjump==true)tju.setTextColor(Color.GREEN);
-            tju.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             tapjump?tapjump=false:tapjump=true;
-tju.setText("Tap jump");
-if(tapjump == true){
-tju.setTextColor(Color.GREEN);
-clientMessage(client + "Tap jump on\nTap ground to jump!");
-
-tapjump = true;
-}
-if(tapjump == false){
-tju.setTextColor(Color.RED);
-clientMessage(client + "Tap jump is off");
-
-tapjump = false;
-}
-                }
-            }));
-            cheatLayout.addView(tju);
-            
-            var spiderman = new styleButton();
-spiderman.setText("Spider");
-spiderman.setTextColor(Color.RED);
-if(spider==true)spiderman.setTextColor(Color.GREEN);
-            spiderman.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             spider?spider=false:spider=true;
-spiderman.setText("Spider");
-if(spider == true){
-spiderman.setTextColor(Color.GREEN);
-clientMessage(client + "Spider on");
-Toast.makeText(MainActivity, "Credit: Firepro9978 from VoidClient!", 1).show();
-Utils.Player.isCollidedHorizontally();
-spider = true;
-}
-if(spider == false){
-spiderman.setTextColor(Color.RED);
-clientMessage(client + "Spider off");
-
-spider = false;
-}
-                }
-            }));
-            cheatLayout.addView(spiderman);
-            
-            var jumps = new styleButton();
-jumps.setText("Higher jumps");
-jumps.setTextColor(Color.RED);
-if(jump==true)jumps.setTextColor(Color.GREEN);
-            jumps.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             jump?jump=false:jump=true;
-jumps.setText("Higher jumps");
-if(jump == true){
-jumps.setTextColor(Color.GREEN);
-clientMessage(client + "Higher jumps on");
-
-jump = true;
-}
-if(jump == false){
-jumps.setTextColor(Color.RED);
-clientMessage(client + "Higher jumps off");
-
-jump = false;
-}
-                }
-            }));
-            cheatLayout.addView(jumps);
-            
-            var autow = new styleButton();
-autow.setText("Auto walk");
-autow.setTextColor(Color.RED);
-if(autowalk==true)autow.setTextColor(Color.GREEN);
-            autow.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             autowalk?autowalk=false:autowalk=true;
-autow.setText("Auto walk");
-if(autowalk == true){
-autow.setTextColor(Color.GREEN);
-clientMessage(client + "Auto walk on");
-
-autowalk = true;
-}
-if(autowalk == false){
-autow.setTextColor(Color.RED);
-clientMessage(client + "Auto walk off");
-
-autowalk = false;
-}
-                }
-            }));
-            cheatLayout.addView(autow);
-            
             var xz = new styleButton();
             xz.setText("Other XYZ");
             xz.setOnClickListener(new View.OnClickListener({
@@ -4002,109 +4121,6 @@ XYZ.setBackgroundDrawable(new ColorDrawable(Color.BLACK));
     }}));
 }
 
-var twek = new styleButton();
-twek.setText("Twerk");
-twek.setTextColor(Color.RED);
-if(twerk==true)twek.setTextColor(Color.GREEN);
-            twek.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             twerk?twerk=false:twerk=true;
-twek.setText("Twerk");
-if(twerk == true){
-twek.setTextColor(Color.GREEN);
-clientMessage(client + "Auto twerk on");
-
-twerk = true;
-}
-if(twerk == false){
-twek.setTextColor(Color.RED);
-clientMessage(client + "Auto twerk off");
-
-twerk = false;
-}
-                }
-            }));
-            cheatLayout.addView(twek);
-
-var taura = new styleButton();
-taura.setText("TP Aura");
-taura.setTextColor(Color.RED);
-if(tpAura==true)taura.setTextColor(Color.GREEN);
-            taura.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             tpAura?tpAura=false:tpAura=true;
-taura.setText("TP Aura");
-if(tpAura == true){
-taura.setTextColor(Color.GREEN);
-clientMessage(client + "TP Aura on");
-Toast.makeText(MainActivity, "Credit: Apric0cks for the idea!", 1).show();
-
-tpAura = true;
-}
-if(tpAura == false){
-taura.setTextColor(Color.RED);
-clientMessage(client + "TP Aura off");
-
-tpAura = false;
-}
-                }
-            }));
-            cheatLayout.addView(taura);
-
-/*
-*
-*TODO Better hit behind handle
-*
-*
-var hitme = new styleButton();
-hitme.setText("Hit behind");
-hitme.setTextColor(Color.RED);
-if(hitBehind==true)hitme.setTextColor(Color.GREEN);
-            hitme.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             hitBehind?hitBehind=false:hitBehind=true;
-hitme.setText("Hit behind");
-if(hitBehind == true){
-hitme.setTextColor(Color.GREEN);
-clientMessage(client + "Hit behind on");
-
-hitBehind = true;
-}
-if(hitBehind == false){
-hitme.setTextColor(Color.RED);
-clientMessage(client + "Hit behind off");
-
-hitBehind = false;
-}
-                }
-            }));
-            cheatLayout.addView(hitme);
-	    */
-
-var jhit = new styleButton();
-jhit.setText("Hit'n'jump");
-jhit.setTextColor(Color.RED);
-if(hitJump==true)jhit.setTextColor(Color.GREEN);
-            jhit.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             hitJump?hitJump=false:hitJump=true;
-jhit.setText("Hit'n'jump");
-if(hitJump == true){
-jhit.setTextColor(Color.GREEN);
-clientMessage(client + "Hit'n'jump on");
-
-hitJump = true;
-}
-if(hitJump == false){
-jhit.setTextColor(Color.RED);
-clientMessage(client + "Hit'n'jump off");
-
-hitJump = false;
-}
-                }
-            }));
-            cheatLayout.addView(jhit);
-
 var nameit = new styleButton();
 nameit.setText("Mob nametags");
 nameit.setTextColor(Color.RED);
@@ -4128,7 +4144,7 @@ nametags = false;
                 }
             }));
             cheatLayout.addView(nameit);
-
+			
 var keeps = new styleButton();
 keeps.setText("Keep hotbar");
 keeps.setTextColor(Color.RED);
@@ -4152,54 +4168,7 @@ keepHotbar = false;
                 }
             }));
             cheatLayout.addView(keeps);
-
-var atkact = new styleButton();
-atkact.setText("Attack action");
-atkact.setTextColor(Color.RED);
-if(attackActions==true)atkact.setTextColor(Color.GREEN);
-            atkact.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             attackActions?attackActions=false:attackActions=true;
-atkact.setText("Attack action");
-if(attackActions == true){
-atkact.setTextColor(Color.GREEN);
-clientMessage(client + "Attack action on");
-atact();
-attackActions = true;
-}
-if(attackActions == false){
-atkact.setTextColor(Color.RED);
-clientMessage(client + "Attack action off");
-
-attackActions = false;
-}
-                }
-            }));
-            cheatLayout.addView(atkact);
-
-var butfuon2 = new styleButton();
-butfuon2.setText("Bunny hop");
-butfuon2.setTextColor(Color.RED);
-if(bhop==true)butfuon2.setTextColor(Color.GREEN);
-            butfuon2.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             bhop?bhop=false:bhop=true;
-butfuon2.setText("Bunny hop");
-if(bhop== true){
-butfuon2.setTextColor(Color.GREEN);
-clientMessage(client+"Bunny hop on");
-	Toast.makeText(MainActivity, "Credit: Apric0cks from maximus mod!", 1).show();
-bhop= true;
-}
-if(bhop== false){
-butfuon2.setTextColor(Color.RED);
-clientMessage(client+"Bunny hop off");
-bhop= false;
-}
-                }
-            }));
-            cheatLayout.addView(butfuon2);
-
+			
 var butfuon3 = new styleButton();
 butfuon3.setText("Alpha Text");
 butfuon3.setTextColor(Color.RED);
@@ -4397,57 +4366,7 @@ facedInfo = false;
                 }
             }));
             cheatLayout.addView(info2);
-
-var walkonice = new styleButton();
-walkonice.setText("Ice walk");
-walkonice.setTextColor(Color.RED);
-if(icewalk==true)walkonice.setTextColor(Color.GREEN);
-            walkonice.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             icewalk?icewalk=false:icewalk=true;
-walkonice.setText("Ice walk");
-if(icewalk == true){
-walkonice.setTextColor(Color.GREEN);
-clientMessage(client + "You may get detected as flying becareful!")
-icewalk = true;
-}
-if(icewalk == false){
-walkonice.setTextColor(Color.RED);
-clientMessage(client + "Ice walk is off")
-icewalk = false;
-}
-                }
-            }));
-            cheatLayout.addView(walkonice);
-
-var frictme = new styleButton();
-frictme.setText("Only friction");
-frictme.setTextColor(Color.RED);
-if(onfriction==true)frictme.setTextColor(Color.GREEN);
-            frictme.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             onfriction?onfriction=false:onfriction=true;
-frictme.setText("Only friction");
-if(onfriction == true){
-frictme.setTextColor(Color.GREEN);
-clientMessage(client + "Only friction on");
-
-onfriction = true;
-}
-if(onfriction == false){
-frictme.setTextColor(Color.RED);
-clientMessage(client + "Only friction off");
-for(var i = 0; i < 100; i++){
-Block.setFriction(i, 0.6000000238418579);
-}
-	Block.setFriction(79, 0.9800000190734863);
-	Block.setFriction(267, 0.9800000190734863);
-onfriction = false;
-}
-                }
-            }));
-            cheatLayout.addView(frictme);
-
+			
 var stap1 = new styleButton();
             stap1.setText("Send to all");        
             stap1.setOnClickListener(new View.OnClickListener({
@@ -4459,27 +4378,109 @@ cheat.dismiss();
             }));
             cheatLayout.addView(stap1);
 
-var dropbutton = new styleButton(MainActivity);
-dropbutton.setText("Double drops");
-dropbutton.setTextColor(Color.RED);
-if(doubledrop==true)dropbutton.setTextColor(Color.GREEN);
-            dropbutton.setOnClickListener(new View.OnClickListener({
+	/*
+*
+*TODO: (IMPROVE) food checking
+*
+*
+var fe1 = new styleButton();
+fe1.setText("Fast eat");
+fe1.setTextColor(Color.RED);
+if(fasteat==true)fe1.setTextColor(Color.GREEN);
+            fe1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-             doubledrop?doubledrop=false:doubledrop=true;
-dropbutton.setText("Double drops");
-if(doubledrop == true){
-dropbutton.setTextColor(Color.GREEN);
-clientMessage(client+"Double drops on\nThis allows you to pick up x2 the amount of the item you placed or broke.");
-doubledrop = true;
+             fasteat?fasteat=false:fasteat=true;
+fe1.setText("Fast eat");
+if(fasteat == true){
+fe1.setTextColor(Color.GREEN);
+
+fasteat = true;
 }
-if(doubledrop == false){
-dropbutton.setTextColor(Color.RED);
-clientMessage(client+"Double drops off");
-doubledrop = false;
+if(fasteat == false){
+fe1.setTextColor(Color.RED);
+
+fasteat = false;
 }
                 }
             }));
-            cheatLayout.addView(dropbutton);
+            cheatLayout.addView(fe1);
+	    */
+/*var oreTrace = new styleButton();
+oreTrace.setText("Ore ESP");
+oreTrace.setTextColor(Color.RED);
+if(oreEsp2==true)oreTrace.setTextColor(Color.GREEN);
+            oreTrace.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             oreEsp2?oreEsp2=false:oreEsp2=true;
+oreTrace.setText("Ore ESP");
+if(oreEsp2 == true){
+oreTrace.setTextColor(Color.GREEN);
+clientMessage(client + "Ore ESP on");
+oreDialog();
+oreEsp2 = true;
+}
+if(oreEsp2 == false){
+oreTrace.setTextColor(Color.RED);
+clientMessage(client + "Ore ESP off");
+oreEsp = false;
+oreEsp2 = false;
+}
+                }
+            }));
+            cheatLayout.addView(oreTrace);
+			
+var playerTracer = new styleButton();
+playerTracer.setText("Player ESP");
+playerTracer.setTextColor(Color.RED);
+if(playeresp==true)playerTracer.setTextColor(Color.GREEN);
+            playerTracer.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             playeresp?playeresp=false:playeresp=true;
+playerTracer.setText("Player ESP");
+if(playeresp == true){
+playerTracer.setTextColor(Color.GREEN);
+clientMessage(client + "Player esp on");
+
+playeresp = true;
+}
+if(playeresp == false){
+playerTracer.setTextColor(Color.RED);
+clientMessage(client + "Player esp off");
+
+playeresp = false;
+}
+                }
+            }));
+            cheatLayout.addView(playerTracer);*/
+/*
+*
+*TODO Better hit behind handle
+*
+*
+var hitme = new styleButton();
+hitme.setText("Hit behind");
+hitme.setTextColor(Color.RED);
+if(hitBehind==true)hitme.setTextColor(Color.GREEN);
+            hitme.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             hitBehind?hitBehind=false:hitBehind=true;
+hitme.setText("Hit behind");
+if(hitBehind == true){
+hitme.setTextColor(Color.GREEN);
+clientMessage(client + "Hit behind on");
+
+hitBehind = true;
+}
+if(hitBehind == false){
+hitme.setTextColor(Color.RED);
+clientMessage(client + "Hit behind off");
+
+hitBehind = false;
+}
+                }
+            }));
+            cheatLayout.addView(hitme);
+	    */
  
 var exit2 = new styleButton();
 		exit2.setText("Exit");
@@ -5004,6 +5005,28 @@ setage = false;
 			}
 		});
 		modLayout.addView(sage);
+		
+		var dropbutton = new styleButton(MainActivity);
+dropbutton.setText("Double drops");
+dropbutton.setTextColor(Color.RED);
+if(doubledrop==true)dropbutton.setTextColor(Color.GREEN);
+            dropbutton.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             doubledrop?doubledrop=false:doubledrop=true;
+dropbutton.setText("Double drops");
+if(doubledrop == true){
+dropbutton.setTextColor(Color.GREEN);
+clientMessage(client+"Double drops on\nThis allows you to pick up x2 the amount of the item you placed or broke.");
+doubledrop = true;
+}
+if(doubledrop == false){
+dropbutton.setTextColor(Color.RED);
+clientMessage(client+"Double drops off");
+doubledrop = false;
+}
+                }
+            }));
+            modLayout.addView(dropbutton);
 
             mod = new PopupWindow(modLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)mod.setBackgroundDrawable(new ColorDrawable(GUIColor));
@@ -11957,7 +11980,6 @@ sc2 =sc1.getText();
 Dialog.dismiss();
 betterWebview('view-source:' + sc2);
 print("Loading web page");
-showMenuBtn();
 }
 });
 
@@ -12012,7 +12034,6 @@ ip =ip1.getText();
 Dialog.dismiss();
 betterWebview('http://ip-api.com/json/' + ip);
 print("Loading web page");
-showMenuBtn();
 }
 });
 
@@ -12072,7 +12093,6 @@ poy =ddip2.getText();
 Dialog.dismiss();
 betterWebview('http://mcapi.ca/query/'+ply+':'+poy+'/list');
 Toast.makeText(ctx, "AlphaHack: Loading web page", 1).show();
-showMenuBtn();
 }
 });
 
