@@ -485,6 +485,7 @@ var extraBtns3 = Color.BLACK;
 var extraBtns4 = Color.BLUE;
 
 function loadSetting(){
+	//background
 var path1 = new java.io.File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/settings/bgTran/");
 var path2 = new java.io.File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/settings/bgBlack/");
 var path3 = new java.io.File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/settings/bgWhite/");
@@ -497,6 +498,32 @@ var path9 = new java.io.File(android.os.Environment.getExternalStorageDirectory(
 var path10 = new java.io.File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/settings/bgDkgray/");
 var path11 = new java.io.File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/settings/bgGreen/");
 var path12 = new java.io.File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/settings/bgMagenta/");
+	//buttons
+var apath1 = new java.io.File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/settings/btnTran/");
+var apath2 = new java.io.File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/settings/btnBlack/");
+var apath3 = new java.io.File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/settings/btnWhite/");
+var apath4 = new java.io.File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/settings/btnRed/");
+var apath5 = new java.io.File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/settings/btnBlue/");
+var apath6 = new java.io.File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/settings/btnGray/");
+var apath7 = new java.io.File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/settings/btnLtgray/");
+var apath8 = new java.io.File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/settings/btnYellow/");
+var apath9 = new java.io.File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/settings/btnCyan/");
+var apath10 = new java.io.File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/settings/btnDkgray/");
+var apath11 = new java.io.File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/settings/btnGreen/");
+var apath12 = new java.io.File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/settings/btnMagenta/");
+	//text
+var bpath1 = new java.io.File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/settings/txtTran/");
+var bpath2 = new java.io.File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/settings/txtBlack/");
+var bpath3 = new java.io.File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/settings/txtWhite/");
+var bpath4 = new java.io.File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/settings/txtRed/");
+var bpath5 = new java.io.File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/settings/txtBlue/");
+var bpath6 = new java.io.File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/settings/txtGray/");
+var bpath7 = new java.io.File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/settings/txtLtgray/");
+var bpath8 = new java.io.File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/settings/txtYellow/");
+var bpath9 = new java.io.File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/settings/txtCyan/");
+var bpath10 = new java.io.File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/settings/txtDkgray/");
+var bpath11 = new java.io.File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/settings/txtGreen/");
+var bpath12 = new java.io.File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/settings/txtMagenta/");
 //transparent
     if(path1.exists()){
 	GUIColor = Color.TRANSPARENT;
@@ -609,6 +636,236 @@ var path12 = new java.io.File(android.os.Environment.getExternalStorageDirectory
 	if(default1==true)default1 = false;
     } else {
 	GUIColor = Color.TRANSPARENT;
+	if(default1==false)default1 = true;
+	var GUIText = Color.WHITE;
+	}
+	//transparent
+    if(apath1.exists()){
+	GUIBtns = Color.TRANSPARENT;
+	if(default1==true)default1 = false;
+    } else {
+	GUIBtns = Color.TRANSPARENT;
+	if(default1==false)default1 = true;
+	var GUIText = Color.WHITE;
+	}
+	//black
+	if(apath2.exists()){
+	GUIBtns = Color.BLACK;
+	if(default1==true)default1 = false;
+	var GUIText = Color.WHITE;
+    } else {
+	GUIBtns = Color.TRANSPARENT;
+	if(default1==false)default1 = true;
+	var GUIText = Color.WHITE;
+	}
+	//white
+	if(apath3.exists()){
+	GUIBtns = Color.WHITE;
+	if(default1==true)default1 = false;
+	var GUIText = Color.BLACK;
+    } else {
+	GUIBtns = Color.TRANSPARENT;
+	if(default1==false)default1 = true;
+	var GUIText = Color.WHITE;
+	}
+	//red
+	if(apath4.exists()){
+	GUIBtns = Color.RED;
+	if(default1==true)default1 = false;
+    } else {
+	GUIBtns = Color.TRANSPARENT;
+	if(default1==false)default1 = true;
+	var GUIText = Color.WHITE;
+	}
+	//blue
+	if(apath5.exists()){
+	GUIBtns = Color.BLUE;
+	if(default1==true)default1 = false;
+    } else {
+	GUIBtns = Color.TRANSPARENT;
+	if(default1==false)default1 = true;
+	var GUIText = Color.WHITE;
+	}
+	//gray
+	if(apath6.exists()){
+	GUIBtns = Color.GRAY;
+	if(default1==true)default1 = false;
+	var GUIText = Color.WHITE;
+    } else {
+	GUIBtns = Color.TRANSPARENT;
+	if(default1==false)default1 = true;
+	var GUIText = Color.WHITE;
+	}
+	//ltgray
+	if(apath7.exists()){
+	GUIBtns = Color.LTGRAY;
+	if(default1==true)default1 = false;
+	var GUIText = Color.BLACK;
+    } else {
+	GUIBtns = Color.TRANSPARENT;
+	if(default1==false)default1 = true;
+	var GUIText = Color.WHITE;
+	}
+	//yellow
+	if(apath8.exists()){
+	GUIBtns = Color.YELLOW;
+	if(default1==true)default1 = false;
+	var GUIText = Color.BLACK;
+    } else {
+	GUIBtns = Color.TRANSPARENT;
+	if(default1==false)default1 = true;
+	var GUIText = Color.WHITE;
+	}
+	//cyan
+	if(apath9.exists()){
+	GUIBtns = Color.CYAN;
+	if(default1==true)default1 = false;
+	var GUIText = Color.BLACK;
+    } else {
+	GUIBtns = Color.TRANSPARENT;
+	if(default1==false)default1 = true;
+	var GUIText = Color.WHITE;
+	}
+	//dkgray
+	if(apath10.exists()){
+	GUIBtns = Color.DKGRAY;
+	if(default1==true)default1 = false;
+	var GUIText = Color.WHITE;
+    } else {
+	GUIBtns = Color.TRANSPARENT;
+	if(default1==false)default1 = true;
+	var GUIText = Color.WHITE;
+	}
+	//green
+	if(apath11.exists()){
+	GUIBtns = Color.GREEN;
+	if(default1==true)default1 = false;
+    } else {
+	GUIBtns = Color.TRANSPARENT;
+	if(default1==false)default1 = true;
+	var GUIText = Color.WHITE;
+	}
+	//magenta
+	if(apath12.exists()){
+	GUIBtns = Color.MAGENTA;
+	if(default1==true)default1 = false;
+    } else {
+	GUIBtns = Color.TRANSPARENT;
+	if(default1==false)default1 = true;
+	var GUIText = Color.WHITE;
+	}
+	//transparent
+    if(bpath1.exists()){
+	GUIText = Color.TRANSPARENT;
+	if(default1==true)default1 = false;
+    } else {
+	GUIText = Color.TRANSPARENT;
+	if(default1==false)default1 = true;
+	var GUIText = Color.WHITE;
+	}
+	//black
+	if(bpath2.exists()){
+	GUIText = Color.BLACK;
+	if(default1==true)default1 = false;
+	var GUIText = Color.WHITE;
+    } else {
+	GUIText = Color.TRANSPARENT;
+	if(default1==false)default1 = true;
+	var GUIText = Color.WHITE;
+	}
+	//white
+	if(bpath3.exists()){
+	GUIText = Color.WHITE;
+	if(default1==true)default1 = false;
+	var GUIText = Color.BLACK;
+    } else {
+	GUIText = Color.TRANSPARENT;
+	if(default1==false)default1 = true;
+	var GUIText = Color.WHITE;
+	}
+	//red
+	if(bpath4.exists()){
+	GUIText = Color.RED;
+	if(default1==true)default1 = false;
+    } else {
+	GUIText = Color.TRANSPARENT;
+	if(default1==false)default1 = true;
+	var GUIText = Color.WHITE;
+	}
+	//blue
+	if(bpath5.exists()){
+	GUIText = Color.BLUE;
+	if(default1==true)default1 = false;
+    } else {
+	GUIText = Color.TRANSPARENT;
+	if(default1==false)default1 = true;
+	var GUIText = Color.WHITE;
+	}
+	//gray
+	if(bpath6.exists()){
+	GUIText = Color.GRAY;
+	if(default1==true)default1 = false;
+	var GUIText = Color.WHITE;
+    } else {
+	GUIText = Color.TRANSPARENT;
+	if(default1==false)default1 = true;
+	var GUIText = Color.WHITE;
+	}
+	//ltgray
+	if(bpath7.exists()){
+	GUIText = Color.LTGRAY;
+	if(default1==true)default1 = false;
+	var GUIText = Color.BLACK;
+    } else {
+	GUIText = Color.TRANSPARENT;
+	if(default1==false)default1 = true;
+	var GUIText = Color.WHITE;
+	}
+	//yellow
+	if(bpath8.exists()){
+	GUIText = Color.YELLOW;
+	if(default1==true)default1 = false;
+	var GUIText = Color.BLACK;
+    } else {
+	GUIText = Color.TRANSPARENT;
+	if(default1==false)default1 = true;
+	var GUIText = Color.WHITE;
+	}
+	//cyan
+	if(bpath9.exists()){
+	GUIText = Color.CYAN;
+	if(default1==true)default1 = false;
+	var GUIText = Color.BLACK;
+    } else {
+	GUIText = Color.TRANSPARENT;
+	if(default1==false)default1 = true;
+	var GUIText = Color.WHITE;
+	}
+	//dkgray
+	if(bpath10.exists()){
+	GUIText = Color.DKGRAY;
+	if(default1==true)default1 = false;
+	var GUIText = Color.WHITE;
+    } else {
+	GUIText = Color.TRANSPARENT;
+	if(default1==false)default1 = true;
+	var GUIText = Color.WHITE;
+	}
+	//green
+	if(bpath11.exists()){
+	GUIText = Color.GREEN;
+	if(default1==true)default1 = false;
+    } else {
+	GUIText = Color.TRANSPARENT;
+	if(default1==false)default1 = true;
+	var GUIText = Color.WHITE;
+	}
+	//magenta
+	if(bpath12.exists()){
+	GUIText = Color.MAGENTA;
+	if(default1==true)default1 = false;
+    } else {
+	GUIText = Color.TRANSPARENT;
 	if(default1==false)default1 = true;
 	var GUIText = Color.WHITE;
 	}
@@ -1526,7 +1783,7 @@ default1 = true;
 GUIColor = GUIColor2
  var GUIText = Color.WHITE;
  if(default1==true)default1 = false;
-			saveSetting("bgBlack"):
+			saveSetting("bgBlack");
                 }
             }));
             settingsLayout.addView(l2);
@@ -1538,7 +1795,7 @@ var l3 = new styleButton();
 GUIColor = GUIColor3
 var GUIText = Color.BLACK
 if(default1==true)default1 = false;
-			saveSetting("bgWhite"):
+			saveSetting("bgWhite");
                 }
             }));
             settingsLayout.addView(l3);
@@ -1549,7 +1806,7 @@ var l4 = new styleButton();
                 onClick: function(viewarg){         
 GUIColor = GUIColor4
 if(default1==true)default1 = false;
-			saveSetting("bgRed"):
+			saveSetting("bgRed");
                 }
             }));
             settingsLayout.addView(l4);
@@ -1560,7 +1817,7 @@ var l5 = new styleButton();
                 onClick: function(viewarg){         
 GUIColor = GUIColor5
 if(default1==true)default1 = false;
-			saveSetting("bgBlue"):
+			saveSetting("bgBlue");
                 }
             }));
             settingsLayout.addView(l5);
@@ -1572,7 +1829,7 @@ var l6 = new styleButton();
 GUIColor = GUIColor6
 var GUIText = Color.WHITE;
 if(default1==true)default1 = false;
-			saveSetting("bgGray"):
+			saveSetting("bgGray");
                 }
             }));
             settingsLayout.addView(l6);
@@ -1584,7 +1841,7 @@ var l7 = new styleButton();
 GUIColor = GUIColor7
 var GUIText = Color.BLACK;
 if(default1==true)default1 = false;
-			saveSetting("bgLtgray"):
+			saveSetting("bgLtgray");
                 }
             }));
             settingsLayout.addView(l7);
@@ -1596,7 +1853,7 @@ var l8 = new styleButton();
 GUIColor = GUIColor8
 var GUIText = Color.BLACK;
 if(default1==true)default1 = false;
-			saveSetting("bgYellow"):
+			saveSetting("bgYellow");
                 }
             }));
             settingsLayout.addView(l8);
@@ -1608,7 +1865,7 @@ var l9 = new styleButton();
 GUIColor = GUIColor9
 var GUIText = Color.BLACK;
 if(default1==true)default1 = false;
-			saveSetting("bgCyan"):
+			saveSetting("bgCyan");
                 }
             }));
             settingsLayout.addView(l9);
@@ -1620,7 +1877,7 @@ var l10 = new styleButton();
 GUIColor = GUIColor10
 var GUIText = Color.WHITE
 if(default1==true)default1 = false;
-			saveSetting("bgDkgray"):
+			saveSetting("bgDkgray");
                 }
             }));
             settingsLayout.addView(l10);
@@ -1631,7 +1888,7 @@ var l11 = new styleButton();
                 onClick: function(viewarg){         
 GUIColor = GUIColor11
 if(default1==true)default1 = false;
-			saveSetting("bgGreen"):
+			saveSetting("bgGreen");
                 }
             }));
             settingsLayout.addView(l11);
@@ -1642,7 +1899,7 @@ var l12 = new styleButton();
                 onClick: function(viewarg){         
 GUIColor = GUIColor12
 if(default1==true)default1 = false;
-			saveSetting("bgMagenta"):
+			saveSetting("bgMagenta");
                 }
             }));
             settingsLayout.addView(l12);
@@ -1651,7 +1908,8 @@ if(default1==true)default1 = false;
             b2.setText("Black button text");       
             b2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIText = GUIText2
+			GUIText = GUIText2;
+			saveSetting("txtBlack");
                 }
             }));
             settingsLayout.addView(b2);
@@ -1660,7 +1918,8 @@ var b3 = new styleButton();
             b3.setText("White button text");       
             b3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIText = GUIText3
+GUIText = GUIText3;
+			saveSetting("txtWhite");
                 }
             }));
             settingsLayout.addView(b3);
@@ -1669,7 +1928,8 @@ var b4 = new styleButton();
             b4.setText("Red button text");       
             b4.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIText = GUIText4
+GUIText = GUIText4;
+			saveSetting("txtRed");
                 }
             }));
             settingsLayout.addView(b4);
@@ -1678,7 +1938,8 @@ var b5 = new styleButton();
             b5.setText("Blue button text");       
             b5.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIText = GUIText5
+GUIText = GUIText5;
+			saveSetting("txtBlue");
                 }
             }));
             settingsLayout.addView(b5);
@@ -1687,7 +1948,8 @@ var b6 = new styleButton();
             b6.setText("Gray button text");       
             b6.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIText = GUIText6
+GUIText = GUIText6;
+			saveSetting("txtGray");
                 }
             }));
             settingsLayout.addView(b6);
@@ -1696,7 +1958,8 @@ var b7 = new styleButton();
             b7.setText("Lightgray button text");       
             b7.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIText = GUIText7
+GUIText = GUIText7;
+			saveSetting("txtLtgray");
                 }
             }));
             settingsLayout.addView(b7);
@@ -1705,7 +1968,8 @@ var b8 = new styleButton();
             b8.setText("Yellow button text");       
             b8.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIText = GUIText8
+GUIText = GUIText8;
+			saveSetting("txtYellow");
                 }
             }));
             settingsLayout.addView(b8);
@@ -1714,7 +1978,8 @@ var b9 = new styleButton();
             b9.setText("Cyan button text");       
             b9.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIText = GUIText9
+GUIText = GUIText9;
+			saveSetting("txtCyan");
                 }
             }));
             settingsLayout.addView(b9);
@@ -1723,7 +1988,8 @@ var b10 = new styleButton();
             b10.setText("Darkgray button text");       
             b10.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIText = GUIText10
+GUIText = GUIText10;
+			saveSetting("txtDkgray");
                 }
             }));
             settingsLayout.addView(b10);
@@ -1732,7 +1998,8 @@ var b11 = new styleButton();
             b11.setText("Green button text");       
             b11.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIText = GUIText11
+GUIText = GUIText11;
+			saveSetting("txtGreen");
                 }
             }));
             settingsLayout.addView(b11);
@@ -1741,7 +2008,8 @@ var b12 = new styleButton();
             b12.setText("Magenta button text");       
             b12.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIText = GUIText12
+GUIText = GUIText12;
+			saveSetting("txtMagenta");
                 }
             }));
             settingsLayout.addView(b12);
@@ -1869,6 +2137,7 @@ var btc2 = new styleButton();
                 onClick: function(viewarg){         
 GUIBtns = GUIBtns2
 defaultbtnc = false;
+			saveSetting("btnBlack");
                 }
             }));
             settingsLayout.addView(btc2);
@@ -1879,6 +2148,7 @@ var btc3 = new styleButton();
                 onClick: function(viewarg){         
 GUIBtns = GUIBtns3
 defaultbtnc = false;
+			saveSetting("btnWhite");
                 }
             }));
             settingsLayout.addView(btc3);
@@ -1889,6 +2159,7 @@ var btc4 = new styleButton();
                 onClick: function(viewarg){         
 GUIBtns = GUIBtns4
 defaultbtnc = false;
+			saveSetting("btnRed");
                 }
             }));
             settingsLayout.addView(btc4);
@@ -1899,6 +2170,7 @@ var btc5 = new styleButton();
                 onClick: function(viewarg){         
 GUIBtns = GUIBtns5
 defaultbtnc = false;
+			saveSetting("btnBlue");
                 }
             }));
             settingsLayout.addView(btc5);
@@ -1909,6 +2181,7 @@ var btc6 = new styleButton();
                 onClick: function(viewarg){         
 GUIBtns = GUIBtns6
 defaultbtnc = false;
+			saveSetting("btnGray");
                 }
             }));
             settingsLayout.addView(btc6);
@@ -1919,6 +2192,7 @@ var btc7 = new styleButton();
                 onClick: function(viewarg){         
 GUIBtns = GUIBtns7
 defaultbtnc = false;
+			saveSetting("btnLtgray");
                 }
             }));
             settingsLayout.addView(btc7);
@@ -1929,6 +2203,7 @@ var btc8 = new styleButton();
                 onClick: function(viewarg){         
 GUIBtns = GUIBtns8
 defaultbtnc = false;
+			saveSetting("btnYellow");
                 }
             }));
             settingsLayout.addView(btc8);
@@ -1939,6 +2214,7 @@ var btc9 = new styleButton();
                 onClick: function(viewarg){         
 GUIBtns = GUIBtns9
 defaultbtnc = false;
+			saveSetting("btnCyan");
                 }
             }));
             settingsLayout.addView(btc9);
@@ -1949,6 +2225,7 @@ var btc10 = new styleButton();
                 onClick: function(viewarg){         
 GUIBtns = GUIBtns10
 defaultbtnc = false;
+			saveSetting("btnDkgray");
                 }
             }));
             settingsLayout.addView(btc10);
@@ -1959,6 +2236,7 @@ var btc11 = new styleButton();
                 onClick: function(viewarg){         
 GUIBtns = GUIBtns11
 defaultbtnc = false;
+			saveSetting("btnGreen");
                 }
             }));
             settingsLayout.addView(btc11);
@@ -1969,6 +2247,7 @@ var btc12 = new styleButton();
                 onClick: function(viewarg){         
 GUIBtns = GUIBtns12;
 defaultbtnc = false;
+			saveSetting("btnMagenta");
                 }
             }));
             settingsLayout.addView(btc12);
