@@ -14413,7 +14413,7 @@ function rptask() {
 			}
 			if(hitbox1){
 				var ent = getNearestEntity3(aimrange);
-				Entity.setCollisionSize(ent, 30, 2):
+				Entity.setCollisionSize(ent, 30, 2);
 			}
                     if(twerk)twerking();
                     nx = getPlayerX();
