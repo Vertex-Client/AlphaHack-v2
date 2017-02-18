@@ -300,6 +300,8 @@ var itemrain = false;
 var rainitem = false;
 var doubledrop = false;
 var censorbypass = false;
+var hitbox1 = false;
+var bowaura = false;
 
 var showActive = false;
 var showActive2 = false;
@@ -2660,6 +2662,50 @@ attackActions = false;
                 }
             }));
             cheatLayout.addView(atkact);
+	
+	var bowbut = new styleButton();
+bowbut.setText("Auto bow aim");
+bowbut.setTextColor(Color.RED);
+if(bowaura==true)bowbut.setTextColor(Color.GREEN);
+            bowbut.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             bowaura?bowaura=false:bowaura=true;
+bowbut.setText("Auto bow aim");
+if(bowaura == true){
+bowbut.setTextColor(Color.GREEN);
+clientMessage(client+"Auto bow aim on");
+bowaura = true;
+}
+if(bowaura == false){
+bowbut.setTextColor(Color.RED);
+clientMessage(client+"Auto bow aim off");
+bowaura = false;
+}
+                }
+            }));
+            cheatLayout.addView(bowbut);
+	
+	var hitbutton = new styleButton();
+hitbutton.setText("Hitbox increase");
+hitbutton.setTextColor(Color.RED);
+if(hitbox1==true)hitbutton.setTextColor(Color.GREEN);
+            hitbutton.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             hitbox1?hitbox1=false:hitbox1=true;
+hitbutton.setText("Hitbox increase");
+if(hitbox1 == true){
+hitbutton.setTextColor(Color.GREEN);
+clientMessage(client+"Hitbox increase on");
+hitbox1 = true;
+}
+if(hitbox1 == false){
+hitbutton.setTextColor(Color.RED);
+clientMessage(client+"Hitbox increase off");
+hitbox1 = false;
+}
+                }
+            }));
+            cheatLayout.addView(hitbutton);
 			
 			var hacks1 = new TextView(MainActivity);
             hacks1.setText("Hacks");
@@ -6722,7 +6768,7 @@ Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,tysplvl);
 		    
 	    }
 	
-	var wearing = new Button(MainActivity);
+	var wearing = new styleButton(MainActivity);
             wearing.setText("God armor (wearing)");
             wearing.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -13935,6 +13981,36 @@ function getNearestEntity2(maxrange) {
 }
 		}
 
+function getNearestEntity3(maxrange) {
+			var mobs = Entity.getAll();
+			var players = Server.getAllPlayers();
+			var small = maxrange;
+			var ent = null;
+	if(mobs!=null && players!=null){
+			for (var i = 0; i < mobs.length; i++) {
+				var x = Entity.getX(mobs[i]) - getPlayerX();
+				var y = Entity.getY(mobs[i]) - getPlayerY();
+				var z = Entity.getZ(mobs[i]) - getPlayerZ();
+				var dist = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2));
+				if (dist < small && dist > 0 && Entity.getEntityTypeId(mobs[i]) <= 63 && Entity.getHealth(mobs[i]) >= 1) {
+					small = dist;
+					ent = mobs[i];
+				}
+			}
+			for (var i = 0; i < players.length; i++) {
+				var x = Entity.getX(players[i]) - getPlayerX();
+				var y = Entity.getY(players[i]) - getPlayerY();
+				var z = Entity.getZ(players[i]) - getPlayerZ();
+				var dist = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2));
+				if (dist < small && dist > 0 && Entity.getHealth(players[i]) >= 1) {
+					small = dist;
+					ent = players[i];
+				}
+			}
+			return ent;
+}
+		}
+
                function crosshairAimAt(ent, pos) {
 					if(ent != null) {
 				var x = Entity.getX(ent) - getPlayerX();
@@ -14326,9 +14402,18 @@ function rptask() {
 			    if(ent != null)crosshairAimAt(ent);
 		    }
 			if(aimbot2){
-				/*TODO Moving aim aura*/
-				var ent = getNearestEntity(aimrange);
+				var ent = getNearestEntity2(aimrange);
 			    if(ent != null)crosshairAimAt(ent);
+			}
+			if(bowaura){
+				if(getCarriedItem() == '261'){
+				var ent = getNearestEntity3(aimrange);
+			    if(ent != null)crosshairAimAt(ent);
+				}
+			}
+			if(hitbox1){
+				var ent = getNearestEntity3(aimrange);
+				Entity.setCollisionSize(ent, 30, 2):
 			}
                     if(twerk)twerking();
                     nx = getPlayerX();
