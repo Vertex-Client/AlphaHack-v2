@@ -14412,8 +14412,10 @@ function rptask() {
 				}
 			}
 			if(hitbox1){
-				var ent = getNearestEntity3(aimrange + 3) - getPlayerEnt();
+				var ent = getNearestEntity3(aimrange + 2);
+				if(ent != getPlayerEnt()){
 				Entity.setCollisionSize(ent, 30, 2);
+				}
 			}
                     if(twerk)twerking();
                     nx = getPlayerX();
