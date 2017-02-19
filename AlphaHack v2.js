@@ -25,27 +25,7 @@ var getLanguage = ModPE.getLanguage();
 //get version of client side minecraft
 var getVer = ModPE.getMinecraftVersion();
 
-//GUI android ModPE lib;
-//xml button
-var Button = android.widget.Button;
-//xml linearLayout
-var LinearLayout = android.widget.LinearLayout;
-//xml relative layout
-var RelativeLayout = android.widget.RelativeLayout;
-//xml popup window
-var PopupWindow = android.widget.PopupWindow;
-//modpe android runnable
-var Runnable = java.lang.Runnable;
-//java view
 var View = android.view.View;
-//xml colorDrawable
-var ColorDrawable = android.graphics.drawable.ColorDrawable;
-//xml edittext
-var EditText = android.widget.EditText;
-var Dialog = android.app.Dialog;
-//xml webview
-var WebView = android.webkit.WebView;
-var Alert = android.app.AlertDialog.Builder;
 
 //Defines
 //define gui incase of error
@@ -546,11 +526,11 @@ callback(new Array("Error"));
 getUpdate(function(info){});
 
 function startUp(){
-MainActivity.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var updiaLayout = new LinearLayout(MainActivity);
+            var updiaLayout = new android.widget.LinearLayout(MainActivity);
             var updiaScroll = new android.widget.ScrollView(MainActivity);
-            var updiaLayout1 = new LinearLayout(MainActivity);
+            var updiaLayout1 = new android.widget.LinearLayout(MainActivity);
             updiaLayout.setOrientation(1);
             updiaLayout1.setOrientation(1);
             updiaScroll.addView(updiaLayout);
@@ -562,7 +542,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 			text1.setPadding(10,20,130,20);
             updiaLayout.addView(text1);
 			
-			var doubleLayout = new LinearLayout(MainActivity);
+			var doubleLayout = new android.widget.LinearLayout(MainActivity);
 			
 			textView1 = new styleButton();
 			textView1.setText("Later");
@@ -591,7 +571,7 @@ MainActivity.startActivity(urls5);
 			
 			updiaLayout.addView(doubleLayout);
 			
-			            updia = new PopupWindow(updiaLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/1.01, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1.01);
+			            updia = new android.widget.PopupWindow(updiaLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/1.01, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1.01);
 		   var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(android.graphics.Color.BLACK);
       bg.setStroke(10,android.graphics.Color.BLUE);
@@ -605,11 +585,11 @@ updiaLayout1.setPadding(20,1,20,1);
 }
 
 function betterWebview(url){
-MainActivity.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var wvLayout = new LinearLayout(MainActivity);
+            var wvLayout = new android.widget.LinearLayout(MainActivity);
             var wvScroll = new android.widget.ScrollView(MainActivity);
-            var wvLayout1 = new LinearLayout(MainActivity);
+            var wvLayout1 = new android.widget.LinearLayout(MainActivity);
             wvLayout.setOrientation(1);
             wvLayout1.setOrientation(1);
             wvScroll.addView(wvLayout);
@@ -658,14 +638,14 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 			webs.loadUrl(url);
 			wvLayout.addView(webs);
 
-wv = new PopupWindow(wvLayout1, dip2px(500), dip2px(500));
-wv = new PopupWindow(wvLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/1, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1);
+wv = new android.widget.PopupWindow(wvLayout1, dip2px(500), dip2px(500));
+wv = new android.widget.PopupWindow(wvLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/1, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1);
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
 wvLayout1.setBackgroundDrawable(bg);
 wvLayout1.setPadding(20,0,20,0);
-wv.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+wv.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.TRANSPARENT));
             wv.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.CENTER | android.view.Gravity.CENTER, 0, 0);
             }catch(error){
                 android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
@@ -851,19 +831,19 @@ var bg64 = "iVBORw0KGgoAAAANSUhEUgAAAD8AAAA/CAYAAABXXxDfAAAWPElEQVR42u1beYyc5Xnf
 var buttonBg = "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";
 
 function enableMod(){
-ctx.runOnUiThread(new Runnable({ run: function(){
+ctx.runOnUiThread(new java.lang.Runnable({ run: function(){
     try{
-        var layout = new LinearLayout(ctx);
+        var layout = new android.widget.LinearLayout(ctx);
         layout.setOrientation(1);
-        var menuNo = new Button(ctx);
+        var menuNo = new android.widget.Button(ctx);
         menuNo.setTextSize(10);
         menuNo.setText("");
 	menuNo.setTextColor(android.graphics.Color.GREEN);
         layout.addView(menuNo);
  
-        Debug = new PopupWindow(layout, dip2px(0), dip2px(0)); 
+        Debug = new android.widget.PopupWindow(layout, dip2px(0), dip2px(0)); 
 
-        Debug.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        Debug.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.TRANSPARENT));
         Debug.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.RIGHT | android.view.Gravity.TOP, 0, 1500);
         }catch(err){
             android.widget.Toast.makeText(ctx, "An error occured: " + err, 1).show();
@@ -875,11 +855,11 @@ enableMod();
 //dismissable or showable function
 function showMenuBtn(){
 	//main button
-MainActivity.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
     try{
-        var layout = new LinearLayout(MainActivity);
+        var layout = new android.widget.LinearLayout(MainActivity);
         layout.setOrientation(1);
-        var menuBtn = new Button(MainActivity);
+        var menuBtn = new android.widget.Button(MainActivity);
         menuBtn.setTextSize(26);
         if(hide==false)menuBtn.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(bg64, 0) , 0, android.util.Base64.decode(bg64, 0).length)));
         if(hide==true)menuBtn.setText("α");
@@ -895,10 +875,10 @@ if(getLanguage=="ko_KR")android.widget.Toast.makeText(MainActivity, "아래를 �
         }));
         layout.addView(menuBtn);
  
-        GUI = new PopupWindow(layout, dip2px(45), dip2px(45)); 
+        GUI = new android.widget.PopupWindow(layout, dip2px(45), dip2px(45)); 
 
-        if(hide==true)menuBtn.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
-	GUI.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        if(hide==true)menuBtn.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.TRANSPARENT));
+	GUI.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.TRANSPARENT));
         GUI.showAtLocation(MainActivity.getWindow().getDecorView(), btnPos | android.view.Gravity.TOP, 0, 120);
         }catch(err){
             android.widget.Toast.makeText(MainActivity, "An error occured: " + err, 1).show();
@@ -914,13 +894,13 @@ showMenuBtn();
 *TODO Improve this in some way.
 *
 function activeView(){
-MainActivity.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var activeLayout = new LinearLayout(MainActivity);
+            var activeLayout = new android.widget.LinearLayout(MainActivity);
             
             var activeScroll = new android.widget.ScrollView(MainActivity);
             
-            var activeLayout1 = new LinearLayout(MainActivity);
+            var activeLayout1 = new android.widget.LinearLayout(MainActivity);
             activeLayout.setOrientation(1);
             activeLayout1.setOrientation(1);
             
@@ -1087,10 +1067,10 @@ paimaura = false;
 		});
 		activeLayout.addView(a11);
 
-active = new PopupWindow(activeLayout1, dip2px(46), dip2px(46));
+active = new android.widget.PopupWindow(activeLayout1, dip2px(46), dip2px(46));
 
-active = new PopupWindow(activeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/13, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/3.5);
-active.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+active = new android.widget.PopupWindow(activeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/13, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/3.5);
+active.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.TRANSPARENT));
             active.showAtLocation(MainActivity.getWindow().getDecorView(), activePos | android.view.Gravity.TOP, 0, 120);
             }catch(error){
                 android.widget.Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
@@ -1101,11 +1081,11 @@ active.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPAREN
 /********************************/
 
 function mainMenu(){
-    MainActivity.runOnUiThread(new Runnable({ run: function(){
+    MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var menuLayout = new LinearLayout(MainActivity);
+            var menuLayout = new android.widget.LinearLayout(MainActivity);
             var menuScroll = new android.widget.ScrollView(MainActivity);
-            var menuLayout1 = new LinearLayout(MainActivity);
+            var menuLayout1 = new android.widget.LinearLayout(MainActivity);
             menuLayout.setOrientation(1);
             menuLayout1.setOrientation(1);
             menuScroll.addView(menuLayout);
@@ -1185,11 +1165,11 @@ settings.setOnClickListener(new android.view.View.OnClickListener() {
 		menuLayout.addView(settings);
 	
 		function settings_menu(){
-MainActivity.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var settingsLayout = new LinearLayout(MainActivity);
+            var settingsLayout = new android.widget.LinearLayout(MainActivity);
             var settingsScroll = new android.widget.ScrollView(MainActivity);
-            var settingsLayout1 = new LinearLayout(MainActivity);
+            var settingsLayout1 = new android.widget.LinearLayout(MainActivity);
             settingsLayout.setOrientation(1);
             settingsLayout1.setOrientation(1);
             settingsScroll.addView(settingsLayout);
@@ -1907,9 +1887,9 @@ defaultbtnc = false;
 		});
 		settingsLayout.addView(exit2)
 
-            settings = new PopupWindow(settingsLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
-            if(default1==true)settings.setBackgroundDrawable(new ColorDrawable(GUIColor));
-      if(default1==false)settings.setBackgroundDrawable(new ColorDrawable(GUIColor));
+            settings = new android.widget.PopupWindow(settingsLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
+            if(default1==true)settings.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+      if(default1==false)settings.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
@@ -1934,11 +1914,11 @@ misc.setOnClickListener(new android.view.View.OnClickListener() {
 		menuLayout.addView(misc);
 		
 		function misc_menu(){
-MainActivity.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var miscLayout = new LinearLayout(MainActivity);
+            var miscLayout = new android.widget.LinearLayout(MainActivity);
             var miscScroll = new android.widget.ScrollView(MainActivity);
-            var miscLayout1 = new LinearLayout(MainActivity);
+            var miscLayout1 = new android.widget.LinearLayout(MainActivity);
             miscLayout.setOrientation(1);
             miscLayout1.setOrientation(1);
             miscScroll.addView(miscLayout);
@@ -1965,11 +1945,11 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		miscLayout.addView(credits);
 		
 		function credit_menu(){
-MainActivity.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var creditLayout = new LinearLayout(MainActivity);
+            var creditLayout = new android.widget.LinearLayout(MainActivity);
             var creditScroll = new android.widget.ScrollView(MainActivity);
-            var creditLayout1 = new LinearLayout(MainActivity);
+            var creditLayout1 = new android.widget.LinearLayout(MainActivity);
             creditLayout.setOrientation(1);
             creditLayout1.setOrientation(1);
             creditScroll.addView(creditLayout);
@@ -2015,7 +1995,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             credit5.setTextColor(android.graphics.Color.RED);
             creditLayout.addView(credit5);
 			
-credit = new PopupWindow(creditLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/1, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
+credit = new android.widget.PopupWindow(creditLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/1, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             credit.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#000000")));
       var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(android.graphics.Color.TRANSPARENT);
@@ -2351,13 +2331,13 @@ var sid = new styleButton();
 		*added a new webview
 		*
 		function animeView(){
-MainActivity.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var animeLayout = new LinearLayout(MainActivity);
+            var animeLayout = new android.widget.LinearLayout(MainActivity);
             
             var animeScroll = new android.widget.ScrollView(MainActivity);
             
-            var animeLayout1 = new LinearLayout(MainActivity);
+            var animeLayout1 = new android.widget.LinearLayout(MainActivity);
             animeLayout.setOrientation(1);
             animeLayout1.setOrientation(1);
             
@@ -2388,15 +2368,15 @@ showMenuBtn();
       webs.loadUrl('https://watch-anime.net');
       animeLayout.addView(webs);
 
-anime = new PopupWindow(animeLayout1, dip2px(500), dip2px(500));
+anime = new android.widget.PopupWindow(animeLayout1, dip2px(500), dip2px(500));
 
-anime = new PopupWindow(animeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/1.4, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1.3);
+anime = new android.widget.PopupWindow(animeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/1.4, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1.3);
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
 animeLayout1.setBackgroundDrawable(bg);
 animeLayout1.setPadding(20,0,20,0);
-anime.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.BLACK));
+anime.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.BLACK));
             anime.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.CENTER | android.view.Gravity.CENTER, 0, 0);
             }catch(error){
                 android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
@@ -2467,9 +2447,9 @@ function djs()
       }}));
       }
 
-            misc = new PopupWindow(miscLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
-            if(default1==true)misc.setBackgroundDrawable(new ColorDrawable(GUIColor));
-      if(default1==false)misc.setBackgroundDrawable(new ColorDrawable(GUIColor));
+            misc = new android.widget.PopupWindow(miscLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
+            if(default1==true)misc.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+      if(default1==false)misc.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
@@ -2494,11 +2474,11 @@ cheats.setOnClickListener(new android.view.View.OnClickListener() {
 		menuLayout.addView(cheats);
 		
 		function cheat_menu(){
-MainActivity.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var cheatLayout = new LinearLayout(MainActivity);
+            var cheatLayout = new android.widget.LinearLayout(MainActivity);
             var cheatScroll = new android.widget.ScrollView(MainActivity);
-            var cheatLayout1 = new LinearLayout(MainActivity);
+            var cheatLayout1 = new android.widget.LinearLayout(MainActivity);
             cheatLayout.setOrientation(1);
             cheatLayout1.setOrientation(1);
             cheatScroll.addView(cheatLayout);
@@ -3467,13 +3447,13 @@ var info = new styleButton();
             cheatLayout.addView(info);
 
 function infoView(){
-MainActivity.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var infoLayout = new LinearLayout(MainActivity);
+            var infoLayout = new android.widget.LinearLayout(MainActivity);
             
             var infoScroll = new android.widget.ScrollView(MainActivity);
             
-            var infoLayout1 = new LinearLayout(MainActivity);
+            var infoLayout1 = new android.widget.LinearLayout(MainActivity);
             infoLayout.setOrientation(1);
             infoLayout1.setOrientation(1);
             
@@ -3584,15 +3564,15 @@ exit.setTextColor(android.graphics.Color.RED);
             skin.setTextColor(android.graphics.Color.WHITE);
             infoLayout.addView(skin);
 
-info = new PopupWindow(infoLayout1, dip2px(500), dip2px(500));
+info = new android.widget.PopupWindow(infoLayout1, dip2px(500), dip2px(500));
 
-info = new PopupWindow(infoLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/2, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1);
+info = new android.widget.PopupWindow(infoLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/2, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1);
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
 infoLayout1.setBackgroundDrawable(bg);
 infoLayout1.setPadding(20,0,20,0);
-info.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.BLACK));
+info.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.BLACK));
             info.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.CENTER | android.view.Gravity.TOP, 0, 0);
             }catch(error){
                 android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
@@ -3796,11 +3776,11 @@ for (var i = 0; i < b_x023489a.length; i++) {
             cheatLayout.addView(ecd);
             
             function cmd_menu(){
-MainActivity.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var cmdLayout = new LinearLayout(MainActivity);
+            var cmdLayout = new android.widget.LinearLayout(MainActivity);
             var cmdScroll = new android.widget.ScrollView(MainActivity);
-            var cmdLayout1 = new LinearLayout(MainActivity);
+            var cmdLayout1 = new android.widget.LinearLayout(MainActivity);
             cmdLayout.setOrientation(1);
             cmdLayout1.setOrientation(1);
             cmdScroll.addView(cmdLayout);
@@ -4143,8 +4123,8 @@ Server.sendChat("./weather clear");
             }));
             cmdLayout.addView(clearain);
             
-            cmd = new PopupWindow(cmdLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
-            cmd.setBackgroundDrawable(new ColorDrawable(GUIColor));
+            cmd = new android.widget.PopupWindow(cmdLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
+            cmd.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
       var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
@@ -4171,13 +4151,13 @@ cmdLayout1.setPadding(20,0,20,0);
             cheatLayout.addView(xz);
             
             function XYZView(){
-MainActivity.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var XYZLayout = new LinearLayout(MainActivity);
+            var XYZLayout = new android.widget.LinearLayout(MainActivity);
             
             var XYZScroll = new android.widget.ScrollView(MainActivity);
             
-            var XYZLayout1 = new LinearLayout(MainActivity);
+            var XYZLayout1 = new android.widget.LinearLayout(MainActivity);
             XYZLayout.setOrientation(1);
             XYZLayout1.setOrientation(1);
             
@@ -4241,15 +4221,15 @@ exit.setTextColor(android.graphics.Color.RED);
             xyZ_show.setTextColor(android.graphics.Color.YELLOW);
             XYZLayout.addView(xyZ_show);
 			
-XYZ = new PopupWindow(XYZLayout1, dip2px(500), dip2px(500));
+XYZ = new android.widget.PopupWindow(XYZLayout1, dip2px(500), dip2px(500));
 
-XYZ = new PopupWindow(XYZLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/2, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1);
+XYZ = new android.widget.PopupWindow(XYZLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/2, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1);
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
 XYZLayout1.setBackgroundDrawable(bg);
 XYZLayout1.setPadding(20,0,20,0);
-XYZ.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.BLACK));
+XYZ.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.BLACK));
             XYZ.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.CENTER | android.view.Gravity.TOP, 0, 0);
             }catch(error){
                 android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
@@ -4648,9 +4628,9 @@ var exit2 = new styleButton();
 		});
 		cheatLayout.addView(exit2);
             
-            cheat = new PopupWindow(cheatLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
-            if(default1==true)cheat.setBackgroundDrawable(new ColorDrawable(GUIColor));
-      if(default1==false)cheat.setBackgroundDrawable(new ColorDrawable(GUIColor));
+            cheat = new android.widget.PopupWindow(cheatLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
+            if(default1==true)cheat.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+      if(default1==false)cheat.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
@@ -4675,11 +4655,11 @@ mods.setOnClickListener(new android.view.View.OnClickListener() {
 		menuLayout.addView(mods);
 		
 		function mod_menu(){
-MainActivity.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var modLayout = new LinearLayout(MainActivity);
+            var modLayout = new android.widget.LinearLayout(MainActivity);
             var modScroll = new android.widget.ScrollView(MainActivity);
-            var modLayout1 = new LinearLayout(MainActivity);
+            var modLayout1 = new android.widget.LinearLayout(MainActivity);
             modLayout.setOrientation(1);
             modLayout1.setOrientation(1);
             modScroll.addView(modLayout);
@@ -5184,9 +5164,9 @@ doubledrop = false;
             }));
             modLayout.addView(dropbutton);
 
-            mod = new PopupWindow(modLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
-            if(default1==true)mod.setBackgroundDrawable(new ColorDrawable(GUIColor));
-      if(default1==false)mod.setBackgroundDrawable(new ColorDrawable(GUIColor));
+            mod = new android.widget.PopupWindow(modLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
+            if(default1==true)mod.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+      if(default1==false)mod.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
@@ -5213,11 +5193,11 @@ effect.setOnClickListener(new android.view.View.OnClickListener() {
 		menuLayout.addView(effect);
 		
 		function effect_menu(){
-MainActivity.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var effectLayout = new LinearLayout(MainActivity);
+            var effectLayout = new android.widget.LinearLayout(MainActivity);
             var effectScroll = new android.widget.ScrollView(MainActivity);
-            var effectLayout1 = new LinearLayout(MainActivity);
+            var effectLayout1 = new android.widget.LinearLayout(MainActivity);
             effectLayout.setOrientation(1);
             effectLayout1.setOrientation(1);
             effectScroll.addView(effectLayout);
@@ -6601,9 +6581,9 @@ function inn23() {
 Entity.addEffect(getPlayerEnt(), MobEffect.movementSpeed, s*l, 0, false, true);
 }
 
-            effect = new PopupWindow(effectLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
-            if(default1==true)effect.setBackgroundDrawable(new ColorDrawable(GUIColor));
-      if(default1==false)effect.setBackgroundDrawable(new ColorDrawable(GUIColor));
+            effect = new android.widget.PopupWindow(effectLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
+            if(default1==true)effect.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+      if(default1==false)effect.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
@@ -6631,11 +6611,11 @@ enchant.setOnClickListener(new android.view.View.OnClickListener() {
 		menuLayout.addView(enchant);
 		
 		function enchant_menu(){
-MainActivity.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var enchantLayout = new LinearLayout(MainActivity);
+            var enchantLayout = new android.widget.LinearLayout(MainActivity);
             var enchantScroll = new android.widget.ScrollView(MainActivity);
-            var enchantLayout1 = new LinearLayout(MainActivity);
+            var enchantLayout1 = new android.widget.LinearLayout(MainActivity);
             enchantLayout.setOrientation(1);
             enchantLayout1.setOrientation(1);
             enchantScroll.addView(enchantLayout);
@@ -8155,9 +8135,9 @@ Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,ll);
 //Enchantment.THORNS;
 //Enchantment.UNBREAKING;
 
-            enchant = new PopupWindow(enchantLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
-            if(default1==true)enchant.setBackgroundDrawable(new ColorDrawable(GUIColor));
-      if(default1==false)enchant.setBackgroundDrawable(new ColorDrawable(GUIColor));
+            enchant = new android.widget.PopupWindow(enchantLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
+            if(default1==true)enchant.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+      if(default1==false)enchant.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
@@ -8185,11 +8165,11 @@ give.setOnClickListener(new android.view.View.OnClickListener() {
 		menuLayout.addView(give);
 		
 		function give_menu(){
-MainActivity.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var giveLayout = new LinearLayout(MainActivity);
+            var giveLayout = new android.widget.LinearLayout(MainActivity);
             var giveScroll = new android.widget.ScrollView(MainActivity);
-            var giveLayout1 = new LinearLayout(MainActivity);
+            var giveLayout1 = new android.widget.LinearLayout(MainActivity);
             giveLayout.setOrientation(1);
             giveLayout1.setOrientation(1);
             giveScroll.addView(giveLayout);
@@ -8354,9 +8334,9 @@ addItemInventory(293, 1, 0);
             }));
             giveLayout.addView(k5);
 
-            give = new PopupWindow(giveLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
-            if(default1==true)give.setBackgroundDrawable(new ColorDrawable(GUIColor));
-      if(default1==false)give.setBackgroundDrawable(new ColorDrawable(GUIColor));
+            give = new android.widget.PopupWindow(giveLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
+            if(default1==true)give.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+      if(default1==false)give.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
@@ -8384,11 +8364,11 @@ morph.setOnClickListener(new android.view.View.OnClickListener() {
 		menuLayout.addView(morph);
 		
 		function morph_menu(){
-MainActivity.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var morphLayout = new LinearLayout(MainActivity);
+            var morphLayout = new android.widget.LinearLayout(MainActivity);
             var morphScroll = new android.widget.ScrollView(MainActivity);
-            var morphLayout1 = new LinearLayout(MainActivity);
+            var morphLayout1 = new android.widget.LinearLayout(MainActivity);
             morphLayout.setOrientation(1);
             morphLayout1.setOrientation(1);
             morphScroll.addView(morphLayout);
@@ -8903,9 +8883,9 @@ Entity.setRenderType(Player.getEntity(), 17);
             }));
             morphLayout.addView(mm22);
 
-            morph = new PopupWindow(morphLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
-            if(default1==true)morph.setBackgroundDrawable(new ColorDrawable(GUIColor));
-			if(default1==false)morph.setBackgroundDrawable(new ColorDrawable(GUIColor));
+            morph = new android.widget.PopupWindow(morphLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
+            if(default1==true)morph.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+			if(default1==false)morph.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
       var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
@@ -8933,11 +8913,11 @@ nuke.setOnClickListener(new android.view.View.OnClickListener() {
 		menuLayout.addView(nuke);
 		
 		function nuke_menu(){
-MainActivity.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var nukeLayout = new LinearLayout(MainActivity);
+            var nukeLayout = new android.widget.LinearLayout(MainActivity);
             var nukeScroll = new android.widget.ScrollView(MainActivity);
-            var nukeLayout1 = new LinearLayout(MainActivity);
+            var nukeLayout1 = new android.widget.LinearLayout(MainActivity);
             nukeLayout.setOrientation(1);
             nukeLayout1.setOrientation(1);
             nukeScroll.addView(nukeLayout);
@@ -9094,9 +9074,9 @@ var n11 = new styleButton();
             }));
             nukeLayout.addView(cn);
 
-            nuke = new PopupWindow(nukeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
-            if(default1==true)nuke.setBackgroundDrawable(new ColorDrawable(GUIColor));
-      if(default1==false)nuke.setBackgroundDrawable(new ColorDrawable(GUIColor));
+            nuke = new android.widget.PopupWindow(nukeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
+            if(default1==true)nuke.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+      if(default1==false)nuke.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
@@ -9124,11 +9104,11 @@ particle.setOnClickListener(new android.view.View.OnClickListener() {
 		menuLayout.addView(particle);
 		
 		function particle_menu(){
-MainActivity.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var particleLayout = new LinearLayout(MainActivity);
+            var particleLayout = new android.widget.LinearLayout(MainActivity);
             var particleScroll = new android.widget.ScrollView(MainActivity);
-            var particleLayout1 = new LinearLayout(MainActivity);
+            var particleLayout1 = new android.widget.LinearLayout(MainActivity);
             particleLayout.setOrientation(1);
             particleLayout1.setOrientation(1);
             particleScroll.addView(particleLayout);
@@ -9704,9 +9684,9 @@ clientMessage(client + "§7Particle 32 is false");
             }));
             particleLayout.addView(p32);
 
-            particle = new PopupWindow(particleLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
-            if(default1==true)particle.setBackgroundDrawable(new ColorDrawable(GUIColor));
-      if(default1==false)particle.setBackgroundDrawable(new ColorDrawable(GUIColor));
+            particle = new android.widget.PopupWindow(particleLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
+            if(default1==true)particle.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+      if(default1==false)particle.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
@@ -9734,11 +9714,11 @@ spawn.setOnClickListener(new android.view.View.OnClickListener() {
 		menuLayout.addView(spawn);
 		
 		function spawn_menu(){
-MainActivity.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var spawnLayout = new LinearLayout(MainActivity);
+            var spawnLayout = new android.widget.LinearLayout(MainActivity);
             var spawnScroll = new android.widget.ScrollView(MainActivity);
-            var spawnLayout1 = new LinearLayout(MainActivity);
+            var spawnLayout1 = new android.widget.LinearLayout(MainActivity);
             spawnLayout.setOrientation(1);
             spawnLayout1.setOrientation(1);
             spawnScroll.addView(spawnLayout);
@@ -10159,9 +10139,9 @@ var spawn70 = new styleButton();
             }));
             spawnLayout.addView(spawn53);
 
-            spawn = new PopupWindow(spawnLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
-            if(default1==true)spawn.setBackgroundDrawable(new ColorDrawable(GUIColor));
-      if(default1==false)spawn.setBackgroundDrawable(new ColorDrawable(GUIColor));
+            spawn = new android.widget.PopupWindow(spawnLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
+            if(default1==true)spawn.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+      if(default1==false)spawn.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
@@ -10189,11 +10169,11 @@ speed.setOnClickListener(new android.view.View.OnClickListener() {
 		menuLayout.addView(speed);
 		
 		function speed_menu(){
-MainActivity.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var speedLayout = new LinearLayout(MainActivity);
+            var speedLayout = new android.widget.LinearLayout(MainActivity);
             var speedScroll = new android.widget.ScrollView(MainActivity);
-            var speedLayout1 = new LinearLayout(MainActivity);
+            var speedLayout1 = new android.widget.LinearLayout(MainActivity);
             speedLayout.setOrientation(1);
             speedLayout1.setOrientation(1);
             speedScroll.addView(speedLayout);
@@ -10418,9 +10398,9 @@ newspeed();
             }));
             speedLayout.addView(d22);
 
-            speed = new PopupWindow(speedLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
-            if(default1==true)speed.setBackgroundDrawable(new ColorDrawable(GUIColor));
-      if(default1==false)speed.setBackgroundDrawable(new ColorDrawable(GUIColor));
+            speed = new android.widget.PopupWindow(speedLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
+            if(default1==true)speed.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+      if(default1==false)speed.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
@@ -10448,11 +10428,11 @@ teleport.setOnClickListener(new android.view.View.OnClickListener() {
 		menuLayout.addView(teleport);
 		
 		function teleport_menu(){
-MainActivity.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var teleportLayout = new LinearLayout(MainActivity);
+            var teleportLayout = new android.widget.LinearLayout(MainActivity);
             var teleportScroll = new android.widget.ScrollView(MainActivity);
-            var teleportLayout1 = new LinearLayout(MainActivity);
+            var teleportLayout1 = new android.widget.LinearLayout(MainActivity);
             teleportLayout.setOrientation(1);
             teleportLayout1.setOrientation(1);
             teleportScroll.addView(teleportLayout);
@@ -10546,9 +10526,9 @@ taptp = false;
 		et.setTextSize(20);
 		teleportLayout.addView(et);
 
-            teleport = new PopupWindow(teleportLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
-            if(default1==true)teleport.setBackgroundDrawable(new ColorDrawable(GUIColor));
-      if(default1==false)teleport.setBackgroundDrawable(new ColorDrawable(GUIColor));
+            teleport = new android.widget.PopupWindow(teleportLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
+            if(default1==true)teleport.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+      if(default1==false)teleport.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
@@ -10576,11 +10556,11 @@ time.setOnClickListener(new android.view.View.OnClickListener() {
 		menuLayout.addView(time);
 		
 		function time_menu(){
-MainActivity.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var timeLayout = new LinearLayout(MainActivity);
+            var timeLayout = new android.widget.LinearLayout(MainActivity);
             var timeScroll = new android.widget.ScrollView(MainActivity);
-            var timeLayout1 = new LinearLayout(MainActivity);
+            var timeLayout1 = new android.widget.LinearLayout(MainActivity);
             timeLayout.setOrientation(1);
             timeLayout1.setOrientation(1);
             timeScroll.addView(timeLayout);
@@ -10849,9 +10829,9 @@ Level.setTime(23000);
             }));
             timeLayout.addView(a24);
 
-            time = new PopupWindow(timeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
-            if(default1==true)time.setBackgroundDrawable(new ColorDrawable(GUIColor));
-      if(default1==false)time.setBackgroundDrawable(new ColorDrawable(GUIColor));
+            time = new android.widget.PopupWindow(timeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
+            if(default1==true)time.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+      if(default1==false)time.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
@@ -10879,11 +10859,11 @@ weather.setOnClickListener(new android.view.View.OnClickListener() {
 		menuLayout.addView(weather);
 		
 		function weather_menu(){
-MainActivity.runOnUiThread(new Runnable({ run: function(){
+MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var weatherLayout = new LinearLayout(MainActivity);
+            var weatherLayout = new android.widget.LinearLayout(MainActivity);
             var weatherScroll = new android.widget.ScrollView(MainActivity);
-            var weatherLayout1 = new LinearLayout(MainActivity);
+            var weatherLayout1 = new android.widget.LinearLayout(MainActivity);
             weatherLayout.setOrientation(1);
             weatherLayout1.setOrientation(1);
             weatherScroll.addView(weatherLayout);
@@ -10960,9 +10940,9 @@ rainitem = false;
             }));
             weatherLayout.addView(itembutton);
 
-            weather = new PopupWindow(weatherLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
-            if(default1==true)weather.setBackgroundDrawable(new ColorDrawable(GUIColor));
-      if(default1==false)weather.setBackgroundDrawable(new ColorDrawable(GUIColor));
+            weather = new android.widget.PopupWindow(weatherLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
+            if(default1==true)weather.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+      if(default1==false)weather.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
@@ -10975,10 +10955,10 @@ weatherLayout1.setPadding(20,0,20,0);
     }}));
 }
             
-            menu = new PopupWindow(menuLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
-           if(default1==true)menu.setBackgroundDrawable(new ColorDrawable(GUIColor));
+            menu = new android.widget.PopupWindow(menuLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
+           if(default1==true)menu.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
            if(mcpetheme==true)menu.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#94857f")));
-		   if(default1==false)menu.setBackgroundDrawable(new ColorDrawable(GUIColor));
+		   if(default1==false)menu.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
 		   var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
@@ -12171,7 +12151,7 @@ iplu = new android.widget.PopupWindow();
 var Layer4 = new android.widget.LinearLayout(ctx);
 var ip1 = new android.widget.EditText(ctx);
 var Dialog = new android.app.Dialog(ctx);
-var Exit = new Button(ctx);
+var Exit = new android.widget.Button(ctx);
 
 Dialog.setTitle("Enter IP to trace");
 Dialog.setContentView(Layer4);
@@ -12226,7 +12206,7 @@ var Layer4 = new android.widget.LinearLayout(ctx);
 var ddip = new android.widget.EditText(ctx);
 var ddip2 = new android.widget.EditText(ctx);
 var Dialog = new android.app.Dialog(ctx);
-var Exit = new Button(ctx);
+var Exit = new android.widget.Button(ctx);
 
 Dialog.setTitle("Enter server");
 Dialog.setContentView(Layer4);
