@@ -859,7 +859,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
     try{
         var layout = new android.widget.LinearLayout(MainActivity);
         layout.setOrientation(1);
-        var menuBtn = new android.widget.Button(MainActivity);
+        var menuBtn = new styleButton();
         menuBtn.setTextSize(26);
         if(hide==false)menuBtn.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(bg64, 0) , 0, android.util.Base64.decode(bg64, 0).length)));
         if(hide==true)menuBtn.setText("α");
@@ -5265,7 +5265,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -5323,7 +5323,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -5381,7 +5381,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -5439,7 +5439,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -5497,7 +5497,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -5555,7 +5555,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -5613,7 +5613,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -5671,7 +5671,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -5729,7 +5729,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -5787,7 +5787,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -5845,7 +5845,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -5903,7 +5903,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -5961,7 +5961,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -6019,7 +6019,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -6077,7 +6077,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -6135,7 +6135,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -6193,7 +6193,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -6251,7 +6251,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -6309,7 +6309,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -6367,7 +6367,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -6425,7 +6425,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -6483,7 +6483,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -6541,7 +6541,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Time & Level");
 Dialog.setContentView(Layer);
@@ -6801,7 +6801,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -6854,7 +6854,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -6907,7 +6907,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -6960,7 +6960,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -7013,7 +7013,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -7066,7 +7066,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -7119,7 +7119,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -7172,7 +7172,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -7225,7 +7225,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -7278,7 +7278,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -7331,7 +7331,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -7384,7 +7384,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -7437,7 +7437,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -7490,7 +7490,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -7543,7 +7543,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -7596,7 +7596,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -7649,7 +7649,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -7702,7 +7702,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -7755,7 +7755,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -7808,7 +7808,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -7861,7 +7861,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -7914,7 +7914,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -7967,7 +7967,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -8020,7 +8020,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -8073,7 +8073,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.styleButton();
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter Level");
 Dialog.setContentView(Layer);
@@ -12097,7 +12097,7 @@ scc = new android.widget.PopupWindow();
 var Layer5 = new android.widget.LinearLayout(MainActivity);
 var sc1 = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);;
+var Exit = new styleButton;
 
 Dialog.setTitle("Enter website");
 Dialog.setContentView(Layer5);
@@ -12263,11 +12263,11 @@ try{
 new10 = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var m1 = new android.widget.EditText(MainActivity);
-var select1 = new android.widget.Button(MainActivity);;
-var select2 = new android.widget.Button(MainActivity);;
+var select1 = new styleButton;
+var select2 = new styleButton;
 var select3 = new android.widget.EditText(MainActivity);
-var select4 = new android.widget.Button(MainActivity);;
-var end1 = new android.widget.Button(MainActivity);;
+var select4 = new styleButton;
+var end1 = new styleButton;
 var Dialog = new android.app.Dialog(MainActivity);
  
 Dialog.setTitle("Enter text & select");
@@ -12358,7 +12358,7 @@ spa = new android.widget.PopupWindow();
 var Layer6 = new android.widget.LinearLayout(MainActivity);
 var mm = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new styleButton();
 
 Dialog.setTitle("Enter text for spam");
 Dialog.setContentView(Layer6);
@@ -12394,8 +12394,8 @@ run: function(){
 try{
 digg = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var select1 = new android.widget.Button(MainActivity);;
-var select2 = new android.widget.Button(MainActivity);;
+var select1 = new styleButton;
+var select2 = new styleButton;
 var ddf = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
  
@@ -12449,14 +12449,14 @@ run: function(){
 try{
 orey = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var select1 = new android.widget.Button(MainActivity);;
-var select2 = new android.widget.Button(MainActivity);;
-var select3 = new android.widget.Button(MainActivity);;
-var select4 = new android.widget.Button(MainActivity);;
-var select5 = new android.widget.Button(MainActivity);;
-var select6 = new android.widget.Button(MainActivity);;
-var select7 = new android.widget.Button(MainActivity);;
-var select8 = new android.widget.Button(MainActivity);;
+var select1 = new styleButton;
+var select2 = new styleButton;
+var select3 = new styleButton;
+var select4 = new styleButton;
+var select5 = new styleButton;
+var select6 = new styleButton;
+var select7 = new styleButton;
+var select8 = new styleButton;
 var Dialog = new android.app.Dialog(MainActivity);
  
 Dialog.setTitle("Select ore");
@@ -12596,8 +12596,8 @@ run: function(){
 try{
 new9 = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var select1 = new android.widget.Button(MainActivity);;
-var select2 = new android.widget.Button(MainActivity);;
+var select1 = new styleButton;
+var select2 = new styleButton;
 var Dialog = new android.app.Dialog(MainActivity);
  
 Dialog.setTitle("Select");
@@ -12705,11 +12705,11 @@ run: function(){
 try{
 new3 = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var select1 = new android.widget.Button(MainActivity);;
-var select2 = new android.widget.Button(MainActivity);;
-var select3 = new android.widget.Button(MainActivity);;
-var select4 = new android.widget.Button(MainActivity);;
-var Exit = new android.widget.Button(MainActivity);;
+var select1 = new styleButton;
+var select2 = new styleButton;
+var select3 = new styleButton;
+var select4 = new styleButton;
+var Exit = new styleButton;
 var Dialog = new android.app.Dialog(MainActivity);
  
 Dialog.setTitle("Select");
@@ -12803,12 +12803,12 @@ run: function(){
 try{
 new2 = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var select1 = new android.widget.Button(MainActivity);;
-var select2 = new android.widget.Button(MainActivity);;
-var select3 = new android.widget.Button(MainActivity);;
+var select1 = new styleButton;
+var select2 = new styleButton;
+var select3 = new styleButton;
 var ddf = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);;
+var Exit = new styleButton;
  
 Dialog.setTitle("Select");
 Dialog.setContentView(Layer);
@@ -12873,7 +12873,7 @@ GetText = new android.widget.PopupWindow();
 var Layer8 = new android.widget.LinearLayout(MainActivity);
 var ntd = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);;
+var Exit = new styleButton;
 
 Dialog.setTitle("Enter difficulty");
 Dialog.setContentView(Layer8);
@@ -12917,7 +12917,7 @@ GetText = new android.widget.PopupWindow();
 var Layer8 = new android.widget.LinearLayout(MainActivity);
 var nt = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);;
+var Exit = new styleButton;
 
 Dialog.setTitle("Enter nickname");
 Dialog.setContentView(Layer8);
@@ -12962,7 +12962,7 @@ var Layer8 = new android.widget.LinearLayout(MainActivity);
 var bd = new android.widget.EditText(MainActivity);
 var bn = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);;
+var Exit = new styleButton;
 
 Dialog.setTitle("Set block light");
 Dialog.setContentView(Layer8);
@@ -13011,7 +13011,7 @@ var Layer8 = new android.widget.LinearLayout(MainActivity);
 var bi = new android.widget.EditText(MainActivity);
 var br = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);;
+var Exit = new styleButton;
 
 Dialog.setTitle("Set block resistance");
 Dialog.setContentView(Layer8);
@@ -13059,7 +13059,7 @@ GetText = new android.widget.PopupWindow();
 var Layer8 = new android.widget.LinearLayout(MainActivity);
 var enh = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);;
+var Exit = new styleButton;
 
 Dialog.setTitle("Enter new hearts");
 Dialog.setContentView(Layer8);
@@ -13103,7 +13103,7 @@ GetText = new android.widget.PopupWindow();
 var Layer10 = new android.widget.LinearLayout(MainActivity);
 var eha = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);;
+var Exit = new styleButton;
 
 Dialog.setTitle("Enter new hearts");
 Dialog.setContentView(Layer10);
@@ -13141,10 +13141,10 @@ run: function(){
 try{
 new3 = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var select1 = new android.widget.Button(MainActivity);;
-var select2 = new android.widget.Button(MainActivity);;
+var select1 = new styleButton;
+var select2 = new styleButton;
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);;
+var Exit = new styleButton;
  
 Dialog.setTitle("Select");
 Dialog.setContentView(Layer);
@@ -13201,7 +13201,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var XP = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);;
+var Exit = new styleButton;
 
 Dialog.setTitle("Enter XP Amount");
 Dialog.setContentView(Layer);
@@ -13248,7 +13248,7 @@ var ID = new android.widget.EditText(MainActivity);
 var Amount = new android.widget.EditText(MainActivity);
 var Damage = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);;
+var Exit = new styleButton;
 
 Dialog.setTitle("Enter ID,Amt,Dmg");
 Dialog.setContentView(Layer);
@@ -13300,7 +13300,7 @@ newn = new android.widget.PopupWindow();
 var Layerb5 = new android.widget.LinearLayout(MainActivity);
 var nNuke = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);;
+var Exit = new styleButton;
 
 Dialog.setTitle("Enter nuke amount");
 Dialog.setContentView(Layerb5);
@@ -13344,7 +13344,7 @@ GetText = new android.widget.PopupWindow();
 var Layer8 = new android.widget.LinearLayout(MainActivity);
 var vspee = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);;
+var Exit = new styleButton;
 
 Dialog.setTitle("Enter custom speed");
 Dialog.setContentView(Layer8);
@@ -13390,7 +13390,7 @@ var X = new android.widget.EditText(MainActivity);
 var Y = new android.widget.EditText(MainActivity);
 var Z = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);;
+var Exit = new styleButton;
 
 Dialog.setTitle("Type coords to teleport");
 Dialog.setContentView(Layer);
@@ -13443,7 +13443,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var w = new android.widget.EditText(MainActivity);
 var w2 = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);;
+var Exit = new styleButton;
 
 Dialog.setTitle("Set Weather");
 Dialog.setContentView(Layer);
@@ -13492,7 +13492,7 @@ atact = new android.widget.PopupWindow();
 var Layerb4 = new android.widget.LinearLayout(MainActivity);
 var editAtk = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);;
+var Exit = new styleButton;
 
 Dialog.setTitle("When attacking send...");
 Dialog.setContentView(Layerb4);
@@ -13532,7 +13532,7 @@ var Layerz8 = new android.widget.LinearLayout(MainActivity);
 var editAtk = new android.widget.EditText(MainActivity);
 var editAtk2 = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);;
+var Exit = new styleButton;
 
 Dialog.setTitle("When dying send...");
 Dialog.setContentView(Layerz8);
@@ -13624,8 +13624,8 @@ GetText = new android.widget.PopupWindow();
 var LayerFov = new android.widget.LinearLayout(MainActivity);
 var fin = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var reset = new android.widget.Button(MainActivity);;
-var Exit = new android.widget.Button(MainActivity);;
+var reset = new styleButton;
+var Exit = new styleButton;
 
 Dialog.setTitle("Enter new fov");
 Dialog.setContentView(LayerFov);
@@ -13679,7 +13679,7 @@ sendEtc = new android.widget.PopupWindow();
 var Layerz89 = new android.widget.LinearLayout(MainActivity);
 var datMsg = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);;
+var Exit = new styleButton;
 
 Dialog.setTitle("Send to all");
 Dialog.setContentView(Layerz89);
@@ -13727,7 +13727,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var rang = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);;
+var Exit = new styleButton;
 
 Dialog.setTitle("Aimaura range");
 Dialog.setContentView(Layer);
@@ -13767,7 +13767,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var height = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);;
+var Exit = new styleButton;
 
 Dialog.setTitle("Jump Height");
 Dialog.setContentView(Layer);
@@ -13807,7 +13807,7 @@ GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var item = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);
+var Exit = new styleButton();
 
 Dialog.setTitle("Item ID");
 Dialog.setContentView(Layer);
