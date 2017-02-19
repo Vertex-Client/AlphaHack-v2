@@ -474,18 +474,6 @@ button.setBackgroundDrawable(buttonBg);
 return button;
 }
 
-function v2Layout(){
-let layout = new v2Layout();
-if(default1==true)layout.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
-if(mcpetheme==true)layout.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#94857f")));
-if(default1==false)layout.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
-var layoutBg = new android.graphics.drawable.GradientDrawable();
-layoutBg.setStroke(4, GUIStroke);
-layout.setBackgroundDrawable(layoutBg);
-layout.setPadding(20,0,20,0);
-return layout;
-}
-
 //tracer draw function || variable
 var AlphaHack = {};
 AlphaHack.drawTracer = function(x, y, z, groundMode, particleName) {
@@ -917,11 +905,11 @@ showMenuBtn();
 function activeView(){
 MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var activeLayout = new v2Layout();
+            var activeLayout = new android.widget.LinearLayout(MainActivity);
             
             var activeScroll = new android.widget.ScrollView(MainActivity);
             
-            var activeLayout1 = new v2Layout();
+            var activeLayout1 = new android.widget.LinearLayout(MainActivity);
             activeLayout.setOrientation(1);
             activeLayout1.setOrientation(1);
             
@@ -1104,9 +1092,9 @@ active.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android
 function mainMenu(){
     MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var menuLayout = new v2Layout();
+            var menuLayout = new android.widget.LinearLayout(MainActivity);
             var menuScroll = new android.widget.ScrollView(MainActivity);
-            var menuLayout1 = new v2Layout();
+            var menuLayout1 = new android.widget.LinearLayout(MainActivity);
             menuLayout.setOrientation(1);
             menuLayout1.setOrientation(1);
             menuScroll.addView(menuLayout);
@@ -1141,7 +1129,7 @@ if(getLanguage=="ko_KR")android.widget.Toast.makeText(MainActivity, "성공적�
             }));
             menuLayout.addView(exit);
             
-        var line0 = new v2Layout();
+        var line0 = new android.widget.LinearLayout(MainActivity);
 	    line0.setOrientation(0);
 
         menuLayout.addView(line0);
@@ -1188,9 +1176,9 @@ settings.setOnClickListener(new android.view.View.OnClickListener() {
 		function settings_menu(){
 MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var settingsLayout = new v2Layout();
+            var settingsLayout = new android.widget.LinearLayout(MainActivity);
             var settingsScroll = new android.widget.ScrollView(MainActivity);
-            var settingsLayout1 = new v2Layout();
+            var settingsLayout1 = new android.widget.LinearLayout(MainActivity);
             settingsLayout.setOrientation(1);
             settingsLayout1.setOrientation(1);
             settingsScroll.addView(settingsLayout);
@@ -1908,6 +1896,13 @@ defaultbtnc = false;
 		settingsLayout.addView(exit2)
 
             settings = new android.widget.PopupWindow(settingsLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
+            if(default1==true)settings.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+      if(default1==false)settings.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+	  var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(android.graphics.Color.TRANSPARENT);
+      bg.setStroke(10,GUIStroke);
+settingsLayout1.setBackgroundDrawable(bg);
+settingsLayout1.setPadding(20,0,20,0);
             settings.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | android.view.Gravity.TOP, 0, 0);
             }catch(error){
                 android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
@@ -1929,9 +1924,9 @@ misc.setOnClickListener(new android.view.View.OnClickListener() {
 		function misc_menu(){
 MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var miscLayout = new v2Layout();
+            var miscLayout = new android.widget.LinearLayout(MainActivity);
             var miscScroll = new android.widget.ScrollView(MainActivity);
-            var miscLayout1 = new v2Layout();
+            var miscLayout1 = new android.widget.LinearLayout(MainActivity);
             miscLayout.setOrientation(1);
             miscLayout1.setOrientation(1);
             miscScroll.addView(miscLayout);
@@ -1960,9 +1955,9 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
 		function credit_menu(){
 MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var creditLayout = new v2Layout();
+            var creditLayout = new android.widget.LinearLayout(MainActivity);
             var creditScroll = new android.widget.ScrollView(MainActivity);
-            var creditLayout1 = new v2Layout();
+            var creditLayout1 = new android.widget.LinearLayout(MainActivity);
             creditLayout.setOrientation(1);
             creditLayout1.setOrientation(1);
             creditScroll.addView(creditLayout);
@@ -2072,7 +2067,7 @@ var alert = new android.app.AlertDialog.Builder(MainActivity);
 /*alert.setTitle(""); */
 
 var scroll = new android.widget.ScrollView(MainActivity); 
-var layout = new v2Layout(); 
+var layout = new android.widget.LinearLayout(MainActivity); 
 layout.setOrientation(1);
 
 alert.setTitle("How to bypass a /ban");
@@ -2104,7 +2099,7 @@ var alert = new android.app.AlertDialog.Builder(MainActivity);
 /*alert.setTitle(""); */
 
 var scroll = new android.widget.ScrollView(MainActivity); 
-var layout = new v2Layout(); 
+var layout = new android.widget.LinearLayout(MainActivity); 
 layout.setOrientation(1);
 
 alert.setTitle("How to bypass a /ban-ip");
@@ -2136,7 +2131,7 @@ var alert = new android.app.AlertDialog.Builder(MainActivity);
 /*alert.setTitle(""); */
 
 var scroll = new android.widget.ScrollView(MainActivity); 
-var layout = new v2Layout(); 
+var layout = new android.widget.LinearLayout(MainActivity); 
 layout.setOrientation(1);
 
 alert.setTitle("How to bypass a /devban");
@@ -2168,7 +2163,7 @@ var alert = new android.app.AlertDialog.Builder(MainActivity);
 /*alert.setTitle(""); */
 
 var scroll = new android.widget.ScrollView(MainActivity); 
-var layout = new v2Layout(); 
+var layout = new android.widget.LinearLayout(MainActivity); 
 layout.setOrientation(1);
 
 alert.setTitle("How to bypass /alias");
@@ -2200,7 +2195,7 @@ var alert = new android.app.AlertDialog.Builder(MainActivity);
 /*alert.setTitle(""); */
 
 var scroll = new android.widget.ScrollView(MainActivity); 
-var layout = new v2Layout(); 
+var layout = new android.widget.LinearLayout(MainActivity); 
 layout.setOrientation(1);
 
 alert.setTitle("How to delete pg chests");
@@ -2232,7 +2227,7 @@ var alert = new android.app.AlertDialog.Builder(MainActivity);
 /*alert.setTitle(""); */
 
 var scroll = new android.widget.ScrollView(MainActivity); 
-var layout = new v2Layout(); 
+var layout = new android.widget.LinearLayout(MainActivity); 
 layout.setOrientation(1);
 
 alert.setTitle("How to clear players items");
@@ -2264,7 +2259,7 @@ var alert = new android.app.AlertDialog.Builder(MainActivity);
 /*alert.setTitle(""); */
 
 var scroll = new android.widget.ScrollView(MainActivity); 
-var layout = new v2Layout(); 
+var layout = new android.widget.LinearLayout(MainActivity); 
 layout.setOrientation(1);
 
 alert.setTitle("How to get into claim land");
@@ -2346,11 +2341,11 @@ var sid = new styleButton();
 		function animeView(){
 MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var animeLayout = new v2Layout();
+            var animeLayout = new android.widget.LinearLayout(MainActivity);
             
             var animeScroll = new android.widget.ScrollView(MainActivity);
             
-            var animeLayout1 = new v2Layout();
+            var animeLayout1 = new android.widget.LinearLayout(MainActivity);
             animeLayout.setOrientation(1);
             animeLayout1.setOrientation(1);
             
@@ -2461,6 +2456,13 @@ function djs()
       }
 
             misc = new android.widget.PopupWindow(miscLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
+            if(default1==true)misc.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+      if(default1==false)misc.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+	  var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(android.graphics.Color.TRANSPARENT);
+      bg.setStroke(10,GUIStroke);
+miscLayout1.setBackgroundDrawable(bg);
+miscLayout1.setPadding(20,0,20,0);
             misc.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | android.view.Gravity.TOP, 0, 0);
             }catch(error){
                 android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
@@ -2482,9 +2484,9 @@ cheats.setOnClickListener(new android.view.View.OnClickListener() {
 		function cheat_menu(){
 MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var cheatLayout = new v2Layout();
+            var cheatLayout = new android.widget.LinearLayout(MainActivity);
             var cheatScroll = new android.widget.ScrollView(MainActivity);
-            var cheatLayout1 = new v2Layout();
+            var cheatLayout1 = new android.widget.LinearLayout(MainActivity);
             cheatLayout.setOrientation(1);
             cheatLayout1.setOrientation(1);
             cheatScroll.addView(cheatLayout);
@@ -3455,11 +3457,11 @@ var info = new styleButton();
 function infoView(){
 MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var infoLayout = new v2Layout();
+            var infoLayout = new android.widget.LinearLayout(MainActivity);
             
             var infoScroll = new android.widget.ScrollView(MainActivity);
             
-            var infoLayout1 = new v2Layout();
+            var infoLayout1 = new android.widget.LinearLayout(MainActivity);
             infoLayout.setOrientation(1);
             infoLayout1.setOrientation(1);
             
@@ -3784,9 +3786,9 @@ for (var i = 0; i < b_x023489a.length; i++) {
             function cmd_menu(){
 MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var cmdLayout = new v2Layout();
+            var cmdLayout = new android.widget.LinearLayout(MainActivity);
             var cmdScroll = new android.widget.ScrollView(MainActivity);
-            var cmdLayout1 = new v2Layout();
+            var cmdLayout1 = new android.widget.LinearLayout(MainActivity);
             cmdLayout.setOrientation(1);
             cmdLayout1.setOrientation(1);
             cmdScroll.addView(cmdLayout);
@@ -4159,11 +4161,11 @@ cmdLayout1.setPadding(20,0,20,0);
             function XYZView(){
 MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var XYZLayout = new v2Layout();
+            var XYZLayout = new android.widget.LinearLayout(MainActivity);
             
             var XYZScroll = new android.widget.ScrollView(MainActivity);
             
-            var XYZLayout1 = new v2Layout();
+            var XYZLayout1 = new android.widget.LinearLayout(MainActivity);
             XYZLayout.setOrientation(1);
             XYZLayout1.setOrientation(1);
             
@@ -4635,6 +4637,13 @@ var exit2 = new styleButton();
 		cheatLayout.addView(exit2);
             
             cheat = new android.widget.PopupWindow(cheatLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
+            if(default1==true)cheat.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+      if(default1==false)cheat.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+	  var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(android.graphics.Color.TRANSPARENT);
+      bg.setStroke(10,GUIStroke);
+cheatLayout1.setBackgroundDrawable(bg);
+cheatLayout1.setPadding(20,0,20,0);
             cheat.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | android.view.Gravity.TOP, 0, 0);
             }catch(error){
                 android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
@@ -4656,9 +4665,9 @@ mods.setOnClickListener(new android.view.View.OnClickListener() {
 		function mod_menu(){
 MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var modLayout = new v2Layout();
+            var modLayout = new android.widget.LinearLayout(MainActivity);
             var modScroll = new android.widget.ScrollView(MainActivity);
-            var modLayout1 = new v2Layout();
+            var modLayout1 = new android.widget.LinearLayout(MainActivity);
             modLayout.setOrientation(1);
             modLayout1.setOrientation(1);
             modScroll.addView(modLayout);
@@ -5164,6 +5173,13 @@ doubledrop = false;
             modLayout.addView(dropbutton);
 
             mod = new android.widget.PopupWindow(modLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
+            if(default1==true)mod.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+      if(default1==false)mod.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+	  var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(android.graphics.Color.TRANSPARENT);
+      bg.setStroke(10,GUIStroke);
+modLayout1.setBackgroundDrawable(bg);
+modLayout1.setPadding(20,0,20,0);
             mod.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | android.view.Gravity.TOP, 0, 0);
             }catch(error){
                 android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
@@ -5187,9 +5203,9 @@ effect.setOnClickListener(new android.view.View.OnClickListener() {
 		function effect_menu(){
 MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var effectLayout = new v2Layout();
+            var effectLayout = new android.widget.LinearLayout(MainActivity);
             var effectScroll = new android.widget.ScrollView(MainActivity);
-            var effectLayout1 = new v2Layout();
+            var effectLayout1 = new android.widget.LinearLayout(MainActivity);
             effectLayout.setOrientation(1);
             effectLayout1.setOrientation(1);
             effectScroll.addView(effectLayout);
@@ -5253,7 +5269,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
@@ -5311,7 +5327,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
@@ -5369,7 +5385,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
@@ -5427,7 +5443,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
@@ -5485,7 +5501,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
@@ -5543,7 +5559,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
@@ -5601,7 +5617,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
@@ -5659,7 +5675,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
@@ -5717,7 +5733,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
@@ -5775,7 +5791,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
@@ -5833,7 +5849,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
@@ -5891,7 +5907,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
@@ -5949,7 +5965,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
@@ -6007,7 +6023,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
@@ -6065,7 +6081,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
@@ -6123,7 +6139,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
@@ -6181,7 +6197,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
@@ -6239,7 +6255,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
@@ -6297,7 +6313,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
@@ -6355,7 +6371,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
@@ -6413,7 +6429,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
@@ -6471,7 +6487,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
@@ -6529,7 +6545,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var sec = new android.widget.EditText(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
@@ -6574,6 +6590,13 @@ Entity.addEffect(getPlayerEnt(), MobEffect.movementSpeed, s*l, 0, false, true);
 }
 
             effect = new android.widget.PopupWindow(effectLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
+            if(default1==true)effect.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+      if(default1==false)effect.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+	  var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(android.graphics.Color.TRANSPARENT);
+      bg.setStroke(10,GUIStroke);
+effectLayout1.setBackgroundDrawable(bg);
+effectLayout1.setPadding(20,0,20,0);
             effect.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | android.view.Gravity.TOP, 0, 0);
             }catch(error){
                 android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
@@ -6598,9 +6621,9 @@ enchant.setOnClickListener(new android.view.View.OnClickListener() {
 		function enchant_menu(){
 MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var enchantLayout = new v2Layout();
+            var enchantLayout = new android.widget.LinearLayout(MainActivity);
             var enchantScroll = new android.widget.ScrollView(MainActivity);
-            var enchantLayout1 = new v2Layout();
+            var enchantLayout1 = new android.widget.LinearLayout(MainActivity);
             enchantLayout.setOrientation(1);
             enchantLayout1.setOrientation(1);
             enchantScroll.addView(enchantLayout);
@@ -6783,7 +6806,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -6836,7 +6859,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -6889,7 +6912,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -6942,7 +6965,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -6995,7 +7018,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -7048,7 +7071,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -7101,7 +7124,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -7154,7 +7177,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -7207,7 +7230,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -7260,7 +7283,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -7313,7 +7336,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -7366,7 +7389,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -7419,7 +7442,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -7472,7 +7495,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -7525,7 +7548,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -7578,7 +7601,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -7631,7 +7654,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -7684,7 +7707,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -7737,7 +7760,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -7790,7 +7813,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -7843,7 +7866,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -7896,7 +7919,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -7949,7 +7972,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -8002,7 +8025,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -8055,7 +8078,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var lvl = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -8121,6 +8144,13 @@ Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,ll);
 //Enchantment.UNBREAKING;
 
             enchant = new android.widget.PopupWindow(enchantLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
+            if(default1==true)enchant.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+      if(default1==false)enchant.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+	  var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(android.graphics.Color.TRANSPARENT);
+      bg.setStroke(10,GUIStroke);
+enchantLayout1.setBackgroundDrawable(bg);
+enchantLayout1.setPadding(20,0,20,0);
             enchant.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | android.view.Gravity.TOP, 0, 0);
             }catch(error){
                 android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
@@ -8145,9 +8175,9 @@ give.setOnClickListener(new android.view.View.OnClickListener() {
 		function give_menu(){
 MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var giveLayout = new v2Layout();
+            var giveLayout = new android.widget.LinearLayout(MainActivity);
             var giveScroll = new android.widget.ScrollView(MainActivity);
-            var giveLayout1 = new v2Layout();
+            var giveLayout1 = new android.widget.LinearLayout(MainActivity);
             giveLayout.setOrientation(1);
             giveLayout1.setOrientation(1);
             giveScroll.addView(giveLayout);
@@ -8313,6 +8343,13 @@ addItemInventory(293, 1, 0);
             giveLayout.addView(k5);
 
             give = new android.widget.PopupWindow(giveLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
+            if(default1==true)give.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+      if(default1==false)give.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+	  var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(android.graphics.Color.TRANSPARENT);
+      bg.setStroke(10,GUIStroke);
+giveLayout1.setBackgroundDrawable(bg);
+giveLayout1.setPadding(20,0,20,0);
             give.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | android.view.Gravity.TOP, 0, 0);
             }catch(error){
                 android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
@@ -8337,9 +8374,9 @@ morph.setOnClickListener(new android.view.View.OnClickListener() {
 		function morph_menu(){
 MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var morphLayout = new v2Layout();
+            var morphLayout = new android.widget.LinearLayout(MainActivity);
             var morphScroll = new android.widget.ScrollView(MainActivity);
-            var morphLayout1 = new v2Layout();
+            var morphLayout1 = new android.widget.LinearLayout(MainActivity);
             morphLayout.setOrientation(1);
             morphLayout1.setOrientation(1);
             morphScroll.addView(morphLayout);
@@ -8855,6 +8892,13 @@ Entity.setRenderType(Player.getEntity(), 17);
             morphLayout.addView(mm22);
 
             morph = new android.widget.PopupWindow(morphLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
+            if(default1==true)morph.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+			if(default1==false)morph.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+      var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(android.graphics.Color.TRANSPARENT);
+      bg.setStroke(10,GUIStroke);
+morphLayout1.setBackgroundDrawable(bg);
+morphLayout1.setPadding(20,0,20,0);
             morph.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | android.view.Gravity.TOP, 0, 0);
             }catch(error){
                 android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
@@ -8879,9 +8923,9 @@ nuke.setOnClickListener(new android.view.View.OnClickListener() {
 		function nuke_menu(){
 MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var nukeLayout = new v2Layout();
+            var nukeLayout = new android.widget.LinearLayout(MainActivity);
             var nukeScroll = new android.widget.ScrollView(MainActivity);
-            var nukeLayout1 = new v2Layout();
+            var nukeLayout1 = new android.widget.LinearLayout(MainActivity);
             nukeLayout.setOrientation(1);
             nukeLayout1.setOrientation(1);
             nukeScroll.addView(nukeLayout);
@@ -9039,6 +9083,13 @@ var n11 = new styleButton();
             nukeLayout.addView(cn);
 
             nuke = new android.widget.PopupWindow(nukeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
+            if(default1==true)nuke.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+      if(default1==false)nuke.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+	  var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(android.graphics.Color.TRANSPARENT);
+      bg.setStroke(10,GUIStroke);
+nukeLayout1.setBackgroundDrawable(bg);
+nukeLayout1.setPadding(20,0,20,0);
             nuke.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | android.view.Gravity.TOP, 0, 0);
             }catch(error){
                 android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
@@ -9063,9 +9114,9 @@ particle.setOnClickListener(new android.view.View.OnClickListener() {
 		function particle_menu(){
 MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var particleLayout = new v2Layout();
+            var particleLayout = new android.widget.LinearLayout(MainActivity);
             var particleScroll = new android.widget.ScrollView(MainActivity);
-            var particleLayout1 = new v2Layout();
+            var particleLayout1 = new android.widget.LinearLayout(MainActivity);
             particleLayout.setOrientation(1);
             particleLayout1.setOrientation(1);
             particleScroll.addView(particleLayout);
@@ -9642,6 +9693,13 @@ clientMessage(client + "§7Particle 32 is false");
             particleLayout.addView(p32);
 
             particle = new android.widget.PopupWindow(particleLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
+            if(default1==true)particle.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+      if(default1==false)particle.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+	  var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(android.graphics.Color.TRANSPARENT);
+      bg.setStroke(10,GUIStroke);
+particleLayout1.setBackgroundDrawable(bg);
+particleLayout1.setPadding(20,0,20,0);
             particle.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | android.view.Gravity.TOP, 0, 0);
             }catch(error){
                 android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
@@ -9666,9 +9724,9 @@ spawn.setOnClickListener(new android.view.View.OnClickListener() {
 		function spawn_menu(){
 MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var spawnLayout = new v2Layout();
+            var spawnLayout = new android.widget.LinearLayout(MainActivity);
             var spawnScroll = new android.widget.ScrollView(MainActivity);
-            var spawnLayout1 = new v2Layout();
+            var spawnLayout1 = new android.widget.LinearLayout(MainActivity);
             spawnLayout.setOrientation(1);
             spawnLayout1.setOrientation(1);
             spawnScroll.addView(spawnLayout);
@@ -10090,6 +10148,13 @@ var spawn70 = new styleButton();
             spawnLayout.addView(spawn53);
 
             spawn = new android.widget.PopupWindow(spawnLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
+            if(default1==true)spawn.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+      if(default1==false)spawn.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+	  var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(android.graphics.Color.TRANSPARENT);
+      bg.setStroke(10,GUIStroke);
+spawnLayout1.setBackgroundDrawable(bg);
+spawnLayout1.setPadding(20,0,20,0);
             spawn.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | android.view.Gravity.TOP, 0, 0);
             }catch(error){
                 android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
@@ -10114,9 +10179,9 @@ speed.setOnClickListener(new android.view.View.OnClickListener() {
 		function speed_menu(){
 MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var speedLayout = new v2Layout();
+            var speedLayout = new android.widget.LinearLayout(MainActivity);
             var speedScroll = new android.widget.ScrollView(MainActivity);
-            var speedLayout1 = new v2Layout();
+            var speedLayout1 = new android.widget.LinearLayout(MainActivity);
             speedLayout.setOrientation(1);
             speedLayout1.setOrientation(1);
             speedScroll.addView(speedLayout);
@@ -10342,6 +10407,13 @@ newspeed();
             speedLayout.addView(d22);
 
             speed = new android.widget.PopupWindow(speedLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
+            if(default1==true)speed.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+      if(default1==false)speed.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+	  var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(android.graphics.Color.TRANSPARENT);
+      bg.setStroke(10,GUIStroke);
+speedLayout1.setBackgroundDrawable(bg);
+speedLayout1.setPadding(20,0,20,0);
             speed.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | android.view.Gravity.TOP, 0, 0);
             }catch(error){
                 android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
@@ -10366,9 +10438,9 @@ teleport.setOnClickListener(new android.view.View.OnClickListener() {
 		function teleport_menu(){
 MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var teleportLayout = new v2Layout();
+            var teleportLayout = new android.widget.LinearLayout(MainActivity);
             var teleportScroll = new android.widget.ScrollView(MainActivity);
-            var teleportLayout1 = new v2Layout();
+            var teleportLayout1 = new android.widget.LinearLayout(MainActivity);
             teleportLayout.setOrientation(1);
             teleportLayout1.setOrientation(1);
             teleportScroll.addView(teleportLayout);
@@ -10463,6 +10535,13 @@ taptp = false;
 		teleportLayout.addView(et);
 
             teleport = new android.widget.PopupWindow(teleportLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
+            if(default1==true)teleport.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+      if(default1==false)teleport.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+	  var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(android.graphics.Color.TRANSPARENT);
+      bg.setStroke(10,GUIStroke);
+teleportLayout1.setBackgroundDrawable(bg);
+teleportLayout1.setPadding(20,0,20,0);
             teleport.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | android.view.Gravity.TOP, 0, 0);
             }catch(error){
                 android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
@@ -10487,9 +10566,9 @@ time.setOnClickListener(new android.view.View.OnClickListener() {
 		function time_menu(){
 MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var timeLayout = new v2Layout();
+            var timeLayout = new android.widget.LinearLayout(MainActivity);
             var timeScroll = new android.widget.ScrollView(MainActivity);
-            var timeLayout1 = new v2Layout();
+            var timeLayout1 = new android.widget.LinearLayout(MainActivity);
             timeLayout.setOrientation(1);
             timeLayout1.setOrientation(1);
             timeScroll.addView(timeLayout);
@@ -10759,6 +10838,13 @@ Level.setTime(23000);
             timeLayout.addView(a24);
 
             time = new android.widget.PopupWindow(timeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
+            if(default1==true)time.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+      if(default1==false)time.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+	  var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(android.graphics.Color.TRANSPARENT);
+      bg.setStroke(10,GUIStroke);
+timeLayout1.setBackgroundDrawable(bg);
+timeLayout1.setPadding(20,0,20,0);
             time.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | android.view.Gravity.TOP, 0, 0);
             }catch(error){
                 android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
@@ -10783,9 +10869,9 @@ weather.setOnClickListener(new android.view.View.OnClickListener() {
 		function weather_menu(){
 MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var weatherLayout = new v2Layout();
+            var weatherLayout = new android.widget.LinearLayout(MainActivity);
             var weatherScroll = new android.widget.ScrollView(MainActivity);
-            var weatherLayout1 = new v2Layout();
+            var weatherLayout1 = new android.widget.LinearLayout(MainActivity);
             weatherLayout.setOrientation(1);
             weatherLayout1.setOrientation(1);
             weatherScroll.addView(weatherLayout);
@@ -10863,6 +10949,13 @@ rainitem = false;
             weatherLayout.addView(itembutton);
 
             weather = new android.widget.PopupWindow(weatherLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
+            if(default1==true)weather.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+      if(default1==false)weather.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+	  var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(android.graphics.Color.TRANSPARENT);
+      bg.setStroke(10,GUIStroke);
+weatherLayout1.setBackgroundDrawable(bg);
+weatherLayout1.setPadding(20,0,20,0);
             weather.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | android.view.Gravity.TOP, 0, 0);
             }catch(error){
                 android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
@@ -10871,6 +10964,14 @@ rainitem = false;
 }
             
             menu = new android.widget.PopupWindow(menuLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
+           if(default1==true)menu.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+           if(mcpetheme==true)menu.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#94857f")));
+		   if(default1==false)menu.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+		   var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(android.graphics.Color.TRANSPARENT);
+      bg.setStroke(10,GUIStroke);
+menuLayout1.setBackgroundDrawable(bg);
+menuLayout1.setPadding(20,0,20,0);
             menu.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | android.view.Gravity.TOP, 0, 0);
             }catch(error){
                 android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
@@ -12001,7 +12102,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 scc = new android.widget.PopupWindow();
-var Layer5 = new v2Layout();
+var Layer5 = new android.widget.LinearLayout(MainActivity);
 var sc1 = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton;
@@ -12055,7 +12156,7 @@ ctx.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 iplu = new android.widget.PopupWindow();
-var Layer4 = new v2Layout();
+var Layer4 = new android.widget.LinearLayout(ctx);
 var ip1 = new android.widget.EditText(ctx);
 var Dialog = new android.app.Dialog(ctx);
 var Exit = new android.widget.Button(ctx);
@@ -12109,7 +12210,7 @@ ctx.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 pip = new android.widget.PopupWindow();
-var Layer4 = new v2Layout();
+var Layer4 = new android.widget.LinearLayout(ctx);
 var ddip = new android.widget.EditText(ctx);
 var ddip2 = new android.widget.EditText(ctx);
 var Dialog = new android.app.Dialog(ctx);
@@ -12168,7 +12269,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 new10 = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var m1 = new android.widget.EditText(MainActivity);
 var select1 = new styleButton;
 var select2 = new styleButton;
@@ -12186,7 +12287,7 @@ Dialog.show();
 Layer.addView(m1);
 m1.setText("AlphaHack!");
 	
-	var doubleBtnS = new v2Layout();
+	var doubleBtnS = new android.widget.LinearLayout(MainActivity);
 	    doubleBtnS.setOrientation(0);
 		
 		doubleBtnS.addView(select3);
@@ -12262,7 +12363,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 spa = new android.widget.PopupWindow();
-var Layer6 = new v2Layout();
+var Layer6 = new android.widget.LinearLayout(MainActivity);
 var mm = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -12300,7 +12401,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 digg = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var select1 = new styleButton;
 var select2 = new styleButton;
 var ddf = new android.widget.EditText(MainActivity);
@@ -12355,7 +12456,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 orey = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var select1 = new styleButton;
 var select2 = new styleButton;
 var select3 = new styleButton;
@@ -12372,7 +12473,7 @@ Dialog.setContentView(Layer);
 Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
 Dialog.show();
 
-var doubleBtn1 = new v2Layout();
+var doubleBtn1 = new android.widget.LinearLayout(MainActivity);
 	    doubleBtn1.setOrientation(0);
 		
 		doubleBtn1.addView(select1);
@@ -12401,7 +12502,7 @@ Dialog.dismiss();
 			
 			Layer.addView(doubleBtn1);
 			
-			var doubleBtn2 = new v2Layout();
+			var doubleBtn2 = new android.widget.LinearLayout(MainActivity);
 	    doubleBtn2.setOrientation(0);
 		
 		doubleBtn2.addView(select3);
@@ -12430,7 +12531,7 @@ Dialog.dismiss();
 			
 			Layer.addView(doubleBtn2);
 			
-			var doubleBtn3 = new v2Layout();
+			var doubleBtn3 = new android.widget.LinearLayout(MainActivity);
 	    doubleBtn3.setOrientation(0);
 		
 		doubleBtn3.addView(select5);
@@ -12459,7 +12560,7 @@ Dialog.dismiss();
 			
 			Layer.addView(doubleBtn3);
 			
-			var doubleBtn4 = new v2Layout();
+			var doubleBtn4 = new android.widget.LinearLayout(MainActivity);
 	    doubleBtn4.setOrientation(0);
 		
 		doubleBtn4.addView(select7);
@@ -12502,7 +12603,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 new9 = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var select1 = new styleButton;
 var select2 = new styleButton;
 var Dialog = new android.app.Dialog(MainActivity);
@@ -12611,7 +12712,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 new3 = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var select1 = new styleButton;
 var select2 = new styleButton;
 var select3 = new styleButton;
@@ -12709,7 +12810,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 new2 = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var select1 = new styleButton;
 var select2 = new styleButton;
 var select3 = new styleButton;
@@ -12777,7 +12878,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer8 = new v2Layout();
+var Layer8 = new android.widget.LinearLayout(MainActivity);
 var ntd = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton;
@@ -12821,7 +12922,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer8 = new v2Layout();
+var Layer8 = new android.widget.LinearLayout(MainActivity);
 var nt = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton;
@@ -12865,7 +12966,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer8 = new v2Layout();
+var Layer8 = new android.widget.LinearLayout(MainActivity);
 var bd = new android.widget.EditText(MainActivity);
 var bn = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
@@ -12914,7 +13015,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer8 = new v2Layout();
+var Layer8 = new android.widget.LinearLayout(MainActivity);
 var bi = new android.widget.EditText(MainActivity);
 var br = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
@@ -12963,7 +13064,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer8 = new v2Layout();
+var Layer8 = new android.widget.LinearLayout(MainActivity);
 var enh = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton;
@@ -13007,7 +13108,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer10 = new v2Layout();
+var Layer10 = new android.widget.LinearLayout(MainActivity);
 var eha = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton;
@@ -13047,7 +13148,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 new3 = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var select1 = new styleButton;
 var select2 = new styleButton;
 var Dialog = new android.app.Dialog(MainActivity);
@@ -13105,7 +13206,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var XP = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton;
@@ -13150,7 +13251,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var ID = new android.widget.EditText(MainActivity);
 var Amount = new android.widget.EditText(MainActivity);
 var Damage = new android.widget.EditText(MainActivity);
@@ -13204,7 +13305,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 newn = new android.widget.PopupWindow();
-var Layerb5 = new v2Layout();
+var Layerb5 = new android.widget.LinearLayout(MainActivity);
 var nNuke = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton;
@@ -13248,7 +13349,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer8 = new v2Layout();
+var Layer8 = new android.widget.LinearLayout(MainActivity);
 var vspee = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton;
@@ -13292,7 +13393,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var X = new android.widget.EditText(MainActivity);
 var Y = new android.widget.EditText(MainActivity);
 var Z = new android.widget.EditText(MainActivity);
@@ -13346,7 +13447,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var w = new android.widget.EditText(MainActivity);
 var w2 = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
@@ -13396,7 +13497,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 atact = new android.widget.PopupWindow();
-var Layerb4 = new v2Layout();
+var Layerb4 = new android.widget.LinearLayout(MainActivity);
 var editAtk = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton;
@@ -13435,7 +13536,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 atact = new android.widget.PopupWindow();
-var Layerz8 = new v2Layout();
+var Layerz8 = new android.widget.LinearLayout(MainActivity);
 var editAtk = new android.widget.EditText(MainActivity);
 var editAtk2 = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
@@ -13479,7 +13580,7 @@ ctx.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(ctx);
 var xy = new android.widget.EditText(ctx);
 var xy2 = new android.widget.EditText(ctx);
 var Dialog = new android.app.Dialog(ctx);
@@ -13528,7 +13629,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var LayerFov = new v2Layout();
+var LayerFov = new android.widget.LinearLayout(MainActivity);
 var fin = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var reset = new styleButton;
@@ -13583,7 +13684,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 sendEtc = new android.widget.PopupWindow();
-var Layerz89 = new v2Layout();
+var Layerz89 = new android.widget.LinearLayout(MainActivity);
 var datMsg = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton;
@@ -13631,7 +13732,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var rang = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton;
@@ -13671,7 +13772,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var height = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton;
@@ -13711,7 +13812,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
 GetText = new android.widget.PopupWindow();
-var Layer = new v2Layout();
+var Layer = new android.widget.LinearLayout(MainActivity);
 var item = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
