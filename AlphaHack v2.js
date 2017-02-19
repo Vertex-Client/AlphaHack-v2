@@ -2552,6 +2552,7 @@ if(paimaura == true){
 killaura1.setTextColor(Color.GREEN);
 clientMessage(client + "Player aim aura on");
 Toast.makeText(MainActivity, "Credit: Firepro9978 from flame client!", 1).show();
+	setRot(getPlayerEnt(), 0, 0);
 aimbot = true;
 aimed = true;
 paimaura = true;
@@ -2559,6 +2560,7 @@ paimaura = true;
 if(paimaura == false){
 killaura1.setTextColor(Color.RED);
 clientMessage(client + "Player aim aura off");
+	setRot(getPlayerEnt(), 0, 0);
 aimbot = false;
 aimed = false;
 paimaura = false;
@@ -2579,6 +2581,7 @@ if(maimaura == true){
 killaura2.setTextColor(Color.GREEN);
 clientMessage(client + "Mob aim aura on");
 Toast.makeText(MainActivity, "Credit: Firepro9978 from flame client!", 1).show();
+	setRot(getPlayerEnt(), 0, 0);
 aimbot2 = true;
 aimed2 = true;
 maimaura = true;
@@ -2586,6 +2589,7 @@ maimaura = true;
 if(maimaura == false){
 killaura2.setTextColor(Color.RED);
 clientMessage(client + "Mob aim aura off");
+	setRot(getPlayerEnt(), 0, 0);
 aimbot2 = false;
 aimed2 = false;
 maimaura = false;
@@ -2675,11 +2679,13 @@ bowbut.setText("Auto bow aim");
 if(bowaura == true){
 bowbut.setTextColor(Color.GREEN);
 clientMessage(client+"Auto bow aim on");
+	setRot(getPlayerEnt(), 0, 0);
 bowaura = true;
 }
 if(bowaura == false){
 bowbut.setTextColor(Color.RED);
 clientMessage(client+"Auto bow aim off");
+	setRot(getPlayerEnt(), 0, 0);
 bowaura = false;
 }
                 }
@@ -2702,6 +2708,10 @@ hitbox1 = true;
 if(hitbox1 == false){
 hitbutton.setTextColor(Color.RED);
 clientMessage(client+"Hitbox increase off");
+	for(var i = 0; i < 5; i++){
+		Entity.setCollisionSize(Entity.getAll(), 1, 1);
+		Entity.setCollisionSize(Server.getAllPlayers(), 1, 2);
+	}
 hitbox1 = false;
 }
                 }
@@ -2732,10 +2742,15 @@ Block.setShape(8, 0, 0, 0, 1, 0.6, 1);
 Block.setShape(9, 0, 0, 0, 1, 0.6, 1);
 Block.setShape(10, 0, 0, 0, 1, 0.6, 1);
 Block.setShape(11, 0, 0, 0, 1, 0.6, 1);
+/*
+*
+* RIP Godsoft029's method
+*
 Block.defineBlock(8, "Water", [["still_water", 0]], 8, false, 4);
 Block.defineBlock(9, "Stationary Water", [["still_water", 0]], 9, false, 4);
 Block.defineBlock(10, "Lava", [["still_lava", 0]], 10, false, 4);
 Block.defineBlock(11, "Stationary Lava", [["still_lava", 0]], 11, false, 4);
+*/
 liquidwalk = true;
 }
 if(liquidwalk == false){
@@ -10217,7 +10232,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             d1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
                 	ModPE.setGameSpeed(20);
-			setRot(getPlayerEnt(), 0, getPitch(getPlayerEnt()));
+			setRot(getPlayerEnt(), 0, 0); //reset looking up/down - left/right
                 }
             }));
             speedLayout.addView(d1);
