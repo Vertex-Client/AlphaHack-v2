@@ -11739,8 +11739,15 @@ function destroyBlock(x, y, z, side)
 {
 if(block == true)preventDefault();
 	if(doubledrop == true){
+		Level.getGameMode();
+		if(Level.getGameMode() == 1 || Level.getGameMode() == 3){
 		var broke = Level.getTile(x, y, z);
 		Level.dropItem(x,y,z,0,broke,broke * 2);
+		}
+		if(Level.getGameMode() == 0 || Level.getGameMode() == 2){
+		var broke = Level.getTile(x, y, z);
+		Level.dropItem(x,y,z,0,broke,broke + 1);
+		}
 	}
 }
 
