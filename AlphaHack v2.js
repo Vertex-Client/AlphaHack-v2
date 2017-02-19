@@ -217,6 +217,7 @@ var Utils = {
 };
 
 //booleans
+var abcabc123 = false;
 var liquidwalk = false;
 var xray = false;
 var ttot = false;
@@ -2715,16 +2716,17 @@ hitbox1 = false;
 			hacks1.setBackgroundDrawable(textviewBg);
             cheatLayout.addView(hacks1);
 			
-			var button1 = new styleButton();
-button1.setText("Walk on liquid");
-button1.setTextColor(Color.RED);
-if(liquidwalk==true)button1.setTextColor(Color.GREEN);
-            button1.setOnClickListener(new View.OnClickListener({
+var liquidhack = new styleButton();
+liquidhack.setText("Walk on liquid");
+liquidhack.setTextColor(Color.RED);
+if(liquidwalk==true)liquidhack.setTextColor(Color.GREEN);
+            liquidhack.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              liquidwalk?liquidwalk=false:liquidwalk=true;
-button1.setText("Walk on liquid");
+liquidhack.setText("Walk on liquid");
 if(liquidwalk == true){
-button1.setTextColor(Color.GREEN);
+liquidhack.setTextColor(Color.GREEN);
+clientMessage(client+"Walk on liquid on");
 Toast.makeText(MainActivity, "Credit: GodSoft029!", 1).show();
 Block.setShape(8, 0, 0, 0, 1, 0.6, 1);
 Block.setShape(9, 0, 0, 0, 1, 0.6, 1);
@@ -2737,7 +2739,8 @@ Block.defineBlock(11, "Stationary Lava", [["still_lava", 0]], 11, false, 4);
 liquidwalk = true;
 }
 if(liquidwalk == false){
-button1.setTextColor(Color.RED);
+liquidhack.setTextColor(Color.RED);
+clientMessage(client+"Walk on liquid off");
 Block.setShape(8, null, null, null, null, null, null);
 Block.setShape(9, null, null, null, null, null, null);
 Block.setShape(10, null, null, null, null, null, null);
@@ -2746,7 +2749,7 @@ liquidwalk = false;
 }
                 }
             }));
-            cheatLayout.addView(button1);
+            cheatLayout.addView(liquidhack);
             
             var creative = new styleButton();
             creative.setText("Creative");        
@@ -10214,6 +10217,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             d1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
                 	ModPE.setGameSpeed(20);
+			setRot(getPlayerEnt(), 0, getPitch(getPlayerEnt()));
                 }
             }));
             speedLayout.addView(d1);
