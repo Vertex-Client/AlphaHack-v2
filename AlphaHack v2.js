@@ -34,30 +34,12 @@ var LinearLayout = android.widget.LinearLayout;
 var RelativeLayout = android.widget.RelativeLayout;
 //xml popup window
 var PopupWindow = android.widget.PopupWindow;
-//xml scroll view
-var ScrollView = android.widget.ScrollView;
-//xml textview
-var TextView = android.widget.TextView;
-//xml checkbox
-var CheckBox = android.widget.CheckBox;
-//java toast
-var Toast = android.widget.Toast;
 //modpe android runnable
 var Runnable = java.lang.Runnable;
 //java view
 var View = android.view.View;
 //xml colorDrawable
 var ColorDrawable = android.graphics.drawable.ColorDrawable;
-//xml color
-var Color = android.graphics.Color;
-//xml gravity
-var Gravity = android.view.Gravity;
-//java intent
-var Intent = android.content.Intent;
-//java uri
-var Uri = android.net.Uri;
-//xml switch
-var Switch = android.widget.Switch;
 //xml edittext
 var EditText = android.widget.EditText;
 var Dialog = android.app.Dialog;
@@ -411,82 +393,82 @@ var particle31 = false;
 var particle32 = false;
 
 //define mod menu color changes and sizes
-var GUIColor = Color.TRANSPARENT;
+var GUIColor = android.graphics.Color.TRANSPARENT;
 
 var default1 = true;
 var mcpetheme = false;
 
-var btnPos = Gravity.RIGHT;
-var activePos = Gravity.LEFT;
+var btnPos = android.view.Gravity.RIGHT;
+var activePos = android.view.Gravity.LEFT;
 
-var GUIColor1 = Color.TRANSPARENT;
-var GUIColor2 = Color.BLACK;
-var GUIColor3 = Color.WHITE;
-var GUIColor4 = Color.RED;
-var GUIColor5 = Color.BLUE;
-var GUIColor6 = Color.GRAY;
-var GUIColor7 = Color.LTGRAY;
-var GUIColor8 = Color.YELLOW;
-var GUIColor9 = Color.CYAN;
-var GUIColor10 = Color.DKGRAY;
-var GUIColor11 = Color.GREEN;
-var GUIColor12 = Color.MAGENTA;
+var GUIColor1 = android.graphics.Color.TRANSPARENT;
+var GUIColor2 = android.graphics.Color.BLACK;
+var GUIColor3 = android.graphics.Color.WHITE;
+var GUIColor4 = android.graphics.Color.RED;
+var GUIColor5 = android.graphics.Color.BLUE;
+var GUIColor6 = android.graphics.Color.GRAY;
+var GUIColor7 = android.graphics.Color.LTGRAY;
+var GUIColor8 = android.graphics.Color.YELLOW;
+var GUIColor9 = android.graphics.Color.CYAN;
+var GUIColor10 = android.graphics.Color.DKGRAY;
+var GUIColor11 = android.graphics.Color.GREEN;
+var GUIColor12 = android.graphics.Color.MAGENTA;
 
-var GUIName = Color.WHITE;
+var GUIName = android.graphics.Color.WHITE;
 
-var GUIPos = Gravity.CENTER;
+var GUIPos = android.view.Gravity.CENTER;
 
-var GUIBtns = Color.BLUE;
+var GUIBtns = android.graphics.Color.BLUE;
 
-var GUIBtns2 = Color.BLACK;
-var GUIBtns3 = Color.WHITE;
-var GUIBtns4 = Color.RED;
-var GUIBtns5 = Color.BLUE;
-var GUIBtns6 = Color.GRAY;
-var GUIBtns7 = Color.LTGRAY;
-var GUIBtns8 = Color.YELLOW;
-var GUIBtns9 = Color.CYAN;
-var GUIBtns10 = Color.DKGRAY;
-var GUIBtns11 = Color.GREEN;
-var GUIBtns12 = Color.MAGENTA;
+var GUIBtns2 = android.graphics.Color.BLACK;
+var GUIBtns3 = android.graphics.Color.WHITE;
+var GUIBtns4 = android.graphics.Color.RED;
+var GUIBtns5 = android.graphics.Color.BLUE;
+var GUIBtns6 = android.graphics.Color.GRAY;
+var GUIBtns7 = android.graphics.Color.LTGRAY;
+var GUIBtns8 = android.graphics.Color.YELLOW;
+var GUIBtns9 = android.graphics.Color.CYAN;
+var GUIBtns10 = android.graphics.Color.DKGRAY;
+var GUIBtns11 = android.graphics.Color.GREEN;
+var GUIBtns12 = android.graphics.Color.MAGENTA;
 
-var GUIStroke = Color.BLUE;
+var GUIStroke = android.graphics.Color.BLUE;
 
-var GUIStroke1 = Color.BLUE;
-var GUIStroke2 = Color.BLACK;
-var GUIStroke3 = Color.WHITE;
-var GUIStroke4 = Color.RED;
-var GUIStroke5 = Color.BLUE;
-var GUIStroke6 = Color.GRAY;
-var GUIStroke7 = Color.LTGRAY;
-var GUIStroke8 = Color.YELLOW;
-var GUIStroke9 = Color.CYAN;
-var GUIStroke10 = Color.DKGRAY;
-var GUIStroke11 = Color.GREEN;
-var GUIStroke12 = Color.MAGENTA;
+var GUIStroke1 = android.graphics.Color.BLUE;
+var GUIStroke2 = android.graphics.Color.BLACK;
+var GUIStroke3 = android.graphics.Color.WHITE;
+var GUIStroke4 = android.graphics.Color.RED;
+var GUIStroke5 = android.graphics.Color.BLUE;
+var GUIStroke6 = android.graphics.Color.GRAY;
+var GUIStroke7 = android.graphics.Color.LTGRAY;
+var GUIStroke8 = android.graphics.Color.YELLOW;
+var GUIStroke9 = android.graphics.Color.CYAN;
+var GUIStroke10 = android.graphics.Color.DKGRAY;
+var GUIStroke11 = android.graphics.Color.GREEN;
+var GUIStroke12 = android.graphics.Color.MAGENTA;
 
 var GUISize = "2";
 
-var GUIText = Color.WHITE;
+var GUIText = android.graphics.Color.WHITE;
 
-var GUIText2 = Color.BLACK;
-var GUIText3 = Color.WHITE;
-var GUIText4 = Color.RED;
-var GUIText5 = Color.BLUE;
-var GUIText6 = Color.GRAY;
-var GUIText7 = Color.LTGRAY;
-var GUIText8 = Color.YELLOW;
-var GUIText9 = Color.CYAN;
-var GUIText10 = Color.DKGRAY;
-var GUIText11 = Color.GREEN;
-var GUIText12 = Color.MAGENTA;
+var GUIText2 = android.graphics.Color.BLACK;
+var GUIText3 = android.graphics.Color.WHITE;
+var GUIText4 = android.graphics.Color.RED;
+var GUIText5 = android.graphics.Color.BLUE;
+var GUIText6 = android.graphics.Color.GRAY;
+var GUIText7 = android.graphics.Color.LTGRAY;
+var GUIText8 = android.graphics.Color.YELLOW;
+var GUIText9 = android.graphics.Color.CYAN;
+var GUIText10 = android.graphics.Color.DKGRAY;
+var GUIText11 = android.graphics.Color.GREEN;
+var GUIText12 = android.graphics.Color.MAGENTA;
 
 //fixed color changing menus making on/off buttons look weird;
-var extraBtns = Color.RED;
-var extraBtns2 = Color.GREEN;
+var extraBtns = android.graphics.Color.RED;
+var extraBtns2 = android.graphics.Color.GREEN;
 
-var extraBtns3 = Color.BLACK;
-var extraBtns4 = Color.BLUE;
+var extraBtns3 = android.graphics.Color.BLACK;
+var extraBtns4 = android.graphics.Color.BLUE;
 
 function styleButton(){
 /*thanks godsoft029 for working on this with me.*/
@@ -547,7 +529,7 @@ callback(new Array("Error"));
 		        reader.close();
 			newUpdate = update.toString();
 		    if(newUpdate!=version){
-			    Toast.makeText(MainActivity, "AlphaHackPE: New update!", 1).show()
+			    android.widget.Toast.makeText(MainActivity, "AlphaHackPE: New update!", 1).show()
 			    startUp();
 		    }
                 }catch(e){
@@ -567,16 +549,16 @@ function startUp(){
 MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
             var updiaLayout = new LinearLayout(MainActivity);
-            var updiaScroll = new ScrollView(MainActivity);
+            var updiaScroll = new android.widget.ScrollView(MainActivity);
             var updiaLayout1 = new LinearLayout(MainActivity);
             updiaLayout.setOrientation(1);
             updiaLayout1.setOrientation(1);
             updiaScroll.addView(updiaLayout);
             updiaLayout1.addView(updiaScroll);
 			
-			var text1 = new TextView(MainActivity);
+			var text1 = new android.widget.TextView(MainActivity);
             text1.setText("\n\n\nA new update is available.\nBug fixes, less crashes, new features & more!\nWould you like to update AlphaHack v2?\nCurret version: "+version+"\n");
-            text1.setTextColor(Color.WHITE);
+            text1.setTextColor(android.graphics.Color.WHITE);
 			text1.setPadding(10,20,130,20);
             updiaLayout.addView(text1);
 			
@@ -584,7 +566,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 			
 			textView1 = new styleButton();
 			textView1.setText("Later");
-			textView1.setTextColor(Color.BLUE);
+			textView1.setTextColor(android.graphics.Color.BLUE);
 			textView1.setPadding(185,10,185,10);
 			textView1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
@@ -595,13 +577,13 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 			
 			textView2 = new styleButton();
 			textView2.setText("Update");
-			textView2.setTextColor(Color.BLUE);
+			textView2.setTextColor(android.graphics.Color.BLUE);
 			textView2.setPadding(185,10,185,10);
 			textView2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-var urls5 = new Intent(MainActivity);
-urls5.setAction(Intent.ACTION_VIEW);
-urls5.setData(Uri.parse("https://arceusmatt.github.io/alphahack"));
+var urls5 = new android.content.Intent(MainActivity);
+urls5.setAction(android.content.Intent.ACTION_VIEW);
+urls5.setData(android.net.Uri.parse("https://arceusmatt.github.io/alphahack"));
 MainActivity.startActivity(urls5);
                 }
             }));
@@ -611,13 +593,13 @@ MainActivity.startActivity(urls5);
 			
 			            updia = new PopupWindow(updiaLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/1.01, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1.01);
 		   var bg = new android.graphics.drawable.GradientDrawable();
-      bg.setColor(Color.BLACK);
-      bg.setStroke(10,Color.BLUE);
+      bg.setColor(android.graphics.Color.BLACK);
+      bg.setStroke(10,android.graphics.Color.BLUE);
 updiaLayout1.setBackgroundDrawable(bg);
 updiaLayout1.setPadding(20,1,20,1);
-            updia.showAtLocation(MainActivity.getWindow().getDecorView(), Gravity.CENTER | Gravity.CENTER, 0, 0);
+            updia.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.CENTER | android.view.Gravity.CENTER, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "Update updia, Error: " + error, 1).show();
+                android.widget.Toast.makeText(MainActivity, "Update updia, Error: " + error, 1).show();
             }
     }}));
 }
@@ -626,7 +608,7 @@ function betterWebview(url){
 MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
             var wvLayout = new LinearLayout(MainActivity);
-            var wvScroll = new ScrollView(MainActivity);
+            var wvScroll = new android.widget.ScrollView(MainActivity);
             var wvLayout1 = new LinearLayout(MainActivity);
             wvLayout.setOrientation(1);
             wvLayout1.setOrientation(1);
@@ -643,7 +625,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 			
 			var exit = new styleButton();
             exit.setText("Exit");
-			exit.setTextColor(Color.RED);
+			exit.setTextColor(android.graphics.Color.RED);
             exit.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
                     wv.dismiss();
@@ -679,14 +661,14 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 wv = new PopupWindow(wvLayout1, dip2px(500), dip2px(500));
 wv = new PopupWindow(wvLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/1, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1);
 	  var bg = new android.graphics.drawable.GradientDrawable();
-      bg.setColor(Color.TRANSPARENT);
+      bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
 wvLayout1.setBackgroundDrawable(bg);
 wvLayout1.setPadding(20,0,20,0);
-wv.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-            wv.showAtLocation(MainActivity.getWindow().getDecorView(), Gravity.CENTER | Gravity.CENTER, 0, 0);
+wv.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+            wv.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.CENTER | android.view.Gravity.CENTER, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
+                android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -876,15 +858,15 @@ ctx.runOnUiThread(new Runnable({ run: function(){
         var menuNo = new Button(ctx);
         menuNo.setTextSize(10);
         menuNo.setText("");
-	menuNo.setTextColor(Color.GREEN);
+	menuNo.setTextColor(android.graphics.Color.GREEN);
         layout.addView(menuNo);
  
         Debug = new PopupWindow(layout, dip2px(0), dip2px(0)); 
 
-        Debug.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        Debug.showAtLocation(ctx.getWindow().getDecorView(), Gravity.RIGHT | Gravity.TOP, 0, 1500);
+        Debug.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        Debug.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.RIGHT | android.view.Gravity.TOP, 0, 1500);
         }catch(err){
-            Toast.makeText(ctx, "An error occured: " + err, 1).show();
+            android.widget.Toast.makeText(ctx, "An error occured: " + err, 1).show();
         }
     }}));
 }
@@ -905,21 +887,21 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             onClick: function(viewarg){
 mainMenu();
 GUI.dismiss();
-if(getLanguage=="en_US")Toast.makeText(MainActivity, "Scroll down", 1).show();
- if(getLanguage=="de_DE")Toast.makeText(MainActivity, "Scroll nach unten", 1).show();
-if(getLanguage=="es_MX")Toast.makeText(MainActivity, "Baja abajo", 1).show();
-if(getLanguage=="ko_KR")Toast.makeText(MainActivity, "아래를 스크롤", 1).show();
+if(getLanguage=="en_US")android.widget.Toast.makeText(MainActivity, "Scroll down", 1).show();
+ if(getLanguage=="de_DE")android.widget.Toast.makeText(MainActivity, "Scroll nach unten", 1).show();
+if(getLanguage=="es_MX")android.widget.Toast.makeText(MainActivity, "Baja abajo", 1).show();
+if(getLanguage=="ko_KR")android.widget.Toast.makeText(MainActivity, "아래를 스크롤", 1).show();
             }
         }));
         layout.addView(menuBtn);
  
         GUI = new PopupWindow(layout, dip2px(45), dip2px(45)); 
 
-        if(hide==true)menuBtn.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-	GUI.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        GUI.showAtLocation(MainActivity.getWindow().getDecorView(), btnPos | Gravity.TOP, 0, 120);
+        if(hide==true)menuBtn.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+	GUI.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        GUI.showAtLocation(MainActivity.getWindow().getDecorView(), btnPos | android.view.Gravity.TOP, 0, 120);
         }catch(err){
-            Toast.makeText(MainActivity, "An error occured: " + err, 1).show();
+            android.widget.Toast.makeText(MainActivity, "An error occured: " + err, 1).show();
         }
     }}));
 }
@@ -936,7 +918,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
             var activeLayout = new LinearLayout(MainActivity);
             
-            var activeScroll = new ScrollView(MainActivity);
+            var activeScroll = new android.widget.ScrollView(MainActivity);
             
             var activeLayout1 = new LinearLayout(MainActivity);
             activeLayout.setOrientation(1);
@@ -945,15 +927,15 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             activeScroll.addView(activeLayout);
             activeLayout1.addView(activeScroll);
 			
-	    var a1 = new TextView(MainActivity);
+	    var a1 = new android.widget.TextView(MainActivity);
             a1.setTextSize(10);
             if(paimaura==true)a1.setText("Player aura");
             if(paimaura==false)a1.setText("");
-	    if(paimaura==false)a1.setTextColor(Color.RED);
-            if(paimaura==true)a1.setTextColor(Color.GREEN);
+	    if(paimaura==false)a1.setTextColor(android.graphics.Color.RED);
+            if(paimaura==true)a1.setTextColor(android.graphics.Color.GREEN);
 			a1.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-             a1.setTextColor(Color.RED);
+             a1.setTextColor(android.graphics.Color.RED);
 aimbot = false;
 aimed = false;
 paimaura = false;
@@ -961,73 +943,73 @@ paimaura = false;
 		});
 		activeLayout.addView(a1);
 		
-		var a2 = new TextView(MainActivity);
+		var a2 = new android.widget.TextView(MainActivity);
             a2.setTextSize(10);
             if(liquidwalk==true)a2.setText("LiquidWalk");
             if(liquidwalk==false)a2.setText("");
-	    if(liquidwalk==false)a2.setTextColor(Color.RED);
-            if(liquidwalk==true)a2.setTextColor(Color.GREEN);
+	    if(liquidwalk==false)a2.setTextColor(android.graphics.Color.RED);
+            if(liquidwalk==true)a2.setTextColor(android.graphics.Color.GREEN);
 			a2.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-             a2.setTextColor(Color.RED);
+             a2.setTextColor(android.graphics.Color.RED);
 			 liquidwalk = false;
 			}
 		});
 		activeLayout.addView(a2);
 					 
-		var a3 = new TextView(MainActivity);
+		var a3 = new android.widget.TextView(MainActivity);
             a3.setTextSize(10);
             if(xray==true)a3.setText("X-ray");
             if(xray==false)a3.setText("");
-	    if(xray==false)a3.setTextColor(Color.RED);
-            if(xray==true)a3.setTextColor(Color.GREEN);
+	    if(xray==false)a3.setTextColor(android.graphics.Color.RED);
+            if(xray==true)a3.setTextColor(android.graphics.Color.GREEN);
 			a3.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-             a3.setTextColor(Color.RED);
+             a3.setTextColor(android.graphics.Color.RED);
 			 xray = false;
 			}
 		});
 		activeLayout.addView(a3);
 		
-		var a4 = new TextView(MainActivity);
+		var a4 = new android.widget.TextView(MainActivity);
             a4.setTextSize(10);
             if(glide==true)a4.setText("Glide");
             if(glide==false)a4.setText("");
-	    if(glide==false)a4.setTextColor(Color.RED);
-            if(glide==true)a4.setTextColor(Color.GREEN);
+	    if(glide==false)a4.setTextColor(android.graphics.Color.RED);
+            if(glide==true)a4.setTextColor(android.graphics.Color.GREEN);
 			a4.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-             a4.setTextColor(Color.RED);
+             a4.setTextColor(android.graphics.Color.RED);
 			 glide = false;
 			}
 		});
 		activeLayout.addView(a4);
 		
-		var a5 = new TextView(MainActivity);
+		var a5 = new android.widget.TextView(MainActivity);
             a5.setTextSize(10);
             if(autospam==true)a5.setText("AutoSpam");
             if(autospam==false)a5.setText("");
-	    if(autospam==false)a5.setTextColor(Color.RED);
-            if(autospam==true)a5.setTextColor(Color.GREEN);
+	    if(autospam==false)a5.setTextColor(android.graphics.Color.RED);
+            if(autospam==true)a5.setTextColor(android.graphics.Color.GREEN);
 			a5.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-             a5.setTextColor(Color.RED);
+             a5.setTextColor(android.graphics.Color.RED);
 			 autospam = false;
 			 autospam2 = false;
 			}
 		});
 		activeLayout.addView(a5);
 		
-		var a6 = new TextView(MainActivity);
+		var a6 = new android.widget.TextView(MainActivity);
             a6.setTextSize(10);
             if(autospam==true)a6.setText("AutoDestroy");
             if(extraj==true)a6.setText("AutoDestroy 2");
             if(autospam==false)a6.setText("");
-	    if(autospam==false)a6.setTextColor(Color.RED);
-            if(autospam==true)a6.setTextColor(Color.GREEN);
+	    if(autospam==false)a6.setTextColor(android.graphics.Color.RED);
+            if(autospam==true)a6.setTextColor(android.graphics.Color.GREEN);
 			a6.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-             a6.setTextColor(Color.RED);
+             a6.setTextColor(android.graphics.Color.RED);
 			 autodestroy = false;
 			 autodestroy2 = false;
 			 extraj = false;
@@ -1035,71 +1017,71 @@ paimaura = false;
 		});
 		activeLayout.addView(a6);
 		
-		var a7 = new TextView(MainActivity);
+		var a7 = new android.widget.TextView(MainActivity);
             a7.setTextSize(10);
             if(coords==true)a7.setText("XYZ");
             if(coords==false)a7.setText("");
-	    if(coords==false)a7.setTextColor(Color.RED);
-            if(coords==true)a7.setTextColor(Color.GREEN);
+	    if(coords==false)a7.setTextColor(android.graphics.Color.RED);
+            if(coords==true)a7.setTextColor(android.graphics.Color.GREEN);
 			a7.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-             a7.setTextColor(Color.RED);
+             a7.setTextColor(android.graphics.Color.RED);
 			 coords = false;
 			}
 		});
 		activeLayout.addView(a7);
 		
-		var a8 = new TextView(MainActivity);
+		var a8 = new android.widget.TextView(MainActivity);
             a8.setTextSize(10);
             if(chestesp==true)a8.setText("ChestESP");
             if(chestesp==false)a8.setText("");
-	    if(chestesp==false)a8.setTextColor(Color.RED);
-            if(chestesp==true)a8.setTextColor(Color.GREEN);
+	    if(chestesp==false)a8.setTextColor(android.graphics.Color.RED);
+            if(chestesp==true)a8.setTextColor(android.graphics.Color.GREEN);
 			a8.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-             a8.setTextColor(Color.RED);
+             a8.setTextColor(android.graphics.Color.RED);
 			 chestesp = false;
 			}
 		});
 		activeLayout.addView(a8);
 		
-		var a9 = new TextView(MainActivity);
+		var a9 = new android.widget.TextView(MainActivity);
             a9.setTextSize(10);
             if(tapjump==true)a9.setText("TapJump");
             if(tapjump==false)a9.setText("");
-	    if(tapjump==false)a9.setTextColor(Color.RED);
-            if(tapjump==true)a9.setTextColor(Color.GREEN);
+	    if(tapjump==false)a9.setTextColor(android.graphics.Color.RED);
+            if(tapjump==true)a9.setTextColor(android.graphics.Color.GREEN);
 			a9.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-             a9.setTextColor(Color.RED);
+             a9.setTextColor(android.graphics.Color.RED);
 			 tapjump = false;
 			}
 		});
 		activeLayout.addView(a9);
 		
-		var a10 = new TextView(MainActivity);
+		var a10 = new android.widget.TextView(MainActivity);
             a10.setTextSize(10);
             if(spider==true)a10.setText("Spider");
             if(spider==false)a10.setText("");
-	    if(spider==false)a10.setTextColor(Color.RED);
-            if(spider==true)a10.setTextColor(Color.GREEN);
+	    if(spider==false)a10.setTextColor(android.graphics.Color.RED);
+            if(spider==true)a10.setTextColor(android.graphics.Color.GREEN);
 			a10.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-             a10.setTextColor(Color.RED);
+             a10.setTextColor(android.graphics.Color.RED);
 			 spider = false;
 			}
 		});
 		activeLayout.addView(a10);
 		
-		var a11 = new TextView(MainActivity);
+		var a11 = new android.widget.TextView(MainActivity);
             a11.setTextSize(10);
             if(autowalk==true)a11.setText("AutoWalk");
             if(autowalk==false)a11.setText("");
-	    if(autowalk==false)a11.setTextColor(Color.RED);
-            if(autowalk==true)a11.setTextColor(Color.GREEN);
+	    if(autowalk==false)a11.setTextColor(android.graphics.Color.RED);
+            if(autowalk==true)a11.setTextColor(android.graphics.Color.GREEN);
 			a11.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-             a11.setTextColor(Color.RED);
+             a11.setTextColor(android.graphics.Color.RED);
 			 autowalk = false;
 			}
 		});
@@ -1108,10 +1090,10 @@ paimaura = false;
 active = new PopupWindow(activeLayout1, dip2px(46), dip2px(46));
 
 active = new PopupWindow(activeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/13, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/3.5);
-active.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-            active.showAtLocation(MainActivity.getWindow().getDecorView(), activePos | Gravity.TOP, 0, 120);
+active.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+            active.showAtLocation(MainActivity.getWindow().getDecorView(), activePos | android.view.Gravity.TOP, 0, 120);
             }catch(error){
-                Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
+                android.widget.Toast.makeText(MainActivity, "An error occured: " + error, 1).show();
             }
     }}));
 }*/
@@ -1122,38 +1104,38 @@ function mainMenu(){
     MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
             var menuLayout = new LinearLayout(MainActivity);
-            var menuScroll = new ScrollView(MainActivity);
+            var menuScroll = new android.widget.ScrollView(MainActivity);
             var menuLayout1 = new LinearLayout(MainActivity);
             menuLayout.setOrientation(1);
             menuLayout1.setOrientation(1);
             menuScroll.addView(menuLayout);
             menuLayout1.addView(menuScroll);
             
-            var title = new TextView(MainActivity);
+            var title = new android.widget.TextView(MainActivity);
             title.setTextSize(20);
             title.setText(" AlphαHαck v2 ("+version+")");
-            title.setGravity(Gravity.CENTER);
+            title.setGravity(android.view.Gravity.CENTER);
             title.setTextColor(GUIName);
             menuLayout.addView(title);
 
-            var title2 = new TextView(MainActivity);
+            var title2 = new android.widget.TextView(MainActivity);
             title2.setTextSize(20);
             title2.setText("Made by: ArceusMαtt");
-            title2.setGravity(Gravity.CENTER);
+            title2.setGravity(android.view.Gravity.CENTER);
             title2.setTextColor(GUIName);
             menuLayout.addView(title2);
             
             var exit = new styleButton();
             exit.setText("Exit AlphαHαck");
             if(mcpetheme==true)exit.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
-            exit.setTextColor(Color.RED);
+            exit.setTextColor(android.graphics.Color.RED);
             exit.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
 menu.dismiss(); 
 showMenuBtn(); 
-if(getLanguage=="en_US")Toast.makeText(MainActivity, "Closed successfully", 1).show();
- if(getLanguage=="de_DE")Toast.makeText(MainActivity, "Erfolgreich geschlossen", 1).show();
-if(getLanguage=="ko_KR")Toast.makeText(MainActivity, "성공적으로 닫았습니다", 1).show();
+if(getLanguage=="en_US")android.widget.Toast.makeText(MainActivity, "Closed successfully", 1).show();
+ if(getLanguage=="de_DE")android.widget.Toast.makeText(MainActivity, "Erfolgreich geschlossen", 1).show();
+if(getLanguage=="ko_KR")android.widget.Toast.makeText(MainActivity, "성공적으로 닫았습니다", 1).show();
                 }
             }));
             menuLayout.addView(exit);
@@ -1163,10 +1145,10 @@ if(getLanguage=="ko_KR")Toast.makeText(MainActivity, "성공적으로 닫았습�
 
         menuLayout.addView(line0);
 		
-	   /*var title4 = new TextView(MainActivity);
+	   /*var title4 = new android.widget.TextView(MainActivity);
             title4.setTextSize(15);
             title4.setText("");
-            title4.setGravity(Gravity.CENTER);
+            title4.setGravity(android.view.Gravity.CENTER);
             title4.setTextColor(GUIName);
             menuLayout.addView(title4);*/
 	    
@@ -1181,9 +1163,9 @@ group.setBackgroundDrawable(buttonBg);
 if(mcpetheme==true)group.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 group.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
-             var urls4 = new Intent(MainActivity);
-	  urls4.setAction(Intent.ACTION_VIEW);
-                    urls4.setData(Uri.parse("https://plus.google.com/communities/103695355587842948163"));
+             var urls4 = new android.content.Intent(MainActivity);
+	  urls4.setAction(android.content.Intent.ACTION_VIEW);
+                    urls4.setData(android.net.Uri.parse("https://plus.google.com/communities/103695355587842948163"));
                     MainActivity.startActivity(urls4);
 			}
 		});
@@ -1206,7 +1188,7 @@ settings.setOnClickListener(new android.view.View.OnClickListener() {
 MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
             var settingsLayout = new LinearLayout(MainActivity);
-            var settingsScroll = new ScrollView(MainActivity);
+            var settingsScroll = new android.widget.ScrollView(MainActivity);
             var settingsLayout1 = new LinearLayout(MainActivity);
             settingsLayout.setOrientation(1);
             settingsLayout1.setOrientation(1);
@@ -1227,9 +1209,9 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
             link.setText("Download link");       
             link.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-var urls3 = new Intent(MainActivity);
-	  urls3.setAction(Intent.ACTION_VIEW);
-                    urls3.setData(Uri.parse("https://arceusmatt.github.io/AlphaHack"));
+var urls3 = new android.content.Intent(MainActivity);
+	  urls3.setAction(android.content.Intent.ACTION_VIEW);
+                    urls3.setData(android.net.Uri.parse("https://arceusmatt.github.io/AlphaHack"));
                     MainActivity.startActivity(urls3);
                 }
             }));
@@ -1277,17 +1259,17 @@ hide = false;
             mcpe.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 mcpetheme = true;
-GUIName = Color.BLACK;
-GUIText = Color.BLACK;
+GUIName = android.graphics.Color.BLACK;
+GUIText = android.graphics.Color.BLACK;
                 }
             }));
             settingsLayout.addView(mcpe);
 	
-	var cat0 = new TextView(MainActivity);
+	var cat0 = new android.widget.TextView(MainActivity);
             cat0.setText("α Button location");
-            cat0.setTextColor(Color.BLACK);
+            cat0.setTextColor(android.graphics.Color.BLACK);
 			var textviewBg = new android.graphics.drawable.GradientDrawable();
-			textviewBg.setColor(Color.WHITE);
+			textviewBg.setColor(android.graphics.Color.WHITE);
 			cat0.setBackgroundDrawable(textviewBg);
             settingsLayout.addView(cat0);
 			
@@ -1295,8 +1277,8 @@ GUIText = Color.BLACK;
             posright.setText("Button right");       
             posright.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-btnPos = Gravity.RIGHT;
-activePos = Gravity.LEFT;
+btnPos = android.view.Gravity.RIGHT;
+activePos = android.view.Gravity.LEFT;
                 }
             }));
             settingsLayout.addView(posright);
@@ -1305,17 +1287,17 @@ activePos = Gravity.LEFT;
             posleft.setText("Button left");       
             posleft.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-btnPos = Gravity.LEFT;
-activePos = Gravity.RIGHT;
+btnPos = android.view.Gravity.LEFT;
+activePos = android.view.Gravity.RIGHT;
                 }
             }));
             settingsLayout.addView(posleft);
 	
-	var cat1 = new TextView(MainActivity);
+	var cat1 = new android.widget.TextView(MainActivity);
             cat1.setText("Menu location");
-            cat1.setTextColor(Color.BLACK);
+            cat1.setTextColor(android.graphics.Color.BLACK);
 			var textviewBg = new android.graphics.drawable.GradientDrawable();
-			textviewBg.setColor(Color.WHITE);
+			textviewBg.setColor(android.graphics.Color.WHITE);
 			cat1.setBackgroundDrawable(textviewBg);
             settingsLayout.addView(cat1);
 		
@@ -1323,9 +1305,9 @@ activePos = Gravity.RIGHT;
             g1.setText("Menu center");       
             g1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIPos = Gravity.CENTER;
-GUIPos2 = Gravity.CENTER;
-GUIPos3 = Gravity.CENTER;
+GUIPos = android.view.Gravity.CENTER;
+GUIPos2 = android.view.Gravity.CENTER;
+GUIPos3 = android.view.Gravity.CENTER;
                 }
             }));
             settingsLayout.addView(g1);
@@ -1334,9 +1316,9 @@ var g2 = new styleButton();
             g2.setText("Menu right");       
             g2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIPos = Gravity.RIGHT;
-GUIPos2 = Gravity.RIGHT;
-GUIPos3 = Gravity.RIGHT;
+GUIPos = android.view.Gravity.RIGHT;
+GUIPos2 = android.view.Gravity.RIGHT;
+GUIPos3 = android.view.Gravity.RIGHT;
                 }
             }));
             settingsLayout.addView(g2);
@@ -1345,18 +1327,18 @@ var g3 = new styleButton();
             g3.setText("Menu left");       
             g3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
-GUIPos = Gravity.LEFT;
-GUIPos2 = Gravity.LEFT;
-GUIPos3 = Gravity.LEFT;
+GUIPos = android.view.Gravity.LEFT;
+GUIPos2 = android.view.Gravity.LEFT;
+GUIPos3 = android.view.Gravity.LEFT;
                 }
             }));
             settingsLayout.addView(g3);
 	
-	var cat2 = new TextView(MainActivity);
+	var cat2 = new android.widget.TextView(MainActivity);
             cat2.setText("Menu Sizes");
-            cat2.setTextColor(Color.BLACK);
+            cat2.setTextColor(android.graphics.Color.BLACK);
 			var textviewBg = new android.graphics.drawable.GradientDrawable();
-			textviewBg.setColor(Color.WHITE);
+			textviewBg.setColor(android.graphics.Color.WHITE);
 			cat2.setBackgroundDrawable(textviewBg);
             settingsLayout.addView(cat2);
 			
@@ -1396,11 +1378,11 @@ GUISize = 1;
             }));
             settingsLayout.addView(gs3);
 	
-	var cat3 = new TextView(MainActivity);
+	var cat3 = new android.widget.TextView(MainActivity);
             cat3.setText("Menu background");
-            cat3.setTextColor(Color.BLACK);
+            cat3.setTextColor(android.graphics.Color.BLACK);
 			var textviewBg = new android.graphics.drawable.GradientDrawable();
-			textviewBg.setColor(Color.WHITE);
+			textviewBg.setColor(android.graphics.Color.WHITE);
 			cat3.setBackgroundDrawable(textviewBg);
             settingsLayout.addView(cat3);
             
@@ -1409,7 +1391,7 @@ var l1 = new styleButton();
             l1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIColor = GUIColor1
-var GUIText = Color.WHITE;
+var GUIText = android.graphics.Color.WHITE;
 default1 = true;
                 }
             }));
@@ -1420,7 +1402,7 @@ default1 = true;
             l2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIColor = GUIColor2
- var GUIText = Color.WHITE;
+ var GUIText = android.graphics.Color.WHITE;
  if(default1==true)default1 = false;
 			//saveSetting("bgBlack");
                 }
@@ -1432,7 +1414,7 @@ var l3 = new styleButton();
             l3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIColor = GUIColor3
-var GUIText = Color.BLACK
+var GUIText = android.graphics.Color.BLACK
 if(default1==true)default1 = false;
 			//saveSetting("bgWhite");
                 }
@@ -1466,7 +1448,7 @@ var l6 = new styleButton();
             l6.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIColor = GUIColor6
-var GUIText = Color.WHITE;
+var GUIText = android.graphics.Color.WHITE;
 if(default1==true)default1 = false;
 			//saveSetting("bgGray");
                 }
@@ -1478,7 +1460,7 @@ var l7 = new styleButton();
             l7.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIColor = GUIColor7
-var GUIText = Color.BLACK;
+var GUIText = android.graphics.Color.BLACK;
 if(default1==true)default1 = false;
 			//saveSetting("bgLtgray");
                 }
@@ -1490,7 +1472,7 @@ var l8 = new styleButton();
             l8.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIColor = GUIColor8
-var GUIText = Color.BLACK;
+var GUIText = android.graphics.Color.BLACK;
 if(default1==true)default1 = false;
 			//saveSetting("bgYellow");
                 }
@@ -1502,7 +1484,7 @@ var l9 = new styleButton();
             l9.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIColor = GUIColor9
-var GUIText = Color.BLACK;
+var GUIText = android.graphics.Color.BLACK;
 if(default1==true)default1 = false;
 			//saveSetting("bgCyan");
                 }
@@ -1514,7 +1496,7 @@ var l10 = new styleButton();
             l10.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIColor = GUIColor10
-var GUIText = Color.WHITE
+var GUIText = android.graphics.Color.WHITE
 if(default1==true)default1 = false;
 			//saveSetting("bgDkgray");
                 }
@@ -1543,11 +1525,11 @@ if(default1==true)default1 = false;
             }));
             settingsLayout.addView(l12);
 	
-	var cat4 = new TextView(MainActivity);
+	var cat4 = new android.widget.TextView(MainActivity);
             cat4.setText("Button text color");
-            cat4.setTextColor(Color.BLACK);
+            cat4.setTextColor(android.graphics.Color.BLACK);
 			var textviewBg = new android.graphics.drawable.GradientDrawable();
-			textviewBg.setColor(Color.WHITE);
+			textviewBg.setColor(android.graphics.Color.WHITE);
 			cat4.setBackgroundDrawable(textviewBg);
             settingsLayout.addView(cat4);
             
@@ -1661,11 +1643,11 @@ GUIText = GUIText12;
             }));
             settingsLayout.addView(b12);
 	
-	var cat5 = new TextView(MainActivity);
+	var cat5 = new android.widget.TextView(MainActivity);
             cat5.setText("Outline color");
-            cat5.setTextColor(Color.BLACK);
+            cat5.setTextColor(android.graphics.Color.BLACK);
 			var textviewBg = new android.graphics.drawable.GradientDrawable();
-			textviewBg.setColor(Color.WHITE);
+			textviewBg.setColor(android.graphics.Color.WHITE);
 			cat5.setBackgroundDrawable(textviewBg);
             settingsLayout.addView(cat5);
             
@@ -1777,11 +1759,11 @@ GUIStroke = GUIStroke12
             }));
             settingsLayout.addView(b12);
 	
-	var cat6 = new TextView(MainActivity);
+	var cat6 = new android.widget.TextView(MainActivity);
             cat6.setText("Button background");
-            cat6.setTextColor(Color.BLACK);
+            cat6.setTextColor(android.graphics.Color.BLACK);
 			var textviewBg = new android.graphics.drawable.GradientDrawable();
-			textviewBg.setColor(Color.WHITE);
+			textviewBg.setColor(android.graphics.Color.WHITE);
 			cat6.setBackgroundDrawable(textviewBg);
             settingsLayout.addView(cat6);
 	
@@ -1929,13 +1911,13 @@ defaultbtnc = false;
             if(default1==true)settings.setBackgroundDrawable(new ColorDrawable(GUIColor));
       if(default1==false)settings.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
-      bg.setColor(Color.TRANSPARENT);
+      bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
 settingsLayout1.setBackgroundDrawable(bg);
 settingsLayout1.setPadding(20,0,20,0);
-            settings.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            settings.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | android.view.Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
+                android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -1955,7 +1937,7 @@ misc.setOnClickListener(new android.view.View.OnClickListener() {
 MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
             var miscLayout = new LinearLayout(MainActivity);
-            var miscScroll = new ScrollView(MainActivity);
+            var miscScroll = new android.widget.ScrollView(MainActivity);
             var miscLayout1 = new LinearLayout(MainActivity);
             miscLayout.setOrientation(1);
             miscLayout1.setOrientation(1);
@@ -1986,7 +1968,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
             var creditLayout = new LinearLayout(MainActivity);
-            var creditScroll = new ScrollView(MainActivity);
+            var creditScroll = new android.widget.ScrollView(MainActivity);
             var creditLayout1 = new LinearLayout(MainActivity);
             creditLayout.setOrientation(1);
             creditLayout1.setOrientation(1);
@@ -2003,64 +1985,64 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		creditLayout.addView(exit);
 		
-	    var credit1 = new TextView(MainActivity);
+	    var credit1 = new android.widget.TextView(MainActivity);
             credit1.setTextSize(20);
             credit1.setText("Godsoft029 for providing JS support & some of his scripts.");
-            credit1.setTextColor(Color.GREEN);
+            credit1.setTextColor(android.graphics.Color.GREEN);
             creditLayout.addView(credit1);
             
-            var credit2 = new TextView(MainActivity);
+            var credit2 = new android.widget.TextView(MainActivity);
             credit2.setTextSize(20);
             credit2.setText("Peacestorm / vertex for some of their scripts & ideas.");
-            credit2.setTextColor(Color.BLUE);
+            credit2.setTextColor(android.graphics.Color.BLUE);
             creditLayout.addView(credit2);
             
-            var credit3 = new TextView(MainActivity);
+            var credit3 = new android.widget.TextView(MainActivity);
             credit3.setTextSize(20);
             credit3.setText("AJ170 for ideas & adding 'clear inventory'.");
-            credit3.setTextColor(Color.YELLOW);
+            credit3.setTextColor(android.graphics.Color.YELLOW);
             creditLayout.addView(credit3);
             
-            var credit4 = new TextView(MainActivity);
+            var credit4 = new android.widget.TextView(MainActivity);
             credit4.setTextSize(20);
             credit4.setText("APRIC0CKS for ideas & adding 'glide'.");
-            credit4.setTextColor(Color.WHITE);
+            credit4.setTextColor(android.graphics.Color.WHITE);
             creditLayout.addView(credit4);
             
-            var credit5 = new TextView(MainActivity);
+            var credit5 = new android.widget.TextView(MainActivity);
             credit5.setTextSize(20);
             credit5.setText("Johnmacrocraft for korean translate & adding 'block protect'.");
-            credit5.setTextColor(Color.RED);
+            credit5.setTextColor(android.graphics.Color.RED);
             creditLayout.addView(credit5);
 			
 credit = new PopupWindow(creditLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/1, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             credit.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#000000")));
       var bg = new android.graphics.drawable.GradientDrawable();
-      bg.setColor(Color.TRANSPARENT);
+      bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
 creditLayout1.setBackgroundDrawable(bg);
 creditLayout1.setPadding(20,0,20,0);
-            credit.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            credit.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | android.view.Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
+                android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
 
 var pass = new styleButton();
 		pass.setText("Brute force (Numbers)");
-		pass.setTextColor(Color.RED);
-if(hackk==true)pass.setTextColor(Color.GREEN);
+		pass.setTextColor(android.graphics.Color.RED);
+if(hackk==true)pass.setTextColor(android.graphics.Color.GREEN);
 		pass.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              hackk?hackk=false:hackk=true;
 pass.setText("Brute force (Numbers)");
 if(hackk == true){
-pass.setTextColor(Color.GREEN);
+pass.setTextColor(android.graphics.Color.GREEN);
 hackk = true;
 }
 if(hackk == false){
-pass.setTextColor(Color.RED);
+pass.setTextColor(android.graphics.Color.RED);
 
 hackk = false;
 }
@@ -2070,18 +2052,18 @@ hackk = false;
 		
 		var pass2 = new styleButton();
 		pass2.setText("SQL Inject (Numbers)");
-		pass2.setTextColor(Color.RED);
-if(hackk2==true)pass2.setTextColor(Color.GREEN);
+		pass2.setTextColor(android.graphics.Color.RED);
+if(hackk2==true)pass2.setTextColor(android.graphics.Color.GREEN);
 		pass2.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              hackk2?hackk2=false:hackk2=true;
 pass2.setText("SQL Inject (Numbers)");
 if(hackk2 == true){
-pass2.setTextColor(Color.GREEN);
+pass2.setTextColor(android.graphics.Color.GREEN);
 hackk2 = true;
 }
 if(hackk2 == false){
-pass2.setTextColor(Color.RED);
+pass2.setTextColor(android.graphics.Color.RED);
 
 hackk2 = false;
 }
@@ -2320,7 +2302,7 @@ var cidban = new styleButton();
                 	for(var hk = 0; hk < 4; hk++){
                 		if(hk==3)devpardon();
                 	}
-Toast.makeText(MainActivity, "You will crash & be unbanned!", 1).show();
+android.widget.Toast.makeText(MainActivity, "You will crash & be unbanned!", 1).show();
                 }
             }));
             miscLayout.addView(cidban);
@@ -2337,9 +2319,9 @@ web3();
 
       function web3()
       {
-      var urls2 = new Intent(MainActivity);
-	  urls2.setAction(Intent.ACTION_VIEW);
-                    urls2.setData(Uri.parse("http://www.tineye.com"));
+      var urls2 = new android.content.Intent(MainActivity);
+	  urls2.setAction(android.content.Intent.ACTION_VIEW);
+                    urls2.setData(android.net.Uri.parse("http://www.tineye.com"));
                     MainActivity.startActivity(urls2);
       }
 
@@ -2359,7 +2341,7 @@ var sid = new styleButton();
 			onClick: function(v){
 			misc.dismiss();
 			betterWebview('https://watch-anime.net');
-			Toast.makeText(MainActivity, "Please avoid ads & adjust your zoom", 1).show();
+			android.widget.Toast.makeText(MainActivity, "Please avoid ads & adjust your zoom", 1).show();
 			}
 		});
 		miscLayout.addView(aniview);
@@ -2373,7 +2355,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
             var animeLayout = new LinearLayout(MainActivity);
             
-            var animeScroll = new ScrollView(MainActivity);
+            var animeScroll = new android.widget.ScrollView(MainActivity);
             
             var animeLayout1 = new LinearLayout(MainActivity);
             animeLayout.setOrientation(1);
@@ -2384,7 +2366,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 
 var exit = new styleButton();
             exit.setText("Exit");
-exit.setTextColor(Color.RED);
+exit.setTextColor(android.graphics.Color.RED);
             exit.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
 
@@ -2410,14 +2392,14 @@ anime = new PopupWindow(animeLayout1, dip2px(500), dip2px(500));
 
 anime = new PopupWindow(animeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/1.4, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1.3);
 	  var bg = new android.graphics.drawable.GradientDrawable();
-      bg.setColor(Color.TRANSPARENT);
+      bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
 animeLayout1.setBackgroundDrawable(bg);
 animeLayout1.setPadding(20,0,20,0);
-anime.setBackgroundDrawable(new ColorDrawable(Color.BLACK));
-            anime.showAtLocation(MainActivity.getWindow().getDecorView(), Gravity.CENTER | Gravity.CENTER, 0, 0);
+anime.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.BLACK));
+            anime.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.CENTER | android.view.Gravity.CENTER, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
+                android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }*/
@@ -2489,13 +2471,13 @@ function djs()
             if(default1==true)misc.setBackgroundDrawable(new ColorDrawable(GUIColor));
       if(default1==false)misc.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
-      bg.setColor(Color.TRANSPARENT);
+      bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
 miscLayout1.setBackgroundDrawable(bg);
 miscLayout1.setPadding(20,0,20,0);
-            misc.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            misc.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | android.view.Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
+                android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -2515,7 +2497,7 @@ cheats.setOnClickListener(new android.view.View.OnClickListener() {
 MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
             var cheatLayout = new LinearLayout(MainActivity);
-            var cheatScroll = new ScrollView(MainActivity);
+            var cheatScroll = new android.widget.ScrollView(MainActivity);
             var cheatLayout1 = new LinearLayout(MainActivity);
             cheatLayout.setOrientation(1);
             cheatLayout1.setOrientation(1);
@@ -2532,33 +2514,33 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		});
 		cheatLayout.addView(exit);
 		
-		var combat1 = new TextView(MainActivity);
+		var combat1 = new android.widget.TextView(MainActivity);
             combat1.setText("Combat");
-            combat1.setTextColor(Color.BLACK);
+            combat1.setTextColor(android.graphics.Color.BLACK);
 			var textviewBg = new android.graphics.drawable.GradientDrawable();
-			textviewBg.setColor(Color.WHITE);
+			textviewBg.setColor(android.graphics.Color.WHITE);
 			combat1.setBackgroundDrawable(textviewBg);
             cheatLayout.addView(combat1);
 			
 			var killaura1 = new styleButton();
 killaura1.setText("Player aim aura");
-killaura1.setTextColor(Color.RED);
-if(paimaura==true)killaura1.setTextColor(Color.GREEN);
+killaura1.setTextColor(android.graphics.Color.RED);
+if(paimaura==true)killaura1.setTextColor(android.graphics.Color.GREEN);
             killaura1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              paimaura?paimaura=false:paimaura=true;
 killaura1.setText("Player aim aura");
 if(paimaura == true){
-killaura1.setTextColor(Color.GREEN);
+killaura1.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client + "Player aim aura on");
-Toast.makeText(MainActivity, "Credit: Firepro9978 from flame client!", 1).show();
+android.widget.Toast.makeText(MainActivity, "Credit: Firepro9978 from flame client!", 1).show();
 	setRot(getPlayerEnt(), 0, 0);
 aimbot = true;
 aimed = true;
 paimaura = true;
 }
 if(paimaura == false){
-killaura1.setTextColor(Color.RED);
+killaura1.setTextColor(android.graphics.Color.RED);
 clientMessage(client + "Player aim aura off");
 	setRot(getPlayerEnt(), 0, 0);
 aimbot = false;
@@ -2571,23 +2553,23 @@ paimaura = false;
 	
 	var killaura2 = new styleButton();
 killaura2.setText("Mob aim aura");
-killaura2.setTextColor(Color.RED);
-if(maimaura==true)killaura2.setTextColor(Color.GREEN);
+killaura2.setTextColor(android.graphics.Color.RED);
+if(maimaura==true)killaura2.setTextColor(android.graphics.Color.GREEN);
             killaura2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              maimaura?maimaura=false:maimaura=true;
 killaura2.setText("Mob aim aura");
 if(maimaura == true){
-killaura2.setTextColor(Color.GREEN);
+killaura2.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client + "Mob aim aura on");
-Toast.makeText(MainActivity, "Credit: Firepro9978 from flame client!", 1).show();
+android.widget.Toast.makeText(MainActivity, "Credit: Firepro9978 from flame client!", 1).show();
 	setRot(getPlayerEnt(), 0, 0);
 aimbot2 = true;
 aimed2 = true;
 maimaura = true;
 }
 if(maimaura == false){
-killaura2.setTextColor(Color.RED);
+killaura2.setTextColor(android.graphics.Color.RED);
 clientMessage(client + "Mob aim aura off");
 	setRot(getPlayerEnt(), 0, 0);
 aimbot2 = false;
@@ -2600,20 +2582,20 @@ maimaura = false;
 
 var jhit = new styleButton();
 jhit.setText("Hit'n'jump");
-jhit.setTextColor(Color.RED);
-if(hitJump==true)jhit.setTextColor(Color.GREEN);
+jhit.setTextColor(android.graphics.Color.RED);
+if(hitJump==true)jhit.setTextColor(android.graphics.Color.GREEN);
             jhit.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              hitJump?hitJump=false:hitJump=true;
 jhit.setText("Hit'n'jump");
 if(hitJump == true){
-jhit.setTextColor(Color.GREEN);
+jhit.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client + "Hit'n'jump on");
 
 hitJump = true;
 }
 if(hitJump == false){
-jhit.setTextColor(Color.RED);
+jhit.setTextColor(android.graphics.Color.RED);
 clientMessage(client + "Hit'n'jump off");
 
 hitJump = false;
@@ -2624,19 +2606,19 @@ hitJump = false;
 			
 var afkspawn = new styleButton();
 afkspawn.setText("Low health action");
-afkspawn.setTextColor(Color.RED);
-if(lowhealth==true)afkspawn.setTextColor(Color.GREEN);
+afkspawn.setTextColor(android.graphics.Color.RED);
+if(lowhealth==true)afkspawn.setTextColor(android.graphics.Color.GREEN);
             afkspawn.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              lowhealth?lowhealth=false:lowhealth=true;
 afkspawn.setText("Low health action");
 if(lowhealth == true){
-afkspawn.setTextColor(Color.GREEN);
+afkspawn.setTextColor(android.graphics.Color.GREEN);
 atact2();
 lowhealth = true;
 }
 if(lowhealth == false){
-afkspawn.setTextColor(Color.RED);
+afkspawn.setTextColor(android.graphics.Color.RED);
 
 afkspawn = false;
 }
@@ -2646,20 +2628,20 @@ afkspawn = false;
 			
 var atkact = new styleButton();
 atkact.setText("Attack action");
-atkact.setTextColor(Color.RED);
-if(attackActions==true)atkact.setTextColor(Color.GREEN);
+atkact.setTextColor(android.graphics.Color.RED);
+if(attackActions==true)atkact.setTextColor(android.graphics.Color.GREEN);
             atkact.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              attackActions?attackActions=false:attackActions=true;
 atkact.setText("Attack action");
 if(attackActions == true){
-atkact.setTextColor(Color.GREEN);
+atkact.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client + "Attack action on");
 atact();
 attackActions = true;
 }
 if(attackActions == false){
-atkact.setTextColor(Color.RED);
+atkact.setTextColor(android.graphics.Color.RED);
 clientMessage(client + "Attack action off");
 
 attackActions = false;
@@ -2670,20 +2652,20 @@ attackActions = false;
 	
 	var bowbut = new styleButton();
 bowbut.setText("Auto bow aim");
-bowbut.setTextColor(Color.RED);
-if(bowaura==true)bowbut.setTextColor(Color.GREEN);
+bowbut.setTextColor(android.graphics.Color.RED);
+if(bowaura==true)bowbut.setTextColor(android.graphics.Color.GREEN);
             bowbut.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              bowaura?bowaura=false:bowaura=true;
 bowbut.setText("Auto bow aim");
 if(bowaura == true){
-bowbut.setTextColor(Color.GREEN);
+bowbut.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client+"Auto bow aim on");
 	setRot(getPlayerEnt(), 0, 0);
 bowaura = true;
 }
 if(bowaura == false){
-bowbut.setTextColor(Color.RED);
+bowbut.setTextColor(android.graphics.Color.RED);
 clientMessage(client+"Auto bow aim off");
 	setRot(getPlayerEnt(), 0, 0);
 bowaura = false;
@@ -2694,19 +2676,19 @@ bowaura = false;
 	
 	var hitbutton = new styleButton();
 hitbutton.setText("Hitbox increase");
-hitbutton.setTextColor(Color.RED);
-if(hitbox1==true)hitbutton.setTextColor(Color.GREEN);
+hitbutton.setTextColor(android.graphics.Color.RED);
+if(hitbox1==true)hitbutton.setTextColor(android.graphics.Color.GREEN);
             hitbutton.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              hitbox1?hitbox1=false:hitbox1=true;
 hitbutton.setText("Hitbox increase");
 if(hitbox1 == true){
-hitbutton.setTextColor(Color.GREEN);
+hitbutton.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client+"Hitbox increase on");
 hitbox1 = true;
 }
 if(hitbox1 == false){
-hitbutton.setTextColor(Color.RED);
+hitbutton.setTextColor(android.graphics.Color.RED);
 clientMessage(client+"Hitbox increase off");
 	for(var i = 0; i < 5; i++){
 		Entity.setCollisionSize(Entity.getAll(), 1, 1);
@@ -2718,26 +2700,26 @@ hitbox1 = false;
             }));
             cheatLayout.addView(hitbutton);
 			
-			var hacks1 = new TextView(MainActivity);
+			var hacks1 = new android.widget.TextView(MainActivity);
             hacks1.setText("Hacks");
-            hacks1.setTextColor(Color.BLACK);
+            hacks1.setTextColor(android.graphics.Color.BLACK);
 			var textviewBg = new android.graphics.drawable.GradientDrawable();
-			textviewBg.setColor(Color.WHITE);
+			textviewBg.setColor(android.graphics.Color.WHITE);
 			hacks1.setBackgroundDrawable(textviewBg);
             cheatLayout.addView(hacks1);
 			
 var liquidhack = new styleButton();
 liquidhack.setText("Walk on liquid");
-liquidhack.setTextColor(Color.RED);
-if(liquidwalk==true)liquidhack.setTextColor(Color.GREEN);
+liquidhack.setTextColor(android.graphics.Color.RED);
+if(liquidwalk==true)liquidhack.setTextColor(android.graphics.Color.GREEN);
             liquidhack.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              liquidwalk?liquidwalk=false:liquidwalk=true;
 liquidhack.setText("Walk on liquid");
 if(liquidwalk == true){
-liquidhack.setTextColor(Color.GREEN);
+liquidhack.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client+"Walk on liquid on");
-Toast.makeText(MainActivity, "Credit: GodSoft029!", 1).show();
+android.widget.Toast.makeText(MainActivity, "Credit: GodSoft029!", 1).show();
 Block.setShape(8, 0, 0, 0, 1, 0.6, 1);
 Block.setShape(9, 0, 0, 0, 1, 0.6, 1);
 Block.setShape(10, 0, 0, 0, 1, 0.6, 1);
@@ -2754,7 +2736,7 @@ Block.defineBlock(11, "Stationary Lava", [["still_lava", 0]], 11, false, 4);
 liquidwalk = true;
 }
 if(liquidwalk == false){
-liquidhack.setTextColor(Color.RED);
+liquidhack.setTextColor(android.graphics.Color.RED);
 clientMessage(client+"Walk on liquid off");
 Block.setShape(8, null, null, null, null, null, null);
 Block.setShape(9, null, null, null, null, null, null);
@@ -2812,19 +2794,19 @@ clientMessage(client + "§7Your gamemode was updated to spectator mode!");
             
             var button6 = new styleButton();
 button6.setText("Glide");
-button6.setTextColor(Color.RED);
-if(glide==true)button6.setTextColor(Color.GREEN);
+button6.setTextColor(android.graphics.Color.RED);
+if(glide==true)button6.setTextColor(android.graphics.Color.GREEN);
             button6.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              glide?glide=false:glide=true;
 button6.setText("Glide");
 if(glide == true){
-button6.setTextColor(Color.GREEN);
-Toast.makeText(MainActivity, "Credit: Apric0cks from maximus mod!", 1).show();
+button6.setTextColor(android.graphics.Color.GREEN);
+android.widget.Toast.makeText(MainActivity, "Credit: Apric0cks from maximus mod!", 1).show();
 glide = true;
 }
 if(glide == false){
-button6.setTextColor(Color.RED);
+button6.setTextColor(android.graphics.Color.RED);
 
 glide = false;
 }
@@ -2834,20 +2816,20 @@ glide = false;
             
             var walkonair = new styleButton();
 walkonair.setText("Walk on air");
-walkonair.setTextColor(Color.RED);
-if(airwalk==true)walkonair.setTextColor(Color.GREEN);
+walkonair.setTextColor(android.graphics.Color.RED);
+if(airwalk==true)walkonair.setTextColor(android.graphics.Color.GREEN);
             walkonair.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              airwalk?airwalk=false:airwalk=true;
 walkonair.setText("Walk on air");
 if(airwalk == true){
-walkonair.setTextColor(Color.GREEN);
+walkonair.setTextColor(android.graphics.Color.GREEN);
 Block.setShape(95, 0, 0, 0, 1, 1, 1);
 clientMessage(client + "You may get detected as flying becareful!")
 airwalk = true;
 }
 if(airwalk == false){
-walkonair.setTextColor(Color.RED);
+walkonair.setTextColor(android.graphics.Color.RED);
 clientMessage(client + "Walk on air is off")
 airwalk = false;
 }
@@ -2857,20 +2839,20 @@ airwalk = false;
 			
 var button2 = new styleButton();
 button2.setText("X-Ray");
-button2.setTextColor(Color.RED);
-if(xray==true)button2.setTextColor(Color.GREEN);
+button2.setTextColor(android.graphics.Color.RED);
+if(xray==true)button2.setTextColor(android.graphics.Color.GREEN);
             button2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              xray?xray=false:xray=true;
 button2.setText("X-Ray");
 if(xray == true){
-button2.setTextColor(Color.GREEN);
+button2.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client + "You may crash!\nchange on/off fancy graphics for better view.\nAlso try relogging from the world.");
 
 xray = true;
 }
 if(xray == false){
-button2.setTextColor(Color.RED);
+button2.setTextColor(android.graphics.Color.RED);
 num0++
 Block.setRenderLayer(1,num0);
 Block.setRenderLayer(2,num0);
@@ -2886,20 +2868,20 @@ xray = false;
             
             var speedup = new styleButton();
 speedup.setText("No friction");
-speedup.setTextColor(Color.RED);
-if(changeSpeed==true)speedup.setTextColor(Color.GREEN);
+speedup.setTextColor(android.graphics.Color.RED);
+if(changeSpeed==true)speedup.setTextColor(android.graphics.Color.GREEN);
             speedup.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              changeSpeed?changeSpeed=false:changeSpeed=true;
 speedup.setText("No friction");
 if(changeSpeed == true){
-speedup.setTextColor(Color.GREEN);
+speedup.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client + "No friction on,\nThis adds no friction when you're on ice, soul sand etc");
 
 changeSpeed = true;
 }
 if(changeSpeed == false){
-speedup.setTextColor(Color.RED);
+speedup.setTextColor(android.graphics.Color.RED);
 clientMessage(client + "No friction off");
 Block.setShape(30, 0, 0, 0, 1, null, 1);
 	Block.setFriction(79, 0.9800000190734863);
@@ -2912,19 +2894,19 @@ changeSpeed = false;
 			
 var button8 = new styleButton();
 button8.setText("Anti break");
-button8.setTextColor(Color.RED);
-if(block==true)button8.setTextColor(Color.GREEN);
+button8.setTextColor(android.graphics.Color.RED);
+if(block==true)button8.setTextColor(android.graphics.Color.GREEN);
             button8.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              block?block=false:block=true;
 button8.setText("Anti break");
 if(block == true){
-button8.setTextColor(Color.GREEN);
-Toast.makeText(MainActivity, "Credit: Johnmacrocraft!", 1).show();
+button8.setTextColor(android.graphics.Color.GREEN);
+android.widget.Toast.makeText(MainActivity, "Credit: Johnmacrocraft!", 1).show();
 block = true;
 }
 if(block == false){
-button8.setTextColor(Color.RED);
+button8.setTextColor(android.graphics.Color.RED);
 
 block = false;
 }
@@ -2934,19 +2916,19 @@ block = false;
 			
             var button10 = new styleButton();
 button10.setText("Tap destroy");
-button10.setTextColor(Color.RED);
-if(tapdestroy==true)button10.setTextColor(Color.GREEN);
+button10.setTextColor(android.graphics.Color.RED);
+if(tapdestroy==true)button10.setTextColor(android.graphics.Color.GREEN);
             button10.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              tapdestroy?tapdestroy=false:tapdestroy=true;
 button10.setText("Tap destroy");
 if(tapdestroy == true){
-button10.setTextColor(Color.GREEN);
+button10.setTextColor(android.graphics.Color.GREEN);
 
 tapdestroy = true;
 }
 if(tapdestroy == false){
-button10.setTextColor(Color.RED);
+button10.setTextColor(android.graphics.Color.RED);
 
 tapdestroy = false;
 }
@@ -2956,19 +2938,19 @@ tapdestroy = false;
 			
             var button11 = new styleButton();
 button11.setText("Storage ESP");
-button11.setTextColor(Color.RED);
-if(chestesp==true)button11.setTextColor(Color.GREEN);
+button11.setTextColor(android.graphics.Color.RED);
+if(chestesp==true)button11.setTextColor(android.graphics.Color.GREEN);
             button11.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              chestesp?chestesp=false:chestesp=true;
 button11.setText("Storage ESP");
 if(chestesp == true){
-button11.setTextColor(Color.GREEN);
-Toast.makeText(MainActivity, "Credit: Vertex Client team!", 1).show();
+button11.setTextColor(android.graphics.Color.GREEN);
+android.widget.Toast.makeText(MainActivity, "Credit: Vertex Client team!", 1).show();
 chestesp = true;
 }
 if(chestesp == false){
-button11.setTextColor(Color.RED);
+button11.setTextColor(android.graphics.Color.RED);
 
 chestesp = false;
 }
@@ -2978,19 +2960,19 @@ chestesp = false;
 			
 var button13 = new styleButton();
 button13.setText("Auto destroy");
-button13.setTextColor(Color.RED);
-if(autodestroy2==true)button13.setTextColor(Color.GREEN);
+button13.setTextColor(android.graphics.Color.RED);
+if(autodestroy2==true)button13.setTextColor(android.graphics.Color.GREEN);
             button13.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
 	autodestroy2?autodestroy2=false:autodestroy2=true;
 button13.setText("Auto destroy");
 if(autodestroy2 == true){
-button13.setTextColor(Color.GREEN);
+button13.setTextColor(android.graphics.Color.GREEN);
 dig1();
 autodestroy2 = true;
 }
 if(autodestroy2 == false){
-button13.setTextColor(Color.RED);
+button13.setTextColor(android.graphics.Color.RED);
 autodestroy = false;
 extraj = false;
 autodestroy2 = false;
@@ -3112,19 +3094,19 @@ clientMessage(client + "Any barriers have been nullifed.");
             
             var light = new styleButton();
 light.setText("Brightness");
-light.setTextColor(Color.RED);
-if(brightness==true)light.setTextColor(Color.GREEN);
+light.setTextColor(android.graphics.Color.RED);
+if(brightness==true)light.setTextColor(android.graphics.Color.GREEN);
             light.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              brightness?brightness=false:brightness=true;
 light.setText("Brightness");
 if(brightness == true){
-light.setTextColor(Color.GREEN);
+light.setTextColor(android.graphics.Color.GREEN);
 
 brightness = true;
 }
 if(brightness == false){
-light.setTextColor(Color.RED);
+light.setTextColor(android.graphics.Color.RED);
 
 brightness = false;
 }
@@ -3134,19 +3116,19 @@ brightness = false;
 			
             var anti2void = new styleButton();
 anti2void.setText("Anti void");
-anti2void.setTextColor(Color.RED);
-if(antivoid==true)anti2void.setTextColor(Color.GREEN);
+anti2void.setTextColor(android.graphics.Color.RED);
+if(antivoid==true)anti2void.setTextColor(android.graphics.Color.GREEN);
             anti2void.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              antivoid?antivoid=false:antivoid=true;
 anti2void.setText("Anti void");
 if(antivoid == true){
-anti2void.setTextColor(Color.GREEN);
+anti2void.setTextColor(android.graphics.Color.GREEN);
 
 antivoid = true;
 }
 if(antivoid == false){
-anti2void.setTextColor(Color.RED);
+anti2void.setTextColor(android.graphics.Color.RED);
 
 antivoid = false;
 }
@@ -3156,19 +3138,19 @@ antivoid = false;
 			
 var zmmm = new styleButton();
       zmmm.setText("Instant break");
-zmmm.setTextColor(Color.RED);
-if(instabreak==true)zmmm.setTextColor(Color.GREEN);
+zmmm.setTextColor(android.graphics.Color.RED);
+if(instabreak==true)zmmm.setTextColor(android.graphics.Color.GREEN);
 		zmmm.setOnClickListener(new android.view.View.OnClickListener() {
 		 onClick: function(v){
  instabreak?instabreak=false:instabreak=true;
 zmmm.setText("Instant break");
 if(instabreak == true){
-zmmm.setTextColor(Color.GREEN);
+zmmm.setTextColor(android.graphics.Color.GREEN);
 instaDestroy();
 clientMessage(client + "§7Instant break is on");
 }
 if(instabreak == false){
-zmmm.setTextColor(Color.RED);
+zmmm.setTextColor(android.graphics.Color.RED);
 clientMessage(client + "§7Instant break is off");
 defaultDestroy();
                 }
@@ -3178,20 +3160,20 @@ defaultDestroy();
 		
 		var tju = new styleButton();
 tju.setText("Tap jump");
-tju.setTextColor(Color.RED);
-if(tapjump==true)tju.setTextColor(Color.GREEN);
+tju.setTextColor(android.graphics.Color.RED);
+if(tapjump==true)tju.setTextColor(android.graphics.Color.GREEN);
             tju.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              tapjump?tapjump=false:tapjump=true;
 tju.setText("Tap jump");
 if(tapjump == true){
-tju.setTextColor(Color.GREEN);
+tju.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client + "Tap jump on\nTap ground to jump!");
 
 tapjump = true;
 }
 if(tapjump == false){
-tju.setTextColor(Color.RED);
+tju.setTextColor(android.graphics.Color.RED);
 clientMessage(client + "Tap jump is off");
 
 tapjump = false;
@@ -3202,21 +3184,21 @@ tapjump = false;
             
             var spiderman = new styleButton();
 spiderman.setText("Spider");
-spiderman.setTextColor(Color.RED);
-if(spider==true)spiderman.setTextColor(Color.GREEN);
+spiderman.setTextColor(android.graphics.Color.RED);
+if(spider==true)spiderman.setTextColor(android.graphics.Color.GREEN);
             spiderman.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              spider?spider=false:spider=true;
 spiderman.setText("Spider");
 if(spider == true){
-spiderman.setTextColor(Color.GREEN);
+spiderman.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client + "Spider on");
-Toast.makeText(MainActivity, "Credit: Firepro9978 from VoidClient!", 1).show();
+android.widget.Toast.makeText(MainActivity, "Credit: Firepro9978 from VoidClient!", 1).show();
 Utils.Player.isCollidedHorizontally();
 spider = true;
 }
 if(spider == false){
-spiderman.setTextColor(Color.RED);
+spiderman.setTextColor(android.graphics.Color.RED);
 clientMessage(client + "Spider off");
 
 spider = false;
@@ -3227,20 +3209,20 @@ spider = false;
             
             var jumps = new styleButton();
 jumps.setText("Higher jumps");
-jumps.setTextColor(Color.RED);
-if(jump==true)jumps.setTextColor(Color.GREEN);
+jumps.setTextColor(android.graphics.Color.RED);
+if(jump==true)jumps.setTextColor(android.graphics.Color.GREEN);
             jumps.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              jump?jump=false:jump=true;
 jumps.setText("Higher jumps");
 if(jump == true){
-jumps.setTextColor(Color.GREEN);
+jumps.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client + "Higher jumps on");
 
 jump = true;
 }
 if(jump == false){
-jumps.setTextColor(Color.RED);
+jumps.setTextColor(android.graphics.Color.RED);
 clientMessage(client + "Higher jumps off");
 
 jump = false;
@@ -3251,20 +3233,20 @@ jump = false;
             
             var autow = new styleButton();
 autow.setText("Auto walk");
-autow.setTextColor(Color.RED);
-if(autowalk==true)autow.setTextColor(Color.GREEN);
+autow.setTextColor(android.graphics.Color.RED);
+if(autowalk==true)autow.setTextColor(android.graphics.Color.GREEN);
             autow.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              autowalk?autowalk=false:autowalk=true;
 autow.setText("Auto walk");
 if(autowalk == true){
-autow.setTextColor(Color.GREEN);
+autow.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client + "Auto walk on");
 
 autowalk = true;
 }
 if(autowalk == false){
-autow.setTextColor(Color.RED);
+autow.setTextColor(android.graphics.Color.RED);
 clientMessage(client + "Auto walk off");
 
 autowalk = false;
@@ -3275,20 +3257,20 @@ autowalk = false;
 			
 var twek = new styleButton();
 twek.setText("Twerk");
-twek.setTextColor(Color.RED);
-if(twerk==true)twek.setTextColor(Color.GREEN);
+twek.setTextColor(android.graphics.Color.RED);
+if(twerk==true)twek.setTextColor(android.graphics.Color.GREEN);
             twek.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              twerk?twerk=false:twerk=true;
 twek.setText("Twerk");
 if(twerk == true){
-twek.setTextColor(Color.GREEN);
+twek.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client + "Auto twerk on");
 
 twerk = true;
 }
 if(twerk == false){
-twek.setTextColor(Color.RED);
+twek.setTextColor(android.graphics.Color.RED);
 clientMessage(client + "Auto twerk off");
 
 twerk = false;
@@ -3299,21 +3281,21 @@ twerk = false;
 
 var taura = new styleButton();
 taura.setText("TP Aura");
-taura.setTextColor(Color.RED);
-if(tpAura==true)taura.setTextColor(Color.GREEN);
+taura.setTextColor(android.graphics.Color.RED);
+if(tpAura==true)taura.setTextColor(android.graphics.Color.GREEN);
             taura.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              tpAura?tpAura=false:tpAura=true;
 taura.setText("TP Aura");
 if(tpAura == true){
-taura.setTextColor(Color.GREEN);
+taura.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client + "TP Aura on");
-Toast.makeText(MainActivity, "Credit: Apric0cks for the idea!", 1).show();
+android.widget.Toast.makeText(MainActivity, "Credit: Apric0cks for the idea!", 1).show();
 
 tpAura = true;
 }
 if(tpAura == false){
-taura.setTextColor(Color.RED);
+taura.setTextColor(android.graphics.Color.RED);
 clientMessage(client + "TP Aura off");
 
 tpAura = false;
@@ -3324,20 +3306,20 @@ tpAura = false;
 			
 var butfuon2 = new styleButton();
 butfuon2.setText("Bunny hop");
-butfuon2.setTextColor(Color.RED);
-if(bhop==true)butfuon2.setTextColor(Color.GREEN);
+butfuon2.setTextColor(android.graphics.Color.RED);
+if(bhop==true)butfuon2.setTextColor(android.graphics.Color.GREEN);
             butfuon2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              bhop?bhop=false:bhop=true;
 butfuon2.setText("Bunny hop");
 if(bhop== true){
-butfuon2.setTextColor(Color.GREEN);
+butfuon2.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client+"Bunny hop on");
-	Toast.makeText(MainActivity, "Credit: Apric0cks from maximus mod!", 1).show();
+	android.widget.Toast.makeText(MainActivity, "Credit: Apric0cks from maximus mod!", 1).show();
 bhop= true;
 }
 if(bhop== false){
-butfuon2.setTextColor(Color.RED);
+butfuon2.setTextColor(android.graphics.Color.RED);
 clientMessage(client+"Bunny hop off");
 bhop= false;
 }
@@ -3347,19 +3329,19 @@ bhop= false;
 			
 var walkonice = new styleButton();
 walkonice.setText("Ice walk");
-walkonice.setTextColor(Color.RED);
-if(icewalk==true)walkonice.setTextColor(Color.GREEN);
+walkonice.setTextColor(android.graphics.Color.RED);
+if(icewalk==true)walkonice.setTextColor(android.graphics.Color.GREEN);
             walkonice.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              icewalk?icewalk=false:icewalk=true;
 walkonice.setText("Ice walk");
 if(icewalk == true){
-walkonice.setTextColor(Color.GREEN);
+walkonice.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client + "You may get detected as flying becareful!")
 icewalk = true;
 }
 if(icewalk == false){
-walkonice.setTextColor(Color.RED);
+walkonice.setTextColor(android.graphics.Color.RED);
 clientMessage(client + "Ice walk is off")
 icewalk = false;
 }
@@ -3369,20 +3351,20 @@ icewalk = false;
 
 var frictme = new styleButton();
 frictme.setText("Only friction");
-frictme.setTextColor(Color.RED);
-if(onfriction==true)frictme.setTextColor(Color.GREEN);
+frictme.setTextColor(android.graphics.Color.RED);
+if(onfriction==true)frictme.setTextColor(android.graphics.Color.GREEN);
             frictme.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              onfriction?onfriction=false:onfriction=true;
 frictme.setText("Only friction");
 if(onfriction == true){
-frictme.setTextColor(Color.GREEN);
+frictme.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client + "Only friction on");
 
 onfriction = true;
 }
 if(onfriction == false){
-frictme.setTextColor(Color.RED);
+frictme.setTextColor(android.graphics.Color.RED);
 clientMessage(client + "Only friction off");
 for(var i = 0; i < 100; i++){
 Block.setFriction(i, 0.6000000238418579);
@@ -3395,29 +3377,29 @@ onfriction = false;
             }));
             cheatLayout.addView(frictme);
 			
-			var misc1 = new TextView(MainActivity);
+			var misc1 = new android.widget.TextView(MainActivity);
             misc1.setText("Misc");
-            misc1.setTextColor(Color.BLACK);
+            misc1.setTextColor(android.graphics.Color.BLACK);
 			var textviewBg = new android.graphics.drawable.GradientDrawable();
-			textviewBg.setColor(Color.WHITE);
+			textviewBg.setColor(android.graphics.Color.WHITE);
 			misc1.setBackgroundDrawable(textviewBg);
             cheatLayout.addView(misc1);
 			
 					var bypass1 = new styleButton();
 bypass1.setText("Anti-spam bypass");
-bypass1.setTextColor(Color.RED);
-if(antispam2==true)bypass1.setTextColor(Color.GREEN);
+bypass1.setTextColor(android.graphics.Color.RED);
+if(antispam2==true)bypass1.setTextColor(android.graphics.Color.GREEN);
             bypass1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              antispam2?antispam2=false:antispam2=true;
 bypass1.setText("Anti-spam bypass");
 if(antispam2 == true){
-bypass1.setTextColor(Color.GREEN);
+bypass1.setTextColor(android.graphics.Color.GREEN);
 spa2();
 antispam2 = true;
 }
 if(antispam2 == false){
-bypass1.setTextColor(Color.RED);
+bypass1.setTextColor(android.graphics.Color.RED);
 antispam = false;
 antispam2 = false;
 }
@@ -3427,19 +3409,19 @@ antispam2 = false;
 			
 	    var button9 = new styleButton();
 button9.setText("Tap spam");
-button9.setTextColor(Color.RED);
-if(tapspam==true)button9.setTextColor(Color.GREEN);
+button9.setTextColor(android.graphics.Color.RED);
+if(tapspam==true)button9.setTextColor(android.graphics.Color.GREEN);
             button9.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              tapspam?tapspam=false:tapspam=true;
 button9.setText("Tap spam");
 if(tapspam == true){
-button9.setTextColor(Color.GREEN);
+button9.setTextColor(android.graphics.Color.GREEN);
 spa();
 tapspam = true;
 }
 if(tapspam == false){
-button9.setTextColor(Color.RED);
+button9.setTextColor(android.graphics.Color.RED);
 autospam = false;
 autospam2 = false;
 tapspam = false;
@@ -3451,19 +3433,19 @@ tapspam = false;
 			
 var button12 = new styleButton();
 button12.setText("Auto spam");
-button12.setTextColor(Color.RED);
-if(autospam2==true)button12.setTextColor(Color.GREEN);
+button12.setTextColor(android.graphics.Color.RED);
+if(autospam2==true)button12.setTextColor(android.graphics.Color.GREEN);
             button12.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
 	autospam2?autospam2=false:autospam2=true;
 button12.setText("Auto spam");
 if(autospam2==true){
-button12.setTextColor(Color.GREEN);
+button12.setTextColor(android.graphics.Color.GREEN);
 spa();
 autospam2= true;
 }
 if(autospam2==false){
-button12.setTextColor(Color.RED);
+button12.setTextColor(android.graphics.Color.RED);
 autospam = false;
 autospam2= false;
 }
@@ -3479,7 +3461,7 @@ var info = new styleButton();
                     
 		    cheat.dismiss();
 		    
-		    Toast.makeText(MainActivity, "Scroll down", 1).show();
+		    android.widget.Toast.makeText(MainActivity, "Scroll down", 1).show();
                 }
             }));
             cheatLayout.addView(info);
@@ -3489,7 +3471,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
             var infoLayout = new LinearLayout(MainActivity);
             
-            var infoScroll = new ScrollView(MainActivity);
+            var infoScroll = new android.widget.ScrollView(MainActivity);
             
             var infoLayout1 = new LinearLayout(MainActivity);
             infoLayout.setOrientation(1);
@@ -3500,7 +3482,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 
 var exit = new styleButton();
             exit.setText("Exit");
-exit.setTextColor(Color.RED);
+exit.setTextColor(android.graphics.Color.RED);
             exit.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
 
@@ -3523,97 +3505,97 @@ exit.setTextColor(Color.RED);
             }));
             infoLayout.addView(refresh);
 			
-	    var username = new TextView(MainActivity);
+	    var username = new android.widget.TextView(MainActivity);
             username.setTextSize(15);
 	    username.setText("Username: "+Player.getName(Player.getEntity()));
-            username.setTextColor(Color.WHITE);
+            username.setTextColor(android.graphics.Color.WHITE);
             infoLayout.addView(username);
 			
-	    var dimension = new TextView(MainActivity);
+	    var dimension = new android.widget.TextView(MainActivity);
             dimension.setTextSize(15);
             dimension.setText("Dimension: "+Player.getDimension());
-            dimension.setTextColor(Color.WHITE);
+            dimension.setTextColor(android.graphics.Color.WHITE);
             infoLayout.addView(dimension);
 			
-	    var world = new TextView(MainActivity);
+	    var world = new android.widget.TextView(MainActivity);
             world.setTextSize(15);
             world.setText("World: "+Level.getWorldName());
-            world.setTextColor(Color.WHITE);
+            world.setTextColor(android.graphics.Color.WHITE);
             infoLayout.addView(world);
 			
-	    var biome = new TextView(MainActivity);
+	    var biome = new android.widget.TextView(MainActivity);
             biome.setTextSize(15);
             biome.setText("Biome: "+Level.getBiomeName());
-            biome.setTextColor(Color.WHITE);
+            biome.setTextColor(android.graphics.Color.WHITE);
             infoLayout.addView(biome);
 			
 			Level.getRainLevel();
-	    var rain = new TextView(MainActivity);
+	    var rain = new android.widget.TextView(MainActivity);
             rain.setTextSize(15);
 	    rain.setText("Weather: "+Math.round(Level.getRainLevel()));
-            rain.setTextColor(Color.WHITE);
+            rain.setTextColor(android.graphics.Color.WHITE);
             infoLayout.addView(rain);
 			
-	    var time = new TextView(MainActivity);
+	    var time = new android.widget.TextView(MainActivity);
             time.setTextSize(15);
 	    time.setText("Time: "+Level.getTime());
-            time.setTextColor(Color.WHITE);
+            time.setTextColor(android.graphics.Color.WHITE);
             infoLayout.addView(time);
 			
-	    var difficulty = new TextView(MainActivity);
+	    var difficulty = new android.widget.TextView(MainActivity);
             difficulty.setTextSize(15);
 	    difficulty.setText("Difficulty: "+Level.getDifficulty());
-            difficulty.setTextColor(Color.WHITE);
+            difficulty.setTextColor(android.graphics.Color.WHITE);
             infoLayout.addView(difficulty);
             
-            var maxHearts = new TextView(MainActivity);
+            var maxHearts = new android.widget.TextView(MainActivity);
             maxHearts.setTextSize(15);
 	    maxHearts.setText("Max hearts: "+Entity.getMaxHealth(getPlayerEnt()));
-            maxHearts.setTextColor(Color.WHITE);
+            maxHearts.setTextColor(android.graphics.Color.WHITE);
             infoLayout.addView(maxHearts);
 		
-		var renderType = new TextView(MainActivity);
+		var renderType = new android.widget.TextView(MainActivity);
             renderType.setTextSize(15);
 	    renderType.setText("Render type: "+Entity.getRenderType(getPlayerEnt()));
-            renderType.setTextColor(Color.WHITE);
+            renderType.setTextColor(android.graphics.Color.WHITE);
             infoLayout.addView(renderType);
 		
-		var gameType = new TextView(MainActivity);
+		var gameType = new android.widget.TextView(MainActivity);
             gameType.setTextSize(15);
 	    gameType.setText("Game mode: "+Level.getGameMode());
-            gameType.setTextColor(Color.WHITE);
+            gameType.setTextColor(android.graphics.Color.WHITE);
             infoLayout.addView(gameType);
 		
-		var lang = new TextView(MainActivity);
+		var lang = new android.widget.TextView(MainActivity);
             lang.setTextSize(15);
 	    lang.setText("Language: "+ModPE.getLanguage());
-            lang.setTextColor(Color.WHITE);
+            lang.setTextColor(android.graphics.Color.WHITE);
             infoLayout.addView(lang);
 		
-		var vere = new TextView(MainActivity);
+		var vere = new android.widget.TextView(MainActivity);
             vere.setTextSize(15);
 	    vere.setText("Version: "+ModPE.getMinecraftVersion());
-            vere.setTextColor(Color.WHITE);
+            vere.setTextColor(android.graphics.Color.WHITE);
             infoLayout.addView(vere);
 		
-		var skin = new TextView(MainActivity);
+		var skin = new android.widget.TextView(MainActivity);
             skin.setTextSize(15);
 	    skin.setText("Mob skin: "+Entity.getMobSkin(getPlayerEnt()));
-            skin.setTextColor(Color.WHITE);
+            skin.setTextColor(android.graphics.Color.WHITE);
             infoLayout.addView(skin);
 
 info = new PopupWindow(infoLayout1, dip2px(500), dip2px(500));
 
 info = new PopupWindow(infoLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/2, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1);
 	  var bg = new android.graphics.drawable.GradientDrawable();
-      bg.setColor(Color.TRANSPARENT);
+      bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
 infoLayout1.setBackgroundDrawable(bg);
 infoLayout1.setPadding(20,0,20,0);
-info.setBackgroundDrawable(new ColorDrawable(Color.BLACK));
-            info.showAtLocation(MainActivity.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
+info.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.BLACK));
+            info.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.CENTER | android.view.Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
+                android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -3631,19 +3613,19 @@ if(Server.getAddress()=="null" || Server.getPort()=="0")clientMessage(client + "
 	
 	var butfuon1 = new styleButton();
 butfuon1.setText("Item indicator");
-butfuon1.setTextColor(Color.RED);
-if(itemIndi==true)butfuon1.setTextColor(Color.GREEN);
+butfuon1.setTextColor(android.graphics.Color.RED);
+if(itemIndi==true)butfuon1.setTextColor(android.graphics.Color.GREEN);
             butfuon1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              itemIndi?itemIndi=false:itemIndi=true;
 butfuon1.setText("Item indicator");
 if(itemIndi== true){
-butfuon1.setTextColor(Color.GREEN);
+butfuon1.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client+"Item info on");
 itemIndi= true;
 }
 if(itemIndi== false){
-butfuon1.setTextColor(Color.RED);
+butfuon1.setTextColor(android.graphics.Color.RED);
 clientMessage(client+"Item info off");
 itemIndi= false;
 }
@@ -3653,21 +3635,21 @@ itemIndi= false;
 	    
 	    var button4 = new styleButton();
 button4.setText("Armor indicator");
-button4.setTextColor(Color.RED);
-if(armor==true)button4.setTextColor(Color.GREEN);
+button4.setTextColor(android.graphics.Color.RED);
+if(armor==true)button4.setTextColor(android.graphics.Color.GREEN);
             button4.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              armor?armor=false:armor=true;
 button4.setText("Armor indicator");
 if(armor == true){
-button4.setTextColor(Color.GREEN);
+button4.setTextColor(android.graphics.Color.GREEN);
 if(coords==true)coords==false;
 if(yawpitch==true)yawpitch==false;
 if(getvel==true)getvel==false;
 armor = true;
 }
 if(armor == false){
-button4.setTextColor(Color.RED);
+button4.setTextColor(android.graphics.Color.RED);
 
 armor = false;
 }
@@ -3677,21 +3659,21 @@ armor = false;
             
             var button5 = new styleButton();
 button5.setText("Coordinates");
-button5.setTextColor(Color.RED);
-if(coords==true)button5.setTextColor(Color.GREEN);
+button5.setTextColor(android.graphics.Color.RED);
+if(coords==true)button5.setTextColor(android.graphics.Color.GREEN);
             button5.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              coords?coords=false:coords=true;
 button5.setText("Coordinates");
 if(coords == true){
-button5.setTextColor(Color.GREEN);
+button5.setTextColor(android.graphics.Color.GREEN);
 if(armor==true)armor==false;
 if(yawpitch==true)yawpitch==false;
 if(getvel==true)getvel==false;
 coords = true;
 }
 if(coords == false){
-button5.setTextColor(Color.RED);
+button5.setTextColor(android.graphics.Color.RED);
 
 coords = false;
 }
@@ -3701,21 +3683,21 @@ coords = false;
             
             var seevel = new styleButton();
 seevel.setText("Velocity indicator");
-seevel.setTextColor(Color.RED);
-if(getvel==true)seevel.setTextColor(Color.GREEN);
+seevel.setTextColor(android.graphics.Color.RED);
+if(getvel==true)seevel.setTextColor(android.graphics.Color.GREEN);
             seevel.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              getvel?getvel=false:getvel=true;
 seevel.setText("Velocity indicator");
 if(getvel == true){
-seevel.setTextColor(Color.GREEN);
+seevel.setTextColor(android.graphics.Color.GREEN);
 if(yawpitch==true)yawpitch==false;
 if(armor==true)armor==false;
 if(coords==true)coords==false;
 getvel = true;
 }
 if(getvel == false){
-seevel.setTextColor(Color.RED);
+seevel.setTextColor(android.graphics.Color.RED);
 
 getvel = false;
 }
@@ -3725,21 +3707,21 @@ getvel = false;
             
             var seeyaw = new styleButton();
 seeyaw.setText("Pitch & yaw");
-seeyaw.setTextColor(Color.RED);
-if(yawpitch==true)seeyaw.setTextColor(Color.GREEN);
+seeyaw.setTextColor(android.graphics.Color.RED);
+if(yawpitch==true)seeyaw.setTextColor(android.graphics.Color.GREEN);
             seeyaw.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              yawpitch?yawpitch=false:yawpitch=true;
 seeyaw.setText("Pitch & yaw");
 if(yawpitch == true){
-seeyaw.setTextColor(Color.GREEN);
+seeyaw.setTextColor(android.graphics.Color.GREEN);
 if(getvel==true)getvel==false;
 if(armor==true)armor==false;
 if(coords==true)coords==false;
 yawpitch = true;
 }
 if(yawpitch == false){
-seeyaw.setTextColor(Color.RED);
+seeyaw.setTextColor(android.graphics.Color.RED);
 
 yawpitch = false;
 }
@@ -3749,19 +3731,19 @@ yawpitch = false;
             
             var button7 = new styleButton();
 button7.setText("Text to toast");
-button7.setTextColor(Color.RED);
-if(ttot==true)button7.setTextColor(Color.GREEN);
+button7.setTextColor(android.graphics.Color.RED);
+if(ttot==true)button7.setTextColor(android.graphics.Color.GREEN);
             button7.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              ttot?ttot=false:ttot=true;
 button7.setText("Text to toast");
 if(ttot == true){
-button7.setTextColor(Color.GREEN);
+button7.setTextColor(android.graphics.Color.GREEN);
 
 ttot = true;
 }
 if(ttot == false){
-button7.setTextColor(Color.RED);
+button7.setTextColor(android.graphics.Color.RED);
 
 ttot = false;
 }
@@ -3771,19 +3753,19 @@ ttot = false;
 			
             var taptoid = new styleButton();
 taptoid.setText("Tap block for ID");
-taptoid.setTextColor(Color.RED);
-if(tapid==true)taptoid.setTextColor(Color.GREEN);
+taptoid.setTextColor(android.graphics.Color.RED);
+if(tapid==true)taptoid.setTextColor(android.graphics.Color.GREEN);
             taptoid.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              tapid?tapid=false:tapid=true;
 taptoid.setText("Tap block for ID");
 if(tapid == true){
-taptoid.setTextColor(Color.GREEN);
+taptoid.setTextColor(android.graphics.Color.GREEN);
 
 tapid = true;
 }
 if(tapid == false){
-taptoid.setTextColor(Color.RED);
+taptoid.setTextColor(android.graphics.Color.RED);
 
 tapid = false;
 }
@@ -3817,7 +3799,7 @@ for (var i = 0; i < b_x023489a.length; i++) {
 MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
             var cmdLayout = new LinearLayout(MainActivity);
-            var cmdScroll = new ScrollView(MainActivity);
+            var cmdScroll = new android.widget.ScrollView(MainActivity);
             var cmdLayout1 = new LinearLayout(MainActivity);
             cmdLayout.setOrientation(1);
             cmdLayout1.setOrientation(1);
@@ -3840,7 +3822,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 			onClick: function(v){
 				Server.sendChat("./gamemode 1");
 				Server.sendChat("./gamemode creative");
-				Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+				android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
 			}
 		});
 		cmdLayout.addView(cmd1);
@@ -3851,7 +3833,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 			onClick: function(v){
 				Server.sendChat("./gamemode 0");
 				Server.sendChat("./gamemode survival");
-				Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+				android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
 			}
 		});
 		cmdLayout.addView(cmd2);
@@ -3862,7 +3844,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 			onClick: function(v){
 				Server.sendChat("./gamemode 2");
 				Server.sendChat("./gamemode adventure");
-				Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+				android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
 			}
 		});
 		cmdLayout.addView(cmd3);
@@ -3873,7 +3855,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 			onClick: function(v){
 				Server.sendChat("./gamemode 3");
 				Server.sendChat("./gamemode spectator");
-				Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+				android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
 			}
 		});
 		cmdLayout.addView(cmd4);
@@ -3883,7 +3865,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		cmd5.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
 				Server.sendChat("./list");
-				Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+				android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
 			}
 		});
 		cmdLayout.addView(cmd5);
@@ -3894,7 +3876,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
                 onClick: function(viewarg){ 
 Server.sendChat("./setuperm " + Player.getName(Player.getEntity()) + space + perm);
 Server.sendChat("./setuperm " + Player.getName(Player.getEntity()) + space + perm);
-Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
 			clientMessage(client + "gives you permanent op if you were op before, if server closes you can op yourself instead of losing it after server closes.");
                 }
             }));
@@ -3905,7 +3887,7 @@ Toast.makeText(MainActivity, "Command has been sent.", 1).show();
             a1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("./time set 0");
-			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a1);
@@ -3915,7 +3897,7 @@ var a2 = new styleButton();
             a2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("./time set 1000");
-			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a2);
@@ -3925,7 +3907,7 @@ var a3 = new styleButton();
             a3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("./time set 2000");
-			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a3);
@@ -3935,7 +3917,7 @@ var a4 = new styleButton();
             a4.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("./time set 3000");
-			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a4);
@@ -3945,7 +3927,7 @@ var a5 = new styleButton();
             a5.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("./time set 4000");
-			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a5);
@@ -3955,7 +3937,7 @@ var a6 = new styleButton();
             a6.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("./time set 5000");
-			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a6);
@@ -3965,7 +3947,7 @@ var a7 = new styleButton();
             a7.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("./time set 6000");
-			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a7);
@@ -3975,7 +3957,7 @@ var a8 = new styleButton();
             a8.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("./time set 7000");
-			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a8);
@@ -3985,7 +3967,7 @@ var a9 = new styleButton();
             a9.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("./time set 8000");
-			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a9);
@@ -3995,7 +3977,7 @@ var a10 = new styleButton();
             a10.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("./time set 9000");
-			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a10);
@@ -4005,7 +3987,7 @@ var a11 = new styleButton();
             a11.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("./time set 10000");
-			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a11);
@@ -4015,7 +3997,7 @@ var a12 = new styleButton();
             a12.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("./time set 11000");
-			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a12);
@@ -4025,7 +4007,7 @@ var a13 = new styleButton();
             a13.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("./time set 12000");
-			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a13);
@@ -4035,7 +4017,7 @@ var a14 = new styleButton();
             a14.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("./time set 13000");
-			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a14);
@@ -4045,7 +4027,7 @@ var a15 = new styleButton();
             a15.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("./time set 14000");
-			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a15);
@@ -4055,7 +4037,7 @@ var a16 = new styleButton();
             a16.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("./time set 15000");
-			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a16);
@@ -4065,7 +4047,7 @@ var a17 = new styleButton();
             a17.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("./time set 16000");
-			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a17);
@@ -4075,7 +4057,7 @@ var a18 = new styleButton();
             a18.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("./time set 17000");
-			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a18);
@@ -4086,7 +4068,7 @@ var a19 = new styleButton();
             a19.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("./time set 18000");
-			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a19);
@@ -4096,7 +4078,7 @@ var a20 = new styleButton();
             a20.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("./time set 19000");
-			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a20);
@@ -4106,7 +4088,7 @@ var a21 = new styleButton();
             a21.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("./time set 20000");
-			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a21);
@@ -4116,7 +4098,7 @@ var a22 = new styleButton();
             a22.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("./time set 21000");
-			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a22);
@@ -4126,7 +4108,7 @@ var a23 = new styleButton();
             a23.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("./time set 22000");
-			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a23);
@@ -4136,7 +4118,7 @@ var a24 = new styleButton();
             a24.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 Server.sendChat("./time set 23000");
-			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(a24);
@@ -4146,7 +4128,7 @@ var rainy = new styleButton();
             rainy.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 Server.sendChat("./weather rain");
-			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(rainy);
@@ -4156,7 +4138,7 @@ var clearain = new styleButton();
             clearain.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 Server.sendChat("./weather clear");
-			Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(clearain);
@@ -4164,13 +4146,13 @@ Server.sendChat("./weather clear");
             cmd = new PopupWindow(cmdLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             cmd.setBackgroundDrawable(new ColorDrawable(GUIColor));
       var bg = new android.graphics.drawable.GradientDrawable();
-      bg.setColor(Color.TRANSPARENT);
+      bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
 cmdLayout1.setBackgroundDrawable(bg);
 cmdLayout1.setPadding(20,0,20,0);
-            cmd.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            cmd.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | android.view.Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
+                android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -4183,7 +4165,7 @@ cmdLayout1.setPadding(20,0,20,0);
                     
 		    cheat.dismiss();
 		    
-		    Toast.makeText(MainActivity, "Scroll down", 1).show();
+		    android.widget.Toast.makeText(MainActivity, "Scroll down", 1).show();
                 }
             }));
             cheatLayout.addView(xz);
@@ -4193,7 +4175,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
             var XYZLayout = new LinearLayout(MainActivity);
             
-            var XYZScroll = new ScrollView(MainActivity);
+            var XYZScroll = new android.widget.ScrollView(MainActivity);
             
             var XYZLayout1 = new LinearLayout(MainActivity);
             XYZLayout.setOrientation(1);
@@ -4204,7 +4186,7 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 
 var exit = new styleButton();
             exit.setText("Exit");
-exit.setTextColor(Color.RED);
+exit.setTextColor(android.graphics.Color.RED);
             exit.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
 
@@ -4227,10 +4209,10 @@ exit.setTextColor(Color.RED);
             }));
             XYZLayout.addView(refresh);
 			
-			var xyZ_title = new TextView(MainActivity);
+			var xyZ_title = new android.widget.TextView(MainActivity);
             xyZ_title.setTextSize(15);
 	    xyZ_title.setText("Showing 5 players XYZ:");
-            xyZ_title.setTextColor(Color.WHITE);
+            xyZ_title.setTextColor(android.graphics.Color.WHITE);
             XYZLayout.addView(xyZ_title);
 			
 			var players = Server.getAllPlayers();
@@ -4253,44 +4235,44 @@ exit.setTextColor(Color.RED);
 			var x5 = Entity.getX(players[5]) - getPlayerX();
 			var y5 = Entity.getY(players[5]) - getPlayerY();
 			var z5 = Entity.getZ(players[5]) - getPlayerZ();
-	    var xyZ_show = new TextView(MainActivity);
+	    var xyZ_show = new android.widget.TextView(MainActivity);
             xyZ_show.setTextSize(15);
 	    xyZ_show.setText(names[0]+"\n"+Math.round(x0)+" "+Math.round(y0)+" "+Math.round(z0)+"\n"+names[1]+"\n"+Math.round(x1)+" "+Math.round(y1)+" "+Math.round(z1)+"\n"+names[2]+"\n"+Math.round(x2)+" "+Math.round(y2)+" "+Math.round(z2)+"\n"+names[3]+"\n"+Math.round(x3)+" "+Math.round(y3)+" "+Math.round(z3)+"\n"+names[4]+"\n"+Math.round(x4)+" "+Math.round(y4)+" "+Math.round(z4)+"\n"+names[5]+"\n"+Math.round(x5)+" "+Math.round(y5)+" "+Math.round(z5)+"\n");
-            xyZ_show.setTextColor(Color.YELLOW);
+            xyZ_show.setTextColor(android.graphics.Color.YELLOW);
             XYZLayout.addView(xyZ_show);
 			
 XYZ = new PopupWindow(XYZLayout1, dip2px(500), dip2px(500));
 
 XYZ = new PopupWindow(XYZLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/2, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1);
 	  var bg = new android.graphics.drawable.GradientDrawable();
-      bg.setColor(Color.TRANSPARENT);
+      bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
 XYZLayout1.setBackgroundDrawable(bg);
 XYZLayout1.setPadding(20,0,20,0);
-XYZ.setBackgroundDrawable(new ColorDrawable(Color.BLACK));
-            XYZ.showAtLocation(MainActivity.getWindow().getDecorView(), Gravity.CENTER | Gravity.TOP, 0, 0);
+XYZ.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.BLACK));
+            XYZ.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.CENTER | android.view.Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
+                android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
 
 var nameit = new styleButton();
 nameit.setText("Mob nametags");
-nameit.setTextColor(Color.RED);
-if(nametags==true)nameit.setTextColor(Color.GREEN);
+nameit.setTextColor(android.graphics.Color.RED);
+if(nametags==true)nameit.setTextColor(android.graphics.Color.GREEN);
             nameit.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              nametags?nametags=false:nametags=true;
 nameit.setText("Mob nametags");
 if(nametags == true){
-nameit.setTextColor(Color.GREEN);
+nameit.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client + "Mob nametags on");
 
 nametags = true;
 }
 if(nametags == false){
-nameit.setTextColor(Color.RED);
+nameit.setTextColor(android.graphics.Color.RED);
 clientMessage(client + "Mob nametags off");
 
 nametags = false;
@@ -4301,20 +4283,20 @@ nametags = false;
 			
 var keeps = new styleButton();
 keeps.setText("Keep hotbar");
-keeps.setTextColor(Color.RED);
-if(keepHotbar==true)keeps.setTextColor(Color.GREEN);
+keeps.setTextColor(android.graphics.Color.RED);
+if(keepHotbar==true)keeps.setTextColor(android.graphics.Color.GREEN);
             keeps.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              keepHotbar?keepHotbar=false:keepHotbar=true;
 keeps.setText("Keep hotbar");
 if(keepHotbar == true){
-keeps.setTextColor(Color.GREEN);
+keeps.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client + "Keep hotbar on, \nThis allows you to keep holding an item so it does not fall out of your hotbar.");
 
 keepHotbar = true;
 }
 if(keepHotbar == false){
-keeps.setTextColor(Color.RED);
+keeps.setTextColor(android.graphics.Color.RED);
 clientMessage(client + "Keep hotbar off");
 
 keepHotbar = false;
@@ -4325,19 +4307,19 @@ keepHotbar = false;
 			
 var butfuon3 = new styleButton();
 butfuon3.setText("Alpha Text");
-butfuon3.setTextColor(Color.RED);
-if(alphatext==true)butfuon3.setTextColor(Color.GREEN);
+butfuon3.setTextColor(android.graphics.Color.RED);
+if(alphatext==true)butfuon3.setTextColor(android.graphics.Color.GREEN);
             butfuon3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              alphatext?alphatext=false:alphatext=true;
 butfuon3.setText("Alpha Text");
 if(alphatext== true){
-butfuon3.setTextColor(Color.GREEN);
+butfuon3.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client+"AlphaText on, send a message in chat!");
 alphatext= true;
 }
 if(alphatext== false){
-butfuon3.setTextColor(Color.RED);
+butfuon3.setTextColor(android.graphics.Color.RED);
 clientMessage(client+"AlphaText off");
 alphatext= false;
 }
@@ -4347,19 +4329,19 @@ alphatext= false;
 
 var butfuon4 = new styleButton();
 butfuon4.setText("Binary text");
-butfuon4.setTextColor(Color.RED);
-if(binarytext==true)butfuon4.setTextColor(Color.GREEN);
+butfuon4.setTextColor(android.graphics.Color.RED);
+if(binarytext==true)butfuon4.setTextColor(android.graphics.Color.GREEN);
             butfuon4.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              binarytext?binarytext=false:binarytext=true;
 butfuon4.setText("Binary text");
 if(binarytext == true){
-butfuon4.setTextColor(Color.GREEN);
+butfuon4.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client+"Binary text on");
 binarytext = true;
 }
 if(binarytext == false){
-butfuon4.setTextColor(Color.RED);
+butfuon4.setTextColor(android.graphics.Color.RED);
 clientMessage(client+"Binary text off");
 binarytext = false;
 }
@@ -4369,19 +4351,19 @@ binarytext = false;
 
 var butfuon5 = new styleButton();
 butfuon5.setText("Zalgo text");
-butfuon5.setTextColor(Color.RED);
-if(zalgotext==true)butfuon5.setTextColor(Color.GREEN);
+butfuon5.setTextColor(android.graphics.Color.RED);
+if(zalgotext==true)butfuon5.setTextColor(android.graphics.Color.GREEN);
             butfuon5.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              zalgotext?zalgotext=false:zalgotext=true;
 butfuon5.setText("Zalgo text");
 if(zalgotext == true){
-butfuon5.setTextColor(Color.GREEN);
+butfuon5.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client+"Zalgo text on");
 zalgotext = true;
 }
 if(zalgotext == false){
-butfuon5.setTextColor(Color.RED);
+butfuon5.setTextColor(android.graphics.Color.RED);
 clientMessage(client+"Zalgo text off");
 zalgotext = false;
 }
@@ -4391,19 +4373,19 @@ zalgotext = false;
 
 var butfuon6 = new styleButton();
 butfuon6.setText("Strike text");
-butfuon6.setTextColor(Color.RED);
-if(striketext==true)butfuon6.setTextColor(Color.GREEN);
+butfuon6.setTextColor(android.graphics.Color.RED);
+if(striketext==true)butfuon6.setTextColor(android.graphics.Color.GREEN);
             butfuon6.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              striketext?striketext=false:striketext=true;
 butfuon6.setText("Strike text");
 if(striketext == true){
-butfuon6.setTextColor(Color.GREEN);
+butfuon6.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client+"Strike text on");
 striketext = true;
 }
 if(striketext == false){
-butfuon6.setTextColor(Color.RED);
+butfuon6.setTextColor(android.graphics.Color.RED);
 clientMessage(client+"Strike text off");
 striketext = false;
 }
@@ -4413,19 +4395,19 @@ striketext = false;
 
 var butfuon8 = new styleButton();
 butfuon8.setText("Prevent same message");
-butfuon8.setTextColor(Color.RED);
-if(preventsame==true)butfuon8.setTextColor(Color.GREEN);
+butfuon8.setTextColor(android.graphics.Color.RED);
+if(preventsame==true)butfuon8.setTextColor(android.graphics.Color.GREEN);
             butfuon8.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              preventsame?preventsame=false:preventsame=true;
 butfuon8.setText("Prevent same message");
 if(preventsame == true){
-butfuon8.setTextColor(Color.GREEN);
+butfuon8.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client+"Prevent same message on,\nyou can now bypass ChatDefender");
 preventsame = true;
 }
 if(preventsame == false){
-butfuon8.setTextColor(Color.RED);
+butfuon8.setTextColor(android.graphics.Color.RED);
 clientMessage(client+"Prevent same message off");
 preventsame = false;
 }
@@ -4498,20 +4480,20 @@ cheat.dismiss();
 
 var info2 = new styleButton();
 info2.setText("Faced player info");
-info2.setTextColor(Color.RED);
-if(facedInfo==true)info2.setTextColor(Color.GREEN);
+info2.setTextColor(android.graphics.Color.RED);
+if(facedInfo==true)info2.setTextColor(android.graphics.Color.GREEN);
             info2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              facedInfo?facedInfo=false:facedInfo=true;
 info2.setText("Faced player info");
 if(facedInfo == true){
-info2.setTextColor(Color.GREEN);
+info2.setTextColor(android.graphics.Color.GREEN);
 	clientMessage(client + "Face the player to see info!");
 
 facedInfo = true;
 }
 if(facedInfo == false){
-info2.setTextColor(Color.RED);
+info2.setTextColor(android.graphics.Color.RED);
 
 facedInfo = false;
 }
@@ -4532,19 +4514,19 @@ cheat.dismiss();
 
 var censor = new styleButton();
 censor.setText("Swear censor bypass");
-censor.setTextColor(Color.RED);
-if(censorbypass==true)censor.setTextColor(Color.GREEN);
+censor.setTextColor(android.graphics.Color.RED);
+if(censorbypass==true)censor.setTextColor(android.graphics.Color.GREEN);
             censor.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              censorbypass?censorbypass=false:censorbypass=true;
 censor.setText("Swear censor bypass");
 if(censorbypass == true){
-censor.setTextColor(Color.GREEN);
+censor.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client+"Swear censor bypass on");
 censorbypass = true;
 }
 if(censorbypass == false){
-censor.setTextColor(Color.RED);
+censor.setTextColor(android.graphics.Color.RED);
 clientMessage(client+"Swear censor bypass off");
 censorbypass = false;
 }
@@ -4559,19 +4541,19 @@ censorbypass = false;
 *
 var fe1 = new styleButton();
 fe1.setText("Fast eat");
-fe1.setTextColor(Color.RED);
-if(fasteat==true)fe1.setTextColor(Color.GREEN);
+fe1.setTextColor(android.graphics.Color.RED);
+if(fasteat==true)fe1.setTextColor(android.graphics.Color.GREEN);
             fe1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              fasteat?fasteat=false:fasteat=true;
 fe1.setText("Fast eat");
 if(fasteat == true){
-fe1.setTextColor(Color.GREEN);
+fe1.setTextColor(android.graphics.Color.GREEN);
 
 fasteat = true;
 }
 if(fasteat == false){
-fe1.setTextColor(Color.RED);
+fe1.setTextColor(android.graphics.Color.RED);
 
 fasteat = false;
 }
@@ -4581,20 +4563,20 @@ fasteat = false;
 	    */
 /*var oreTrace = new styleButton();
 oreTrace.setText("Ore ESP");
-oreTrace.setTextColor(Color.RED);
-if(oreEsp2==true)oreTrace.setTextColor(Color.GREEN);
+oreTrace.setTextColor(android.graphics.Color.RED);
+if(oreEsp2==true)oreTrace.setTextColor(android.graphics.Color.GREEN);
             oreTrace.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              oreEsp2?oreEsp2=false:oreEsp2=true;
 oreTrace.setText("Ore ESP");
 if(oreEsp2 == true){
-oreTrace.setTextColor(Color.GREEN);
+oreTrace.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client + "Ore ESP on");
 oreDialog();
 oreEsp2 = true;
 }
 if(oreEsp2 == false){
-oreTrace.setTextColor(Color.RED);
+oreTrace.setTextColor(android.graphics.Color.RED);
 clientMessage(client + "Ore ESP off");
 oreEsp = false;
 oreEsp2 = false;
@@ -4605,20 +4587,20 @@ oreEsp2 = false;
 			
 var playerTracer = new styleButton();
 playerTracer.setText("Player ESP");
-playerTracer.setTextColor(Color.RED);
-if(playeresp==true)playerTracer.setTextColor(Color.GREEN);
+playerTracer.setTextColor(android.graphics.Color.RED);
+if(playeresp==true)playerTracer.setTextColor(android.graphics.Color.GREEN);
             playerTracer.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              playeresp?playeresp=false:playeresp=true;
 playerTracer.setText("Player ESP");
 if(playeresp == true){
-playerTracer.setTextColor(Color.GREEN);
+playerTracer.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client + "Player esp on");
 
 playeresp = true;
 }
 if(playeresp == false){
-playerTracer.setTextColor(Color.RED);
+playerTracer.setTextColor(android.graphics.Color.RED);
 clientMessage(client + "Player esp off");
 
 playeresp = false;
@@ -4633,20 +4615,20 @@ playeresp = false;
 *
 var hitme = new styleButton();
 hitme.setText("Hit behind");
-hitme.setTextColor(Color.RED);
-if(hitBehind==true)hitme.setTextColor(Color.GREEN);
+hitme.setTextColor(android.graphics.Color.RED);
+if(hitBehind==true)hitme.setTextColor(android.graphics.Color.GREEN);
             hitme.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              hitBehind?hitBehind=false:hitBehind=true;
 hitme.setText("Hit behind");
 if(hitBehind == true){
-hitme.setTextColor(Color.GREEN);
+hitme.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client + "Hit behind on");
 
 hitBehind = true;
 }
 if(hitBehind == false){
-hitme.setTextColor(Color.RED);
+hitme.setTextColor(android.graphics.Color.RED);
 clientMessage(client + "Hit behind off");
 
 hitBehind = false;
@@ -4670,13 +4652,13 @@ var exit2 = new styleButton();
             if(default1==true)cheat.setBackgroundDrawable(new ColorDrawable(GUIColor));
       if(default1==false)cheat.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
-      bg.setColor(Color.TRANSPARENT);
+      bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
 cheatLayout1.setBackgroundDrawable(bg);
 cheatLayout1.setPadding(20,0,20,0);
-            cheat.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            cheat.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | android.view.Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
+                android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -4696,7 +4678,7 @@ mods.setOnClickListener(new android.view.View.OnClickListener() {
 MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
             var modLayout = new LinearLayout(MainActivity);
-            var modScroll = new ScrollView(MainActivity);
+            var modScroll = new android.widget.ScrollView(MainActivity);
             var modLayout1 = new LinearLayout(MainActivity);
             modLayout.setOrientation(1);
             modLayout1.setOrientation(1);
@@ -5182,19 +5164,19 @@ setage = false;
 		
 		var dropbutton = new styleButton(MainActivity);
 dropbutton.setText("Double drops");
-dropbutton.setTextColor(Color.RED);
-if(doubledrop==true)dropbutton.setTextColor(Color.GREEN);
+dropbutton.setTextColor(android.graphics.Color.RED);
+if(doubledrop==true)dropbutton.setTextColor(android.graphics.Color.GREEN);
             dropbutton.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              doubledrop?doubledrop=false:doubledrop=true;
 dropbutton.setText("Double drops");
 if(doubledrop == true){
-dropbutton.setTextColor(Color.GREEN);
+dropbutton.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client+"Double drops on\nThis allows you to pick up x2 the amount of the item you placed or broke.");
 doubledrop = true;
 }
 if(doubledrop == false){
-dropbutton.setTextColor(Color.RED);
+dropbutton.setTextColor(android.graphics.Color.RED);
 clientMessage(client+"Double drops off");
 doubledrop = false;
 }
@@ -5206,13 +5188,13 @@ doubledrop = false;
             if(default1==true)mod.setBackgroundDrawable(new ColorDrawable(GUIColor));
       if(default1==false)mod.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
-      bg.setColor(Color.TRANSPARENT);
+      bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
 modLayout1.setBackgroundDrawable(bg);
 modLayout1.setPadding(20,0,20,0);
-            mod.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            mod.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | android.view.Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
+                android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -5234,7 +5216,7 @@ effect.setOnClickListener(new android.view.View.OnClickListener() {
 MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
             var effectLayout = new LinearLayout(MainActivity);
-            var effectScroll = new ScrollView(MainActivity);
+            var effectScroll = new android.widget.ScrollView(MainActivity);
             var effectLayout1 = new LinearLayout(MainActivity);
             effectLayout.setOrientation(1);
             effectLayout1.setOrientation(1);
@@ -5263,20 +5245,20 @@ Entity.removeAllEffects(getPlayerEnt());
 	
 	var rmeft = new styleButton();
 rmeft.setText("Hit remove effects");
-rmeft.setTextColor(Color.RED);
-if(hitrmef==true)rmeft.setTextColor(Color.GREEN);
+rmeft.setTextColor(android.graphics.Color.RED);
+if(hitrmef==true)rmeft.setTextColor(android.graphics.Color.GREEN);
             rmeft.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              hitrmef?hitrmef=false:hitrmef=true;
 rmeft.setText("Hit remove effects");
 if(hitrmef == true){
-rmeft.setTextColor(Color.GREEN);
+rmeft.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client + "Hit remove effects on");
 
 hitrmef = true;
 }
 if(hitrmef == false){
-rmeft.setTextColor(Color.RED);
+rmeft.setTextColor(android.graphics.Color.RED);
 clientMessage(client + "Hit remove effects off");
 
 hitrmef = false;
@@ -6623,13 +6605,13 @@ Entity.addEffect(getPlayerEnt(), MobEffect.movementSpeed, s*l, 0, false, true);
             if(default1==true)effect.setBackgroundDrawable(new ColorDrawable(GUIColor));
       if(default1==false)effect.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
-      bg.setColor(Color.TRANSPARENT);
+      bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
 effectLayout1.setBackgroundDrawable(bg);
 effectLayout1.setPadding(20,0,20,0);
-            effect.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            effect.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | android.view.Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
+                android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -6652,7 +6634,7 @@ enchant.setOnClickListener(new android.view.View.OnClickListener() {
 MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
             var enchantLayout = new LinearLayout(MainActivity);
-            var enchantScroll = new ScrollView(MainActivity);
+            var enchantScroll = new android.widget.ScrollView(MainActivity);
             var enchantLayout1 = new LinearLayout(MainActivity);
             enchantLayout.setOrientation(1);
             enchantLayout1.setOrientation(1);
@@ -8177,13 +8159,13 @@ Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,ll);
             if(default1==true)enchant.setBackgroundDrawable(new ColorDrawable(GUIColor));
       if(default1==false)enchant.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
-      bg.setColor(Color.TRANSPARENT);
+      bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
 enchantLayout1.setBackgroundDrawable(bg);
 enchantLayout1.setPadding(20,0,20,0);
-            enchant.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            enchant.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | android.view.Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
+                android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -8206,7 +8188,7 @@ give.setOnClickListener(new android.view.View.OnClickListener() {
 MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
             var giveLayout = new LinearLayout(MainActivity);
-            var giveScroll = new ScrollView(MainActivity);
+            var giveScroll = new android.widget.ScrollView(MainActivity);
             var giveLayout1 = new LinearLayout(MainActivity);
             giveLayout.setOrientation(1);
             giveLayout1.setOrientation(1);
@@ -8376,13 +8358,13 @@ addItemInventory(293, 1, 0);
             if(default1==true)give.setBackgroundDrawable(new ColorDrawable(GUIColor));
       if(default1==false)give.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
-      bg.setColor(Color.TRANSPARENT);
+      bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
 giveLayout1.setBackgroundDrawable(bg);
 giveLayout1.setPadding(20,0,20,0);
-            give.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            give.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | android.view.Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
+                android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -8405,7 +8387,7 @@ morph.setOnClickListener(new android.view.View.OnClickListener() {
 MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
             var morphLayout = new LinearLayout(MainActivity);
-            var morphScroll = new ScrollView(MainActivity);
+            var morphScroll = new android.widget.ScrollView(MainActivity);
             var morphLayout1 = new LinearLayout(MainActivity);
             morphLayout.setOrientation(1);
             morphLayout1.setOrientation(1);
@@ -8424,20 +8406,20 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 		
 		var mne = new styleButton();
 mne.setText("Morph enhance");
-mne.setTextColor(Color.RED);
-if(morphEnhance==true)mne.setTextColor(Color.GREEN);
+mne.setTextColor(android.graphics.Color.RED);
+if(morphEnhance==true)mne.setTextColor(android.graphics.Color.GREEN);
             mne.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              morphEnhance?morphEnhance=false:morphEnhance=true;
 mne.setText("Morph enhance");
 if(morphEnhance == true){
-mne.setTextColor(Color.GREEN);
+mne.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client + "Morph enhance adds effects and more to what mob you morph into!");
 
 morphEnhance = true;
 }
 if(morphEnhance == false){
-mne.setTextColor(Color.RED);
+mne.setTextColor(android.graphics.Color.RED);
 clientMessage(client + "Morph enhance off");
 
 morphEnhance = false;
@@ -8448,20 +8430,20 @@ morphEnhance = false;
 	
 	var morphit = new styleButton();
 morphit.setText("Hit'n'morph");
-morphit.setTextColor(Color.RED);
-if(hitmorph==true)morphit.setTextColor(Color.GREEN);
+morphit.setTextColor(android.graphics.Color.RED);
+if(hitmorph==true)morphit.setTextColor(android.graphics.Color.GREEN);
             morphit.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              hitmorph?hitmorph=false:hitmorph=true;
 morphit.setText("Hit'n'morph");
 if(hitmorph == true){
-morphit.setTextColor(Color.GREEN);
+morphit.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client + "Hit'n'morph on, hit a mob to morph!");
 
 hitmorph = true;
 }
 if(hitmorph == false){
-morphit.setTextColor(Color.RED);
+morphit.setTextColor(android.graphics.Color.RED);
 clientMessage(client + "Hit'n'morph off");
 
 hitmorph = false;
@@ -8925,13 +8907,13 @@ Entity.setRenderType(Player.getEntity(), 17);
             if(default1==true)morph.setBackgroundDrawable(new ColorDrawable(GUIColor));
 			if(default1==false)morph.setBackgroundDrawable(new ColorDrawable(GUIColor));
       var bg = new android.graphics.drawable.GradientDrawable();
-      bg.setColor(Color.TRANSPARENT);
+      bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
 morphLayout1.setBackgroundDrawable(bg);
 morphLayout1.setPadding(20,0,20,0);
-            morph.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            morph.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | android.view.Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
+                android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -8954,7 +8936,7 @@ nuke.setOnClickListener(new android.view.View.OnClickListener() {
 MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
             var nukeLayout = new LinearLayout(MainActivity);
-            var nukeScroll = new ScrollView(MainActivity);
+            var nukeScroll = new android.widget.ScrollView(MainActivity);
             var nukeLayout1 = new LinearLayout(MainActivity);
             nukeLayout.setOrientation(1);
             nukeLayout1.setOrientation(1);
@@ -9116,13 +9098,13 @@ var n11 = new styleButton();
             if(default1==true)nuke.setBackgroundDrawable(new ColorDrawable(GUIColor));
       if(default1==false)nuke.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
-      bg.setColor(Color.TRANSPARENT);
+      bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
 nukeLayout1.setBackgroundDrawable(bg);
 nukeLayout1.setPadding(20,0,20,0);
-            nuke.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            nuke.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | android.view.Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
+                android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -9145,7 +9127,7 @@ particle.setOnClickListener(new android.view.View.OnClickListener() {
 MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
             var particleLayout = new LinearLayout(MainActivity);
-            var particleScroll = new ScrollView(MainActivity);
+            var particleScroll = new android.widget.ScrollView(MainActivity);
             var particleLayout1 = new LinearLayout(MainActivity);
             particleLayout.setOrientation(1);
             particleLayout1.setOrientation(1);
@@ -9164,20 +9146,20 @@ MainActivity.runOnUiThread(new Runnable({ run: function(){
 	
 	var hitpart = new styleButton();
 hitpart.setText("Hit particles");
-hitpart.setTextColor(Color.RED);
-if(hitparticles==true)hitpart.setTextColor(Color.GREEN);
+hitpart.setTextColor(android.graphics.Color.RED);
+if(hitparticles==true)hitpart.setTextColor(android.graphics.Color.GREEN);
             hitpart.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              hitparticles?hitparticles=false:hitparticles=true;
 hitpart.setText("Hit particles");
 if(hitparticles == true){
-hitpart.setTextColor(Color.GREEN);
+hitpart.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client + "Hit particles enables the selected particle to show when you hit a player~");
 
 hitparticles = true;
 }
 if(hitparticles == false){
-hitpart.setTextColor(Color.RED);
+hitpart.setTextColor(android.graphics.Color.RED);
 clientMessage(client + "Hit particles off");
 
 hitparticles = false;
@@ -9188,20 +9170,20 @@ hitparticles = false;
 	
 	var parti2l = new styleButton();
 parti2l.setText("Tap particles");
-parti2l.setTextColor(Color.RED);
-if(tapParti==true)parti2l.setTextColor(Color.GREEN);
+parti2l.setTextColor(android.graphics.Color.RED);
+if(tapParti==true)parti2l.setTextColor(android.graphics.Color.GREEN);
             parti2l.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              tapParti?tapParti=false:tapParti=true;
 parti2l.setText("Tap particles");
 if(tapParti == true){
-parti2l.setTextColor(Color.GREEN);
+parti2l.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client + "Tap particles on, enable a particle!");
 
 tapParti = true;
 }
 if(tapParti == false){
-parti2l.setTextColor(Color.RED);
+parti2l.setTextColor(android.graphics.Color.RED);
 clientMessage(client + "Tap particles off");
 
 tapParti = false;
@@ -9726,13 +9708,13 @@ clientMessage(client + "§7Particle 32 is false");
             if(default1==true)particle.setBackgroundDrawable(new ColorDrawable(GUIColor));
       if(default1==false)particle.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
-      bg.setColor(Color.TRANSPARENT);
+      bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
 particleLayout1.setBackgroundDrawable(bg);
 particleLayout1.setPadding(20,0,20,0);
-            particle.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            particle.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | android.view.Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
+                android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -9755,7 +9737,7 @@ spawn.setOnClickListener(new android.view.View.OnClickListener() {
 MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
             var spawnLayout = new LinearLayout(MainActivity);
-            var spawnScroll = new ScrollView(MainActivity);
+            var spawnScroll = new android.widget.ScrollView(MainActivity);
             var spawnLayout1 = new LinearLayout(MainActivity);
             spawnLayout.setOrientation(1);
             spawnLayout1.setOrientation(1);
@@ -10181,13 +10163,13 @@ var spawn70 = new styleButton();
             if(default1==true)spawn.setBackgroundDrawable(new ColorDrawable(GUIColor));
       if(default1==false)spawn.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
-      bg.setColor(Color.TRANSPARENT);
+      bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
 spawnLayout1.setBackgroundDrawable(bg);
 spawnLayout1.setPadding(20,0,20,0);
-            spawn.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            spawn.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | android.view.Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
+                android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -10210,7 +10192,7 @@ speed.setOnClickListener(new android.view.View.OnClickListener() {
 MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
             var speedLayout = new LinearLayout(MainActivity);
-            var speedScroll = new ScrollView(MainActivity);
+            var speedScroll = new android.widget.ScrollView(MainActivity);
             var speedLayout1 = new LinearLayout(MainActivity);
             speedLayout.setOrientation(1);
             speedLayout1.setOrientation(1);
@@ -10440,13 +10422,13 @@ newspeed();
             if(default1==true)speed.setBackgroundDrawable(new ColorDrawable(GUIColor));
       if(default1==false)speed.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
-      bg.setColor(Color.TRANSPARENT);
+      bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
 speedLayout1.setBackgroundDrawable(bg);
 speedLayout1.setPadding(20,0,20,0);
-            speed.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            speed.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | android.view.Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
+                android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -10469,7 +10451,7 @@ teleport.setOnClickListener(new android.view.View.OnClickListener() {
 MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
             var teleportLayout = new LinearLayout(MainActivity);
-            var teleportScroll = new ScrollView(MainActivity);
+            var teleportScroll = new android.widget.ScrollView(MainActivity);
             var teleportLayout1 = new LinearLayout(MainActivity);
             teleportLayout.setOrientation(1);
             teleportLayout1.setOrientation(1);
@@ -10560,7 +10542,7 @@ taptp = false;
 			var et = new android.widget.TextView(MainActivity);
 			et.setGravity(android.view.Gravity.CENTER);
 		et.setText("You may crash while tping because blocks do not load correctly.");
-       et.setTextColor(Color.RED);
+       et.setTextColor(android.graphics.Color.RED);
 		et.setTextSize(20);
 		teleportLayout.addView(et);
 
@@ -10568,13 +10550,13 @@ taptp = false;
             if(default1==true)teleport.setBackgroundDrawable(new ColorDrawable(GUIColor));
       if(default1==false)teleport.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
-      bg.setColor(Color.TRANSPARENT);
+      bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
 teleportLayout1.setBackgroundDrawable(bg);
 teleportLayout1.setPadding(20,0,20,0);
-            teleport.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            teleport.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | android.view.Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
+                android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -10597,7 +10579,7 @@ time.setOnClickListener(new android.view.View.OnClickListener() {
 MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
             var timeLayout = new LinearLayout(MainActivity);
-            var timeScroll = new ScrollView(MainActivity);
+            var timeScroll = new android.widget.ScrollView(MainActivity);
             var timeLayout1 = new LinearLayout(MainActivity);
             timeLayout.setOrientation(1);
             timeLayout1.setOrientation(1);
@@ -10871,13 +10853,13 @@ Level.setTime(23000);
             if(default1==true)time.setBackgroundDrawable(new ColorDrawable(GUIColor));
       if(default1==false)time.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
-      bg.setColor(Color.TRANSPARENT);
+      bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
 timeLayout1.setBackgroundDrawable(bg);
 timeLayout1.setPadding(20,0,20,0);
-            time.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            time.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | android.view.Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
+                android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -10900,7 +10882,7 @@ weather.setOnClickListener(new android.view.View.OnClickListener() {
 MainActivity.runOnUiThread(new Runnable({ run: function(){
         try{
             var weatherLayout = new LinearLayout(MainActivity);
-            var weatherScroll = new ScrollView(MainActivity);
+            var weatherScroll = new android.widget.ScrollView(MainActivity);
             var weatherLayout1 = new LinearLayout(MainActivity);
             weatherLayout.setOrientation(1);
             weatherLayout1.setOrientation(1);
@@ -10957,19 +10939,19 @@ Level.setLightningLevel(0);
 	
 	var itembutton = new styleButton();
 itembutton.setText("Item rain");
-itembutton.setTextColor(Color.RED);
-if(itemrain==true)itembutton.setTextColor(Color.GREEN);
+itembutton.setTextColor(android.graphics.Color.RED);
+if(itemrain==true)itembutton.setTextColor(android.graphics.Color.GREEN);
             itembutton.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              itemrain?itemrain=false:itemrain=true;
 itembutton.setText("Item rain");
 if(itemrain == true){
-itembutton.setTextColor(Color.GREEN);
+itembutton.setTextColor(android.graphics.Color.GREEN);
 itementer();
 itemrain = true;
 }
 if(itemrain == false){
-itembutton.setTextColor(Color.RED);
+itembutton.setTextColor(android.graphics.Color.RED);
 clientMessage(client+"Item rain off");
 itemrain = false;
 rainitem = false;
@@ -10982,13 +10964,13 @@ rainitem = false;
             if(default1==true)weather.setBackgroundDrawable(new ColorDrawable(GUIColor));
       if(default1==false)weather.setBackgroundDrawable(new ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
-      bg.setColor(Color.TRANSPARENT);
+      bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
 weatherLayout1.setBackgroundDrawable(bg);
 weatherLayout1.setPadding(20,0,20,0);
-            weather.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            weather.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | android.view.Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
+                android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -10998,13 +10980,13 @@ weatherLayout1.setPadding(20,0,20,0);
            if(mcpetheme==true)menu.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.parseColor("#94857f")));
 		   if(default1==false)menu.setBackgroundDrawable(new ColorDrawable(GUIColor));
 		   var bg = new android.graphics.drawable.GradientDrawable();
-      bg.setColor(Color.TRANSPARENT);
+      bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
 menuLayout1.setBackgroundDrawable(bg);
 menuLayout1.setPadding(20,0,20,0);
-            menu.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | Gravity.TOP, 0, 0);
+            menu.showAtLocation(MainActivity.getWindow().getDecorView(), GUIPos | android.view.Gravity.TOP, 0, 0);
             }catch(error){
-                Toast.makeText(MainActivity, "Error! : " + error, 1).show();
+                android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -11014,7 +10996,7 @@ menuLayout1.setPadding(20,0,20,0);
 function serverMessageReceiveHook(str) {
 	ctx.runOnUiThread(new java.lang.Runnable(){
 run: function(){
-	if(ttot)Toast.makeText(ctx, str, 1).show();
+	if(ttot)android.widget.Toast.makeText(ctx, str, 1).show();
 	}});
 }
 
@@ -12267,7 +12249,7 @@ ply =ddip.getText();
 poy =ddip2.getText();
 Dialog.dismiss();
 betterWebview('http://mcapi.ca/query/'+ply+':'+poy+'/list');
-Toast.makeText(ctx, "AlphaHack: Loading web page", 1).show();
+android.widget.Toast.makeText(ctx, "AlphaHack: Loading web page", 1).show();
 }
 });
 
@@ -12396,7 +12378,7 @@ spa = new android.widget.PopupWindow();
 var Layer6 = new android.widget.LinearLayout(MainActivity);
 var mm = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.Button(MainActivity);;
+var Exit = new android.widget.Button(MainActivity);
 
 Dialog.setTitle("Enter text for spam");
 Dialog.setContentView(Layer6);
@@ -13530,7 +13512,7 @@ atact = new android.widget.PopupWindow();
 var Layerb4 = new android.widget.LinearLayout(MainActivity);
 var editAtk = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.android.widget.Button(MainActivity);;
+var Exit = new android.widget.Button(MainActivity);;
 
 Dialog.setTitle("When attacking send...");
 Dialog.setContentView(Layerb4);
@@ -13570,7 +13552,7 @@ var Layerz8 = new android.widget.LinearLayout(MainActivity);
 var editAtk = new android.widget.EditText(MainActivity);
 var editAtk2 = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.android.widget.Button(MainActivity);;
+var Exit = new android.widget.Button(MainActivity);;
 
 Dialog.setTitle("When dying send...");
 Dialog.setContentView(Layerz8);
@@ -13717,7 +13699,7 @@ sendEtc = new android.widget.PopupWindow();
 var Layerz89 = new android.widget.LinearLayout(MainActivity);
 var datMsg = new android.widget.EditText(MainActivity);
 var Dialog = new android.app.Dialog(MainActivity);
-var Exit = new android.widget.android.widget.Button(MainActivity);;
+var Exit = new android.widget.Button(MainActivity);;
 
 Dialog.setTitle("Send to all");
 Dialog.setContentView(Layerz89);
