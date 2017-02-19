@@ -103,6 +103,15 @@ var canGetHP = 1;
 var HP;
 var gravity = -0.07840000092983246;
 
+var fps = 0;
+var lastLoop = new Date;
+function ping(){
+    var thisLoop = new Date;
+    fps = 1000 / (thisLoop - lastLoop);
+    lastLoop = thisLoop;
+    return thisLoop;
+}
+
 var onBackground = {
 	returnAddress:function(){
 		/*godsofts json to js ip viewer, do not copy! this will only work in this mod!*/
@@ -115,7 +124,7 @@ var onBackground = {
 		return ModPE.getOS();
 	},
 	returnPing:function(){
-		return null;
+		return ping();
 	}
 }
 
@@ -1197,25 +1206,6 @@ var urls3 = new android.content.Intent(MainActivity);
             }));
             settingsLayout.addView(link);
 	
-	
-            var hideAH = new styleButton();
-            hideAH.setText("Hide AlphaHack");  
-	    if(hide==true)hideAH.setText("Unhide AlphaHack"); 
-            hideAH.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){         
-hide?hide=false:hide=true;
-if(hide == true){
-hideAH.setText("Unhide AlphaHack");
-hide = true;
-}
-if(hide == false){
-hideAH.setText("Hide AlphaHack");
-hide = false;
-}
-                }
-            }));
-            settingsLayout.addView(hideAH);
-	
 	var heset = new styleButton();
             heset.setText("Height for HigherJumps");       
             heset.setOnClickListener(new View.OnClickListener({
@@ -1246,12 +1236,30 @@ GUIText = android.graphics.Color.BLACK;
             settingsLayout.addView(mcpe);
 	
 	var cat0 = new android.widget.TextView(MainActivity);
-            cat0.setText("α Button location");
+            cat0.setText("α Button");
             cat0.setTextColor(android.graphics.Color.BLACK);
 			var textviewBg = new android.graphics.drawable.GradientDrawable();
 			textviewBg.setColor(android.graphics.Color.WHITE);
 			cat0.setBackgroundDrawable(textviewBg);
             settingsLayout.addView(cat0);
+	
+	     var hideAH = new styleButton();
+            hideAH.setText("Hide AlphaHack");  
+	    if(hide==true)hideAH.setText("Unhide AlphaHack"); 
+            hideAH.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+hide?hide=false:hide=true;
+if(hide == true){
+hideAH.setText("Unhide AlphaHack");
+hide = true;
+}
+if(hide == false){
+hideAH.setText("Hide AlphaHack");
+hide = false;
+}
+                }
+            }));
+            settingsLayout.addView(hideAH);
 			
 			var posright = new styleButton();
             posright.setText("Button right");       
@@ -2700,10 +2708,10 @@ if(liquidwalk == true){
 liquidhack.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client+"Walk on liquid on");
 android.widget.Toast.makeText(MainActivity, "Credit: GodSoft029!", 1).show();
-Block.setShape(8, 0, 0, 0, 1, 0.6, 1);
-Block.setShape(9, 0, 0, 0, 1, 0.6, 1);
-Block.setShape(10, 0, 0, 0, 1, 0.6, 1);
-Block.setShape(11, 0, 0, 0, 1, 0.6, 1);
+Block.setShape(8, 0, 0, 0, 1, 1, 1);
+Block.setShape(9, 0, 0, 0, 1, 1, 1);
+Block.setShape(10, 0, 0, 0, 1, 1, 1);
+Block.setShape(11, 0, 0, 0, 1, 1, 1);
 /*
 *
 * RIP Godsoft029's method
@@ -14149,8 +14157,8 @@ function replaceAll(search, replacement, str) {
 };
 /*Thanks to godsoft029 !*/
 function toAlphaSpeak(text){
-	var end = text.toUpperCase();
-	var normal = new Array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+	var end = text.toLowerCase();
+	var normal = new Array("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z");
 	var alpha = new Array("α","в","c","∂","є","ƒ","g","н","ι","נ","к","ℓ","м","η","σ","ρ","q","я","ѕ","т","υ","ν","ω","χ","у","z");
 	for(i = 0; i < normal.length; i++) {
 		end = replaceAll(normal[i], alpha[i], end);
@@ -14158,8 +14166,8 @@ function toAlphaSpeak(text){
 	return end;
 }
 function toBinarySpeak(text){
-	var end = text.toUpperCase();
-	var normal = new Array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+	var end = text.toLowerCase();
+	var normal = new Array("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z");
 	var binary = new Array("01100001","01100010","01100011","01100100","01100101", "01100110", "01100111", "01101000","01101001","01101010","01101011","01101100","01101101","01101110","01101111","01110000","01110001","01110010","01110011","01110100","01110101","01110110","01110111","01111000","01111001","01111010");
 	for(i = 0; i < normal.length; i++) {
 		end = replaceAll(normal[i], binary[i], end);
@@ -14167,8 +14175,8 @@ function toBinarySpeak(text){
 	return end;
 }
 function toZalgoSpeak(text){
-	var end = text.toUpperCase();
-	var normal = new Array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+	var end = text.toLowerCase();
+	var normal = new Array("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z");
 	var zalgo = new Array("á̡̢","b́͏҉","c̷̨͘","d̨","e̢͘͡", "f̕͘", "g̶̡", "h́̏ͭ̄̚","i̹̞̱͍̪̙̠̳̰","j̧͢͞","k҉","ļ҉͜","m̸̢","n͈̯̱̝̲̯̬̘̭̫̗̭͈͍ͭ̔͐ͫ́̎̀̉̐ͫ̿̚","ó҉","p͆̌̂̿̊̌","q̢͛ͪ̆ͦ̓̏ͮ","r͝͠","s̨","t͠҉̸","u͏͝","v͏҉̨","w̶̡͜","x̟̗̘̗̅ͣ̐̅","y͔͇̠","Z̦͙̯̯͚̱͓̩̬͕̖̰̭͎̐̄̒ͤ͑̎̐̊̓ͥͬ̈́͌͂͊͟");
 	for(i = 0; i < normal.length; i++) {
 		end = replaceAll(normal[i], zalgo[i], end);
@@ -14176,8 +14184,8 @@ function toZalgoSpeak(text){
 	return end;
 }
 function toStrikeSpeak(text){
-	var end = text.toUpperCase();
-	var normal = new Array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+	var end = text.toLowerCase();
+	var normal = new Array("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z");
 	var strike = new Array("a̶","b̶","c̶","d̶","e̶","f̶","g̶","h̶","i̶","j̶","k̶","l̶","m̶","n̶","o̶","p̶","q̶","r̶","s̶","t̶","u̶","v̶","w̶","x̶","y̶","z̶");
 		for(i = 0; i < normal.length; i++) {
 		end = replaceAll(normal[i], strike[i], end);
@@ -14185,8 +14193,8 @@ function toStrikeSpeak(text){
 	return end;
 }
 function toSwearSpeak(text){
-	var end = text.toUpperCase();
-	var normal = new Array("BITCH","FUCK","SHIT","CUNT","ASS","DICK","PISS","DAMN","PUSSY","COCK"); //TODO
+	var end = text.toLowerCase();
+	var normal = new Array("bitch","fuck","shit","cunt","ass","dick","piss","damn","pussy","cock"); //TODO
 	var swear = new Array("B¡tсћ","Fцсҝ","Sɦіt","Cцɲt","Asʂ","Dіcҝ","P¡ʂs","Damɲ","Pцsʂy","Cоҫҝ"); //TODO
 		for(i = 0; i < normal.length; i++) {
 		end = replaceAll(normal[i], swear[i], end);
