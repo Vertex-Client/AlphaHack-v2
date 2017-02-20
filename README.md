@@ -25,7 +25,7 @@ ALPHAHack v2 is a remake of AlphaHack 0.8.1
 - [ ] 0.17.0 Morph menu (Render ID of mobs seem to change);
 - [x] 0.8.5 Nuke menu
 - [x] 0.8.5 Particle menu
-- [ ] 0.17.0 Spawn menu (Spawn eggs damage/data/ID seem to change);
+- [x] 1.0.3 Spawn menu
 - [x] 0.8.5 Speed menu
 - [x] 0.8.5 Teleport menu
 - [x] 0.8.5 Time menu
