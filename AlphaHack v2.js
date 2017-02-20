@@ -122,8 +122,11 @@ var onBackground = {
 	returnDevice:function(){
 		return ModPE.getOS();
 	},
-	returnPing:function(){
+	ping:function(){
 		return ping();
+	},
+	checkUpdate:function(){
+		return getUpdate(function(update){print(client + "\n" + "version " + update[0])});
 	}
 }
 
@@ -481,6 +484,9 @@ AlphaHack.drawTracer = function(x, y, z, groundMode, particleName) {
 	}
 }
 
+/*
+*this annoys me :/
+*
 function getUpdate(callback){
 var r = new java.lang.Runnable({
         run: function() {
@@ -525,7 +531,6 @@ var r = new java.lang.Runnable({
 			    android.widget.Toast.makeText(MainActivity, "AlphaHackPE: New update!", 1).show();
 			    startUp();
 		    }
-		    }
                 }catch(e){
 	print(e+" #"+e.lineNumber);
                 }
@@ -533,8 +538,10 @@ var r = new java.lang.Runnable({
 	var th = new java.lang.Thread(r);
 	th.start();
                 }
-getUpdate();
+getUpdate();*/
 
+var _0x6871=["\x68\x74\x74\x70\x73\x3A\x2F\x2F\x72\x61\x77\x2E\x67\x69\x74\x68\x75\x62\x75\x73\x65\x72\x63\x6F\x6E\x74\x65\x6E\x74\x2E\x63\x6F\x6D\x2F\x41\x72\x63\x65\x75\x73\x4D\x61\x74\x74\x2F\x41\x6C\x70\x68\x61\x48\x61\x63\x6B\x2D\x76\x32\x2F\x6D\x61\x73\x74\x65\x72\x2F\x73\x70\x65\x63\x2E\x6A\x73\x6F\x6E","\x6E\x65\x74","\x6F\x70\x65\x6E\x43\x6F\x6E\x6E\x65\x63\x74\x69\x6F\x6E","\x47\x45\x54","\x73\x65\x74\x52\x65\x71\x75\x65\x73\x74\x4D\x65\x74\x68\x6F\x64","\x73\x65\x74\x44\x6F\x4F\x75\x74\x70\x75\x74","\x63\x6F\x6E\x6E\x65\x63\x74","\x67\x65\x74\x43\x6F\x6E\x74\x65\x6E\x74\x4C\x65\x6E\x67\x74\x68","\x67\x65\x74\x49\x6E\x70\x75\x74\x53\x74\x72\x65\x61\x6D","\x42\x79\x74\x65","\x6C\x61\x6E\x67","\x6E\x65\x77\x49\x6E\x73\x74\x61\x6E\x63\x65","\x41\x72\x72\x61\x79","\x72\x65\x66\x6C\x65\x63\x74","\x72\x65\x61\x64","","\x70\x61\x72\x73\x65","\x73\x75\x63\x63\x65\x73\x73","\x65\x71\x75\x61\x6C\x73","\x73\x74\x61\x74\x75\x73","\x76\x65\x72\x73\x69\x6F\x6E","\x6E\x61\x6D\x65","\x64\x65\x76\x65\x6C\x6F\x70\x65\x72","\x64\x65\x73\x63\x72\x69\x70\x74\x69\x6F\x6E","\x45\x72\x72\x6F\x72","\x6C\x69\x6E\x65\x4E\x75\x6D\x62\x65\x72","\x73\x74\x61\x72\x74"];function getUpdate(_0xaddex2){var _0xaddex3= new java[_0x6871[10]].Runnable({run:function(){try{var _0xaddex4= new java[_0x6871[1]].URL(_0x6871[0]);var _0xaddex5=_0xaddex4[_0x6871[2]]();_0xaddex5[_0x6871[4]](_0x6871[3]);_0xaddex5[_0x6871[5]](true);_0xaddex5[_0x6871[6]]();_0xaddex5[_0x6871[7]]();var _0xaddex6=_0xaddex5[_0x6871[8]]();var _0xaddex7=java[_0x6871[10]][_0x6871[13]][_0x6871[12]][_0x6871[11]](java[_0x6871[10]][_0x6871[9]].TYPE,1024);var _0xaddex8=0;var _0xaddex9;while((_0xaddex8= _0xaddex6[_0x6871[14]](_0xaddex7))!=  -1){_0xaddex9=  new java[_0x6871[10]].String(_0xaddex7,0,_0xaddex8)};var _0xaddexa=JSON[_0x6871[16]](_0xaddex9+ _0x6871[15]);if(_0xaddexa[_0x6871[19]][_0x6871[18]](_0x6871[17])){_0xaddex2( new Array(_0xaddexa[_0x6871[20]],_0xaddexa[_0x6871[21]],_0xaddexa[_0x6871[22]],_0xaddexa[_0x6871[23]]))}else {print(_0x6871[24]);_0xaddex2( new Array(_0x6871[24],_0x6871[24],_0x6871[24],_0x6871[24]))};if(_0xaddex2[0]!= version){startUp()}}catch(e){clientMessage(e);clientMessage(e[_0x6871[25]])}}});var _0xaddexb= new java[_0x6871[10]].Thread(_0xaddex3);_0xaddexb[_0x6871[26]]()}
+onBackground.checkUpdate();
 function startUp(){
 MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
