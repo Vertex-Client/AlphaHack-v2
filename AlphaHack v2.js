@@ -35,7 +35,6 @@ var menu;
 //define active incase of error
 var active;
 var update;
-var newUpdate;
 //define counting variable
 var num0 = 0;
 //idek
@@ -483,54 +482,48 @@ AlphaHack.drawTracer = function(x, y, z, groundMode, particleName) {
 }
 
 function getUpdate(callback){
-MainActivity.runOnUiThread(var r = new java.lang.Runnable({
+var r = new java.lang.Runnable({
         run: function() {
             try {
-                /*var c = u.openConnection();
-                c.setRequestMethod("GET");
-                c.setDoOutput(true);
-                c.connect();
-                c.getContentLength();
-                var input = c.getInputStream();
-                var contents = java.lang.reflect.Array.newInstance(java.lang.Byte.TYPE, 1024);
-                var bytesRead = 0;
-                var strFileContents;
-                while((bytesRead = input.read(contents)) != -1) {
-                    strFileContents = new java.lang.String(contents, 0, bytesRead);
-                }
-                var update;
-                var update = strFileContents;
-                var update = JSON.parse(strFileContents+"");
-
-if(update.status.equals("success")){
-callback(new Array(update.version));
-}else{
-print("Error");
-callback(new Array("Error"));
-}*/
-		        var u = new java.net.URL("https://raw.githubusercontent.com/ArceusMatt/AlphaHack-v2/master/Version.txt");
-			var update = new java.lang.StringBuilder();
-			var reader = new java.io.BufferedReader(new java.io.InputStreamReader(u.openStream()));
-			var line = "";
-		        while ((line = reader.readLine()) != null) {
-				update.append(line);
-					}
-		        reader.close();
+		    var u = new java.net.URL("https://raw.githubusercontent.com/ArceusMatt/AlphaHack-v2/master/Version.txt");
+		    var connection = u.openConnection();
+		    var c = connection;
+		    c.setRequestMethod("GET");
+		    c.setDoOutput(true);
+		    c.connect();
+		    c.getContentLength();
+		    var inputStream = connection.getInputStream();
+		    var input = c.getInputStream();
+		    var contents = java.lang.reflect.Array.newInstance(java.lang.Byte.TYPE, 1024);
+		    var bytesRead = 0;
+		    var strFileContents;
+		    var reader2 = new java.io.BufferedReader(new java.io.InputStreamReader(inputStream));
+		    var update = new java.lang.StringBuilder();
+		    var reader = new java.io.BufferedReader(new java.io.InputStreamReader(u.openStream()));
+		    var line = '';
+		    var newUpdate = '';
+		    reader2 = reader;
+		    while((bytesRead = input.read(contents)) != -1) {
+			    strFileContents = new java.lang.String(contents, 0, bytesRead);
+		    }
+                /*var update = strFileContents;
+                var update = JSON.parse(strFileContents+"");*/
+		    while ((line = reader2.readLine()) != null) {
+			    update.append(line);
+		    }
+		        reader2.close();
 			newUpdate = update.toString();
+		    return newUpdate;
 		    if(newUpdate!=version){
-			    android.widget.Toast.makeText(MainActivity, "AlphaHackPE: New update!", 1).show()
+			    android.widget.Toast.makeText(MainActivity, "AlphaHackPE: New update!", 1).show();
 			    startUp();
 		    }
                 }catch(e){
-                	
-                print(e+"");
-                
-                /*print(e.lineNumber);*/
-                
+                android.widget.Toast.makeText(MainActivity, e, 1).show();   
                 }
-                }}));
-                var th = new java.lang.Thread(r);
-    th.start();
+                }});
+	var th = new java.lang.Thread(r);
+	th.start();
                 }
 getUpdate();
 
