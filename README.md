@@ -10,11 +10,11 @@ ALPHAHack v2 is a remake of AlphaHack 0.8.1
 [Free to use mod menu for MCPE under MIT license];<br />
 </>--------------------</><br />
 [Pleαse contαct the developers of eαch code for permission to copy.];<br />
-</>--------------------</><br />
+</>--------------------</><br>
 [contributors: Godsoft029, Johnmαcrocrαft, αJ170, Peαcestorm(αgαmeR), Firepro9978, αPRIC0CKS, Vertex client teαm];<br />
-</>--------------------</><br />
-<br />
-# Issues & Features:
+</>--------------------</><br>
+<hr>
+<h1> Menus &amp; menu issues
 - [x] 0.8.5 Misc
 - [x] 0.8.5 Settings
 - [x] 0.8.5 Online mods
@@ -30,3 +30,21 @@ ALPHAHack v2 is a remake of AlphaHack 0.8.1
 - [x] 0.8.5 Teleport menu
 - [x] 0.8.5 Time menu
 - [x] 0.8.5 Weather menu
+<hr>
+<h2> Popular features
+- [x] AimAura / Killaura
+- [x] Speed hax
+- [x] Storage esp / chest esp
+- [x] Hitbox / reach
+- [x] Walk on liquid (currently broken)
+- [x] Glide
+- [x] Brightness
+- [x] Instant break
+- [x] Spider
+- [x] Bunny hop
+- [x] Spam mods
+- [x] Coordinates
+- [x] Flight mods
+- [x] Indicators
+- [x] Player mods
+- [x] Chat fonts
