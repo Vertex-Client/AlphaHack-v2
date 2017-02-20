@@ -502,19 +502,30 @@ var r = new java.lang.Runnable({
 		    var reader = new java.io.BufferedReader(new java.io.InputStreamReader(u.openStream()));
 		    var line = '';
 		    var newUpdate = '';
-		    reader2 = reader;
+		    var newUpdate1 = '';
+		    var newUpdate2 = '';
+		    var update2 = '';
 		    while((bytesRead = input.read(contents)) != -1) {
 			    strFileContents = new java.lang.String(contents, 0, bytesRead);
 		    }
-                /*var update = strFileContents;
-                var update = JSON.parse(strFileContents+"");*/
-		    while ((line = reader2.readLine()) != null) {
+		    var newUpdate1 = strFileContents;
+		    var newUpdate1 = JSON.parse(strFileContents+"");
+		    while ((line = reader.readLine()) != null) {
 			    update.append(line);
 		    }
-		        reader2.close();
-			newUpdate = update.toString();
+		    while ((line = reader2.readLine()) != null) {
+			    update2.append(line);
+		    }
+		    reader.close();
+		    reader2.close();
+		    newUpdate = update.toString();
+		    newUpdate2 = update2.toString();
 		    return newUpdate;
 		    if(newUpdate!=version){
+			    android.widget.Toast.makeText(MainActivity, "AlphaHackPE: New update!", 1).show();
+			    startUp();
+		    }
+		    if(newUpdate2!=version){
 			    android.widget.Toast.makeText(MainActivity, "AlphaHackPE: New update!", 1).show();
 			    startUp();
 		    }
