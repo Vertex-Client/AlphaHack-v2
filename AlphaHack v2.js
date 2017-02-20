@@ -4749,6 +4749,28 @@ button14.setText("Wheat farm");
                 }
             }));
             modLayout.addView(button14);
+	
+var endHack2 = new styleButton();
+endHack2.setText("End gateway");
+            endHack2.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+		Level.setTile(getPlayerX(), 75, getPlayerZ(), 7, 0); //bottom
+		Level.setTile(getPlayerX(), 76, getPlayerZ(), 7, 0); //bottom middle
+		Level.setTile(getPlayerX() -1, 76, getPlayerZ(), 7, 0); //front
+		Level.setTile(getPlayerX(), 76, getPlayerZ() -1, 7, 0); //right
+		Level.setTile(getPlayerX() +1, 76, getPlayerZ(), 7, 0); //back
+		Level.setTile(getPlayerX(), 76, getPlayerZ() +1, 7, 0); //left
+		Level.setTile(getPlayerX(), 77, getPlayerZ(), 209, 0); //middle
+		Level.setTile(getPlayerX(), 78, getPlayerZ(), 7, 0); //top middle
+		Level.setTile(getPlayerX() -1, 78, getPlayerZ(), 7, 0); //front
+		Level.setTile(getPlayerX(), 78, getPlayerZ() -1, 7, 0); //right
+		Level.setTile(getPlayerX() +1, 78, getPlayerZ(), 7, 0); //back
+		Level.setTile(getPlayerX(), 78, getPlayerZ() +1, 7, 0); //left
+		Level.setTile(getPlayerX(), 79, getPlayerZ(), 7, 0); //top
+		clientMessage(client+"End gateway has spawned above you at x"+Math.round(getPlayerX())+", y77, z"+Math.round(getPlayerZ())+"\nThrow an ender pearl in it to go to a end city or island.");
+				}
+            }));
+            modLayout.addView(endHack2);
 
 var df = new styleButton();
       df.setText("Disable up/down fly: "+(nofly?"on":"off"));
