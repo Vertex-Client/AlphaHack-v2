@@ -22,7 +22,7 @@ ALPHAHack v2 is a remake of AlphaHack 0.8.1
 - [x] 0.8.5 Effect menu
 - [x] 0.8.5 Enchant menu
 - [x] 0.8.5 Give menu
-- [ ] 0.17.0 Morph menu (Render ID of mobs seem to change);
+- [x] 1.0.3 Morph menu (Horse(54) crashes);
 - [x] 0.8.5 Nuke menu
 - [x] 0.8.5 Particle menu
 - [x] 1.0.3 Spawn menu
