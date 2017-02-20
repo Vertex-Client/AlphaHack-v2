@@ -265,6 +265,7 @@ var hitparticles = false;
 var icewalk = false;
 
 var facedInfo = false;
+var facedInfo2 = false;
 var tapParti = false;
 var hitmorph = false;
 var hitaction2 = false;
@@ -2283,6 +2284,38 @@ dialog.show();
 			}
 		});
 		miscLayout.addView(ht7);
+		
+var ht8 = new styleButton();
+		ht8.setText("How to get players XYZ");
+		ht8.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+var alert = new android.app.AlertDialog.Builder(MainActivity); 
+/*alert.setTitle(""); */
+
+var scroll = new android.widget.ScrollView(MainActivity); 
+var layout = new android.widget.LinearLayout(MainActivity); 
+layout.setOrientation(1);
+
+alert.setTitle("How to get players XYZ");
+ alert.setMessage("If you're using AH V2 Open the online menu\nOnce open pick coords OR use toolboxs mini map coords\nChange your username to the player you want XYZ of\nOnce you join you should see their coords. -ArceusMatt\nThis cant be used if the server has:\nAlways spawn or xbox login only.");
+
+alert.setPositiveButton("Exit all", new android.content.DialogInterface.OnClickListener(){ 
+  onClick: function(viewarg){
+    
+dialog.dismiss();
+misc.dismiss();
+      }});
+
+alert.setNegativeButton("Back to menu", new android.content.DialogInterface.OnClickListener(){ 
+   onClick: function(viewarg){
+
+dialog.dismiss();
+      }});
+var dialog = alert.create();
+dialog.show();
+			}
+		});
+		miscLayout.addView(ht8);
 
 var cidban = new styleButton();
             cidban.setText("CID/dev pardon"); 
@@ -4471,6 +4504,29 @@ facedInfo = false;
                 }
             }));
             cheatLayout.addView(info2);
+			
+var info3 = new styleButton();
+info3.setText("Faced mob info");
+info3.setTextColor(android.graphics.Color.RED);
+if(facedInfo2==true)info3.setTextColor(android.graphics.Color.GREEN);
+            info3.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             facedInfo2?facedInfo2=false:facedInfo2=true;
+info3.setText("Faced mob info");
+if(facedInfo2 == true){
+info3.setTextColor(android.graphics.Color.GREEN);
+	clientMessage(client + "Face the mob to see info!");
+
+facedInfo2 = true;
+}
+if(facedInfo2 == false){
+info3.setTextColor(android.graphics.Color.RED);
+
+facedInfo2 = false;
+}
+                }
+            }));
+            cheatLayout.addView(info3);
 			
 var stap1 = new styleButton();
             stap1.setText("Send to all");        
@@ -12047,12 +12103,14 @@ if (spider && Utils.Player.isCollidedHorizontally()) {
 		}
 	}
 	if(facedInfo){
-		if(Entity.getEntityTypeId(Player.getPointedEntity()) <= 63){
-			ModPE.showTipMessage(client + "\nName: "+Player.getName(Player.getPointedEntity())+", RenderType: "+Entity.getRenderType(Player.getPointedEntity())+", Health: "+Entity.getHealth(Player.getPointedEntity())+"/"+Entity.getMaxHealth(Player.getPointedEntity())+"");
-		}
 		if(Entity.getEntityTypeId(Player.getPointedEntity()) == 63 && Entity.getArmorDamage(Player.getPointedEntity(), 0) != 0 || Entity.getArmorDamage(Player.getPointedEntity(), 1) != 0 || Entity.getArmorDamage(Player.getPointedEntity(), 2) != 0 || Entity.getArmorDamage(Player.getPointedEntity(), 3) != 0){
 			ModPE.showTipMessage(client + "\nName: "+Player.getName(Player.getPointedEntity())+", RenderType: "+Entity.getRenderType(Player.getPointedEntity())+", Health: "+Entity.getHealth(Player.getPointedEntity())+"/"+Entity.getMaxHealth(Player.getPointedEntity())+"\nHead: "+Entity.getArmorDamage(Player.getPointedEntity(), 0)+", Chest: "+Entity.getArmorDamage(Player.getPointedEntity(), 1)+", Leggings: "+Entity.getArmorDamage(Player.getPointedEntity(), 2)+", Boots: "+Entity.getArmorDamage(Player.getPointedEntity(), 3));
 		} else {
+			ModPE.showTipMessage(client + "\nName: "+Player.getName(Player.getPointedEntity())+", RenderType: "+Entity.getRenderType(Player.getPointedEntity())+", Health: "+Entity.getHealth(Player.getPointedEntity())+"/"+Entity.getMaxHealth(Player.getPointedEntity())+"");
+		}
+	}
+	if(facedInfo2){
+	if(Entity.getEntityTypeId(Player.getPointedEntity()) <= 63){
 			ModPE.showTipMessage(client + "\nName: "+Player.getName(Player.getPointedEntity())+", RenderType: "+Entity.getRenderType(Player.getPointedEntity())+", Health: "+Entity.getHealth(Player.getPointedEntity())+"/"+Entity.getMaxHealth(Player.getPointedEntity())+"");
 		}
 	}
