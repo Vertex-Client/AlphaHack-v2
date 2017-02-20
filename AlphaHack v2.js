@@ -483,7 +483,7 @@ AlphaHack.drawTracer = function(x, y, z, groundMode, particleName) {
 }
 
 function getUpdate(callback){
-var r = new java.lang.Runnable({
+MainActivity.runOnUiThread(var r = new java.lang.Runnable({
         run: function() {
             try {
                 /*var c = u.openConnection();
@@ -528,11 +528,11 @@ callback(new Array("Error"));
                 /*print(e.lineNumber);*/
                 
                 }
-                }});
+                }}));
                 var th = new java.lang.Thread(r);
     th.start();
                 }
-getUpdate(function(info){});
+getUpdate();
 
 function startUp(){
 MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
@@ -1133,13 +1133,6 @@ if(getLanguage=="ko_KR")android.widget.Toast.makeText(MainActivity, "성공적�
 	    line0.setOrientation(0);
 
         menuLayout.addView(line0);
-		
-	   /*var title4 = new android.widget.TextView(MainActivity);
-            title4.setTextSize(15);
-            title4.setText("");
-            title4.setGravity(android.view.Gravity.CENTER);
-            title4.setTextColor(GUIName);
-            menuLayout.addView(title4);*/
 	    
 var group = new styleButton();
 group.setText("Community");
@@ -2968,24 +2961,6 @@ autodestroy2 = false;
                 }
             }));
             cheatLayout.addView(button13);
-			
-            var kjump = new styleButton();
-            kjump.setText("Infinite jump: "+(jump?"on":"off"));
-            kjump.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
-jump?jump=false:jump=true;
-kjump.setText("Infinite jump: "+(jump?"on":"off"));
-if(jump == true){
-clientMessage(client + "§7");
-jump = true;
-}
-if(jump == false){
-clientMessage(client + "§7");
-jump = false;
-                }
-}
-            }));
-            cheatLayout.addView(kjump);
             
             var nowall = new styleButton();
             nowall.setText("No clip: "+(noclip?"on":"off"));
@@ -3373,7 +3348,7 @@ onfriction = false;
 			misc1.setBackgroundDrawable(textviewBg);
             cheatLayout.addView(misc1);
 			
-					var bypass1 = new styleButton();
+var bypass1 = new styleButton();
 bypass1.setText("Anti-spam bypass");
 bypass1.setTextColor(android.graphics.Color.RED);
 if(antispam2==true)bypass1.setTextColor(android.graphics.Color.GREEN);
@@ -11757,12 +11732,14 @@ if(block == true)preventDefault()
 }
 
 function useItem(x, y, z, itemId, blockId, side, itemDamage, blockDamage){
-if(deadchat)if(blockId == 63 || blockId == 68){
+if(deadchat){
+	if(blockId == 63 || blockId == 68){
 	var notex = x;
 	var notey = y;
 	var notez = z;
 	
 	signEditor();
+}
 }
 
 	if(lightning) {
@@ -12040,7 +12017,9 @@ if (spider && Utils.Player.isCollidedHorizontally()) {
 		}
 	}
 	if(facedInfo){
-		if(Entity.getEntityTypeId(Player.getPointedEntity()) != 63)ModPE.showTipMessage(client + "\nName: "+Player.getName(Player.getPointedEntity())+", RenderType: "+Entity.getRenderType(Player.getPointedEntity())+", Health: "+Entity.getHealth(Player.getPointedEntity())+"/"+Entity.getMaxHealth(Player.getPointedEntity())+"");
+		if(Entity.getEntityTypeId(Player.getPointedEntity()) <= 63){
+			ModPE.showTipMessage(client + "\nName: "+Player.getName(Player.getPointedEntity())+", RenderType: "+Entity.getRenderType(Player.getPointedEntity())+", Health: "+Entity.getHealth(Player.getPointedEntity())+"/"+Entity.getMaxHealth(Player.getPointedEntity())+"");
+		}
 		if(Entity.getEntityTypeId(Player.getPointedEntity()) == 63 && Entity.getArmorDamage(Player.getPointedEntity(), 0) != 0 || Entity.getArmorDamage(Player.getPointedEntity(), 1) != 0 || Entity.getArmorDamage(Player.getPointedEntity(), 2) != 0 || Entity.getArmorDamage(Player.getPointedEntity(), 3) != 0){
 			ModPE.showTipMessage(client + "\nName: "+Player.getName(Player.getPointedEntity())+", RenderType: "+Entity.getRenderType(Player.getPointedEntity())+", Health: "+Entity.getHealth(Player.getPointedEntity())+"/"+Entity.getMaxHealth(Player.getPointedEntity())+"\nHead: "+Entity.getArmorDamage(Player.getPointedEntity(), 0)+", Chest: "+Entity.getArmorDamage(Player.getPointedEntity(), 1)+", Leggings: "+Entity.getArmorDamage(Player.getPointedEntity(), 2)+", Boots: "+Entity.getArmorDamage(Player.getPointedEntity(), 3));
 		} else {
@@ -12049,7 +12028,6 @@ if (spider && Utils.Player.isCollidedHorizontally()) {
 	}
 	if(onfriction)onlyFriction();
 	if(rainitem==true){
-Level.dropItem(getPlayerX(),getPlayerY()+11,getPlayerZ(),0,rainId,1);
 Level.dropItem(getPlayerX()+3,getPlayerY()+11,getPlayerZ(),0,rainId,1);
 Level.dropItem(getPlayerX()+7,getPlayerY()+11,getPlayerZ(),0,rainId,1);
 Level.dropItem(getPlayerX(),getPlayerY()+11,getPlayerZ()+3,0,rainId,1);
