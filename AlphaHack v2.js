@@ -383,6 +383,10 @@ var particle30 = false;
 var particle31 = false;
 //spell3
 var particle32 = false;
+//carrotboost
+var particle33 = false;
+//witchspell
+var particle34 = false;
 
 //define mod menu color changes and sizes
 var GUIColor = android.graphics.Color.TRANSPARENT;
@@ -2343,8 +2347,8 @@ web3();
       {
       var urls2 = new android.content.Intent(MainActivity);
 	  urls2.setAction(android.content.Intent.ACTION_VIEW);
-                    urls2.setData(android.net.Uri.parse("http://www.tineye.com"));
-                    MainActivity.startActivity(urls2);
+	  urls2.setData(android.net.Uri.parse("http://www.tineye.com"));
+	  MainActivity.startActivity(urls2);
       }
 
 var sid = new styleButton();
@@ -6727,7 +6731,7 @@ Player.enchant(Player.getSelectedSlotId(), Enchantment.KNOCKBACK,tysplvl);
 Player.enchant(Player.getSelectedSlotId(), Enchantment.LOOTING,tysplvl);
 Player.enchant(Player.getSelectedSlotId(), Enchantment.SHARPNESS,tysplvl);
 Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,tysplvl);
-		    Player.setLevel(Math.round(tysplvl));
+		    //Player.setLevel(Math.round(tysplvl));
 		    Player.setItemCustomName(Player.getSelectedSlotId(), "God sword");
 		    }
             }
@@ -6748,7 +6752,7 @@ Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,tysplvl);
 Player.enchant(Player.getSelectedSlotId(), Enchantment.EFFICIENCY,tysplvl);
 Player.enchant(Player.getSelectedSlotId(), Enchantment.FORTUNE,fortuneLvl);
 Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,tysplvl);
-		    Player.setLevel(Math.round(tysplvl));
+		    //Player.setLevel(Math.round(tysplvl));
 		    Player.setItemCustomName(Player.getSelectedSlotId(), "God pickaxe");
 		    }
             }
@@ -6769,7 +6773,7 @@ Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,tysplvl);
 Player.enchant(Player.getSelectedSlotId(), Enchantment.EFFICIENCY,tysplvl);
 Player.enchant(Player.getSelectedSlotId(), Enchantment.FORTUNE,fortuneLvl);
 Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,tysplvl);
-		    Player.setLevel(Math.round(tysplvl));
+		    //Player.setLevel(Math.round(tysplvl));
 		    Player.setItemCustomName(Player.getSelectedSlotId(), "God axe");
 		    }
             }
@@ -6791,7 +6795,7 @@ Player.enchant(Player.getSelectedSlotId(), Enchantment.FLAME,flamelvl);
 Player.enchant(Player.getSelectedSlotId(), Enchantment.PUNCH,tysplvl);
 Player.enchant(Player.getSelectedSlotId(), Enchantment.INFINITY,tysplvl);
 Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,tysplvl);
-		    Player.setLevel(Math.round(tysplvl));
+		    //Player.setLevel(Math.round(tysplvl));
 		    Player.setItemCustomName(Player.getSelectedSlotId(), "God bow");
 		    }
             }
@@ -6811,7 +6815,7 @@ var god3 = new styleButton();
 Player.enchant(Player.getSelectedSlotId(), Enchantment.PROTECTION,tysplvl);
 Player.enchant(Player.getSelectedSlotId(), Enchantment.THORNS,tysplvl);
 Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,tysplvl);
-		    Player.setLevel(Math.round(tysplvl));
+		    //Player.setLevel(Math.round(tysplvl));
 		    Player.setItemCustomName(Player.getSelectedSlotId(), "God armor");
 		    }
 		    
@@ -6889,7 +6893,6 @@ onClick: function(view){
 ll =lvl.getText();
 Dialog.dismiss();
 add1();
-showMenuBtn();
 }
 });
 
@@ -6942,7 +6945,6 @@ onClick: function(view){
 ll =lvl.getText();
 Dialog.dismiss();
 add2();
-showMenuBtn();
 }
 });
 
@@ -6995,7 +6997,6 @@ onClick: function(view){
 ll =lvl.getText();
 Dialog.dismiss();
 add3();
-showMenuBtn();
 }
 });
 
@@ -7048,7 +7049,6 @@ onClick: function(view){
 ll =lvl.getText();
 Dialog.dismiss();
 add5();
-showMenuBtn();
 }
 });
 
@@ -7101,7 +7101,6 @@ onClick: function(view){
 ll =lvl.getText();
 Dialog.dismiss();
 add6();
-showMenuBtn();
 }
 });
 
@@ -7154,7 +7153,6 @@ onClick: function(view){
 ll =lvl.getText();
 Dialog.dismiss();
 add7();
-showMenuBtn();
 }
 });
 
@@ -7207,7 +7205,6 @@ onClick: function(view){
 ll =lvl.getText();
 Dialog.dismiss();
 add8();
-showMenuBtn();
 }
 });
 
@@ -7260,7 +7257,6 @@ onClick: function(view){
 ll =lvl.getText();
 Dialog.dismiss();
 add9();
-showMenuBtn();
 }
 });
 
@@ -7313,7 +7309,6 @@ onClick: function(view){
 ll =lvl.getText();
 Dialog.dismiss();
 add10();
-showMenuBtn();
 }
 });
 
@@ -7366,7 +7361,6 @@ onClick: function(view){
 ll =lvl.getText();
 Dialog.dismiss();
 add11();
-showMenuBtn();
 }
 });
 
@@ -7419,7 +7413,6 @@ onClick: function(view){
 ll =lvl.getText();
 Dialog.dismiss();
 add12();
-showMenuBtn();
 }
 });
 
@@ -7472,7 +7465,6 @@ onClick: function(view){
 ll =lvl.getText();
 Dialog.dismiss();
 add13();
-showMenuBtn();
 }
 });
 
@@ -7525,7 +7517,6 @@ onClick: function(view){
 ll =lvl.getText();
 Dialog.dismiss();
 add14();
-showMenuBtn();
 }
 });
 
@@ -7578,7 +7569,6 @@ onClick: function(view){
 ll =lvl.getText();
 Dialog.dismiss();
 add15();
-showMenuBtn();
 }
 });
 
@@ -7631,7 +7621,6 @@ onClick: function(view){
 ll =lvl.getText();
 Dialog.dismiss();
 add16();
-showMenuBtn();
 }
 });
 
@@ -7684,7 +7673,6 @@ onClick: function(view){
 ll =lvl.getText();
 Dialog.dismiss();
 add17();
-showMenuBtn();
 }
 });
 
@@ -7737,7 +7725,6 @@ onClick: function(view){
 ll =lvl.getText();
 Dialog.dismiss();
 add18();
-showMenuBtn();
 }
 });
 
@@ -7790,7 +7777,6 @@ onClick: function(view){
 ll =lvl.getText();
 Dialog.dismiss();
 add19();
-showMenuBtn();
 }
 });
 
@@ -7843,7 +7829,6 @@ onClick: function(view){
 ll =lvl.getText();
 Dialog.dismiss();
 add20();
-showMenuBtn();
 }
 });
 
@@ -7896,7 +7881,6 @@ onClick: function(view){
 ll =lvl.getText();
 Dialog.dismiss();
 add21();
-showMenuBtn();
 }
 });
 
@@ -7949,7 +7933,6 @@ onClick: function(view){
 ll =lvl.getText();
 Dialog.dismiss();
 add22();
-showMenuBtn();
 }
 });
 
@@ -8002,7 +7985,6 @@ onClick: function(view){
 ll =lvl.getText();
 Dialog.dismiss();
 add23();
-showMenuBtn();
 }
 });
 
@@ -8055,7 +8037,6 @@ onClick: function(view){
 ll =lvl.getText();
 Dialog.dismiss();
 add24();
-showMenuBtn();
 }
 });
 
@@ -8108,7 +8089,6 @@ onClick: function(view){
 ll =lvl.getText();
 Dialog.dismiss();
 add25();
-showMenuBtn();
 }
 });
 
@@ -8161,7 +8141,6 @@ onClick: function(view){
 ll =lvl.getText();
 Dialog.dismiss();
 add26();
-showMenuBtn();
 }
 });
 
@@ -9752,6 +9731,38 @@ clientMessage(client + "§7Particle 32 is false");
 }
             }));
             particleLayout.addView(p32);
+			
+var p33 = new styleButton();
+            p33.setText("Carrot boost: "+(particle33?"on":"off"));
+            p33.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+particle33?particle33=false:particle33=true;
+p33.setText("Carrot boost: "+(particle33?"on":"off"));
+if(particle33 == true){
+clientMessage(client + "§7Particle 33 is true");
+}
+if(particle33 == false){
+clientMessage(client + "§7Particle 33 is false");
+                }
+}
+            }));
+            particleLayout.addView(p33);
+			
+var p34 = new styleButton();
+            p34.setText("Witch spell: "+(particle34?"on":"off"));
+            p34.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+particle34?particle34=false:particle34=true;
+p34.setText("Witch spell: "+(particle34?"on":"off"));
+if(particle34 == true){
+clientMessage(client + "§7Particle 34 is true");
+}
+if(particle34 == false){
+clientMessage(client + "§7Particle 34 is false");
+                }
+}
+            }));
+            particleLayout.addView(p34);
 
             particle = new android.widget.PopupWindow(particleLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)particle.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
@@ -11111,6 +11122,8 @@ if(particle29)Level.addParticle(ParticleType.waterWake, x, y, z, 0, 0, 0, 150);
 if(particle30)Level.addParticle(ParticleType.largeexplode, x, y, z, 0, 0, 0, 150);
 if(particle31)Level.addParticle(ParticleType.spell2, x, y, z, 0, 0, 0, 150);
 if(particle32)Level.addParticle(ParticleType.spell3, x, y, z, 0, 0, 0, 150);
+if(particle33)Level.addParticle(ParticleType.carrotboost, x, y, z, 0, 0, 0, 150);
+if(particle34)Level.addParticle(ParticleType.witchspell, x, y, z, 0, 0, 0, 150);
 }
 	if(hitmorph)Entity.setRenderType(Player.getEntity(), Entity.getRenderType(victim));
 	if(hitrmef)Entity.removeAllEffects(victim);
@@ -11903,6 +11916,8 @@ if(particle29)Level.addParticle(ParticleType.waterWake, x, y+1, z, 0, 0, 0, 150)
 if(particle30)Level.addParticle(ParticleType.largeexplode, x, y+1, z, 0, 0, 0, 150);
 if(particle31)Level.addParticle(ParticleType.spell2, x, y+1, z, 0, 0, 0, 150);
 if(particle32)Level.addParticle(ParticleType.spell3, x, y+1, z, 0, 0, 0, 150);
+if(particle33)Level.addParticle(ParticleType.carrotboost, x, y+1, z, 0, 0, 0, 150);
+if(particle34)Level.addParticle(ParticleType.witchspell, x, y+1, z, 0, 0, 0, 150);
 }
 }
 }
@@ -11965,6 +11980,8 @@ if(particle29)Level.addParticle(ParticleType.waterWake, getPlayerX(), getPlayerY
 if(particle30)Level.addParticle(ParticleType.largeexplode, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
 if(particle31)Level.addParticle(ParticleType.spell2, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
 if(particle32)Level.addParticle(ParticleType.spell3, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle33)Level.addParticle(ParticleType.carrotboost, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle34)Level.addParticle(ParticleType.witchspell, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
 
 if(onlynight)Level.setTime(15000);
 
