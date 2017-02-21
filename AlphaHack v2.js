@@ -470,7 +470,9 @@ function styleButton(){
 /*thanks godsoft029 for working on this with me.*/
 let button = new android.widget.Button(ctx);
 button.setTextColor(GUIText);
-/*button.setFocusableInTouch(true);*/
+button.setFocusableInTouchMode(false);
+button.setTransformationMethod(null);
+button.setSoundEffectsEnabled(true);
 if(mcpetheme==true)button.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 var buttonBg = new android.graphics.drawable.GradientDrawable();
 if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000"));
@@ -623,9 +625,19 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
 		webs.setScrollBarStyle(webs.SCROLLBARS_INSIDE_OVERLAY);
 		webs.requestFocus(webs.FOCUS_DOWN);
 		webs.requestFocusFromTouch();
+		var webset = webs.getSettings();
 		
-			
-			var exit = new styleButton();
+		var exit = new styleButton();
+		var settings = new styleButton();
+		var back = new styleButton();
+		var clear = new styleButton();
+		var js1 = new styleButton();
+		var geo = new styleButton();
+		var passes = new styleButton();
+		var jscript = true;
+		var geoloco = false;
+		var savepass = false;
+		
             exit.setText("Exit");
 			exit.setTextColor(android.graphics.Color.RED);
             exit.setOnClickListener(new View.OnClickListener({
@@ -638,16 +650,124 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
                 }
             }));
             wvLayout.addView(exit);
+			
+            settings.setText("Settings");
+            settings.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				webs.setVisibility(android.view.View.GONE);
+				settings.setVisibility(android.view.View.GONE);
+				back.setVisibility(android.view.View.VISIBLE);
+				clear.setVisibility(android.view.View.VISIBLE);
+				js1.setVisibility(android.view.View.VISIBLE);
+				geo.setVisibility(android.view.View.VISIBLE);
+				passes.setVisibility(android.view.View.VISIBLE);
+                }
+            }));
+            wvLayout.addView(settings);
+			
+            back.setText("Back to webview");
+			back.setVisibility(android.view.View.GONE);
+            back.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				webs.setVisibility(android.view.View.VISIBLE);
+				settings.setVisibility(android.view.View.VISIBLE);
+				back.setVisibility(android.view.View.GONE);
+				clear.setVisibility(android.view.View.GONE);
+				js1.setVisibility(android.view.View.GONE);
+				geo.setVisibility(android.view.View.GONE);
+				passes.setVisibility(android.view.View.GONE);
+                }
+            }));
+            wvLayout.addView(back);
+			
+            clear.setText("Clear history");
+			clear.setVisibility(android.view.View.GONE);
+            clear.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				webs.clearCache(true);
+				webs.clearFormData();
+				webs.clearHistory();
+                }
+            }));
+            wvLayout.addView(clear);
+			
+js1.setText("JavaScript enabled");
+			js1.setTextColor(android.graphics.Color.RED);
+            js1.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             jscript?jscript=false:jscript=true;
+if(jscript == true){
+js1.setTextColor(Color.GREEN);
+js1.setText("JavaScript enabled");
+webset.setJavaScriptEnabled(true);
+webs.reload();
+jscript = true;
+}
+if(jscript == false){
+js1.setTextColor(Color.RED);
+js1.setText("JavaScript disabled");
+webset.setJavaScriptEnabled(false);
+webs.reload();
+jscript = false;
+}
+                }
+            }));
+            wvLayout.addView(js1);
+			
+			geo.setText("Geolocation disabled");
+			geo.setTextColor(android.graphics.Color.RED);
+            geo.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             geoloco?geoloco=false:geoloco=true;
+if(geoloco == true){
+geo.setTextColor(Color.GREEN);
+geo.setText("Geolocation enabled");
+webset.setGeolocationEnabled(true);
+webs.reload();
+geoloco = true;
+}
+if(geoloco == false){
+geo.setTextColor(Color.RED);
+geo.setText("Geolocation disabled");
+webset.setGeolocationEnabled(false);
+webs.reload();
+geoloco = false;
+}
+                }
+            }));
+            wvLayout.addView(geo);
+			
+			passes.setText("SavePasswords disabled");
+			passes.setTextColor(android.graphics.Color.RED);
+            passes.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             savepass?savepass=false:savepass=true;
+if(savepass == true){
+passes.setTextColor(Color.GREEN);
+passes.setText("SavePasswords enabled");
+webset.setSavePassword(true);
+webs.reload();
+savepass = true;
+}
+if(savepass == false){
+passes.setTextColor(Color.RED);
+passes.setText("SavePasswords disabled");
+webset.setSavePassword(false);
+webs.reload();
+savepass = false;
+}
+                }
+            }));
+            wvLayout.addView(passes);
             
-			var webset = webs.getSettings();
 			webset.setLoadsImagesAutomatically(true);
 			webset.setJavaScriptCanOpenWindowsAutomatically(false);
 			webset.setSupportZoom(true);
 			webset.setBuiltInZoomControls(true);
 			webset.setDisplayZoomControls(false);
-			webset.setGeolocationEnabled(false);
-			webset.setJavaScriptEnabled(true);
-			webset.setSavePassword(false);
+			webset.setGeolocationEnabled(geoloco);
+			webset.setJavaScriptEnabled(jscript);
+			webset.setSavePassword(savepass);
 			webset.setAppCacheEnabled(false);
 			webset.setUserAgentString(webset.getUserAgentString());
 			webset.setAllowContentAccess(false);
@@ -882,7 +1002,6 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         var layout = new android.widget.LinearLayout(MainActivity);
         layout.setOrientation(1);
         var menuBtn = new styleButton();
-        menuBtn.setTextSize(26);
         if(hide==false)menuBtn.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(bg64, 0) , 0, android.util.Base64.decode(bg64, 0).length)));
         if(hide==true)menuBtn.setText("α");
         menuBtn.setOnClickListener(new View.OnClickListener({
