@@ -8388,10 +8388,11 @@ var scroll = new android.widget.ScrollView(MainActivity);
 var layout = new android.widget.LinearLayout(MainActivity); 
 layout.setOrientation(1);
 alert.setTitle("MCPE "+getVer+" Items");
-var bids = Block.getAllBlockIds();
-  for (var i = 0; i < bids.length; i++) {
-alert.setMessage(Item.getName(bids[i], 0, false) + " - " + bids[i] + "\n");
-  }
+var ids = Block.getAllBlockIds();
+			for (var i = 0; i < ids.length; i++) {
+				var names = Item.getName(ids[i], 0, false);
+				alert.setMessage(names.join(" - " + ids.join("\n")));
+			}
 alert.setPositiveButton("Exit all", new android.content.DialogInterface.OnClickListener(){ 
   onClick: function(viewarg){
 dialog.dismiss();
