@@ -6917,7 +6917,7 @@ Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,tysplvl);
             god5.setText("God bow");
             god5.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-                godaxe()	
+                godbow();	
                 }
             }));
             enchantLayout.addView(god5);
