@@ -8383,17 +8383,15 @@ var button90 = new styleButton();
             button90.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 				/*betterWebview('https://arceusmatt.github.io/minecraftid.html');*/
-var bids = Block.getAllBlockIds();
-  for (var i = 0; i < bids.length; i++) {
-    var ids = bids[i];
-    var names = Item.getName(bids[i], 0, false);
-  }
 var alert = new android.app.AlertDialog.Builder(MainActivity); 
 var scroll = new android.widget.ScrollView(MainActivity); 
 var layout = new android.widget.LinearLayout(MainActivity); 
 layout.setOrientation(1);
 alert.setTitle("MCPE "+getVer+" Items");
-alert.setMessage(names + " - " + ids + "\n");
+var bids = Block.getAllBlockIds();
+  for (var i = 0; i < bids.length; i++) {
+alert.setMessage(Item.getName(bids[i], 0, false); + " - " + bids[i] + "\n");
+  }
 alert.setPositiveButton("Exit all", new android.content.DialogInterface.OnClickListener(){ 
   onClick: function(viewarg){
 dialog.dismiss();
