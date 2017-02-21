@@ -8390,7 +8390,7 @@ layout.setOrientation(1);
 alert.setTitle("MCPE "+getVer+" Items");
 var bids = Block.getAllBlockIds();
   for (var i = 0; i < bids.length; i++) {
-alert.setMessage(Item.getName(bids[i], 0, false); + " - " + bids[i] + "\n");
+alert.setMessage(Item.getName(bids[i], 0, false) + " - " + bids[i] + "\n");
   }
 alert.setPositiveButton("Exit all", new android.content.DialogInterface.OnClickListener(){ 
   onClick: function(viewarg){
