@@ -634,11 +634,13 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
 		var js1 = new styleButton();
 		var geo = new styleButton();
 		var passes = new styleButton();
+		var agent1 = new android.widget.TextView(MainActivity);
 		back.setVisibility(android.view.View.GONE);
 		clear.setVisibility(android.view.View.GONE);
 		js1.setVisibility(android.view.View.GONE);
 		geo.setVisibility(android.view.View.GONE);
 		passes.setVisibility(android.view.View.GONE);
+		agent1.setVisibility(android.view.View.GONE);
 		var jscript = true;
 		var geoloco = false;
 		var savepass = false;
@@ -666,6 +668,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
 				js1.setVisibility(android.view.View.VISIBLE);
 				geo.setVisibility(android.view.View.VISIBLE);
 				passes.setVisibility(android.view.View.VISIBLE);
+			agent1.setVisibility(android.view.View.VISIBLE);
                 }
             }));
             wvLayout.addView(settings);
@@ -681,6 +684,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
 				js1.setVisibility(android.view.View.GONE);
 				geo.setVisibility(android.view.View.GONE);
 				passes.setVisibility(android.view.View.GONE);
+			agent1.setVisibility(android.view.View.GONE);
                 }
             }));
             wvLayout.addView(back);
@@ -764,6 +768,13 @@ savepass = false;
                 }
             }));
             wvLayout.addView(passes);
+		
+		agent1.setText(webset.getUserAgentString()+"");
+		agent1.setTextColor(android.graphics.Color.WHITE);
+		var textviewBg = new android.graphics.drawable.GradientDrawable();
+		textviewBg.setColor(android.graphics.Color.BLACK);
+		agent1.setBackgroundDrawable(textviewBg);
+		wvLayout.addView(agent1);
             
 			webset.setLoadsImagesAutomatically(true);
 			webset.setJavaScriptCanOpenWindowsAutomatically(false);
@@ -780,7 +791,7 @@ savepass = false;
 			webset.setAllowFileAccessFromFileURLs(false);
 			webset.setAllowUniversalAccessFromFileURLs(false);
 			webset.setDatabaseEnabled(false);
-			/*webset.setCacheMode(WebSettings.LOAD_NO_CACHE);*/
+			webset.setCacheMode(android.webkit.WebSettings.LOAD_NO_CACHE);
 			webset.setDomStorageEnabled(false);
 			webs.loadUrl(url);
 			wvLayout.addView(webs);
@@ -8371,11 +8382,35 @@ var button90 = new styleButton();
             button90.setText("Item ID list");
             button90.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-				betterWebview('https://arceusmatt.github.io/minecraftid.html');
-			give.dismiss();
+				/*betterWebview('https://arceusmatt.github.io/minecraftid.html');*/
+var bids = Block.getAllBlockIds();
+  for (var i = 0; i < bids.length; i++) {
+    var ids = bids[i];
+    var names = Item.getName(bids[i], 0, false);
+  }
+var alert = new android.app.AlertDialog.Builder(MainActivity); 
+var scroll = new android.widget.ScrollView(MainActivity); 
+var layout = new android.widget.LinearLayout(MainActivity); 
+layout.setOrientation(1);
+alert.setTitle("MCPE "+getVer+" Items");
+alert.setMessage(names + " - " + ids + "\n");
+alert.setPositiveButton("Exit all", new android.content.DialogInterface.OnClickListener(){ 
+  onClick: function(viewarg){
+dialog.dismiss();
+give.dismiss();
+showMenuBtn();
+      }});
+alert.setNegativeButton("Back to menu", new android.content.DialogInterface.OnClickListener(){ 
+   onClick: function(viewarg){
+dialog.dismiss();
+      }});
+var dialog = alert.create();
+dialog.show();
                 }
             }));
             giveLayout.addView(button90);
+	
+	
 
 function idList()
       {
@@ -10726,7 +10761,9 @@ taptp = false;
 			var et = new android.widget.TextView(MainActivity);
 			et.setGravity(android.view.Gravity.CENTER);
 		et.setText("You may crash while tping because blocks do not load correctly.");
-       et.setTextColor(android.graphics.Color.RED);
+		et.setTextColor(android.graphics.Color.BLACK);
+		textviewBg.setColor(android.graphics.Color.WHITE);
+		et.setBackgroundDrawable(textviewBg);
 		et.setTextSize(20);
 		teleportLayout.addView(et);
 
