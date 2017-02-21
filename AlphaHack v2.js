@@ -702,14 +702,14 @@ js1.setText("JavaScript enabled");
                 onClick: function(viewarg){
              jscript?jscript=false:jscript=true;
 if(jscript == true){
-js1.setTextColor(Color.GREEN);
+js1.setTextColor(android.graphics.Color.GREEN);
 js1.setText("JavaScript enabled");
 webset.setJavaScriptEnabled(true);
 webs.reload();
 jscript = true;
 }
 if(jscript == false){
-js1.setTextColor(Color.RED);
+js1.setTextColor(android.graphics.Color.RED);
 js1.setText("JavaScript disabled");
 webset.setJavaScriptEnabled(false);
 webs.reload();
@@ -725,14 +725,14 @@ jscript = false;
                 onClick: function(viewarg){
              geoloco?geoloco=false:geoloco=true;
 if(geoloco == true){
-geo.setTextColor(Color.GREEN);
+geo.setTextColor(android.graphics.Color.GREEN);
 geo.setText("Geolocation enabled");
 webset.setGeolocationEnabled(true);
 webs.reload();
 geoloco = true;
 }
 if(geoloco == false){
-geo.setTextColor(Color.RED);
+geo.setTextColor(android.graphics.Color.RED);
 geo.setText("Geolocation disabled");
 webset.setGeolocationEnabled(false);
 webs.reload();
@@ -748,14 +748,14 @@ geoloco = false;
                 onClick: function(viewarg){
              savepass?savepass=false:savepass=true;
 if(savepass == true){
-passes.setTextColor(Color.GREEN);
+passes.setTextColor(android.graphics.Color.GREEN);
 passes.setText("SavePasswords enabled");
 webset.setSavePassword(true);
 webs.reload();
 savepass = true;
 }
 if(savepass == false){
-passes.setTextColor(Color.RED);
+passes.setTextColor(android.graphics.Color.RED);
 passes.setText("SavePasswords disabled");
 webset.setSavePassword(false);
 webs.reload();
