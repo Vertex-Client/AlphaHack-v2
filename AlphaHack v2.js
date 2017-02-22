@@ -1017,7 +1017,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
     try{
         var layout = new android.widget.LinearLayout(MainActivity);
         layout.setOrientation(1);
-        var menuBtn = new styleButton();
+        var menuBtn = new android.widget.Button(ctx);
         if(hide==false)menuBtn.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(bg64, 0) , 0, android.util.Base64.decode(bg64, 0).length)));
         if(hide==true)menuBtn.setText("α");
         menuBtn.setOnClickListener(new View.OnClickListener({
@@ -12408,7 +12408,7 @@ iplu = new android.widget.PopupWindow();
 var Layer4 = new android.widget.LinearLayout(ctx);
 var ip1 = new android.widget.EditText(ctx);
 var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Exit = new styleButton(ctx);
 
 Dialog.setTitle("Enter IP to trace");
 Dialog.setContentView(Layer4);
@@ -12463,7 +12463,7 @@ var Layer4 = new android.widget.LinearLayout(ctx);
 var ddip = new android.widget.EditText(ctx);
 var ddip2 = new android.widget.EditText(ctx);
 var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Exit = new styleButton(ctx);
 
 Dialog.setTitle("Enter server");
 Dialog.setContentView(Layer4);
@@ -13833,7 +13833,7 @@ var Layer = new android.widget.LinearLayout(ctx);
 var xy = new android.widget.EditText(ctx);
 var xy2 = new android.widget.EditText(ctx);
 var Dialog = new android.app.Dialog(ctx);
-var Exit = new android.widget.Button(ctx);
+var Exit = new styleButton(ctx);
 
 Dialog.setTitle("Enter sign line & text");
 Dialog.setContentView(Layer);
