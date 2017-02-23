@@ -10756,10 +10756,11 @@ taptp = false;
 		});
 		teleportLayout.addView(at);
 			
-			var et = new android.widget.TextView(MainActivity);
-			et.setGravity(android.view.Gravity.CENTER);
+		var et = new android.widget.TextView(MainActivity);
+		et.setGravity(android.view.Gravity.CENTER);
 		et.setText("You may crash while tping because blocks do not load correctly.");
 		et.setTextColor(android.graphics.Color.BLACK);
+		var textviewBg = new android.graphics.drawable.GradientDrawable();
 		textviewBg.setColor(android.graphics.Color.WHITE);
 		et.setBackgroundDrawable(textviewBg);
 		et.setTextSize(20);
