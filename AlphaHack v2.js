@@ -3153,20 +3153,21 @@ autodestroy2 = false;
             }));
             cheatLayout.addView(button13);
             
-            var nowall = new styleButton();
-            nowall.setText("No clip: "+(noclip?"on":"off"));
-            nowall.setOnClickListener(new android.view.View.OnClickListener({
+var nowall = new styleButton();
+nowall.setText("No clip");
+nowall.setTextColor(android.graphics.Color.RED);
+if(noclip==true)nowall.setTextColor(android.graphics.Color.GREEN);
+            nowall.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-noclip?noclip=false:noclip=true;
-nowall.setText("No clip: "+(noclip?"on":"off"));
+             noclip?noclip=false:noclip=true;
+nowall.setText("No clip");
 if(noclip == true){
-clientMessage(client + "§7No clip / walk through walls on");
-
+nowall.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"No clip on");
 Block.setShape(4, null, null, null, null, null, null);
 Block.setShape(5, null, null, null, null, null, null);
 Block.setShape(17, null, null, null, null, null, null);
 Block.setShape(3, null, null, null, null, null, null);
-
 Block.setShape(24, null, null, null, null, null, null);
 Block.setShape(3, null, null, null, null, null, null);
 Block.setShape(41, null, null, null, null, null, null);
@@ -3175,7 +3176,6 @@ Block.setShape(45, null, null, null, null, null, null);
 Block.setShape(49, null, null, null, null, null, null);
 Block.setShape(48, null, null, null, null, null, null);
 Block.setShape(47, null, null, null, null, null, null);
-
 Block.setShape(57, null, null, null, null, null, null);
 Block.setShape(8, null, null, null, null, null, null);
 Block.setShape(98, null, null, null, null, null, null);
@@ -3183,7 +3183,6 @@ Block.setShape(1, null, null, null, null, null, null);
 Block.setShape(112, null, null, null, null, null, null);
 Block.setShape(133, null, null, null, null, null, null);
 Block.setShape(7, null, null, null, null, null, null);
-
 Block.setShape(155, null, null, null, null, null, null);
 Block.setShape(179, null, null, null, null, null, null);
 Block.setShape(188, null, null, null, null, null, null);
@@ -3191,17 +3190,15 @@ Block.setShape(189, null, null, null, null, null, null);
 Block.setShape(19, null, null, null, null, null, null);
 Block.setShape(191, null, null, null, null, null, null);
 Block.setShape(192, null, null, null, null, null, null);
-
 noclip = true;
 }
 if(noclip == false){
-clientMessage(client + "§7No clip / walk through walls off");
-
+nowall.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"No clip off");
 Block.setShape(4, 0, 0, 0, 1, 1, 1);
 Block.setShape(5, 0, 0, 0, 1, 1, 1);
 Block.setShape(17, 0, 0, 0, 1, 1, 1);
 Block.setShape(3, 0, 0, 0, 1, 1, 1);
-
 Block.setShape(24, 0, 0, 0, 1, 1, 1);
 Block.setShape(21, 0, 0, 0, 1, 1, 1);
 Block.setShape(41, 0, 0, 0, 1, 1, 1);
@@ -3210,7 +3207,6 @@ Block.setShape(45, 0, 0, 0, 1, 1, 1);
 Block.setShape(49, 0, 0, 0, 1, 1, 1);
 Block.setShape(48, 0, 0, 0, 1, 1, 1);
 Block.setShape(47, 0, 0, 0, 1, 1, 1);
-
 Block.setShape(57, 0, 0, 0, 1, 1, 1);
 Block.setShape(81, 0, 0, 0, 1, 1, 1);
 Block.setShape(98, 0, 0, 0, 1, 1, 1);
@@ -3218,7 +3214,6 @@ Block.setShape(111, 0, 0, 0, 1, 1, 1);
 Block.setShape(112, 0, 0, 0, 1, 1, 1);
 Block.setShape(133, 0, 0, 0, 1, 1, 1);
 Block.setShape(7, 0, 0, 0, 1, 1, 1);
-
 Block.setShape(155, 0, 0, 0, 1, 1, 1);
 Block.setShape(179, 0, 0, 0, 1, 1, 1);
 Block.setShape(188, 0, 0, 0, 1, 1, 1);
@@ -3226,10 +3221,9 @@ Block.setShape(189, 0, 0, 0, 1, 1, 1);
 Block.setShape(191, 0, 0, 0, 1, 1, 1);
 Block.setShape(191, 0, 0, 0, 1, 1, 1);
 Block.setShape(192, 0, 0, 0, 1, 1, 1);
-
 noclip = false;
-                }
 }
+                }
             }));
             cheatLayout.addView(nowall);
 			
@@ -4035,6 +4029,17 @@ android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
             }));
             cmdLayout.addView(opp);
+			
+				    var vpl = new styleButton();
+            vpl.setText("View plugins");        
+            vpl.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){ 
+Server.sendChat("./ver a");
+Server.sendChat("./ver b");
+android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+                }
+            }));
+            cmdLayout.addView(vpl);
             
             var a1 = new styleButton();
             a1.setText("Time: 6:00am");
@@ -4979,26 +4984,28 @@ endHack2.setText("End gateway");
             modLayout.addView(endHack2);
 
 var df = new styleButton();
-      df.setText("Disable up/down fly: "+(nofly?"on":"off"));
-		df.setOnClickListener(new android.view.View.OnClickListener() {
-			onClick: function(v){
-				nofly?nofly=false:nofly=true;
-df.setText("Disable up/down fly: "+(nofly?"on":"off"));
+df.setText("Disable up/down fly");
+df.setTextColor(android.graphics.Color.RED);
+if(nofly==true)df.setTextColor(android.graphics.Color.GREEN);
+            df.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             nofly?nofly=false:nofly=true;
+df.setText("Disable up/down fly");
 if(nofly == true){
-clientMessage(client + "§7No up/down fly is on");
+df.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"Disable up/down fly on");
 Player.setCanFly(false);
-
 nofly = true;
 }
 if(nofly == false){
-clientMessage(client + "§7No up/down fly is off");
+df.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"Disable up/down fly off");
 Player.setCanFly(true);
-
 nofly = false;
- }
-			}
-		});
-		modLayout.addView(df);
+}
+                }
+            }));
+            modLayout.addView(df);
 
 var es = new styleButton();
             es.setText("Entity spawner");        
@@ -5010,53 +5017,58 @@ var es = new styleButton();
             modLayout.addView(es);
 
 var rr = new styleButton();
-rr.setText("Night mode: "+(remode?"on":"off"));
-rr.setOnClickListener(new android.view.View.OnClickListener({
-onClick: function(viewarg){
-remode?remode=false:remode=true;
-rr.setText("Night mode: "+(remode?"on":"off"));
+rr.setText("Night mode");
+rr.setTextColor(android.graphics.Color.RED);
+if(remode==true)rr.setTextColor(android.graphics.Color.GREEN);
+            rr.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             remode?remode=false:remode=true;
+rr.setText("Night mode");
 if(remode == true){
-clientMessage(client + "§7Night mode on");
- setNightMode(true);
-
-remode = true
+rr.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"Night mode on");
+setNightMode(true);
+remode = true;
 }
 if(remode == false){
-clientMessage(client + "§7Night mode off");
+rr.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"Night mode off");
 setNightMode(false);
-
-remode = false
+remode = false;
 }
-}
-}));
-modLayout.addView(rr);
+                }
+            }));
+            modLayout.addView(rr);
 
 var cs = new styleButton();
-      cs.setText("Sign Editor: "+(deadchat?"on":"off"));
-		cs.setOnClickListener(new android.view.View.OnClickListener() {
-			onClick: function(v){
-				deadchat?deadchat=false:deadchat=true;
-cs.setText("Sign Editor: "+(deadchat?"on":"off"));
+cs.setText("Sign Editor");
+cs.setTextColor(android.graphics.Color.RED);
+if(deadchat==true)cs.setTextColor(android.graphics.Color.GREEN);
+            cs.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             deadchat?deadchat=false:deadchat=true;
+cs.setText("Sign Editor");
 if(deadchat == true){
-clientMessage(client + "§7Sign editor is on");
-
+cs.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"Sign Editor on");
 deadchat = true;
 }
 if(deadchat == false){
-clientMessage(client + "§7Sign editor is off");
-
+cs.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"Sign Editor off");
 deadchat = false;
 }
-			}
-		});
-		modLayout.addView(cs);
+                }
+            }));
+            modLayout.addView(cs);
 
 var killme = new styleButton();
             killme.setText("Kill yourself");        
             killme.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){ 
+				
 Player.setHealth(0);
-Player.setHealth(0);
+
                 }
             }));
             modLayout.addView(killme);
@@ -5082,146 +5094,183 @@ var hun = new styleButton();
 		modLayout.addView(hun);
 
 var mm = new styleButton();
-      mm.setText("Anti health: "+(stackheart?"on":"off"));
-		mm.setOnClickListener(new android.view.View.OnClickListener() {
-			onClick: function(v){         stackheart?stackheart=false:stackheart=true;
-mm.setText("Anti health: "+(stackheart?"on":"off"));
+mm.setText("Anti health");
+mm.setTextColor(android.graphics.Color.RED);
+if(stackheart==true)mm.setTextColor(android.graphics.Color.GREEN);
+            mm.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             stackheart?stackheart=false:stackheart=true;
+mm.setText("Anti health");
 if(stackheart == true){
+mm.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"Anti health on");
 stackheart = true;
-clientMessage(client + "§7infinite health is on");
 }
 if(stackheart == false){
-clientMessage(client + "§7infinite health is off");
-Player.setHealth(20);
+mm.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"Anti health off");
 stackheart = false;
- }
-			}
-		});
-		modLayout.addView(mm);
+}
+                }
+            }));
+            modLayout.addView(mm);
 
 var mm2 = new styleButton();
-mm2.setText("Anti hunger: "+(infhun?"on":"off"));
-mm2.setOnClickListener(new android.view.View.OnClickListener({
-onClick: function(viewarg){
-infhun?infhun=false:infhun=true;
-mm2.setText("Anti hunger: "+(infhun?"on":"off"));
+mm2.setText("Anti hunger");
+mm2.setTextColor(android.graphics.Color.RED);
+if(infhun==true)mm2.setTextColor(android.graphics.Color.GREEN);
+            mm2.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             infhun?infhun=false:infhun=true;
+mm2.setText("Anti hunger");
 if(infhun == true){
-clientMessage(client + "§7infinite hunger is on");
+mm2.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"Anti hunger on");
+infhun = true;
 }
 if(infhun == false){
-clientMessage(client + "§7infinite hunger is off");
-Player.setHunger(20);
-                }
+mm2.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"Anti hunger off");
+infhun = false;
 }
+                }
             }));
             modLayout.addView(mm2);
 
 var zm = new styleButton();
-      zm.setText("1 hit kill: "+(instakilled?"on":"off"));
-		zm.setOnClickListener(new android.view.View.OnClickListener() {
-			onClick: function(v){         instakilled?instakilled=false:instakilled=true;
-zm.setText("1 hit kill: "+(instakilled?"on":"off"));
+zm.setText("1 hit kill");
+zm.setTextColor(android.graphics.Color.RED);
+if(instakilled==true)zm.setTextColor(android.graphics.Color.GREEN);
+            zm.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             instakilled?instakilled=false:instakilled=true;
+zm.setText("1 hit kill");
 if(instakilled == true){
+zm.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"1 hit kill on");
 instakilled = true;
-clientMessage(client + "§7Insta kill is on");
 }
 if(instakilled == false){
-clientMessage(client + "§7Insta kill is off");
+zm.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"1 hit kill off");
 instakilled = false;
+}
                 }
-			}
-		});
-		modLayout.addView(zm);
+            }));
+            modLayout.addView(zm);
 
 var zmm = new styleButton();
-      zmm.setText("Ride mobs: "+(saddle?"on":"off"));
-		zmm.setOnClickListener(new android.view.View.OnClickListener() {
-			onClick: function(v){
+zmm.setText("Ride mobs");
+zmm.setTextColor(android.graphics.Color.RED);
+if(saddle==true)zmm.setTextColor(android.graphics.Color.GREEN);
+            zmm.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
              saddle?saddle=false:saddle=true;
-zmm.setText("Ride mobs: "+(saddle?"on":"off"));
+zmm.setText("Ride mobs");
 if(saddle == true){
-clientMessage(client + "§7Ride mobs is on");
-clientMessage(client + "§cTap mob to ride,\n§cJump to get off mob.");
+zmm.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"Ride mobs on");
 saddle = true;
 }
 if(saddle == false){
-clientMessage(client + "§7Ride mobs is off");
+zmm.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"Ride mobs off");
 saddle = false;
+}
                 }
-			}
-		});
-		modLayout.addView(zmm);
+            }));
+            modLayout.addView(zmm);
 
-var f = new styleButton();
-            f.setText("Fly in survival: "+(fch?"on":"off"));
-            f.setOnClickListener(new android.view.View.OnClickListener({
+var fis = new styleButton();
+fis.setText("Fly in survival");
+fis.setTextColor(android.graphics.Color.RED);
+if(fch==true)fis.setTextColor(android.graphics.Color.GREEN);
+            fis.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-fch?fch=false:fch=true;
-f.setText("Fly in survival: "+(fch?"on":"off"));
+             fch?fch=false:fch=true;
+fis.setText("Fly in survival");
 if(fch == true){
-Player.setCanFly(1);
-clientMessage(client + "§7Fly in survival is on");
+fis.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"Fly in survival on");
+Player.setCanFly(true);
+fch = true;
 }
 if(fch == false){
-clientMessage(client + "§7Fly in survival is off");
-Player.setCanFly(0);
-                }
+fis.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"Fly in survival off");
+Player.setCanFly(false);
+fch = false;
 }
+                }
             }));
-            modLayout.addView(f);
-
-var g = new styleButton();
-            g.setText("Grief: "+(grief?"on":"off"));
-            g.setOnClickListener(new android.view.View.OnClickListener({
+            modLayout.addView(fis);
+			
+var grif = new styleButton();
+grif.setText("Grief");
+grif.setTextColor(android.graphics.Color.RED);
+if(grief==true)grif.setTextColor(android.graphics.Color.GREEN);
+            grif.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-grief?grief=false:grief=true;
-g.setText("Grief: "+(grief?"on":"off"));
+             grief?grief=false:grief=true;
+grif.setText("Grief");
 if(grief == true){
+grif.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"Grief on");
 new2();
+grief = true;
 }
 if(grief == false){
-clientMessage(client + "§7You stopped griefing!");
+grif.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"Grief off");
 grief = false;
-                }
 }
+                }
             }));
-            modLayout.addView(g);
+            modLayout.addView(grif);
 
-var kl = new styleButton();
-            kl.setText("KillAura: "+(killaura?"on":"off"));
-            kl.setOnClickListener(new android.view.View.OnClickListener({
+var k1l = new styleButton();
+k1l.setText("Killaura");
+k1l.setTextColor(android.graphics.Color.RED);
+if(killaura==true)k1l.setTextColor(android.graphics.Color.GREEN);
+            k1l.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-killaura?killaura=false:killaura=true;
-kl.setText("KillAura: "+(killaura?"on":"off"));
+             killaura?killaura=false:killaura=true;
+k1l.setText("Killaura");
 if(killaura == true){
-clientMessage(client + "§7KillAura on");
+k1l.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"Killaura on");
 killaura = true;
 }
 if(killaura == false){
-clientMessage(client + "§7KillAura off");
+k1l.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"Killaura off");
 killaura = false;
-                }
 }
+                }
             }));
-            modLayout.addView(kl);
+            modLayout.addView(k1l);
 
-var kl2 = new styleButton();
-            kl2.setText("FreezeAura: "+(killfaura?"on":"off"));
-            kl2.setOnClickListener(new android.view.View.OnClickListener({
+var k2l = new styleButton();
+k2l.setText("FreezeAura");
+k2l.setTextColor(android.graphics.Color.RED);
+if(killfaura==true)k2l.setTextColor(android.graphics.Color.GREEN);
+            k2l.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-killfaura?killfaura=false:killfaura=true;
-kl2.setText("FreezeAura: "+(killfaura?"on":"off"));
+             killfaura?killfaura=false:killfaura=true;
+k2l.setText("FreezeAura");
 if(killfaura == true){
-clientMessage(client + "§7FreezeAura on");
+k2l.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"FreezeAura on");
 killfaura = true;
 }
 if(killfaura == false){
-clientMessage(client + "§7FreezeAura off");
+k2l.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"FreezeAura off");
 killfaura = false;
-                }
 }
+                }
             }));
-            modLayout.addView(kl2);
+            modLayout.addView(k2l);
 
 var attd = new styleButton();
             attd.setText("Set difficulty");        
@@ -5246,18 +5295,24 @@ nameMe();
             modLayout.addView(att);
 
 var fp = new styleButton();
-            fp.setText("Fire punch: "+(firepunch?"on":"off"));
-            fp.setOnClickListener(new android.view.View.OnClickListener({
+fp.setText("FirePunch");
+fp.setTextColor(android.graphics.Color.RED);
+if(firepunch==true)fp.setTextColor(android.graphics.Color.GREEN);
+            fp.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-firepunch?firepunch=false:firepunch=true;
-fp.setText("Fire punch: "+(firepunch?"on":"off"));
+             firepunch?firepunch=false:firepunch=true;
+fp.setText("FirePunch");
 if(firepunch == true){
-clientMessage(client + "§7Falcon punch! on");
+fp.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"FirePunch on");
+firepunch = true;
 }
 if(firepunch == false){
-clientMessage(client + "§7Falcon punch! off");
-                }
+fp.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"FirePunch off");
+firepunch = false;
 }
+                }
             }));
             modLayout.addView(fp);
 
@@ -5273,20 +5328,24 @@ block2();
             modLayout.addView(sbr);
 
 var saysome = new styleButton();
-            saysome.setText("BurnAura: "+(killdaura?"on":"off"));
-            saysome.setOnClickListener(new android.view.View.OnClickListener({
+saysome.setText("BurnAura");
+saysome.setTextColor(android.graphics.Color.RED);
+if(killdaura==true)saysome.setTextColor(android.graphics.Color.GREEN);
+            saysome.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-killdaura?killdaura=false:killdaura=true;
-saysome.setText("BurnAura: "+(killdaura?"on":"off"));
+             killdaura?killdaura=false:killdaura=true;
+saysome.setText("BurnAura");
 if(killdaura == true){
-clientMessage(client + "§7BurnAura on, Thanks to the vertex team for coming up with the idea");
+saysome.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"BurnAura on");
 killdaura = true;
 }
 if(killdaura == false){
-clientMessage(client + "§7BurnAura off");
+saysome.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"BurnAura off");
 killdaura = false;
-                }
 }
+                }
             }));
             modLayout.addView(saysome);
 
@@ -5302,25 +5361,32 @@ newhealth();
             modLayout.addView(nh);
 
 var horse = new styleButton();
-      horse.setText("Set mob health: "+(horsehealth?"on":"off"));
-		horse.setOnClickListener(new android.view.View.OnClickListener() {
-			onClick: function(v){
-			horsehealth?horsehealth=false:horsehealth=true;
-horse.setText("Set mob health: "+(horsehealth?"on":"off"));
+horse.setText("Set mob health");
+horse.setTextColor(android.graphics.Color.RED);
+if(horsehealth==true)horse.setTextColor(android.graphics.Color.GREEN);
+            horse.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             horsehealth?horsehealth=false:horsehealth=true;
+horse.setText("Set mob health");
 if(horsehealth == true){
+horse.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"Set mob health on");
 horsehealth1();
-	mod.dismiss();
+mod.dismiss();
 horsehealth = true;
 }
 if(horsehealth == false){
-clientMessage(client + "§7Set health is off");
-
+horse.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"Set mob health off");
 horsehealth = false;
- }
-			}
-		});
-		modLayout.addView(horse);
+}
+                }
+            }));
+            modLayout.addView(horse);
 
+			/*
+			* i'll add this in a later feature
+			*
 var gage = new styleButton();
       gage.setText("Get mob age: "+(getage?"on":"off"));
 		gage.setOnClickListener(new android.view.View.OnClickListener() {
@@ -5340,26 +5406,31 @@ getage = false;
 			}
 		});
 		modLayout.addView(gage);
+		*/
 		
-		var sage = new styleButton();
-      sage.setText("Set mob age: "+(setage?"on":"off"));
-		sage.setOnClickListener(new android.view.View.OnClickListener() {
-			onClick: function(v){
-			setage?setage=false:setage=true;
-sage.setText("Set mob age: "+(setage?"on":"off"));
+var sage = new styleButton();
+sage.setText("Set mob age");
+sage.setTextColor(android.graphics.Color.RED);
+if(setage==true)sage.setTextColor(android.graphics.Color.GREEN);
+            sage.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             setage?setage=false:setage=true;
+sage.setText("Set mob age");
 if(setage == true){
+sage.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"Set mob age on");
 new4();
-	mod.dismiss();
+mod.dismiss();
 setage = true;
 }
 if(setage == false){
-clientMessage(client + "§7Set age is off");
-
+sage.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"Set mob age off");
 setage = false;
- }
-			}
-		});
-		modLayout.addView(sage);
+}
+                }
+            }));
+            modLayout.addView(sage);
 		
 		var dropbutton = new styleButton(MainActivity);
 dropbutton.setText("Double drops");
@@ -8398,7 +8469,7 @@ var alert = new android.app.AlertDialog.Builder(MainActivity);
 var scroll = new android.widget.ScrollView(MainActivity); 
 var layout = new android.widget.LinearLayout(MainActivity); 
 layout.setOrientation(1);
-alert.setTitle("MCPE "+getVer+" Items");
+alert.setTitle("MCPE "+getVer+" blocks");
 var ids = Block.getAllBlockIds();
 			for (var i = 0; i < ids.length; i++) {
 				alert.setMessage(ids.join("\n"));
@@ -9149,37 +9220,49 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
 		});
 		nukeLayout.addView(exit);
 		
-            var tn = new styleButton();
-            tn.setText("Tap nuke: "+(tapnuke?"on":"off"));
-            tn.setOnClickListener(new android.view.View.OnClickListener({
+var tn = new styleButton();
+tn.setText("Tap nuke");
+tn.setTextColor(android.graphics.Color.RED);
+if(tapnuke==true)tn.setTextColor(android.graphics.Color.GREEN);
+            tn.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-tapnuke?tapnuke=false:tapnuke=true;
-tn.setText("Tap nuke: "+(tapnuke?"on":"off"));
+             tapnuke?tapnuke=false:tapnuke=true;
+tn.setText("Tap nuke");
 if(tapnuke == true){
-clientMessage(client + "§7Tap nuke is on");
+tn.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"Tap nuke on");
+tapnuke = true;
 }
 if(tapnuke == false){
-clientMessage(client + "§7Tap nuke is off");
-                }
+tn.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"Tap nuke off");
+tapnuke = false;
 }
+                }
             }));
             nukeLayout.addView(tn);
-            
-            var an = new styleButton();
-            an.setText("Auto nuke: "+(autonuke?"on":"off"));
-            an.setOnClickListener(new android.view.View.OnClickListener({
+			
+var ann = new styleButton();
+ann.setText("Auto nuke");
+ann.setTextColor(android.graphics.Color.RED);
+if(autonuke==true)ann.setTextColor(android.graphics.Color.GREEN);
+            ann.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-autonuke?autonuke=false:autonuke=true;
-an.setText("Auto nuke: "+(autonuke?"on":"off"));
+             autonuke?autonuke=false:autonuke=true;
+ann.setText("Auto nuke");
 if(autonuke == true){
-clientMessage(client + "§7Auto nuke is on");
+ann.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"Auto nuke on");
+autonuke = true;
 }
 if(autonuke == false){
-clientMessage(client + "§7Auto nuke is off");
-                }
+ann.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"Auto nuke off");
+autonuke = false;
 }
+                }
             }));
-            nukeLayout.addView(an);
+            nukeLayout.addView(ann);
 		
 		var n1 = new styleButton();
             n1.setText("Nuke 1%");  
@@ -10749,23 +10832,27 @@ clientMessage(client + "Woah!\n"+"Teleported to: "+getPlayerX()+" "+getPlayerY()
             }));
             teleportLayout.addView(randomtp);
 			
-			var at = new styleButton();
-      at.setText("Tap teleport: "+(taptp?"on":"off"));
-		at.setOnClickListener(new android.view.View.OnClickListener() {
-			onClick: function(v){
-				taptp?taptp=false:taptp=true;
-at.setText("Tap teleport: "+(taptp?"on":"off"));
+var ttp = new styleButton();
+ttp.setText("Tap teleport");
+ttp.setTextColor(android.graphics.Color.RED);
+if(taptp==true)ttp.setTextColor(android.graphics.Color.GREEN);
+            ttp.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             taptp?taptp=false:taptp=true;
+ttp.setText("Tap teleport");
 if(taptp == true){
-clientMessage(client + "Tap telelport enabled.")
+ttp.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"Tap teleport on");
+taptp = true;
 }
 if(taptp == false){
-clientMessage(client + "Tap teleport disabled.");
-
+ttp.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"Tap teleport off");
 taptp = false;
+}
                 }
-			}
-		});
-		teleportLayout.addView(at);
+            }));
+            telepotLayout.addView(ttp);
 			
 		var et = new android.widget.TextView(MainActivity);
 		et.setGravity(android.view.Gravity.CENTER);
@@ -10826,39 +10913,47 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
 			}
 		});
 		timeLayout.addView(exit);
-		
-		var aa = new styleButton();
-            aa.setText("Only day: "+(onlyday?"on":"off"));
-            aa.setOnClickListener(new android.view.View.OnClickListener({
+			
+var aa = new styleButton();
+aa.setText("Only day");
+aa.setTextColor(android.graphics.Color.RED);
+if(onlyday==true)aa.setTextColor(android.graphics.Color.GREEN);
+            aa.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-                onlyday?onlyday=false:onlyday=true;
-aa.setText("Only day: "+(onlyday?"on":"off"));
+             onlyday?onlyday=false:onlyday=true;
+aa.setText("Only day");
 if(onlyday == true){
-clientMessage(client + "§7Only day is on");
+aa.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"Only day on");
 onlyday = true;
 }
 if(onlyday == false){
-clientMessage(client + "§7Only day is off");
+aa.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"Only day off");
 onlyday = false;
-                }
+}
                 }
             }));
             timeLayout.addView(aa);
 
 var aa2 = new styleButton();
-            aa2.setText("Only night: "+(onlynight?"on":"off"));
-            aa2.setOnClickListener(new android.view.View.OnClickListener({
+aa2.setText("Only night");
+aa2.setTextColor(android.graphics.Color.RED);
+if(onlynight==true)aa2.setTextColor(android.graphics.Color.GREEN);
+            aa2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-onlynight?onlynight=false:onlynight=true;
-aa2.setText("Only night: "+(onlynight?"on":"off"));
+             onlynight?onlynight=false:onlynight=true;
+aa2.setText("Only night");
 if(onlynight == true){
-clientMessage(client + "§7Only night is on");
+aa2.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"Only night on");
 onlynight = true;
 }
 if(onlynight == false){
-clientMessage(client + "§7Only night is off");
+aa2.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"Only night off");
 onlynight = false;
-                }
+}
                 }
             }));
             timeLayout.addView(aa2);
