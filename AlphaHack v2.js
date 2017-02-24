@@ -4919,6 +4919,7 @@ portal.setText("Nether portal");
             portal.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
                 new9();
+				mod.dismiss();
                 }
             }));
             modLayout.addView(portal);
@@ -12806,153 +12807,6 @@ print("Error :"+e);
 }});
 }
 
-function oreDialog() {
-MainActivity.runOnUiThread(new java.lang.Runnable(){
-run: function(){ 
-try{
-orey = new android.widget.PopupWindow();
-var Layer = new android.widget.LinearLayout(MainActivity);
-var select1 = new styleButton();
-var select2 = new styleButton();
-var select3 = new styleButton();
-var select4 = new styleButton();
-var select5 = new styleButton();
-var select6 = new styleButton();
-var select7 = new styleButton();
-var select8 = new styleButton();
-var Dialog = new android.app.Dialog(MainActivity);
- 
-Dialog.setTitle("Select ore");
-Dialog.setContentView(Layer);
- 
-Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
-Dialog.show();
-
-var doubleBtn1 = new android.widget.LinearLayout(MainActivity);
-	    doubleBtn1.setOrientation(0);
-		
-		doubleBtn1.addView(select1);
-
-		doubleBtn1.addView(select2);
- 
-            select1.setText("Coal ore");
-            select1.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
-oreEsp = true;
-oreId = "16";
-var oreId = "16";
-Dialog.dismiss();
-                }
-            }));
-             
-            select2.setText("Iron ore");
-            select2.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
-oreEsp = true;
-oreId = "15";
-var oreId = "15";
-Dialog.dismiss();
-                }
-            }));
-			
-			Layer.addView(doubleBtn1);
-			
-			var doubleBtn2 = new android.widget.LinearLayout(MainActivity);
-	    doubleBtn2.setOrientation(0);
-		
-		doubleBtn2.addView(select3);
-
-		doubleBtn2.addView(select4);
-            
-            select3.setText("Gold ore");
-            select3.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
-oreEsp = true;
-oreId = "14";
-var oreId = "14";
-Dialog.dismiss();
-                }
-            }));
-            
-            select4.setText("Diamond ore");
-            select4.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
-oreEsp = true;
-oreId = "56";
-var oreId = "56";
-Dialog.dismiss();
-                }
-            }));
-			
-			Layer.addView(doubleBtn2);
-			
-			var doubleBtn3 = new android.widget.LinearLayout(MainActivity);
-	    doubleBtn3.setOrientation(0);
-		
-		doubleBtn3.addView(select5);
-
-		doubleBtn3.addView(select6);
-            
-            select5.setText("Redstone ore");
-            select5.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
-oreEsp = true;
-oreId = "73";
-var oreId = "73";
-Dialog.dismiss();
-                }
-            }));
-            
-            select6.setText("Lapis ore");
-            select6.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
-oreEsp = true;
-oreId = "21";
-var oreId = "21";
-Dialog.dismiss();
-                }
-            }));
-			
-			Layer.addView(doubleBtn3);
-			
-			var doubleBtn4 = new android.widget.LinearLayout(MainActivity);
-	    doubleBtn4.setOrientation(0);
-		
-		doubleBtn4.addView(select7);
-
-		doubleBtn4.addView(select8);
-            
-            select7.setText("Emerald ore");
-            select7.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
-oreEsp = true;
-oreId = "129";
-var oreId = "129";
-Dialog.dismiss();
-                }
-            }));
-            
-            select8.setText("Quartz ore");
-            select8.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
-oreEsp = true;
-oreId = "153";
-var oreId = "153";
-Dialog.dismiss();
-                }
-            }));
-			
-			Layer.addView(doubleBtn4);
- 
-orey.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-orey.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-orey.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
-} catch (e){
-print("Ore error: "+e);
-}
-}});
-}
-
 function new9() {
 MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
@@ -13215,7 +13069,6 @@ onClick: function(view){
  vid =ddf.getText();
  grief = true;
 Dialog.dismiss();
-showMenuBtn();
 }
 });
  
