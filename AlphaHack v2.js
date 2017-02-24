@@ -483,6 +483,17 @@ button.setBackgroundDrawable(buttonBg);
 return button;
 }
 
+function styleInput(){
+let input = new android.widget.EditText(ctx);
+input.setTextColor(GUIText);
+var inputBg = new android.graphics.drawable.GradientDrawable();
+inputBg.setColor(android.graphics.Color.parseColor("#93000000"));
+inputBg.setStroke(4, GUIStroke);
+inputBg.setCornerRadius(10);
+input.setBackgroundDrawable(inputBg);
+return input;
+}
+
 //tracer draw function || variable
 var AlphaHack = {};
 AlphaHack.drawTracer = function(x, y, z, groundMode, particleName) {
@@ -5470,8 +5481,8 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new android.widget.EditText(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var sec = new styleInput();
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -5528,8 +5539,8 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new android.widget.EditText(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var sec = new styleInput();
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -5586,8 +5597,8 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new android.widget.EditText(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var sec = new styleInput();
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -5644,8 +5655,8 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new android.widget.EditText(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var sec = new styleInput();
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -5702,8 +5713,8 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new android.widget.EditText(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var sec = new styleInput();
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -5760,8 +5771,8 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new android.widget.EditText(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var sec = new styleInput();
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -5818,8 +5829,8 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new android.widget.EditText(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var sec = new styleInput();
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -5876,8 +5887,8 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new android.widget.EditText(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var sec = new styleInput();
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -5934,8 +5945,8 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new android.widget.EditText(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var sec = new styleInput();
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -5992,8 +6003,8 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new android.widget.EditText(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var sec = new styleInput();
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -6050,8 +6061,8 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new android.widget.EditText(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var sec = new styleInput();
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -6108,8 +6119,8 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new android.widget.EditText(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var sec = new styleInput();
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -6166,8 +6177,8 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new android.widget.EditText(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var sec = new styleInput();
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -6224,8 +6235,8 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new android.widget.EditText(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var sec = new styleInput();
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -6282,8 +6293,8 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new android.widget.EditText(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var sec = new styleInput();
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -6340,8 +6351,8 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new android.widget.EditText(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var sec = new styleInput();
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -6398,8 +6409,8 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new android.widget.EditText(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var sec = new styleInput();
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -6456,8 +6467,8 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new android.widget.EditText(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var sec = new styleInput();
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -6514,8 +6525,8 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new android.widget.EditText(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var sec = new styleInput();
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -6572,8 +6583,8 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new android.widget.EditText(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var sec = new styleInput();
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -6630,8 +6641,8 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new android.widget.EditText(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var sec = new styleInput();
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -6688,8 +6699,8 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new android.widget.EditText(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var sec = new styleInput();
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -6746,8 +6757,8 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new android.widget.EditText(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var sec = new styleInput();
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -7007,7 +7018,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -7059,7 +7070,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -7111,7 +7122,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -7163,7 +7174,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -7215,7 +7226,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -7267,7 +7278,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -7319,7 +7330,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -7371,7 +7382,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -7423,7 +7434,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -7475,7 +7486,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -7527,7 +7538,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -7579,7 +7590,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -7631,7 +7642,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -7683,7 +7694,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -7735,7 +7746,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -7787,7 +7798,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -7839,7 +7850,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -7891,7 +7902,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -7943,7 +7954,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -7995,7 +8006,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -8047,7 +8058,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -8099,7 +8110,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -8151,7 +8162,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -8203,7 +8214,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -8255,7 +8266,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var lvl = new android.widget.EditText(MainActivity);
+var lvl = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -12353,7 +12364,7 @@ run: function(){
 try{
 scc = new android.widget.PopupWindow();
 var Layer5 = new android.widget.LinearLayout(MainActivity);
-var sc1 = new android.widget.EditText(MainActivity);
+var sc1 = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -12407,7 +12418,7 @@ run: function(){
 try{
 iplu = new android.widget.PopupWindow();
 var Layer4 = new android.widget.LinearLayout(ctx);
-var ip1 = new android.widget.EditText(ctx);
+var ip1 = new styleInput();
 var Dialog = new android.app.Dialog(ctx);
 var Exit = new styleButton(ctx);
 
@@ -12461,8 +12472,8 @@ run: function(){
 try{
 pip = new android.widget.PopupWindow();
 var Layer4 = new android.widget.LinearLayout(ctx);
-var ddip = new android.widget.EditText(ctx);
-var ddip2 = new android.widget.EditText(ctx);
+var ddip = new styleInput();
+var ddip2 = new styleInput();
 var Dialog = new android.app.Dialog(ctx);
 var Exit = new styleButton(ctx);
 
@@ -12520,10 +12531,10 @@ run: function(){
 try{
 new10 = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var m1 = new android.widget.EditText(MainActivity);
+var m1 = new styleInput();
 var select1 = new styleButton();
 var select2 = new styleButton();
-var select3 = new android.widget.EditText(MainActivity);
+var select3 = new styleInput();
 var select4 = new styleButton();
 var end1 = new styleButton();
 var Dialog = new android.app.Dialog(MainActivity);
@@ -12614,7 +12625,7 @@ run: function(){
 try{
 spa = new android.widget.PopupWindow();
 var Layer6 = new android.widget.LinearLayout(MainActivity);
-var mm = new android.widget.EditText(MainActivity);
+var mm = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -12654,7 +12665,7 @@ digg = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var select1 = new styleButton();
 var select2 = new styleButton();
-var ddf = new android.widget.EditText(MainActivity);
+var ddf = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
  
 Dialog.setTitle("Select");
@@ -13064,7 +13075,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var select1 = new styleButton();
 var select2 = new styleButton();
 var select3 = new styleButton();
-var ddf = new android.widget.EditText(MainActivity);
+var ddf = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
  
@@ -13129,7 +13140,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer8 = new android.widget.LinearLayout(MainActivity);
-var ntd = new android.widget.EditText(MainActivity);
+var ntd = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -13173,7 +13184,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer8 = new android.widget.LinearLayout(MainActivity);
-var nt = new android.widget.EditText(MainActivity);
+var nt = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -13217,8 +13228,8 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer8 = new android.widget.LinearLayout(MainActivity);
-var bd = new android.widget.EditText(MainActivity);
-var bn = new android.widget.EditText(MainActivity);
+var bd = new styleInput();
+var bn = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -13266,8 +13277,8 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer8 = new android.widget.LinearLayout(MainActivity);
-var bi = new android.widget.EditText(MainActivity);
-var br = new android.widget.EditText(MainActivity);
+var bi = new styleInput();
+var br = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -13315,7 +13326,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer8 = new android.widget.LinearLayout(MainActivity);
-var enh = new android.widget.EditText(MainActivity);
+var enh = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -13359,7 +13370,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer10 = new android.widget.LinearLayout(MainActivity);
-var eha = new android.widget.EditText(MainActivity);
+var eha = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -13457,7 +13468,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var XP = new android.widget.EditText(MainActivity);
+var XP = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -13502,9 +13513,9 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var ID = new android.widget.EditText(MainActivity);
-var Amount = new android.widget.EditText(MainActivity);
-var Damage = new android.widget.EditText(MainActivity);
+var ID = new styleInput();
+var Amount = new styleInput();
+var Damage = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -13556,7 +13567,7 @@ run: function(){
 try{
 newn = new android.widget.PopupWindow();
 var Layerb5 = new android.widget.LinearLayout(MainActivity);
-var nNuke = new android.widget.EditText(MainActivity);
+var nNuke = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -13600,7 +13611,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer8 = new android.widget.LinearLayout(MainActivity);
-var vspee = new android.widget.EditText(MainActivity);
+var vspee = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -13644,9 +13655,9 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var X = new android.widget.EditText(MainActivity);
-var Y = new android.widget.EditText(MainActivity);
-var Z = new android.widget.EditText(MainActivity);
+var X = new styleInput();
+var Y = new styleInput();
+var Z = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -13698,8 +13709,8 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var w = new android.widget.EditText(MainActivity);
-var w2 = new android.widget.EditText(MainActivity);
+var w = new styleInput();
+var w2 = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -13748,7 +13759,7 @@ run: function(){
 try{
 atact = new android.widget.PopupWindow();
 var Layerb4 = new android.widget.LinearLayout(MainActivity);
-var editAtk = new android.widget.EditText(MainActivity);
+var editAtk = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -13787,8 +13798,8 @@ run: function(){
 try{
 atact = new android.widget.PopupWindow();
 var Layerz8 = new android.widget.LinearLayout(MainActivity);
-var editAtk = new android.widget.EditText(MainActivity);
-var editAtk2 = new android.widget.EditText(MainActivity);
+var editAtk = new styleInput();
+var editAtk2 = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -13831,8 +13842,8 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(ctx);
-var xy = new android.widget.EditText(ctx);
-var xy2 = new android.widget.EditText(ctx);
+var xy = new styleInput();
+var xy2 = new styleInput();
 var Dialog = new android.app.Dialog(ctx);
 var Exit = new styleButton(ctx);
 
@@ -13880,7 +13891,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var LayerFov = new android.widget.LinearLayout(MainActivity);
-var fin = new android.widget.EditText(MainActivity);
+var fin = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var reset = new styleButton();
 var Exit = new styleButton();
@@ -13935,7 +13946,7 @@ run: function(){
 try{
 sendEtc = new android.widget.PopupWindow();
 var Layerz89 = new android.widget.LinearLayout(MainActivity);
-var datMsg = new android.widget.EditText(MainActivity);
+var datMsg = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -13983,7 +13994,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var rang = new android.widget.EditText(MainActivity);
+var rang = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -14023,7 +14034,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var height = new android.widget.EditText(MainActivity);
+var height = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
@@ -14063,7 +14074,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var item = new android.widget.EditText(MainActivity);
+var item = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
