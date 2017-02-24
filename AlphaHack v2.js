@@ -10852,7 +10852,7 @@ taptp = false;
 }
                 }
             }));
-            telepotLayout.addView(ttp);
+            teleportLayout.addView(ttp);
 			
 		var et = new android.widget.TextView(MainActivity);
 		et.setGravity(android.view.Gravity.CENTER);
@@ -12143,7 +12143,7 @@ if(tapdestroy){
 }
 
 if(taptp){
-Entity.setPosition(Player.getEntity(), x, y + 3, z);
+Entity.setPosition(Player.getEntity(), x, y + 2.62, z);
 }
 if(tapnuke)explode(x,y,z,5);
 if(tapid)clientMessage(client + "Block ID: "+blockId+"\nTapped with: "+itemId+"\n"+" X: "+x+" Y: "+y+" Z: "+z+"\nFriction: "+Block.getFriction(blockId));
@@ -12356,9 +12356,7 @@ if (spider && Utils.Player.isCollidedHorizontally()) {
 			var x = Entity.getX(players[i]) - getPlayerX();
 			var y = Entity.getY(players[i]) - getPlayerY();
 			var z = Entity.getZ(players[i]) - getPlayerZ();
-			if(names[i]!="undefined"){
-			if(x!=0 || z!=0)Entity.setPosition(Player.getEntity(), x, y + 3, z);
-			}
+			if(y!=0)Entity.setPosition(Player.getEntity(), x, y + 2.62, z);
 		}
 	}
 	if(keepHotbar)keepSlot();
