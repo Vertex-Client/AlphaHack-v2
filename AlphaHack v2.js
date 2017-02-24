@@ -5011,7 +5011,8 @@ var es = new styleButton();
             es.setText("Entity spawner");        
             es.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-                    new3(); 
+				new3();
+				mod.dismiss();
                 }
             }));
             modLayout.addView(es);
