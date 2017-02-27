@@ -277,6 +277,7 @@ var doubledrop = false;
 var censorbypass = false;
 var hitbox1 = false;
 var bowaura = false;
+var legalenchant = false;
 
 var showActive = false;
 var showActive2 = false;
@@ -6932,6 +6933,28 @@ enchant.dismiss();
                 }
             }));
             enchantLayout.addView(button);
+			
+var checker = new styleButton();
+checker.setText("illegal enchant checker");
+checker.setTextColor(android.graphics.Color.RED);
+if(legalenchant==true)checker.setTextColor(android.graphics.Color.GREEN);
+            checker.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             legalenchant?legalenchant=false:legalenchant=true;
+checker.setText("illegal enchant checker");
+if(legalenchant == true){
+checker.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"illegal enchant checker on");
+legalenchant = true;
+}
+if(legalenchant == false){
+checker.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"illegal enchant checker off");
+legalenchant = false;
+}
+                }
+            }));
+            enchantLayout.addView(checker);
 
 var god1 = new styleButton();
             god1.setText("God sword");
@@ -7109,9 +7132,24 @@ Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
-ll =lvl.getText();
+if(legalenchant==true){
+ench =lvl.getText();
+if(ench >= 5){
+ench = 5;
 Dialog.dismiss();
 add1();
+clientMessage(client+"That enchantment is illegal in vanilla.");
+}
+if(ench <= 5){
+Dialog.dismiss();
+add1();
+}
+}
+if(legalenchant==false){
+ench =lvl.getText();
+Dialog.dismiss();
+add1();
+}
 }
 });
 
@@ -7125,7 +7163,7 @@ print("The Enchant Dialog Is Malfunctioning:"+e);
 }
 
 function add1() {
-Player.enchant(Player.getSelectedSlotId(), Enchantment.AQUA_AFFINITY,ll);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.AQUA_AFFINITY,ench);
 }
 
 var enb = new styleButton();
@@ -7161,9 +7199,24 @@ Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
-ll =lvl.getText();
+if(legalenchant==true){
+ench =lvl.getText();
+if(ench >= 5){
+ench = 5;
 Dialog.dismiss();
 add2();
+clientMessage(client+"That enchantment is illegal in vanilla.");
+}
+if(ench <= 5){
+Dialog.dismiss();
+add2();
+}
+}
+if(legalenchant==false){
+ench =lvl.getText();
+Dialog.dismiss();
+add2();
+}
 }
 });
 
@@ -7177,7 +7230,7 @@ print("The Enchant Dialog Is Malfunctioning:"+e);
 }
 
 function add2() {
-Player.enchant(Player.getSelectedSlotId(), Enchantment.BANE_OF_ARTHROPODS,ll);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.BANE_OF_ARTHROPODS,ench);
 }
 
 var enc = new styleButton();
@@ -7213,9 +7266,24 @@ Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
-ll =lvl.getText();
+if(legalenchant==true){
+ench =lvl.getText();
+if(ench >= 5){
+ench = 5;
 Dialog.dismiss();
 add3();
+clientMessage(client+"That enchantment is illegal in vanilla.");
+}
+if(ench <= 5){
+Dialog.dismiss();
+add3();
+}
+}
+if(legalenchant==false){
+ench =lvl.getText();
+Dialog.dismiss();
+add3();
+}
 }
 });
 
@@ -7229,7 +7297,7 @@ print("The Enchant Dialog Is Malfunctioning:"+e);
 }
 
 function add3() {
-Player.enchant(Player.getSelectedSlotId(), Enchantment.BLAST_PROTECTION,ll);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.BLAST_PROTECTION,ench);
 }
 
 var enf = new styleButton();
@@ -7265,9 +7333,24 @@ Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
-ll =lvl.getText();
+if(legalenchant==true){
+ench =lvl.getText();
+if(ench >= 5){
+ench = 5;
 Dialog.dismiss();
 add5();
+clientMessage(client+"That enchantment is illegal in vanilla.");
+}
+if(ench <= 5){
+Dialog.dismiss();
+add5();
+}
+}
+if(legalenchant==false){
+ench =lvl.getText();
+Dialog.dismiss();
+add5();
+}
 }
 });
 
@@ -7281,7 +7364,7 @@ print("The Enchant Dialog Is Malfunctioning:"+e);
 }
 
 function add5() {
-Player.enchant(Player.getSelectedSlotId(), Enchantment.DEPTH_STRIDER,ll);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.DEPTH_STRIDER,ench);
 }
 
 var ene = new styleButton();
@@ -7317,9 +7400,24 @@ Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
-ll =lvl.getText();
+if(legalenchant==true){
+ench =lvl.getText();
+if(ench >= 5){
+ench = 5;
 Dialog.dismiss();
 add6();
+clientMessage(client+"That enchantment is illegal in vanilla.");
+}
+if(ench <= 5){
+Dialog.dismiss();
+add6();
+}
+}
+if(legalenchant==false){
+ench =lvl.getText();
+Dialog.dismiss();
+add6();
+}
 }
 });
 
@@ -7333,7 +7431,7 @@ print("The Enchant Dialog Is Malfunctioning:"+e);
 }
 
 function add6() {
-Player.enchant(Player.getSelectedSlotId(), Enchantment.EFFICIENCY,ll);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.EFFICIENCY,ench);
 }
 
 var eng = new styleButton();
@@ -7369,9 +7467,24 @@ Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
-ll =lvl.getText();
+if(legalenchant==true){
+ench =lvl.getText();
+if(ench >= 5){
+ench = 5;
 Dialog.dismiss();
 add7();
+clientMessage(client+"That enchantment is illegal in vanilla.");
+}
+if(ench <= 5){
+Dialog.dismiss();
+add7();
+}
+}
+if(legalenchant==false){
+ench =lvl.getText();
+Dialog.dismiss();
+add7();
+}
 }
 });
 
@@ -7385,7 +7498,7 @@ print("The Enchant Dialog Is Malfunctioning:"+e);
 }
 
 function add7() {
-Player.enchant(Player.getSelectedSlotId(), Enchantment.FEATHER_FALLING,ll);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.FEATHER_FALLING,ench);
 }
 
 var enh = new styleButton();
@@ -7421,9 +7534,24 @@ Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
-ll =lvl.getText();
+if(legalenchant==true){
+ench =lvl.getText();
+if(ench >= 5){
+ench = 5;
 Dialog.dismiss();
 add8();
+clientMessage(client+"That enchantment is illegal in vanilla.");
+}
+if(ench <= 5){
+Dialog.dismiss();
+add8();
+}
+}
+if(legalenchant==false){
+ench =lvl.getText();
+Dialog.dismiss();
+add8();
+}
 }
 });
 
@@ -7437,7 +7565,7 @@ print("The Enchant Dialog Is Malfunctioning:"+e);
 }
 
 function add8() {
-Player.enchant(Player.getSelectedSlotId(), Enchantment.FIRE_ASPECT,ll);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.FIRE_ASPECT,ench);
 }
 
 var eni = new styleButton();
@@ -7473,9 +7601,24 @@ Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
-ll =lvl.getText();
+if(legalenchant==true){
+ench =lvl.getText();
+if(ench >= 5){
+ench = 5;
 Dialog.dismiss();
 add9();
+clientMessage(client+"That enchantment is illegal in vanilla.");
+}
+if(ench <= 5){
+Dialog.dismiss();
+add9();
+}
+}
+if(legalenchant==false){
+ench =lvl.getText();
+Dialog.dismiss();
+add9();
+}
 }
 });
 
@@ -7489,7 +7632,7 @@ print("The Enchant Dialog Is Malfunctioning:"+e);
 }
 
 function add9() {
-Player.enchant(Player.getSelectedSlotId(), Enchantment.FIRE_PROTECTION,ll);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.FIRE_PROTECTION,ench);
 }
 
 var enj = new styleButton();
@@ -7525,9 +7668,24 @@ Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
-ll =lvl.getText();
+if(legalenchant==true){
+ench =lvl.getText();
+if(ench >= 5){
+ench = 5;
 Dialog.dismiss();
 add10();
+clientMessage(client+"That enchantment is illegal in vanilla.");
+}
+if(ench <= 5){
+Dialog.dismiss();
+add10();
+}
+}
+if(legalenchant==false){
+ench =lvl.getText();
+Dialog.dismiss();
+add10();
+}
 }
 });
 
@@ -7541,7 +7699,7 @@ print("The Enchant Dialog Is Malfunctioning:"+e);
 }
 
 function add10() {
-Player.enchant(Player.getSelectedSlotId(), Enchantment.FLAME,ll);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.FLAME,ench);
 }
 
 var enk = new styleButton();
@@ -7577,9 +7735,24 @@ Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
-ll =lvl.getText();
+if(legalenchant==true){
+ench =lvl.getText();
+if(ench >= 5){
+ench = 5;
 Dialog.dismiss();
 add11();
+clientMessage(client+"That enchantment is illegal in vanilla.");
+}
+if(ench <= 5){
+Dialog.dismiss();
+add11();
+}
+}
+if(legalenchant==false){
+ench =lvl.getText();
+Dialog.dismiss();
+add11();
+}
 }
 });
 
@@ -7593,7 +7766,7 @@ print("The Enchant Dialog Is Malfunctioning:"+e);
 }
 
 function add11() {
-Player.enchant(Player.getSelectedSlotId(), Enchantment.FORTUNE,ll);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.FORTUNE,ench);
 }
 
 var enl = new styleButton();
@@ -7629,9 +7802,24 @@ Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
-ll =lvl.getText();
+if(legalenchant==true){
+ench =lvl.getText();
+if(ench >= 5){
+ench = 5;
 Dialog.dismiss();
 add12();
+clientMessage(client+"That enchantment is illegal in vanilla.");
+}
+if(ench <= 5){
+Dialog.dismiss();
+add12();
+}
+}
+if(legalenchant==false){
+ench =lvl.getText();
+Dialog.dismiss();
+add12();
+}
 }
 });
 
@@ -7645,7 +7833,7 @@ print("The Enchant Dialog Is Malfunctioning:"+e);
 }
 
 function add12() {
-Player.enchant(Player.getSelectedSlotId(), Enchantment.INFINITY,ll);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.INFINITY,ench);
 }
 
 var enm = new styleButton();
@@ -7681,9 +7869,24 @@ Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
-ll =lvl.getText();
+if(legalenchant==true){
+ench =lvl.getText();
+if(ench >= 5){
+ench = 5;
 Dialog.dismiss();
 add13();
+clientMessage(client+"That enchantment is illegal in vanilla.");
+}
+if(ench <= 5){
+Dialog.dismiss();
+add13();
+}
+}
+if(legalenchant==false){
+ench =lvl.getText();
+Dialog.dismiss();
+add13();
+}
 }
 });
 
@@ -7697,7 +7900,7 @@ print("The Enchant Dialog Is Malfunctioning:"+e);
 }
 
 function add13() {
-Player.enchant(Player.getSelectedSlotId(), Enchantment.KNOCKBACK,ll);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.KNOCKBACK,ench);
 }
 
 var enn = new styleButton();
@@ -7733,9 +7936,24 @@ Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
-ll =lvl.getText();
+if(legalenchant==true){
+ench =lvl.getText();
+if(ench >= 5){
+ench = 5;
 Dialog.dismiss();
 add14();
+clientMessage(client+"That enchantment is illegal in vanilla.");
+}
+if(ench <= 5){
+Dialog.dismiss();
+add14();
+}
+}
+if(legalenchant==false){
+ench =lvl.getText();
+Dialog.dismiss();
+add14();
+}
 }
 });
 
@@ -7749,7 +7967,7 @@ print("The Enchant Dialog Is Malfunctioning:"+e);
 }
 
 function add14() {
-Player.enchant(Player.getSelectedSlotId(), Enchantment.LOOTING,ll);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.LOOTING,ench);
 }
 
 var eno = new styleButton();
@@ -7785,9 +8003,24 @@ Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
-ll =lvl.getText();
+if(legalenchant==true){
+ench =lvl.getText();
+if(ench >= 5){
+ench = 5;
 Dialog.dismiss();
 add15();
+clientMessage(client+"That enchantment is illegal in vanilla.");
+}
+if(ench <= 5){
+Dialog.dismiss();
+add15();
+}
+}
+if(legalenchant==false){
+ench =lvl.getText();
+Dialog.dismiss();
+add15();
+}
 }
 });
 
@@ -7801,7 +8034,7 @@ print("The Enchant Dialog Is Malfunctioning:"+e);
 }
 
 function add15() {
-Player.enchant(Player.getSelectedSlotId(), Enchantment.LUCK_OF_THE_SEA,ll);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.LUCK_OF_THE_SEA,ench);
 }
 
 var enp = new styleButton();
@@ -7837,9 +8070,24 @@ Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
-ll =lvl.getText();
+if(legalenchant==true){
+ench =lvl.getText();
+if(ench >= 5){
+ench = 5;
 Dialog.dismiss();
 add16();
+clientMessage(client+"That enchantment is illegal in vanilla.");
+}
+if(ench <= 5){
+Dialog.dismiss();
+add16();
+}
+}
+if(legalenchant==false){
+ench =lvl.getText();
+Dialog.dismiss();
+add16();
+}
 }
 });
 
@@ -7853,7 +8101,7 @@ print("The Enchant Dialog Is Malfunctioning:"+e);
 }
 
 function add16() {
-Player.enchant(Player.getSelectedSlotId(), Enchantment.LURE,ll);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.LURE,ench);
 }
 
 var enq = new styleButton();
@@ -7889,9 +8137,24 @@ Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
-ll =lvl.getText();
+if(legalenchant==true){
+ench =lvl.getText();
+if(ench >= 5){
+ench = 5;
 Dialog.dismiss();
 add17();
+clientMessage(client+"That enchantment is illegal in vanilla.");
+}
+if(ench <= 5){
+Dialog.dismiss();
+add17();
+}
+}
+if(legalenchant==false){
+ench =lvl.getText();
+Dialog.dismiss();
+add17();
+}
 }
 });
 
@@ -7905,7 +8168,7 @@ print("The Enchant Dialog Is Malfunctioning:"+e);
 }
 
 function add17() {
-Player.enchant(Player.getSelectedSlotId(), Enchantment.POWER,ll);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.POWER,ench);
 }
 
 var enr = new styleButton();
@@ -7941,9 +8204,24 @@ Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
-ll =lvl.getText();
+if(legalenchant==true){
+ench =lvl.getText();
+if(ench >= 5){
+ench = 5;
 Dialog.dismiss();
 add18();
+clientMessage(client+"That enchantment is illegal in vanilla.");
+}
+if(ench <= 5){
+Dialog.dismiss();
+add18();
+}
+}
+if(legalenchant==false){
+ench =lvl.getText();
+Dialog.dismiss();
+add18();
+}
 }
 });
 
@@ -7957,7 +8235,7 @@ print("The Enchant Dialog Is Malfunctioning:"+e);
 }
 
 function add18() {
-Player.enchant(Player.getSelectedSlotId(), Enchantment.PROJECTILE_PROTECTION,ll);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.PROJECTILE_PROTECTION,ench);
 }
 
 var ens = new styleButton();
@@ -7993,9 +8271,24 @@ Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
-ll =lvl.getText();
+if(legalenchant==true){
+ench =lvl.getText();
+if(ench >= 5){
+ench = 5;
 Dialog.dismiss();
 add19();
+clientMessage(client+"That enchantment is illegal in vanilla.");
+}
+if(ench <= 5){
+Dialog.dismiss();
+add19();
+}
+}
+if(legalenchant==false){
+ench =lvl.getText();
+Dialog.dismiss();
+add19();
+}
 }
 });
 
@@ -8009,7 +8302,7 @@ print("The Enchant Dialog Is Malfunctioning:"+e);
 }
 
 function add19() {
-Player.enchant(Player.getSelectedSlotId(), Enchantment.PROTECTION,ll);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.PROTECTION,ench);
 }
 
 var ent = new styleButton();
@@ -8045,9 +8338,24 @@ Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
-ll =lvl.getText();
+if(legalenchant==true){
+ench =lvl.getText();
+if(ench >= 5){
+ench = 5;
 Dialog.dismiss();
 add20();
+clientMessage(client+"That enchantment is illegal in vanilla.");
+}
+if(ench <= 5){
+Dialog.dismiss();
+add20();
+}
+}
+if(legalenchant==false){
+ench =lvl.getText();
+Dialog.dismiss();
+add20();
+}
 }
 });
 
@@ -8061,7 +8369,7 @@ print("The Enchant Dialog Is Malfunctioning:"+e);
 }
 
 function add20() {
-Player.enchant(Player.getSelectedSlotId(), Enchantment.PUNCH,ll);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.PUNCH,ench);
 }
 
 var enu = new styleButton();
@@ -8097,9 +8405,24 @@ Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
-ll =lvl.getText();
+if(legalenchant==true){
+ench =lvl.getText();
+if(ench >= 5){
+ench = 5;
 Dialog.dismiss();
 add21();
+clientMessage(client+"That enchantment is illegal in vanilla.");
+}
+if(ench <= 5){
+Dialog.dismiss();
+add21();
+}
+}
+if(legalenchant==false){
+ench =lvl.getText();
+Dialog.dismiss();
+add21();
+}
 }
 });
 
@@ -8113,7 +8436,7 @@ print("The Enchant Dialog Is Malfunctioning:"+e);
 }
 
 function add21() {
-Player.enchant(Player.getSelectedSlotId(), Enchantment.RESPIRATION,ll);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.RESPIRATION,ench);
 }
 
 var env = new styleButton();
@@ -8149,9 +8472,24 @@ Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
-ll =lvl.getText();
+if(legalenchant==true){
+ench =lvl.getText();
+if(ench >= 5){
+ench = 5;
 Dialog.dismiss();
 add22();
+clientMessage(client+"That enchantment is illegal in vanilla.");
+}
+if(ench <= 5){
+Dialog.dismiss();
+add22();
+}
+}
+if(legalenchant==false){
+ench =lvl.getText();
+Dialog.dismiss();
+add22();
+}
 }
 });
 
@@ -8165,7 +8503,7 @@ print("The Enchant Dialog Is Malfunctioning:"+e);
 }
 
 function add22() {
-Player.enchant(Player.getSelectedSlotId(), Enchantment.SHARPNESS,ll);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.SHARPNESS,ench);
 }
 
 var enw = new styleButton();
@@ -8201,9 +8539,24 @@ Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
-ll =lvl.getText();
+if(legalenchant==true){
+ench =lvl.getText();
+if(ench >= 5){
+ench = 5;
 Dialog.dismiss();
 add23();
+clientMessage(client+"That enchantment is illegal in vanilla.");
+}
+if(ench <= 5){
+Dialog.dismiss();
+add23();
+}
+}
+if(legalenchant==false){
+ench =lvl.getText();
+Dialog.dismiss();
+add23();
+}
 }
 });
 
@@ -8217,7 +8570,7 @@ print("The Enchant Dialog Is Malfunctioning:"+e);
 }
 
 function add23() {
-Player.enchant(Player.getSelectedSlotId(), Enchantment.SILK_TOUCH,ll);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.SILK_TOUCH,ench);
 }
 
 var enx = new styleButton();
@@ -8253,9 +8606,24 @@ Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
-ll =lvl.getText();
+if(legalenchant==true){
+ench =lvl.getText();
+if(ench >= 5){
+ench = 5;
 Dialog.dismiss();
 add24();
+clientMessage(client+"That enchantment is illegal in vanilla.");
+}
+if(ench <= 5){
+Dialog.dismiss();
+add24();
+}
+}
+if(legalenchant==false){
+ench =lvl.getText();
+Dialog.dismiss();
+add24();
+}
 }
 });
 
@@ -8269,7 +8637,7 @@ print("The Enchant Dialog Is Malfunctioning:"+e);
 }
 
 function add24() {
-Player.enchant(Player.getSelectedSlotId(), Enchantment.SMITE,ll);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.SMITE,ench);
 }
 
 var eny = new styleButton();
@@ -8305,9 +8673,24 @@ Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
-ll =lvl.getText();
+if(legalenchant==true){
+ench =lvl.getText();
+if(ench >= 5){
+ench = 5;
 Dialog.dismiss();
 add25();
+clientMessage(client+"That enchantment is illegal in vanilla.");
+}
+if(ench <= 5){
+Dialog.dismiss();
+add25();
+}
+}
+if(legalenchant==false){
+ench =lvl.getText();
+Dialog.dismiss();
+add25();
+}
 }
 });
 
@@ -8321,7 +8704,7 @@ print("The Enchant Dialog Is Malfunctioning:"+e);
 }
 
 function add25() {
-Player.enchant(Player.getSelectedSlotId(), Enchantment.THORNS,ll);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.THORNS,ench);
 }
 
 var enz = new styleButton();
@@ -8357,9 +8740,24 @@ Exit.setText("Done");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
-ll =lvl.getText();
+if(legalenchant==true){
+ench =lvl.getText();
+if(ench >= 5){
+ench = 5;
 Dialog.dismiss();
 add26();
+clientMessage(client+"That enchantment is illegal in vanilla.");
+}
+if(ench <= 5){
+Dialog.dismiss();
+add26();
+}
+}
+if(legalenchant==false){
+ench =lvl.getText();
+Dialog.dismiss();
+add26();
+}
 }
 });
 
@@ -8367,13 +8765,13 @@ GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
-print("The Enchant Dialog Is Malfunctioning:"+e);
+print("The Enchant Dialog :"+e);
 }
 }});
 }
 
 function add26() {
-Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,ll);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,ench);
 }
 
 //Enchantment.AQUA_AFFINITY;
@@ -13617,11 +14015,8 @@ try{
 teleportD = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var X = new styleInput();
-X.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Y = new styleInput();
-Y.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Z = new styleInput();
-Z.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
 
