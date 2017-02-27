@@ -5555,7 +5555,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
+var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var lvl = new styleInput(); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -5613,7 +5613,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
+var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var lvl = new styleInput(); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -5671,7 +5671,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
+var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var lvl = new styleInput(); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -5729,7 +5729,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
+var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var lvl = new styleInput(); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -5787,7 +5787,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
+var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var lvl = new styleInput(); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -5845,7 +5845,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
+var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var lvl = new styleInput(); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -5903,7 +5903,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
+var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var lvl = new styleInput(); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -5961,7 +5961,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
+var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var lvl = new styleInput(); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -6019,7 +6019,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
+var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var lvl = new styleInput(); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -6077,7 +6077,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
+var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var lvl = new styleInput(); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -6135,7 +6135,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
+var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var lvl = new styleInput(); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -6193,7 +6193,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
+var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var lvl = new styleInput(); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -6251,7 +6251,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
+var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var lvl = new styleInput(); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -6309,7 +6309,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
+var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var lvl = new styleInput(); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -6367,7 +6367,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
+var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var lvl = new styleInput(); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -6425,7 +6425,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
+var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var lvl = new styleInput(); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -6483,7 +6483,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
+var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var lvl = new styleInput(); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -6541,7 +6541,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
+var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var lvl = new styleInput(); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -6599,7 +6599,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
+var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var lvl = new styleInput(); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -6657,7 +6657,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
+var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var lvl = new styleInput(); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -6715,7 +6715,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
+var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var lvl = new styleInput(); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -6773,7 +6773,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
+var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var lvl = new styleInput(); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
@@ -6831,7 +6831,7 @@ run: function(){
 try{
 GetText = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
-var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
+var sec = new styleInput(); sec.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var lvl = new styleInput(); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
