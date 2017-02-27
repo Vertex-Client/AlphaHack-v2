@@ -12457,7 +12457,7 @@ function scc() {
 MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
-scc = new android.widget.PopupWindow();
+sccD = new android.widget.PopupWindow();
 var Layer5 = new android.widget.LinearLayout(MainActivity);
 var sc1 = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
@@ -12484,11 +12484,11 @@ print("Loading web page");
 }
 });
 
-scc.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-scc.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-scc.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+sccD.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+sccD.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+sccD.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
-print("The scc Dialog Is Malfunctioning:"+e);
+print("html dialog:"+e);
 }
 }});
 }
@@ -12511,7 +12511,7 @@ function iplu() {
 ctx.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
-iplu = new android.widget.PopupWindow();
+ipluD = new android.widget.PopupWindow();
 var Layer4 = new android.widget.LinearLayout(ctx);
 var ip1 = new styleInput();
 var Dialog = new android.app.Dialog(ctx);
@@ -12538,11 +12538,11 @@ print("Loading web page");
 }
 });
 
-iplu.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-iplu.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-iplu.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+ipluD.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+ipluD.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+ipluD.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
-print("The IPLU Dialog Is Malfunctioning:"+e);
+print("trace dialog:"+e);
 }
 }});
 }
@@ -12565,7 +12565,7 @@ function pip() {
 ctx.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
-pip = new android.widget.PopupWindow();
+pipD = new android.widget.PopupWindow();
 var Layer4 = new android.widget.LinearLayout(ctx);
 var ddip = new styleInput();
 var ddip2 = new styleInput();
@@ -12597,11 +12597,11 @@ android.widget.Toast.makeText(ctx, "AlphaHack: Loading web page", 1).show();
 }
 });
 
-pip.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-pip.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-pip.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+pipD.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+pipD.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+pipD.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
-print("The IP Dialog Is Malfunctioning:"+e);
+print("IP Dialog:"+e);
 }
 }});
 }
@@ -12718,7 +12718,7 @@ function spa() {
 MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
-spa = new android.widget.PopupWindow();
+spaD = new android.widget.PopupWindow();
 var Layer6 = new android.widget.LinearLayout(MainActivity);
 var mm = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
@@ -12743,9 +12743,9 @@ if(autospam2==true)autospam = true;
 }
 });
 
-spa.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-spa.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-spa.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+spaD.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+spaD.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+spaD.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
 print("Spam dialog error:"+e);
 }
@@ -12802,7 +12802,7 @@ digg.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 digg.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 digg.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
-print("Error :"+e);
+print("destroy dialog :"+e);
 }
 }});
 }
@@ -12811,7 +12811,7 @@ function new9() {
 MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
-new9 = new android.widget.PopupWindow();
+netherD = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var select1 = new styleButton();
 var select2 = new styleButton();
@@ -12907,11 +12907,11 @@ showMenuBtn();
                 }
             }));
 
-new9.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-new9.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-new9.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+netherD.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+netherD.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+netherD.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
-print("error: "+e);
+print("nether dialog: "+e);
 }
 }});
 }
@@ -12920,7 +12920,7 @@ function new3() {
 MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
-new3 = new android.widget.PopupWindow();
+entD = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var select1 = new styleButton();
 var select2 = new styleButton();
@@ -13005,11 +13005,11 @@ showMenuBtn();
 }
 });
  
-new3.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-new3.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-new3.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+entD.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+entD.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+entD.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
-print("ent spawn Dialog error:"+e);
+print("ent spawn dialog:"+e);
 }
 }});
 }
@@ -13018,7 +13018,7 @@ function new2() {
 MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
-new2 = new android.widget.PopupWindow();
+griefD = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var select1 = new styleButton();
 var select2 = new styleButton();
@@ -13072,11 +13072,11 @@ Dialog.dismiss();
 }
 });
  
-new2.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-new2.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-new2.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+griefD.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+griefD.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+griefD.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
-print("Error :"+e);
+print("grief dialog :"+e);
 }
 }});
 }
@@ -13085,7 +13085,7 @@ function named() {
 MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
-GetText = new android.widget.PopupWindow();
+diffD = new android.widget.PopupWindow();
 var Layer8 = new android.widget.LinearLayout(MainActivity);
 var ntd = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
@@ -13112,11 +13112,11 @@ showMenuBtn();
 }
 });
 
-GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+diffD.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+diffD.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+diffD.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
-print("The setdiff Dialog Is Malfunctioning:"+e);
+print("difficulty dialog:"+e);
 }
 }});
 }
@@ -13129,7 +13129,7 @@ function nameMe() {
 MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
-GetText = new android.widget.PopupWindow();
+nameeD = new android.widget.PopupWindow();
 var Layer8 = new android.widget.LinearLayout(MainActivity);
 var nt = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
@@ -13156,11 +13156,11 @@ showMenuBtn();
 }
 });
 
-GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+nameeD.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+nameeD.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+nameeD.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
-print("The setName Dialog Is Malfunctioning:"+e);
+print("name dialog:"+e);
 }
 }});
 }
@@ -13173,7 +13173,7 @@ function block1() {
 MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
-GetText = new android.widget.PopupWindow();
+lightD = new android.widget.PopupWindow();
 var Layer8 = new android.widget.LinearLayout(MainActivity);
 var bd = new styleInput();
 var bn = new styleInput();
@@ -13205,11 +13205,11 @@ showMenuBtn();
 }
 });
 
-GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+lightD.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+lightD.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+lightD.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
-print("The block L Dialog Is Malfunctioning:"+e);
+print("light lvl dialog:"+e);
 }
 }});
 }
@@ -13222,7 +13222,7 @@ function block2() {
 MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
-GetText = new android.widget.PopupWindow();
+resisD = new android.widget.PopupWindow();
 var Layer8 = new android.widget.LinearLayout(MainActivity);
 var bi = new styleInput();
 var br = new styleInput();
@@ -13254,11 +13254,11 @@ showMenuBtn();
 }
 });
 
-GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+resisD.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+resisD.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+resisD.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
-print("The block R Dialog Is Malfunctioning:"+e);
+print("resistance dialog:"+e);
 }
 }});
 }
@@ -13271,7 +13271,7 @@ function newhealth() {
 MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
-GetText = new android.widget.PopupWindow();
+healthD = new android.widget.PopupWindow();
 var Layer8 = new android.widget.LinearLayout(MainActivity);
 var enh = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
@@ -13298,11 +13298,11 @@ showMenuBtn();
 }
 });
 
-GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+healthD.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+healthD.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+healthD.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
-print("The set health Dialog Is Malfunctioning:"+e);
+print("set heart dialog:"+e);
 }
 }});
 }
@@ -13315,7 +13315,7 @@ function horsehealth1() {
 MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
-GetText = new android.widget.PopupWindow();
+heartD = new android.widget.PopupWindow();
 var Layer10 = new android.widget.LinearLayout(MainActivity);
 var eha = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
@@ -13342,20 +13342,20 @@ showMenuBtn();
 }
 });
 
-GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+heartD.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+heartD.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+heartD.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
-print("The set health Dialog Is Malfunctioning:"+e);
+print("set health dialog:"+e);
 }
 }});
 }
 
-		function new4() {
+function new4() {
 MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
-new3 = new android.widget.PopupWindow();
+ageD = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var select1 = new styleButton();
 var select2 = new styleButton();
@@ -13400,11 +13400,11 @@ showMenuBtn();
 }
 });
  
-new3.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-new3.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-new3.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+ageD.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+ageD.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+ageD.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
-print("The new Dialog Is Malfunctioning:"+e);
+print("age dialog:"+e);
 }
 }});
 }
@@ -13413,7 +13413,7 @@ function XGive() {
 MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
-GetText = new android.widget.PopupWindow();
+expD = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var XP = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
@@ -13440,11 +13440,11 @@ showMenuBtn();
 }
 });
 
-GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+expD.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+expD.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+expD.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
-print("The XP Dialog Is Malfunctioning:"+e);
+print("xp dialog:"+e);
 }
 }});
 }
@@ -13458,7 +13458,7 @@ function Give() {
 MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
-GetText = new android.widget.PopupWindow();
+giveD = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var ID = new styleInput();
 var Amount = new styleInput();
@@ -13495,11 +13495,11 @@ showMenuBtn();
 }
 });
 
-GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+giveD.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+giveD.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+giveD.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
-print("The Give Dialog Is Malfunctioning:"+e);
+print("give dialog:"+e);
 }
 }});
 }
@@ -13512,7 +13512,7 @@ function newn() {
 MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
-newn = new android.widget.PopupWindow();
+nukeD = new android.widget.PopupWindow();
 var Layerb5 = new android.widget.LinearLayout(MainActivity);
 var nNuke = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
@@ -13539,11 +13539,11 @@ showMenuBtn();
 }
 });
 
-newn.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-newn.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-newn.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+nukeD.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+nukeD.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+nukeD.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
-print("The newn Dialog Is Malfunctioning:"+e);
+print("nuke dialog:"+e);
 }
 }});
 }
@@ -13556,7 +13556,7 @@ function newspeed() {
 MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
-GetText = new android.widget.PopupWindow();
+speedD = new android.widget.PopupWindow();
 var Layer8 = new android.widget.LinearLayout(MainActivity);
 var vspee = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
@@ -13583,11 +13583,11 @@ showMenuBtn();
 }
 });
 
-GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+speedD.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+speedD.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+speedD.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
-print("The set speed Dialog Is Malfunctioning:"+e);
+print("speed dialog:"+e);
 }
 }});
 }
@@ -13600,7 +13600,7 @@ function Tsele() {
 MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
-GetText = new android.widget.PopupWindow();
+teleportD = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var X = new styleInput();
 var Y = new styleInput();
@@ -13637,11 +13637,11 @@ showMenuBtn();
 }
 });
 
-GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+teleportD.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+teleportD.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+teleportD.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
-print("The Teleport Dialog Is Malfunctioning:"+e);
+print("teleport dialog:"+e);
 }
 }});
 }
@@ -13654,7 +13654,7 @@ function setDialogW() {
 MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
-GetText = new android.widget.PopupWindow();
+weatherD = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var w = new styleInput();
 var w2 = new styleInput();
@@ -13686,11 +13686,11 @@ showMenuBtn();
 }
 });
 
-GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+weatherD.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+weatherD.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+weatherD.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
-print("The WS Dialog Is Malfunctioning:"+e);
+print("weather dialog:"+e);
 }
 }});
 }
@@ -13704,7 +13704,7 @@ function atact() {
 MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
-atact = new android.widget.PopupWindow();
+act1 = new android.widget.PopupWindow();
 var Layerb4 = new android.widget.LinearLayout(MainActivity);
 var editAtk = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
@@ -13730,11 +13730,11 @@ showMenuBtn();
 }
 });
 
-atact.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-atact.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-atact.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+act1.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+act1.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+act1.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
-print("The atact Dialog Is Malfunctioning:"+e);
+print("action 1 dialog:"+e);
 }
 }});
 }
@@ -13743,7 +13743,7 @@ function atact2() {
 MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
-atact = new android.widget.PopupWindow();
+act2 = new android.widget.PopupWindow();
 var Layerz8 = new android.widget.LinearLayout(MainActivity);
 var editAtk = new styleInput();
 var editAtk2 = new styleInput();
@@ -13774,11 +13774,11 @@ showMenuBtn();
 }
 });
 
-atact.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-atact.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-atact.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+act2.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+act2.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+act2.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
-print("The atact Dialog Is Malfunctioning:"+e);
+print("action 2 dialog:"+e);
 }
 }});
 }
@@ -13787,7 +13787,7 @@ function signEditor() {
 ctx.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
-GetText = new android.widget.PopupWindow();
+signD = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(ctx);
 var xy = new styleInput();
 var xy2 = new styleInput();
@@ -13819,11 +13819,11 @@ showMenuBtn();
 }
 });
 
-GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+signD.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+signD.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+signD.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
-print("The signer Dialog Is Malfunctioning:"+e);
+print("sign dialog:"+e);
 }
 }});
 }
@@ -13836,7 +13836,7 @@ function fov() {
 MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
-GetText = new android.widget.PopupWindow();
+fovD = new android.widget.PopupWindow();
 var LayerFov = new android.widget.LinearLayout(MainActivity);
 var fin = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
@@ -13874,11 +13874,11 @@ showMenuBtn();
 }
 });
 
-GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+fovD.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+fovD.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+fovD.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
-print("The set fov Dialog:"+e);
+print("fov dialog:"+e);
 }
 }});
 }
@@ -13891,7 +13891,7 @@ function sendEtc() {
 MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
-sendEtc = new android.widget.PopupWindow();
+sendD = new android.widget.PopupWindow();
 var Layerz89 = new android.widget.LinearLayout(MainActivity);
 var datMsg = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
@@ -13918,11 +13918,11 @@ showMenuBtn();
 }
 });
 
-sendEtc.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-sendEtc.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-sendEtc.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+sendD.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+sendD.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+sendD.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
-print("The sendEtc Dialog Is Malfunctioning:"+e);
+print("send all dialog:"+e);
 }
 }});
 }
@@ -13939,7 +13939,7 @@ function rangeset() {
 MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
-GetText = new android.widget.PopupWindow();
+rangeD = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var rang = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
@@ -13966,11 +13966,11 @@ showMenuBtn();
 }
 });
 
-GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+rangeD.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+rangeD.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+rangeD.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
-print("The range Dialog Is Malfunctioning:"+e);
+print("range dialog:"+e);
 }
 }});
 }
@@ -13979,7 +13979,7 @@ function heightset() {
 MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
-GetText = new android.widget.PopupWindow();
+heightD = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var height = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
@@ -14006,11 +14006,11 @@ showMenuBtn();
 }
 });
 
-GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+heightD.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+heightD.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+heightD.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
-print("The heighte Dialog Is Malfunctioning:"+e);
+print("height dialog:"+e);
 }
 }});
 }
@@ -14019,7 +14019,7 @@ function itementer() {
 MainActivity.runOnUiThread(new java.lang.Runnable(){
 run: function(){ 
 try{
-GetText = new android.widget.PopupWindow();
+rainD = new android.widget.PopupWindow();
 var Layer = new android.widget.LinearLayout(MainActivity);
 var item = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
@@ -14046,11 +14046,11 @@ showMenuBtn();
 }
 });
 
-GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
-GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+rainD.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+rainD.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+rainD.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
-print("The iteme Dialog Is Malfunctioning:"+e);
+print("item rain dialog:"+e);
 }
 }});
 }
