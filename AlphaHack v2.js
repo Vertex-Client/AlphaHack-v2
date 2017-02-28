@@ -135,11 +135,27 @@ var onBackground = {
 }
 
 /*
-  dragop utils
+  dragop
 http://imgur.com/6xCQAyT
 http://imgur.com/xpEHET3
   Thank you godsoft029
 */
+var Timings = {
+	processing: new org.json.JSONObject(),
+	timingData: new org.json.JSONObject(),
+	startTiming: function (funcName) {
+		this.processing.put(funcName, java.lang.System.currentTimeMillis());
+	},
+	stopTiming: function (funcName) {
+		this.timingData.put(funcName, java.lang.System.currentTimeMillis() - this.processing.optLong(funcName, -1));
+	},
+	getTimingData: function () {
+		return this.timingData;
+	},
+	resetTiming: function (funcName) {
+		this.timingData.put(funcName, 0);
+	}
+};
 var Utils = {
             Block: {
                  isLiquid: function (id) {
@@ -195,6 +211,17 @@ var Utils = {
 			return false;
 		}
 	},
+	File: {
+		getTextFromFile: function (file) {
+
+			let readed = (new java.io.BufferedReader(new java.io.FileReader(file)));
+			let data = new java.lang.StringBuilder();
+			let string;
+			while((string = readed.readLine()) != null)
+				data.append(string + "\n");
+			return data.toString();
+		}
+	},
 	Render: {
 		getFloatBuffer: function (fArray) {
 			let bBuffer = java.nio.ByteBuffer.allocateDirect(fArray.length * 4);
@@ -214,9 +241,176 @@ var Utils = {
 			sBuffer.position(0);
 			return sBuffer;
 		},
+		renderer: null,
+		glSurface: null,
+		fov: 90,
 		color: android.graphics.Color.argb(180, 0, 255, 0),
+		initted: false,
+		init: function () {
+			if(!tracers1)return;
+			let options = Utils.File.getTextFromFile(new java.io.File(android.os.Environment.getExternalStorageDirectory() + "/games/com.mojang/minecraftpe/", "options.txt"));
+
+			options = options.split("\n");
+			options.forEach(function (entry) {
+				let suboption = entry.split(":");
+				if(suboption[0] == "gfx_field_of_view") {
+					Utils.Render.fov = suboption[1];
+
+				}
+			});
+			this.renderer = new android.opengl.GLSurfaceView.Renderer({
+				onSurfaceCreated: function (gl, config) {
+					let GL10 = javax.microedition.khronos.opengles.GL10;
+					gl.glClearColor(0, 0, 0, 0);
+					gl.glShadeModel(GL10.GL_SMOOTH);
+					gl.glClearDepthf(1.0);
+					gl.glDisable(GL10.GL_DITHER);
+					gl.glEnable(GL10.GL_DEPTH_TEST);
+					gl.glDepthFunc(GL10.GL_LEQUAL);
+					gl.glHint(GL10.GL_PERSPECTIVE_CORRECTION_HINT, GL10.GL_NICEST);
+				},
+				onSurfaceChanged: function (gl, width, height) {
+					let GL10 = javax.microedition.khronos.opengles.GL10;
+					gl.glMatrixMode(GL10.GL_PROJECTION);
+					gl.glLoadIdentity();
+					android.opengl.GLU.gluPerspective(gl, Utils.Render.fov, width / height, 0.1, 100);
+					gl.glMatrixMode(GL10.GL_MODELVIEW);
+					gl.glLoadIdentity();
+				},
+				/*onDrawFrame: function (gl) {
+					Timings.startTiming("gl_clear");
+					let GL10 = javax.microedition.khronos.opengles.GL10;
+					gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
+					gl.glLoadIdentity();
+					Timings.stopTiming("gl_clear");
+					if(tracers3) {
+						try {
+							Timings.startTiming("gl_lookAt");
+							gl.glDisable(GL10.GL_LIGHTING);
+							let yaw = getYaw() % 360;
+							let pitch = getPitch() % 360;
+							let eyeX = getPlayerX();
+							let eyeY = getPlayerY() + 1;
+							let eyeZ = getPlayerZ();
+
+							let dCenterX = Math.sin(yaw / 180 * Math.PI);
+							let dCenterZ = Math.cos(yaw / 180 * Math.PI);
+							let dCenterY = Math.sqrt(dCenterX * dCenterX + dCenterZ * dCenterZ) * Math.tan((pitch - 180) / 180 * Math.PI);
+
+							let centerX = eyeX - dCenterX;
+							let centerZ = eyeZ + dCenterZ;
+							let centerY = eyeY - dCenterY;
+
+							android.opengl.GLU.gluLookAt(gl, eyeX, eyeY, eyeZ, centerX, centerY, centerZ, 0, 1.0, 0);
+
+							Timings.stopTiming("gl_lookAt");
+							Timings.startTiming("gl_onRender");
+							DragOP.mods.forEach(function (entry, index, array) {
+								try {
+									if((!entry.isStateMode() || entry.state) && entry.hasOwnProperty("onRender"))
+										entry.onRender(gl);
+								} catch(e) {}
+							});
+							Timings.stopTiming("gl_onRender");
+						} catch(e) {
+							print("RenderProblem: " + e);
+						}
+
+					} else {
+						Timings.resetTiming("gl_lookAt");
+						Timings.resetTiming("gl_onRender");
+					}
+				}*/
+			});
+			ctx.runOnUiThread(new java.lang.Runnable({
+				run: function () {
+					Utils.Render.glSurface = new android.opengl.GLSurfaceView(ctx);
+					Utils.Render.glSurface.setZOrderOnTop(true);
+
+
+					Utils.Render.glSurface.setEGLConfigChooser(8, 8, 8, 8, 16, 0);
+					Utils.Render.glSurface.getHolder().setFormat(android.graphics.PixelFormat.TRANSLUCENT);
+					Utils.Render.glSurface.setRenderer(Utils.Render.renderer);
+					Utils.Render.glSurface.setRenderMode(0);
+
+					ctx.getWindow().getDecorView().addView(Utils.Render.glSurface);
+
+					Utils.Render.initted = true;
+				}
+			}));
+
+		},
+		drawBox: function (gl, x, y, z, xsize, ysize, zsize) {
+			if(!tracers2)return;
+			let GL10 = javax.microedition.khronos.opengles.GL10;
+			let size = new Array(xsize, ysize, zsize);
+			let vertices = [
+				0, 0, 0,
+				size[0], 0, 0,
+				0, 0, size[2],
+				size[0], 0, size[2],
+
+				0, size[1], 0,
+				size[0], size[1], 0,
+				0, size[1], size[2],
+				size[0], size[1], size[2]
+			];
+			let vertexBuffer = Utils.Render.getFloatBuffer(vertices);
+			let lineIndices = [
+				0, 1,
+				0, 2,
+				0, 4,
+
+				3, 1,
+				3, 2,
+				3, 7,
+
+				5, 4,
+				5, 7,
+				5, 1,
+
+				6, 4,
+				6, 7,
+				6, 2
+			];
+			let polyIndices = [
+				0, 1, 4,
+				1, 4, 5,
+
+				2, 3, 6,
+				7, 6, 3,
+
+				1, 3, 7,
+				7, 1, 5,
+
+				0, 2, 6,
+				6, 0, 4,
+
+				0, 1, 2,
+				3, 1, 2,
+
+				4, 5, 6,
+				7, 5, 6
+			];
+			let lineBuffer = Utils.Render.getShortBuffer(lineIndices);
+			let polyBuffer = Utils.Render.getShortBuffer(polyIndices);
+			gl.glTranslatef(x, y, z);
+			gl.glFrontFace(GL10.GL_CCW);
+			gl.glEnable(GL10.GL_BLEND);
+			//gl.glEnable(GL10.GL_LINE_SMOOTH);
+			gl.glBlendFunc(GL10.GL_SRC_ALPHA, GL10.GL_ONE_MINUS_SRC_ALPHA);
+			gl.glLineWidth(4);
+			gl.glColor4f(android.graphics.Color.red(Utils.Render.color) / 255,android.graphics.Color.green(Utils.Render.color) / 255, android.graphics.Color.blue(Utils.Render.color) / 255, 0.7);
+			gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);
+			gl.glVertexPointer(3, GL10.GL_FLOAT, 0, vertexBuffer);
+			gl.glDrawElements(GL10.GL_LINES, lineIndices.length, GL10.GL_UNSIGNED_SHORT, lineBuffer);
+			gl.glColor4f(android.graphics.Color.red(Utils.Render.color) / 255, android.graphics.Color.green(Utils.Render.color) / 255, android.graphics.Color.blue(Utils.Render.color) / 255, 0.2);
+			gl.glDrawElements(GL10.GL_TRIANGLES, polyIndices.length, GL10.GL_UNSIGNED_SHORT, polyBuffer);
+			gl.glDisable(GL10.GL_LINE_SMOOTH);
+			gl.glTranslatef(-x, -y, -z);
+		},
 		drawLine: function (gl, x, y, z, x2, y2, z2) {
-				return;
+				if(!tracers1)return;
 			let GL10 = javax.microedition.khronos.opengles.GL10;
 			let size = new Array(x2, y2, z2);
 			let vertices = [
@@ -440,6 +634,7 @@ var hitbox1 = false;
 var bowaura = false;
 var legalenchant = false;
 var tracers1 = false;
+var tracers2 = false;
 
 var showActive = false;
 var showActive2 = false;
