@@ -1739,6 +1739,10 @@ var urls3 = new android.content.Intent(MainActivity);
 mcpetheme = true;
 GUIName = android.graphics.Color.BLACK;
 GUIText = android.graphics.Color.BLACK;
+                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(mcpe);
@@ -1815,6 +1819,10 @@ var g2 = new styleButton();
 GUIPos = android.view.Gravity.RIGHT;
 GUIPos2 = android.view.Gravity.RIGHT;
 GUIPos3 = android.view.Gravity.RIGHT;
+                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(g2);
@@ -1826,6 +1834,10 @@ var g3 = new styleButton();
 GUIPos = android.view.Gravity.LEFT;
 GUIPos2 = android.view.Gravity.LEFT;
 GUIPos3 = android.view.Gravity.LEFT;
+                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(g3);
@@ -1843,6 +1855,10 @@ GUIPos3 = android.view.Gravity.LEFT;
             gs0.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUISize = 4;
+                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(gs0);
@@ -1852,6 +1868,10 @@ var gs1 = new styleButton();
             gs1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUISize = 3;
+                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(gs1);
@@ -1861,6 +1881,10 @@ var gs2 = new styleButton();
             gs2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUISize = 2;
+                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(gs2);
@@ -1870,6 +1894,10 @@ var gs3 = new styleButton();
             gs3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUISize = 1;
+                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(gs3);
@@ -1889,6 +1917,10 @@ var l1 = new styleButton();
 GUIColor = GUIColor1
 var GUIText = android.graphics.Color.WHITE;
 default1 = true;
+                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(l1);
@@ -1901,6 +1933,10 @@ GUIColor = GUIColor2
  var GUIText = android.graphics.Color.WHITE;
  if(default1==true)default1 = false;
 			//saveSetting("bgBlack");
+			                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(l2);
@@ -1913,6 +1949,10 @@ GUIColor = GUIColor3
 var GUIText = android.graphics.Color.BLACK
 if(default1==true)default1 = false;
 			//saveSetting("bgWhite");
+			                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(l3);
@@ -1924,6 +1964,10 @@ var l4 = new styleButton();
 GUIColor = GUIColor4
 if(default1==true)default1 = false;
 			//saveSetting("bgRed");
+			                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(l4);
@@ -1935,6 +1979,10 @@ var l5 = new styleButton();
 GUIColor = GUIColor5
 if(default1==true)default1 = false;
 			//saveSetting("bgBlue");
+			                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(l5);
@@ -1947,6 +1995,10 @@ GUIColor = GUIColor6
 var GUIText = android.graphics.Color.WHITE;
 if(default1==true)default1 = false;
 			//saveSetting("bgGray");
+			                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(l6);
@@ -1959,6 +2011,10 @@ GUIColor = GUIColor7
 var GUIText = android.graphics.Color.BLACK;
 if(default1==true)default1 = false;
 			//saveSetting("bgLtgray");
+			                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(l7);
@@ -1971,6 +2027,10 @@ GUIColor = GUIColor8
 var GUIText = android.graphics.Color.BLACK;
 if(default1==true)default1 = false;
 			//saveSetting("bgYellow");
+			                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(l8);
@@ -1983,6 +2043,10 @@ GUIColor = GUIColor9
 var GUIText = android.graphics.Color.BLACK;
 if(default1==true)default1 = false;
 			//saveSetting("bgCyan");
+			                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(l9);
@@ -1995,6 +2059,10 @@ GUIColor = GUIColor10
 var GUIText = android.graphics.Color.WHITE
 if(default1==true)default1 = false;
 			//saveSetting("bgDkgray");
+			                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(l10);
@@ -2006,6 +2074,10 @@ var l11 = new styleButton();
 GUIColor = GUIColor11
 if(default1==true)default1 = false;
 			//saveSetting("bgGreen");
+			                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(l11);
@@ -2017,6 +2089,10 @@ var l12 = new styleButton();
 GUIColor = GUIColor12
 if(default1==true)default1 = false;
 			//saveSetting("bgMagenta");
+			                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(l12);
@@ -2035,6 +2111,10 @@ if(default1==true)default1 = false;
                 onClick: function(viewarg){         
 			GUIText = GUIText2;
 			//saveSetting("txtBlack");
+			                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(b2);
@@ -2045,6 +2125,10 @@ var b3 = new styleButton();
                 onClick: function(viewarg){         
 GUIText = GUIText3;
 			//saveSetting("txtWhite");
+			                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(b3);
@@ -2055,6 +2139,10 @@ var b4 = new styleButton();
                 onClick: function(viewarg){         
 GUIText = GUIText4;
 			//saveSetting("txtRed");
+			                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(b4);
@@ -2065,6 +2153,10 @@ var b5 = new styleButton();
                 onClick: function(viewarg){         
 GUIText = GUIText5;
 			//saveSetting("txtBlue");
+			                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(b5);
@@ -2075,6 +2167,10 @@ var b6 = new styleButton();
                 onClick: function(viewarg){         
 GUIText = GUIText6;
 			//saveSetting("txtGray");
+			                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(b6);
@@ -2085,6 +2181,10 @@ var b7 = new styleButton();
                 onClick: function(viewarg){         
 GUIText = GUIText7;
 			//saveSetting("txtLtgray");
+			                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(b7);
@@ -2095,6 +2195,10 @@ var b8 = new styleButton();
                 onClick: function(viewarg){         
 GUIText = GUIText8;
 			//saveSetting("txtYellow");
+			                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(b8);
@@ -2105,6 +2209,10 @@ var b9 = new styleButton();
                 onClick: function(viewarg){         
 GUIText = GUIText9;
 			//saveSetting("txtCyan");
+			                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(b9);
@@ -2115,6 +2223,10 @@ var b10 = new styleButton();
                 onClick: function(viewarg){         
 GUIText = GUIText10;
 			//saveSetting("txtDkgray");
+			                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(b10);
@@ -2125,6 +2237,10 @@ var b11 = new styleButton();
                 onClick: function(viewarg){         
 GUIText = GUIText11;
 			//saveSetting("txtGreen");
+			                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(b11);
@@ -2135,6 +2251,10 @@ var b12 = new styleButton();
                 onClick: function(viewarg){         
 GUIText = GUIText12;
 			//saveSetting("txtMagenta");
+			                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(b12);
@@ -2152,6 +2272,10 @@ GUIText = GUIText12;
             b1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIStroke = GUIStroke1
+                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(b1);
@@ -2161,6 +2285,10 @@ var b2 = new styleButton();
             b2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIStroke = GUIStroke2
+                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(b2);
@@ -2170,6 +2298,10 @@ var b3 = new styleButton();
             b3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIStroke = GUIStroke3
+                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(b3);
@@ -2179,6 +2311,10 @@ var b4 = new styleButton();
             b4.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIStroke = GUIStroke4
+                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(b4);
@@ -2188,6 +2324,10 @@ var b5 = new styleButton();
             b5.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIStroke = GUIStroke5
+                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(b5);
@@ -2197,6 +2337,10 @@ var b6 = new styleButton();
             b6.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIStroke = GUIStroke6
+                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(b6);
@@ -2206,6 +2350,10 @@ var b7 = new styleButton();
             b7.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIStroke = GUIStroke7
+                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(b7);
@@ -2215,6 +2363,10 @@ var b8 = new styleButton();
             b8.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIStroke = GUIStroke8
+                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(b8);
@@ -2224,6 +2376,10 @@ var b9 = new styleButton();
             b9.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIStroke = GUIStroke9
+                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(b9);
@@ -2233,6 +2389,10 @@ var b10 = new styleButton();
             b10.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIStroke = GUIStroke10
+                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(b10);
@@ -2242,6 +2402,10 @@ var b11 = new styleButton();
             b11.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIStroke = GUIStroke11
+                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(b11);
@@ -2251,6 +2415,10 @@ var b12 = new styleButton();
             b12.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 GUIStroke = GUIStroke12
+                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(b12);
@@ -2268,6 +2436,10 @@ GUIStroke = GUIStroke12
             btc1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 defaultbtnc = true;
+                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(btc1);
@@ -2279,6 +2451,10 @@ var btc2 = new styleButton();
 GUIBtns = GUIBtns2
 defaultbtnc = false;
 			//saveSetting("btnBlack");
+			                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(btc2);
@@ -2290,6 +2466,10 @@ var btc3 = new styleButton();
 GUIBtns = GUIBtns3
 defaultbtnc = false;
 			//saveSetting("btnWhite");
+			                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(btc3);
@@ -2301,6 +2481,10 @@ var btc4 = new styleButton();
 GUIBtns = GUIBtns4
 defaultbtnc = false;
 			//saveSetting("btnRed");
+			                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(btc4);
@@ -2312,6 +2496,10 @@ var btc5 = new styleButton();
 GUIBtns = GUIBtns5
 defaultbtnc = false;
 			//saveSetting("btnBlue");
+			                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(btc5);
@@ -2323,6 +2511,10 @@ var btc6 = new styleButton();
 GUIBtns = GUIBtns6
 defaultbtnc = false;
 			//saveSetting("btnGray");
+			                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(btc6);
@@ -2334,6 +2526,10 @@ var btc7 = new styleButton();
 GUIBtns = GUIBtns7
 defaultbtnc = false;
 			//saveSetting("btnLtgray");
+			                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(btc7);
@@ -2345,6 +2541,10 @@ var btc8 = new styleButton();
 GUIBtns = GUIBtns8
 defaultbtnc = false;
 			//saveSetting("btnYellow");
+			                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(btc8);
@@ -2356,6 +2556,10 @@ var btc9 = new styleButton();
 GUIBtns = GUIBtns9
 defaultbtnc = false;
 			//saveSetting("btnCyan");
+			                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(btc9);
@@ -2367,6 +2571,10 @@ var btc10 = new styleButton();
 GUIBtns = GUIBtns10
 defaultbtnc = false;
 			//saveSetting("btnDkgray");
+			                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(btc10);
@@ -2378,6 +2586,10 @@ var btc11 = new styleButton();
 GUIBtns = GUIBtns11
 defaultbtnc = false;
 			//saveSetting("btnGreen");
+			                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(btc11);
@@ -2389,6 +2601,10 @@ var btc12 = new styleButton();
 GUIBtns = GUIBtns12;
 defaultbtnc = false;
 			//saveSetting("btnMagenta");
+			                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(btc12);
