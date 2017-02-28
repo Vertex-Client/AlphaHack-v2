@@ -140,22 +140,7 @@ http://imgur.com/6xCQAyT
 http://imgur.com/xpEHET3
   Thank you godsoft029
 */
-var Timings = {
-	processing: new org.json.JSONObject(),
-	timingData: new org.json.JSONObject(),
-	startTiming: function (funcName) {
-		this.processing.put(funcName, java.lang.System.currentTimeMillis());
-	},
-	stopTiming: function (funcName) {
-		this.timingData.put(funcName, java.lang.System.currentTimeMillis() - this.processing.optLong(funcName, -1));
-	},
-	getTimingData: function () {
-		return this.timingData;
-	},
-	resetTiming: function (funcName) {
-		this.timingData.put(funcName, 0);
-	}
-};
+
 var Utils = {
             Block: {
                  isLiquid: function (id) {
@@ -277,15 +262,15 @@ var Utils = {
 					gl.glMatrixMode(GL10.GL_MODELVIEW);
 					gl.glLoadIdentity();
 				},
-				/*onDrawFrame: function (gl) {
-					Timings.startTiming("gl_clear");
+				onDrawFrame: function (gl) {
+					
 					let GL10 = javax.microedition.khronos.opengles.GL10;
 					gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
 					gl.glLoadIdentity();
-					Timings.stopTiming("gl_clear");
-					if(tracers3) {
+					
+					if(tracers1) {
 						try {
-							Timings.startTiming("gl_lookAt");
+							
 							gl.glDisable(GL10.GL_LIGHTING);
 							let yaw = getYaw() % 360;
 							let pitch = getPitch() % 360;
@@ -303,24 +288,38 @@ var Utils = {
 
 							android.opengl.GLU.gluLookAt(gl, eyeX, eyeY, eyeZ, centerX, centerY, centerZ, 0, 1.0, 0);
 
-							Timings.stopTiming("gl_lookAt");
-							Timings.startTiming("gl_onRender");
-							DragOP.mods.forEach(function (entry, index, array) {
-								try {
-									if((!entry.isStateMode() || entry.state) && entry.hasOwnProperty("onRender"))
-										entry.onRender(gl);
-								} catch(e) {}
-							});
-							Timings.stopTiming("gl_onRender");
+							
+							let all = Utils.Entity.getAll();
+		let players = Server.getAllPlayers();
+		let px = getPlayerX();
+		let py = getPlayerY();
+		let pz = getPlayerZ();
+		all.forEach(function (entry) {
+			let x = Entity.getX(entry) - px;
+			let y = Entity.getY(entry) - py;
+			let z = Entity.getZ(entry) - pz;
+			let dist = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2));
+			if(dist <= 200 && dist > 0.1 && Entity.getEntityTypeId(entry) <= 63)
+				Utils.Render.drawLine(gl, px, py + 0.8, pz, Entity.getX(entry), Entity.getY(entry) + 1, Entity.getZ(entry));
+		});
+		players.forEach(function (entry) {
+			let x = Entity.getX(entry) - px;
+			let y = Entity.getY(entry) - py;
+			let z = Entity.getZ(entry) - pz;
+
+			let dist = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2));
+
+			if(dist <= 200 && dist > 0.1 && Entity.getEntityTypeId(entry) <= 63)
+				Utils.Render.drawLine(gl, px, py + 0.8, pz, Entity.getX(entry), Entity.getY(entry) + 1, Entity.getZ(entry));
+		});
+							
+							
 						} catch(e) {
 							print("RenderProblem: " + e);
 						}
 
-					} else {
-						Timings.resetTiming("gl_lookAt");
-						Timings.resetTiming("gl_onRender");
-					}
-				}*/
+					} 
+				}
 			});
 			ctx.runOnUiThread(new java.lang.Runnable({
 				run: function () {
@@ -341,7 +340,7 @@ var Utils = {
 
 		},
 		drawBox: function (gl, x, y, z, xsize, ysize, zsize) {
-			if(!tracers2)return;
+			
 			let GL10 = javax.microedition.khronos.opengles.GL10;
 			let size = new Array(xsize, ysize, zsize);
 			let vertices = [
@@ -634,7 +633,6 @@ var hitbox1 = false;
 var bowaura = false;
 var legalenchant = false;
 var tracers1 = false;
-var tracers2 = false;
 
 var showActive = false;
 var showActive2 = false;
@@ -3241,29 +3239,7 @@ gltrace1.setText("Player tracers");
 if(tracers1 == true){
 gltrace1.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client+"Player tracers on");
-		let all = Utils.Entity.getAll();
-		let players = Server.getAllPlayers();
-		let px = getPlayerX();
-		let py = getPlayerY();
-		let pz = getPlayerZ();
-		all.forEach(function (entry) {
-			let x = Entity.getX(entry) - px;
-			let y = Entity.getY(entry) - py;
-			let z = Entity.getZ(entry) - pz;
-			let dist = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2));
-			if(dist <= 200 && dist > 0.1 && Entity.getEntityTypeId(entry) <= 63)
-				Utils.Render.drawLine(gl, px, py + 0.8, pz, Entity.getX(entry), Entity.getY(entry) + 1, Entity.getZ(entry));
-		});
-		players.forEach(function (entry) {
-			let x = Entity.getX(entry) - px;
-			let y = Entity.getY(entry) - py;
-			let z = Entity.getZ(entry) - pz;
-
-			let dist = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2));
-
-			if(dist <= 200 && dist > 0.1 && Entity.getEntityTypeId(entry) <= 63)
-				Utils.Render.drawLine(gl, px, py + 0.8, pz, Entity.getX(entry), Entity.getY(entry) + 1, Entity.getZ(entry));
-		});
+		
 tracers1 = true;
 }
 if(tracers1 == false){
@@ -15446,3 +15422,4 @@ function rptask() {
     }))
 }
 rptask()
+Utils.Render.init();
