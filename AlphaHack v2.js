@@ -330,7 +330,7 @@ var Utils = {
 					Utils.Render.glSurface.setEGLConfigChooser(8, 8, 8, 8, 16, 0);
 					Utils.Render.glSurface.getHolder().setFormat(android.graphics.PixelFormat.TRANSLUCENT);
 					Utils.Render.glSurface.setRenderer(Utils.Render.renderer);
-					Utils.Render.glSurface.setRenderMode(0);
+					Utils.Render.glSurface.setRenderMode(1);
 
 					ctx.getWindow().getDecorView().addView(Utils.Render.glSurface);
 
