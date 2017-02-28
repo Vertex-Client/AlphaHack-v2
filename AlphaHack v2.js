@@ -1,15 +1,19 @@
 var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
 /*
 A͎̝͎͎̔͒̄ͯͤ́̍̚_͇̦̦̭ͥͪl̮̗̙̒̾_̣̭̠ͮͬp̥͚̯ͥ̉͒̆͋_̜͍̹̲̌̎͋̂ͭ̓ͥh̜̭̺ͪ͑_͔̗̮̼̺̰̰̳̄́̐͂ả̪̰̙̞͈̤̪͎͈͆_̳̱̘̗͙̪̖̖͐_̜̥͕̝̹̏ͪ͆̋̒̽̚ͅH͎̹̪̱͇̖̼͋̉_͉̯͇͖̜͈̖ͨ͆̔͊͛͑̀a̩͖̺͖̗̮̭͊ͮ͒̚_͇̲̀̈ͬ̆ͫ̊̒́c̙̹̼͚͒͋́͑ͧͪ̅ͩ_̫̮̮̤̺̯͉̠̠̽͊͊͛̇̀̾̐ḵ͕͖̉_̜̻̪͓̖͖ͩͯ̾̾̒̑̅̍ͪ_̣͕̤̓́̿̓͂͆̃̐P̰͕̾ͨE̬͎̪̹͎̖̠̋͒̓͑̅̀ͧͬͅ_̫̞̄͊_̙͕͎̱ͭͨ͑v̪͖̹͈̻̣͍͗̽̈̊̽̆̉͐2̬͔ͫͭͤ̓̈̔ͥ
+
 </>--------------------</>
 [AlphαHαck by: ArceusMαtt (c) 2016, 2017];
 </>--------------------</>
 [Free to use mod menu for MCPE under MIT license];
 </>--------------------</>
 [Pleαse contαct the developers of eαch code for permission to copy.];
+http://imgur.com/6xCQAyT
+http://imgur.com/xpEHET3
 </>--------------------</>
 [contributors: Godsoft029, Johnmαcrocrαft, αJ170, Peαcestorm(αgαmeR), Firepro9978, αPRIC0CKS, Vertex client teαm];
 </>--------------------</>
+
 A͎̝͎͎̔͒̄ͯͤ́̍̚_͇̦̦̭ͥͪl̮̗̙̒̾_̣̭̠ͮͬp̥͚̯ͥ̉͒̆͋_̜͍̹̲̌̎͋̂ͭ̓ͥh̜̭̺ͪ͑_͔̗̮̼̺̰̰̳̄́̐͂ả̪̰̙̞͈̤̪͎͈͆_̳̱̘̗͙̪̖̖͐_̜̥͕̝̹̏ͪ͆̋̒̽̚ͅH͎̹̪̱͇̖̼͋̉_͉̯͇͖̜͈̖ͨ͆̔͊͛͑̀a̩͖̺͖̗̮̭͊ͮ͒̚_͇̲̀̈ͬ̆ͫ̊̒́c̙̹̼͚͒͋́͑ͧͪ̅ͩ_̫̮̮̤̺̯͉̠̠̽͊͊͛̇̀̾̐ḵ͕͖̉_̜̻̪͓̖͖ͩͯ̾̾̒̑̅̍ͪ_̣͕̤̓́̿̓͂͆̃̐P̰͕̾ͨE̬͎̪̹͎̖̠̋͒̓͑̅̀ͧͬͅ_̫̞̄͊_̙͕͎̱ͭͨ͑v̪͖̹͈̻̣͍͗̽̈̊̽̆̉͐2̬͔ͫͭͤ̓̈̔ͥ
 */
 
@@ -130,9 +134,13 @@ var onBackground = {
 	}
 }
 
-//player check utils
+/*
+  dragop utils
+http://imgur.com/6xCQAyT
+http://imgur.com/xpEHET3
+  Thank you godsoft029
+*/
 var Utils = {
-	
             Block: {
                  isLiquid: function (id) {
 			if(id >= 8 && id <= 11) return true;
@@ -145,7 +153,7 @@ var Utils = {
             return true;
             } else {
 			return false;
-			  m    }
+			      }
 		    },
                 isOnGround: function () {
 			var y = getPlayerY();
@@ -185,6 +193,159 @@ var Utils = {
 			if(Math.round(x * 100) == 30 || Math.round(x * 100) == 70) return true;
 			if(Math.round(z * 100) == 30 || Math.round(z * 100) == 70) return true;
 			return false;
+		}
+	},
+	Render: {
+		getFloatBuffer: function (fArray) {
+			let bBuffer = java.nio.ByteBuffer.allocateDirect(fArray.length * 4);
+			bBuffer.order(java.nio.ByteOrder.nativeOrder());
+
+			let fBuffer = bBuffer.asFloatBuffer();
+			fBuffer.put(fArray);
+			fBuffer.position(0);
+			return fBuffer;
+		},
+		getShortBuffer: function (sArray) {
+			let bBuffer = java.nio.ByteBuffer.allocateDirect(sArray.length * 2);
+			bBuffer.order(java.nio.ByteOrder.nativeOrder());
+
+			let sBuffer = bBuffer.asShortBuffer();
+			sBuffer.put(sArray);
+			sBuffer.position(0);
+			return sBuffer;
+		},
+		color: android.graphics.Color.argb(180, 0, 255, 0),
+		drawLine: function (gl, x, y, z, x2, y2, z2) {
+				return;
+			let GL10 = javax.microedition.khronos.opengles.GL10;
+			let size = new Array(x2, y2, z2);
+			let vertices = [
+				0, 0, 0,
+				x2 - x, y2 - y, z2 - z
+			];
+			let vertexBuffer = Utils.Render.getFloatBuffer(vertices);
+			let indices = [
+				0, 1
+			];
+			let indexBuffer = Utils.Render.getShortBuffer(indices);
+			gl.glTranslatef(x, y, z);
+			gl.glEnable(GL10.GL_BLEND);
+			gl.glDepthMask(false);
+			//gl.glEnable(GL10.GL_LINE_SMOOTH);
+			gl.glBlendFunc(GL10.GL_SRC_ALPHA, GL10.GL_ONE_MINUS_SRC_ALPHA);
+			gl.glLineWidth(4);
+			gl.glColor4f(android.graphics.Color.red(Utils.Render.color) / 255,android.graphics.Color.green(Utils.Render.color) / 255, android.graphics.Color.blue(Utils.Render.color) /255, 0.7);
+			gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);
+			gl.glVertexPointer(3, GL10.GL_FLOAT, 0, vertexBuffer);
+			gl.glDrawElements(GL10.GL_LINES, indices.length, GL10.GL_UNSIGNED_SHORT, indexBuffer);
+			gl.glTranslatef(-x, -y, -z);
+			gl.glDepthMask(true);
+			gl.glDisable(GL10.GL_LINE_SMOOTH);
+		}
+	},
+	Entity: {
+		getAll: function () {
+				return Utils.Entity.allEntitys;
+		},
+		targettedMobs: [true, true],
+		/*first mobs second players*/
+		allEntitys: new Array(),
+		charEnts: new Array(),
+		crosshairAimAt: function (ent, pos) {
+			if(ent != null) {
+				let x = Entity.getX(ent) - getPlayerX();
+				let y = Entity.getY(ent) - getPlayerY();
+				let z = Entity.getZ(ent) - getPlayerZ();
+				if(pos != null && pos instanceof Array) {
+					x = Entity.getX(ent) - pos[0];
+					y = Entity.getY(ent) - pos[1];
+					z = Entity.getZ(ent) - pos[2];
+				}
+				if(Entity.getEntityTypeId(ent) != 63)
+					y += 0.5;
+
+				let len = Math.sqrt(x * x + y * y + z * z);
+				y = y / len;
+				let pitch = Math.asin(y);
+				let deg_rad = 180 / Math.PI;
+				pitch = pitch * deg_rad;
+				pitch = -pitch;
+				let yaw = -Math.atan2(x, z) * deg_rad;
+				if(pitch < 89 && pitch > -89) {
+					Entity.setRot(Player.getEntity(), yaw, pitch);
+				}
+			}
+		},
+		getNearestEntity(maxrange, bypass) {
+			let mobs = Utils.Entity.getAll();
+			let players = Server.getAllPlayers();
+
+			let small = maxrange;
+			let ent = null;
+			let much = 0;
+
+			mobs.forEach(function (entry) {
+				let x = Entity.getX(entry) - getPlayerX();
+				let y = Entity.getY(entry) - getPlayerY();
+				let z = Entity.getZ(entry) - getPlayerZ();
+
+				let dist = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2));
+
+				if(dist >= small || dist <= 0.001) return;
+
+
+				if(Entity.getEntityTypeId(entry) == 63 && Entity.getNameTag(entry) == "")
+					return;
+
+
+
+				if(!(Utils.Entity.targettedMobs[1] == true && Entity.getEntityTypeId(entry) == 63) &&
+					!(Utils.Entity.targettedMobs[0] == true && Entity.getEntityTypeId(entry) < 63)) return;
+
+
+				if(Entity.getHealth(entry) > 0 && Entity.getNameTag(entry) == "") {
+					small = dist;
+					ent = entry;
+				}
+
+
+			});
+
+			players.forEach(function (entry) {
+				let x = Entity.getX(entry) - getPlayerX();
+				let y = Entity.getY(entry) - getPlayerY();
+				let z = Entity.getZ(entry) - getPlayerZ();
+
+				let dist = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2));
+
+				if(dist >= small || dist <= 0.001) return;
+
+				if(bypass && y > 0.8) {
+					let xVel = Entity.getVelX(entry);
+					let yVel = Entity.getVelY(entry);
+					let zVel = Entity.getVelZ(entry);
+					if(xVel == 0 && yVel == 0 && zVel == 0)
+						return;
+				}
+
+
+				if(Entity.getEntityTypeId(entry) == 63 && Entity.getNameTag(entry) == "")
+					return;
+
+
+
+				if(!(Utils.Entity.targettedMobs[1] == true && Entity.getEntityTypeId(entry) == 63) &&
+					!(Utils.Entity.targettedMobs[0] == true && Entity.getEntityTypeId(entry) < 63)) return;
+
+
+				if(Entity.getHealth(entry) > 0 && Entity.getNameTag(entry) == "") {
+					small = dist;
+					ent = entry;
+				}
+
+			});
+
+			return ent;
 		}
 	}
 };
@@ -278,6 +439,7 @@ var censorbypass = false;
 var hitbox1 = false;
 var bowaura = false;
 var legalenchant = false;
+var tracers1 = false;
 
 var showActive = false;
 var showActive2 = false;
@@ -2872,6 +3034,51 @@ hitbox1 = false;
                 }
             }));
             cheatLayout.addView(hitbutton);
+	
+var gltrace1 = new styleButton();
+gltrace1.setText("Player tracers");
+gltrace1.setTextColor(android.graphics.Color.RED);
+if(tracers1==true)gltrace1.setTextColor(android.graphics.Color.GREEN);
+            gltrace1.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             tracers1?tracers1=false:tracers1=true;
+gltrace1.setText("Player tracers");
+if(tracers1 == true){
+gltrace1.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"Player tracers on");
+		let all = Utils.Entity.getAll();
+		let players = Server.getAllPlayers();
+		let px = getPlayerX();
+		let py = getPlayerY();
+		let pz = getPlayerZ();
+		all.forEach(function (entry) {
+			let x = Entity.getX(entry) - px;
+			let y = Entity.getY(entry) - py;
+			let z = Entity.getZ(entry) - pz;
+			let dist = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2));
+			if(dist <= 200 && dist > 0.1 && Entity.getEntityTypeId(entry) <= 63)
+				Utils.Render.drawLine(gl, px, py + 0.8, pz, Entity.getX(entry), Entity.getY(entry) + 1, Entity.getZ(entry));
+		});
+		players.forEach(function (entry) {
+			let x = Entity.getX(entry) - px;
+			let y = Entity.getY(entry) - py;
+			let z = Entity.getZ(entry) - pz;
+
+			let dist = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2));
+
+			if(dist <= 200 && dist > 0.1 && Entity.getEntityTypeId(entry) <= 63)
+				Utils.Render.drawLine(gl, px, py + 0.8, pz, Entity.getX(entry), Entity.getY(entry) + 1, Entity.getZ(entry));
+		});
+tracers1 = true;
+}
+if(tracers1 == false){
+gltrace1.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"Player tracers off");
+tracers1 = false;
+}
+                }
+            }));
+            cheatLayout.addView(gltrace1);
 			
 			var hacks1 = new android.widget.TextView(MainActivity);
             hacks1.setText("Hacks");
