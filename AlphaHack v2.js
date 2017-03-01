@@ -4423,6 +4423,28 @@ coords = false;
                 }
             }));
             cheatLayout.addView(button5);
+
+var srent = new styleButton();
+srent.setText("Entity indicator");
+srent.setTextColor(android.graphics.Color.RED);
+if(entind==true)srent.setTextColor(android.graphics.Color.GREEN);
+            srent.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             entind?entind=false:entind=true;
+srent.setText("Entity indicator");
+if(entind == true){
+srent.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"Entity indicator on\nThis shows you which entity/item/player/mob has been spawned or removed.");
+entind = true;
+}
+if(entind == false){
+srent.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"Entity indicator off");
+entind = false;
+}
+                }
+            }));
+            cheatLayout.addView(srent);
             
             var seevel = new styleButton();
 seevel.setText("Velocity indicator");
@@ -5414,6 +5436,50 @@ hitBehind = false;
             }));
             cheatLayout.addView(hitme);
 	    */
+
+var screnid = new styleButton();
+screnid.setText("Screen indicator");
+screnid.setTextColor(android.graphics.Color.RED);
+if(screenind==true)screnid.setTextColor(android.graphics.Color.GREEN);
+            screnid.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             screenind?screenind=false:screenind=true;
+screnid.setText("Screen indicator");
+if(screenind == true){
+screnid.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"Screen indicator on");
+screenind = true;
+}
+if(screenind == false){
+screnid.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"Screen indicator off");
+screenind = false;
+}
+                }
+            }));
+            cheatLayout.addView(screnid);
+
+var destroyy = new styleButton();
+destroyy.setText("Destroy indicator");
+destroyy.setTextColor(android.graphics.Color.RED);
+if(destroyind==true)destroyy.setTextColor(android.graphics.Color.GREEN);
+            destroyy.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             destroyind?destroyind=false:destroyind=true;
+destroyy.setText("Destroy indicator");
+if(destroyind == true){
+destroyy.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"Destroy indicator on");
+destroyind = true;
+}
+if(destroyind == false){
+destroyy.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"Destroy indicator off");
+destroyind = false;
+}
+                }
+            }));
+            cheatLayout.addView(destroyy);
  
 var exit2 = new styleButton();
 		exit2.setText("Exit");
@@ -12313,11 +12379,34 @@ menuLayout1.setPadding(20,0,20,0);
 
 /********************************/
 
+function entityAddedHook(entity){
+if(entind){
+var x = Entity.getX(entity);
+var y = Entity.getY(entity);
+var z = Entity.getZ(entity);
+clientMessage(client+"Entity added:\n"+Entity.getNameTag(entity)+" / "+Entity.getEntityTypeId(entity)+"\nx "+x+" y "+y+" z "+z);
+}
+}
+
+function entityRemovedHook(entity){
+if(entind){
+var x = Entity.getX(entity);
+var y = Entity.getY(entity);
+var z = Entity.getZ(entity);
+clientMessage(client+"Entity removed:\n"+Entity.getNameTag(entity)+" / "+Entity.getEntityTypeId(entity)+"\nx "+x+" y "+y+" z "+z);
+}
+}
+
+function screenChangeHook(screenName){
+if(screenind)android.widget.Toast.makeText(ctx, screenName, 1).show();
+}
+
 function serverMessageReceiveHook(str) {
 	ctx.runOnUiThread(new java.lang.Runnable(){
 run: function(){
 	if(ttot)android.widget.Toast.makeText(ctx, str, 1).show();
 	}});
+	if(chatind)clientMessage(client+str);
 }
 
 function attackHook(attacker, victim) {
@@ -13083,6 +13172,10 @@ if(block == true)preventDefault();
 		Level.dropItem(x,y,z,0,broke,broke + 1);
 		}
 	}
+	if(destroyind){
+	var broke = Level.getTile(x, y, z);
+	clientMessage(client+"broke: "+broke+"\nx "+x+" y "+y+" z "+z+"\nSide: "+side);
+	}
 }
 
 function startDestroyBlock(x, y, z, side)
@@ -13140,7 +13233,7 @@ if(taptp){
 Entity.setPosition(Player.getEntity(), x, y + 2.62, z);
 }
 if(tapnuke)explode(x,y,z,5);
-if(tapid)clientMessage(client + "Block ID: "+blockId+"\nTapped with: "+itemId+"\n"+" X: "+x+" Y: "+y+" Z: "+z+"\nFriction: "+Block.getFriction(blockId));
+if(tapid)clientMessage(client + "Block ID: "+blockId+"\nTapped with: "+itemId+"\n"+" X: "+x+" Y: "+y+" Z: "+z+"\nFriction: "+Block.getFriction(blockId)+"\nSide: "+side+"\nBlock damage: "+blockDamage+"\nItem damage: "+itemDamage);
 if(tapjump)setVelY(getPlayerEnt(),0.5);
 	if(tapParti){
 if(tapParti){
@@ -13353,7 +13446,11 @@ if (spider && Utils.Player.isCollidedHorizontally()) {
 			if(y!=0)Entity.setPosition(Player.getEntity(), x, y + 2.62, z);
 		}
 	}
-	if(keepHotbar)keepSlot();
+	if(keepHotbar){
+	Player.setSelectedSlotId(Player.getSelectedSlotId());
+	Player.getCarriedItem();
+	Player.setSelectedSlotId(Player.getCarriedItem());
+	}
 	if(itemIndi)ModPE.showTipMessage(client+"\nHeld: "+Player.getCarriedItem()+":"+Player.getCarriedItemData()+", Amount: "+Player.getCarriedItemCount());
 	if(bhop){
 		if(Entity.getVelX(Player.getEntity())>0.1){
@@ -15366,12 +15463,6 @@ function onlyFriction(){
 	}
 }
 
-function keepSlot(){
-	Player.setSelectedSlotId(Player.getSelectedSlotId());
-	Player.getCarriedItem();
-	Player.setSelectedSlotId(Player.getCarriedItem());
-}
-
 function replaceAll(search, replacement, str) {
     var target = str;
     return target.replace(new RegExp(search, 'g'), replacement);
@@ -15458,6 +15549,7 @@ function chatHook(str){
 	}
 		}
 	}
+	if(chatind)clientMessage(client+str);
 }
 
 function rptask3() {
