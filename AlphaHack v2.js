@@ -633,6 +633,10 @@ var hitbox1 = false;
 var bowaura = false;
 var legalenchant = false;
 var tracers1 = false;
+var entind = false;
+var screenind = false;
+var chatind = false;
+var destroyind = false;
 
 var showActive = false;
 var showActive2 = false;
