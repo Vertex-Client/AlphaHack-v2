@@ -12388,7 +12388,7 @@ if(entind){
 var x = Entity.getX(entity);
 var y = Entity.getY(entity);
 var z = Entity.getZ(entity);
-clientMessage(client+"Entity added:\n"+Entity.getNameTag(entity)+" / "+Entity.getEntityTypeId(entity)+"\nx "+x+" y "+y+" z "+z);
+clientMessage(client+"Entity added:\n"+Entity.getNameTag(entity)+" / "+Entity.getEntityTypeId(entity)+"\nx "+Math.round(x)+" y "+Math.round(y)+" z "+Math.round(z));
 }
 }
 
@@ -12397,7 +12397,7 @@ if(entind){
 var x = Entity.getX(entity);
 var y = Entity.getY(entity);
 var z = Entity.getZ(entity);
-clientMessage(client+"Entity removed:\n"+Entity.getNameTag(entity)+" / "+Entity.getEntityTypeId(entity)+"\nx "+x+" y "+y+" z "+z);
+clientMessage(client+"Entity removed:\n"+Entity.getNameTag(entity)+" / "+Entity.getEntityTypeId(entity)+"\nx "+Math.round(x)+" y "+Math.round(y)+" z "+Math.round(z));
 }
 }
 
@@ -13178,7 +13178,7 @@ if(block == true)preventDefault();
 	}
 	if(destroyind){
 	var broke = Level.getTile(x, y, z);
-	clientMessage(client+"broke: "+broke+"\nx "+x+" y "+y+" z "+z+"\nSide: "+side);
+	clientMessage(client+"broke: "+broke+"\nx "+Math.round(x)+" y "+Math.round(y)+" z "+Math.round(z)+"\nSide: "+side);
 	}
 }
 
