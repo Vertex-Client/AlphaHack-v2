@@ -12445,7 +12445,15 @@ var y = Entity.getY(entity);
 var z = Entity.getZ(entity);
 clientMessage(client+"Entity added:\n"+Entity.getNameTag(entity)+" / "+Entity.getEntityTypeId(entity)+"\nx "+Math.round(x)+" y "+Math.round(y)+" z "+Math.round(z));
 }
-	if(noentity)Entity.setHealth(entity, 0);
+	if(noentity){
+		for(var i = 0; i < 5; i++){
+		if(entity != getPlayerEnt()){
+		//Entity.setHealth(entity, 0); setting this more than once can glitch the entity
+		Entity.setFireTicks(entity, 50);
+			if(i=2)i = 0;
+		}
+		}
+	}
 }
 
 function entityRemovedHook(entity){
@@ -12476,9 +12484,7 @@ function attackHook(attacker, victim) {
 	if(firepunch) {
 Entity.setFireTicks(victim, 5);
 	}
-if(saddle){
-rideAnimal(Player.getEntity(), victim);
-}
+if(saddle)rideAnimal(attacker, victim);
 if(horsehealth)Entity.setMaxHealth(victim, horseheart);
 if(getage)clientMessage(client + "age: "+Entity.getAnimalAge(victim));
 if(setage)Entity.setAnimalAge(victim, newage);
