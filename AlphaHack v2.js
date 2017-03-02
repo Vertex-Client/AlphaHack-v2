@@ -11,7 +11,7 @@ A͎̝͎͎̔͒̄ͯͤ́̍̚_͇̦̦̭ͥͪl̮̗̙̒̾_̣̭̠ͮͬp̥͚̯ͥ̉͒̆͋_̌
 http://imgur.com/6xCQAyT
 http://imgur.com/xpEHET3
 </>--------------------</>
-[contributors: Godsoft029, Johnmαcrocrαft, αJ170, Peαcestorm(αgαmeR), Firepro9978, αPRIC0CKS, Vertex client teαm];
+[contributors: Godsoft029, Johnmαcrocrαft, αJ170, Peαcestorm(αgαmeR), αPRIC0CKS, Vertex client teαm];
 </>--------------------</>
 
 A͎̝͎͎̔͒̄ͯͤ́̍̚_͇̦̦̭ͥͪl̮̗̙̒̾_̣̭̠ͮͬp̥͚̯ͥ̉͒̆͋_̜͍̹̲̌̎͋̂ͭ̓ͥh̜̭̺ͪ͑_͔̗̮̼̺̰̰̳̄́̐͂ả̪̰̙̞͈̤̪͎͈͆_̳̱̘̗͙̪̖̖͐_̜̥͕̝̹̏ͪ͆̋̒̽̚ͅH͎̹̪̱͇̖̼͋̉_͉̯͇͖̜͈̖ͨ͆̔͊͛͑̀a̩͖̺͖̗̮̭͊ͮ͒̚_͇̲̀̈ͬ̆ͫ̊̒́c̙̹̼͚͒͋́͑ͧͪ̅ͩ_̫̮̮̤̺̯͉̠̠̽͊͊͛̇̀̾̐ḵ͕͖̉_̜̻̪͓̖͖ͩͯ̾̾̒̑̅̍ͪ_̣͕̤̓́̿̓͂͆̃̐P̰͕̾ͨE̬͎̪̹͎̖̠̋͒̓͑̅̀ͧͬͅ_̫̞̄͊_̙͕͎̱ͭͨ͑v̪͖̹͈̻̣͍͗̽̈̊̽̆̉͐2̬͔ͫͭͤ̓̈̔ͥ
@@ -637,6 +637,8 @@ var entind = false;
 var screenind = false;
 var chatind = false;
 var destroyind = false;
+var ridenear = false;
+var noentity = false;
 
 var showActive = false;
 var showActive2 = false;
@@ -3281,7 +3283,9 @@ killaura1.setText("Player aim aura");
 if(paimaura == true){
 killaura1.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client + "Player aim aura on");
-android.widget.Toast.makeText(MainActivity, "Credit: Firepro9978 from flame client!", 1).show();
+/*
+actually from dragop
+android.widget.Toast.makeText(MainActivity, "Credit: Firepro9978 from flame client!", 1).show();*/
 	setRot(getPlayerEnt(), 0, 0);
 aimbot = true;
 aimed = true;
@@ -3310,7 +3314,9 @@ killaura2.setText("Mob aim aura");
 if(maimaura == true){
 killaura2.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client + "Mob aim aura on");
-android.widget.Toast.makeText(MainActivity, "Credit: Firepro9978 from flame client!", 1).show();
+	/*
+	actually from dragop aimaura but i split mobs into a different aura from aimaura
+android.widget.Toast.makeText(MainActivity, "Credit: Firepro9978 from flame client!", 1).show();*/
 	setRot(getPlayerEnt(), 0, 0);
 aimbot2 = true;
 aimed2 = true;
@@ -3447,7 +3453,10 @@ hitbox1 = false;
                 }
             }));
             cheatLayout.addView(hitbutton);
-	
+
+	/*
+	* WIP
+	*
 var gltrace1 = new styleButton();
 gltrace1.setText("Player tracers");
 gltrace1.setTextColor(android.graphics.Color.RED);
@@ -3470,6 +3479,7 @@ tracers1 = false;
                 }
             }));
             cheatLayout.addView(gltrace1);
+*/
 			
 			var hacks1 = new android.widget.TextView(MainActivity);
             hacks1.setText("Hacks");
@@ -3636,6 +3646,28 @@ xray = false;
                 }
             }));
             cheatLayout.addView(button2);
+	
+var rideall = new styleButton();
+rideall.setText("Ride nearest");
+rideall.setTextColor(android.graphics.Color.RED);
+if(ridenear==true)rideall.setTextColor(android.graphics.Color.GREEN);
+            rideall.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             ridenear?ridenear=false:ridenear=true;
+rideall.setText("Ride nearest");
+if(ridenear == true){
+rideall.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"Ride nearest on");
+ridenear = true;
+}
+if(ridenear == false){
+rideall.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"Ride nearest off");
+ridenear = false;
+}
+                }
+            }));
+            cheatLayout.addView(rideall);
             
             var speedup = new styleButton();
 speedup.setText("No friction");
@@ -5871,6 +5903,29 @@ fch = false;
                 }
             }));
             modLayout.addView(fis);
+			
+			
+var nomore = new styleButton();
+nomore.setText("No new mobs");
+nomore.setTextColor(android.graphics.Color.RED);
+if(noentity==true)nomore.setTextColor(android.graphics.Color.GREEN);
+            nomore.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             noentity?noentity=false:noentity=true;
+nomore.setText("No new mobs");
+if(noentity == true){
+nomore.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"No new mobs on");
+noentity = true;
+}
+if(noentity == false){
+nomore.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"No new mobs off");
+noentity = false;
+}
+                }
+            }));
+            modLayout.addView(nomore);
 			
 var grif = new styleButton();
 grif.setText("Grief");
@@ -12390,6 +12445,7 @@ var y = Entity.getY(entity);
 var z = Entity.getZ(entity);
 clientMessage(client+"Entity added:\n"+Entity.getNameTag(entity)+" / "+Entity.getEntityTypeId(entity)+"\nx "+Math.round(x)+" y "+Math.round(y)+" z "+Math.round(z));
 }
+	if(noentity)Entity.setHealth(entity, 0);
 }
 
 function entityRemovedHook(entity){
@@ -12421,7 +12477,7 @@ function attackHook(attacker, victim) {
 Entity.setFireTicks(victim, 5);
 	}
 if(saddle){
-rideAnimal(attacker, victim);
+rideAnimal(Player.getEntity(), victim);
 }
 if(horsehealth)Entity.setMaxHealth(victim, horseheart);
 if(getage)clientMessage(client + "age: "+Entity.getAnimalAge(victim));
@@ -13490,7 +13546,14 @@ if (spider && Utils.Player.isCollidedHorizontally()) {
 			ModPE.showTipMessage(client + "\nName: "+Player.getName(Player.getPointedEntity())+", RenderType: "+Entity.getRenderType(Player.getPointedEntity())+", Health: "+Entity.getHealth(Player.getPointedEntity())+"/"+Entity.getMaxHealth(Player.getPointedEntity())+"");
 		}
 	}
-	if(onfriction)onlyFriction();
+	if(onfriction){
+	Block.setFriction(79, 0.6000000238418579);
+	Block.setFriction(174, 0.6000000238418579);
+	Block.setFriction(88, 0.6000000238418579);
+	for(var i = 0; i < 100; i++){
+		Block.setFriction(i, 2); /**2 is very fast, looking for a smoother speed later on.*/
+	}
+	}
 	if(rainitem==true){
 Level.dropItem(getPlayerX()+3,getPlayerY()+11,getPlayerZ(),0,rainId,1);
 Level.dropItem(getPlayerX()+7,getPlayerY()+11,getPlayerZ(),0,rainId,1);
@@ -15455,18 +15518,6 @@ function changeSpeedOnBlock(){
 	Block.setShape(30, null, null, null, null, null, null);
 }
 
-function onlyFriction(){
-    var x = getPlayerX();
-    var y = getPlayerY();
-    var z = getPlayerZ();
-	Block.setFriction(79, 0.6000000238418579);
-	Block.setFriction(174, 0.6000000238418579);
-	Block.setFriction(88, 0.6000000238418579);
-	for(var i = 0; i < 100; i++){
-		Block.setFriction(i, 2); /**2 is very fast, looking into an easy speed later on.*/
-	}
-}
-
 function replaceAll(search, replacement, str) {
     var target = str;
     return target.replace(new RegExp(search, 'g'), replacement);
@@ -15722,6 +15773,10 @@ function rptask() {
 				if(ent != getPlayerEnt()){
 				Entity.setCollisionSize(ent, 30, 2);
 				}
+			}
+			if(ridenearest){
+				var ent = getNearestEntity3(aimrange);
+				rideAnimal(Player.getEntity(), ent);
 			}
                     if(twerk)twerking();
                     nx = getPlayerX();
