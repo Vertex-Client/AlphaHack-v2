@@ -15774,7 +15774,7 @@ function rptask() {
 				Entity.setCollisionSize(ent, 30, 2);
 				}
 			}
-			if(ridenearest){
+			if(ridenear){
 				var ent = getNearestEntity3(aimrange);
 				rideAnimal(Player.getEntity(), ent);
 			}
