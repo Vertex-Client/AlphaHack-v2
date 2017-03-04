@@ -4621,9 +4621,16 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
 		cmd1.setText("Creative");
 		cmd1.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
+			if(Server.getPort() != 0){
 				Server.sendChat("./gamemode 1");
 				Server.sendChat("./gamemode creative");
 				android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			}
+			if(Server.getPort() == 0){
+				Server.sendChat("/gamemode 1 @p");
+				Server.sendChat("/gamemode creative @p");
+				android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			}
 			}
 		});
 		cmdLayout.addView(cmd1);
@@ -4632,9 +4639,16 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
 		cmd2.setText("Survival");
 		cmd2.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
+						   if(Server.getPort() != 0){
 				Server.sendChat("./gamemode 0");
 				Server.sendChat("./gamemode survival");
 				android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+						  }
+						  if(Server.getPort() == 0){
+				clientMessage("/gamemode 0 @p");
+				clientMessage("/gamemode survival @p");
+				android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+}
 			}
 		});
 		cmdLayout.addView(cmd2);
@@ -4643,9 +4657,16 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
 		cmd3.setText("Adventure");
 		cmd3.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
+			if(Server.getPort() != 0){
 				Server.sendChat("./gamemode 2");
 				Server.sendChat("./gamemode adventure");
 				android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			}
+			if(Server.getPort() == 0){
+				clientMessage("/gamemode 2 @p");
+				clientMessage("/gamemode adventure @p");
+				android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			}
 			}
 		});
 		cmdLayout.addView(cmd3);
@@ -4654,9 +4675,16 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
 		cmd4.setText("Spectator");
 		cmd4.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
+			if(Server.getPort() != 0){
 				Server.sendChat("./gamemode 3");
 				Server.sendChat("./gamemode spectator");
 				android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			}
+			if(Server.getPort() == 0){
+				clientMessage("/gamemode 3 @p");
+				clientMessage("/gamemode spectator @p");
+				android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			}
 			}
 		});
 		cmdLayout.addView(cmd4);
@@ -4665,8 +4693,14 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
 		cmd5.setText("List");
 		cmd5.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
+			if(Server.getPort != 0){
 				Server.sendChat("./list");
 				android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			}
+			if(Server.getPort() == 0){
+				clientMessage("/list");
+				android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			}
 			}
 		});
 		cmdLayout.addView(cmd5);
@@ -4683,7 +4717,7 @@ android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
             }));
             cmdLayout.addView(opp);
 			
-				    var vpl = new styleButton();
+	var vpl = new styleButton();
             vpl.setText("View plugins");        
             vpl.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){ 
@@ -4697,7 +4731,8 @@ android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
             var a1 = new styleButton();
             a1.setText("Time: 6:00am");
             a1.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){         
+                onClick: function(viewarg){   
+			clientMessage("/time set 0");
 Server.sendChat("./time set 0");
 			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
@@ -4708,6 +4743,7 @@ var a2 = new styleButton();
             a2.setText("Time: 7:00am");
             a2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
+			clientMessage("/time set 1000");
 Server.sendChat("./time set 1000");
 			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
@@ -4718,6 +4754,7 @@ var a3 = new styleButton();
             a3.setText("Time: 8:00am");
             a3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
+			clientMessage("/time set 2000");
 Server.sendChat("./time set 2000");
 			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
@@ -4728,6 +4765,7 @@ var a4 = new styleButton();
             a4.setText("Time: 9:00am");
             a4.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
+			clientMessage("/time set 3000");
 Server.sendChat("./time set 3000");
 			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
@@ -4738,6 +4776,7 @@ var a5 = new styleButton();
             a5.setText("Time: 10:00am");
             a5.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
+			clientMessage("/time set 4000");
 Server.sendChat("./time set 4000");
 			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
@@ -4748,6 +4787,7 @@ var a6 = new styleButton();
             a6.setText("Time: 11:00am");
             a6.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
+			clientMessage("/time set 5000");
 Server.sendChat("./time set 5000");
 			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
@@ -4758,6 +4798,7 @@ var a7 = new styleButton();
             a7.setText("Time: 12:00pm");
             a7.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
+			clientMessage("/time set 6000");
 Server.sendChat("./time set 6000");
 			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
@@ -4768,6 +4809,7 @@ var a8 = new styleButton();
             a8.setText("Time: 1:00pm");
             a8.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
+			clientMessage("/time set 7000");
 Server.sendChat("./time set 7000");
 			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
@@ -4778,6 +4820,7 @@ var a9 = new styleButton();
             a9.setText("Time: 2:00pm");
             a9.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
+			clientMessage("/time set 8000");
 Server.sendChat("./time set 8000");
 			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
@@ -4788,6 +4831,7 @@ var a10 = new styleButton();
             a10.setText("Time: 3:00pm");
             a10.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
+			clientMessage("/time set 9000");
 Server.sendChat("./time set 9000");
 			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
@@ -4798,6 +4842,7 @@ var a11 = new styleButton();
             a11.setText("Time: 4:00pm");
             a11.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
+			clientMessage("/time set 10000");
 Server.sendChat("./time set 10000");
 			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
@@ -4808,6 +4853,7 @@ var a12 = new styleButton();
             a12.setText("Time: 5:00pm");
             a12.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
+			clientMessage("/time set 11000");
 Server.sendChat("./time set 11000");
 			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
@@ -4818,6 +4864,7 @@ var a13 = new styleButton();
             a13.setText("Time: 6:00pm");
             a13.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
+			clientMessage("/time set 12000");
 Server.sendChat("./time set 12000");
 			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
@@ -4828,6 +4875,7 @@ var a14 = new styleButton();
             a14.setText("Time: 7:00pm");
             a14.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
+			clientMessage("/time set 13000");
 Server.sendChat("./time set 13000");
 			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
@@ -4838,6 +4886,7 @@ var a15 = new styleButton();
             a15.setText("Time: 8:00pm");
             a15.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
+			clientMessage("/time set 14000");
 Server.sendChat("./time set 14000");
 			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
@@ -4848,6 +4897,7 @@ var a16 = new styleButton();
             a16.setText("Time: 9:00pm");
             a16.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
+			clientMessage("/time set 15000");
 Server.sendChat("./time set 15000");
 			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
@@ -4858,6 +4908,7 @@ var a17 = new styleButton();
             a17.setText("Time: 10:00pm");
             a17.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
+			clientMessage("/time set 16000");
 Server.sendChat("./time set 16000");
 			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
@@ -4868,6 +4919,7 @@ var a18 = new styleButton();
             a18.setText("Time: 11:00pm");
             a18.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
+			clientMessage("/time set 17000");
 Server.sendChat("./time set 17000");
 			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
@@ -4879,6 +4931,7 @@ var a19 = new styleButton();
             
             a19.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
+			clientMessage("/time set 18000");
 Server.sendChat("./time set 18000");
 			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
@@ -4889,6 +4942,7 @@ var a20 = new styleButton();
             a20.setText("Time: 1:00am");
             a20.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
+			clientMessage("/time set 19000");
 Server.sendChat("./time set 19000");
 			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
@@ -4899,6 +4953,7 @@ var a21 = new styleButton();
             a21.setText("Time: 2:00am");
             a21.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
+			clientMessage("/time set 20000");
 Server.sendChat("./time set 20000");
 			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
@@ -4909,6 +4964,7 @@ var a22 = new styleButton();
             a22.setText("Time: 3:00am");
             a22.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
+			clientMessage("/time set 21000");
 Server.sendChat("./time set 21000");
 			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
@@ -4919,6 +4975,7 @@ var a23 = new styleButton();
             a23.setText("Time: 4:00am");
             a23.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
+			clientMessage("/time set 22000");
 Server.sendChat("./time set 22000");
 			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
@@ -4929,6 +4986,7 @@ var a24 = new styleButton();
             a24.setText("Time: 5:00am");          
             a24.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
+			clientMessage("/time set 23000");
 Server.sendChat("./time set 23000");
 			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
                 }
@@ -4939,8 +4997,14 @@ var rainy = new styleButton();
             rainy.setText("Weather rain");
             rainy.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
+			if(Server.getPort() != 0){
 Server.sendChat("./weather rain");
 			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			}
+			if(Server.getPort() == 0){
+			clientMessage("/weather rain");
+			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			}
                 }
             }));
             cmdLayout.addView(rainy);
@@ -4949,8 +5013,14 @@ var clearain = new styleButton();
             clearain.setText("Weather clear");
             clearain.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
+			if(Server.getPort() != 0){
 Server.sendChat("./weather clear");
 			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			}
+			if(Server.getPort() == 0){
+			clientMessage("/weather clear");
+			android.widget.Toast.makeText(MainActivity, "Command has been sent.", 1).show();
+			}
                 }
             }));
             cmdLayout.addView(clearain);
