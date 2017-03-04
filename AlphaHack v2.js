@@ -639,6 +639,7 @@ var chatind = false;
 var destroyind = false;
 var ridenear = false;
 var noentity = false;
+var autosword = false;
 
 var showActive = false;
 var showActive2 = false;
@@ -3480,6 +3481,28 @@ tracers1 = false;
             }));
             cheatLayout.addView(gltrace1);
 */
+	
+var asword = new styleButton();
+asword.setText("Auto sword");
+asword.setTextColor(android.graphics.Color.RED);
+if(autosword==true)asword.setTextColor(android.graphics.Color.GREEN);
+            asword.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             autosword?autosword=false:autosword=true;
+asword.setText("Auto sword");
+if(autosword == true){
+asword.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"Auto sword on");
+autosword = true;
+}
+if(autosword == false){
+asword.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"Auto sword off");
+autosword = false;
+}
+                }
+            }));
+            cheatLayout.addView(asword);
 			
 			var hacks1 = new android.widget.TextView(MainActivity);
             hacks1.setText("Hacks");
@@ -13643,6 +13666,21 @@ Level.dropItem(getPlayerX()-3,getPlayerY()+11,getPlayerZ()+3,0,rainId,1);
 Level.dropItem(getPlayerX()-7,getPlayerY()+11,getPlayerZ()+7,0,rainId,1);
 Level.dropItem(getPlayerX()+3,getPlayerY()+11,getPlayerZ()-3,0,rainId,1);
 Level.dropItem(getPlayerX()+7,getPlayerY()+11,getPlayerZ()-7,0,rainId,1);
+}
+if(autosword){
+var swords = [268,272,267,283,276]; //swords
+var slots = 50; //slots
+for(var i = 0; i < slots; i++){
+var items = Player.getInventorySlot(i); //items
+if(Player.getInventorySlot(i) == swords[i]){ //if slot is a sword
+var sword = Player.getInventorySlot(i); //define which slot that sword is in
+var damage = Player.getInventorySlotData(sword); //get that swords damage
+var itemsDamage = Player.getInventorySlotData(items); //get all swords damage
+if(damage < itemsDamage){ //if damage is less than other damages
+Player.setSelectedSlotId(sword); //set that sword
+}
+}
+}
 }
 }
 
