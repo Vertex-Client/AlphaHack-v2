@@ -14,7 +14,7 @@ ALPHAHack v2 is a remake of AlphaHack 0.8.1
 [contributors: Godsoft029, Johnmαcrocrαft, αJ170, Peαcestorm(αgαmeR), Firepro9978, αPRIC0CKS, Vertex client teαm];<br />
 </>--------------------</><br>
 <hr>
-<h1> Menus &amp; menu issues
+**Menus &amp; menu issues**
 - [x] 0.8.5 Misc
 - [x] 0.8.5 Settings
 - [x] 0.8.5 Online mods
@@ -31,7 +31,7 @@ ALPHAHack v2 is a remake of AlphaHack 0.8.1
 - [x] 0.8.5 Time menu
 - [x] 0.8.5 Weather menu
 <hr>
-<h2> Popular features
+**Popular features**
 - [x] AimAura / Killaura
 - [x] Speed hax
 - [x] Storage esp / chest esp
@@ -48,3 +48,4 @@ ALPHAHack v2 is a remake of AlphaHack 0.8.1
 - [x] Indicators
 - [x] Player mods
 - [x] Chat fonts
+- [x] No knockback
