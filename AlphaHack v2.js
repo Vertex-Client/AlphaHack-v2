@@ -7885,6 +7885,7 @@ Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,tysplvl);
             enchantLayout.addView(wearing);
 	
 	function wearGodArmor(){
+		var tysplvl = "29000";
 		if(Player.getArmorSlot(0) != null){
 				Player.enchant(Player.getArmorSlot(0), Enchantment.PROTECTION,tysplvl);
 				Player.enchant(Player.getArmorSlot(0), Enchantment.THORNS,tysplvl);
