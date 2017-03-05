@@ -640,6 +640,7 @@ var destroyind = false;
 var ridenear = false;
 var noentity = false;
 var autosword = false;
+var noknock = false;
 
 var showActive = false;
 var showActive2 = false;
@@ -3503,6 +3504,28 @@ autosword = false;
                 }
             }));
             cheatLayout.addView(asword);
+	
+var nknock = new styleButton();
+nknock.setText("No knockback");
+nknock.setTextColor(android.graphics.Color.RED);
+if(noknock==true)nknock.setTextColor(android.graphics.Color.GREEN);
+            nknock.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             noknock?noknock=false:noknock=true;
+nknock.setText("No knockback");
+if(noknock == true){
+nknock.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"No knockback on");
+noknock = true;
+}
+if(noknock == false){
+nknock.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"No knockback off");
+noknock = false;
+}
+                }
+            }));
+            cheatLayout.addView(nknock);
 			
 			var hacks1 = new android.widget.TextView(MainActivity);
             hacks1.setText("Hacks");
@@ -12487,6 +12510,7 @@ itembutton.setText("Item rain");
 if(itemrain == true){
 itembutton.setTextColor(android.graphics.Color.GREEN);
 itementer();
+weather.dismiss();
 itemrain = true;
 }
 if(itemrain == false){
@@ -12543,7 +12567,7 @@ clientMessage(client+"Entity added:\n"+Entity.getNameTag(entity)+" / "+Entity.ge
 		for(var i = 0; i < 5; i++){
 		if(entity != getPlayerEnt()){
 		//Entity.setHealth(entity, 0); setting this more than once can glitch the entity
-		Entity.setFireTicks(entity, 50);
+		Entity.setFireTicks(entity, 5);
 			if(i=2)i = 0;
 		}
 		}
@@ -13670,7 +13694,7 @@ Level.dropItem(getPlayerX()+7,getPlayerY()+11,getPlayerZ()-7,0,rainId,1);
 }
 if(autosword){
 var swords = [268,272,267,283,276]; //swords
-var slots = 50; //slots
+var slots = 51; //slots
 for(var i = 0; i < slots; i++){
 var items = Player.getInventorySlot(i); //items
 if(Player.getInventorySlot(i) == swords[i]){ //if slot is a sword
@@ -13679,10 +13703,16 @@ var damage = Player.getInventorySlotData(sword); //get that swords damage
 var itemsDamage = Player.getInventorySlotData(items); //get all swords damage
 if(damage < itemsDamage){ //if damage is less than other damages
 Player.setSelectedSlotId(sword); //set that sword
+if(i == 50)i = 0;
 }
 }
 }
 }
+	if(noknock){
+if(Entity.getVelY(Player.getEntity())>0.1){
+Entity.setVelY(Player.getEntity(), -0.5);
+		}
+	}
 }
 
 function toDirectionalVector(dir, a, b) {
@@ -15426,10 +15456,8 @@ if(TTick==0)Entity.setSneaking(getPlayerEnt(), true);
 if(TTick==2)Entity.setSneaking(getPlayerEnt(), false);
 if(TTick==4)Entity.setSneaking(getPlayerEnt(), true);
 if(TTick==6)Entity.setSneaking(getPlayerEnt(), false);
-if(TTick==8)Entity.setSneaking(getPlayerEnt(), true);
-if(TTick==10)Entity.setSneaking(getPlayerEnt(), false);
 
-if(TTick==11)TTick = 0;
+if(TTick==7)TTick = 0;
 }
 
 function getNearestEntity(maxrange) {
@@ -15769,55 +15797,6 @@ function rptask2() {
   			}
  		}
                     }
-                    /*
-		    *TODO Fix these :/
-		    *
-		    if(oreEsp){
-                var x = getPlayerX();
- 		var y = getPlayerY();
- 		var z = getPlayerZ();
- 		var newX;
- 		var newY;
- 		var newZ;
- 		for(var blockX = - oreTracersRange; blockX <= oreTracersRange; blockX++) {
- 			for(var blockY = - oreTracersRange; blockY <= oreTracersRange; blockY++) {
- 				for(var blockZ = - oreTracersRange; blockZ <= oreTracersRange; blockZ++) {
- 					newX = x + blockX;
-  					newY = y + blockY;
-  					newZ = z + blockZ;
-  					if(getTile(newX, newY, newZ) == oreId) {
-  						AlphaHack.drawTracer(newX, newY, newZ, oreTracersGroundMode=="on"?true:false, oreTracersParticle);
-  					}
-  				}
-  			}
- 		}
-                    }
-                    if(playeresp){
-                var x = getPlayerX();
- 		var y = getPlayerY();
- 		var z = getPlayerZ();
- 		var newX;
- 		var newY;
- 		var newZ;
- 		for(var blockX = - playerTracersRange; blockX <= playerTracersRange; blockX++) {
- 			for(var blockY = - playerTracersRange; blockY <= playerTracersRange; blockY++) {
- 				for(var blockZ = - playerTracersRange; blockZ <= playerTracersRange; blockZ++) {
- 					newX = x + blockX;
-  					newY = y + blockY;
-  					newZ = z + blockZ;
-					var mobs = Server.getAllPlayers();
-                                        for (var e = 0; e < mobs.length; e++) {
-                                        var newX = Entity.getX(mobs[e]) - getPlayerX();
-                                        var newY = Entity.getY(mobs[e]) - getPlayerY();
-                                        var newZ = Entity.getZ(mobs[e]) - getPlayerZ();
-                                        if(Entity.getRenderType(mobs[e]) == 27 || Entity.getEntityTypeId(mobs[e]) == 63){
-						AlphaHack.drawTracer(newX, newY, newZ, playerTracersGroundMode=="on"?true:false, playerTracersParticle);
-                                        }
-                                }
-  			}
- 		}
-	}
-                    }*/
                     nx = getPlayerX();
                     ny = getPlayerY();
                     nz = getPlayerZ();
@@ -15891,7 +15870,9 @@ function rptask() {
 			}
 			if(ridenear){
 				var ent = getNearestEntity3(aimrange);
-				rideAnimal(Player.getEntity(), ent);
+				if(ent != getPlayerEnt()){
+				rideAnimal(getPlayerEnt(), ent);
+				}
 			}
                     if(twerk)twerking();
                     nx = getPlayerX();
