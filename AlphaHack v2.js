@@ -2810,6 +2810,7 @@ alert.setPositiveButton("Exit all", new android.content.DialogInterface.OnClickL
     
 dialog.dismiss();
 misc.dismiss();
+	showMenuBtn();
       }});
 
 alert.setNegativeButton("Back to menu", new android.content.DialogInterface.OnClickListener(){ 
@@ -2842,6 +2843,7 @@ alert.setPositiveButton("Exit all", new android.content.DialogInterface.OnClickL
     
 dialog.dismiss();
 misc.dismiss();
+	showMenuBtn();
       }});
 
 alert.setNegativeButton("Back to menu", new android.content.DialogInterface.OnClickListener(){ 
@@ -2874,6 +2876,7 @@ alert.setPositiveButton("Exit all", new android.content.DialogInterface.OnClickL
     
 dialog.dismiss();
 misc.dismiss();
+	showMenuBtn();
       }});
 
 alert.setNegativeButton("Back to menu", new android.content.DialogInterface.OnClickListener(){ 
@@ -2906,6 +2909,7 @@ alert.setPositiveButton("Exit all", new android.content.DialogInterface.OnClickL
     
 dialog.dismiss();
 misc.dismiss();
+	showMenuBtn();
       }});
 
 alert.setNegativeButton("Back to menu", new android.content.DialogInterface.OnClickListener(){ 
@@ -2938,6 +2942,7 @@ alert.setPositiveButton("Exit all", new android.content.DialogInterface.OnClickL
     
 dialog.dismiss();
 misc.dismiss();
+	showMenuBtn();
       }});
 
 alert.setNegativeButton("Back to menu", new android.content.DialogInterface.OnClickListener(){ 
@@ -2970,6 +2975,7 @@ alert.setPositiveButton("Exit all", new android.content.DialogInterface.OnClickL
     
 dialog.dismiss();
 misc.dismiss();
+	showMenuBtn();
       }});
 
 alert.setNegativeButton("Back to menu", new android.content.DialogInterface.OnClickListener(){ 
@@ -3002,6 +3008,7 @@ alert.setPositiveButton("Exit all", new android.content.DialogInterface.OnClickL
     
 dialog.dismiss();
 misc.dismiss();
+	showMenuBtn();
       }});
 
 alert.setNegativeButton("Back to menu", new android.content.DialogInterface.OnClickListener(){ 
@@ -3034,6 +3041,7 @@ alert.setPositiveButton("Exit all", new android.content.DialogInterface.OnClickL
     
 dialog.dismiss();
 misc.dismiss();
+	showMenuBtn();
       }});
 
 alert.setNegativeButton("Back to menu", new android.content.DialogInterface.OnClickListener(){ 
