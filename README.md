@@ -36,7 +36,7 @@ ALPHAHack v2 is a remake of AlphaHack 0.8.1
 - [x] Speed hax
 - [x] Storage esp / chest esp
 - [x] Hitbox / reach
-- [x] Walk on liquid (currently broken)
+- [ ] Walk on liquid WIP
 - [x] Glide
 - [x] Brightness
 - [x] Instant break
@@ -46,6 +46,9 @@ ALPHAHack v2 is a remake of AlphaHack 0.8.1
 - [x] Coordinates
 - [x] Flight mods
 - [x] Indicators
-- [x] Player mods
+- [x] Player/client mods
 - [x] Chat fonts
 - [x] No knockback
+- [ ] Player tracers WIP
+- [ ] AutoSword WIP
+- [ ] F2, F3, F5 WIP
