@@ -108,11 +108,13 @@ var gravity = -0.07840000092983246;
 
 var fps = 0;
 var lastLoop = new Date;
+var aLoop = lastLoop.getMilliseconds();
 function ping(){
     var thisLoop = new Date;
-    fps = 1000 / (thisLoop - lastLoop);
-    lastLoop = thisLoop;
-    return thisLoop;
+    var bLoop = thisLoop.getMilliseconds();
+    fps = 1000 / (bLoop - aLoop);
+    aLoop = bLoop;
+    return bLoop;
 }
 
 var onBackground = {
