@@ -3225,6 +3225,28 @@ function djs()
       new android.app.AlertDialog.Builder(ctx).setView(webs).show();
       }}));
       }
+	  
+var doping = new styleButton();
+doping.setText("Ping / fps");
+doping.setTextColor(android.graphics.Color.RED);
+if(checkping==true)doping.setTextColor(android.graphics.Color.GREEN);
+            doping.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             checkping?checkping=false:checkping=true;
+doping.setText("Ping / fps");
+if(checkping == true){
+doping.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"Ping / fps on");
+checkping = true;
+}
+if(checkping == false){
+doping.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"Ping / fps off");
+checkping = false;
+}
+                }
+            }));
+            miscLayout.addView(doping);
 
             misc = new android.widget.PopupWindow(miscLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)misc.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
@@ -13720,6 +13742,10 @@ if(Entity.getVelY(Player.getEntity())>0.1){
 Entity.setVelY(Player.getEntity(), -0.5);
 		}
 	}
+	if(checkping){
+	var ping = onBackground.ping();
+	ModPE.showTipMessage(ping+" ms.");
+	}
 }
 
 function toDirectionalVector(dir, a, b) {
@@ -13939,6 +13965,7 @@ var select1 = new styleButton();
 var select2 = new styleButton();
 var select3 = new styleInput();
 var select4 = new styleButton();
+var select5 = new styleButton();
 var end1 = new styleButton();
 var Dialog = new android.app.Dialog(MainActivity);
  
@@ -13979,6 +14006,8 @@ Layer.addView(select1);
 Layer.addView(select2);
 
 Layer.addView(select4);
+
+Layer.addView(select5);
  
             select1.setText("LBSG");
             select1.setOnClickListener(new android.view.View.OnClickListener({
@@ -14007,6 +14036,17 @@ showMenuBtn();
                 onClick: function(viewarg){
 text =m1.getText();
 var seconds = "2500";
+antispam = true;
+Dialog.dismiss();
+showMenuBtn();
+                }
+            }));
+			
+            select5.setText("Cuboss");
+            select5.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+text =m1.getText();
+var seconds = "10000";
 antispam = true;
 Dialog.dismiss();
 showMenuBtn();
@@ -15858,6 +15898,13 @@ function rptask() {
                     if(aimbot){
 			    var ent = getNearestEntity(aimrange);
 			    if(ent != null)crosshairAimAt(ent);
+				/*
+				* todo handle this better
+				*
+				if(onBackground.ping() => 200){
+				aimbot = false;
+				print("ping too high!");
+				}*/
 		    }
 			if(aimbot2){
 				var ent = getNearestEntity2(aimrange);
