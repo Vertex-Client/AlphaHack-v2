@@ -1011,12 +1011,14 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
 		var settings = new styleButton();
 		var back = new styleButton();
 		var clear = new styleButton();
+		var backb = new styleButton();
 		var js1 = new styleButton();
 		var geo = new styleButton();
 		var passes = new styleButton();
 		var agent1 = new android.widget.TextView(MainActivity);
 		back.setVisibility(android.view.View.GONE);
 		clear.setVisibility(android.view.View.GONE);
+		backb.setVisibility(android.view.View.GONE);
 		js1.setVisibility(android.view.View.GONE);
 		geo.setVisibility(android.view.View.GONE);
 		passes.setVisibility(android.view.View.GONE);
@@ -1045,10 +1047,11 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
 				settings.setVisibility(android.view.View.GONE);
 				back.setVisibility(android.view.View.VISIBLE);
 				clear.setVisibility(android.view.View.VISIBLE);
+				backb.setVisibility(android.view.View.VISIBLE);
 				js1.setVisibility(android.view.View.VISIBLE);
 				geo.setVisibility(android.view.View.VISIBLE);
 				passes.setVisibility(android.view.View.VISIBLE);
-			agent1.setVisibility(android.view.View.VISIBLE);
+			    agent1.setVisibility(android.view.View.VISIBLE);
                 }
             }));
             wvLayout.addView(settings);
@@ -1061,10 +1064,11 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
 				settings.setVisibility(android.view.View.VISIBLE);
 				back.setVisibility(android.view.View.GONE);
 				clear.setVisibility(android.view.View.GONE);
+				backb.setVisibility(android.view.View.GONE);
 				js1.setVisibility(android.view.View.GONE);
 				geo.setVisibility(android.view.View.GONE);
 				passes.setVisibility(android.view.View.GONE);
-			agent1.setVisibility(android.view.View.GONE);
+			    agent1.setVisibility(android.view.View.GONE);
                 }
             }));
             wvLayout.addView(back);
@@ -1076,12 +1080,23 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
 				webs.clearCache(true);
 				webs.clearFormData();
 				webs.clearHistory();
+				android.widget.Toast.makeText(ctx, "Cache & history cleared.", 1).show();
                 }
             }));
             wvLayout.addView(clear);
 			
+            backb.setText("Back to first page");
+			backb.setVisibility(android.view.View.GONE);
+            backb.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				android.widget.Toast.makeText(ctx, "Loading... "+url, 1).show();
+				webs.loadUrl(url);
+                }
+            }));
+            wvLayout.addView(backb);
+			
 js1.setText("JavaScript enabled");
-			js1.setTextColor(android.graphics.Color.RED);
+			js1.setTextColor(android.graphics.Color.WHITE);
             js1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              jscript?jscript=false:jscript=true;
@@ -1104,7 +1119,7 @@ jscript = false;
             wvLayout.addView(js1);
 			
 			geo.setText("Geolocation disabled");
-			geo.setTextColor(android.graphics.Color.RED);
+			geo.setTextColor(android.graphics.Color.WHITE);
             geo.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              geoloco?geoloco=false:geoloco=true;
@@ -1127,7 +1142,7 @@ geoloco = false;
             wvLayout.addView(geo);
 			
 			passes.setText("SavePasswords disabled");
-			passes.setTextColor(android.graphics.Color.RED);
+			passes.setTextColor(android.graphics.Color.WHITE);
             passes.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              savepass?savepass=false:savepass=true;
@@ -6036,7 +6051,7 @@ var nh = new styleButton();
             nh.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){ 
 newhealth(); 
-			mod.dismiss();
+mod.dismiss();
 
                 }
             }));
@@ -6044,24 +6059,10 @@ newhealth();
 
 var horse = new styleButton();
 horse.setText("Set mob health");
-horse.setTextColor(android.graphics.Color.RED);
-if(horsehealth==true)horse.setTextColor(android.graphics.Color.GREEN);
             horse.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-             horsehealth?horsehealth=false:horsehealth=true;
-horse.setText("Set mob health");
-if(horsehealth == true){
-horse.setTextColor(android.graphics.Color.GREEN);
-clientMessage(client+"Set mob health on");
 horsehealth1();
 mod.dismiss();
-horsehealth = true;
-}
-if(horsehealth == false){
-horse.setTextColor(android.graphics.Color.RED);
-clientMessage(client+"Set mob health off");
-horsehealth = false;
-}
                 }
             }));
             modLayout.addView(horse);
@@ -6092,24 +6093,10 @@ getage = false;
 		
 var sage = new styleButton();
 sage.setText("Set mob age");
-sage.setTextColor(android.graphics.Color.RED);
-if(setage==true)sage.setTextColor(android.graphics.Color.GREEN);
             sage.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-             setage?setage=false:setage=true;
-sage.setText("Set mob age");
-if(setage == true){
-sage.setTextColor(android.graphics.Color.GREEN);
-clientMessage(client+"Set mob age on");
 new4();
 mod.dismiss();
-setage = true;
-}
-if(setage == false){
-sage.setTextColor(android.graphics.Color.RED);
-clientMessage(client+"Set mob age off");
-setage = false;
-}
                 }
             }));
             modLayout.addView(sage);
@@ -12412,7 +12399,7 @@ clientMessage(client+"Entity added:\n"+Entity.getNameTag(entity)+" / "+Entity.ge
 		if(entity != getPlayerEnt()){
 		//Entity.setHealth(entity, 0); setting this more than once can glitch the entity
 		Entity.setFireTicks(entity, 5);
-			if(i=2)i = 0;
+			if(i==2)i = 0;
 		}
 		}
 	}
@@ -12436,7 +12423,10 @@ function serverMessageReceiveHook(str) {
 run: function(){
 	if(ttot)android.widget.Toast.makeText(ctx, str, 1).show();
 	}});
-	if(chatind)clientMessage(client+str);
+	if(chatind){
+	clientMessage(client+str);
+	android.widget.Toast.makeText(ctx, str, 1).show();
+	}
 }
 
 function attackHook(attacker, victim) {
@@ -13780,6 +13770,7 @@ var m1 = new styleInput();
 var select1 = new styleButton();
 var select2 = new styleButton();
 var select3 = new styleInput();
+select3.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var select4 = new styleButton();
 var select5 = new styleButton();
 var end1 = new styleButton();
@@ -13808,7 +13799,8 @@ m1.setText("AlphaHack!");
                 onClick: function(viewarg){
 sec =select3.getText();
 text =m1.getText();
-seconds = sec;
+var sec2 = new Date(sec);
+seconds = sec2.getMilliseconds();
 antispam = true;
 Dialog.dismiss();
 showMenuBtn();
@@ -13825,7 +13817,7 @@ Layer.addView(select4);
 
 Layer.addView(select5);
  
-            select1.setText("LBSG");
+            select1.setText("LBSG (2 sec)");
             select1.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 text =m1.getText();
@@ -13836,7 +13828,7 @@ showMenuBtn();
                 }
             }));
              
-            select2.setText("Mineplex");
+            select2.setText("Mineplex (3 sec)");
             select2.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 text =m1.getText();
@@ -13847,7 +13839,7 @@ showMenuBtn();
                 }
             }));
             
-            select4.setText("Leet.cc");
+            select4.setText("Leet.cc (2/3 sec)");
             select4.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 text =m1.getText();
@@ -13858,7 +13850,7 @@ showMenuBtn();
                 }
             }));
 			
-            select5.setText("Cuboss");
+            select5.setText("Cuboss (10 sec)");
             select5.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 text =m1.getText();
