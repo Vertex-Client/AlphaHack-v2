@@ -1553,6 +1553,7 @@ var urls3 = new android.content.Intent(MainActivity);
             heset.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 				heightset();
+				settings.dismiss();
                 }
             }));
             settingsLayout.addView(heset);
@@ -1562,6 +1563,7 @@ var urls3 = new android.content.Intent(MainActivity);
             rangset.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 				rangeset();
+				settings.dismiss();
                 }
             }));
             settingsLayout.addView(rangset);
@@ -1645,6 +1647,10 @@ activePos = android.view.Gravity.RIGHT;
 GUIPos = android.view.Gravity.CENTER;
 GUIPos2 = android.view.Gravity.CENTER;
 GUIPos3 = android.view.Gravity.CENTER;
+                settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
                 }
             }));
             settingsLayout.addView(g1);
@@ -3341,7 +3347,10 @@ tracers1 = false;
             }));
             cheatLayout.addView(gltrace1);
 */
-	
+
+/*
+* WIP
+*	
 var asword = new styleButton();
 asword.setText("Auto sword");
 asword.setTextColor(android.graphics.Color.RED);
@@ -3363,6 +3372,7 @@ autosword = false;
                 }
             }));
             cheatLayout.addView(asword);
+			*/
 	
 var nknock = new styleButton();
 nknock.setText("No knockback");
@@ -15135,6 +15145,7 @@ Exit.setText("Save");
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
 aimrange=rang.getText();
+android.widget.Toast.makeText(MainActivity, "Set to: "+rang, 1).show();
 Dialog.dismiss();
 
 showMenuBtn();
@@ -15175,7 +15186,14 @@ Exit.setText("Save");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
+if(height < 10){
 jumpheight=height.getText();
+android.widget.Toast.makeText(MainActivity, "Set to: "+height, 1).show();
+}
+if(height > 10){
+jumpheight = 9;
+android.widget.Toast.makeText(MainActivity, "Set to default: "+jumpheight, 1).show();
+}
 Dialog.dismiss();
 
 showMenuBtn();
