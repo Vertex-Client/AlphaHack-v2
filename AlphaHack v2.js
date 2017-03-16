@@ -99,6 +99,7 @@ var aimrange = '7';
 var rainId = '';
 var shadow1X = '30';
 var shadow1Y = '2';
+var keybind1 = false;
 
 var playerDir = [0, 0, 0];
 var DEG_TO_RAD = Math["PI"] / 180;
@@ -1407,6 +1408,7 @@ enableMod();
 //dismissable or showable function
 function showMenuBtn(){
 	//main button
+if(keybind1==false){
 MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
     try{
         var layout = new android.widget.LinearLayout(MainActivity);
@@ -1435,8 +1437,117 @@ if(getLanguage=="ko_KR")android.widget.Toast.makeText(MainActivity, "아래를 �
             android.widget.Toast.makeText(MainActivity, "An error occured: " + err, 1).show();
         }
     }}));
+	}
+if(keybind1==true)keybind();
 }
 showMenuBtn();
+
+function keybind(){
+MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
+        try{
+            var toggleLayout = new android.widget.LinearLayout(MainActivity);
+            var toggleScroll = new android.widget.ScrollView(MainActivity);
+            var toggleLayout1 = new android.widget.LinearLayout(MainActivity);
+            toggleLayout.setOrientation(1);
+            toggleLayout1.setOrientation(1);
+            toggleScroll.addView(toggleLayout);
+            toggleLayout1.addView(toggleScroll);
+		
+		var exit = new styleButton();
+		var open = new styleButton();
+		var killaura = new styleButton();
+		var hitbox = new styleButton();
+		
+		    exit.setText("Exit");
+			exit.setTextColor(android.graphics.Color.RED);
+			exit.setTextSize(8);
+            exit.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    toggle.dismiss();
+					showMenuBtn();
+					var keybind1 = false;
+                }
+            }));
+            toggleLayout.addView(exit);
+			
+		    open.setText("α");
+			open.setTextColor(android.graphics.Color.WHITE);
+			open.setTextSize(8);
+            open.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    toggle.dismiss();
+					mainMenu();
+                }
+            }));
+            toggleLayout.addView(open);
+			
+killaura.setText("Aimbot");
+killaura.setTextColor(android.graphics.Color.WHITE);
+if(paimaura==true)killaura.setTextColor(android.graphics.Color.GREEN);
+killaura.setTextSize(8);
+            killaura.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             paimaura?paimaura=false:paimaura=true;
+killaura.setText("Aimbot");
+if(paimaura == true){
+killaura.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client + "aimbot on");
+	setRot(getPlayerEnt(), 0, 0);
+aimbot = true;
+aimed = true;
+paimaura = true;
+}
+if(paimaura == false){
+killaura.setTextColor(android.graphics.Color.RED);
+clientMessage(client + "aimbot off");
+	setRot(getPlayerEnt(), 0, 0);
+aimbot = false;
+aimed = false;
+paimaura = false;
+}
+                }
+            }));
+            toggleLayout.addView(killaura);
+			
+hitbox.setText("Hitbox");
+hitbox.setTextColor(android.graphics.Color.WHITE);
+if(hitbox1==true)hitbox.setTextColor(android.graphics.Color.GREEN);
+hitbox.setTextSize(8);
+            hitbox.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             hitbox1?hitbox1=false:hitbox1=true;
+hitbox.setText("Hitbox");
+if(hitbox1 == true){
+hitbox.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"Hitbox on");
+hitbox1 = true;
+}
+if(hitbox1 == false){
+hitbox.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"Hitbox off");
+	for(var i = 0; i < 5; i++){
+		Entity.setCollisionSize(Entity.getAll(), 1, 1);
+		Entity.setCollisionSize(Server.getAllPlayers(), 1, 2);
+	}
+hitbox1 = false;
+}
+                }
+            }));
+            toggleLayout.addView(hitbox);
+
+toggle = new android.widget.PopupWindow(toggleLayout1, dip2px(55), MainActivity.getWindowManager().getDefaultDisplay().getHeight()/3);
+	  var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(android.graphics.Color.TRANSPARENT);
+      bg.setStroke(10,GUIStroke);
+toggleLayout1.setBackgroundDrawable(bg);
+toggleLayout1.setPadding(20,0,20,0);
+toggle.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.TRANSPARENT));
+            toggle.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.RIGHT | android.view.Gravity.TOP, 0, 130);
+            }catch(error){
+                android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
+            }
+    }}));
+}
 
 /********************************/
 
@@ -1549,6 +1660,24 @@ var urls3 = new android.content.Intent(MainActivity);
                 }
             }));
             settingsLayout.addView(link);
+			
+	     var toggleAH = new styleButton();
+            toggleAH.setText("Keybind mode");  
+	    if(keybind1==true)toggleAH.setText("Unhide keybind"); 
+            toggleAH.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+keybind1?keybind1=false:keybind1=true;
+if(keybind1 == true){
+toggleAH.setText("Unhide keybind");
+keybind1 = true;
+}
+if(keybind1 == false){
+toggleAH.setText("Hide keybind");
+keybind1 = false;
+}
+                }
+            }));
+            settingsLayout.addView(toggleAH);
 	
 	var heset = new styleButton();
             heset.setText("Height for HigherJumps");       
