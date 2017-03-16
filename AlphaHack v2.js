@@ -1651,16 +1651,16 @@ var urls3 = new android.content.Intent(MainActivity);
 			
 	     var toggleAH = new styleButton();
             toggleAH.setText("Keybind mode");  
-	    if(keybind1==true)toggleAH.setText("Unhide keybind"); 
+	    if(keybind1==true)toggleAH.setText("Exit keybind"); 
             toggleAH.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
 keybind1?keybind1=false:keybind1=true;
 if(keybind1 == true){
-toggleAH.setText("Unhide keybind");
+toggleAH.setText("Exit keybind");
 keybind1 = true;
 }
 if(keybind1 == false){
-toggleAH.setText("Hide keybind");
+toggleAH.setText("Keybind mode");
 keybind1 = false;
 }
                 }
