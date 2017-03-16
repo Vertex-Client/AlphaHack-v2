@@ -1458,21 +1458,22 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
 		var killaura = new styleButton();
 		var hitbox = new styleButton();
 		
-		    exit.setText("Exit");
+		    exit.setText("X");
 			exit.setTextColor(android.graphics.Color.RED);
-			exit.setTextSize(8);
+			exit.setTextSize(10);
             exit.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
                     toggle.dismiss();
-					showMenuBtn();
-					var keybind1 = false;
+			showMenuBtn();
+			var keybind1 = false;
+			keybind1 = false;
                 }
             }));
             toggleLayout.addView(exit);
 			
 		    open.setText("α");
 			open.setTextColor(android.graphics.Color.WHITE);
-			open.setTextSize(8);
+			open.setTextSize(10);
             open.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
                     toggle.dismiss();
@@ -1484,7 +1485,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
 killaura.setText("Aimbot");
 killaura.setTextColor(android.graphics.Color.WHITE);
 if(paimaura==true)killaura.setTextColor(android.graphics.Color.GREEN);
-killaura.setTextSize(8);
+killaura.setTextSize(7);
             killaura.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              paimaura?paimaura=false:paimaura=true;
@@ -1512,7 +1513,7 @@ paimaura = false;
 hitbox.setText("Hitbox");
 hitbox.setTextColor(android.graphics.Color.WHITE);
 if(hitbox1==true)hitbox.setTextColor(android.graphics.Color.GREEN);
-hitbox.setTextSize(8);
+hitbox.setTextSize(7);
             hitbox.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
              hitbox1?hitbox1=false:hitbox1=true;
@@ -1537,10 +1538,10 @@ hitbox1 = false;
 
 toggle = new android.widget.PopupWindow(toggleLayout1, dip2px(55), MainActivity.getWindowManager().getDefaultDisplay().getHeight()/3);
 	  var bg = new android.graphics.drawable.GradientDrawable();
-      bg.setColor(android.graphics.Color.TRANSPARENT);
-      bg.setStroke(10,GUIStroke);
-toggleLayout1.setBackgroundDrawable(bg);
-toggleLayout1.setPadding(20,0,20,0);
+      //bg.setColor(android.graphics.Color.TRANSPARENT);
+      //bg.setStroke(10,GUIStroke);
+//toggleLayout1.setBackgroundDrawable(bg);
+//toggleLayout1.setPadding(20,0,20,0);
 toggle.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.TRANSPARENT));
             toggle.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.RIGHT | android.view.Gravity.TOP, 0, 130);
             }catch(error){
