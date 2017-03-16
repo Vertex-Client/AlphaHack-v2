@@ -1191,6 +1191,22 @@ savepass = false;
 			webset.setDatabaseEnabled(false);
 			webset.setCacheMode(android.webkit.WebSettings.LOAD_NO_CACHE);
 			webset.setDomStorageEnabled(false);
+		        webs.requestFocus(android.view.View.FOCUS_DOWN);
+webs.setOnTouchListener(new android.view.View.OnTouchListener(
+      {
+      onTouch:function(v, e){
+      switch(e.getAction()){
+      case android.view.MotionEvent.ACTION_UP:
+      case android.view.MotionEvent.ACTION_DOWN:
+	  if(v.hasFocus()){
+	  v.requestFocus();
+	  ctx.getWindow().setSoftInputMode(android.view.WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
+	  }
+      break;
+      }
+      return false;
+      }
+      }));
 			webs.loadUrl(url);
 			wvLayout.addView(webs);
 
