@@ -5,7 +5,7 @@ ALPHAHack v2 is a remake of AlphaHack 0.8.1
 <br>
 # Info
 --------------------<br>
-[AlphαHαck by: ArceusMαtt (c) 2016, 2017];<br>
+[AlphαHαck by: ArceusMαtt (c) 2016 - 2017];<br>
 --------------------<br>
 [Free to use mod menu for MCPE under MIT license];<br>
 --------------------<br>
@@ -14,21 +14,21 @@ ALPHAHack v2 is a remake of AlphaHack 0.8.1
 [contributors: Godsoft029, Johnmαcrocrαft, αJ170, Peαcestorm(αgαmeR), Firepro9978, αPRIC0CKS, Vertex client teαm];<br>
 --------------------
 # Menus &amp; menu issues
-0.8.5 Misc
-0.8.5 Settings
-0.8.5 Online mods
-0.8.5 Offline mods incomplete
-0.8.5 Effect menu
-0.8.5 Enchant menu
-0.8.5 Give menu
-1.0.3 Morph menu (Horse(54) crashes);
-0.8.5 Nuke menu
-0.8.5 Particle menu
-1.0.3 Spawn menu
-0.8.5 Speed menu
-0.8.5 Teleport menu
-0.8.5 Time menu
-0.8.5 Weather menu
+0.8.5 Misc<br>
+0.8.5 Settings<br>
+0.8.5 Online mods<br>
+0.8.5 Offline mods incomplete<br>
+0.8.5 Effect menu<br>
+0.8.5 Enchant menu<br>
+0.8.5 Give menu<br>
+1.0.3 Morph menu (Horse(54) crashes);<br>
+0.8.5 Nuke menu<br>
+0.8.5 Particle menu<br>
+1.0.3 Spawn menu<br>
+0.8.5 Speed menu<br>
+0.8.5 Teleport menu<br>
+0.8.5 Time menu<br>
+0.8.5 Weather menu<br>
 # Popular features
 - [x] AimAura / Killaura
 - [x] Speed hax
