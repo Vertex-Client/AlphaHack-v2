@@ -1457,19 +1457,6 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
 		var open = new styleButton();
 		var killaura = new styleButton();
 		var hitbox = new styleButton();
-		
-		    exit.setText("X");
-			exit.setTextColor(android.graphics.Color.RED);
-			exit.setTextSize(10);
-            exit.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-                    toggle.dismiss();
-			showMenuBtn();
-			var keybind1 = false;
-			keybind1 = false;
-                }
-            }));
-            toggleLayout.addView(exit);
 			
 		    open.setText("α");
 			open.setTextColor(android.graphics.Color.WHITE);
@@ -1477,7 +1464,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
             open.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
                     toggle.dismiss();
-					mainMenu();
+			mainMenu();
                 }
             }));
             toggleLayout.addView(open);
@@ -1538,9 +1525,9 @@ hitbox1 = false;
 
 toggle = new android.widget.PopupWindow(toggleLayout1, dip2px(55), MainActivity.getWindowManager().getDefaultDisplay().getHeight()/3);
 	  var bg = new android.graphics.drawable.GradientDrawable();
-      //bg.setColor(android.graphics.Color.TRANSPARENT);
-      //bg.setStroke(10,GUIStroke);
-//toggleLayout1.setBackgroundDrawable(bg);
+      bg.setColor(android.graphics.Color.TRANSPARENT);
+      bg.setStroke(10,GUIStroke);
+toggleLayout1.setBackgroundDrawable(bg);
 //toggleLayout1.setPadding(20,0,20,0);
 toggle.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.TRANSPARENT));
             toggle.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.RIGHT | android.view.Gravity.TOP, 0, 130);
