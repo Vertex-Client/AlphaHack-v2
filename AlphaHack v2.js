@@ -97,6 +97,8 @@ var cidm8 = "";
 var jumpheight = '5';
 var aimrange = '7';
 var rainId = '';
+var shadow1X = '30';
+var shadow1Y = '2';
 
 var playerDir = [0, 0, 0];
 var DEG_TO_RAD = Math["PI"] / 180;
@@ -1567,6 +1569,16 @@ var urls3 = new android.content.Intent(MainActivity);
                 }
             }));
             settingsLayout.addView(rangset);
+			
+	var shaset = new styleButton();
+            shaset.setText("Hitbox range & height");       
+            shaset.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+				shadowset();
+				settings.dismiss();
+                }
+            }));
+            settingsLayout.addView(shaset);
 	
 	/*
 	* todo fix base64
@@ -15250,6 +15262,53 @@ print("item rain dialog:"+e);
 }});
 }
 
+function shadowset() {
+MainActivity.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+shadowD = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(MainActivity);
+var shadowX = new styleInput();
+shadowX.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
+var shadowY = new styleInput();
+shadowY.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new styleButton();
+
+Dialog.setTitle("Hitbox range & height");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(shadowX);
+Layer.addView(shadowY);
+Layer.addView(Exit);
+
+shadowX.setText("");
+shadowX.setHint("Width/X/range");
+shadowY.setText("");
+shadowY.setHint("Height/Y/up-down");
+Exit.setText("Save");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+shadow1X=shadowX.getText();
+shadow1Y=shadowY.getText();
+Dialog.dismiss();
+
+showMenuBtn();
+}
+});
+
+shadowD.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+shadowD.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+shadowD.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("shadow dialog:"+e);
+}
+}});
+}
+
 function save() {
         var file = new java.io.File( android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/homes/", "home " + Level.getWorldDir() + ".txt/");
         var path=android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/AlphaHackPE/homes/" ; 
@@ -15745,7 +15804,7 @@ function rptask() {
 			if(hitbox1){
 				var ent = getNearestEntity3(aimrange + 2);
 				if(ent != getPlayerEnt()){
-				Entity.setCollisionSize(ent, 30, 2);
+				Entity.setCollisionSize(ent, shadow1X, shadow1Y);
 				}
 			}
 			if(ridenear){
