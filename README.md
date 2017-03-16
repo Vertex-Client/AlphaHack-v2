@@ -9,10 +9,10 @@ ALPHAHack v2 is a remake of AlphaHack 0.8.1
 --------------------<br>
 [Free to use mod menu for MCPE under MIT license];<br>
 --------------------<br>
-[Pleαse contαct the developers of eαch code for permission to copy.];<br/>
+[Pleαse contαct the developers of eαch code for permission to copy.];<br>
 --------------------<br>
-[contributors: Godsoft029, Johnmαcrocrαft, αJ170, Peαcestorm(αgαmeR), Firepro9978, αPRIC0CKS, Vertex client teαm];<br>
---------------------
+[contributors: Godsoft029, Johnmαcrocrαft, αJ170, Peαcestorm(αgαmeR), Firepro9978, αPRIC0CKS, Vertex client teαm];
+<br>--------------------
 # Menus &amp; menu issues
 0.8.5 Misc<br>
 0.8.5 Settings<br>
