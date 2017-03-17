@@ -1192,7 +1192,7 @@ savepass = false;
 			webset.setCacheMode(android.webkit.WebSettings.LOAD_NO_CACHE);
 			webset.setDomStorageEnabled(false);
 		        webs.requestFocus(android.view.View.FOCUS_DOWN);
-webs.setOnTouchListener(new android.view.View.OnTouchListener(
+/*webs.setOnTouchListener(new android.view.View.OnTouchListener(
       {
       onTouch:function(v, e){
       switch(e.getAction()){
@@ -1201,17 +1201,25 @@ webs.setOnTouchListener(new android.view.View.OnTouchListener(
 	  if(v.hasFocus()){
 	  v.requestFocus();
 	  ctx.getWindow().setSoftInputMode(android.view.WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
+	  var InputMethodManager = android.view.inputmethod.InputMethodManager;
+	  var input = ctx.getSystemService(android.content.Context.INPUT_METHOD_SERVICE);
+	  input.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+	  
+	  *//* 
+	  thanks godsoft029 for fixing the keyboard issue :) now i dont have to use this. ^ 
+	  *//*
+	  
 	  }
       break;
       }
       return false;
       }
-      }));
+      }));*/
 			webs.loadUrl(url);
 			wvLayout.addView(webs);
 
-wv = new android.widget.PopupWindow(wvLayout1, dip2px(500), dip2px(500));
-wv = new android.widget.PopupWindow(wvLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/1, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1);
+wv = new android.widget.PopupWindow(wvLayout1, dip2px(500), dip2px(500), true);
+wv = new android.widget.PopupWindow(wvLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/1, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1, true);
 	  var bg = new android.graphics.drawable.GradientDrawable();
       bg.setColor(android.graphics.Color.TRANSPARENT);
       bg.setStroke(10,GUIStroke);
