@@ -1496,7 +1496,6 @@ killaura.setText("Aimbot");
 if(paimaura == true){
 killaura.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client + "aimbot on");
-	setRot(getPlayerEnt(), 0, 0);
 aimbot = true;
 aimed = true;
 paimaura = true;
@@ -1504,7 +1503,6 @@ paimaura = true;
 if(paimaura == false){
 killaura.setTextColor(android.graphics.Color.RED);
 clientMessage(client + "aimbot off");
-	setRot(getPlayerEnt(), 0, 0);
 aimbot = false;
 aimed = false;
 paimaura = false;
@@ -3298,7 +3296,6 @@ clientMessage(client + "Player aim aura on");
 /*
 actually from dragop
 android.widget.Toast.makeText(MainActivity, "Credit: Firepro9978 from flame client!", 1).show();*/
-	setRot(getPlayerEnt(), 0, 0);
 aimbot = true;
 aimed = true;
 paimaura = true;
@@ -3306,7 +3303,6 @@ paimaura = true;
 if(paimaura == false){
 killaura1.setTextColor(android.graphics.Color.RED);
 clientMessage(client + "Player aim aura off");
-	setRot(getPlayerEnt(), 0, 0);
 aimbot = false;
 aimed = false;
 paimaura = false;
@@ -3329,7 +3325,6 @@ clientMessage(client + "Mob aim aura on");
 	/*
 	actually from dragop aimaura but i split mobs into a different aura from aimaura
 android.widget.Toast.makeText(MainActivity, "Credit: Firepro9978 from flame client!", 1).show();*/
-	setRot(getPlayerEnt(), 0, 0);
 aimbot2 = true;
 aimed2 = true;
 maimaura = true;
@@ -3337,7 +3332,6 @@ maimaura = true;
 if(maimaura == false){
 killaura2.setTextColor(android.graphics.Color.RED);
 clientMessage(client + "Mob aim aura off");
-	setRot(getPlayerEnt(), 0, 0);
 aimbot2 = false;
 aimed2 = false;
 maimaura = false;
@@ -3427,13 +3421,11 @@ bowbut.setText("Auto bow aim");
 if(bowaura == true){
 bowbut.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client+"Auto bow aim on");
-	setRot(getPlayerEnt(), 0, 0);
 bowaura = true;
 }
 if(bowaura == false){
 bowbut.setTextColor(android.graphics.Color.RED);
 clientMessage(client+"Auto bow aim off");
-	setRot(getPlayerEnt(), 0, 0);
 bowaura = false;
 }
                 }
@@ -11747,7 +11739,6 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
             d1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){         
                 	ModPE.setGameSpeed(20);
-			setRot(getPlayerEnt(), 0, 0); //reset looking up/down - left/right
                 }
             }));
             speedLayout.addView(d1);
@@ -12547,7 +12538,13 @@ if(entind){
 var x = Entity.getX(entity);
 var y = Entity.getY(entity);
 var z = Entity.getZ(entity);
+var name = Entity.getNameTag(entity);
+	if(!name.match(' ') && name != ''){
 clientMessage(client+"Entity added:\n"+Entity.getNameTag(entity)+" / "+Entity.getEntityTypeId(entity)+"\nx "+Math.round(x)+" y "+Math.round(y)+" z "+Math.round(z));
+	}
+	if(Entity.getEntityTypeId(entity) == 64){
+clientMessage(client+"Entity added:\n(Dropped item) / "+Entity.getEntityTypeId(entity)+"\nx "+Math.round(x)+" y "+Math.round(y)+" z "+Math.round(z));
+	}
 }
 	if(noentity){
 		for(var i = 0; i < 5; i++){
@@ -12565,7 +12562,13 @@ if(entind){
 var x = Entity.getX(entity);
 var y = Entity.getY(entity);
 var z = Entity.getZ(entity);
+var name = Entity.getNameTag(entity);
+	if(!name.match(' ') && name != ''){
 clientMessage(client+"Entity removed:\n"+Entity.getNameTag(entity)+" / "+Entity.getEntityTypeId(entity)+"\nx "+Math.round(x)+" y "+Math.round(y)+" z "+Math.round(z));
+	}
+	if(Entity.getEntityTypeId(entity) == 64){
+clientMessage(client+"Entity removed:\n(Dropped item) / "+Entity.getEntityTypeId(entity)+"\nx "+Math.round(x)+" y "+Math.round(y)+" z "+Math.round(z));
+	}
 }
 }
 
