@@ -12547,7 +12547,7 @@ var x = Entity.getX(entity);
 var y = Entity.getY(entity);
 var z = Entity.getZ(entity);
 var name = Entity.getNameTag(entity);
-	if(!name.match(' ') && name != ''){
+	if(!name.match(' ')){
 clientMessage(client+"Entity added:\n"+Entity.getNameTag(entity)+" / "+Entity.getEntityTypeId(entity)+"\nx "+Math.round(x)+" y "+Math.round(y)+" z "+Math.round(z));
 	}
 	if(Entity.getEntityTypeId(entity) == 64){
