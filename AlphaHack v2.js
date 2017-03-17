@@ -647,6 +647,7 @@ var noentity = false;
 var autosword = false;
 var noknock = false;
 var checkping = false;
+var dropind = false;
 
 var showActive = false;
 var showActive2 = false;
@@ -4530,7 +4531,7 @@ if(entind==true)srent.setTextColor(android.graphics.Color.GREEN);
 srent.setText("Entity indicator");
 if(entind == true){
 srent.setTextColor(android.graphics.Color.GREEN);
-clientMessage(client+"Entity indicator on\nThis shows you which entity/item/player/mob has been spawned or removed.");
+clientMessage(client+"Entity indicator on\nThis shows you which entity/player/mob has been spawned or removed.");
 entind = true;
 }
 if(entind == false){
@@ -4541,6 +4542,28 @@ entind = false;
                 }
             }));
             cheatLayout.addView(srent);
+
+var dropsin = new styleButton();
+dropsin.setText("Drops indicator");
+dropsin.setTextColor(android.graphics.Color.RED);
+if(dropind==true)dropsin.setTextColor(android.graphics.Color.GREEN);
+            dropsin.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             dropind?dropind=false:dropind=true;
+dropsin.setText("Drops indicator");
+if(dropind == true){
+dropsin.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"Drops indicator on\nThis shows you item drops that has been spawned or removed.");
+dropind = true;
+}
+if(dropind == false){
+dropsin.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"Drops indicator off");
+dropind = false;
+}
+                }
+            }));
+            cheatLayout.addView(dropsin);
             
             var seevel = new styleButton();
 seevel.setText("Velocity indicator");
@@ -12550,6 +12573,11 @@ var name = Entity.getNameTag(entity);
 	if(!name.match(' ') && Entity.getEntityTypeId(entity) != 64){
 clientMessage(client+"Entity added:\n"+Entity.getNameTag(entity)+" / "+Entity.getEntityTypeId(entity)+"\nx "+Math.round(x)+" y "+Math.round(y)+" z "+Math.round(z));
 	}
+}
+	if(dropind){
+var x = Entity.getX(entity);
+var y = Entity.getY(entity);
+var z = Entity.getZ(entity);
 	if(Entity.getEntityTypeId(entity) == 64){
 clientMessage(client+"Entity added:\n(Dropped item) / "+Entity.getEntityTypeId(entity)+"\nx "+Math.round(x)+" y "+Math.round(y)+" z "+Math.round(z));
 	}
@@ -12574,6 +12602,11 @@ var name = Entity.getNameTag(entity);
 	if(!name.match(' ') && Entity.getEntityTypeId(entity) != 64){
 clientMessage(client+"Entity removed:\n"+Entity.getNameTag(entity)+" / "+Entity.getEntityTypeId(entity)+"\nx "+Math.round(x)+" y "+Math.round(y)+" z "+Math.round(z));
 	}
+}
+	if(dropind){
+var x = Entity.getX(entity);
+var y = Entity.getY(entity);
+var z = Entity.getZ(entity);
 	if(Entity.getEntityTypeId(entity) == 64){
 clientMessage(client+"Entity removed:\n(Dropped item) / "+Entity.getEntityTypeId(entity)+"\nx "+Math.round(x)+" y "+Math.round(y)+" z "+Math.round(z));
 	}
