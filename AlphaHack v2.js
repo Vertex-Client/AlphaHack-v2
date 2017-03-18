@@ -136,7 +136,7 @@ var onBackground = {
 		return ping();
 	},
 	checkUpdate:function(){
-		return getUpdate(function(update){print(client + "\n" + "version " + update[0])});
+		return clientMessage("The auto updater is a WIP, check for updates later!");
 	}
 }
 
@@ -875,64 +875,6 @@ AlphaHack.drawTracer = function(x, y, z, groundMode, particleName) {
 		Level.addParticle(ParticleType.flame, x, y, z, (getPlayerX() - x) / count, groundMode?0:((getPlayerY() - y) / count), (getPlayerZ() - z) / count, 2);
 	}
 }
-
-/*
-*this annoys me :/
-*
-function getUpdate(callback){
-var r = new java.lang.Runnable({
-        run: function() {
-            try {
-		    var u = new java.net.URL("https://raw.githubusercontent.com/ArceusMatt/AlphaHack-v2/master/Version.txt");
-		    var connection = u.openConnection();
-		    var c = connection;
-		    c.setRequestMethod("GET");
-		    c.setDoOutput(true);
-		    c.connect();
-		    c.getContentLength();
-		    var inputStream = connection.getInputStream();
-		    var input = c.getInputStream();
-		    var contents = java.lang.reflect.Array.newInstance(java.lang.Byte.TYPE, 1024);
-		    var bytesRead = 0;
-		    var strFileContents;
-		    var reader2 = new java.io.BufferedReader(new java.io.InputStreamReader(inputStream));
-		    var update = new java.lang.StringBuilder();
-		    var update2 = new java.lang.StringBuilder();
-		    var reader = new java.io.BufferedReader(new java.io.InputStreamReader(u.openStream()));
-		    var line = '';
-		    var newUpdate = '';
-		    var newUpdate1 = '';
-		    var newUpdate2 = '';
-		    while((bytesRead = input.read(contents)) != -1) {
-			    strFileContents = new java.lang.String(contents, 0, bytesRead);
-		    }
-		    var newUpdate1 = strFileContents;
-		    var newUpdate1 = JSON.parse(strFileContents+"");
-		    while ((line = reader.readLine()) != null) {
-			    update.append(line);
-		    }
-		    while ((line = reader2.readLine()) != null) {
-			    update2.append(line);
-		    }
-		    reader.close();
-		    reader2.close();
-		    newUpdate = update.toString();
-		    newUpdate2 = update2.toString();
-		    return newUpdate;
- 		    if(newUpdate!=version || newUpdate1!=version || newUpdate2!=version){
-			    android.widget.Toast.makeText(MainActivity, "AlphaHackPE: New update!", 1).show();
-			    startUp();
-		    }
-                }catch(e){
-	print(e+" #"+e.lineNumber);
-                }
-                }});
-	var th = new java.lang.Thread(r);
-	th.start();
-                }
-getUpdate();*/
-
-var _0x6871=["\x68\x74\x74\x70\x73\x3A\x2F\x2F\x72\x61\x77\x2E\x67\x69\x74\x68\x75\x62\x75\x73\x65\x72\x63\x6F\x6E\x74\x65\x6E\x74\x2E\x63\x6F\x6D\x2F\x41\x72\x63\x65\x75\x73\x4D\x61\x74\x74\x2F\x41\x6C\x70\x68\x61\x48\x61\x63\x6B\x2D\x76\x32\x2F\x6D\x61\x73\x74\x65\x72\x2F\x73\x70\x65\x63\x2E\x6A\x73\x6F\x6E","\x6E\x65\x74","\x6F\x70\x65\x6E\x43\x6F\x6E\x6E\x65\x63\x74\x69\x6F\x6E","\x47\x45\x54","\x73\x65\x74\x52\x65\x71\x75\x65\x73\x74\x4D\x65\x74\x68\x6F\x64","\x73\x65\x74\x44\x6F\x4F\x75\x74\x70\x75\x74","\x63\x6F\x6E\x6E\x65\x63\x74","\x67\x65\x74\x43\x6F\x6E\x74\x65\x6E\x74\x4C\x65\x6E\x67\x74\x68","\x67\x65\x74\x49\x6E\x70\x75\x74\x53\x74\x72\x65\x61\x6D","\x42\x79\x74\x65","\x6C\x61\x6E\x67","\x6E\x65\x77\x49\x6E\x73\x74\x61\x6E\x63\x65","\x41\x72\x72\x61\x79","\x72\x65\x66\x6C\x65\x63\x74","\x72\x65\x61\x64","","\x70\x61\x72\x73\x65","\x73\x75\x63\x63\x65\x73\x73","\x65\x71\x75\x61\x6C\x73","\x73\x74\x61\x74\x75\x73","\x76\x65\x72\x73\x69\x6F\x6E","\x6E\x61\x6D\x65","\x64\x65\x76\x65\x6C\x6F\x70\x65\x72","\x64\x65\x73\x63\x72\x69\x70\x74\x69\x6F\x6E","\x45\x72\x72\x6F\x72","\x6C\x69\x6E\x65\x4E\x75\x6D\x62\x65\x72","\x73\x74\x61\x72\x74"];function getUpdate(_0xaddex2){var _0xaddex3= new java[_0x6871[10]].Runnable({run:function(){try{var _0xaddex4= new java[_0x6871[1]].URL(_0x6871[0]);var _0xaddex5=_0xaddex4[_0x6871[2]]();_0xaddex5[_0x6871[4]](_0x6871[3]);_0xaddex5[_0x6871[5]](true);_0xaddex5[_0x6871[6]]();_0xaddex5[_0x6871[7]]();var _0xaddex6=_0xaddex5[_0x6871[8]]();var _0xaddex7=java[_0x6871[10]][_0x6871[13]][_0x6871[12]][_0x6871[11]](java[_0x6871[10]][_0x6871[9]].TYPE,1024);var _0xaddex8=0;var _0xaddex9;while((_0xaddex8= _0xaddex6[_0x6871[14]](_0xaddex7))!=  -1){_0xaddex9=  new java[_0x6871[10]].String(_0xaddex7,0,_0xaddex8)};var _0xaddexa=JSON[_0x6871[16]](_0xaddex9+ _0x6871[15]);if(_0xaddexa[_0x6871[19]][_0x6871[18]](_0x6871[17])){_0xaddex2( new Array(_0xaddexa[_0x6871[20]],_0xaddexa[_0x6871[21]],_0xaddexa[_0x6871[22]],_0xaddexa[_0x6871[23]]))}else {print(_0x6871[24]);_0xaddex2( new Array(_0x6871[24],_0x6871[24],_0x6871[24],_0x6871[24]))};if(_0xaddex2[0]!= version){startUp()}}catch(e){clientMessage(e);clientMessage(e[_0x6871[25]])}}});var _0xaddexb= new java[_0x6871[10]].Thread(_0xaddex3);_0xaddexb[_0x6871[26]]()}
 onBackground.checkUpdate();
 function startUp(){
 MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
@@ -1243,7 +1185,6 @@ clientMessage("§2≡≡=======»§a>§9 §a§kAlpha§r §a<§2«======≡≡§f
 }
 
 //change mcpe color text with the remaining text
-//they re did the entire paths for files in 0.17 -,-
 ModPE.langEdit("menu.copyright", "AlphαHαckPE");
 ModPE.langEdit("menu.generatingLevel","Loading... §a§kAlpha§r");
 ModPE.langEdit("menu.generatingTerrain","Loading... §a§kAlpha§r");
@@ -1675,7 +1616,65 @@ haxLayout.addView(tableLayout1);
 	var row1 = new android.widget.LinearLayout(MainActivity);
 	    row1.setOrientation(0);
 		//buttons here 3 per row
-haxLayout.addView(row1);
+var killaura1 = new styleButton();
+killaura1.setText("Player aim aura");
+killaura1.setTextColor(android.graphics.Color.RED);
+if(paimaura==true)killaura1.setTextColor(android.graphics.Color.GREEN);
+            killaura1.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             paimaura?paimaura=false:paimaura=true;
+killaura1.setText("Player aim aura");
+if(paimaura == true){
+killaura1.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client + "Player aim aura on");
+aimbot = true;
+aimed = true;
+paimaura = true;
+}
+if(paimaura == false){
+killaura1.setTextColor(android.graphics.Color.RED);
+clientMessage(client + "Player aim aura off");
+aimbot = false;
+aimed = false;
+paimaura = false;
+}
+                }
+            }));
+            row1.addView(killaura1);
+
+            var creative = new styleButton();
+            creative.setText("Creative");        
+            creative.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.setGameMode(1);
+                    Player.setCanFly(true);
+clientMessage(client + "§7Your gamemode was updated to creative mode!");
+                }
+            }));
+            row1.addView(creative);
+
+var bypass1 = new styleButton();
+bypass1.setText("Anti-spam bypass");
+bypass1.setTextColor(android.graphics.Color.RED);
+if(antispam2==true)bypass1.setTextColor(android.graphics.Color.GREEN);
+            bypass1.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             antispam2?antispam2=false:antispam2=true;
+bypass1.setText("Anti-spam bypass");
+if(antispam2 == true){
+bypass1.setTextColor(android.graphics.Color.GREEN);
+spa2();
+antispam2 = true;
+}
+if(antispam2 == false){
+bypass1.setTextColor(android.graphics.Color.RED);
+antispam = false;
+antispam2 = false;
+}
+                }
+            }));
+            row1.addView(bypass1);
+haxLayout.addView(row1);/*thanks to godsoft029 for teaching me this method so many months ago*/
 			
       hax = new android.widget.PopupWindow(haxLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/1.1, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1.2, true);
              if(default1==true)hax.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
