@@ -1439,12 +1439,14 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         var layout = new android.widget.LinearLayout(MainActivity);
         layout.setOrientation(1);
         var menuBtn = new android.widget.Button(ctx);
+	menuBtn.setVisibility(android.view.View.VISIBLE);
         if(hide==false)menuBtn.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(bg64, 0) , 0, android.util.Base64.decode(bg64, 0).length)));
         if(hide==true)menuBtn.setText("α");
         menuBtn.setOnClickListener(new View.OnClickListener({
             onClick: function(viewarg){
 mainMenu();
 GUI.dismiss();
+menuBtn.setVisibility(android.view.View.GONE);
 if(getLanguage=="en_US")android.widget.Toast.makeText(MainActivity, "Scroll down", 1).show();
  if(getLanguage=="de_DE")android.widget.Toast.makeText(MainActivity, "Scroll nach unten", 1).show();
 if(getLanguage=="es_MX")android.widget.Toast.makeText(MainActivity, "Baja abajo", 1).show();
