@@ -1674,23 +1674,13 @@ var urls3 = new android.content.Intent(MainActivity);
             }));
             settingsLayout.addView(link);
 			
-	     var toggleAH = new styleButton();
-            toggleAH.setText("Keybind mode");  
-	    if(keybind1==true)toggleAH.setText("Exit keybind"); 
-            toggleAH.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){         
-keybind1?keybind1=false:keybind1=true;
-if(keybind1 == true){
-toggleAH.setText("Exit keybind");
-keybind1 = true;
-}
-if(keybind1 == false){
-toggleAH.setText("Keybind mode");
-keybind1 = false;
-}
-                }
-            }));
-            settingsLayout.addView(toggleAH);
+	var catm1 = new android.widget.TextView(MainActivity);
+            catm1.setText("Mod settings");
+            catm1.setTextColor(android.graphics.Color.BLACK);
+			var textviewBg = new android.graphics.drawable.GradientDrawable();
+			textviewBg.setColor(android.graphics.Color.WHITE);
+			catm1.setBackgroundDrawable(textviewBg);
+            settingsLayout.addView(catm1);
 	
 	var heset = new styleButton();
             heset.setText("Height for HigherJumps");       
@@ -1765,6 +1755,24 @@ hide = false;
                 }
             }));
             settingsLayout.addView(hideAH);
+	
+	     var toggleAH = new styleButton();
+            toggleAH.setText("Keybind mode");  
+	    if(keybind1==true)toggleAH.setText("Exit keybind"); 
+            toggleAH.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+keybind1?keybind1=false:keybind1=true;
+if(keybind1 == true){
+toggleAH.setText("Exit keybind");
+keybind1 = true;
+}
+if(keybind1 == false){
+toggleAH.setText("Keybind mode");
+keybind1 = false;
+}
+                }
+            }));
+            settingsLayout.addView(toggleAH);
 			
 			var posright = new styleButton();
             posright.setText("Button right");       
