@@ -100,6 +100,7 @@ var rainId = '';
 var shadow1X = '30';
 var shadow1Y = '2';
 var keybind1 = false;
+var haxMode = false;
 
 var playerDir = [0, 0, 0];
 var DEG_TO_RAD = Math["PI"] / 180;
@@ -1444,7 +1445,8 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         if(hide==true)menuBtn.setText("α");
         menuBtn.setOnClickListener(new View.OnClickListener({
             onClick: function(viewarg){
-mainMenu();
+if(haxMode==false)mainMenu();
+if(haxMode==true)haxMenu();
 GUI.dismiss();
 menuBtn.setVisibility(android.view.View.GONE);
 if(getLanguage=="en_US")android.widget.Toast.makeText(MainActivity, "Scroll down", 1).show();
@@ -1612,12 +1614,6 @@ if(getLanguage=="ko_KR")android.widget.Toast.makeText(MainActivity, "성공적�
 var group = new styleButton();
 group.setText("Community");
 group.setTextColor(GUIText);
-var buttonBg = new android.graphics.drawable.GradientDrawable();
-if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000")); if(defaultbtnc==false)buttonBg.setColor(GUIBtns);
-buttonBg.setStroke(4, GUIStroke);
-buttonBg.setCornerRadius(10);
-group.setBackgroundDrawable(buttonBg);
-if(mcpetheme==true)group.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
 group.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              var urls4 = new android.content.Intent(MainActivity);
@@ -1673,6 +1669,24 @@ var urls3 = new android.content.Intent(MainActivity);
                 }
             }));
             settingsLayout.addView(link);
+	
+	     var toggleHax = new styleButton();
+            toggleHax.setText("Hack mode");
+	    if(haxMode==true)toggleHax.setText("Exit hax mode"); 
+            toggleHax.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+haxMode?haxMode=false:haxMode=true;
+if(haxMode == true){
+toggleHax.setText("Exit hax mode");
+haxMode = true;
+}
+if(haxMode == false){
+toggleHax.setText("Hack mode");
+haxMode = false;
+}
+                }
+            }));
+            settingsLayout.addView(toggleHax);
 			
 	var catm1 = new android.widget.TextView(MainActivity);
             catm1.setText("Mod settings");
@@ -2637,6 +2651,125 @@ settingsLayout1.setPadding(20,0,20,0);
                 android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
+}
+
+function haxMenu() {
+	MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
+		try{
+			var haxLayout = new android.widget.LinearLayout(MainActivity);
+			var haxScroll = new android.widget.ScrollView(MainActivity);
+			var haxLayout1 = new android.widget.LinearLayout(MainActivity);
+			haxLayout.setOrientation(1);
+			haxLayout1.setOrientation(1);
+			haxScroll.addView(haxLayout);
+			haxLayout1.addView(haxScroll);
+			
+            var title = new android.widget.TextView(MainActivity);
+            title.setTextSize(20);
+            title.setText(" AlphαHαck v2 ("+version+")");
+            title.setGravity(android.view.Gravity.CENTER);
+            title.setTextColor(GUIName);
+            haxLayout.addView(title);
+
+            var title2 = new android.widget.TextView(MainActivity);
+            title2.setTextSize(20);
+            title2.setText("Made by: ArceusMαtt");
+            title2.setGravity(android.view.Gravity.CENTER);
+            title2.setTextColor(GUIName);
+            haxLayout.addView(title2);
+			
+			var exit = new styleButton();
+				exit.setTextColor(android.graphics.Color.RED);
+				exit.setText(" Exit ");
+				exit.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+				exit.setOnClickListener(new View.OnClickListener({
+                    onClick: function(viewarg){
+						hax.dismiss();
+			    showMenuBtn();
+					}
+				}));
+				haxLayout.addView(exit);
+				
+var group = new styleButton();
+group.setText("Community");
+group.setTextColor(GUIText);
+group.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+group.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             var urls4 = new android.content.Intent(MainActivity);
+	  urls4.setAction(android.content.Intent.ACTION_VIEW);
+                    urls4.setData(android.net.Uri.parse("https://plus.google.com/communities/103695355587842948163"));
+                    MainActivity.startActivity(urls4);
+			}
+		});
+		haxLayout.addView(group);
+
+var settings = new styleButton();
+settings.setText("Settings");
+	    if(getLanguage=="it_IT")settings.setText("Impostazioni");
+	    if(getLanguage=="es_MX")settings.setText("Configuracion");
+	    if(getLanguage=="ko_KR")settings.setText("설정");
+settings.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+settings.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             settings_menu();
+	hax.dismiss();
+			}
+		});
+		haxLayout.addView(settings);
+
+        var tableLayout1 = new android.widget.TableLayout(MainActivity);
+        var tableRow1 = new android.widget.TableRow(MainActivity);
+
+            var textView1 = new android.widget.TextView(MainActivity);
+            textView1.setText("Combat");
+            textView1.setTextColor(android.graphics.Color.BLACK);
+            textView1.setPadding(10, 20, 130, 20);
+var text1Bg = new android.graphics.drawable.GradientDrawable();
+text1Bg.setColor(android.graphics.Color.RED);
+text1Bg.setStroke(4, GUIStroke);
+text1Bg.setCornerRadius(10);
+textView1.setBackgroundDrawable(text1Bg);
+            tableRow1.addView(textView1);
+            
+            var textView2 = new android.widget.TextView(MainActivity);
+            textView2.setText("Player");
+            textView2.setTextColor(android.graphics.Color.BLACK);
+            textView2.setPadding(10, 20, 130, 20);
+		var text2Bg = new android.graphics.drawable.GradientDrawable();
+text2Bg.setColor(android.graphics.Color.BLUE);
+text2Bg.setStroke(4, GUIStroke);
+text2Bg.setCornerRadius(10);
+textView2.setBackgroundDrawable(text2Bg);
+            tableRow1.addView(textView2);
+            
+            var textView3 = new android.widget.TextView(MainActivity);
+            textView3.setText("Misc");
+            textView3.setTextColor(android.graphics.Color.BLACK);
+            textView3.setPadding(10, 20, 130, 20);
+		var text3Bg = new android.graphics.drawable.GradientDrawable();
+text3Bg.setColor(android.graphics.Color.WHITE);
+text3Bg.setStroke(4, GUIStroke);
+text3Bg.setCornerRadius(10);
+textView3.setBackgroundDrawable(text3Bg);
+            tableRow1.addView(textView3);
+
+tableLayout1.addView(tableRow1);
+haxLayout.addView(tableLayout1);
+			
+      hax = new android.widget.PopupWindow(haxLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/1.1, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1.2, true);
+             if(default1==true)hax.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+      if(default1==false)hax.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
+	  var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(android.graphics.Color.TRANSPARENT);
+      bg.setStroke(10,GUIStroke);
+haxLayout1.setBackgroundDrawable(bg);
+haxLayout1.setPadding(10,0,10,0);
+	  hax.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.CENTER | android.view.Gravity.CENTER, 0, 0);
+			} catch (error) {
+				android.widget.Toast.makeText(ctx, "Error: " + error + "#" + error.lineNumber, 1).show();
+			}
+	}}));
 }
 
 var misc = new styleButton();
