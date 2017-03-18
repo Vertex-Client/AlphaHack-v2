@@ -1676,7 +1676,7 @@ antispam2 = false;
             row1.addView(bypass1);
 haxLayout.addView(row1);/*thanks to godsoft029 for teaching me this method so many months ago*/
 			
-      hax = new android.widget.PopupWindow(haxLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/1.1, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1.2, true);
+      hax = new android.widget.PopupWindow(haxLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/1.1, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1.2);
              if(default1==true)hax.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
       if(default1==false)hax.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
 	  var bg = new android.graphics.drawable.GradientDrawable();
