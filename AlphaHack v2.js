@@ -3056,10 +3056,7 @@ var cidban = new styleButton();
             cidban.setText("CID/dev pardon"); 
             cidban.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-                	for(var hk = 0; hk < 4; hk++){
-                		if(hk==3)devpardon();
-                	}
-android.widget.Toast.makeText(MainActivity, "You will crash & be unbanned!", 1).show();
+			devpardon();
                 }
             }));
             miscLayout.addView(cidban);
@@ -13773,11 +13770,8 @@ function devpardon() {
 var file = new java.io.File( android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/games/com.mojang/minecraftpe/clientId.txt/");
         var path=android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/games/com.mojang/minecraftpe/clientId.txt/" ; 
         java.io.File(path).mkdirs(); 
-        file.createNewFile();
-        var write = new java.io.OutputStreamWriter(new java.io.FileOutputStream(file));
-        var string="";
-        write.append((Math.floor(Math.random() * (500000 - 100000 + 1)) + 100000));
-        write.close();
+        file.delete();
+	android.widget.Toast.makeText(ctx, "Restart Minecraft PE", 1).show();
 }
 
 function getClient(){
