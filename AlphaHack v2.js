@@ -4129,8 +4129,10 @@ if(hitbox1 == false){
 hitbutton.setTextColor(android.graphics.Color.RED);
 clientMessage(client+"Hitbox increase off");
 	for(var i = 0; i < 5; i++){
-		Entity.setCollisionSize(Entity.getAll(), 1, 1);
-		Entity.setCollisionSize(Server.getAllPlayers(), 1, 2);
+		var ent = getNearestEntity3(aimrange + 2);
+		if(ent != getPlayerEnt()){
+		Entity.setCollisionSize(ent, 2, 1);
+		}
 	}
 hitbox1 = false;
 }
@@ -13271,8 +13273,10 @@ var x = Entity.getX(entity);
 var y = Entity.getY(entity);
 var z = Entity.getZ(entity);
 var name = Entity.getNameTag(entity);
+	if(name != null){
 	if(!name.match(' ') && Entity.getEntityTypeId(entity) != 64){
 clientMessage(client+"Entity added:\n"+Entity.getNameTag(entity)+" / "+Entity.getEntityTypeId(entity)+"\nx "+Math.round(x)+" y "+Math.round(y)+" z "+Math.round(z));
+	}
 	}
 }
 	if(dropind){
