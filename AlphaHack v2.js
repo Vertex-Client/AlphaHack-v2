@@ -1790,16 +1790,27 @@ hitJump = false;
             }));
             row3.addView(jhit);
 	
-            var adventure = new haxButton();
-            adventure.setText("Adventure");       
-            adventure.setOnClickListener(new View.OnClickListener({
+            var light = new haxButton();
+light.setText("Brightness");
+light.setTextColor(android.graphics.Color.RED);
+if(brightness==true)light.setTextColor(android.graphics.Color.GREEN);
+            light.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-                    Level.setGameMode(2);
-                    Player.setCanFly(false);
-clientMessage(client + "§7Your gamemode was updated to adventure mode!");
+             brightness?brightness=false:brightness=true;
+light.setText("Brightness");
+if(brightness == true){
+light.setTextColor(android.graphics.Color.GREEN);
+
+brightness = true;
+}
+if(brightness == false){
+light.setTextColor(android.graphics.Color.RED);
+
+brightness = false;
+}
                 }
             }));
-            row3.addView(adventure);
+            row3.addView(light);
 	
 var button12 = new haxButton();
 button12.setText("Auto spam");
@@ -1850,29 +1861,49 @@ afkspawn = false;
             }));
             row4.addView(afkspawn);
 	
-            var spectator = new haxButton();
-            spectator.setText("Spectator");     
-            spectator.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-                    Level.setGameMode(3);
-                    Player.setCanFly(true);
-clientMessage(client + "§7Your gamemode was updated to spectator mode!");
+var zmmm = new haxButton();
+      zmmm.setText("Instant break");
+zmmm.setTextColor(android.graphics.Color.RED);
+if(instabreak==true)zmmm.setTextColor(android.graphics.Color.GREEN);
+		zmmm.setOnClickListener(new android.view.View.OnClickListener() {
+		 onClick: function(v){
+ instabreak?instabreak=false:instabreak=true;
+zmmm.setText("Instant break");
+if(instabreak == true){
+zmmm.setTextColor(android.graphics.Color.GREEN);
+instaDestroy();
+clientMessage(client + "§7Instant break is on");
+}
+if(instabreak == false){
+zmmm.setTextColor(android.graphics.Color.RED);
+clientMessage(client + "§7Instant break is off");
+defaultDestroy();
                 }
-            }));
-            row4.addView(spectator);
+			}
+		});
+		row4.addView(zmmm);
 	
-var info = new haxButton();
-            info.setText("Game info");
-            info.setOnClickListener(new View.OnClickListener({
+var srent = new haxButton();
+srent.setText("Entity indicator");
+srent.setTextColor(android.graphics.Color.RED);
+if(entind==true)srent.setTextColor(android.graphics.Color.GREEN);
+            srent.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-                    infoView();
-                    
-		    cheat.dismiss();
-		    
-		    android.widget.Toast.makeText(MainActivity, "Scroll down", 1).show();
+             entind?entind=false:entind=true;
+srent.setText("Entity indicator");
+if(entind == true){
+srent.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"Entity indicator on\nThis shows you which entity/player/mob has been spawned or removed.");
+entind = true;
+}
+if(entind == false){
+srent.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"Entity indicator off");
+entind = false;
+}
                 }
             }));
-            row4.addView(info);
+            row4.addView(srent);
 	
 haxLayout.addView(row4);
 	
@@ -2039,58 +2070,52 @@ hitbox1 = false;
             }));
             row7.addView(hitbutton);
 	
-var button2 = new haxButton();
-button2.setText("X-Ray");
-button2.setTextColor(android.graphics.Color.RED);
-if(xray==true)button2.setTextColor(android.graphics.Color.GREEN);
-            button2.setOnClickListener(new View.OnClickListener({
+            var spiderman = new haxButton();
+spiderman.setText("Spider");
+spiderman.setTextColor(android.graphics.Color.RED);
+if(spider==true)spiderman.setTextColor(android.graphics.Color.GREEN);
+            spiderman.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-             xray?xray=false:xray=true;
-button2.setText("X-Ray");
-if(xray == true){
-button2.setTextColor(android.graphics.Color.GREEN);
-clientMessage(client + "You may crash!\nchange on/off fancy graphics for better view.\nAlso try relogging from the world.");
-
-xray = true;
+             spider?spider=false:spider=true;
+spiderman.setText("Spider");
+if(spider == true){
+spiderman.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client + "Spider on");
+android.widget.Toast.makeText(MainActivity, "Credit: Firepro9978 from VoidClient!", 1).show();
+Utils.Player.isCollidedHorizontally();
+spider = true;
 }
-if(xray == false){
-button2.setTextColor(android.graphics.Color.RED);
-num0++
-Block.setRenderLayer(1,num0);
-Block.setRenderLayer(2,num0);
-Block.setRenderLayer(3,num0);
-Block.setRenderLayer(12,num0);
-Block.setRenderLayer(24,num0);
-Block.setRenderLayer(78,num0);
-xray = false;
+if(spider == false){
+spiderman.setTextColor(android.graphics.Color.RED);
+clientMessage(client + "Spider off");
+
+spider = false;
 }
                 }
             }));
-            row7.addView(button2);
+            row7.addView(spiderman);
 	
-	    var button4 = new haxButton();
-button4.setText("Armor indicator");
-button4.setTextColor(android.graphics.Color.RED);
-if(armor==true)button4.setTextColor(android.graphics.Color.GREEN);
-            button4.setOnClickListener(new View.OnClickListener({
+var butfuon3 = new haxButton();
+butfuon3.setText("Alpha Text");
+butfuon3.setTextColor(android.graphics.Color.RED);
+if(alphatext==true)butfuon3.setTextColor(android.graphics.Color.GREEN);
+            butfuon3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-             armor?armor=false:armor=true;
-button4.setText("Armor indicator");
-if(armor == true){
-button4.setTextColor(android.graphics.Color.GREEN);
-if(coords==true)coords==false;
-if(yawpitch==true)yawpitch==false;
-if(getvel==true)getvel==false;
-armor = true;
+             alphatext?alphatext=false:alphatext=true;
+butfuon3.setText("Alpha Text");
+if(alphatext== true){
+butfuon3.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"AlphaText on, send a message in chat!");
+alphatext= true;
 }
-if(armor == false){
-button4.setTextColor(android.graphics.Color.RED);
-
-armor = false;
+if(alphatext== false){
+butfuon3.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"AlphaText off");
+alphatext= false;
 }
                 }
             }));
-            row7.addView(button4);
+            row7.addView(butfuon3);
 	
 haxLayout.addView(row7);
 	
@@ -2119,31 +2144,28 @@ noknock = false;
             }));
             row8.addView(nknock);
 	
-            var speedup = new haxButton();
-speedup.setText("No friction");
-speedup.setTextColor(android.graphics.Color.RED);
-if(changeSpeed==true)speedup.setTextColor(android.graphics.Color.GREEN);
-            speedup.setOnClickListener(new View.OnClickListener({
+var butfuon2 = new haxButton();
+butfuon2.setText("Bunny hop");
+butfuon2.setTextColor(android.graphics.Color.RED);
+if(bhop==true)butfuon2.setTextColor(android.graphics.Color.GREEN);
+            butfuon2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-             changeSpeed?changeSpeed=false:changeSpeed=true;
-speedup.setText("No friction");
-if(changeSpeed == true){
-speedup.setTextColor(android.graphics.Color.GREEN);
-clientMessage(client + "No friction on,\nThis adds no friction when you're on ice, soul sand etc");
-
-changeSpeed = true;
+             bhop?bhop=false:bhop=true;
+butfuon2.setText("Bunny hop");
+if(bhop== true){
+butfuon2.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"Bunny hop on");
+	android.widget.Toast.makeText(MainActivity, "Credit: Apric0cks from maximus mod!", 1).show();
+bhop= true;
 }
-if(changeSpeed == false){
-speedup.setTextColor(android.graphics.Color.RED);
-clientMessage(client + "No friction off");
-Block.setShape(30, 0, 0, 0, 1, null, 1);
-	Block.setFriction(79, 0.9800000190734863);
-	Block.setFriction(267, 0.9800000190734863);
-changeSpeed = false;
+if(bhop== false){
+butfuon2.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"Bunny hop off");
+bhop= false;
 }
                 }
             }));
-            row8.addView(speedup);
+            row8.addView(butfuon2);
 	
             var button5 = new haxButton();
 button5.setText("Coordinates");
