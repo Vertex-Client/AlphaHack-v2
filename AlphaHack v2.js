@@ -1571,52 +1571,74 @@ settings.setOnClickListener(new android.view.View.OnClickListener() {
 			}
 		});
 		haxLayout.addView(settings);
+							   
+	var params = new android.widget.LinearLayout.LayoutParams(android.widget.LinearLayout.LayoutParams.MATCH_PARENT, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT, 1);
 
-        var tableLayout1 = new android.widget.TableLayout(MainActivity);
-        var tableRow1 = new android.widget.TableRow(MainActivity);
+//button
+function haxButton(){
+/*thanks godsoft029 for working on this with me.*/
+let button = new styleButton();
+button.setTextColor(GUIText);
+button.setFocusableInTouchMode(false);
+button.setTransformationMethod(null);
+button.setSoundEffectsEnabled(true);
+button.setLayoutParams(params);
+	/* new mcpc/mcpe button */
+var mcpeBg = "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";
+if(mcpetheme==true)button.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(mcpeBg, 0) , 0, android.util.Base64.decode(mcpeBg, 0).length)));
+var buttonBg = new android.graphics.drawable.GradientDrawable();
+if(defaultbtnc==true)buttonBg.setColor(android.graphics.Color.parseColor("#93000000"));
+if(defaultbtnc==false)buttonBg.setColor(GUIBtns);
+if(mcpetheme==false)buttonBg.setStroke(4, GUIStroke);
+if(mcpetheme==false)buttonBg.setCornerRadius(10);
+button.setBackgroundDrawable(buttonBg);
+return button;
+}
+		   
+	var row0 = new android.widget.LinearLayout(MainActivity);
+	    row0.setOrientation(0);
 
             var textView1 = new android.widget.TextView(MainActivity);
             textView1.setText("Combat");
             textView1.setTextColor(android.graphics.Color.BLACK);
-            textView1.setPadding(10, 20, 270, 20);
+textView1.setLayoutParams(params);
 var text1Bg = new android.graphics.drawable.GradientDrawable();
 text1Bg.setColor(android.graphics.Color.RED);
 text1Bg.setStroke(4, GUIStroke);
 text1Bg.setCornerRadius(10);
 textView1.setBackgroundDrawable(text1Bg);
-            tableRow1.addView(textView1);
+            row0.addView(textView1);
             
             var textView2 = new android.widget.TextView(MainActivity);
             textView2.setText("Player");
             textView2.setTextColor(android.graphics.Color.BLACK);
-            textView2.setPadding(10, 20, 270, 20);
+textView2.setLayoutParams(params);
 		var text2Bg = new android.graphics.drawable.GradientDrawable();
 text2Bg.setColor(android.graphics.Color.BLUE);
 text2Bg.setStroke(4, GUIStroke);
 text2Bg.setCornerRadius(10);
 textView2.setBackgroundDrawable(text2Bg);
-            tableRow1.addView(textView2);
+            row0.addView(textView2);
             
             var textView3 = new android.widget.TextView(MainActivity);
             textView3.setText("Misc");
             textView3.setTextColor(android.graphics.Color.BLACK);
-            textView3.setPadding(10, 20, 270, 20);
+textView3.setLayoutParams(params);
 		var text3Bg = new android.graphics.drawable.GradientDrawable();
 text3Bg.setColor(android.graphics.Color.WHITE);
 text3Bg.setStroke(4, GUIStroke);
 text3Bg.setCornerRadius(10);
 textView3.setBackgroundDrawable(text3Bg);
-            tableRow1.addView(textView3);
+            row0.addView(textView3);
 
-tableLayout1.addView(tableRow1);
-haxLayout.addView(tableLayout1);
+haxLayout.addView(row0);
 							   
 //wip
 							   
 	var row1 = new android.widget.LinearLayout(MainActivity);
 	    row1.setOrientation(0);
 		//buttons here 3 per row
-var killaura1 = new styleButton();
+var killaura1 = new haxButton();
 killaura1.setText("Player aim aura");
 killaura1.setTextColor(android.graphics.Color.RED);
 if(paimaura==true)killaura1.setTextColor(android.graphics.Color.GREEN);
@@ -1642,8 +1664,8 @@ paimaura = false;
             }));
             row1.addView(killaura1);
 
-            var creative = new styleButton();
-            creative.setText("Creative");        
+            var creative = new haxButton();
+            creative.setText("Creative");
             creative.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
                     Level.setGameMode(1);
@@ -1653,7 +1675,7 @@ clientMessage(client + "§7Your gamemode was updated to creative mode!");
             }));
             row1.addView(creative);
 
-var bypass1 = new styleButton();
+var bypass1 = new haxButton();
 bypass1.setText("Anti-spam bypass");
 bypass1.setTextColor(android.graphics.Color.RED);
 if(antispam2==true)bypass1.setTextColor(android.graphics.Color.GREEN);
@@ -1675,6 +1697,479 @@ antispam2 = false;
             }));
             row1.addView(bypass1);
 haxLayout.addView(row1);/*thanks to godsoft029 for teaching me this method so many months ago*/
+	
+	var row2 = new android.widget.LinearLayout(MainActivity);
+	    row2.setOrientation(0);
+	
+	var killaura2 = new haxButton();
+killaura2.setText("Mob aim aura");
+killaura2.setTextColor(android.graphics.Color.RED);
+if(maimaura==true)killaura2.setTextColor(android.graphics.Color.GREEN);
+            killaura2.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             maimaura?maimaura=false:maimaura=true;
+killaura2.setText("Mob aim aura");
+if(maimaura == true){
+killaura2.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client + "Mob aim aura on");
+aimbot2 = true;
+aimed2 = true;
+maimaura = true;
+}
+if(maimaura == false){
+killaura2.setTextColor(android.graphics.Color.RED);
+clientMessage(client + "Mob aim aura off");
+aimbot2 = false;
+aimed2 = false;
+maimaura = false;
+}
+                }
+            }));
+            row2.addView(killaura2);
+	
+            var survival = new haxButton();
+            survival.setText("Survival");
+            survival.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.setGameMode(0);
+                    Player.setCanFly(false);
+clientMessage(client + "§7Your gamemode was updated to survival mode!");
+                }
+            }));
+            row2.addView(survival);
+	
+	    var button9 = new haxButton();
+button9.setText("Tap spam");
+button9.setTextColor(android.graphics.Color.RED);
+if(tapspam==true)button9.setTextColor(android.graphics.Color.GREEN);
+            button9.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             tapspam?tapspam=false:tapspam=true;
+button9.setText("Tap spam");
+if(tapspam == true){
+button9.setTextColor(android.graphics.Color.GREEN);
+spa();
+tapspam = true;
+}
+if(tapspam == false){
+button9.setTextColor(android.graphics.Color.RED);
+autospam = false;
+autospam2 = false;
+tapspam = false;
+}
+                }
+            }));
+            row2.addView(button9);
+	
+haxLayout.addView(row2);
+	
+	var row3 = new android.widget.LinearLayout(MainActivity);
+	    row3.setOrientation(0);
+	
+var jhit = new haxButton();
+jhit.setText("Hit'n'jump");
+jhit.setTextColor(android.graphics.Color.RED);
+if(hitJump==true)jhit.setTextColor(android.graphics.Color.GREEN);
+            jhit.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             hitJump?hitJump=false:hitJump=true;
+jhit.setText("Hit'n'jump");
+if(hitJump == true){
+jhit.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client + "Hit'n'jump on");
+
+hitJump = true;
+}
+if(hitJump == false){
+jhit.setTextColor(android.graphics.Color.RED);
+clientMessage(client + "Hit'n'jump off");
+
+hitJump = false;
+}
+                }
+            }));
+            row3.addView(jhit);
+	
+            var adventure = new haxButton();
+            adventure.setText("Adventure");       
+            adventure.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.setGameMode(2);
+                    Player.setCanFly(false);
+clientMessage(client + "§7Your gamemode was updated to adventure mode!");
+                }
+            }));
+            row3.addView(adventure);
+	
+var button12 = new haxButton();
+button12.setText("Auto spam");
+button12.setTextColor(android.graphics.Color.RED);
+if(autospam2==true)button12.setTextColor(android.graphics.Color.GREEN);
+            button12.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+	autospam2?autospam2=false:autospam2=true;
+button12.setText("Auto spam");
+if(autospam2==true){
+button12.setTextColor(android.graphics.Color.GREEN);
+spa();
+autospam2= true;
+}
+if(autospam2==false){
+button12.setTextColor(android.graphics.Color.RED);
+autospam = false;
+autospam2= false;
+}
+                }
+            }));
+            row3.addView(button12);
+	
+haxLayout.addView(row3);
+	
+	var row4 = new android.widget.LinearLayout(MainActivity);
+	    row4.setOrientation(0);
+	
+var afkspawn = new haxButton();
+afkspawn.setText("Low health action");
+afkspawn.setTextColor(android.graphics.Color.RED);
+if(lowhealth==true)afkspawn.setTextColor(android.graphics.Color.GREEN);
+            afkspawn.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             lowhealth?lowhealth=false:lowhealth=true;
+afkspawn.setText("Low health action");
+if(lowhealth == true){
+afkspawn.setTextColor(android.graphics.Color.GREEN);
+atact2();
+lowhealth = true;
+}
+if(lowhealth == false){
+afkspawn.setTextColor(android.graphics.Color.RED);
+
+afkspawn = false;
+}
+                }
+            }));
+            row4.addView(afkspawn);
+	
+            var spectator = new haxButton();
+            spectator.setText("Spectator");     
+            spectator.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.setGameMode(3);
+                    Player.setCanFly(true);
+clientMessage(client + "§7Your gamemode was updated to spectator mode!");
+                }
+            }));
+            row4.addView(spectator);
+	
+var info = new haxButton();
+            info.setText("Game info");
+            info.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    infoView();
+                    
+		    cheat.dismiss();
+		    
+		    android.widget.Toast.makeText(MainActivity, "Scroll down", 1).show();
+                }
+            }));
+            row4.addView(info);
+	
+haxLayout.addView(row4);
+	
+	var row5 = new android.widget.LinearLayout(MainActivity);
+	    row5.setOrientation(0);
+	
+var atkact = new haxButton();
+atkact.setText("Attack action");
+atkact.setTextColor(android.graphics.Color.RED);
+if(attackActions==true)atkact.setTextColor(android.graphics.Color.GREEN);
+            atkact.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             attackActions?attackActions=false:attackActions=true;
+atkact.setText("Attack action");
+if(attackActions == true){
+atkact.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client + "Attack action on");
+atact();
+attackActions = true;
+}
+if(attackActions == false){
+atkact.setTextColor(android.graphics.Color.RED);
+clientMessage(client + "Attack action off");
+
+attackActions = false;
+}
+                }
+            }));
+            row5.addView(atkact);
+	
+            var button6 = new haxButton();
+button6.setText("Glide");
+button6.setTextColor(android.graphics.Color.RED);
+if(glide==true)button6.setTextColor(android.graphics.Color.GREEN);
+            button6.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             glide?glide=false:glide=true;
+button6.setText("Glide");
+if(glide == true){
+button6.setTextColor(android.graphics.Color.GREEN);
+android.widget.Toast.makeText(MainActivity, "Credit: Apric0cks from maximus mod!", 1).show();
+glide = true;
+}
+if(glide == false){
+button6.setTextColor(android.graphics.Color.RED);
+
+glide = false;
+}
+                }
+            }));
+            row5.addView(button6);
+	
+var svr = new haxButton();
+            svr.setText("Server IP:Port");
+            svr.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+clientMessage(client + "§lIP:§r " + Server.getAddress() + " §lPort:§r " + Server.getPort());
+			/*no need to do anything with this, it shows server IP:Port anyways incase the user is on a realm.*/
+if(Server.getAddress()=="null" || Server.getPort()=="0")clientMessage(client + "You are not on a server!");
+                }
+            }));
+            row5.addView(svr);
+	
+haxLayout.addView(row5);
+	
+	var row6 = new android.widget.LinearLayout(MainActivity);
+	    row6.setOrientation(0);
+	
+	var bowbut = new haxButton();
+bowbut.setText("Auto bow aim");
+bowbut.setTextColor(android.graphics.Color.RED);
+if(bowaura==true)bowbut.setTextColor(android.graphics.Color.GREEN);
+            bowbut.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             bowaura?bowaura=false:bowaura=true;
+bowbut.setText("Auto bow aim");
+if(bowaura == true){
+bowbut.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"Auto bow aim on");
+bowaura = true;
+}
+if(bowaura == false){
+bowbut.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"Auto bow aim off");
+bowaura = false;
+}
+                }
+            }));
+            row6.addView(bowbut);
+	
+            var walkonair = new haxButton();
+walkonair.setText("Walk on air");
+walkonair.setTextColor(android.graphics.Color.RED);
+if(airwalk==true)walkonair.setTextColor(android.graphics.Color.GREEN);
+            walkonair.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             airwalk?airwalk=false:airwalk=true;
+walkonair.setText("Walk on air");
+if(airwalk == true){
+walkonair.setTextColor(android.graphics.Color.GREEN);
+Block.setShape(95, 0, 0, 0, 1, 1, 1);
+clientMessage(client + "You may get detected as flying becareful!")
+airwalk = true;
+}
+if(airwalk == false){
+walkonair.setTextColor(android.graphics.Color.RED);
+clientMessage(client + "Walk on air is off")
+airwalk = false;
+}
+                }
+            }));
+            row6.addView(walkonair);
+	
+	var butfuon1 = new haxButton();
+butfuon1.setText("Item indicator");
+butfuon1.setTextColor(android.graphics.Color.RED);
+if(itemIndi==true)butfuon1.setTextColor(android.graphics.Color.GREEN);
+            butfuon1.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             itemIndi?itemIndi=false:itemIndi=true;
+butfuon1.setText("Item indicator");
+if(itemIndi== true){
+butfuon1.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"Item info on");
+itemIndi= true;
+}
+if(itemIndi== false){
+butfuon1.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"Item info off");
+itemIndi= false;
+}
+                }
+            }));
+            row6.addView(butfuon1);
+	
+haxLayout.addView(row6);
+	
+	var row7 = new android.widget.LinearLayout(MainActivity);
+	    row7.setOrientation(0);
+	
+	var hitbutton = new haxButton();
+hitbutton.setText("Hitbox increase");
+hitbutton.setTextColor(android.graphics.Color.RED);
+if(hitbox1==true)hitbutton.setTextColor(android.graphics.Color.GREEN);
+            hitbutton.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             hitbox1?hitbox1=false:hitbox1=true;
+hitbutton.setText("Hitbox increase");
+if(hitbox1 == true){
+hitbutton.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"Hitbox increase on");
+hitbox1 = true;
+}
+if(hitbox1 == false){
+hitbutton.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"Hitbox increase off");
+	for(var i = 0; i < 5; i++){
+		Entity.setCollisionSize(Entity.getAll(), 1, 1);
+		Entity.setCollisionSize(Server.getAllPlayers(), 1, 2);
+	}
+hitbox1 = false;
+}
+                }
+            }));
+            row7.addView(hitbutton);
+	
+var button2 = new haxButton();
+button2.setText("X-Ray");
+button2.setTextColor(android.graphics.Color.RED);
+if(xray==true)button2.setTextColor(android.graphics.Color.GREEN);
+            button2.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             xray?xray=false:xray=true;
+button2.setText("X-Ray");
+if(xray == true){
+button2.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client + "You may crash!\nchange on/off fancy graphics for better view.\nAlso try relogging from the world.");
+
+xray = true;
+}
+if(xray == false){
+button2.setTextColor(android.graphics.Color.RED);
+num0++
+Block.setRenderLayer(1,num0);
+Block.setRenderLayer(2,num0);
+Block.setRenderLayer(3,num0);
+Block.setRenderLayer(12,num0);
+Block.setRenderLayer(24,num0);
+Block.setRenderLayer(78,num0);
+xray = false;
+}
+                }
+            }));
+            row7.addView(button2);
+	
+	    var button4 = new haxButton();
+button4.setText("Armor indicator");
+button4.setTextColor(android.graphics.Color.RED);
+if(armor==true)button4.setTextColor(android.graphics.Color.GREEN);
+            button4.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             armor?armor=false:armor=true;
+button4.setText("Armor indicator");
+if(armor == true){
+button4.setTextColor(android.graphics.Color.GREEN);
+if(coords==true)coords==false;
+if(yawpitch==true)yawpitch==false;
+if(getvel==true)getvel==false;
+armor = true;
+}
+if(armor == false){
+button4.setTextColor(android.graphics.Color.RED);
+
+armor = false;
+}
+                }
+            }));
+            row7.addView(button4);
+	
+haxLayout.addView(row7);
+	
+	var row8 = new android.widget.LinearLayout(MainActivity);
+	    row8.setOrientation(0);
+	
+var nknock = new haxButton();
+nknock.setText("No knockback");
+nknock.setTextColor(android.graphics.Color.RED);
+if(noknock==true)nknock.setTextColor(android.graphics.Color.GREEN);
+            nknock.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             noknock?noknock=false:noknock=true;
+nknock.setText("No knockback");
+if(noknock == true){
+nknock.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"No knockback on");
+noknock = true;
+}
+if(noknock == false){
+nknock.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"No knockback off");
+noknock = false;
+}
+                }
+            }));
+            row8.addView(nknock);
+	
+            var speedup = new haxButton();
+speedup.setText("No friction");
+speedup.setTextColor(android.graphics.Color.RED);
+if(changeSpeed==true)speedup.setTextColor(android.graphics.Color.GREEN);
+            speedup.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             changeSpeed?changeSpeed=false:changeSpeed=true;
+speedup.setText("No friction");
+if(changeSpeed == true){
+speedup.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client + "No friction on,\nThis adds no friction when you're on ice, soul sand etc");
+
+changeSpeed = true;
+}
+if(changeSpeed == false){
+speedup.setTextColor(android.graphics.Color.RED);
+clientMessage(client + "No friction off");
+Block.setShape(30, 0, 0, 0, 1, null, 1);
+	Block.setFriction(79, 0.9800000190734863);
+	Block.setFriction(267, 0.9800000190734863);
+changeSpeed = false;
+}
+                }
+            }));
+            row8.addView(speedup);
+	
+            var button5 = new haxButton();
+button5.setText("Coordinates");
+button5.setTextColor(android.graphics.Color.RED);
+if(coords==true)button5.setTextColor(android.graphics.Color.GREEN);
+            button5.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             coords?coords=false:coords=true;
+button5.setText("Coordinates");
+if(coords == true){
+button5.setTextColor(android.graphics.Color.GREEN);
+if(armor==true)armor==false;
+if(yawpitch==true)yawpitch==false;
+if(getvel==true)getvel==false;
+coords = true;
+}
+if(coords == false){
+button5.setTextColor(android.graphics.Color.RED);
+
+coords = false;
+}
+                }
+            }));
+            row8.addView(button5);
+	
+haxLayout.addView(row8);
 			
       hax = new android.widget.PopupWindow(haxLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/1.1, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1.2);
              if(default1==true)hax.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
@@ -4451,140 +4946,6 @@ var info = new styleButton();
                 }
             }));
             cheatLayout.addView(info);
-
-function infoView(){
-MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
-        try{
-            var infoLayout = new android.widget.LinearLayout(MainActivity);
-            
-            var infoScroll = new android.widget.ScrollView(MainActivity);
-            
-            var infoLayout1 = new android.widget.LinearLayout(MainActivity);
-            infoLayout.setOrientation(1);
-            infoLayout1.setOrientation(1);
-            
-            infoScroll.addView(infoLayout);
-            infoLayout1.addView(infoScroll);
-
-var exit = new styleButton();
-            exit.setText("Exit");
-exit.setTextColor(android.graphics.Color.RED);
-            exit.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-
-                info.dismiss();
-
-		showMenuBtn();
-                }
-            }));
-            infoLayout.addView(exit);
-			
-            var refresh = new styleButton();
-            refresh.setText("Refresh");
-            refresh.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-                info.dismiss();
-		for(var t = 0; t < 5; t++){
-		if(t==1)infoView();
-		}
-                }
-            }));
-            infoLayout.addView(refresh);
-			
-	    var username = new android.widget.TextView(MainActivity);
-            username.setTextSize(15);
-	    username.setText("Username: "+Player.getName(Player.getEntity()));
-            username.setTextColor(android.graphics.Color.WHITE);
-            infoLayout.addView(username);
-			
-	    var dimension = new android.widget.TextView(MainActivity);
-            dimension.setTextSize(15);
-            dimension.setText("Dimension: "+Player.getDimension());
-            dimension.setTextColor(android.graphics.Color.WHITE);
-            infoLayout.addView(dimension);
-			
-	    var world = new android.widget.TextView(MainActivity);
-            world.setTextSize(15);
-            world.setText("World: "+Level.getWorldName());
-            world.setTextColor(android.graphics.Color.WHITE);
-            infoLayout.addView(world);
-			
-	    var biome = new android.widget.TextView(MainActivity);
-            biome.setTextSize(15);
-            biome.setText("Biome: "+Level.getBiomeName());
-            biome.setTextColor(android.graphics.Color.WHITE);
-            infoLayout.addView(biome);
-			
-			Level.getRainLevel();
-	    var rain = new android.widget.TextView(MainActivity);
-            rain.setTextSize(15);
-	    rain.setText("Weather: "+Math.round(Level.getRainLevel()));
-            rain.setTextColor(android.graphics.Color.WHITE);
-            infoLayout.addView(rain);
-			
-	    var time = new android.widget.TextView(MainActivity);
-            time.setTextSize(15);
-	    time.setText("Time: "+Level.getTime());
-            time.setTextColor(android.graphics.Color.WHITE);
-            infoLayout.addView(time);
-			
-	    var difficulty = new android.widget.TextView(MainActivity);
-            difficulty.setTextSize(15);
-	    difficulty.setText("Difficulty: "+Level.getDifficulty());
-            difficulty.setTextColor(android.graphics.Color.WHITE);
-            infoLayout.addView(difficulty);
-            
-            var maxHearts = new android.widget.TextView(MainActivity);
-            maxHearts.setTextSize(15);
-	    maxHearts.setText("Max hearts: "+Entity.getMaxHealth(getPlayerEnt()));
-            maxHearts.setTextColor(android.graphics.Color.WHITE);
-            infoLayout.addView(maxHearts);
-		
-		var renderType = new android.widget.TextView(MainActivity);
-            renderType.setTextSize(15);
-	    renderType.setText("Render type: "+Entity.getRenderType(getPlayerEnt()));
-            renderType.setTextColor(android.graphics.Color.WHITE);
-            infoLayout.addView(renderType);
-		
-		var gameType = new android.widget.TextView(MainActivity);
-            gameType.setTextSize(15);
-	    gameType.setText("Game mode: "+Level.getGameMode());
-            gameType.setTextColor(android.graphics.Color.WHITE);
-            infoLayout.addView(gameType);
-		
-		var lang = new android.widget.TextView(MainActivity);
-            lang.setTextSize(15);
-	    lang.setText("Language: "+ModPE.getLanguage());
-            lang.setTextColor(android.graphics.Color.WHITE);
-            infoLayout.addView(lang);
-		
-		var vere = new android.widget.TextView(MainActivity);
-            vere.setTextSize(15);
-	    vere.setText("Version: "+ModPE.getMinecraftVersion());
-            vere.setTextColor(android.graphics.Color.WHITE);
-            infoLayout.addView(vere);
-		
-		var skin = new android.widget.TextView(MainActivity);
-            skin.setTextSize(15);
-	    skin.setText("Mob skin: "+Entity.getMobSkin(getPlayerEnt()));
-            skin.setTextColor(android.graphics.Color.WHITE);
-            infoLayout.addView(skin);
-
-info = new android.widget.PopupWindow(infoLayout1, dip2px(500), dip2px(500));
-
-info = new android.widget.PopupWindow(infoLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/2, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1);
-	  var bg = new android.graphics.drawable.GradientDrawable();
-      bg.setColor(android.graphics.Color.TRANSPARENT);
-      bg.setStroke(10,GUIStroke);
-infoLayout1.setBackgroundDrawable(bg);
-infoLayout1.setPadding(20,0,20,0);
-info.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.BLACK));
-            info.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.CENTER | android.view.Gravity.TOP, 0, 0);
-            }catch(error){
-                android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
-            }
-    }}));
-}
 
 var svr = new styleButton();
             svr.setText("Server IP:Port");
@@ -12709,6 +13070,140 @@ menuLayout1.setPadding(20,0,20,0);
 }
 
 /********************************/
+
+function infoView(){
+MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
+        try{
+            var infoLayout = new android.widget.LinearLayout(MainActivity);
+            
+            var infoScroll = new android.widget.ScrollView(MainActivity);
+            
+            var infoLayout1 = new android.widget.LinearLayout(MainActivity);
+            infoLayout.setOrientation(1);
+            infoLayout1.setOrientation(1);
+            
+            infoScroll.addView(infoLayout);
+            infoLayout1.addView(infoScroll);
+
+var exit = new styleButton();
+            exit.setText("Exit");
+exit.setTextColor(android.graphics.Color.RED);
+            exit.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+
+                info.dismiss();
+
+		showMenuBtn();
+                }
+            }));
+            infoLayout.addView(exit);
+			
+            var refresh = new styleButton();
+            refresh.setText("Refresh");
+            refresh.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                info.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)infoView();
+		}
+                }
+            }));
+            infoLayout.addView(refresh);
+			
+	    var username = new android.widget.TextView(MainActivity);
+            username.setTextSize(15);
+	    username.setText("Username: "+Player.getName(Player.getEntity()));
+            username.setTextColor(android.graphics.Color.WHITE);
+            infoLayout.addView(username);
+			
+	    var dimension = new android.widget.TextView(MainActivity);
+            dimension.setTextSize(15);
+            dimension.setText("Dimension: "+Player.getDimension());
+            dimension.setTextColor(android.graphics.Color.WHITE);
+            infoLayout.addView(dimension);
+			
+	    var world = new android.widget.TextView(MainActivity);
+            world.setTextSize(15);
+            world.setText("World: "+Level.getWorldName());
+            world.setTextColor(android.graphics.Color.WHITE);
+            infoLayout.addView(world);
+			
+	    var biome = new android.widget.TextView(MainActivity);
+            biome.setTextSize(15);
+            biome.setText("Biome: "+Level.getBiomeName());
+            biome.setTextColor(android.graphics.Color.WHITE);
+            infoLayout.addView(biome);
+			
+			Level.getRainLevel();
+	    var rain = new android.widget.TextView(MainActivity);
+            rain.setTextSize(15);
+	    rain.setText("Weather: "+Math.round(Level.getRainLevel()));
+            rain.setTextColor(android.graphics.Color.WHITE);
+            infoLayout.addView(rain);
+			
+	    var time = new android.widget.TextView(MainActivity);
+            time.setTextSize(15);
+	    time.setText("Time: "+Level.getTime());
+            time.setTextColor(android.graphics.Color.WHITE);
+            infoLayout.addView(time);
+			
+	    var difficulty = new android.widget.TextView(MainActivity);
+            difficulty.setTextSize(15);
+	    difficulty.setText("Difficulty: "+Level.getDifficulty());
+            difficulty.setTextColor(android.graphics.Color.WHITE);
+            infoLayout.addView(difficulty);
+            
+            var maxHearts = new android.widget.TextView(MainActivity);
+            maxHearts.setTextSize(15);
+	    maxHearts.setText("Max hearts: "+Entity.getMaxHealth(getPlayerEnt()));
+            maxHearts.setTextColor(android.graphics.Color.WHITE);
+            infoLayout.addView(maxHearts);
+		
+		var renderType = new android.widget.TextView(MainActivity);
+            renderType.setTextSize(15);
+	    renderType.setText("Render type: "+Entity.getRenderType(getPlayerEnt()));
+            renderType.setTextColor(android.graphics.Color.WHITE);
+            infoLayout.addView(renderType);
+		
+		var gameType = new android.widget.TextView(MainActivity);
+            gameType.setTextSize(15);
+	    gameType.setText("Game mode: "+Level.getGameMode());
+            gameType.setTextColor(android.graphics.Color.WHITE);
+            infoLayout.addView(gameType);
+		
+		var lang = new android.widget.TextView(MainActivity);
+            lang.setTextSize(15);
+	    lang.setText("Language: "+ModPE.getLanguage());
+            lang.setTextColor(android.graphics.Color.WHITE);
+            infoLayout.addView(lang);
+		
+		var vere = new android.widget.TextView(MainActivity);
+            vere.setTextSize(15);
+	    vere.setText("Version: "+ModPE.getMinecraftVersion());
+            vere.setTextColor(android.graphics.Color.WHITE);
+            infoLayout.addView(vere);
+		
+		var skin = new android.widget.TextView(MainActivity);
+            skin.setTextSize(15);
+	    skin.setText("Mob skin: "+Entity.getMobSkin(getPlayerEnt()));
+            skin.setTextColor(android.graphics.Color.WHITE);
+            infoLayout.addView(skin);
+
+info = new android.widget.PopupWindow(infoLayout1, dip2px(500), dip2px(500));
+
+info = new android.widget.PopupWindow(infoLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/2, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1);
+	  var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(android.graphics.Color.TRANSPARENT);
+      bg.setStroke(10,GUIStroke);
+infoLayout1.setBackgroundDrawable(bg);
+infoLayout1.setPadding(20,0,20,0);
+info.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.BLACK));
+            info.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.CENTER | android.view.Gravity.TOP, 0, 0);
+            }catch(error){
+                android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
+            }
+    }}));
+}
 
 function entityAddedHook(entity){
 if(entind){
