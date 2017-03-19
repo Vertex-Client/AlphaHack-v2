@@ -16661,14 +16661,8 @@ function rptask() {
                     }
                     if(aimbot){
 			    var ent = getNearestEntity(aimrange);
-			    if(ent != null)crosshairAimAt(ent);
-				/*
-				* todo handle this better
-				*
-				if(onBackground.ping() => 200){
-				aimbot = false;
-				print("ping too high!");
-				}*/
+			    var name = Entity.getNameTag(ent);
+			    if(!name.match(' ') && ent != null)crosshairAimAt(ent);
 		    }
 			if(aimbot2){
 				var ent = getNearestEntity2(aimrange);
