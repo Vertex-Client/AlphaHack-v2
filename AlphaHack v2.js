@@ -1434,7 +1434,8 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
             open.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
                     toggle.dismiss();
-			mainMenu();
+			if(haxMode==false)mainMenu();
+			if(haxMode==true)haxMenu();
                 }
             }));
             toggleLayout.addView(open);
@@ -1538,7 +1539,7 @@ function haxMenu() {
 				exit.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 				exit.setOnClickListener(new View.OnClickListener({
                     onClick: function(viewarg){
-						hax.dismiss();
+			hax.dismiss();
 			    showMenuBtn();
 					}
 				}));
@@ -1686,6 +1687,7 @@ bypass1.setText("Anti-spam bypass");
 if(antispam2 == true){
 bypass1.setTextColor(android.graphics.Color.GREEN);
 spa2();
+hax.dismiss();
 antispam2 = true;
 }
 if(antispam2 == false){
@@ -1749,6 +1751,7 @@ button9.setText("Tap spam");
 if(tapspam == true){
 button9.setTextColor(android.graphics.Color.GREEN);
 spa();
+hax.dismiss();
 tapspam = true;
 }
 if(tapspam == false){
@@ -1823,6 +1826,7 @@ button12.setText("Auto spam");
 if(autospam2==true){
 button12.setTextColor(android.graphics.Color.GREEN);
 spa();
+hax.dismiss();
 autospam2= true;
 }
 if(autospam2==false){
@@ -1850,6 +1854,7 @@ afkspawn.setText("Low health action");
 if(lowhealth == true){
 afkspawn.setTextColor(android.graphics.Color.GREEN);
 atact2();
+hax.dismiss();
 lowhealth = true;
 }
 if(lowhealth == false){
@@ -1922,6 +1927,7 @@ if(attackActions == true){
 atkact.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client + "Attack action on");
 atact();
+hax.dismiss();
 attackActions = true;
 }
 if(attackActions == false){
@@ -4047,6 +4053,7 @@ afkspawn.setText("Low health action");
 if(lowhealth == true){
 afkspawn.setTextColor(android.graphics.Color.GREEN);
 atact2();
+cheat.dismiss();
 lowhealth = true;
 }
 if(lowhealth == false){
@@ -4070,6 +4077,7 @@ if(attackActions == true){
 atkact.setTextColor(android.graphics.Color.GREEN);
 clientMessage(client + "Attack action on");
 atact();
+cheat.dismiss();
 attackActions = true;
 }
 if(attackActions == false){
@@ -4371,6 +4379,9 @@ xray = false;
             }));
             cheatLayout.addView(button2);
 	
+/*
+* WIP
+*
 var rideall = new styleButton();
 rideall.setText("Ride nearest");
 rideall.setTextColor(android.graphics.Color.RED);
@@ -4391,7 +4402,7 @@ ridenear = false;
 }
                 }
             }));
-            cheatLayout.addView(rideall);
+            cheatLayout.addView(rideall);*/
             
             var speedup = new styleButton();
 speedup.setText("No friction");
@@ -4496,6 +4507,7 @@ button13.setText("Auto destroy");
 if(autodestroy2 == true){
 button13.setTextColor(android.graphics.Color.GREEN);
 dig1();
+cheat.dismiss();
 autodestroy2 = true;
 }
 if(autodestroy2 == false){
@@ -4899,6 +4911,7 @@ bypass1.setText("Anti-spam bypass");
 if(antispam2 == true){
 bypass1.setTextColor(android.graphics.Color.GREEN);
 spa2();
+cheat.dismiss();
 antispam2 = true;
 }
 if(antispam2 == false){
@@ -4921,6 +4934,7 @@ button9.setText("Tap spam");
 if(tapspam == true){
 button9.setTextColor(android.graphics.Color.GREEN);
 spa();
+cheat.dismiss();
 tapspam = true;
 }
 if(tapspam == false){
@@ -4945,6 +4959,7 @@ button12.setText("Auto spam");
 if(autospam2==true){
 button12.setTextColor(android.graphics.Color.GREEN);
 spa();
+cheat.dismiss();
 autospam2= true;
 }
 if(autospam2==false){
@@ -6918,6 +6933,7 @@ var e1 = new styleButton();
             e1.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
 ea();
+			effect.dismiss();
                 }
             }));
             effectLayout.addView(e1);
@@ -6976,6 +6992,7 @@ Entity.addEffect(getPlayerEnt(), MobEffect.saturation, s*l, 0, false, true);
             e2.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
 eb();
+			effect.dismiss();
                 }
             }));
             effectLayout.addView(e2);
@@ -7034,6 +7051,7 @@ var e3 = new styleButton();
             e3.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
   ec();
+			effect.dismiss();
                 }
             }));
             effectLayout.addView(e3);
@@ -7092,6 +7110,7 @@ var e4 = new styleButton();
             e4.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
 ed();
+			effect.dismiss();
                 }
             }));
             effectLayout.addView(e4);
@@ -7150,6 +7169,7 @@ Entity.addEffect(getPlayerEnt(), MobEffect.wither, s*l, 0, false, true);
             e5.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
 ee();
+			effect.dismiss();
                 }
             }));
             effectLayout.addView(e5);
@@ -7208,6 +7228,7 @@ var e6 = new styleButton();
             e6.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
                     ef();
+			effect.dismiss();
                 }
             }));
             effectLayout.addView(e6);
@@ -7265,7 +7286,8 @@ var e7 = new styleButton();
             e7.setText("Hunger");
             e7.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-eg()
+eg();
+			effect.dismiss();
                 }
             }));
             effectLayout.addView(e7);
@@ -7324,6 +7346,7 @@ var e8 = new styleButton();
             e8.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
 eh();
+			effect.dismiss();
                 }
             }));
             effectLayout.addView(e8);
@@ -7382,6 +7405,7 @@ var e9 = new styleButton();
             e9.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
 ei();
+			effect.dismiss();
                 }
             }));
             effectLayout.addView(e9);
@@ -7440,6 +7464,7 @@ var e10 = new styleButton();
             e10.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
  ej();
+			effect.dismiss();
                 }
             }));
             effectLayout.addView(e10);
@@ -7498,6 +7523,7 @@ var e11 = new styleButton();
             e11.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
 ek();
+			effect.dismiss();
                 }
             }));
             effectLayout.addView(e11);
@@ -7556,6 +7582,7 @@ var e12 = new styleButton();
             e12.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
 el();
+			effect.dismiss();
                 }
             }));
             effectLayout.addView(e12);
@@ -7614,6 +7641,7 @@ var e13 = new styleButton();
             e13.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
 em();
+			effect.dismiss();
                 }
             }));
             effectLayout.addView(e13);
@@ -7672,6 +7700,7 @@ var e14 = new styleButton();
             e14.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
 en();
+			effect.dismiss();
                 }
             }));
             effectLayout.addView(e14);
@@ -7730,6 +7759,7 @@ var e15 = new styleButton();
             e15.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
  eo();
+			effect.dismiss();
                 }
             }));
             effectLayout.addView(e15);
@@ -7788,6 +7818,7 @@ var e16 = new styleButton();
             e16.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
  ep();
+			effect.dismiss();
                 }
             }));
             effectLayout.addView(e16);
@@ -7846,6 +7877,7 @@ var e17 = new styleButton();
             e17.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
 eq();
+			effect.dismiss();
                 }
             }));
             effectLayout.addView(e17);
@@ -7904,6 +7936,7 @@ var e18 = new styleButton();
             e18.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
 er();
+			effect.dismiss();
                 }
             }));
             effectLayout.addView(e18);
@@ -7962,6 +7995,7 @@ var e19 = new styleButton();
             e19.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
 es();
+			effect.dismiss();
                 }
             }));
             effectLayout.addView(e19);
@@ -8020,6 +8054,7 @@ var e20 = new styleButton();
             e20.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
 et();
+			effect.dismiss();
                 }
             }));
             effectLayout.addView(e20);
@@ -8078,6 +8113,7 @@ var e21 = new styleButton();
             e21.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
 eu();
+			effect.dismiss();
                 }
             }));
             effectLayout.addView(e21);
@@ -8136,6 +8172,7 @@ var e22 = new styleButton();
             e22.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
 ev();
+			effect.dismiss();
                 }
             }));
             effectLayout.addView(e22);
@@ -8194,6 +8231,7 @@ var e23 = new styleButton();
             e23.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
 ew();
+			effect.dismiss();
                 }
             }));
             effectLayout.addView(e23);
@@ -16035,11 +16073,11 @@ Exit.setText("Save");
 
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
-if(height < 10){
+if(height <= 10){
 jumpheight=height.getText();
 android.widget.Toast.makeText(MainActivity, "Set to: "+height, 1).show();
 }
-if(height > 10){
+if(height >= 10){
 jumpheight = 9;
 android.widget.Toast.makeText(MainActivity, "Set to default: "+jumpheight, 1).show();
 }
