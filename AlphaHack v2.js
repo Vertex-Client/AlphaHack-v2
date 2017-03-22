@@ -789,6 +789,7 @@ var GUIPos = android.view.Gravity.CENTER;
 
 var GUIBtns = android.graphics.Color.BLUE;
 
+var GUIBtns1 = android.graphics.Color.TRANSPARENT;
 var GUIBtns2 = android.graphics.Color.BLACK;
 var GUIBtns3 = android.graphics.Color.WHITE;
 var GUIBtns4 = android.graphics.Color.RED;
@@ -2521,6 +2522,22 @@ default1 = true;
                 }
             }));
             settingsLayout.addView(l1);
+	
+            var l0 = new styleButton();
+            l0.setText("Transparent Menu");       
+            l0.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIColor = GUIColor1
+ var GUIText = android.graphics.Color.WHITE;
+ if(default1==true)default1 = false;
+			//saveSetting("bgTrans");
+		settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
+                }
+            }));
+            settingsLayout.addView(l0);
             
             var l2 = new styleButton();
             l2.setText("Black Menu");       
@@ -3040,6 +3057,21 @@ defaultbtnc = true;
                 }
             }));
             settingsLayout.addView(btc1);
+	
+var btc0 = new styleButton();
+            btc0.setText("Transparent Buttons");       
+            btc0.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){         
+GUIBtns = GUIBtns1
+defaultbtnc = false;
+			//saveSetting("btnTrans");
+		settings.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)settings_menu();
+		}
+                }
+            }));
+            settingsLayout.addView(btc0);
 
 var btc2 = new styleButton();
             btc2.setText("Black Buttons");       
