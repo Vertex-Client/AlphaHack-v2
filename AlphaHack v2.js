@@ -907,10 +907,11 @@ ModPE.JSON = {
   }
 };
 var details = "https://raw.githubusercontent.com/ArceusMatt/AlphaHack-v2/master/details.json";
-var update = ModPE.getFromUrl(details);
-var update2 = ModPE.JSON.parse(update);
-if(version != update2.version)startUp();
-function startUp(){
+var jsoncontent = ModPE.getFromUrl(details);
+var update2 = ModPE.JSON.parse(jsoncontent);
+var newupdate = update2.version;
+if(version != newupdate)startUp(newupdate);
+function startUp(update){
 MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
             var updiaLayout = new android.widget.LinearLayout(MainActivity);
@@ -922,7 +923,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
             updiaLayout1.addView(updiaScroll);
 			
 			var text1 = new android.widget.TextView(MainActivity);
-            text1.setText("\n\n\nA new update is available.\nBug fixes, less crashes, new features & more!\nWould you like to update AlphaHack v2?\nCurret version: "+version+"\n");
+            text1.setText("\n\n\nA new update is available.\nBug fixes, less crashes, new features & more!\nWould you like to update AlphaHack v2?\nCurrent version: "+version+"\nNew version: "+update+"\n");
             text1.setTextColor(android.graphics.Color.WHITE);
 			text1.setPadding(10,20,130,20);
             updiaLayout.addView(text1);
