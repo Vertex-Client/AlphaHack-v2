@@ -13285,7 +13285,7 @@ var y = Entity.getY(entity);
 var z = Entity.getZ(entity);
 var name = Entity.getNameTag(entity);
 	if(name != null){
-	if(!name.match(' ') && Entity.getEntityTypeId(entity) != 64){
+	if(!name.match(' ') && Entity.getEntityTypeId(entity) != 64 && entity != null){
 clientMessage(client+"Entity added:\n"+Entity.getNameTag(entity)+" / "+Entity.getEntityTypeId(entity)+"\nx "+Math.round(x)+" y "+Math.round(y)+" z "+Math.round(z));
 	}
 	}
@@ -13315,7 +13315,7 @@ var x = Entity.getX(entity);
 var y = Entity.getY(entity);
 var z = Entity.getZ(entity);
 var name = Entity.getNameTag(entity);
-	if(!name.match(' ') && Entity.getEntityTypeId(entity) != 64){
+	if(!name.match(' ') && Entity.getEntityTypeId(entity) != 64 && entity != null){
 clientMessage(client+"Entity removed:\n"+Entity.getNameTag(entity)+" / "+Entity.getEntityTypeId(entity)+"\nx "+Math.round(x)+" y "+Math.round(y)+" z "+Math.round(z));
 	}
 }
@@ -16228,6 +16228,7 @@ Exit.setText("Done");
 Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
 newtime=time.getText();
+settime1();
 Dialog.dismiss();
 showMenuBtn();
 }
