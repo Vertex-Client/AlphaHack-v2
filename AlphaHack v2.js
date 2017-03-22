@@ -101,6 +101,7 @@ var shadow1X = '30';
 var shadow1Y = '2';
 var keybind1 = false;
 var haxMode = false;
+var newtime = '';
 
 var playerDir = [0, 0, 0];
 var DEG_TO_RAD = Math["PI"] / 180;
@@ -12987,6 +12988,16 @@ Level.setTime(23000);
                 }
             }));
             timeLayout.addView(a24);
+	
+var ct1 = new styleButton();
+            ct1.setText("Custom time");        
+            ct1.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){ 
+custime();
+			time.dismiss();
+                }
+            }));
+            timeLayout.addView(ct1);
 
             time = new android.widget.PopupWindow(timeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)time.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
@@ -14375,24 +14386,27 @@ if (spider && Utils.Player.isCollidedHorizontally()) {
 	}
 	if(itemIndi)ModPE.showTipMessage(client+"\nHeld: "+Player.getCarriedItem()+":"+Player.getCarriedItemData()+", Amount: "+Player.getCarriedItemCount());
 	if(bhop){
-		if(Entity.getVelX(Player.getEntity())>0.1){
+		var x=getPlayerX();
+		    var y=getPlayerY();
+			    var z=getPlayerZ();
+		if(Entity.getVelX(Player.getEntity())>0.1 && getTile(x, y +2, z) == 0){
 			if(getTile(Player.getX(), Player.getY()-2, Player.getZ())>0){
-				Entity.setVelY(Player.getEntity(), 0.5);
+				Entity.setVelY(Player.getEntity(), 0.4);
 			}
 		}
-		if(Entity.getVelX(Player.getEntity())<-0.1){
+		if(Entity.getVelX(Player.getEntity())<-0.1 && getTile(x, y +2, z) == 0){
 			if(getTile(Player.getX(), Player.getY()-2, Player.getZ())>0){
-				Entity.setVelY(Player.getEntity(), 0.5);
+				Entity.setVelY(Player.getEntity(), 0.4);
 			}
 		}
-		if(Entity.getVelZ(Player.getEntity())>0.1){
+		if(Entity.getVelZ(Player.getEntity())>0.1 && getTile(x, y +2, z) == 0){
 			if(getTile(Player.getX(), Player.getY()-2, Player.getZ())>0){
-				Entity.setVelY(Player.getEntity(), 0.5);
+				Entity.setVelY(Player.getEntity(), 0.4);
 			}
 		}
-		if(Entity.getVelZ(Player.getEntity())<-0.1){
+		if(Entity.getVelZ(Player.getEntity())<-0.1 && getTile(x, y +2, z) == 0){
 			if(getTile(Player.getX(), Player.getY()-2, Player.getZ())>0){
-				Entity.setVelY(Player.getEntity(), 0.5);
+				Entity.setVelY(Player.getEntity(), 0.4);
 			}
 		}
 	}
@@ -16186,6 +16200,50 @@ shadowD.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gra
 print("shadow dialog:"+e);
 }
 }});
+}
+
+function custime() {
+MainActivity.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+timeD = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(MainActivity);
+var time = new styleInput();
+time.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new styleButton();
+
+Dialog.setTitle("Custom time");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(time);
+Layer.addView(Exit);
+
+time.setText("");
+time.setHint("Time...");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+newtime=time.getText();
+Dialog.dismiss();
+showMenuBtn();
+}
+});
+
+timeD.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+timeD.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+timeD.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("time dialog:"+e);
+}
+}});
+}
+
+function settime1(){
+Level.setTime(newtime);
 }
 
 function save() {
