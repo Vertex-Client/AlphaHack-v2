@@ -38,7 +38,6 @@ var GUI;
 var menu;
 //define active incase of error
 var active;
-var update;
 //define counting variable
 var num0 = 0;
 //idek
@@ -51,8 +50,6 @@ var text = "AlphαHαck!";
 var space = " ";
 //define version
 var version = "0.8.5";
-//if version is version change version to beta
-if(version=="0.8.5")version = "Beta";
 //tracer define length
 var chestTracersRange = 10;
 //tracer define mode
@@ -904,9 +901,15 @@ ModPE.getFromUrl = function(url, errs){
     }
     return result;
 };
-var masterVersion = "https://raw.githubusercontent.com/ArceusMatt/AlphaHack-v2/master/Version.txt";
-var update = ModPE.getFromUrl(masterVersion);
-if(update != version)startUp();
+ModPE.JSON = {
+  parse: function(str){
+    return Function("return " + str)();
+  }
+};
+var details = "https://raw.githubusercontent.com/ArceusMatt/AlphaHack-v2/master/details.json";
+var update = ModPE.getFromUrl(details);
+var update2 = ModPE.JSON.parse(update);
+if(version != update2.version)startUp();
 function startUp(){
 MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
@@ -3305,7 +3308,7 @@ function mainMenu(){
             
             var title = new android.widget.TextView(MainActivity);
             title.setTextSize(20);
-            title.setText(" AlphαHαck v2 ("+version+")");
+            title.setText(" AlphαHαck v2 (Beta)");
             title.setGravity(android.view.Gravity.CENTER);
             title.setTextColor(GUIName);
             menuLayout.addView(title);
