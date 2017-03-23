@@ -14731,7 +14731,7 @@ if(Level.getTile(getPlayerX(), getPlayerY() -2, getPlayerZ())=="0" || Level.getT
 	}
 }
 	if(icewalk){
-if(Level.getTile(getPlayerX(), getPlayerY() -2, getPlayerZ())!="0" || Level.getTile(getPlayerX(), getPlayerY() -2, getPlayerZ())!="79"){
+if(Level.getTile(getPlayerX(), getPlayerY() -2, getPlayerZ())=="0" || Level.getTile(getPlayerX(), getPlayerY() -2, getPlayerZ())!="79"){
 	Level.setTile(getPlayerX() +1, getPlayerY() -2, getPlayerZ(), 79, 0);
 	 Level.setTile(getPlayerX() +2, getPlayerY() -2, getPlayerZ(), 79, 0);
 	 Level.setTile(getPlayerX() +3, getPlayerY() -2, getPlayerZ(), 79, 0);
@@ -14880,7 +14880,7 @@ if(i == 50)i = 0;
 }
 }
 	if(noknock){
-if(Entity.getVelY(Player.getEntity())>0.1){
+if(Entity.getVelY(Player.getEntity())>0.1 && getTile(x-1, y -2, z) == 0 || getTile(x, y -2, z -1) == 0 || getTile(x +1, y -2, z) == 0 || getTile(x, y +2, z +1) == 0){
 Entity.setVelY(Player.getEntity(), -0.5);
 		}
 	}
