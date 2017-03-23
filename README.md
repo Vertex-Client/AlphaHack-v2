@@ -17,7 +17,7 @@ ALPHAHack v2 is a remake of AlphaHack 0.8.1
 0.8.5 Misc<br>
 0.8.5 Settings<br>
 0.8.5 Online mods<br>
-0.8.5 Offline mods incomplete<br>
+0.8.5 Offline mods<br>
 0.8.5 Effect menu<br>
 0.8.5 Enchant menu<br>
 0.8.5 Give menu<br>
@@ -50,3 +50,4 @@ ALPHAHack v2 is a remake of AlphaHack 0.8.1
 - [ ] Player tracers WIP
 - [ ] AutoSword WIP
 - [ ] F2, F3, F5 WIP
+- [x] Unban features
