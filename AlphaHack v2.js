@@ -621,7 +621,6 @@ var belowblock = false;
 var preventsame = false;
 var hitparticles = false;
 var icewalk = false;
-
 var facedInfo = false;
 var facedInfo2 = false;
 var tapParti = false;
@@ -648,6 +647,7 @@ var noknock = false;
 var checkping = false;
 var dropind = false;
 var autoply1 = false;
+var expind = false;
 
 var showActive = false;
 var showActive2 = false;
@@ -5199,6 +5199,28 @@ dropind = false;
                 }
             }));
             cheatLayout.addView(dropsin);
+
+var whoxp = new styleButton();
+whoxp.setText("XP indicator");
+whoxp.setTextColor(android.graphics.Color.RED);
+if(expind==true)whoxp.setTextColor(android.graphics.Color.GREEN);
+            whoxp.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             expind?expind=false:expind=true;
+whoxp.setText("XP indicator");
+if(expind == true){
+whoxp.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"XP indicator on");
+expind = true;
+}
+if(expind == false){
+whoxp.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"XP indicator off");
+expind = false;
+}
+                }
+            }));
+            cheatLayout.addView(whoxp);
             
             var seevel = new styleButton();
 seevel.setText("Velocity indicator");
@@ -13372,10 +13394,10 @@ var x = Entity.getX(entity);
 var y = Entity.getY(entity);
 var z = Entity.getZ(entity);
 var name = Entity.getNameTag(entity);
-	if(name != null){
-	if(!name.match(' ') && Entity.getEntityTypeId(entity) != 64 && entity != null){
+	if(Entity.getEntityTypeId(entity) != 64 && entity != null){
+		if(!name.match(' ')){
 clientMessage(client+"Entity added:\n"+Entity.getNameTag(entity)+" / "+Entity.getEntityTypeId(entity)+"\nx "+Math.round(x)+" y "+Math.round(y)+" z "+Math.round(z));
-	}
+		}
 	}
 }
 	if(dropind){
@@ -13403,8 +13425,10 @@ var x = Entity.getX(entity);
 var y = Entity.getY(entity);
 var z = Entity.getZ(entity);
 var name = Entity.getNameTag(entity);
-	if(!name.match(' ') && Entity.getEntityTypeId(entity) != 64 && entity != null){
+	if(Entity.getEntityTypeId(entity) != 64 && entity != null){
+		if(!name.match(' ')){
 clientMessage(client+"Entity removed:\n"+Entity.getNameTag(entity)+" / "+Entity.getEntityTypeId(entity)+"\nx "+Math.round(x)+" y "+Math.round(y)+" z "+Math.round(z));
+		}
 	}
 }
 	if(dropind){
@@ -13524,6 +13548,20 @@ if(instabreak==false)
 	for(i = 0; i < 256; i++){
 		Block.setDestroyTime(i, defaultDestroyTime[i]);
 	}
+}
+
+function playerExpLevelChangeHook(player, levelsAdded){
+if(expind){
+var x = Entity.getX(player);
+var y = Entity.getY(player);
+var z = Entity.getZ(player);
+var name = Entity.getNameTag(player);
+	if(Entity.getEntityTypeId(player) != 64 && player != null){
+		if(!name.match(' ')){
+clientMessage(client+"Player:\n"+Entity.getNameTag(player)+"\nExp:\n"+levelsAdded+"\nx "+Math.round(x)+" y "+Math.round(y)+" z "+Math.round(z));
+		}
+	}
+}
 }
 
 function killing() {
