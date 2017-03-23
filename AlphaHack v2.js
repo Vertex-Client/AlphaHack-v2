@@ -648,6 +648,7 @@ var checkping = false;
 var dropind = false;
 var autoply1 = false;
 var expind = false;
+var ccolors = false;
 
 var showActive = false;
 var showActive2 = false;
@@ -837,6 +838,28 @@ var extraBtns2 = android.graphics.Color.GREEN;
 
 var extraBtns3 = android.graphics.Color.BLACK;
 var extraBtns4 = android.graphics.Color.BLUE;
+
+var chatColors = ChatColor.BEGIN;
+var chatColors1 = ChatColor.AQUA;
+var chatColors2 = ChatColor.BLACK;
+var chatColors3 = ChatColor.BLUE;
+var chatColors4 = ChatColor.BOLD;
+var chatColors5 = ChatColor.DARK_AQUA;
+var chatColors6 = ChatColor.DARK_BLUE;
+var chatColors7 = ChatColor.DARK_GRAY;
+var chatColors8 = ChatColor.DARK_GREEN;
+var chatColors9 = ChatColor.DARK_PURPLE;
+var chatColors10 = ChatColor.DARK_RED;
+var chatColors11 = ChatColor.GOLD;
+var chatColors12 = ChatColor.GRAY;
+var chatColors13 = ChatColor.GREEN;
+var chatColors14 = ChatColor.LIGHT_PURPLE;
+var chatColors15 = ChatColor.RED;
+var chatColors16 = ChatColor.RESET;
+var chatColors17 = ChatColor.WHITE;
+var chatColors18 = ChatColor.YELLOW;
+var chatColors19 = '§o';
+var chatColors20 = '§k';
 
 function styleButton(){
 /*thanks godsoft029 for working on this with me.*/
@@ -6037,6 +6060,29 @@ preventsame = false;
             }));       
             cheatLayout.addView(butfuon8);
 
+var newchat = new styleButton();
+newchat.setText("Chat color");
+newchat.setTextColor(android.graphics.Color.RED);
+if(ccolors==true)newchat.setTextColor(android.graphics.Color.GREEN);
+            newchat.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             ccolors?ccolors=false:ccolors=true;
+newchat.setText("Chat color");
+if(ccolors == true){
+newchat.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"Chat color on");
+selectView();
+cheat.dismiss();
+ccolors = true;
+}
+if(ccolors == false){
+newchat.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"Chat color off");
+ccolors = false;
+}
+                }
+            }));
+            cheatLayout.addView(newchat);
 
 var cc = new styleButton();
             cc.setText("Clear your chat");        
@@ -13388,6 +13434,249 @@ info.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.g
     }}));
 }
 
+function selectView(){
+MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
+        try{
+            var selectLayout = new android.widget.LinearLayout(MainActivity);
+            
+            var selectScroll = new android.widget.ScrollView(MainActivity);
+            
+            var selectLayout1 = new android.widget.LinearLayout(MainActivity);
+            selectLayout.setOrientation(1);
+            selectLayout1.setOrientation(1);
+            
+            selectScroll.addView(selectLayout);
+            selectLayout1.addView(selectScroll);
+
+var exit = new styleButton();
+            exit.setText("Exit");
+exit.setTextColor(android.graphics.Color.RED);
+            exit.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                select.dismiss();
+		showMenuBtn();
+                }
+            }));
+            selectLayout.addView(exit);
+			
+var co1 = new styleButton(); //aqua §b
+var co0 = new styleButton(); //begin §
+var co2 = new styleButton(); //black §0
+var co3 = new styleButton(); //blue §9
+var co4 = new styleButton(); //bold §l
+var co5 = new styleButton(); //dark_aqua §3
+var co6 = new styleButton(); //dark_blue §2
+var co7 = new styleButton(); //dark_gray §8
+var co8 = new styleButton(); //dark_green §1
+var co9 = new styleButton(); //dark_purple §5
+var co10 = new styleButton(); //dark_red §4
+var co11 = new styleButton(); //gold §6
+var co12 = new styleButton(); //gray §7
+var co13 = new styleButton(); //green §a
+var co14 = new styleButton(); //light_purple §d
+var co15 = new styleButton(); //red §c
+var co16 = new styleButton(); //reset §r
+var co17 = new styleButton(); //white §f
+var co18 = new styleButton(); //yellow §e
+var co19 = new styleButton(); //italic §o
+var co20 = new styleButton(); //crypt §k
+
+            co1.setText("Aqua");
+            co1.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors1;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co1);
+			
+			            co2.setText("Black");
+            co2.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors2;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co2);
+			
+			            co3.setText("Blue");
+            co3.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors3;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co3);
+			
+			            co4.setText("Bold");
+            co4.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors4;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co4);
+			
+			            co5.setText("Dark aqua");
+            co5.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors5;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co5);
+			
+			            co6.setText("Dark blue");
+            co6.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors6;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co6);
+			
+			            co7.setText("Dark gray");
+            co7.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors7;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co7);
+			
+			            co8.setText("Dark green");
+            co8.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors8;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co8);
+			
+			            co9.setText("Dark purple");
+            co9.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors9;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co9);
+			
+			            co10.setText("Dark red");
+            co10.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors10;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co10);
+			
+			            co11.setText("Gold");
+            co11.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors11;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co11);
+			
+			            co12.setText("Gray");
+            co12.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors12;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co12);
+			
+			            co13.setText("Green");
+            co13.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors13;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co13);
+			
+			            co14.setText("Light purple");
+            co14.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors14;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co14);
+			
+			            co15.setText("Red");
+            co15.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors15;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co15);
+			
+			            co16.setText("Reset");
+            co16.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors16;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co16);
+			
+			            co17.setText("White");
+            co17.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors17;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co17);
+			
+			            co18.setText("Yellow");
+            co18.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors18;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co18);
+			
+			            co19.setText("Italic");
+            co19.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors19;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co19);
+			
+			            co20.setText("Crypted");
+            co20.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors20;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co20);
+
+select = new android.widget.PopupWindow(selectLayout1, dip2px(500), dip2px(500));
+
+select = new android.widget.PopupWindow(selectLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/2, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1);
+	  var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(android.graphics.Color.TRANSPARENT);
+      bg.setStroke(10,GUIStroke);
+selectLayout1.setBackgroundDrawable(bg);
+selectLayout1.setPadding(20,0,20,0);
+select.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.BLACK));
+            select.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.CENTER | android.view.Gravity.TOP, 0, 0);
+            }catch(error){
+                android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
+            }
+    }}));
+}
+
 function entityAddedHook(entity){
 if(entind){
 var x = Entity.getX(entity);
@@ -16746,6 +17035,10 @@ function chatHook(str){
 		Server.sendChat(""+alphabet1[i]+" "+i+" "+str+" "+i+" "+alphabet1[i]);
 	}
 		}
+	 if(ccolors){
+	 preventDefault();
+	 Server.sendChat(chatColors+str);
+	 }
 	}
 if(autoply1 && str != null){ 
 if(Server.getPort() == "0")clientMessage("yee."); 
