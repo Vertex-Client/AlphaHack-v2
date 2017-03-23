@@ -14876,6 +14876,7 @@ onClick: function(view){
 text =mm.getText();
 Dialog.dismiss();
 if(autospam2==true)autospam = true;
+showMenuBtn();
 }
 });
 
