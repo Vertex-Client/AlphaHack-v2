@@ -647,6 +647,7 @@ var autosword = false;
 var noknock = false;
 var checkping = false;
 var dropind = false;
+var autoply1 = false;
 
 var showActive = false;
 var showActive2 = false;
@@ -5051,6 +5052,28 @@ var info = new styleButton();
                 }
             }));
             cheatLayout.addView(info);
+
+var autore1 = new styleButton();
+autore1.setText("Auto reply (yee)");
+autore1.setTextColor(android.graphics.Color.RED);
+if(autoply1==true)autore1.setTextColor(android.graphics.Color.GREEN);
+            autore1.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             autoply1?autoply1=false:autoply1=true;
+autore1.setText("Auto reply (yee)");
+if(autoply1 == true){
+autore1.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"Auto reply (yee) on");
+autoply1 = true;
+}
+if(autoply1 == false){
+autore1.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"Auto reply (yee) off");
+autoply1 = false;
+}
+                }
+            }));
+            cheatLayout.addView(autore1);
 
 var svr = new styleButton();
             svr.setText("Server IP:Port");
@@ -13407,7 +13430,21 @@ run: function(){
 	clientMessage(client+str);
 	android.widget.Toast.makeText(ctx, str, 1).show();
 	}
+if(autoply1 && str != null){
+if(Server.getPort() != "0")Server.sendChat("yee.");
 }
+}
+
+function chatHook(str){
+if(autoply1 && str != null){
+if(Server.getPort() == "0")clientMessage("yee.");
+}
+	if(chatind){
+	clientMessage(client+str);
+	android.widget.Toast.makeText(ctx, str, 1).show();
+	}
+}
+
 
 function attackHook(attacker, victim) {
 	if(instakilled) {
