@@ -13459,17 +13459,6 @@ if(Server.getPort() != "0")Server.sendChat("yee.");
 }
 }
 
-function chatHook(str){
-if(autoply1 && str != null){
-if(Server.getPort() == "0")clientMessage("yee.");
-}
-	if(chatind){
-	clientMessage(client+str);
-	android.widget.Toast.makeText(ctx, str, 1).show();
-	}
-}
-
-
 function attackHook(attacker, victim) {
 	if(instakilled) {
 		Entity.setHealth(victim, 1);
@@ -16758,7 +16747,13 @@ function chatHook(str){
 	}
 		}
 	}
-	if(chatind)clientMessage(client+str);
+if(autoply1 && str != null){ 
+if(Server.getPort() == "0")clientMessage("yee."); 
+} 
+if(chatind){ 
+clientMessage(client+str); 
+android.widget.Toast.makeText(ctx, str, 1).show(); 
+}
 }
 
 function rptask3() {
