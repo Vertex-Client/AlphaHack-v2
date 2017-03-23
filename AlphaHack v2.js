@@ -16824,7 +16824,9 @@ function rptask() {
                     if(aimbot){
 			    var ent = getNearestEntity(aimrange);
 			    var name = Entity.getNameTag(ent);
-			    if(!name.match(' ') && ent != null)crosshairAimAt(ent);
+			    if(ent != null){
+if(!name.match(' '))crosshairAimAt(ent);
+			    }
 		    }
 			if(aimbot2){
 				var ent = getNearestEntity2(aimrange);
