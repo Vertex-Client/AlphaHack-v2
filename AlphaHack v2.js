@@ -14710,7 +14710,7 @@ if(grief)Level.setTile(Player.getPointedBlockX(), Player.getPointedBlockY(), Pla
 if(getvel)ModPE.showTipMessage("VelX: "+Math.round(Entity.getVelX(getPlayerEnt()))+" VelY "+Math.round(Entity.getVelY(getPlayerEnt()))+" VelZ "+Math.round(Entity.getVelZ(getPlayerEnt())));
 if(yawpitch)ModPE.showTipMessage("pitch: "+Math.round(getPitch(getPlayerEnt()))+" \nYaw: "+Math.round(getYaw(getPlayerEnt()))+" ");
 if(airwalk){
-if(Level.getTile(getPlayerX(), getPlayerY() -2, getPlayerZ())=="0" || Level.getTile(getPlayerX(), getPlayerY() -2, getPlayerZ())=="95"){
+if(Level.getTile(getPlayerX(), getPlayerY() -1, getPlayerZ())=="0" || Level.getTile(getPlayerX(), getPlayerY() -1, getPlayerZ())=="95"){
 	Level.setTile(getPlayerX() +1, getPlayerY() -2, getPlayerZ(), 95, 0);
 	 Level.setTile(getPlayerX() +2, getPlayerY() -2, getPlayerZ(), 95, 0);
 	 Level.setTile(getPlayerX() +3, getPlayerY() -2, getPlayerZ(), 95, 0);
@@ -14731,7 +14731,7 @@ if(Level.getTile(getPlayerX(), getPlayerY() -2, getPlayerZ())=="0" || Level.getT
 	}
 }
 	if(icewalk){
-if(Level.getTile(getPlayerX(), getPlayerY() -2, getPlayerZ())=="0" || Level.getTile(getPlayerX(), getPlayerY() -2, getPlayerZ())!="79"){
+if(Level.getTile(getPlayerX(), getPlayerY() -1, getPlayerZ())=="0" || Level.getTile(getPlayerX(), getPlayerY() -1, getPlayerZ())!="79"){
 	Level.setTile(getPlayerX() +1, getPlayerY() -2, getPlayerZ(), 79, 0);
 	 Level.setTile(getPlayerX() +2, getPlayerY() -2, getPlayerZ(), 79, 0);
 	 Level.setTile(getPlayerX() +3, getPlayerY() -2, getPlayerZ(), 79, 0);
@@ -14880,7 +14880,7 @@ if(i == 50)i = 0;
 }
 }
 	if(noknock){
-if(Entity.getVelY(Player.getEntity())>0.1 && getTile(x-1, y -2, z) == 0 || getTile(x, y -2, z -1) == 0 || getTile(x +1, y -2, z) == 0 || getTile(x, y +2, z +1) == 0){
+if(Entity.getVelY(Player.getEntity())>0.1 && getTile(x-1, y -1, z) == 0 || getTile(x, y -1, z -1) == 0 || getTile(x +1, y -1, z) == 0 || getTile(x, y -1, z +1) == 0){
 Entity.setVelY(Player.getEntity(), -0.5);
 		}
 	}
