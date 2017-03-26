@@ -441,6 +441,40 @@ var Utils = {
 			gl.glDisable(GL10.GL_LINE_SMOOTH);
 		}
 	},
+	Item: {
+		getDamage: function (id) {
+			switch(id) {
+				//Swords
+			case 268:
+			case 283:
+				return 5;
+				break;
+			case 272:
+				return 6;
+				break;
+			case 267:
+				return 7;
+				break;
+			case 276:
+				return 8;
+				break;
+				//Axe
+			case 271:
+			case 286:
+				return 4;
+				break;
+			case 275:
+				return 5;
+				break;
+			case 258:
+				return 6;
+				break;
+			case 279:
+				return 7;
+				break;
+			}
+		}
+	},
 	Entity: {
 		getAll: function () {
 				return Utils.Entity.allEntitys;
@@ -4258,9 +4292,6 @@ tracers1 = false;
             cheatLayout.addView(gltrace1);
 */
 
-/*
-* WIP
-*	
 var asword = new styleButton();
 asword.setText("Auto sword");
 asword.setTextColor(android.graphics.Color.RED);
@@ -4282,7 +4313,6 @@ autosword = false;
                 }
             }));
             cheatLayout.addView(asword);
-			*/
 	
 var nknock = new styleButton();
 nknock.setText("No knockback");
@@ -14872,21 +14902,18 @@ Level.dropItem(getPlayerX()+3,getPlayerY()+11,getPlayerZ()-3,0,rainId,1);
 Level.dropItem(getPlayerX()+7,getPlayerY()+11,getPlayerZ()-7,0,rainId,1);
 }
 if(autosword){
-var swords = [268,272,267,283,276]; //swords
-var slots = 51; //slots
-for(var i = 0; i < slots; i++){
-var items = Player.getInventorySlot(i); //items
-if(Player.getInventorySlot(i) == swords[i]){ //if slot is a sword
-var sword = Player.getInventorySlot(i); //define which slot that sword is in
-var damage = Player.getInventorySlotData(sword); //get that swords damage
-var itemsDamage = Player.getInventorySlotData(Player.getInventorySlot(i)); //get all swords damage
-if(damage < itemsDamage){ //if damage is less than other damages
-Player.setSelectedSlotId(sword); //set that sword
-Player.setSelectedSlotId(sword);
-if(i == 50)i = 0;
-}
-}
-}
+if(getNearestEntity3(aimrange) != null) {
+	let bestsword = [-1, -1];
+	for(let i = 0; i < 10; i++) {
+		let dmg = Utils.Item.getDamage(Player.getInventorySlot(i));
+		if(dmg > bestsword[0]) {
+			bestsword[0] = dmg;
+			bestsword[1] = i;
+		}
+	}
+	if(bestsword[1] != -1)
+		Player.setSelectedSlotId(bestsword[1]);
+		}
 }
 	if(noknock){
 if(Entity.getVelY(Player.getEntity())>0.1 && getTile(x-1, y -1, z) == 0 || getTile(x, y -1, z -1) == 0 || getTile(x +1, y -1, z) == 0 || getTile(x, y -1, z +1) == 0){
