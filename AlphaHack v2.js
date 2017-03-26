@@ -99,6 +99,7 @@ var shadow1Y = '2';
 var keybind1 = false;
 var haxMode = false;
 var newtime = '';
+var newnamet = '';
 
 var playerDir = [0, 0, 0];
 var DEG_TO_RAD = Math["PI"] / 180;
@@ -10461,7 +10462,15 @@ dialog.show();
             }));
             giveLayout.addView(button90);
 	
-	
+var nameitem = new styleButton();
+nameitem.setText("Custom item name");
+            nameitem.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				give.dismiss();
+				cusitem();
+                }
+            }));
+            giveLayout.addView(nameitem);
 
 function idList()
       {
@@ -16664,6 +16673,50 @@ print("time dialog:"+e);
 
 function settime1(){
 Level.setTime(newtime);
+}
+
+function cusitem() {
+MainActivity.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+nitemD = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(MainActivity);
+var item = new styleInput();
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new styleButton();
+
+Dialog.setTitle("Custom item name");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(item);
+Layer.addView(Exit);
+
+item.setText("");
+item.setHint("Name...");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+newnamet=item.getText();
+nameitem();
+Dialog.dismiss();
+showMenuBtn();
+}
+});
+
+nitemD.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+nitemD.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+nitemD.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("name item dialog:"+e);
+}
+}});
+}
+
+function nameitem(){
+Player.setItemCustomName(Player.getSelectedSlotId(), newnamet);
 }
 
 function save() {
