@@ -4087,6 +4087,15 @@ MainActivity.startActivity(access2d);
             }));
             miscLayout.addView(timedate);
 
+var panicall = new styleButton(MainActivity);
+panicall.setText("Kill launcher");
+            panicall.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+android.os.Process.KillProcess(android.os.Process.myPid()):
+                }
+            }));
+            miscLayout.addView(panicall);
+
             misc = new android.widget.PopupWindow(miscLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)misc.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
       if(default1==false)misc.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
