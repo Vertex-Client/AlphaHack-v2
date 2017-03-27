@@ -2,17 +2,23 @@ var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
 /*
 A͎̝͎͎̔͒̄ͯͤ́̍̚_͇̦̦̭ͥͪl̮̗̙̒̾_̣̭̠ͮͬp̥͚̯ͥ̉͒̆͋_̜͍̹̲̌̎͋̂ͭ̓ͥh̜̭̺ͪ͑_͔̗̮̼̺̰̰̳̄́̐͂ả̪̰̙̞͈̤̪͎͈͆_̳̱̘̗͙̪̖̖͐_̜̥͕̝̹̏ͪ͆̋̒̽̚ͅH͎̹̪̱͇̖̼͋̉_͉̯͇͖̜͈̖ͨ͆̔͊͛͑̀a̩͖̺͖̗̮̭͊ͮ͒̚_͇̲̀̈ͬ̆ͫ̊̒́c̙̹̼͚͒͋́͑ͧͪ̅ͩ_̫̮̮̤̺̯͉̠̠̽͊͊͛̇̀̾̐ḵ͕͖̉_̜̻̪͓̖͖ͩͯ̾̾̒̑̅̍ͪ_̣͕̤̓́̿̓͂͆̃̐P̰͕̾ͨE̬͎̪̹͎̖̠̋͒̓͑̅̀ͧͬͅ_̫̞̄͊_̙͕͎̱ͭͨ͑v̪͖̹͈̻̣͍͗̽̈̊̽̆̉͐2̬͔ͫͭͤ̓̈̔ͥ
 
-</>--------------------</>
-[AlphαHαck by: ArceusMαtt (c) 2016, 2017];
-</>--------------------</>
+<>--------------------<>
+[AlphαHαck by: ArceusMαtt (c) 2016 - 2017];
+<>--------------------<>
 [Free to use mod menu for MCPE under MIT license];
-</>--------------------</>
+Anyone modifying, gaining money, copying without permission,
+releasing without permission; will be confronted &
+will be asked to change or delete their mistakes by the creator of this program.
+<>--------------------<>
 [Pleαse contαct the developers of eαch code for permission to copy.];
 http://imgur.com/6xCQAyT
 http://imgur.com/xpEHET3
-</>--------------------</>
+https://github.com/ArceusMatt/AlphaHack-v2/pull/2
+http://imgur.com/1Vkl3q2
+<>--------------------<>
 [contributors: Godsoft029, Johnmαcrocrαft, αJ170, Peαcestorm(αgαmeR), αPRIC0CKS, Vertex client teαm];
-</>--------------------</>
+Contributor means they have decided to make a commit to the mod.
+<>--------------------<>
 
 A͎̝͎͎̔͒̄ͯͤ́̍̚_͇̦̦̭ͥͪl̮̗̙̒̾_̣̭̠ͮͬp̥͚̯ͥ̉͒̆͋_̜͍̹̲̌̎͋̂ͭ̓ͥh̜̭̺ͪ͑_͔̗̮̼̺̰̰̳̄́̐͂ả̪̰̙̞͈̤̪͎͈͆_̳̱̘̗͙̪̖̖͐_̜̥͕̝̹̏ͪ͆̋̒̽̚ͅH͎̹̪̱͇̖̼͋̉_͉̯͇͖̜͈̖ͨ͆̔͊͛͑̀a̩͖̺͖̗̮̭͊ͮ͒̚_͇̲̀̈ͬ̆ͫ̊̒́c̙̹̼͚͒͋́͑ͧͪ̅ͩ_̫̮̮̤̺̯͉̠̠̽͊͊͛̇̀̾̐ḵ͕͖̉_̜̻̪͓̖͖ͩͯ̾̾̒̑̅̍ͪ_̣͕̤̓́̿̓͂͆̃̐P̰͕̾ͨE̬͎̪̹͎̖̠̋͒̓͑̅̀ͧͬͅ_̫̞̄͊_̙͕͎̱ͭͨ͑v̪͖̹͈̻̣͍͗̽̈̊̽̆̉͐2̬͔ͫͭͤ̓̈̔ͥ
 */
