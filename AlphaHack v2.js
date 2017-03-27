@@ -3841,6 +3841,39 @@ dialog.show();
 		});
 		miscLayout.addView(ht8);
 
+		var ht9 = new styleButton();
+		ht9.setText("How to bypass time ban");
+		ht9.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+var alert = new android.app.AlertDialog.Builder(MainActivity); 
+/*alert.setTitle(""); */
+
+var scroll = new android.widget.ScrollView(MainActivity); 
+var layout = new android.widget.LinearLayout(MainActivity); 
+layout.setOrientation(1);
+
+alert.setTitle("How to bypass time ban");
+ alert.setMessage("Eventually you'll get banned by your IP time,\nYou can change your time since servers don't have timers\n#1 Wait untill unbanned\n#2 Change device\n#3 open time/date settings\nYou can set the date/time past the ban time, time ban is a command the server has if they download a plugin\n-Arceus_matt");
+
+alert.setPositiveButton("Exit all", new android.content.DialogInterface.OnClickListener(){ 
+  onClick: function(viewarg){
+    
+dialog.dismiss();
+misc.dismiss();
+	showMenuBtn();
+      }});
+
+alert.setNegativeButton("Back to menu", new android.content.DialogInterface.OnClickListener(){ 
+   onClick: function(viewarg){
+
+dialog.dismiss();
+      }});
+var dialog = alert.create();
+dialog.show();
+			}
+		});
+		miscLayout.addView(ht9);
+
 var cidban = new styleButton();
             cidban.setText("CID/dev pardon"); 
             cidban.setOnClickListener(new View.OnClickListener({
