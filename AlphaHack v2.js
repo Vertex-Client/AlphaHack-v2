@@ -4091,7 +4091,7 @@ var panicall = new styleButton(MainActivity);
 panicall.setText("Kill launcher");
             panicall.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-android.os.Process.KillProcess(android.os.Process.myPid()):
+android.os.Process.KillProcess(android.os.Process.myPid());
                 }
             }));
             miscLayout.addView(panicall);
