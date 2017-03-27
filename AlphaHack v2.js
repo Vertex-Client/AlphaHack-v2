@@ -3707,6 +3707,8 @@ dialog.show();
 		});
 		miscLayout.addView(ht4);
 
+
+
 var ht5 = new styleButton();
 		ht5.setText("How to delete pg chests");
 		ht5.setOnClickListener(new android.view.View.OnClickListener() {
@@ -4029,6 +4031,28 @@ checkping = false;
                 }
             }));
             miscLayout.addView(doping);
+
+var devsett = new styleButton(MainActivity);
+devsett.setText("Device developer settings");
+            devsett.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+var access1d = new android.content.Intent(MainActivity);
+access1d.setAction(android.provider.Settings.ACTION_APPLICATION_DEVELOPMENT_SETTINGS);
+MainActivity.startActivity(access1d);
+                }
+            }));
+            miscLayout.addView(devsett);
+			
+var timedate = new styleButton(MainActivity);
+timedate.setText("Device date/time settings");
+            timedate.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+var access2d = new android.content.Intent(MainActivity);
+access2d.setAction(android.provider.Settings.ACTION_DATE_SETTINGS);
+MainActivity.startActivity(access2d);
+                }
+            }));
+            miscLayout.addView(timedate);
 
             misc = new android.widget.PopupWindow(miscLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)misc.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
