@@ -106,6 +106,7 @@ var keybind1 = false;
 var haxMode = false;
 var newtime = '';
 var newnamet = '';
+var checkslapper = false;
 
 var playerDir = [0, 0, 0];
 var DEG_TO_RAD = Math["PI"] / 180;
@@ -2402,6 +2403,28 @@ haxMode = false;
                 }
             }));
             settingsLayout.addView(shaset);
+	
+var checkslap = new styleButton();
+checkslap.setText("Aimaura: check for slapper");
+checkslap.setTextColor(android.graphics.Color.RED);
+if(checkslapper==true)checkslap.setTextColor(android.graphics.Color.GREEN);
+            checkslap.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             checkslapper?checkslapper=false:checkslapper=true;
+checkslap.setText("Aimaura: check for slapper");
+if(checkslapper == true){
+checkslap.setTextColor(android.graphics.Color.GREEN);
+clientMessage(client+"Aimaura: check for slapper on");
+checkslapper = true;
+}
+if(checkslapper == false){
+checkslap.setTextColor(android.graphics.Color.RED);
+clientMessage(client+"Aimaura: check for slapper off");
+checkslapper = false;
+}
+                }
+            }));
+            settingsLayout.addView(checkslap);
 	
 	/*
 	* todo fix base64
@@ -17302,8 +17325,9 @@ function rptask() {
                     if(aimbot){
 			    var ent = getNearestEntity(aimrange);
 			    var name = Entity.getNameTag(ent);
-			    if(ent != null){
-if(!name.match(' '))crosshairAimAt(ent);
+			    if(ent != null && checkslapper == false)crosshairAimAt(ent);
+			    if(ent != null && checkslapper == true){
+				    if(!name.match(' '))crosshairAimAt(ent);
 			    }
 		    }
 			if(aimbot2){
