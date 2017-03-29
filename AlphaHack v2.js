@@ -4124,6 +4124,16 @@ android.os.Process.KillProcess(android.os.Process.myPid());
                 }
             }));
             miscLayout.addView(panicall);
+			
+        var exit2 = new styleButton();
+		exit2.setText("Exit");
+		exit2.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             misc.dismiss();
+             showMenuBtn();
+			}
+		});
+		miscLayout.addView(exit2);
 
             misc = new android.widget.PopupWindow(miscLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)misc.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
@@ -4162,7 +4172,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
             cheatScroll.addView(cheatLayout);
             cheatLayout1.addView(cheatScroll);
             
-            var exit = new styleButton();
+        var exit = new styleButton();
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -7129,6 +7139,16 @@ doubledrop = false;
                 }
             }));
             modLayout.addView(dropbutton);
+			
+        var exit2 = new styleButton();
+		exit2.setText("Exit");
+		exit2.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             mod.dismiss();
+             showMenuBtn();
+			}
+		});
+		modLayout.addView(exit2);
 
             mod = new android.widget.PopupWindow(modLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)mod.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
@@ -8569,6 +8589,16 @@ print("The Effect Dialog Is Malfunctioning:"+e);
 function inn23() {
 Entity.addEffect(getPlayerEnt(), MobEffect.movementSpeed, s*l, 0, false, true);
 }
+
+        var exit2 = new styleButton();
+		exit2.setText("Exit");
+		exit2.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             effect.dismiss();
+             showMenuBtn();
+			}
+		});
+		effectLayout.addView(exit2);
 
             effect = new android.widget.PopupWindow(effectLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)effect.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
@@ -10497,6 +10527,16 @@ Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,ench);
 //Enchantment.THORNS;
 //Enchantment.UNBREAKING;
 
+        var exit2 = new styleButton();
+		exit2.setText("Exit");
+		exit2.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             enchant.dismiss();
+             showMenuBtn();
+			}
+		});
+		enchantLayout.addView(exit2);
+
             enchant = new android.widget.PopupWindow(enchantLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)enchant.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
       if(default1==false)enchant.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
@@ -10725,6 +10765,16 @@ addItemInventory(293, 1, 0);
                 }
             }));
             giveLayout.addView(k5);
+			
+        var exit2 = new styleButton();
+		exit2.setText("Exit");
+		exit2.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             give.dismiss();
+             showMenuBtn();
+			}
+		});
+		giveLayout.addView(exit2);
 
             give = new android.widget.PopupWindow(giveLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)give.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
@@ -11274,6 +11324,16 @@ Entity.setRenderType(Player.getEntity(), 17);
                 }
             }));
             morphLayout.addView(mm22);
+			
+        var exit2 = new styleButton();
+		exit2.setText("Exit");
+		exit2.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             morph.dismiss();
+             showMenuBtn();
+			}
+		});
+		morphLayout.addView(exit2);
 
             morph = new android.widget.PopupWindow(morphLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)morph.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
@@ -11477,6 +11537,16 @@ var n11 = new styleButton();
                 }
             }));
             nukeLayout.addView(cn);
+			
+        var exit2 = new styleButton();
+		exit2.setText("Exit");
+		exit2.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             nuke.dismiss();
+             showMenuBtn();
+			}
+		});
+		nukeLayout.addView(exit2);
 
             nuke = new android.widget.PopupWindow(nukeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)nuke.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
@@ -12119,6 +12189,16 @@ clientMessage(client + "§7Particle 34 is false");
 }
             }));
             particleLayout.addView(p34);
+			
+        var exit2 = new styleButton();
+		exit2.setText("Exit");
+		exit2.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             particle.dismiss();
+             showMenuBtn();
+			}
+		});
+		particleLayout.addView(exit2);
 
             particle = new android.widget.PopupWindow(particleLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)particle.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
@@ -12574,6 +12654,16 @@ var spawn70 = new styleButton();
                 }
             }));
             spawnLayout.addView(spawn53);
+			
+        var exit2 = new styleButton();
+		exit2.setText("Exit");
+		exit2.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             spawn.dismiss();
+             showMenuBtn();
+			}
+		});
+		spawnLayout.addView(exit2);
 
             spawn = new android.widget.PopupWindow(spawnLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)spawn.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
@@ -12832,6 +12922,16 @@ newspeed();
                 }
             }));
             speedLayout.addView(d22);
+			
+        var exit2 = new styleButton();
+		exit2.setText("Exit");
+		exit2.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             speed.dismiss();
+             showMenuBtn();
+			}
+		});
+		speedLayout.addView(exit2);
 
             speed = new android.widget.PopupWindow(speedLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)speed.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
@@ -13288,6 +13388,16 @@ custime();
                 }
             }));
             timeLayout.addView(ct1);
+			
+        var exit2 = new styleButton();
+		exit2.setText("Exit");
+		exit2.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             time.dismiss();
+             showMenuBtn();
+			}
+		});
+		timeLayout.addView(exit2);
 
             time = new android.widget.PopupWindow(timeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)time.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
