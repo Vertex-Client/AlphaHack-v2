@@ -15865,6 +15865,7 @@ var select4 = new styleButton();
 var select5 = new styleButton();
 var end1 = new styleButton();
 var Dialog = new android.app.Dialog(MainActivity);
+showMenuBtn();
  
 Dialog.setTitle("Enter text & select");
 Dialog.setContentView(Layer);
@@ -15893,7 +15894,6 @@ var sec2 = new Date(sec);
 seconds = sec2.getMilliseconds();
 antispam = true;
 Dialog.dismiss();
-showMenuBtn();
                 }
             }));
 			
@@ -15914,7 +15914,6 @@ text =m1.getText();
 seconds = "2000";
 antispam = true;
 Dialog.dismiss();
-showMenuBtn();
                 }
             }));
              
@@ -15925,7 +15924,6 @@ text =m1.getText();
 seconds = "3000";
 antispam = true;
 Dialog.dismiss();
-showMenuBtn();
                 }
             }));
             
@@ -15936,7 +15934,6 @@ text =m1.getText();
 var seconds = "2500";
 antispam = true;
 Dialog.dismiss();
-showMenuBtn();
                 }
             }));
 			
@@ -15947,7 +15944,6 @@ text =m1.getText();
 var seconds = "10000";
 antispam = true;
 Dialog.dismiss();
-showMenuBtn();
                 }
             }));
  
@@ -15969,6 +15965,7 @@ var Layer6 = new android.widget.LinearLayout(MainActivity);
 var mm = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
+showMenuBtn();
 
 Dialog.setTitle("Enter text for spam");
 Dialog.setContentView(Layer6);
@@ -15986,7 +15983,6 @@ onClick: function(view){
 text =mm.getText();
 Dialog.dismiss();
 if(autospam2==true)autospam = true;
-showMenuBtn();
 }
 });
 
@@ -16009,6 +16005,7 @@ var select1 = new styleButton();
 var select2 = new styleButton();
 var ddf = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
+showMenuBtn();
  
 Dialog.setTitle("Select");
 Dialog.setContentView(Layer);
@@ -16028,7 +16025,6 @@ if(Level.getGameMode()=="2")vidd=true;
 if(Level.getGameMode()=="1")vidd=false;
 if(Level.getGameMode()=="0")vidd=true;
  Dialog.dismiss();
-showMenuBtn();
                 }
             }));
              
@@ -16041,7 +16037,6 @@ if(Level.getGameMode()=="2")vidd=true;
 if(Level.getGameMode()=="1")vidd=false;
 if(Level.getGameMode()=="0")vidd=true;
 Dialog.dismiss();
-showMenuBtn();
                 }
             }));
  
@@ -16063,6 +16058,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var select1 = new styleButton();
 var select2 = new styleButton();
 var Dialog = new android.app.Dialog(MainActivity);
+showMenuBtn();
  
 Dialog.setTitle("Select");
 Dialog.setContentView(Layer);
@@ -16117,7 +16113,6 @@ if(useNether){
                 Level.setTile(getPlayerX() -1, getPlayerY() +3, getPlayerZ() -3, 90, 0);
                 }
 Dialog.dismiss();
-showMenuBtn();
                 }
             }));
              
@@ -16150,7 +16145,6 @@ if(useFire){
                 Level.setTile(getPlayerX(), getPlayerY() +1, getPlayerZ() -3, 51, 0);
                 }
 Dialog.dismiss();
-showMenuBtn();
                 }
             }));
 
@@ -16175,6 +16169,7 @@ var select3 = new styleButton();
 var select4 = new styleButton();
 var Exit = new styleButton();
 var Dialog = new android.app.Dialog(MainActivity);
+showMenuBtn();
  
 Dialog.setTitle("Select");
 Dialog.setContentView(Layer);
@@ -16200,7 +16195,6 @@ if(primedtnt==true)primedtnt = false;
 if(arrow==true)arrow = false;
 if(exporb==true)exporb = false;
 Dialog.dismiss();
-showMenuBtn();
                 }
             }));
              
@@ -16212,7 +16206,6 @@ if(lightning==true)lightning = false;
 if(arrow==true)arrow = false;
 if(exporb==true)exporb = false;
 Dialog.dismiss();
-showMenuBtn();
                 }
             }));
 			
@@ -16224,7 +16217,6 @@ if(lightning==true)lightning = false;
 if(primedtnt==true)primedtnt = false;
 if(exporb==true)exporb = false;
 Dialog.dismiss();
-showMenuBtn();
                 }
             }));
 			
@@ -16236,7 +16228,6 @@ if(lightning==true)lightning = false;
 if(primedtnt==true)primedtnt = false;
 if(arrow==true)arrow = false;
 Dialog.dismiss();
-showMenuBtn();
                 }
             }));
 	
@@ -16248,7 +16239,6 @@ onClick: function(view){
  arrow = false;
  primedtnt = false;
 Dialog.dismiss();
-showMenuBtn();
 }
 });
  
@@ -16339,6 +16329,7 @@ var ntd = new styleInput();
 ntd.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
+showMenuBtn();
 
 Dialog.setTitle("Enter difficulty");
 Dialog.setContentView(Layer8);
@@ -16357,7 +16348,6 @@ onClick: function(view){
 nametd =ntd.getText();
 Dialog.dismiss();
 setdiff();
-showMenuBtn();
 }
 });
 
@@ -16383,6 +16373,7 @@ var Layer8 = new android.widget.LinearLayout(MainActivity);
 var nt = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
+showMenuBtn();
 
 Dialog.setTitle("Enter nickname");
 Dialog.setContentView(Layer8);
@@ -16401,7 +16392,6 @@ onClick: function(view){
 nametgg =nt.getText();
 Dialog.dismiss();
 setName();
-showMenuBtn();
 }
 });
 
@@ -16430,6 +16420,7 @@ var bn = new styleInput();
 bn.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
+showMenuBtn();
 
 Dialog.setTitle("Set block light");
 Dialog.setContentView(Layer8);
@@ -16452,7 +16443,6 @@ idm =bd.getText();
 levelm =bn.getText();
 Dialog.dismiss();
 setLight();
-showMenuBtn();
 }
 });
 
@@ -16481,6 +16471,7 @@ var br = new styleInput();
 br.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
+showMenuBtn();
 
 Dialog.setTitle("Set block resistance");
 Dialog.setContentView(Layer8);
@@ -16503,7 +16494,6 @@ idb =bi.getText();
 resis =br.getText();
 Dialog.dismiss();
 setResis();
-showMenuBtn();
 }
 });
 
@@ -16530,6 +16520,7 @@ var enh = new styleInput();
 enh.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
+showMenuBtn();
 
 Dialog.setTitle("Enter new hearts");
 Dialog.setContentView(Layer8);
@@ -16548,7 +16539,6 @@ onClick: function(view){
 newheart =enh.getText();
 Dialog.dismiss();
 sethealth();
-showMenuBtn();
 }
 });
 
@@ -16575,6 +16565,7 @@ var eha = new styleInput();
 eha.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
+showMenuBtn();
 
 Dialog.setTitle("Enter new hearts");
 Dialog.setContentView(Layer10);
@@ -16593,7 +16584,6 @@ onClick: function(view){
 horseheart =eha.getText();
 Dialog.dismiss();
 clientMessage(client + "Tap mob to change health.");
-showMenuBtn();
 }
 });
 
@@ -16616,6 +16606,7 @@ var select1 = new styleButton();
 var select2 = new styleButton();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
+showMenuBtn();
  
 Dialog.setTitle("Select");
 Dialog.setContentView(Layer);
@@ -16651,7 +16642,6 @@ Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
  
 Dialog.dismiss();
-showMenuBtn();
 }
 });
  
@@ -16674,6 +16664,7 @@ var XP = new styleInput();
 XP.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
+showMenuBtn();
 
 Dialog.setTitle("Enter XP Amount");
 Dialog.setContentView(Layer);
@@ -16692,7 +16683,6 @@ onClick: function(view){
 L=XP.getText();
 Dialog.dismiss();
 XG();
-showMenuBtn();
 }
 });
 
@@ -16724,6 +16714,7 @@ var Damage = new styleInput();
 Damage.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
+showMenuBtn();
 
 Dialog.setTitle("Enter ID,Amt,Dmg");
 Dialog.setContentView(Layer);
@@ -16750,7 +16741,6 @@ A=Amount.getText();
 D=Damage.getText();
 Dialog.dismiss();
 give2();
-showMenuBtn();
 }
 });
 
@@ -16777,6 +16767,7 @@ var nNuke = new styleInput();
 nNuke.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
+showMenuBtn();
 
 Dialog.setTitle("Enter nuke amount");
 Dialog.setContentView(Layerb5);
@@ -16795,7 +16786,6 @@ onClick: function(view){
 lenuke =nNuke.getText();
 Dialog.dismiss();
 setNuke();
-showMenuBtn();
 }
 });
 
@@ -16822,6 +16812,7 @@ var vspee = new styleInput();
 vspee.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
+showMenuBtn();
 
 Dialog.setTitle("Enter custom speed");
 Dialog.setContentView(Layer8);
@@ -16840,7 +16831,6 @@ onClick: function(view){
 nspee =vspee.getText();
 Dialog.dismiss();
 setspeed();
-showMenuBtn();
 }
 });
 
@@ -16868,6 +16858,7 @@ var Y = new styleInput();
 var Z = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
+showMenuBtn();
 
 Dialog.setTitle("Type coords to teleport");
 Dialog.setContentView(Layer);
@@ -16894,7 +16885,6 @@ py=Y.getText();
 pz=Z.getText();
 Dialog.dismiss();
 setTp();
-showMenuBtn();
 }
 });
 
@@ -16923,6 +16913,7 @@ var w2 = new styleInput();
 w2.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
+showMenuBtn();
 
 Dialog.setTitle("Set Weather");
 Dialog.setContentView(Layer);
@@ -16945,7 +16936,6 @@ v=w.getText();
 v2=w2.getText();
 Dialog.dismiss();
 setWeather();
-showMenuBtn();
 }
 });
 
@@ -16972,6 +16962,7 @@ var Layerb4 = new android.widget.LinearLayout(MainActivity);
 var editAtk = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
+showMenuBtn();
 
 Dialog.setTitle("When attacking send...");
 Dialog.setContentView(Layerb4);
@@ -16989,7 +16980,6 @@ Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
 newAction =editAtk.getText();
 Dialog.dismiss();
-showMenuBtn();
 }
 });
 
@@ -17012,6 +17002,7 @@ var editAtk = new styleInput();
 var editAtk2 = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
+showMenuBtn();
 
 Dialog.setTitle("When dying send...");
 Dialog.setContentView(Layerz8);
@@ -17033,7 +17024,6 @@ onClick: function(view){
 newAction2 =editAtk.getText();
 actionHeart =editAtk2.getText();
 Dialog.dismiss();
-showMenuBtn();
 }
 });
 
@@ -17057,6 +17047,7 @@ xy.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var xy2 = new styleInput();
 var Dialog = new android.app.Dialog(ctx);
 var Exit = new styleButton(ctx);
+showMenuBtn();
 
 Dialog.setTitle("Enter sign line & text");
 Dialog.setContentView(Layer);
@@ -17079,7 +17070,6 @@ text4 =xy.getText();
 line4 =xy2.getText();
 newSignText();
 Dialog.dismiss();
-showMenuBtn();
 }
 });
 
@@ -17107,6 +17097,7 @@ fin.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var reset = new styleButton();
 var Exit = new styleButton();
+showMenuBtn();
 
 Dialog.setTitle("Enter new fov");
 Dialog.setContentView(LayerFov);
@@ -17135,7 +17126,6 @@ onClick: function(view){
 typedFov =fin.getText();
 Dialog.dismiss();
 startFov();
-showMenuBtn();
 }
 });
 
@@ -17161,6 +17151,7 @@ var Layerz89 = new android.widget.LinearLayout(MainActivity);
 var datMsg = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
+showMenuBtn();
 
 Dialog.setTitle("Send to all");
 Dialog.setContentView(Layerz89);
@@ -17179,7 +17170,6 @@ onClick: function(view){
 urMsg =datMsg.getText();
 sendToAll();
 Dialog.dismiss();
-showMenuBtn();
 }
 });
 
@@ -17210,6 +17200,7 @@ var rang = new styleInput();
 rang.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
+showMenuBtn();
 
 Dialog.setTitle("Aimaura range");
 Dialog.setContentView(Layer);
@@ -17228,8 +17219,6 @@ onClick: function(view){
 aimrange=rang.getText();
 android.widget.Toast.makeText(MainActivity, "Set to: "+rang, 1).show();
 Dialog.dismiss();
-
-showMenuBtn();
 }
 });
 
@@ -17252,6 +17241,7 @@ var height = new styleInput();
 height.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
+showMenuBtn();
 
 Dialog.setTitle("Jump Height");
 Dialog.setContentView(Layer);
@@ -17276,8 +17266,6 @@ jumpheight = 9;
 android.widget.Toast.makeText(MainActivity, "Set to default: "+jumpheight, 1).show();
 }
 Dialog.dismiss();
-
-showMenuBtn();
 }
 });
 
@@ -17300,6 +17288,7 @@ var item = new styleInput();
 item.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
+showMenuBtn();
 
 Dialog.setTitle("Item ID");
 Dialog.setContentView(Layer);
@@ -17318,7 +17307,6 @@ onClick: function(view){
 rainId=item.getText();
 Dialog.dismiss();
 rainitem = true;
-showMenuBtn();
 }
 });
 
@@ -17343,6 +17331,7 @@ var shadowY = new styleInput();
 shadowY.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
+showMenuBtn();
 
 Dialog.setTitle("Hitbox range & height");
 Dialog.setContentView(Layer);
@@ -17364,8 +17353,6 @@ onClick: function(view){
 shadow1X=shadowX.getText();
 shadow1Y=shadowY.getText();
 Dialog.dismiss();
-
-showMenuBtn();
 }
 });
 
@@ -17388,6 +17375,7 @@ var time = new styleInput();
 time.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
+showMenuBtn();
 
 Dialog.setTitle("Custom time");
 Dialog.setContentView(Layer);
@@ -17406,7 +17394,6 @@ onClick: function(view){
 newtime=time.getText();
 settime1();
 Dialog.dismiss();
-showMenuBtn();
 }
 });
 
@@ -17432,6 +17419,7 @@ var Layer = new android.widget.LinearLayout(MainActivity);
 var item = new styleInput();
 var Dialog = new android.app.Dialog(MainActivity);
 var Exit = new styleButton();
+showMenuBtn();
 
 Dialog.setTitle("Custom item name");
 Dialog.setContentView(Layer);
@@ -17450,7 +17438,6 @@ onClick: function(view){
 newnamet=item.getText();
 nameitem();
 Dialog.dismiss();
-showMenuBtn();
 }
 });
 
