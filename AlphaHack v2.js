@@ -1500,7 +1500,7 @@ menuBtn.setVisibility(android.view.View.GONE);
 if(getLanguage=="en_US")android.widget.Toast.makeText(MainActivity, "Scroll down", 1).show();
  if(getLanguage=="de_DE")android.widget.Toast.makeText(MainActivity, "Scroll nach unten", 1).show();
 if(getLanguage=="es_MX")android.widget.Toast.makeText(MainActivity, "Baja abajo", 1).show();
-if(getLanguage=="ko_KR")android.widget.Toast.makeText(MainActivity, "아래를 스크롤", 1).show();
+if(getLanguage=="ko_KR")android.widget.Toast.makeText(MainActivity, "아래로 스크롤", 1).show();
             }
         }));
         layout.addView(menuBtn);
@@ -11682,7 +11682,7 @@ var nuke = new styleButton();
 nuke.setText("Nuke menu");
 if(getLanguage=="it_IT")nuke.setText("Menu esplosioni");
 if(getLanguage=="es_MX")nuke.setText("Menu de bomba nuclear");
-if(getLanguage=="ko_KR")nuke.setText("핵폭탄 메뉴");
+if(getLanguage=="ko_KR")nuke.setText("파괴자 메뉴");
 if(getLanguage=="de_DE")nuke.setText("Vernichtungs menu");
 nuke.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -12623,7 +12623,7 @@ var spawn = new styleButton();
 spawn.setText("Spawn menu");
 if(getLanguage=="it_IT")spawn.setText("Menu spawner");
 if(getLanguage=="es_MX")spawn.setText("Menu de spawn");
-if(getLanguage=="ko_KR")spawn.setText("생성 메뉴");
+if(getLanguage=="ko_KR")spawn.setText("소환 메뉴");
 if(getLanguage=="de_DE")spawn.setText("Erschaffungs menu");
 spawn.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
