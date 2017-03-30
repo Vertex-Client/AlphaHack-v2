@@ -142,7 +142,7 @@ var onBackground = {
 		return ping();
 	},
 	checkUpdate:function(){
-		return clientMessage("The auto updater is a WIP, check for updates later!");
+		return getUpdate();
 	}
 }
 
@@ -972,11 +972,14 @@ ModPE.JSON = {
     return Function("return " + str)();
   }
 };
+function getUpdate(){
 var details = "https://raw.githubusercontent.com/ArceusMatt/AlphaHack-v2/master/details.json";
 var jsoncontent = ModPE.getFromUrl(details);
 var update2 = ModPE.JSON.parse(jsoncontent);
 var newupdate = update2.version;
 if(version != newupdate)startUp(newupdate);
+}
+onBackground.checkUpdate();
 function startUp(update){
 MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
@@ -1015,7 +1018,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
                 onClick: function(viewarg){
 var urls5 = new android.content.Intent(MainActivity);
 urls5.setAction(android.content.Intent.ACTION_VIEW);
-urls5.setData(android.net.Uri.parse("https://arceusmatt.github.io/alphahack"));
+urls5.setData(android.net.Uri.parse("https://arceusmatt.github.io/alphahack.html"));
 MainActivity.startActivity(urls5);
                 }
             }));
@@ -2326,15 +2329,34 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
             settingsScroll.addView(settingsLayout);
             settingsLayout1.addView(settingsScroll);
             
-                var exit = new styleButton();
+var exitLayout = new android.widget.LinearLayout(MainActivity);
+exitLayout.setOrientation(0);
+var params = new android.widget.LinearLayout.LayoutParams(android.widget.LinearLayout.LayoutParams.MATCH_PARENT, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT, 1);
+		
+        var back = new styleButton();
+		back.setText("Back");
+		back.setLayoutParams(params);
+		back.setOnClickListener(new View.OnClickListener() {
+			onClick: function(v){
+             settings.dismiss();
+             if(haxMode==false)mainMenu();
+			 if(haxMode==true)haxMenu();
+			}
+		});
+		exitLayout.addView(back);
+		
+		var exit = new styleButton();
 		exit.setText("Exit");
+		exit.setLayoutParams(params);
 		exit.setOnClickListener(new View.OnClickListener() {
 			onClick: function(v){
              settings.dismiss();
              showMenuBtn();
 			}
 		});
-		settingsLayout.addView(exit);
+		exitLayout.addView(exit);
+		
+settingsLayout.addView(exitLayout);
 		
 	    var link = new styleButton();
             link.setText("Download link");       
@@ -3359,15 +3381,34 @@ defaultbtnc = false;
             }));
             settingsLayout.addView(btc12);
 	
-	var exit2 = new styleButton();
+var exit2Layout = new android.widget.LinearLayout(MainActivity);
+exit2Layout.setOrientation(0);
+var params = new android.widget.LinearLayout.LayoutParams(android.widget.LinearLayout.LayoutParams.MATCH_PARENT, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT, 1);
+		
+        var back2 = new styleButton();
+		back2.setText("Back");
+		back2.setLayoutParams(params);
+		back2.setOnClickListener(new View.OnClickListener() {
+			onClick: function(v){
+             settings.dismiss();
+             if(haxMode==false)mainMenu();
+			 if(haxMode==true)haxMenu();
+			}
+		});
+		exit2Layout.addView(back2);
+		
+		var exit2 = new styleButton();
 		exit2.setText("Exit");
+		exit2.setLayoutParams(params);
 		exit2.setOnClickListener(new View.OnClickListener() {
 			onClick: function(v){
              settings.dismiss();
              showMenuBtn();
 			}
 		});
-		settingsLayout.addView(exit2)
+		exit2Layout.addView(exit2);
+		
+settingsLayout.addView(exit2Layout);
 
             settings = new android.widget.PopupWindow(settingsLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)settings.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
@@ -3477,15 +3518,34 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
             miscScroll.addView(miscLayout);
             miscLayout1.addView(miscScroll);
             
-            var exit = new styleButton();
+var exitLayout = new android.widget.LinearLayout(MainActivity);
+exitLayout.setOrientation(0);
+var params = new android.widget.LinearLayout.LayoutParams(android.widget.LinearLayout.LayoutParams.MATCH_PARENT, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT, 1);
+		
+        var back = new styleButton();
+		back.setText("Back");
+		back.setLayoutParams(params);
+		back.setOnClickListener(new View.OnClickListener() {
+			onClick: function(v){
+             misc.dismiss();
+             if(haxMode==false)mainMenu();
+			 if(haxMode==true)haxMenu();
+			}
+		});
+		exitLayout.addView(back);
+		
+		var exit = new styleButton();
 		exit.setText("Exit");
-		exit.setOnClickListener(new android.view.View.OnClickListener() {
+		exit.setLayoutParams(params);
+		exit.setOnClickListener(new View.OnClickListener() {
 			onClick: function(v){
              misc.dismiss();
              showMenuBtn();
 			}
 		});
-		miscLayout.addView(exit);
+		exitLayout.addView(exit);
+		
+miscLayout.addView(exitLayout);
 		
 		var credits = new styleButton();
 		credits.setText("Credits");
@@ -4125,15 +4185,34 @@ android.os.Process.KillProcess(android.os.Process.myPid());
             }));
             miscLayout.addView(panicall);
 			
-        var exit2 = new styleButton();
+var exit2Layout = new android.widget.LinearLayout(MainActivity);
+exit2Layout.setOrientation(0);
+var params = new android.widget.LinearLayout.LayoutParams(android.widget.LinearLayout.LayoutParams.MATCH_PARENT, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT, 1);
+		
+        var back2 = new styleButton();
+		back2.setText("Back");
+		back2.setLayoutParams(params);
+		back2.setOnClickListener(new View.OnClickListener() {
+			onClick: function(v){
+             misc.dismiss();
+             if(haxMode==false)mainMenu();
+			 if(haxMode==true)haxMenu();
+			}
+		});
+		exit2Layout.addView(back2);
+		
+		var exit2 = new styleButton();
 		exit2.setText("Exit");
-		exit2.setOnClickListener(new android.view.View.OnClickListener() {
+		exit2.setLayoutParams(params);
+		exit2.setOnClickListener(new View.OnClickListener() {
 			onClick: function(v){
              misc.dismiss();
              showMenuBtn();
 			}
 		});
-		miscLayout.addView(exit2);
+		exit2Layout.addView(exit2);
+		
+miscLayout.addView(exit2Layout);
 
             misc = new android.widget.PopupWindow(miscLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)misc.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
@@ -4172,15 +4251,34 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
             cheatScroll.addView(cheatLayout);
             cheatLayout1.addView(cheatScroll);
             
-        var exit = new styleButton();
+var exitLayout = new android.widget.LinearLayout(MainActivity);
+exitLayout.setOrientation(0);
+var params = new android.widget.LinearLayout.LayoutParams(android.widget.LinearLayout.LayoutParams.MATCH_PARENT, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT, 1);
+		
+        var back = new styleButton();
+		back.setText("Back");
+		back.setLayoutParams(params);
+		back.setOnClickListener(new View.OnClickListener() {
+			onClick: function(v){
+             cheat.dismiss();
+             if(haxMode==false)mainMenu();
+			 if(haxMode==true)haxMenu();
+			}
+		});
+		exitLayout.addView(back);
+		
+		var exit = new styleButton();
 		exit.setText("Exit");
-		exit.setOnClickListener(new android.view.View.OnClickListener() {
+		exit.setLayoutParams(params);
+		exit.setOnClickListener(new View.OnClickListener() {
 			onClick: function(v){
              cheat.dismiss();
              showMenuBtn();
 			}
 		});
-		cheatLayout.addView(exit);
+		exitLayout.addView(exit);
+		
+cheatLayout.addView(exitLayout);
 		
 		var combat1 = new android.widget.TextView(MainActivity);
             combat1.setText("Combat");
@@ -6509,15 +6607,34 @@ destroyind = false;
             }));
             cheatLayout.addView(destroyy);
  
-var exit2 = new styleButton();
+var exit2Layout = new android.widget.LinearLayout(MainActivity);
+exit2Layout.setOrientation(0);
+var params = new android.widget.LinearLayout.LayoutParams(android.widget.LinearLayout.LayoutParams.MATCH_PARENT, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT, 1);
+		
+        var back2 = new styleButton();
+		back2.setText("Back");
+		back2.setLayoutParams(params);
+		back2.setOnClickListener(new View.OnClickListener() {
+			onClick: function(v){
+             cheat.dismiss();
+             if(haxMode==false)mainMenu();
+			 if(haxMode==true)haxMenu();
+			}
+		});
+		exit2Layout.addView(back2);
+		
+		var exit2 = new styleButton();
 		exit2.setText("Exit");
-		exit2.setOnClickListener(new android.view.View.OnClickListener() {
+		exit2.setLayoutParams(params);
+		exit2.setOnClickListener(new View.OnClickListener() {
 			onClick: function(v){
              cheat.dismiss();
              showMenuBtn();
 			}
 		});
-		cheatLayout.addView(exit2);
+		exit2Layout.addView(exit2);
+		
+cheatLayout.addView(exit2Layout);
             
             cheat = new android.widget.PopupWindow(cheatLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)cheat.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
@@ -6556,15 +6673,34 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
             modScroll.addView(modLayout);
             modLayout1.addView(modScroll);
             
-            var exit = new styleButton();
+var exitLayout = new android.widget.LinearLayout(MainActivity);
+exitLayout.setOrientation(0);
+var params = new android.widget.LinearLayout.LayoutParams(android.widget.LinearLayout.LayoutParams.MATCH_PARENT, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT, 1);
+		
+        var back = new styleButton();
+		back.setText("Back");
+		back.setLayoutParams(params);
+		back.setOnClickListener(new View.OnClickListener() {
+			onClick: function(v){
+             mod.dismiss();
+             if(haxMode==false)mainMenu();
+			 if(haxMode==true)haxMenu();
+			}
+		});
+		exitLayout.addView(back);
+		
+		var exit = new styleButton();
 		exit.setText("Exit");
-		exit.setOnClickListener(new android.view.View.OnClickListener() {
+		exit.setLayoutParams(params);
+		exit.setOnClickListener(new View.OnClickListener() {
 			onClick: function(v){
              mod.dismiss();
              showMenuBtn();
 			}
 		});
-		modLayout.addView(exit);
+		exitLayout.addView(exit);
+		
+modLayout.addView(exitLayout);
 		
 		var endHack = new styleButton();
 endHack.setText("End portal");
@@ -7140,15 +7276,34 @@ doubledrop = false;
             }));
             modLayout.addView(dropbutton);
 			
-        var exit2 = new styleButton();
+var exit2Layout = new android.widget.LinearLayout(MainActivity);
+exit2Layout.setOrientation(0);
+var params = new android.widget.LinearLayout.LayoutParams(android.widget.LinearLayout.LayoutParams.MATCH_PARENT, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT, 1);
+		
+        var back2 = new styleButton();
+		back2.setText("Back");
+		back2.setLayoutParams(params);
+		back2.setOnClickListener(new View.OnClickListener() {
+			onClick: function(v){
+             mod.dismiss();
+             if(haxMode==false)mainMenu();
+			 if(haxMode==true)haxMenu();
+			}
+		});
+		exit2Layout.addView(back2);
+		
+		var exit2 = new styleButton();
 		exit2.setText("Exit");
-		exit2.setOnClickListener(new android.view.View.OnClickListener() {
+		exit2.setLayoutParams(params);
+		exit2.setOnClickListener(new View.OnClickListener() {
 			onClick: function(v){
              mod.dismiss();
              showMenuBtn();
 			}
 		});
-		modLayout.addView(exit2);
+		exit2Layout.addView(exit2);
+		
+modLayout.addView(exit2Layout);
 
             mod = new android.widget.PopupWindow(modLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)mod.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
@@ -7189,15 +7344,34 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
             effectScroll.addView(effectLayout);
             effectLayout1.addView(effectScroll);
             
-            var exit = new styleButton();
+var exitLayout = new android.widget.LinearLayout(MainActivity);
+exitLayout.setOrientation(0);
+var params = new android.widget.LinearLayout.LayoutParams(android.widget.LinearLayout.LayoutParams.MATCH_PARENT, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT, 1);
+		
+        var back = new styleButton();
+		back.setText("Back");
+		back.setLayoutParams(params);
+		back.setOnClickListener(new View.OnClickListener() {
+			onClick: function(v){
+             effect.dismiss();
+             if(haxMode==false)mainMenu();
+			 if(haxMode==true)haxMenu();
+			}
+		});
+		exitLayout.addView(back);
+		
+		var exit = new styleButton();
 		exit.setText("Exit");
-		exit.setOnClickListener(new android.view.View.OnClickListener() {
+		exit.setLayoutParams(params);
+		exit.setOnClickListener(new View.OnClickListener() {
 			onClick: function(v){
              effect.dismiss();
              showMenuBtn();
 			}
 		});
-		effectLayout.addView(exit);
+		exitLayout.addView(exit);
+		
+effectLayout.addView(exitLayout);
 		
 		var mov = new styleButton();
             mov.setText("Remove all effect");
@@ -8590,15 +8764,34 @@ function inn23() {
 Entity.addEffect(getPlayerEnt(), MobEffect.movementSpeed, s*l, 0, false, true);
 }
 
-        var exit2 = new styleButton();
+var exit2Layout = new android.widget.LinearLayout(MainActivity);
+exit2Layout.setOrientation(0);
+var params = new android.widget.LinearLayout.LayoutParams(android.widget.LinearLayout.LayoutParams.MATCH_PARENT, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT, 1);
+		
+        var back2 = new styleButton();
+		back2.setText("Back");
+		back2.setLayoutParams(params);
+		back2.setOnClickListener(new View.OnClickListener() {
+			onClick: function(v){
+             effect.dismiss();
+             if(haxMode==false)mainMenu();
+			 if(haxMode==true)haxMenu();
+			}
+		});
+		exit2Layout.addView(back2);
+		
+		var exit2 = new styleButton();
 		exit2.setText("Exit");
-		exit2.setOnClickListener(new android.view.View.OnClickListener() {
+		exit2.setLayoutParams(params);
+		exit2.setOnClickListener(new View.OnClickListener() {
 			onClick: function(v){
              effect.dismiss();
              showMenuBtn();
 			}
 		});
-		effectLayout.addView(exit2);
+		exit2Layout.addView(exit2);
+		
+effectLayout.addView(exit2Layout);
 
             effect = new android.widget.PopupWindow(effectLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)effect.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
@@ -8640,15 +8833,34 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
             enchantScroll.addView(enchantLayout);
             enchantLayout1.addView(enchantScroll);
             
-            var exit = new styleButton();
+var exitLayout = new android.widget.LinearLayout(MainActivity);
+exitLayout.setOrientation(0);
+var params = new android.widget.LinearLayout.LayoutParams(android.widget.LinearLayout.LayoutParams.MATCH_PARENT, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT, 1);
+		
+        var back = new styleButton();
+		back.setText("Back");
+		back.setLayoutParams(params);
+		back.setOnClickListener(new View.OnClickListener() {
+			onClick: function(v){
+             enchant.dismiss();
+             if(haxMode==false)mainMenu();
+			 if(haxMode==true)haxMenu();
+			}
+		});
+		exitLayout.addView(back);
+		
+		var exit = new styleButton();
 		exit.setText("Exit");
-		exit.setOnClickListener(new android.view.View.OnClickListener() {
+		exit.setLayoutParams(params);
+		exit.setOnClickListener(new View.OnClickListener() {
 			onClick: function(v){
              enchant.dismiss();
              showMenuBtn();
 			}
 		});
-		enchantLayout.addView(exit);
+		exitLayout.addView(exit);
+		
+enchantLayout.addView(exitLayout);
 		
 		var button = new styleButton();
             button.setText("Add experience");
@@ -10527,15 +10739,34 @@ Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,ench);
 //Enchantment.THORNS;
 //Enchantment.UNBREAKING;
 
-        var exit2 = new styleButton();
+var exit2Layout = new android.widget.LinearLayout(MainActivity);
+exit2Layout.setOrientation(0);
+var params = new android.widget.LinearLayout.LayoutParams(android.widget.LinearLayout.LayoutParams.MATCH_PARENT, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT, 1);
+		
+        var back2 = new styleButton();
+		back2.setText("Back");
+		back2.setLayoutParams(params);
+		back2.setOnClickListener(new View.OnClickListener() {
+			onClick: function(v){
+             enchant.dismiss();
+             if(haxMode==false)mainMenu();
+			 if(haxMode==true)haxMenu();
+			}
+		});
+		exit2Layout.addView(back2);
+		
+		var exit2 = new styleButton();
 		exit2.setText("Exit");
-		exit2.setOnClickListener(new android.view.View.OnClickListener() {
+		exit2.setLayoutParams(params);
+		exit2.setOnClickListener(new View.OnClickListener() {
 			onClick: function(v){
              enchant.dismiss();
              showMenuBtn();
 			}
 		});
-		enchantLayout.addView(exit2);
+		exit2Layout.addView(exit2);
+		
+enchantLayout.addView(exit2Layout);
 
             enchant = new android.widget.PopupWindow(enchantLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)enchant.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
@@ -10577,15 +10808,34 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
             giveScroll.addView(giveLayout);
             giveLayout1.addView(giveScroll);
             
-            var exit = new styleButton();
+var exitLayout = new android.widget.LinearLayout(MainActivity);
+exitLayout.setOrientation(0);
+var params = new android.widget.LinearLayout.LayoutParams(android.widget.LinearLayout.LayoutParams.MATCH_PARENT, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT, 1);
+		
+        var back = new styleButton();
+		back.setText("Back");
+		back.setLayoutParams(params);
+		back.setOnClickListener(new View.OnClickListener() {
+			onClick: function(v){
+             give.dismiss();
+             if(haxMode==false)mainMenu();
+			 if(haxMode==true)haxMenu();
+			}
+		});
+		exitLayout.addView(back);
+		
+		var exit = new styleButton();
 		exit.setText("Exit");
-		exit.setOnClickListener(new android.view.View.OnClickListener() {
+		exit.setLayoutParams(params);
+		exit.setOnClickListener(new View.OnClickListener() {
 			onClick: function(v){
              give.dismiss();
              showMenuBtn();
 			}
 		});
-		giveLayout.addView(exit);
+		exitLayout.addView(exit);
+		
+giveLayout.addView(exitLayout);
 		
 		var button = new styleButton();
             button.setText("Custom Give");
@@ -10766,15 +11016,34 @@ addItemInventory(293, 1, 0);
             }));
             giveLayout.addView(k5);
 			
-        var exit2 = new styleButton();
+var exit2Layout = new android.widget.LinearLayout(MainActivity);
+exit2Layout.setOrientation(0);
+var params = new android.widget.LinearLayout.LayoutParams(android.widget.LinearLayout.LayoutParams.MATCH_PARENT, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT, 1);
+		
+        var back2 = new styleButton();
+		back2.setText("Back");
+		back2.setLayoutParams(params);
+		back2.setOnClickListener(new View.OnClickListener() {
+			onClick: function(v){
+             give.dismiss();
+             if(haxMode==false)mainMenu();
+			 if(haxMode==true)haxMenu();
+			}
+		});
+		exit2Layout.addView(back2);
+		
+		var exit2 = new styleButton();
 		exit2.setText("Exit");
-		exit2.setOnClickListener(new android.view.View.OnClickListener() {
+		exit2.setLayoutParams(params);
+		exit2.setOnClickListener(new View.OnClickListener() {
 			onClick: function(v){
              give.dismiss();
              showMenuBtn();
 			}
 		});
-		giveLayout.addView(exit2);
+		exit2Layout.addView(exit2);
+		
+giveLayout.addView(exit2Layout);
 
             give = new android.widget.PopupWindow(giveLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)give.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
@@ -10816,15 +11085,34 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
             morphScroll.addView(morphLayout);
             morphLayout1.addView(morphScroll);
             
-            var exit = new styleButton();
+var exitLayout = new android.widget.LinearLayout(MainActivity);
+exitLayout.setOrientation(0);
+var params = new android.widget.LinearLayout.LayoutParams(android.widget.LinearLayout.LayoutParams.MATCH_PARENT, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT, 1);
+		
+        var back = new styleButton();
+		back.setText("Back");
+		back.setLayoutParams(params);
+		back.setOnClickListener(new View.OnClickListener() {
+			onClick: function(v){
+             morph.dismiss();
+             if(haxMode==false)mainMenu();
+			 if(haxMode==true)haxMenu();
+			}
+		});
+		exitLayout.addView(back);
+		
+		var exit = new styleButton();
 		exit.setText("Exit");
-		exit.setOnClickListener(new android.view.View.OnClickListener() {
+		exit.setLayoutParams(params);
+		exit.setOnClickListener(new View.OnClickListener() {
 			onClick: function(v){
              morph.dismiss();
              showMenuBtn();
 			}
 		});
-		morphLayout.addView(exit);
+		exitLayout.addView(exit);
+		
+morphLayout.addView(exitLayout);
 		
 		var mne = new styleButton();
 mne.setText("Morph enhance");
@@ -11325,15 +11613,34 @@ Entity.setRenderType(Player.getEntity(), 17);
             }));
             morphLayout.addView(mm22);
 			
-        var exit2 = new styleButton();
+var exit2Layout = new android.widget.LinearLayout(MainActivity);
+exit2Layout.setOrientation(0);
+var params = new android.widget.LinearLayout.LayoutParams(android.widget.LinearLayout.LayoutParams.MATCH_PARENT, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT, 1);
+		
+        var back2 = new styleButton();
+		back2.setText("Back");
+		back2.setLayoutParams(params);
+		back2.setOnClickListener(new View.OnClickListener() {
+			onClick: function(v){
+             morph.dismiss();
+             if(haxMode==false)mainMenu();
+			 if(haxMode==true)haxMenu();
+			}
+		});
+		exit2Layout.addView(back2);
+		
+		var exit2 = new styleButton();
 		exit2.setText("Exit");
-		exit2.setOnClickListener(new android.view.View.OnClickListener() {
+		exit2.setLayoutParams(params);
+		exit2.setOnClickListener(new View.OnClickListener() {
 			onClick: function(v){
              morph.dismiss();
              showMenuBtn();
 			}
 		});
-		morphLayout.addView(exit2);
+		exit2Layout.addView(exit2);
+		
+morphLayout.addView(exit2Layout);
 
             morph = new android.widget.PopupWindow(morphLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)morph.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
@@ -11375,15 +11682,34 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
             nukeScroll.addView(nukeLayout);
             nukeLayout1.addView(nukeScroll);
             
-            var exit = new styleButton();
+var exitLayout = new android.widget.LinearLayout(MainActivity);
+exitLayout.setOrientation(0);
+var params = new android.widget.LinearLayout.LayoutParams(android.widget.LinearLayout.LayoutParams.MATCH_PARENT, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT, 1);
+		
+        var back = new styleButton();
+		back.setText("Back");
+		back.setLayoutParams(params);
+		back.setOnClickListener(new View.OnClickListener() {
+			onClick: function(v){
+             nuke.dismiss();
+             if(haxMode==false)mainMenu();
+			 if(haxMode==true)haxMenu();
+			}
+		});
+		exitLayout.addView(back);
+		
+		var exit = new styleButton();
 		exit.setText("Exit");
-		exit.setOnClickListener(new android.view.View.OnClickListener() {
+		exit.setLayoutParams(params);
+		exit.setOnClickListener(new View.OnClickListener() {
 			onClick: function(v){
              nuke.dismiss();
              showMenuBtn();
 			}
 		});
-		nukeLayout.addView(exit);
+		exitLayout.addView(exit);
+		
+nukeLayout.addView(exitLayout);
 		
 var tn = new styleButton();
 tn.setText("Tap nuke");
@@ -11538,15 +11864,34 @@ var n11 = new styleButton();
             }));
             nukeLayout.addView(cn);
 			
-        var exit2 = new styleButton();
+var exit2Layout = new android.widget.LinearLayout(MainActivity);
+exit2Layout.setOrientation(0);
+var params = new android.widget.LinearLayout.LayoutParams(android.widget.LinearLayout.LayoutParams.MATCH_PARENT, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT, 1);
+		
+        var back2 = new styleButton();
+		back2.setText("Back");
+		back2.setLayoutParams(params);
+		back2.setOnClickListener(new View.OnClickListener() {
+			onClick: function(v){
+             nuke.dismiss();
+             if(haxMode==false)mainMenu();
+			 if(haxMode==true)haxMenu();
+			}
+		});
+		exit2Layout.addView(back2);
+		
+		var exit2 = new styleButton();
 		exit2.setText("Exit");
-		exit2.setOnClickListener(new android.view.View.OnClickListener() {
+		exit2.setLayoutParams(params);
+		exit2.setOnClickListener(new View.OnClickListener() {
 			onClick: function(v){
              nuke.dismiss();
              showMenuBtn();
 			}
 		});
-		nukeLayout.addView(exit2);
+		exit2Layout.addView(exit2);
+		
+nukeLayout.addView(exit2Layout);
 
             nuke = new android.widget.PopupWindow(nukeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)nuke.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
@@ -11588,15 +11933,34 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
             particleScroll.addView(particleLayout);
             particleLayout1.addView(particleScroll);
             
-            var exit = new styleButton();
+var exitLayout = new android.widget.LinearLayout(MainActivity);
+exitLayout.setOrientation(0);
+var params = new android.widget.LinearLayout.LayoutParams(android.widget.LinearLayout.LayoutParams.MATCH_PARENT, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT, 1);
+		
+        var back = new styleButton();
+		back.setText("Back");
+		back.setLayoutParams(params);
+		back.setOnClickListener(new View.OnClickListener() {
+			onClick: function(v){
+             particle.dismiss();
+             if(haxMode==false)mainMenu();
+			 if(haxMode==true)haxMenu();
+			}
+		});
+		exitLayout.addView(back);
+		
+		var exit = new styleButton();
 		exit.setText("Exit");
-		exit.setOnClickListener(new android.view.View.OnClickListener() {
+		exit.setLayoutParams(params);
+		exit.setOnClickListener(new View.OnClickListener() {
 			onClick: function(v){
              particle.dismiss();
              showMenuBtn();
 			}
 		});
-		particleLayout.addView(exit);
+		exitLayout.addView(exit);
+		
+particleLayout.addView(exitLayout);
 	
 	var hitpart = new styleButton();
 hitpart.setText("Hit particles");
@@ -12190,15 +12554,34 @@ clientMessage(client + "§7Particle 34 is false");
             }));
             particleLayout.addView(p34);
 			
-        var exit2 = new styleButton();
+var exit2Layout = new android.widget.LinearLayout(MainActivity);
+exit2Layout.setOrientation(0);
+var params = new android.widget.LinearLayout.LayoutParams(android.widget.LinearLayout.LayoutParams.MATCH_PARENT, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT, 1);
+		
+        var back2 = new styleButton();
+		back2.setText("Back");
+		back2.setLayoutParams(params);
+		back2.setOnClickListener(new View.OnClickListener() {
+			onClick: function(v){
+             particle.dismiss();
+             if(haxMode==false)mainMenu();
+			 if(haxMode==true)haxMenu();
+			}
+		});
+		exit2Layout.addView(back2);
+		
+		var exit2 = new styleButton();
 		exit2.setText("Exit");
-		exit2.setOnClickListener(new android.view.View.OnClickListener() {
+		exit2.setLayoutParams(params);
+		exit2.setOnClickListener(new View.OnClickListener() {
 			onClick: function(v){
              particle.dismiss();
              showMenuBtn();
 			}
 		});
-		particleLayout.addView(exit2);
+		exit2Layout.addView(exit2);
+		
+particleLayout.addView(exit2Layout);
 
             particle = new android.widget.PopupWindow(particleLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)particle.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
@@ -12240,15 +12623,34 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
             spawnScroll.addView(spawnLayout);
             spawnLayout1.addView(spawnScroll);
             
-            var exit = new styleButton();
+var exitLayout = new android.widget.LinearLayout(MainActivity);
+exitLayout.setOrientation(0);
+var params = new android.widget.LinearLayout.LayoutParams(android.widget.LinearLayout.LayoutParams.MATCH_PARENT, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT, 1);
+		
+        var back = new styleButton();
+		back.setText("Back");
+		back.setLayoutParams(params);
+		back.setOnClickListener(new View.OnClickListener() {
+			onClick: function(v){
+             spawn.dismiss();
+             if(haxMode==false)mainMenu();
+			 if(haxMode==true)haxMenu();
+			}
+		});
+		exitLayout.addView(back);
+		
+		var exit = new styleButton();
 		exit.setText("Exit");
-		exit.setOnClickListener(new android.view.View.OnClickListener() {
+		exit.setLayoutParams(params);
+		exit.setOnClickListener(new View.OnClickListener() {
 			onClick: function(v){
              spawn.dismiss();
              showMenuBtn();
 			}
 		});
-		spawnLayout.addView(exit);
+		exitLayout.addView(exit);
+		
+spawnLayout.addView(exitLayout);
 		
 		var spawn10 = new styleButton();
             spawn10.setText("Spawn Chicken");      
@@ -12655,15 +13057,34 @@ var spawn70 = new styleButton();
             }));
             spawnLayout.addView(spawn53);
 			
-        var exit2 = new styleButton();
+var exit2Layout = new android.widget.LinearLayout(MainActivity);
+exit2Layout.setOrientation(0);
+var params = new android.widget.LinearLayout.LayoutParams(android.widget.LinearLayout.LayoutParams.MATCH_PARENT, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT, 1);
+		
+        var back2 = new styleButton();
+		back2.setText("Back");
+		back2.setLayoutParams(params);
+		back2.setOnClickListener(new View.OnClickListener() {
+			onClick: function(v){
+             spawn.dismiss();
+             if(haxMode==false)mainMenu();
+			 if(haxMode==true)haxMenu();
+			}
+		});
+		exit2Layout.addView(back2);
+		
+		var exit2 = new styleButton();
 		exit2.setText("Exit");
-		exit2.setOnClickListener(new android.view.View.OnClickListener() {
+		exit2.setLayoutParams(params);
+		exit2.setOnClickListener(new View.OnClickListener() {
 			onClick: function(v){
              spawn.dismiss();
              showMenuBtn();
 			}
 		});
-		spawnLayout.addView(exit2);
+		exit2Layout.addView(exit2);
+		
+spawnLayout.addView(exit2Layout);
 
             spawn = new android.widget.PopupWindow(spawnLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)spawn.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
@@ -12705,15 +13126,34 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
             speedScroll.addView(speedLayout);
             speedLayout1.addView(speedScroll);
             
-            var exit = new styleButton();
+var exitLayout = new android.widget.LinearLayout(MainActivity);
+exitLayout.setOrientation(0);
+var params = new android.widget.LinearLayout.LayoutParams(android.widget.LinearLayout.LayoutParams.MATCH_PARENT, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT, 1);
+		
+        var back = new styleButton();
+		back.setText("Back");
+		back.setLayoutParams(params);
+		back.setOnClickListener(new View.OnClickListener() {
+			onClick: function(v){
+             speed.dismiss();
+             if(haxMode==false)mainMenu();
+			 if(haxMode==true)haxMenu();
+			}
+		});
+		exitLayout.addView(back);
+		
+		var exit = new styleButton();
 		exit.setText("Exit");
-		exit.setOnClickListener(new android.view.View.OnClickListener() {
+		exit.setLayoutParams(params);
+		exit.setOnClickListener(new View.OnClickListener() {
 			onClick: function(v){
              speed.dismiss();
              showMenuBtn();
 			}
 		});
-		speedLayout.addView(exit);
+		exitLayout.addView(exit);
+		
+speedLayout.addView(exitLayout);
 		
 		var d1 = new styleButton();
             d1.setText("Normal speed");       
@@ -12973,15 +13413,34 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
             teleportScroll.addView(teleportLayout);
             teleportLayout1.addView(teleportScroll);
             
-            var exit = new styleButton();
+var exitLayout = new android.widget.LinearLayout(MainActivity);
+exitLayout.setOrientation(0);
+var params = new android.widget.LinearLayout.LayoutParams(android.widget.LinearLayout.LayoutParams.MATCH_PARENT, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT, 1);
+		
+        var back = new styleButton();
+		back.setText("Back");
+		back.setLayoutParams(params);
+		back.setOnClickListener(new View.OnClickListener() {
+			onClick: function(v){
+             teleport.dismiss();
+             if(haxMode==false)mainMenu();
+			 if(haxMode==true)haxMenu();
+			}
+		});
+		exitLayout.addView(back);
+		
+		var exit = new styleButton();
 		exit.setText("Exit");
-		exit.setOnClickListener(new android.view.View.OnClickListener() {
+		exit.setLayoutParams(params);
+		exit.setOnClickListener(new View.OnClickListener() {
 			onClick: function(v){
              teleport.dismiss();
              showMenuBtn();
 			}
 		});
-		teleportLayout.addView(exit);
+		exitLayout.addView(exit);
+		
+teleportLayout.addView(exitLayout);
 		
 		var button = new styleButton();
             button.setText("Select coords");
@@ -13108,15 +13567,34 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
             timeScroll.addView(timeLayout);
             timeLayout1.addView(timeScroll);
             
-            var exit = new styleButton();
+var exitLayout = new android.widget.LinearLayout(MainActivity);
+exitLayout.setOrientation(0);
+var params = new android.widget.LinearLayout.LayoutParams(android.widget.LinearLayout.LayoutParams.MATCH_PARENT, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT, 1);
+		
+        var back = new styleButton();
+		back.setText("Back");
+		back.setLayoutParams(params);
+		back.setOnClickListener(new View.OnClickListener() {
+			onClick: function(v){
+             time.dismiss();
+             if(haxMode==false)mainMenu();
+			 if(haxMode==true)haxMenu();
+			}
+		});
+		exitLayout.addView(back);
+		
+		var exit = new styleButton();
 		exit.setText("Exit");
-		exit.setOnClickListener(new android.view.View.OnClickListener() {
+		exit.setLayoutParams(params);
+		exit.setOnClickListener(new View.OnClickListener() {
 			onClick: function(v){
              time.dismiss();
              showMenuBtn();
 			}
 		});
-		timeLayout.addView(exit);
+		exitLayout.addView(exit);
+		
+timeLayout.addView(exitLayout);
 			
 var aa = new styleButton();
 aa.setText("Only day");
@@ -13389,15 +13867,34 @@ custime();
             }));
             timeLayout.addView(ct1);
 			
-        var exit2 = new styleButton();
+var exit2Layout = new android.widget.LinearLayout(MainActivity);
+exit2Layout.setOrientation(0);
+var params = new android.widget.LinearLayout.LayoutParams(android.widget.LinearLayout.LayoutParams.MATCH_PARENT, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT, 1);
+		
+        var back2 = new styleButton();
+		back2.setText("Back");
+		back2.setLayoutParams(params);
+		back2.setOnClickListener(new View.OnClickListener() {
+			onClick: function(v){
+             time.dismiss();
+             if(haxMode==false)mainMenu();
+			 if(haxMode==true)haxMenu();
+			}
+		});
+		exit2Layout.addView(back2);
+		
+		var exit2 = new styleButton();
 		exit2.setText("Exit");
-		exit2.setOnClickListener(new android.view.View.OnClickListener() {
+		exit2.setLayoutParams(params);
+		exit2.setOnClickListener(new View.OnClickListener() {
 			onClick: function(v){
              time.dismiss();
              showMenuBtn();
 			}
 		});
-		timeLayout.addView(exit2);
+		exit2Layout.addView(exit2);
+		
+timeLayout.addView(exit2Layout);
 
             time = new android.widget.PopupWindow(timeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/GUISize, MainActivity.getWindowManager().getDefaultDisplay().getHeight());
             if(default1==true)time.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(GUIColor));
@@ -13439,15 +13936,34 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
             weatherScroll.addView(weatherLayout);
             weatherLayout1.addView(weatherScroll);
             
-            var exit = new styleButton();
+var exitLayout = new android.widget.LinearLayout(MainActivity);
+exitLayout.setOrientation(0);
+var params = new android.widget.LinearLayout.LayoutParams(android.widget.LinearLayout.LayoutParams.MATCH_PARENT, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT, 1);
+		
+        var back = new styleButton();
+		back.setText("Back");
+		back.setLayoutParams(params);
+		back.setOnClickListener(new View.OnClickListener() {
+			onClick: function(v){
+             weather.dismiss();
+             if(haxMode==false)mainMenu();
+			 if(haxMode==true)haxMenu();
+			}
+		});
+		exitLayout.addView(back);
+		
+		var exit = new styleButton();
 		exit.setText("Exit");
-		exit.setOnClickListener(new android.view.View.OnClickListener() {
+		exit.setLayoutParams(params);
+		exit.setOnClickListener(new View.OnClickListener() {
 			onClick: function(v){
              weather.dismiss();
              showMenuBtn();
 			}
 		});
-		weatherLayout.addView(exit);
+		exitLayout.addView(exit);
+		
+weatherLayout.addView(exitLayout);
 		
 		var button = new styleButton();
             button.setText("Custom weather");
