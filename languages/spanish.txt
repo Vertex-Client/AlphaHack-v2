@@ -1,0 +1,16 @@
+Configuracion
+- misc
+- online menu
+- offline menu
+Menu de efectos - effect menu
+Menu de experiencia - enchant menu
+Menu de dar - give menu
+Menu de morph - morph menu
+Menu de bomba nuclear - nuke menu
+Menu de partícula - particle menu
+Menu de spawn - spawn menu
+Menu de velocidad - speed menu
+Menu de teletransportacion - teleport menu
+Menu de momento - time menu
+Menu de tiempo - weather menu
+Baja abajo - scroll down
