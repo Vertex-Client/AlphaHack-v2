@@ -124,7 +124,7 @@ function ping(){
     var bLoop = thisLoop.getMilliseconds();
     fps = 1000 / (bLoop - aLoop);
     aLoop = bLoop;
-    return bLoop;
+    return aLoop;
 }
 
 var AlphaHackPE = {
@@ -1303,17 +1303,13 @@ ModPE.langEdit("menu.options",viddd + ModPE.getI18n("menu.options"));
 ModPE.langEdit("menu.skins",viddd + ModPE.getI18n("menu.skins"));
 ModPE.langEdit("menu.store",viddd + ModPE.getI18n("menu.store"));
 ModPE.langEdit("menu.achievements",viddd + ModPE.getI18n("menu.achievements"));
-ModPE.langEdit("menu.launcherOptions",viddd + ModPE.getI18n("menu.launcherOptions"));
 ModPE.langEdit("menu.settings",viddd + ModPE.getI18n("menu.settings"));
-ModPE.langEdit("menu.playdemo",viddd + ModPE.getI18n("menu.playdemo"));
-ModPE.langEdit("menu.resetdemo",viddd + ModPE.getI18n("menu.resetdemo"));
 ModPE.langEdit("menu.returnToGame",viddd + ModPE.getI18n("menu.returnToGame"));
 ModPE.langEdit("menu.shareToLan",viddd + ModPE.getI18n("menu.shareToLan"));
 ModPE.langEdit("menu.online",viddd + ModPE.getI18n("menu.online"));
 ModPE.langEdit("menu.realms",viddd + ModPE.getI18n("menu.realms"));
 ModPE.langEdit("menu.playOnRealms",viddd + ModPE.getI18n("menu.playOnRealms"));
 ModPE.langEdit("menu.multiplayer",viddd + ModPE.getI18n("menu.multiplayer"));
-ModPE.langEdit("menu.online",viddd + ModPE.getI18n("menu.online"));
 ModPE.langEdit("menu.online",viddd + ModPE.getI18n("menu.online"));
 ModPE.langEdit("pauseScreen.quit",viddd + ModPE.getI18n("pauseScreen.quit"));
 ModPE.langEdit("pauseScreen.options",viddd + ModPE.getI18n("pauseScreen.options"));
@@ -1340,7 +1336,6 @@ ModPE.langEdit("chatScreen.hide",viddd + ModPE.getI18n("chatScreen.hide"));
 ModPE.langEdit("xbox.signin",viddd + ModPE.getI18n("xbox.signin"));
 ModPE.langEdit("xbox.signout",viddd + ModPE.getI18n("xbox.signout"));
 ModPE.langEdit("entity.generic.name",viddd + ModPE.getI18n("entity.generic.name"));
-ModPE.langEdit("gui.back",viddd + ModPE.getI18n("gui.back"));
 ModPE.langEdit("chestScreen.header.large",viddd + ModPE.getI18n("chestScreen.header.large"));
 ModPE.langEdit("chestScreen.header.player",viddd + ModPE.getI18n("chestScreen.header.player"));
 ModPE.langEdit("chestScreen.header.small",viddd + ModPE.getI18n("chestScreen.header.small"));
@@ -1376,7 +1371,6 @@ ModPE.langEdit("container.enderchest",viddd + ModPE.getI18n("container.enderches
 ModPE.langEdit("cauldronScreen.header",viddd + ModPE.getI18n("cauldronScreen.header"));
 ModPE.langEdit("externalServerScreen.header",viddd + ModPE.getI18n("externalServerScreen.header"));
 ModPE.langEdit("gui.achievements",viddd + ModPE.getI18n("gui.achievements"));
-ModPE.langEdit("gui.done",viddd + ModPE.getI18n("gui.done"));
 ModPE.langEdit("skins.picker.title",viddd + ModPE.getI18n("skins.picker.title"));
 ModPE.langEdit("skins.picker.accept.button",viddd + ModPE.getI18n("skins.picker.accept.button"));
 ModPE.langEdit("options.title",viddd + ModPE.getI18n("options.title"));
@@ -1401,7 +1395,6 @@ ModPE.langEdit("death.attack.player",viddd + ModPE.getI18n("death.attack.player"
 ModPE.langEdit("death.attack.starve",viddd + ModPE.getI18n("death.attack.starve"));
 ModPE.langEdit("death.attack.thorns",viddd + ModPE.getI18n("death.attack.thorns"));
 ModPE.langEdit("death.attack.wither",viddd + ModPE.getI18n("death.attack.wither"));
-ModPE.langEdit("gui.version",viddd + ModPE.getI18n("gui.version"));
 ModPE.langEdit("menu.version",viddd + ModPE.getI18n("menu.version"));
 ModPE.langEdit("pauseScreen.currentWorld",viddd + ModPE.getI18n("pauseScreen.currentWorld"));
 ModPE.langEdit("pauseScreen.ipAddress",viddd + ModPE.getI18n("pauseScreen.ipAddress"));
@@ -1415,6 +1408,16 @@ ModPE.langEdit("selectWorld.createNew",viddd + ModPE.getI18n("selectWorld.create
 ModPE.langEdit("addExternalServerScreen.saveButtonLabel",viddd + ModPE.getI18n("addExternalServerScreen.saveButtonLabel"));
 ModPE.langEdit("addExternalServerScreen.playButtonLabel",viddd + ModPE.getI18n("addExternalServerScreen.playButtonLabel"));
 ModPE.langEdit("addExternalServerScreen.removeButtonLabel",viddd + ModPE.getI18n("addExternalServerScreen.removeButtonLabel"));
+ModPE.langEdit("credits.skip",viddd + ModPE.getI18n("credits.skip"));
+ModPE.langEdit("commandBlockScreen.title",viddd + ModPE.getI18n("commandBlockScreen.title"));
+ModPE.langEdit("gui.cancel",viddd + ModPE.getI18n("gui.cancel"));
+ModPE.langEdit("gui.ok",viddd + ModPE.getI18n("gui.ok"));
+ModPE.langEdit("gui.yes",viddd + ModPE.getI18n("gui.yes"));
+ModPE.langEdit("gui.done",viddd + ModPE.getI18n("gui.done"));
+ModPE.langEdit("gui.back",viddd + ModPE.getI18n("gui.back"));
+ModPE.langEdit("gui.confirm",viddd + ModPE.getI18n("gui.confirm"));
+ModPE.langEdit("gui.exit",viddd + ModPE.getI18n("gui.exit"));
+/*note to self "zip/assets/resource_packs/vanilla/texts/"*/
 
 //new block destroy time
 var defaultDestroyTime = [
