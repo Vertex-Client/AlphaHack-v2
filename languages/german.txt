@@ -1,0 +1,16 @@
+- settings
+- misc
+- online menu
+- offline menu
+- effect menu
+Verzauberungs menu - enchant menu
+Geben menu - give menu
+Verwandelungs menu - morph menu
+Vernichtungs menu - nuke menu
+Partikel menu - particle menu
+Erschaffungs menu - spawn menu
+Schnelligkeits menu - speed menu
+Teleportierungs menu - teleport menu
+Zeit menu - time menu
+Wetter menu - weather menu
+Scroll nach unten - scroll down
