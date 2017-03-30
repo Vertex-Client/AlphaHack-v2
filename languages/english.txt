@@ -1,0 +1,16 @@
+Settings
+Misc
+Online menu
+Offline menu
+Effect menu
+Enchant menu
+Give menu
+Morph menu
+Nuke menu
+Particle menu
+Spawn menu
+Speed menu
+Teleport menu
+Time menu
+Weather menu
+Scroll down
