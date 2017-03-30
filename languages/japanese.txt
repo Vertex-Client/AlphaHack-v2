@@ -1,0 +1,16 @@
+設定 - settings
+- misc
+- online menu
+- offline menu
+エフェクトメニュー - effect menu
+エンチャントメニュー - enchant menu
+アイテムの付与 - give menu
+変身 - morph menu
+爆発メニュー - nuke menu
+パーティクルメニュー - particle menu
+スポーンメニュー - spawn menu
+ゲームスピードメニュー - speed menu
+텔레포트 메뉴 - teleport menu
+時間設定 - time menu
+天候 - weather menu
+- scroll down
