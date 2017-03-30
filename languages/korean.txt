@@ -1,0 +1,16 @@
+설정 - settings
+기타 - misc
+온라인 모드 - online menu
+오프라인 모드 - offline menu
+효과 메뉴 - effect menu
+마법 부여 메뉴 - enchant menu
+아이템 주기 메뉴 - give menu
+변신 메뉴 - morph menu
+핵폭탄 메뉴 - nuke menu
+파티클 메뉴 - particle menu
+생성 메뉴 - spawn menu
+속도 메뉴 - speed menu
+순간이동 메뉴 - teleport menu
+시간 메뉴 - time menu
+날씨 메뉴 - weather menu
+아래를 스크롤 - scroll down
