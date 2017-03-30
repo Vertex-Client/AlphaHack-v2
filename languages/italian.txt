@@ -1,0 +1,16 @@
+Impostazioni - settings
+- misc
+- online menu
+- offline menu
+Menu effetti - effect menu
+Menu incantamenti - enchant menu
+Menu give - give menu
+Menu trasformazioni - morph menu
+Menu esplosioni - nuke menu
+Menu particelle - particle menu
+Menu spawner - spawn menu
+Menu velocita - speed menu
+Menu teletrasporto - teleport menu
+Menu tempo - time menu
+Menu del tempo - weather menu
+- scroll down
