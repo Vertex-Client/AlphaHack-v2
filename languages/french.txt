@@ -1,0 +1,16 @@
+Paramètres - settings
+- misc
+- online menu
+- offline menu
+Effet Menu - effect menu
+Enchanter Menu - enchant menu
+Donner Menu - give menu
+- morph menu
+Destruction Menu - nuke menu
+Menu des particules - particle menu
+Créer Menu - spawn menu
+Vitesse Menu - speed menu
+- teleport menu
+Menu du temps - time menu
+Menu du météo - weather menu
+- scroll down
