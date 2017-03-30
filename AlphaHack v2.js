@@ -127,7 +127,7 @@ function ping(){
     return bLoop;
 }
 
-var onBackground = {
+var AlphaHackPE = {
 	returnAddress:function(){
 		/*godsofts json to js ip viewer, do not copy! this will only work in this mod!*/
 		return getIp(function(info){clientMessage(client + "\n" + "External IP: " + info[0] + "\nCountry: "+info[1]+ "\nRegion: "+info[2])});
@@ -979,7 +979,7 @@ var update2 = ModPE.JSON.parse(jsoncontent);
 var newupdate = update2.version;
 if(version != newupdate)startUp(newupdate);
 }
-onBackground.checkUpdate();
+AlphaHackPE.checkUpdate();
 function startUp(update){
 MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
@@ -4093,7 +4093,7 @@ var getCid = new styleButton();
             getCid.setText("What's my CID?");
             getCid.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-				onBackground.returnClient();
+				AlphaHackPE.returnClient();
                 }
             }));
             miscLayout.addView(getCid);
@@ -4102,7 +4102,7 @@ var yrip = new styleButton();
             yrip.setText("What's my IP?");
             yrip.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-			onBackground.returnAddress();
+			AlphaHackPE.returnAddress();
 clientMessage("§cDo Not Share! for your safety.");
                 }
             }));
@@ -11325,6 +11325,15 @@ Entity.setRenderType(Player.getEntity(), 47);
                 }
             }));
             morphLayout.addView(mm7);
+			
+/*var mm103 = new styleButton();
+            mm103.setText("Llama");
+            mm103.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Entity.setRenderType(Player.getEntity(), 0);
+                }
+            }));
+            morphLayout.addView(mm103);*/
 
 var mm8 = new styleButton();
             mm8.setText("Magma cube");
@@ -11354,6 +11363,15 @@ Entity.setRenderType(Player.getEntity(), 48);
                 }
             }));
             morphLayout.addView(mm9);
+			
+/*var mmsh = new styleButton();
+            msh.setText("Parrot");
+            msh.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Entity.setRenderType(Player.getEntity(), 0);
+                }
+            }));
+            morphLayout.addView(mmsh);*/
 
 var mm10 = new styleButton();
             mm10.setText("Pig");
@@ -13057,6 +13075,24 @@ var spawn70 = new styleButton();
             }));
             spawnLayout.addView(spawn53);
 			
+	/*var spawn103 = new styleButton();
+            spawn103.setText("Spawn llama");
+            spawn103.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 103);
+                }
+            }));
+            spawnLayout.addView(spawn103);
+			
+	var spawnsh = new styleButton();
+            spawnsh.setText("Spawn parrot");
+            spawnsh.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 104);
+                }
+            }));
+            spawnLayout.addView(spawnsh);*/
+			
 var exit2Layout = new android.widget.LinearLayout(MainActivity);
 exit2Layout.setOrientation(0);
 var params = new android.widget.LinearLayout.LayoutParams(android.widget.LinearLayout.LayoutParams.MATCH_PARENT, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT, 1);
@@ -14738,6 +14774,12 @@ function killing() {
 			if (Entity.getEntityTypeId(mobs[a]) == 53) {
 			Entity.setHealth(mobs[a], 0);
 			}
+			/*if (Entity.getEntityTypeId(mobs[a]) == 103) {
+			Entity.setHealth(mobs[a], 0);
+			}
+			if (Entity.getEntityTypeId(mobs[a]) == 104) {
+			Entity.setHealth(mobs[a], 0);
+			}*/
 		
 	   }
     }
@@ -14882,6 +14924,12 @@ function killingf() {
 			if (Entity.getEntityTypeId(mobs[b]) == 53) {
 			Entity.setImmobile(uuid,immobile);
 			}
+			/*if (Entity.getEntityTypeId(mobs[b]) == 103) {
+			Entity.setImmobile(uuid,immobile);
+			}
+			if (Entity.getEntityTypeId(mobs[b]) == 104) {
+			Entity.setImmobile(uuid,immobile);
+			}*/
 	   }
     }
 }
@@ -15022,6 +15070,12 @@ function killingd() {
 			if (Entity.getEntityTypeId(mobs[c]) == 53) {
 			Entity.setFireTicks(mobs[c],5);
 			}
+			/*if (Entity.getEntityTypeId(mobs[c]) == 103) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+			if (Entity.getEntityTypeId(mobs[c]) == 104) {
+			Entity.setFireTicks(mobs[c],5);
+			}*/
 		
 	   }
     }
@@ -15252,6 +15306,16 @@ function namedem() {
                 Entity.setNameTag(mobs[n], " Ender dragon "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
 			}
+			/*if (Entity.getEntityTypeId(mobs[n]) == 103) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Llama "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+			if (Entity.getEntityTypeId(mobs[n]) == 104) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Parrot "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}*/
 		
 	   }
     }
@@ -15642,7 +15706,7 @@ Entity.setVelY(Player.getEntity(), -0.5);
 		}
 	}
 	if(checkping){
-	var ping = onBackground.ping();
+	var ping = AlphaHackPE.ping();
 	ModPE.showTipMessage(ping+" ms.");
 	}
 }
