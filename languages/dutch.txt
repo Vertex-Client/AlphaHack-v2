@@ -1,0 +1,16 @@
+Instellingen - Settings
+Diversen - Misc
+Online menu - Online menu
+Offline menu - Offline menu
+Effect menu - Effect menu
+Betoveringen menu - Enchant menu
+Geef items menu - Give menu
+Morph menu - Morph menu
+Nuke menu - Nuke menu
+Partikel menu - Particle menu
+Spawn menu - Spawn menu
+Snelheid menu - Speed menu
+Teleporteer menu - Teleport menu
+Tijd menu - Time menu
+Weer menu - Weather menu
+Scroll naar beneden - Scroll down
