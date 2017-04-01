@@ -32,7 +32,7 @@ Contributor means they have decided to make a commit to the mod.<br>
 1.0.3 Morph menu<br>
 0.8.5 Nuke menu<br>
 0.8.5 Particle menu<br>
-1.0.3 Spawn menu<br>
+1.1.0 Spawn menu<br>
 0.8.5 Speed menu<br>
 0.8.5 Teleport menu<br>
 0.8.5 Time menu<br>
