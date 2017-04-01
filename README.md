@@ -56,6 +56,6 @@ Contributor means they have decided to make a commit to the mod.<br>
 - [x] Chat fonts
 - [x] No knockback
 - [ ] Player tracers WIP
-- [ ] AutoSword WIP
+- [ ] AutoSword, AutoArmor, AutoFood WIP
 - [ ] F2, F3, F5 WIP
 - [x] Unban features
