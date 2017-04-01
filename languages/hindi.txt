@@ -1,0 +1,16 @@
+विन्यास - settings
+विविध - misc
+ऑनलाइन मेनू - online menu
+ऑफ़लाइन मेनू - offline menu
+प्रभाव मेनू - effect menu
+ऐंचेंट मेनू - enchant menu
+आइटम मेनू - give menu
+मॉर्फ मेनू - morph menu
+बम मेनू - nuke menu
+कण मेनू - particle menu
+स्पॉन मेनू - spawn menu
+गति मेनू - speed menu
+टेलीपोर्ट मेनू - teleport menu
+समय मेनू - time menu
+मौसम मेनू - weather menu
+नीचे स्क्रॉल करें - scroll down
