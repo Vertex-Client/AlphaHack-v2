@@ -11328,15 +11328,6 @@ Entity.setRenderType(Player.getEntity(), 47);
                 }
             }));
             morphLayout.addView(mm7);
-			
-/*var mm103 = new styleButton();
-            mm103.setText("Llama");
-            mm103.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
-Entity.setRenderType(Player.getEntity(), 0);
-                }
-            }));
-            morphLayout.addView(mm103);*/
 
 var mm8 = new styleButton();
             mm8.setText("Magma cube");
@@ -11366,15 +11357,6 @@ Entity.setRenderType(Player.getEntity(), 48);
                 }
             }));
             morphLayout.addView(mm9);
-			
-/*var mmsh = new styleButton();
-            msh.setText("Parrot");
-            msh.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
-Entity.setRenderType(Player.getEntity(), 0);
-                }
-            }));
-            morphLayout.addView(mmsh);*/
 
 var mm10 = new styleButton();
             mm10.setText("Pig");
@@ -13078,23 +13060,41 @@ var spawn70 = new styleButton();
             }));
             spawnLayout.addView(spawn53);
 			
-	/*var spawn103 = new styleButton();
-            spawn103.setText("Spawn llama");
-            spawn103.setOnClickListener(new View.OnClickListener({
+	var spawn29 = new styleButton();
+            spawn29.setText("Spawn Llama");
+            spawn29.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 103);
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 29);
                 }
             }));
-            spawnLayout.addView(spawn103);
+            spawnLayout.addView(spawn29);
 			
-	var spawnsh = new styleButton();
-            spawnsh.setText("Spawn parrot");
-            spawnsh.setOnClickListener(new View.OnClickListener({
+	var spawn57 = new styleButton();
+            spawn57.setText("Spawn Vindicator");
+            spawn57.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 57);
+                }
+            }));
+            spawnLayout.addView(spawn57);
+			
+	var spawn104 = new styleButton();
+            spawn104.setText("Spawn Evoker");
+            spawn104.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
                     Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 104);
                 }
             }));
-            spawnLayout.addView(spawnsh);*/
+            spawnLayout.addView(spawn104);
+			
+	var spawn105 = new styleButton();
+            spawn105.setText("Spawn Vex");
+            spawn105.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 105);
+                }
+            }));
+            spawnLayout.addView(spawn105);
 			
 var exit2Layout = new android.widget.LinearLayout(MainActivity);
 exit2Layout.setOrientation(0);
@@ -14777,12 +14777,18 @@ function killing() {
 			if (Entity.getEntityTypeId(mobs[a]) == 53) {
 			Entity.setHealth(mobs[a], 0);
 			}
-			/*if (Entity.getEntityTypeId(mobs[a]) == 103) {
+			if (Entity.getEntityTypeId(mobs[a]) == 29) {
+			Entity.setHealth(mobs[a], 0);
+			}
+			if (Entity.getEntityTypeId(mobs[a]) == 57) {
 			Entity.setHealth(mobs[a], 0);
 			}
 			if (Entity.getEntityTypeId(mobs[a]) == 104) {
 			Entity.setHealth(mobs[a], 0);
-			}*/
+			}
+			if (Entity.getEntityTypeId(mobs[a]) == 105) {
+			Entity.setHealth(mobs[a], 0);
+			}
 		
 	   }
     }
@@ -14927,12 +14933,18 @@ function killingf() {
 			if (Entity.getEntityTypeId(mobs[b]) == 53) {
 			Entity.setImmobile(uuid,immobile);
 			}
-			/*if (Entity.getEntityTypeId(mobs[b]) == 103) {
+			if (Entity.getEntityTypeId(mobs[b]) == 29) {
+			Entity.setImmobile(uuid,immobile);
+			}
+			if (Entity.getEntityTypeId(mobs[b]) == 57) {
 			Entity.setImmobile(uuid,immobile);
 			}
 			if (Entity.getEntityTypeId(mobs[b]) == 104) {
 			Entity.setImmobile(uuid,immobile);
-			}*/
+			}
+			if (Entity.getEntityTypeId(mobs[b]) == 105) {
+			Entity.setImmobile(uuid,immobile);
+			}
 	   }
     }
 }
@@ -15073,12 +15085,18 @@ function killingd() {
 			if (Entity.getEntityTypeId(mobs[c]) == 53) {
 			Entity.setFireTicks(mobs[c],5);
 			}
-			/*if (Entity.getEntityTypeId(mobs[c]) == 103) {
+			if (Entity.getEntityTypeId(mobs[c]) == 29) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+			if (Entity.getEntityTypeId(mobs[c]) == 57) {
 			Entity.setFireTicks(mobs[c],5);
 			}
 			if (Entity.getEntityTypeId(mobs[c]) == 104) {
 			Entity.setFireTicks(mobs[c],5);
-			}*/
+			}
+			if (Entity.getEntityTypeId(mobs[c]) == 105) {
+			Entity.setFireTicks(mobs[c],5);
+			}
 		
 	   }
     }
@@ -15309,16 +15327,26 @@ function namedem() {
                 Entity.setNameTag(mobs[n], " Ender dragon "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
 			}
-			/*if (Entity.getEntityTypeId(mobs[n]) == 103) {
+			if (Entity.getEntityTypeId(mobs[n]) == 29) {
 			if(Entity.getNameTag(mobs[n]) == ""){
                 Entity.setNameTag(mobs[n], " Llama "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
 			}
+			if (Entity.getEntityTypeId(mobs[n]) == 57) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Vindicator "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
 			if (Entity.getEntityTypeId(mobs[n]) == 104) {
 			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Parrot "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+                Entity.setNameTag(mobs[n], " Evoker "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
             }
-			}*/
+			}
+			if (Entity.getEntityTypeId(mobs[n]) == 105) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Vex "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
 		
 	   }
     }
