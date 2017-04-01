@@ -21,7 +21,7 @@ http://imgur.com/1Vkl3q2<br>
 [contributors: Godsoft029, Johnmαcrocrαft, αJ170, Peαcestorm(αgαmeR), αPRIC0CKS, Vertex client teαm];<br>
 Contributor means they have decided to make a commit to the mod.<br>
 --------------------<br>
-# Menus &amp; menu issues
+# Menus
 0.8.5 Misc<br>
 0.8.5 Settings<br>
 0.8.5 Online mods<br>
@@ -29,7 +29,7 @@ Contributor means they have decided to make a commit to the mod.<br>
 0.8.5 Effect menu<br>
 0.8.5 Enchant menu<br>
 0.8.5 Give menu<br>
-1.0.3 Morph menu (Horse(54) crashes);<br>
+1.0.3 Morph menu<br>
 0.8.5 Nuke menu<br>
 0.8.5 Particle menu<br>
 1.0.3 Spawn menu<br>
