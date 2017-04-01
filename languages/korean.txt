@@ -6,7 +6,7 @@
 마법 부여 메뉴 - enchant menu
 아이템 주기 메뉴 - give menu
 변신 메뉴 - morph menu
-파괴자 메뉴 - nuke menu
+핵폭탄 메뉴 - nuke menu
 파티클 메뉴 - particle menu
 소환 메뉴 - spawn menu
 속도 메뉴 - speed menu

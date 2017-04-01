@@ -11682,7 +11682,7 @@ var nuke = new styleButton();
 nuke.setText("Nuke menu");
 if(getLanguage=="it_IT")nuke.setText("Menu esplosioni");
 if(getLanguage=="es_MX")nuke.setText("Menu de bomba nuclear");
-if(getLanguage=="ko_KR")nuke.setText("파괴자 메뉴");
+if(getLanguage=="ko_KR")nuke.setText("핵폭탄 메뉴");
 if(getLanguage=="de_DE")nuke.setText("Vernichtungs menu");
 nuke.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){

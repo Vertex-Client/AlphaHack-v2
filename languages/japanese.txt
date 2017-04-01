@@ -10,7 +10,7 @@
 パーティクルメニュー - particle menu
 スポーンメニュー - spawn menu
 ゲームスピードメニュー - speed menu
-텔레포트 메뉴 - teleport menu
+- teleport menu
 時間設定 - time menu
 天候 - weather menu
 - scroll down
