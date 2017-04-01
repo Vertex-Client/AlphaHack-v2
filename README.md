@@ -44,6 +44,8 @@ Contributor means they have decided to make a commit to the mod.<br>
 - [x] Hitbox / reach
 - [ ] Walk on liquid WIP
 - [x] Glide
+- [ ] UpGlide WIP
+- [ ] Limitless elytra WIP
 - [x] Brightness
 - [x] Instant break
 - [x] Spider
