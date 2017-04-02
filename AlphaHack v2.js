@@ -1165,6 +1165,7 @@ if(getLanguage=="en_US")android.widget.Toast.makeText(MainActivity, "Scroll down
  if(getLanguage=="de_DE")android.widget.Toast.makeText(MainActivity, "Scrolle herunter", 1).show();
 if(getLanguage=="es_MX" || getLanguage=="es_ES")android.widget.Toast.makeText(MainActivity, "Baja abajo", 1).show();
 if(getLanguage=="ko_KR")android.widget.Toast.makeText(MainActivity, "아래로 스크롤", 1).show();
+if(getLanguage=="nl_NL")android.widget.Toast.makeText(MainActivity, "Scroll naar beneden", 1).show();
             }
         }));
         layout.addView(menuBtn);
@@ -4193,6 +4194,7 @@ settings.setText("Settings");
 	    if(getLanguage=="ko_KR")settings.setText("설정");
 		if(getLanguage=="de_DE")settings.setText("Einstellungen");
 		if(getLanguage=="ja_JP")settings.setText("設定");
+		if(getLanguage=="nl_NL")settings.setText("Instellingen");
 settings.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              settings_menu();
@@ -4205,6 +4207,7 @@ var misc = new styleButton();
 misc.setText("Misc");
 if(getLanguage=="ko_KR")misc.setText("기타");
 if(getLanguage=="de_DE")misc.setText("Verschiedenes");
+if(getLanguage=="nl_NL")misc.setText("Diversen");
 misc.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              misc_menu();
@@ -8801,6 +8804,7 @@ if(getLanguage=="es_MX" || getLanguage=="es_ES")enchant.setText("Menu de experie
 if(getLanguage=="ko_KR")enchant.setText("마법 부여 메뉴");
 if(getLanguage=="de_DE")enchant.setText("Verzauberungs menu");
 if(getLanguage=="ja_JP")enchant.setText("エンチャントメニュー");
+if(getLanguage=="nl_NL")enchant.setText("Betoveringen menu");
 enchant.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              enchant_menu();
@@ -10777,6 +10781,7 @@ if(getLanguage=="es_MX" || getLanguage=="es_ES")give.setText("Menu de dar");
 if(getLanguage=="ko_KR")give.setText("아이템 주기 메뉴");
 if(getLanguage=="de_DE")give.setText("Item-manager");
 if(getLanguage=="ja_JP")give.setText("アイテムの付与");
+if(getLanguage=="nl_NL")give.setText("Geef items menu");
 give.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              give_menu();
@@ -11905,6 +11910,7 @@ if(getLanguage=="es_MX" || getLanguage=="es_ES")particle.setText("Menu de partí
 if(getLanguage=="ko_KR")particle.setText("파티클 메뉴");
 if(getLanguage=="de_DE")particle.setText("Partikel menu");
 if(getLanguage=="ja_JP")particle.setText("パーティクルメニュー");
+if(getLanguage=="nl_NL")particle.setText("Partikel menu");
 particle.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              particle_menu();
@@ -13136,6 +13142,7 @@ if(getLanguage=="es_MX" || getLanguage=="es_ES")speed.setText("Menu de velocidad
 if(getLanguage=="ko_KR")speed.setText("속도 메뉴");
 if(getLanguage=="de_DE")speed.setText("Schnelligkeits menu");
 if(getLanguage=="ja_JP")speed.setText("ゲームスピードメニュー");
+if(getLanguage=="nl_NL")speed.setText("Snelheid menu");
 speed.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              speed_menu();
@@ -13424,6 +13431,7 @@ if(getLanguage=="es_MX" || getLanguage=="es_ES")teleport.setText("Menu de teletr
 if(getLanguage=="ko_KR")teleport.setText("순간이동 메뉴");
 if(getLanguage=="de_DE")teleport.setText("Teleporter menu");
 if(getLanguage=="ja_JP")teleport.setText("テレポートメニュー");
+if(getLanguage=="nl_NL")teleport.setText("Teleporter menu");
 teleport.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              teleport_menu();
@@ -13579,6 +13587,7 @@ if(getLanguage=="es_MX" || getLanguage=="es_ES")time.setText("Menu de momento");
 if(getLanguage=="ko_KR")time.setText("시간 메뉴");
 if(getLanguage=="de_DE")time.setText("Zeit-Einstellungen");
 if(getLanguage=="ja_JP")time.setText("時間設定");
+if(getLanguage=="nl_NL")time.setText("Tijd menu");
 time.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              time_menu();
@@ -13949,6 +13958,7 @@ if(getLanguage=="es_MX" || getLanguage=="es_ES")weather.setText("Menu de tiempo"
 if(getLanguage=="ko_KR")weather.setText("날씨 메뉴");
 if(getLanguage=="de_DE")weather.setText("Wetter menu");
 if(getLanguage=="ja_JP")weather.setText("天候");
+if(getLanguage=="nl_NL")weather.setText("Weer menu");
 weather.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              weather_menu();
