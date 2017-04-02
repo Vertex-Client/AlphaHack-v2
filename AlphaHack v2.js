@@ -4153,7 +4153,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
 			textView1.setText("Later");
 			textView1.setTextColor(android.graphics.Color.BLUE);
 			textView1.setPadding(185,10,185,10);
-			textView1.setOnClickListener(new View.OnClickListener({
+			textView1.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 				updia.dismiss();
                 }
@@ -4164,7 +4164,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
 			textView2.setText("Update");
 			textView2.setTextColor(android.graphics.Color.BLUE);
 			textView2.setPadding(185,10,185,10);
-			textView2.setOnClickListener(new View.OnClickListener({
+			textView2.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 var urls5 = new android.content.Intent(MainActivity);
 urls5.setAction(android.content.Intent.ACTION_VIEW);
@@ -4230,7 +4230,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
 		
             exit.setText("Exit");
 			exit.setTextColor(android.graphics.Color.RED);
-            exit.setOnClickListener(new View.OnClickListener({
+            exit.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
                     wv.dismiss();
 			showMenuBtn();
@@ -4242,7 +4242,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
             wvLayout.addView(exit);
 			
             settings.setText("Settings");
-            settings.setOnClickListener(new View.OnClickListener({
+            settings.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 				webs.setVisibility(android.view.View.GONE);
 				settings.setVisibility(android.view.View.GONE);
@@ -4259,7 +4259,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
 			
             back.setText("Back to webview");
 			back.setVisibility(android.view.View.GONE);
-            back.setOnClickListener(new View.OnClickListener({
+            back.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 				webs.setVisibility(android.view.View.VISIBLE);
 				settings.setVisibility(android.view.View.VISIBLE);
@@ -4276,7 +4276,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
 			
             clear.setText("Clear history");
 			clear.setVisibility(android.view.View.GONE);
-            clear.setOnClickListener(new View.OnClickListener({
+            clear.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 				webs.clearCache(true);
 				webs.clearFormData();
@@ -4288,7 +4288,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
 			
             backb.setText("Back to first page");
 			backb.setVisibility(android.view.View.GONE);
-            backb.setOnClickListener(new View.OnClickListener({
+            backb.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 				android.widget.Toast.makeText(ctx, "Loading... "+url, 1).show();
 				webs.loadUrl(url);
@@ -4298,7 +4298,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
 			
 js1.setText("JavaScript enabled");
 			js1.setTextColor(android.graphics.Color.WHITE);
-            js1.setOnClickListener(new View.OnClickListener({
+            js1.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
              jscript?jscript=false:jscript=true;
 if(jscript == true){
@@ -4321,7 +4321,7 @@ jscript = false;
 			
 			geo.setText("Geolocation disabled");
 			geo.setTextColor(android.graphics.Color.WHITE);
-            geo.setOnClickListener(new View.OnClickListener({
+            geo.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
              geoloco?geoloco=false:geoloco=true;
 if(geoloco == true){
@@ -4344,7 +4344,7 @@ geoloco = false;
 			
 			passes.setText("SavePasswords disabled");
 			passes.setTextColor(android.graphics.Color.WHITE);
-            passes.setOnClickListener(new View.OnClickListener({
+            passes.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
              savepass?savepass=false:savepass=true;
 if(savepass == true){
