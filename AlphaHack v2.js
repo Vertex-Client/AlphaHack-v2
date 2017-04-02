@@ -4130,6 +4130,307 @@ select.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android
     }}));
 }
 
+function startUp(update){
+MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
+        try{
+            var updiaLayout = new android.widget.LinearLayout(MainActivity);
+            var updiaScroll = new android.widget.ScrollView(MainActivity);
+            var updiaLayout1 = new android.widget.LinearLayout(MainActivity);
+            updiaLayout.setOrientation(1);
+            updiaLayout1.setOrientation(1);
+            updiaScroll.addView(updiaLayout);
+            updiaLayout1.addView(updiaScroll);
+			
+			var text1 = new android.widget.TextView(MainActivity);
+            text1.setText("\n\n\nA new update is available.\nBug fixes, less crashes, new features & more!\nWould you like to update AlphaHack v2?\nCurrent version: "+version+"\nNew version: "+update+"\n");
+            text1.setTextColor(android.graphics.Color.WHITE);
+			text1.setPadding(10,20,130,20);
+            updiaLayout.addView(text1);
+			
+			var doubleLayout = new android.widget.LinearLayout(MainActivity);
+			
+			textView1 = new styleButton();
+			textView1.setText("Later");
+			textView1.setTextColor(android.graphics.Color.BLUE);
+			textView1.setPadding(185,10,185,10);
+			textView1.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				updia.dismiss();
+                }
+            }));
+			doubleLayout.addView(textView1);
+			
+			textView2 = new styleButton();
+			textView2.setText("Update");
+			textView2.setTextColor(android.graphics.Color.BLUE);
+			textView2.setPadding(185,10,185,10);
+			textView2.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+var urls5 = new android.content.Intent(MainActivity);
+urls5.setAction(android.content.Intent.ACTION_VIEW);
+urls5.setData(android.net.Uri.parse("https://arceusmatt.github.io/alphahack.html"));
+MainActivity.startActivity(urls5);
+                }
+            }));
+			doubleLayout.addView(textView2);
+			
+			updiaLayout.addView(doubleLayout);
+			
+			            updia = new android.widget.PopupWindow(updiaLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/1.01, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1.01);
+		   var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(android.graphics.Color.BLACK);
+      bg.setStroke(10,android.graphics.Color.BLUE);
+updiaLayout1.setBackgroundDrawable(bg);
+updiaLayout1.setPadding(20,1,20,1);
+            updia.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.CENTER | android.view.Gravity.CENTER, 0, 0);
+            }catch(error){
+                android.widget.Toast.makeText(MainActivity, "Update updia, Error: " + error, 1).show();
+            }
+    }}));
+}
+
+function betterWebview(url){
+MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
+        try{
+            var wvLayout = new android.widget.LinearLayout(MainActivity);
+            var wvScroll = new android.widget.ScrollView(MainActivity);
+            var wvLayout1 = new android.widget.LinearLayout(MainActivity);
+            wvLayout.setOrientation(1);
+            wvLayout1.setOrientation(1);
+            wvScroll.addView(wvLayout);
+            wvLayout1.addView(wvScroll);
+		
+		var webs = new android.webkit.WebView(MainActivity);
+		webs.setWebChromeClient(new android.webkit.WebChromeClient());
+		webs.setWebViewClient(new android.webkit.WebViewClient());
+		webs.setScrollBarStyle(webs.SCROLLBARS_INSIDE_OVERLAY);
+		webs.requestFocus(webs.FOCUS_DOWN);
+		webs.requestFocusFromTouch();
+		var webset = webs.getSettings();
+		
+		var exit = new styleButton();
+		var settings = new styleButton();
+		var back = new styleButton();
+		var clear = new styleButton();
+		var backb = new styleButton();
+		var js1 = new styleButton();
+		var geo = new styleButton();
+		var passes = new styleButton();
+		var agent1 = new android.widget.TextView(MainActivity);
+		back.setVisibility(android.view.View.GONE);
+		clear.setVisibility(android.view.View.GONE);
+		backb.setVisibility(android.view.View.GONE);
+		js1.setVisibility(android.view.View.GONE);
+		geo.setVisibility(android.view.View.GONE);
+		passes.setVisibility(android.view.View.GONE);
+		agent1.setVisibility(android.view.View.GONE);
+		var jscript = true;
+		var geoloco = false;
+		var savepass = false;
+		
+            exit.setText("Exit");
+			exit.setTextColor(android.graphics.Color.RED);
+            exit.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    wv.dismiss();
+			showMenuBtn();
+			webs.clearCache(true);
+			webs.clearFormData();
+			webs.clearHistory();
+                }
+            }));
+            wvLayout.addView(exit);
+			
+            settings.setText("Settings");
+            settings.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				webs.setVisibility(android.view.View.GONE);
+				settings.setVisibility(android.view.View.GONE);
+				back.setVisibility(android.view.View.VISIBLE);
+				clear.setVisibility(android.view.View.VISIBLE);
+				backb.setVisibility(android.view.View.VISIBLE);
+				js1.setVisibility(android.view.View.VISIBLE);
+				geo.setVisibility(android.view.View.VISIBLE);
+				passes.setVisibility(android.view.View.VISIBLE);
+			    agent1.setVisibility(android.view.View.VISIBLE);
+                }
+            }));
+            wvLayout.addView(settings);
+			
+            back.setText("Back to webview");
+			back.setVisibility(android.view.View.GONE);
+            back.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				webs.setVisibility(android.view.View.VISIBLE);
+				settings.setVisibility(android.view.View.VISIBLE);
+				back.setVisibility(android.view.View.GONE);
+				clear.setVisibility(android.view.View.GONE);
+				backb.setVisibility(android.view.View.GONE);
+				js1.setVisibility(android.view.View.GONE);
+				geo.setVisibility(android.view.View.GONE);
+				passes.setVisibility(android.view.View.GONE);
+			    agent1.setVisibility(android.view.View.GONE);
+                }
+            }));
+            wvLayout.addView(back);
+			
+            clear.setText("Clear history");
+			clear.setVisibility(android.view.View.GONE);
+            clear.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				webs.clearCache(true);
+				webs.clearFormData();
+				webs.clearHistory();
+				android.widget.Toast.makeText(ctx, "Cache & history cleared.", 1).show();
+                }
+            }));
+            wvLayout.addView(clear);
+			
+            backb.setText("Back to first page");
+			backb.setVisibility(android.view.View.GONE);
+            backb.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				android.widget.Toast.makeText(ctx, "Loading... "+url, 1).show();
+				webs.loadUrl(url);
+                }
+            }));
+            wvLayout.addView(backb);
+			
+js1.setText("JavaScript enabled");
+			js1.setTextColor(android.graphics.Color.WHITE);
+            js1.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             jscript?jscript=false:jscript=true;
+if(jscript == true){
+js1.setTextColor(android.graphics.Color.GREEN);
+js1.setText("JavaScript enabled");
+webset.setJavaScriptEnabled(true);
+webs.reload();
+jscript = true;
+}
+if(jscript == false){
+js1.setTextColor(android.graphics.Color.RED);
+js1.setText("JavaScript disabled");
+webset.setJavaScriptEnabled(false);
+webs.reload();
+jscript = false;
+}
+                }
+            }));
+            wvLayout.addView(js1);
+			
+			geo.setText("Geolocation disabled");
+			geo.setTextColor(android.graphics.Color.WHITE);
+            geo.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             geoloco?geoloco=false:geoloco=true;
+if(geoloco == true){
+geo.setTextColor(android.graphics.Color.GREEN);
+geo.setText("Geolocation enabled");
+webset.setGeolocationEnabled(true);
+webs.reload();
+geoloco = true;
+}
+if(geoloco == false){
+geo.setTextColor(android.graphics.Color.RED);
+geo.setText("Geolocation disabled");
+webset.setGeolocationEnabled(false);
+webs.reload();
+geoloco = false;
+}
+                }
+            }));
+            wvLayout.addView(geo);
+			
+			passes.setText("SavePasswords disabled");
+			passes.setTextColor(android.graphics.Color.WHITE);
+            passes.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+             savepass?savepass=false:savepass=true;
+if(savepass == true){
+passes.setTextColor(android.graphics.Color.GREEN);
+passes.setText("SavePasswords enabled");
+webset.setSavePassword(true);
+webs.reload();
+savepass = true;
+}
+if(savepass == false){
+passes.setTextColor(android.graphics.Color.RED);
+passes.setText("SavePasswords disabled");
+webset.setSavePassword(false);
+webs.reload();
+savepass = false;
+}
+                }
+            }));
+            wvLayout.addView(passes);
+		
+		agent1.setText(webset.getUserAgentString()+"");
+		agent1.setTextColor(android.graphics.Color.WHITE);
+		var textviewBg = new android.graphics.drawable.GradientDrawable();
+		textviewBg.setColor(android.graphics.Color.BLACK);
+		agent1.setBackgroundDrawable(textviewBg);
+		wvLayout.addView(agent1);
+            
+			webset.setLoadsImagesAutomatically(true);
+			webset.setJavaScriptCanOpenWindowsAutomatically(false);
+			webset.setSupportZoom(true);
+			webset.setBuiltInZoomControls(true);
+			webset.setDisplayZoomControls(false);
+			webset.setGeolocationEnabled(geoloco);
+			webset.setJavaScriptEnabled(jscript);
+			webset.setSavePassword(savepass);
+			webset.setAppCacheEnabled(false);
+			webset.setUserAgentString(webset.getUserAgentString());
+			webset.setAllowContentAccess(false);
+			webset.setAllowFileAccess(false);
+			webset.setAllowFileAccessFromFileURLs(false);
+			webset.setAllowUniversalAccessFromFileURLs(false);
+			webset.setDatabaseEnabled(false);
+			webset.setCacheMode(android.webkit.WebSettings.LOAD_NO_CACHE);
+			webset.setDomStorageEnabled(false);
+		        webs.requestFocus(android.view.View.FOCUS_DOWN);
+/*webs.setOnTouchListener(new android.view.View.OnTouchListener(
+      {
+      onTouch:function(v, e){
+      switch(e.getAction()){
+      case android.view.MotionEvent.ACTION_UP:
+      case android.view.MotionEvent.ACTION_DOWN:
+	  if(v.hasFocus()){
+	  v.requestFocus();
+	  ctx.getWindow().setSoftInputMode(android.view.WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
+	  var InputMethodManager = android.view.inputmethod.InputMethodManager;
+	  var input = ctx.getSystemService(android.content.Context.INPUT_METHOD_SERVICE);
+	  input.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+	  
+	  *//* 
+	  thanks godsoft029 for fixing the keyboard issue :) now i dont have to use this. ^ 
+	  *//*
+	  
+	  }
+      break;
+      }
+      return false;
+      }
+      }));*/
+			webs.loadUrl(url);
+			wvLayout.addView(webs);
+
+wv = new android.widget.PopupWindow(wvLayout1, dip2px(500), dip2px(500), true);
+wv = new android.widget.PopupWindow(wvLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/1, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1, true);
+	  var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(android.graphics.Color.TRANSPARENT);
+      bg.setStroke(10,GUIStroke);
+wvLayout1.setBackgroundDrawable(bg);
+wvLayout1.setPadding(20,0,20,0);
+wv.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.TRANSPARENT));
+            wv.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.CENTER | android.view.Gravity.CENTER, 0, 0);
+            }catch(error){
+                android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
+            }
+    }}));
+}
+
 /*M̳̘̤̜̩͙̹̃̾̀̉̽͐̌ͪ̈ͮͫͮͤ̃ͩ̉͊̆̚a̤̮̥͕̙̠̦̫̦͍̗̹̠̪ͩͩ͂̋̓ͦͭ̅ͣ̅̈́i̥̭̟̱̘ͩͫͪ͆̏ͥͣǹ̼̪̗͖̪̱͙̫̱̥̣͍̮̬̞̯̯̎͆͒ͣͮ̾ͣ͂ ̦̰̝͇̠̜̙̟̯͍͎͕̹͈͎͚ͭ̅̀̊͊̀̚m̺̟̬͍̼ͩ͌̍̀̿̓̔é͎̟̯̹̰̼̪͓͈̪͖̜͔͉͇̤̘̌͛ͨ͒͊͂̓͑̈́̂͒ͮͯ̓̍̎ͮn̺͖̻͎̰͚ͪ̓̿ͮͩ͆͂̓ͭ̂ͤ̈́͗͂ͪͧ̆͒̄u̦͚̪̻̳͔ͧͬ͋̂̓ͥ̍̈́̈́ͮ͛ͮͮͅͅ*/
 
 function mainMenu(){
