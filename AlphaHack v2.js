@@ -1,7 +1,5 @@
 var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
 /*
-A͎̝͎͎̔͒̄ͯͤ́̍̚_͇̦̦̭ͥͪl̮̗̙̒̾_̣̭̠ͮͬp̥͚̯ͥ̉͒̆͋_̜͍̹̲̌̎͋̂ͭ̓ͥh̜̭̺ͪ͑_͔̗̮̼̺̰̰̳̄́̐͂ả̪̰̙̞͈̤̪͎͈͆_̳̱̘̗͙̪̖̖͐_̜̥͕̝̹̏ͪ͆̋̒̽̚ͅH͎̹̪̱͇̖̼͋̉_͉̯͇͖̜͈̖ͨ͆̔͊͛͑̀a̩͖̺͖̗̮̭͊ͮ͒̚_͇̲̀̈ͬ̆ͫ̊̒́c̙̹̼͚͒͋́͑ͧͪ̅ͩ_̫̮̮̤̺̯͉̠̠̽͊͊͛̇̀̾̐ḵ͕͖̉_̜̻̪͓̖͖ͩͯ̾̾̒̑̅̍ͪ_̣͕̤̓́̿̓͂͆̃̐P̰͕̾ͨE̬͎̪̹͎̖̠̋͒̓͑̅̀ͧͬͅ_̫̞̄͊_̙͕͎̱ͭͨ͑v̪͖̹͈̻̣͍͗̽̈̊̽̆̉͐2̬͔ͫͭͤ̓̈̔ͥ
-
 <>--------------------<>
 [AlphαHαck by: ArceusMαtt (c) 2016 - 2017];
 <>--------------------<>
@@ -19,73 +17,53 @@ http://imgur.com/1Vkl3q2
 [contributors: Godsoft029, Johnmαcrocrαft, αJ170, Peαcestorm(αgαmeR), αPRIC0CKS, Vertex client teαm];
 Contributor means they have decided to make a commit to the mod.
 <>--------------------<>
-
-A͎̝͎͎̔͒̄ͯͤ́̍̚_͇̦̦̭ͥͪl̮̗̙̒̾_̣̭̠ͮͬp̥͚̯ͥ̉͒̆͋_̜͍̹̲̌̎͋̂ͭ̓ͥh̜̭̺ͪ͑_͔̗̮̼̺̰̰̳̄́̐͂ả̪̰̙̞͈̤̪͎͈͆_̳̱̘̗͙̪̖̖͐_̜̥͕̝̹̏ͪ͆̋̒̽̚ͅH͎̹̪̱͇̖̼͋̉_͉̯͇͖̜͈̖ͨ͆̔͊͛͑̀a̩͖̺͖̗̮̭͊ͮ͒̚_͇̲̀̈ͬ̆ͫ̊̒́c̙̹̼͚͒͋́͑ͧͪ̅ͩ_̫̮̮̤̺̯͉̠̠̽͊͊͛̇̀̾̐ḵ͕͖̉_̜̻̪͓̖͖ͩͯ̾̾̒̑̅̍ͪ_̣͕̤̓́̿̓͂͆̃̐P̰͕̾ͨE̬͎̪̹͎̖̠̋͒̓͑̅̀ͧͬͅ_̫̞̄͊_̙͕͎̱ͭͨ͑v̪͖̹͈̻̣͍͗̽̈̊̽̆̉͐2̬͔ͫͭͤ̓̈̔ͥ
 */
 
 var MainActivity = ctx;
 
-//Get language of client side minecraft
 var getLanguage = ModPE.getLanguage();
+var getVersion = ModPE.getMinecraftVersion();
 /*Thanks to godsoft029 and many others for german translate*/
 /*Thanks to MasterProGame & TheNewHEROBRINE for italian translate*/
 /*Thanks to walpo for spanish translate*/
 /*Thanks to johnmacrocraft for korean translate*/
+/*Thanks to billbeds for hindi translate*/
+/*Thanks to anton for swedish translate*/
+/*Thanks to peacestorm(AgameR) for dutch translate*/
 
-//get version of client side minecraft
-var getVer = ModPE.getMinecraftVersion();
-
-var View = android.view.View;
-
-//Defines
-//define gui incase of error
 var GUI;
-//define menu incase of error
 var menu;
-//define active incase of error
-var active;
-//define counting variable
-var num0 = 0;
-//idek
 var vidd = true;
-//define mcpe text color variable
-var viddd = "§9";
-//define spam text name
-var text = "AlphαHαck!";
-//define an auto space variable
-var space = " ";
-//define version
-var version = "0.8.5";
-//tracer define length
+var viddd = '§9';
+var text = 'AlphαHαck!';
+var space = ' ';
+var version = '0.8.5';
 var chestTracersRange = 10;
-//tracer define mode
 var chestTracersGroundMode = "on";
-//tracer define particle
 var chestTracersParticle = "on";
-var playerTracersRange = 10;
-var playerTracersGroundMode = "on";
-var playerTracersParticle = "on";
-var oreTracersRange = 10;
-var oreTracersGroundMode = "on";
-var oreTracersParticle = "on";
 var offtime = 0;
-//define an empty text variable
+var seconds = '1000';
+var numhack = 0;
+var client = '§f<§9AlphαHαck§f> ';
+var copyright = '©';
+var trademark = 'AlphaHackPE ™';
+var modpeFolder = ctx.getDir('ModPE', 0);
+var modpeFile = new java.io.File(modpeFolder, 'AlphaHack v2.js');
+var perm = '*';
+
+var playerDir = [0, 0, 0];
+var DEG_TO_RAD = Math["PI"] / 180;
+
+var can = 1;
+var canGetHP = 1;
+var HP;
+var gravity = -0.07840000092983246;
+
+/*S͎̹̦͔̰̪̻͎̈̈́͂̍ͬͅt̼̙͇̫͎̪̹̽̍̉̌͆̃̋ͬ̊ͦͅr̺͎̙̯̺̟̮̗̳̰̗̙͉̠̦̙͒̆ͥ̄ͭ͂ͨ̀̑ͧ̿ͥ̉̌ͥ̒̚i̲͓̫̭̫̫̰̥̖͎̲͎̫͕ͣ̎̄̐͂n̺̩̭̗̫̻̗͖̖̯̙̟̱͂ͭ̐͛ͪ̑ͣͣ̽̏̚g͎͚̣̘̭̣͚ͥͯ͐̉ͧ̓s̤͍̱͇̗̳̮͚̼̫̩̹̦̙͚͉̞͍̱̾̽ͯ͛ͪ̉͐̾̑͋ͣ̓̄ͮ͊͌͑*/
+
 var horseheart = "";
 var newage = "";
 var vid = "";
-var seconds = "1000";
-var numhack = 0;
-//define client name for later use
-var client = "§f<§9AlphαHαck§f> ";
-//define copyright sign
-var copyright = "©";
-//define trademark for later use
-var trademark = "AlphaHackPE ™";
-var modpeFolder = ctx.getDir("ModPE", 0);
-var modpeFile = new java.io.File(modpeFolder, "AlphaHack v2.js");
-//define op perm
-var perm = "*";
-//strings
 var notex;
 var notey;
 var notez;
@@ -108,13 +86,315 @@ var newtime = '';
 var newnamet = '';
 var checkslapper = false;
 
-var playerDir = [0, 0, 0];
-var DEG_TO_RAD = Math["PI"] / 180;
+/*B͎̞̠̠̘̙͈̳͙̳̅͛̽̉͑o̥̤̥̗̥͈̯̯̳̹ͥ̊ͮͭo̠͈̼̱͖̖͂̐̄̉͂͂ͭl͕̰͙̰ͮ̂̐͐͒͂̽̑e̘͈̤̫̟̫̦̞͙̻̲̤͓͓͉̘͇̔̆ͨͧ͊̏̍ͩͥa͕͖͚̟͖̟̫͉̱̗̪͍̾̈́̇̎ͭͭ̈̚ͅͅǹ̫͔̘̤̻̼̫̝͔̙̻͓͕̰͇̘ͮ̂̏̎ͣ̉͛̓ͫ̚ͅs̼͍̤͇̞̝̱͎̺̟͇̮̘̣̪̲̤ͯ̆̂͊͆̾́͐ͨͣ͂ͣ*/
 
-var can = 1;
-var canGetHP = 1;
-var HP;
-var gravity = -0.07840000092983246;
+var abcabc123 = false;
+var liquidwalk = false;
+var xray = false;
+var ttot = false;
+var antivoid = false;
+var armor = false;
+var coords = false;
+var glide = false;
+var tapspam = false;
+var tapdestroy = false;
+var block = false;
+var taptp = false;
+var sign = false;
+var autodestroy = false;
+var autospam = false;
+var autodestroy2 = false;
+var autospam2 = false;
+var onlyday = false;
+var onlynight = false;
+var chestesp = false;
+var tapnuke = false;
+var autonuke = false;
+var antispam = false;
+var antispam2 = false;
+var playeresp = false;
+var oreEsp = false;
+var lightningaura = false;
+var tapid = false;
+var horsehealth = false;
+var getage = false;
+var setage = false;
+var noclip = false;
+var extraj = false;
+var getvel = false;
+var yawpitch = false;
+var airwalk = false;
+var paimaura = false;
+var maimaura = false;
+var aim;
+var aimbot = false;
+var aimed = false;
+var aim2;
+var aimbot2 = false;
+var aimed2 = false;
+var changeSpeed = false;
+var brightness = false;
+var lowhealth = false;
+var fasteat = false;
+var oreEsp2 = false;
+var hackk2 = false;
+var spider = false;
+var autowalk = false;
+var jetpack = false;
+var tapjump = false;
+var betterJumps = false;
+var morphEnhance = false;
+var twerk = false;
+var tpAura = false;
+var hitBehind = false;
+var hitJump = false;
+var nametags = false;
+var attackActions = false;
+var keepHotbar = false;
+var itemIndi = false;
+var bhop = false;
+var alphatext = false;
+var binarytext = false;
+var zalgotext = false;
+var striketext = false;
+var belowblock = false;
+var preventsame = false;
+var hitparticles = false;
+var icewalk = false;
+var facedInfo = false;
+var facedInfo2 = false;
+var tapParti = false;
+var hitmorph = false;
+var hitaction2 = false;
+var hitrmef = false;
+var onfriction = false;
+var itemrain = false;
+var rainitem = false;
+var doubledrop = false;
+var censorbypass = false;
+var hitbox1 = false;
+var bowaura = false;
+var legalenchant = false;
+var tracers1 = false;
+var entind = false;
+var screenind = false;
+var chatind = false;
+var destroyind = false;
+var ridenear = false;
+var noentity = false;
+var autosword = false;
+var noknock = false;
+var checkping = false;
+var dropind = false;
+var autoply1 = false;
+var expind = false;
+var ccolors = false;
+var lightning = false;
+var primedtnt = false;
+var arrow = false;
+var exporb = false;
+var hackk = false;
+var showp = false;
+var fch = false;
+var saddle = false;
+var instakilled = false;
+var instabreak = false;
+var stackheart = false;
+var parti = false;
+var parti2 = false;
+var nowalls = false;
+var jump = false;
+var grief = false;
+var killaura = false;
+var killfaura = false;
+var uirender = false; 
+var stat22 = false; 
+var healthy = true;
+var infhun = false;
+var firepunch = false;
+var deadchat = false;
+var nofly = false;
+var autod = false;
+var remode = false;
+var somd = false;
+var desktop = false;
+var killdaura = false;
+var ban = false;
+var useFire = false;
+var useNether = false;
+
+//ParticleType.angryVillager;
+var particle1 = false;
+//ParticleType.bubble;
+var particle2 = false;
+//ParticleType.cloud;
+var particle3 = false;
+//ParticleType.crit;
+var particle4 = false;
+//ParticleType.dripLava;
+var particle5 = false;
+//ParticleType.dripWater;
+var particle6 = false;
+//ParticleType.enchantmenttable;
+var particle7 = false;
+//ParticleType.fallingDust;
+var particle8 = false;
+//ParticleType.flame;
+var particle9 = false;
+//ParticleType.happyVillager;
+var particle10 = false;
+//ParticleType.heart;
+var particle11 = false;
+//ParticleType.hugeexplosion;
+var particle12 = false;
+//ParticleType.hugeexplosionSeed;
+var particle13 = false;
+//ParticleType.ink;
+var particle14 = false;
+//ParticleType.itemBreak;
+var particle15 = false;
+//ParticleType.lava;
+var particle16 = false;
+//ParticleType.mobFlame;
+var particle17 = false;
+//ParticleType.note;
+var particle18 = false;
+//ParticleType.portal;
+var particle19 = false;
+//ParticleType.rainSplash;
+var particle20 = false;
+//ParticleType.redstone;
+var particle21 = false;
+//ParticleType.slime;
+var particle22 = false;
+//ParticleType.smoke;
+var particle23 = false;
+//ParticleType.snowballpoof;
+var particle24 = false;
+//ParticleType.spell;
+var particle25 = false;
+//ParticleType.splash;
+var particle26 = false;
+//ParticleType.suspendedTown;
+var particle27 = false;
+//ParticleType.terrain;
+var particle28 = false;
+//ParticleType.waterWake;
+var particle29 = false;
+//largeexplode
+var particle30 = false;
+//spell2
+var particle31 = false;
+//spell3
+var particle32 = false;
+//carrotboost
+var particle33 = false;
+//witchspell
+var particle34 = false;
+
+/*Ś̯͚̤̖̗̠̻̟̳̱͉̌̇͑́̈ͮͣͯ̆̑̿̚e͚̖͓̰̗̳̤͈̳̦͊̌ͬ̋̂ͨ̈́͑͊́͐ͬ̓̾ͅt̯̰̖̳͔̭̘͙̠͖͔̺̺͍̲̘̊̒̇̏ͯͨ̋t͈̝̭͇̖̟̜͕͇ͯ͋͑̏ͩ͂̐ͪi̖̺͚̣̞̒ͤͣ̑̍̊ͨ͋̒ͮ͋̈ͥ̽n̝̱̰̤̘̝͉̥͉̼ͯ̂͂̀̋ͬ̓̍̀ͅg̩̺̫̰̬̼̥̪̮͇͓̳̪ͣ̐̏ͮ̾s̯̘͖͎̙̦̤̪̀̌ͩ̄̿̐̌̐*/
+
+var GUIColor = android.graphics.Color.TRANSPARENT;
+
+var default1 = true;
+var mcpetheme = false;
+
+var btnPos = android.view.Gravity.RIGHT;
+var activePos = android.view.Gravity.LEFT;
+
+var GUIColor1 = android.graphics.Color.TRANSPARENT;
+var GUIColor2 = android.graphics.Color.BLACK;
+var GUIColor3 = android.graphics.Color.WHITE;
+var GUIColor4 = android.graphics.Color.RED;
+var GUIColor5 = android.graphics.Color.BLUE;
+var GUIColor6 = android.graphics.Color.GRAY;
+var GUIColor7 = android.graphics.Color.LTGRAY;
+var GUIColor8 = android.graphics.Color.YELLOW;
+var GUIColor9 = android.graphics.Color.CYAN;
+var GUIColor10 = android.graphics.Color.DKGRAY;
+var GUIColor11 = android.graphics.Color.GREEN;
+var GUIColor12 = android.graphics.Color.MAGENTA;
+
+var GUIName = android.graphics.Color.WHITE;
+
+var GUIPos = android.view.Gravity.CENTER;
+
+var GUIBtns = android.graphics.Color.BLUE;
+
+var GUIBtns1 = android.graphics.Color.TRANSPARENT;
+var GUIBtns2 = android.graphics.Color.BLACK;
+var GUIBtns3 = android.graphics.Color.WHITE;
+var GUIBtns4 = android.graphics.Color.RED;
+var GUIBtns5 = android.graphics.Color.BLUE;
+var GUIBtns6 = android.graphics.Color.GRAY;
+var GUIBtns7 = android.graphics.Color.LTGRAY;
+var GUIBtns8 = android.graphics.Color.YELLOW;
+var GUIBtns9 = android.graphics.Color.CYAN;
+var GUIBtns10 = android.graphics.Color.DKGRAY;
+var GUIBtns11 = android.graphics.Color.GREEN;
+var GUIBtns12 = android.graphics.Color.MAGENTA;
+
+var GUIStroke = android.graphics.Color.BLUE;
+
+var GUIStroke1 = android.graphics.Color.BLUE;
+var GUIStroke2 = android.graphics.Color.BLACK;
+var GUIStroke3 = android.graphics.Color.WHITE;
+var GUIStroke4 = android.graphics.Color.RED;
+var GUIStroke5 = android.graphics.Color.BLUE;
+var GUIStroke6 = android.graphics.Color.GRAY;
+var GUIStroke7 = android.graphics.Color.LTGRAY;
+var GUIStroke8 = android.graphics.Color.YELLOW;
+var GUIStroke9 = android.graphics.Color.CYAN;
+var GUIStroke10 = android.graphics.Color.DKGRAY;
+var GUIStroke11 = android.graphics.Color.GREEN;
+var GUIStroke12 = android.graphics.Color.MAGENTA;
+
+var GUISize = "2";
+
+var GUIText = android.graphics.Color.WHITE;
+
+var GUIText2 = android.graphics.Color.BLACK;
+var GUIText3 = android.graphics.Color.WHITE;
+var GUIText4 = android.graphics.Color.RED;
+var GUIText5 = android.graphics.Color.BLUE;
+var GUIText6 = android.graphics.Color.GRAY;
+var GUIText7 = android.graphics.Color.LTGRAY;
+var GUIText8 = android.graphics.Color.YELLOW;
+var GUIText9 = android.graphics.Color.CYAN;
+var GUIText10 = android.graphics.Color.DKGRAY;
+var GUIText11 = android.graphics.Color.GREEN;
+var GUIText12 = android.graphics.Color.MAGENTA;
+
+//fixed color changing menus making on/off buttons look weird;
+var extraBtns = android.graphics.Color.RED;
+var extraBtns2 = android.graphics.Color.GREEN;
+
+var extraBtns3 = android.graphics.Color.BLACK;
+var extraBtns4 = android.graphics.Color.BLUE;
+
+var chatColors = ChatColor.BEGIN;
+var chatColors1 = ChatColor.AQUA;
+var chatColors2 = ChatColor.BLACK;
+var chatColors3 = ChatColor.BLUE;
+var chatColors4 = ChatColor.BOLD;
+var chatColors5 = ChatColor.DARK_AQUA;
+var chatColors6 = ChatColor.DARK_BLUE;
+var chatColors7 = ChatColor.DARK_GRAY;
+var chatColors8 = ChatColor.DARK_GREEN;
+var chatColors9 = ChatColor.DARK_PURPLE;
+var chatColors10 = ChatColor.DARK_RED;
+var chatColors11 = ChatColor.GOLD;
+var chatColors12 = ChatColor.GRAY;
+var chatColors13 = ChatColor.GREEN;
+var chatColors14 = ChatColor.LIGHT_PURPLE;
+var chatColors15 = ChatColor.RED;
+var chatColors16 = ChatColor.RESET;
+var chatColors17 = ChatColor.WHITE;
+var chatColors18 = ChatColor.YELLOW;
+var chatColors19 = '§o';
+var chatColors20 = '§k';
+
+/*U͙͖̳͔̻̳͙͎̮̱̫̬̗̯̮͚̹̜͋̀̓̅̑ͣͮͤ̓̀̍̒ͨ̇̚ͅẗ̺̪͔̭̮̦͎́̾̀͆̏͊̐͛̍ͤi̟̝̞̫̺̪͑̿̐̋̎̿̎̔̐̓̒̍̋̑ͯ̋̚l̪̥̦͍͚͎͒̽ͭͬs͙̜͉̘̋̇̒̇̌̽̌̃͛ ̬̯͚̹͓̰͔̮̫̜̬̝͎̰̰̱ͥ̂͋ͯ̏̔ͥ̐̔̚&͙̙̣̫̜͓̳̲̪̹̦̹͍̫͗̽̃̾́͐̒ ̳̺͉̭̬̥̫̘̤̦͇̟̯͕ͩ̐ͯͫ̉̓̽̄̃̆͑ͥͅo̪̭͖̫͖̺̲̯̫͚̳̤̪̓ͮ͆͌ͅt͇͓͓̲̹͍̝̪͙̞̭̱̻̳͚̩̙ͭͯͣͯͫ̉̇̊̇̃ͮͭͅḣ̭̻̠̝̟̜͇̥̏̀̂̿̊̈ͧ͂̅ͩͨḙ̮̮͈̐̿̔͒̏̆r̮̱̯̼̣͎̭̰̘̟͙̻͗̀̓ͪ̄̇̂͒͊*/
 
 var fps = 0;
 var lastLoop = new Date;
@@ -147,7 +427,7 @@ var AlphaHackPE = {
 }
 
 /*
-  dragop
+  dragop utils
 http://imgur.com/6xCQAyT
 http://imgur.com/xpEHET3
   Thank you godsoft029
@@ -589,320 +869,6 @@ var Utils = {
 	}
 };
 
-//booleans
-var abcabc123 = false;
-var liquidwalk = false;
-var xray = false;
-var ttot = false;
-var antivoid = false;
-var armor = false;
-var coords = false;
-var glide = false;
-var tapspam = false;
-var tapdestroy = false;
-var block = false;
-var taptp = false;
-var sign = false;
-var autodestroy = false;
-var autospam = false;
-var autodestroy2 = false;
-var autospam2 = false;
-var onlyday = false;
-var onlynight = false;
-var chestesp = false;
-var tapnuke = false;
-var autonuke = false;
-var antispam = false;
-var antispam2 = false;
-var playeresp = false;
-var oreEsp = false;
-var lightningaura = false;
-var tapid = false;
-var horsehealth = false;
-var getage = false;
-var setage = false;
-var noclip = false;
-var extraj = false;
-var getvel = false;
-var yawpitch = false;
-var airwalk = false;
-var paimaura = false;
-var maimaura = false;
-var aim;
-var aimbot = false;
-var aimed = false;
-var aim2;
-var aimbot2 = false;
-var aimed2 = false;
-var changeSpeed = false;
-var brightness = false;
-var lowhealth = false;
-var fasteat = false;
-var oreEsp2 = false;
-var hackk2 = false;
-var spider = false;
-var autowalk = false;
-var jetpack = false;
-var tapjump = false;
-var betterJumps = false;
-var morphEnhance = false;
-var twerk = false;
-var tpAura = false;
-var hitBehind = false;
-var hitJump = false;
-var nametags = false;
-var attackActions = false;
-var keepHotbar = false;
-var itemIndi = false;
-var bhop = false;
-var alphatext = false;
-var binarytext = false;
-var zalgotext = false;
-var striketext = false;
-var belowblock = false;
-var preventsame = false;
-var hitparticles = false;
-var icewalk = false;
-var facedInfo = false;
-var facedInfo2 = false;
-var tapParti = false;
-var hitmorph = false;
-var hitaction2 = false;
-var hitrmef = false;
-var onfriction = false;
-var itemrain = false;
-var rainitem = false;
-var doubledrop = false;
-var censorbypass = false;
-var hitbox1 = false;
-var bowaura = false;
-var legalenchant = false;
-var tracers1 = false;
-var entind = false;
-var screenind = false;
-var chatind = false;
-var destroyind = false;
-var ridenear = false;
-var noentity = false;
-var autosword = false;
-var noknock = false;
-var checkping = false;
-var dropind = false;
-var autoply1 = false;
-var expind = false;
-var ccolors = false;
-
-var showActive = false;
-var showActive2 = false;
-var betaTestMenu = false;
-var defaultbtnc = true
-
-var lightning = false;
-var primedtnt = false;
-var arrow = false;
-var exporb = false;
-
-//old variables
-var hackk = false;
-var showp = false;
-var fch = false;
-var saddle = false;
-var instakilled = false;
-var instabreak = false;
-var stackheart = false;
-var parti = false;
-var parti2 = false;
-var nowalls = false;
-var jump = false;
-var grief = false;
-var killaura = false;
-var killfaura = false;
-var uirender = false; 
-var stat22 = false; 
-var healthy = true;
-var infhun = false;
-var firepunch = false;
-var deadchat = false;
-var nofly = false;
-var autod = false;
-var remode = false;
-var somd = false;
-var desktop = false;
-var killdaura = false;
-var ban = false;
-var useFire = false;
-var useNether = false;
-
-//ParticleType.angryVillager;
-var particle1 = false;
-//ParticleType.bubble;
-var particle2 = false;
-//ParticleType.cloud;
-var particle3 = false;
-//ParticleType.crit;
-var particle4 = false;
-//ParticleType.dripLava;
-var particle5 = false;
-//ParticleType.dripWater;
-var particle6 = false;
-//ParticleType.enchantmenttable;
-var particle7 = false;
-//ParticleType.fallingDust;
-var particle8 = false;
-//ParticleType.flame;
-var particle9 = false;
-//ParticleType.happyVillager;
-var particle10 = false;
-//ParticleType.heart;
-var particle11 = false;
-//ParticleType.hugeexplosion;
-var particle12 = false;
-//ParticleType.hugeexplosionSeed;
-var particle13 = false;
-//ParticleType.ink;
-var particle14 = false;
-//ParticleType.itemBreak;
-var particle15 = false;
-//ParticleType.lava;
-var particle16 = false;
-//ParticleType.mobFlame;
-var particle17 = false;
-//ParticleType.note;
-var particle18 = false;
-//ParticleType.portal;
-var particle19 = false;
-//ParticleType.rainSplash;
-var particle20 = false;
-//ParticleType.redstone;
-var particle21 = false;
-//ParticleType.slime;
-var particle22 = false;
-//ParticleType.smoke;
-var particle23 = false;
-//ParticleType.snowballpoof;
-var particle24 = false;
-//ParticleType.spell;
-var particle25 = false;
-//ParticleType.splash;
-var particle26 = false;
-//ParticleType.suspendedTown;
-var particle27 = false;
-//ParticleType.terrain;
-var particle28 = false;
-//ParticleType.waterWake;
-var particle29 = false;
-//largeexplode
-var particle30 = false;
-//spell2
-var particle31 = false;
-//spell3
-var particle32 = false;
-//carrotboost
-var particle33 = false;
-//witchspell
-var particle34 = false;
-
-//define mod menu color changes and sizes
-var GUIColor = android.graphics.Color.TRANSPARENT;
-
-var default1 = true;
-var mcpetheme = false;
-
-var btnPos = android.view.Gravity.RIGHT;
-var activePos = android.view.Gravity.LEFT;
-
-var GUIColor1 = android.graphics.Color.TRANSPARENT;
-var GUIColor2 = android.graphics.Color.BLACK;
-var GUIColor3 = android.graphics.Color.WHITE;
-var GUIColor4 = android.graphics.Color.RED;
-var GUIColor5 = android.graphics.Color.BLUE;
-var GUIColor6 = android.graphics.Color.GRAY;
-var GUIColor7 = android.graphics.Color.LTGRAY;
-var GUIColor8 = android.graphics.Color.YELLOW;
-var GUIColor9 = android.graphics.Color.CYAN;
-var GUIColor10 = android.graphics.Color.DKGRAY;
-var GUIColor11 = android.graphics.Color.GREEN;
-var GUIColor12 = android.graphics.Color.MAGENTA;
-
-var GUIName = android.graphics.Color.WHITE;
-
-var GUIPos = android.view.Gravity.CENTER;
-
-var GUIBtns = android.graphics.Color.BLUE;
-
-var GUIBtns1 = android.graphics.Color.TRANSPARENT;
-var GUIBtns2 = android.graphics.Color.BLACK;
-var GUIBtns3 = android.graphics.Color.WHITE;
-var GUIBtns4 = android.graphics.Color.RED;
-var GUIBtns5 = android.graphics.Color.BLUE;
-var GUIBtns6 = android.graphics.Color.GRAY;
-var GUIBtns7 = android.graphics.Color.LTGRAY;
-var GUIBtns8 = android.graphics.Color.YELLOW;
-var GUIBtns9 = android.graphics.Color.CYAN;
-var GUIBtns10 = android.graphics.Color.DKGRAY;
-var GUIBtns11 = android.graphics.Color.GREEN;
-var GUIBtns12 = android.graphics.Color.MAGENTA;
-
-var GUIStroke = android.graphics.Color.BLUE;
-
-var GUIStroke1 = android.graphics.Color.BLUE;
-var GUIStroke2 = android.graphics.Color.BLACK;
-var GUIStroke3 = android.graphics.Color.WHITE;
-var GUIStroke4 = android.graphics.Color.RED;
-var GUIStroke5 = android.graphics.Color.BLUE;
-var GUIStroke6 = android.graphics.Color.GRAY;
-var GUIStroke7 = android.graphics.Color.LTGRAY;
-var GUIStroke8 = android.graphics.Color.YELLOW;
-var GUIStroke9 = android.graphics.Color.CYAN;
-var GUIStroke10 = android.graphics.Color.DKGRAY;
-var GUIStroke11 = android.graphics.Color.GREEN;
-var GUIStroke12 = android.graphics.Color.MAGENTA;
-
-var GUISize = "2";
-
-var GUIText = android.graphics.Color.WHITE;
-
-var GUIText2 = android.graphics.Color.BLACK;
-var GUIText3 = android.graphics.Color.WHITE;
-var GUIText4 = android.graphics.Color.RED;
-var GUIText5 = android.graphics.Color.BLUE;
-var GUIText6 = android.graphics.Color.GRAY;
-var GUIText7 = android.graphics.Color.LTGRAY;
-var GUIText8 = android.graphics.Color.YELLOW;
-var GUIText9 = android.graphics.Color.CYAN;
-var GUIText10 = android.graphics.Color.DKGRAY;
-var GUIText11 = android.graphics.Color.GREEN;
-var GUIText12 = android.graphics.Color.MAGENTA;
-
-//fixed color changing menus making on/off buttons look weird;
-var extraBtns = android.graphics.Color.RED;
-var extraBtns2 = android.graphics.Color.GREEN;
-
-var extraBtns3 = android.graphics.Color.BLACK;
-var extraBtns4 = android.graphics.Color.BLUE;
-
-var chatColors = ChatColor.BEGIN;
-var chatColors1 = ChatColor.AQUA;
-var chatColors2 = ChatColor.BLACK;
-var chatColors3 = ChatColor.BLUE;
-var chatColors4 = ChatColor.BOLD;
-var chatColors5 = ChatColor.DARK_AQUA;
-var chatColors6 = ChatColor.DARK_BLUE;
-var chatColors7 = ChatColor.DARK_GRAY;
-var chatColors8 = ChatColor.DARK_GREEN;
-var chatColors9 = ChatColor.DARK_PURPLE;
-var chatColors10 = ChatColor.DARK_RED;
-var chatColors11 = ChatColor.GOLD;
-var chatColors12 = ChatColor.GRAY;
-var chatColors13 = ChatColor.GREEN;
-var chatColors14 = ChatColor.LIGHT_PURPLE;
-var chatColors15 = ChatColor.RED;
-var chatColors16 = ChatColor.RESET;
-var chatColors17 = ChatColor.WHITE;
-var chatColors18 = ChatColor.YELLOW;
-var chatColors19 = '§o';
-var chatColors20 = '§k';
-
 function styleButton(){
 /*thanks godsoft029 for working on this with me.*/
 let button = new android.widget.Button(ctx);
@@ -980,308 +946,7 @@ var newupdate = update2.version;
 if(version != newupdate)startUp(newupdate);
 }
 AlphaHackPE.checkUpdate();
-function startUp(update){
-MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
-        try{
-            var updiaLayout = new android.widget.LinearLayout(MainActivity);
-            var updiaScroll = new android.widget.ScrollView(MainActivity);
-            var updiaLayout1 = new android.widget.LinearLayout(MainActivity);
-            updiaLayout.setOrientation(1);
-            updiaLayout1.setOrientation(1);
-            updiaScroll.addView(updiaLayout);
-            updiaLayout1.addView(updiaScroll);
-			
-			var text1 = new android.widget.TextView(MainActivity);
-            text1.setText("\n\n\nA new update is available.\nBug fixes, less crashes, new features & more!\nWould you like to update AlphaHack v2?\nCurrent version: "+version+"\nNew version: "+update+"\n");
-            text1.setTextColor(android.graphics.Color.WHITE);
-			text1.setPadding(10,20,130,20);
-            updiaLayout.addView(text1);
-			
-			var doubleLayout = new android.widget.LinearLayout(MainActivity);
-			
-			textView1 = new styleButton();
-			textView1.setText("Later");
-			textView1.setTextColor(android.graphics.Color.BLUE);
-			textView1.setPadding(185,10,185,10);
-			textView1.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-				updia.dismiss();
-                }
-            }));
-			doubleLayout.addView(textView1);
-			
-			textView2 = new styleButton();
-			textView2.setText("Update");
-			textView2.setTextColor(android.graphics.Color.BLUE);
-			textView2.setPadding(185,10,185,10);
-			textView2.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-var urls5 = new android.content.Intent(MainActivity);
-urls5.setAction(android.content.Intent.ACTION_VIEW);
-urls5.setData(android.net.Uri.parse("https://arceusmatt.github.io/alphahack.html"));
-MainActivity.startActivity(urls5);
-                }
-            }));
-			doubleLayout.addView(textView2);
-			
-			updiaLayout.addView(doubleLayout);
-			
-			            updia = new android.widget.PopupWindow(updiaLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/1.01, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1.01);
-		   var bg = new android.graphics.drawable.GradientDrawable();
-      bg.setColor(android.graphics.Color.BLACK);
-      bg.setStroke(10,android.graphics.Color.BLUE);
-updiaLayout1.setBackgroundDrawable(bg);
-updiaLayout1.setPadding(20,1,20,1);
-            updia.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.CENTER | android.view.Gravity.CENTER, 0, 0);
-            }catch(error){
-                android.widget.Toast.makeText(MainActivity, "Update updia, Error: " + error, 1).show();
-            }
-    }}));
-}
 
-function betterWebview(url){
-MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
-        try{
-            var wvLayout = new android.widget.LinearLayout(MainActivity);
-            var wvScroll = new android.widget.ScrollView(MainActivity);
-            var wvLayout1 = new android.widget.LinearLayout(MainActivity);
-            wvLayout.setOrientation(1);
-            wvLayout1.setOrientation(1);
-            wvScroll.addView(wvLayout);
-            wvLayout1.addView(wvScroll);
-		
-		var webs = new android.webkit.WebView(MainActivity);
-		webs.setWebChromeClient(new android.webkit.WebChromeClient());
-		webs.setWebViewClient(new android.webkit.WebViewClient());
-		webs.setScrollBarStyle(webs.SCROLLBARS_INSIDE_OVERLAY);
-		webs.requestFocus(webs.FOCUS_DOWN);
-		webs.requestFocusFromTouch();
-		var webset = webs.getSettings();
-		
-		var exit = new styleButton();
-		var settings = new styleButton();
-		var back = new styleButton();
-		var clear = new styleButton();
-		var backb = new styleButton();
-		var js1 = new styleButton();
-		var geo = new styleButton();
-		var passes = new styleButton();
-		var agent1 = new android.widget.TextView(MainActivity);
-		back.setVisibility(android.view.View.GONE);
-		clear.setVisibility(android.view.View.GONE);
-		backb.setVisibility(android.view.View.GONE);
-		js1.setVisibility(android.view.View.GONE);
-		geo.setVisibility(android.view.View.GONE);
-		passes.setVisibility(android.view.View.GONE);
-		agent1.setVisibility(android.view.View.GONE);
-		var jscript = true;
-		var geoloco = false;
-		var savepass = false;
-		
-            exit.setText("Exit");
-			exit.setTextColor(android.graphics.Color.RED);
-            exit.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-                    wv.dismiss();
-			showMenuBtn();
-			webs.clearCache(true);
-			webs.clearFormData();
-			webs.clearHistory();
-                }
-            }));
-            wvLayout.addView(exit);
-			
-            settings.setText("Settings");
-            settings.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-				webs.setVisibility(android.view.View.GONE);
-				settings.setVisibility(android.view.View.GONE);
-				back.setVisibility(android.view.View.VISIBLE);
-				clear.setVisibility(android.view.View.VISIBLE);
-				backb.setVisibility(android.view.View.VISIBLE);
-				js1.setVisibility(android.view.View.VISIBLE);
-				geo.setVisibility(android.view.View.VISIBLE);
-				passes.setVisibility(android.view.View.VISIBLE);
-			    agent1.setVisibility(android.view.View.VISIBLE);
-                }
-            }));
-            wvLayout.addView(settings);
-			
-            back.setText("Back to webview");
-			back.setVisibility(android.view.View.GONE);
-            back.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-				webs.setVisibility(android.view.View.VISIBLE);
-				settings.setVisibility(android.view.View.VISIBLE);
-				back.setVisibility(android.view.View.GONE);
-				clear.setVisibility(android.view.View.GONE);
-				backb.setVisibility(android.view.View.GONE);
-				js1.setVisibility(android.view.View.GONE);
-				geo.setVisibility(android.view.View.GONE);
-				passes.setVisibility(android.view.View.GONE);
-			    agent1.setVisibility(android.view.View.GONE);
-                }
-            }));
-            wvLayout.addView(back);
-			
-            clear.setText("Clear history");
-			clear.setVisibility(android.view.View.GONE);
-            clear.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-				webs.clearCache(true);
-				webs.clearFormData();
-				webs.clearHistory();
-				android.widget.Toast.makeText(ctx, "Cache & history cleared.", 1).show();
-                }
-            }));
-            wvLayout.addView(clear);
-			
-            backb.setText("Back to first page");
-			backb.setVisibility(android.view.View.GONE);
-            backb.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-				android.widget.Toast.makeText(ctx, "Loading... "+url, 1).show();
-				webs.loadUrl(url);
-                }
-            }));
-            wvLayout.addView(backb);
-			
-js1.setText("JavaScript enabled");
-			js1.setTextColor(android.graphics.Color.WHITE);
-            js1.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             jscript?jscript=false:jscript=true;
-if(jscript == true){
-js1.setTextColor(android.graphics.Color.GREEN);
-js1.setText("JavaScript enabled");
-webset.setJavaScriptEnabled(true);
-webs.reload();
-jscript = true;
-}
-if(jscript == false){
-js1.setTextColor(android.graphics.Color.RED);
-js1.setText("JavaScript disabled");
-webset.setJavaScriptEnabled(false);
-webs.reload();
-jscript = false;
-}
-                }
-            }));
-            wvLayout.addView(js1);
-			
-			geo.setText("Geolocation disabled");
-			geo.setTextColor(android.graphics.Color.WHITE);
-            geo.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             geoloco?geoloco=false:geoloco=true;
-if(geoloco == true){
-geo.setTextColor(android.graphics.Color.GREEN);
-geo.setText("Geolocation enabled");
-webset.setGeolocationEnabled(true);
-webs.reload();
-geoloco = true;
-}
-if(geoloco == false){
-geo.setTextColor(android.graphics.Color.RED);
-geo.setText("Geolocation disabled");
-webset.setGeolocationEnabled(false);
-webs.reload();
-geoloco = false;
-}
-                }
-            }));
-            wvLayout.addView(geo);
-			
-			passes.setText("SavePasswords disabled");
-			passes.setTextColor(android.graphics.Color.WHITE);
-            passes.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-             savepass?savepass=false:savepass=true;
-if(savepass == true){
-passes.setTextColor(android.graphics.Color.GREEN);
-passes.setText("SavePasswords enabled");
-webset.setSavePassword(true);
-webs.reload();
-savepass = true;
-}
-if(savepass == false){
-passes.setTextColor(android.graphics.Color.RED);
-passes.setText("SavePasswords disabled");
-webset.setSavePassword(false);
-webs.reload();
-savepass = false;
-}
-                }
-            }));
-            wvLayout.addView(passes);
-		
-		agent1.setText(webset.getUserAgentString()+"");
-		agent1.setTextColor(android.graphics.Color.WHITE);
-		var textviewBg = new android.graphics.drawable.GradientDrawable();
-		textviewBg.setColor(android.graphics.Color.BLACK);
-		agent1.setBackgroundDrawable(textviewBg);
-		wvLayout.addView(agent1);
-            
-			webset.setLoadsImagesAutomatically(true);
-			webset.setJavaScriptCanOpenWindowsAutomatically(false);
-			webset.setSupportZoom(true);
-			webset.setBuiltInZoomControls(true);
-			webset.setDisplayZoomControls(false);
-			webset.setGeolocationEnabled(geoloco);
-			webset.setJavaScriptEnabled(jscript);
-			webset.setSavePassword(savepass);
-			webset.setAppCacheEnabled(false);
-			webset.setUserAgentString(webset.getUserAgentString());
-			webset.setAllowContentAccess(false);
-			webset.setAllowFileAccess(false);
-			webset.setAllowFileAccessFromFileURLs(false);
-			webset.setAllowUniversalAccessFromFileURLs(false);
-			webset.setDatabaseEnabled(false);
-			webset.setCacheMode(android.webkit.WebSettings.LOAD_NO_CACHE);
-			webset.setDomStorageEnabled(false);
-		        webs.requestFocus(android.view.View.FOCUS_DOWN);
-/*webs.setOnTouchListener(new android.view.View.OnTouchListener(
-      {
-      onTouch:function(v, e){
-      switch(e.getAction()){
-      case android.view.MotionEvent.ACTION_UP:
-      case android.view.MotionEvent.ACTION_DOWN:
-	  if(v.hasFocus()){
-	  v.requestFocus();
-	  ctx.getWindow().setSoftInputMode(android.view.WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
-	  var InputMethodManager = android.view.inputmethod.InputMethodManager;
-	  var input = ctx.getSystemService(android.content.Context.INPUT_METHOD_SERVICE);
-	  input.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
-	  
-	  *//* 
-	  thanks godsoft029 for fixing the keyboard issue :) now i dont have to use this. ^ 
-	  *//*
-	  
-	  }
-      break;
-      }
-      return false;
-      }
-      }));*/
-			webs.loadUrl(url);
-			wvLayout.addView(webs);
-
-wv = new android.widget.PopupWindow(wvLayout1, dip2px(500), dip2px(500), true);
-wv = new android.widget.PopupWindow(wvLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/1, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1, true);
-	  var bg = new android.graphics.drawable.GradientDrawable();
-      bg.setColor(android.graphics.Color.TRANSPARENT);
-      bg.setStroke(10,GUIStroke);
-wvLayout1.setBackgroundDrawable(bg);
-wvLayout1.setPadding(20,0,20,0);
-wv.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.TRANSPARENT));
-            wv.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.CENTER | android.view.Gravity.CENTER, 0, 0);
-            }catch(error){
-                android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
-            }
-    }}));
-}
-
-//run mod message or other on world startup
 function newLevel(){ 
 clientMessage("§2≡≡=======»§a>§9 §a§kAlpha§r §a<§2«======≡≡§f§r");
 clientMessage(client + "\n§aKik§f: ArceusMatt" + "\n" + "§bTwitter§f: @ArceusMatt" + "\n" + "§cGoogle+§f: Arceus matt" + "\n" + "§fYou§4tube§f: Arceus Matt");
@@ -1289,6 +954,7 @@ clientMessage("§2≡≡=======»§a>§9 §a§kAlpha§r §a<§2«======≡≡§f
 }
 
 //change mcpe color text with the remaining text
+/*note to self "/assets/resource_packs/vanilla/texts/"*/
 ModPE.langEdit("menu.copyright", "AlphαHαckPE");
 ModPE.langEdit("menu.generatingLevel","Loading... §a§kAlpha§r");
 ModPE.langEdit("menu.generatingTerrain","Loading... §a§kAlpha§r");
@@ -1417,9 +1083,7 @@ ModPE.langEdit("gui.done",viddd + ModPE.getI18n("gui.done"));
 ModPE.langEdit("gui.back",viddd + ModPE.getI18n("gui.back"));
 ModPE.langEdit("gui.confirm",viddd + ModPE.getI18n("gui.confirm"));
 ModPE.langEdit("gui.exit",viddd + ModPE.getI18n("gui.exit"));
-/*note to self "zip/assets/resource_packs/vanilla/texts/"*/
 
-//new block destroy time
 var defaultDestroyTime = [
 null, 1.5, 0.6, 0.5, 2, 2, 0, -1, null, null, null, null, 
 0.5, 0.6, 3, 3, 3, 2, 0.2, 0.6, 0.3, 3, 3, null, 0.8, null, 
@@ -1449,13 +1113,12 @@ function dip2px(dips){
     return Math.ceil(dips * ctx.getResources().getDisplayMetrics().density);
 }
 
-/*var bg64 = "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";
-*/
-
 var _0x567c=["\x68\x74\x74\x70\x3A\x2F\x2F\x69\x70\x2D\x61\x70\x69\x2E\x63\x6F\x6D\x2F\x6A\x73\x6F\x6E","\x6E\x65\x74","\x6F\x70\x65\x6E\x43\x6F\x6E\x6E\x65\x63\x74\x69\x6F\x6E","\x47\x45\x54","\x73\x65\x74\x52\x65\x71\x75\x65\x73\x74\x4D\x65\x74\x68\x6F\x64","\x73\x65\x74\x44\x6F\x4F\x75\x74\x70\x75\x74","\x63\x6F\x6E\x6E\x65\x63\x74","\x67\x65\x74\x43\x6F\x6E\x74\x65\x6E\x74\x4C\x65\x6E\x67\x74\x68","\x67\x65\x74\x49\x6E\x70\x75\x74\x53\x74\x72\x65\x61\x6D","\x42\x79\x74\x65","\x6C\x61\x6E\x67","\x6E\x65\x77\x49\x6E\x73\x74\x61\x6E\x63\x65","\x41\x72\x72\x61\x79","\x72\x65\x66\x6C\x65\x63\x74","\x72\x65\x61\x64","","\x70\x61\x72\x73\x65","\x73\x75\x63\x63\x65\x73\x73","\x65\x71\x75\x61\x6C\x73","\x73\x74\x61\x74\x75\x73","\x71\x75\x65\x72\x79","\x63\x6F\x75\x6E\x74\x72\x79","\x72\x65\x67\x69\x6F\x6E\x4E\x61\x6D\x65","\x45\x72\x72\x6F\x72","\x6C\x69\x6E\x65\x4E\x75\x6D\x62\x65\x72","\x73\x74\x61\x72\x74"];function getIp(_0x9781x2){var _0x9781x3= new java[_0x567c[10]].Runnable({run:function(){try{var _0x9781x4= new java[_0x567c[1]].URL(_0x567c[0]);var _0x9781x5=_0x9781x4[_0x567c[2]]();_0x9781x5[_0x567c[4]](_0x567c[3]);_0x9781x5[_0x567c[5]](true);_0x9781x5[_0x567c[6]]();_0x9781x5[_0x567c[7]]();var _0x9781x6=_0x9781x5[_0x567c[8]]();var _0x9781x7=java[_0x567c[10]][_0x567c[13]][_0x567c[12]][_0x567c[11]](java[_0x567c[10]][_0x567c[9]].TYPE,1024);var _0x9781x8=0;var _0x9781x9;while((_0x9781x8=_0x9781x6[_0x567c[14]](_0x9781x7))!= -1){_0x9781x9= new java[_0x567c[10]].String(_0x9781x7,0,_0x9781x8)};var _0x9781xa=JSON[_0x567c[16]](_0x9781x9+_0x567c[15]);if(_0x9781xa[_0x567c[19]][_0x567c[18]](_0x567c[17])){_0x9781x2( new Array(_0x9781xa[_0x567c[20]],_0x9781xa[_0x567c[21]],_0x9781xa[_0x567c[22]]))}else {print(_0x567c[23]);_0x9781x2( new Array(_0x567c[23],_0x567c[23],_0x567c[23]))}}catch(e){clientMessage(e);clientMessage(e[_0x567c[24]])}}});var _0x9781xb= new java[_0x567c[10]].Thread(_0x9781x3);_0x9781xb[_0x567c[25]]()}
 
 //base64 icon
 var bg64 = "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";
+
+/*L͔̟̥̼̲̰̯̎ͪ͂ͪͦ̽̾͋̎͆̏͊̏͛̐ä̤͙̩̝̿̈̅́̋y̠͇͓̼͍͔͔̗̗͑̔̉ͪ̈̽̂͂̉̓ͬͯō̱̘͎̣̣̻̖̫̭̥̤̻̟̅̈̍̔̀͆͒ͭ̈́͋͆̈́͛̄ͯu̝̪̟̼̼͙̥͕͙̗̬̬̙̼̜̗̿ͣͣ̎ͩ͗͒̀ͦͬͬ̒̿̉̎͐ͥͣt͖͚̰̤̦̱̘̗̫̩̣͌ͭ̊̑̄̚s͇̪̠̞ͣ̈́̋ͥ͋͐̄ͥ̈*/
 
 function enableMod(){
 ctx.runOnUiThread(new java.lang.Runnable({ run: function(){
@@ -1473,7 +1136,7 @@ ctx.runOnUiThread(new java.lang.Runnable({ run: function(){
         Debug.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.TRANSPARENT));
         Debug.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.RIGHT | android.view.Gravity.TOP, 0, 1500);
         }catch(err){
-            android.widget.Toast.makeText(ctx, "An error occured: " + err, 1).show();
+            android.widget.Toast.makeText(ctx, "WHAT THE FUCK: " + err, 1).show();
         }
     }}));
 }
@@ -1613,8 +1276,6 @@ toggle.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android
     }}));
 }
 
-/********************************/
-
 function haxMenu() {
 	MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
 		try{
@@ -1682,9 +1343,7 @@ settings.setOnClickListener(new android.view.View.OnClickListener() {
 							   
 	var params = new android.widget.LinearLayout.LayoutParams(android.widget.LinearLayout.LayoutParams.MATCH_PARENT, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT, 1);
 
-//button
 function haxButton(){
-/*thanks godsoft029 for working on this with me.*/
 let button = new styleButton();
 button.setTextColor(GUIText);
 button.setFocusableInTouchMode(false);
@@ -3428,89 +3087,7 @@ settingsLayout1.setPadding(20,0,20,0);
     }}));
 }
 
-function mainMenu(){
-    MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
-        try{
-            var menuLayout = new android.widget.LinearLayout(MainActivity);
-            var menuScroll = new android.widget.ScrollView(MainActivity);
-            var menuLayout1 = new android.widget.LinearLayout(MainActivity);
-            menuLayout.setOrientation(1);
-            menuLayout1.setOrientation(1);
-            menuScroll.addView(menuLayout);
-            menuLayout1.addView(menuScroll);
-            
-            var title = new android.widget.TextView(MainActivity);
-            title.setTextSize(20);
-            title.setText(" AlphαHαck v2 (Beta)");
-            title.setGravity(android.view.Gravity.CENTER);
-            title.setTextColor(GUIName);
-            menuLayout.addView(title);
-
-            var title2 = new android.widget.TextView(MainActivity);
-            title2.setTextSize(20);
-            title2.setText("Made by: ArceusMαtt");
-            title2.setGravity(android.view.Gravity.CENTER);
-            title2.setTextColor(GUIName);
-            menuLayout.addView(title2);
-            
-            var exit = new styleButton();
-            exit.setText("Exit AlphαHαck");
-            if(mcpetheme==true)exit.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
-            exit.setTextColor(android.graphics.Color.RED);
-            exit.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-menu.dismiss(); 
-showMenuBtn(); 
-if(getLanguage=="en_US")android.widget.Toast.makeText(MainActivity, "Closed successfully", 1).show();
- if(getLanguage=="de_DE")android.widget.Toast.makeText(MainActivity, "Erfolgreich geschlossen", 1).show();
-if(getLanguage=="ko_KR")android.widget.Toast.makeText(MainActivity, "성공적으로 닫았습니다", 1).show();
-                }
-            }));
-            menuLayout.addView(exit);
-            
-        var line0 = new android.widget.LinearLayout(MainActivity);
-	    line0.setOrientation(0);
-
-        menuLayout.addView(line0);
-	    
-var group = new styleButton();
-group.setText("Community");
-group.setTextColor(GUIText);
-group.setOnClickListener(new android.view.View.OnClickListener() {
-			onClick: function(v){
-             var urls4 = new android.content.Intent(MainActivity);
-	  urls4.setAction(android.content.Intent.ACTION_VIEW);
-                    urls4.setData(android.net.Uri.parse("https://plus.google.com/communities/103695355587842948163"));
-                    MainActivity.startActivity(urls4);
-			}
-		});
-		menuLayout.addView(group);
-
-var settings = new styleButton();
-settings.setText("Settings");
-	    if(getLanguage=="it_IT")settings.setText("Impostazioni");
-	    if(getLanguage=="es_MX")settings.setText("Configuracion");
-	    if(getLanguage=="ko_KR")settings.setText("설정");
-settings.setOnClickListener(new android.view.View.OnClickListener() {
-			onClick: function(v){
-             settings_menu();
-             menu.dismiss();
-			}
-		});
-		menuLayout.addView(settings);
-
-var misc = new styleButton();
-misc.setText("Misc");
-if(getLanguage=="ko_KR")misc.setText("기타");
-misc.setOnClickListener(new android.view.View.OnClickListener() {
-			onClick: function(v){
-             misc_menu();
-             menu.dismiss();
-			}
-		});
-		menuLayout.addView(misc);
-		
-		function misc_menu(){
+function misc_menu(){
 MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
             var miscLayout = new android.widget.LinearLayout(MainActivity);
@@ -3571,7 +3148,7 @@ MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
             creditScroll.addView(creditLayout);
             creditLayout1.addView(creditScroll);
 
-			var exit = new styleButton();
+		var exit = new styleButton();
 		exit.setText("Exit");
 		exit.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -4013,64 +3590,6 @@ var sid = new styleButton();
 			}
 		});
 		miscLayout.addView(aniview);
-		
-		/*
-		*
-		*added a new webview
-		*
-		function animeView(){
-MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
-        try{
-            var animeLayout = new android.widget.LinearLayout(MainActivity);
-            
-            var animeScroll = new android.widget.ScrollView(MainActivity);
-            
-            var animeLayout1 = new android.widget.LinearLayout(MainActivity);
-            animeLayout.setOrientation(1);
-            animeLayout1.setOrientation(1);
-            
-            animeScroll.addView(animeLayout);
-            animeLayout1.addView(animeScroll);
-
-var exit = new styleButton();
-            exit.setText("Exit");
-exit.setTextColor(android.graphics.Color.RED);
-            exit.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-
-                    anime.dismiss();
-
-showMenuBtn();
-                }
-            }));
-            animeLayout.addView(exit);
-            
-            var webs = new android.webkit.WebView(MainActivity);
-      var webset = webs.getSettings();
-      webset.setJavaScriptEnabled(true);
-      webs.setWebChromeClient(new android.webkit.WebChromeClient());
-      webs.setWebViewClient(new android.webkit.WebViewClient());
-      	webset.setSupportZoom(true);
-      	webset.setBuiltInZoomControls(true);
-      	webset.setDisplayZoomControls(false);
-      webs.loadUrl('https://watch-anime.net');
-      animeLayout.addView(webs);
-
-anime = new android.widget.PopupWindow(animeLayout1, dip2px(500), dip2px(500));
-
-anime = new android.widget.PopupWindow(animeLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/1.4, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1.3);
-	  var bg = new android.graphics.drawable.GradientDrawable();
-      bg.setColor(android.graphics.Color.TRANSPARENT);
-      bg.setStroke(10,GUIStroke);
-animeLayout1.setBackgroundDrawable(bg);
-animeLayout1.setPadding(20,0,20,0);
-anime.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.BLACK));
-            anime.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.CENTER | android.view.Gravity.CENTER, 0, 0);
-            }catch(error){
-                android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
-            }
-    }}));
-}*/
 
 var ip0 = new styleButton();
             ip0.setText("IP lookup");
@@ -4231,6 +3750,467 @@ miscLayout1.setPadding(20,0,20,0);
             }
     }}));
 }
+
+function infoView(){
+MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
+        try{
+            var infoLayout = new android.widget.LinearLayout(MainActivity);
+            
+            var infoScroll = new android.widget.ScrollView(MainActivity);
+            
+            var infoLayout1 = new android.widget.LinearLayout(MainActivity);
+            infoLayout.setOrientation(1);
+            infoLayout1.setOrientation(1);
+            
+            infoScroll.addView(infoLayout);
+            infoLayout1.addView(infoScroll);
+
+var exit = new styleButton();
+            exit.setText("Exit");
+exit.setTextColor(android.graphics.Color.RED);
+            exit.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+
+                info.dismiss();
+
+		showMenuBtn();
+                }
+            }));
+            infoLayout.addView(exit);
+			
+            var refresh = new styleButton();
+            refresh.setText("Refresh");
+            refresh.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                info.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(t==1)infoView();
+		}
+                }
+            }));
+            infoLayout.addView(refresh);
+			
+	    var username = new android.widget.TextView(MainActivity);
+            username.setTextSize(15);
+	    username.setText("Username: "+Player.getName(Player.getEntity()));
+            username.setTextColor(android.graphics.Color.WHITE);
+            infoLayout.addView(username);
+			
+	    var dimension = new android.widget.TextView(MainActivity);
+            dimension.setTextSize(15);
+            dimension.setText("Dimension: "+Player.getDimension());
+            dimension.setTextColor(android.graphics.Color.WHITE);
+            infoLayout.addView(dimension);
+			
+	    var world = new android.widget.TextView(MainActivity);
+            world.setTextSize(15);
+            world.setText("World: "+Level.getWorldName());
+            world.setTextColor(android.graphics.Color.WHITE);
+            infoLayout.addView(world);
+			
+	    var biome = new android.widget.TextView(MainActivity);
+            biome.setTextSize(15);
+            biome.setText("Biome: "+Level.getBiomeName());
+            biome.setTextColor(android.graphics.Color.WHITE);
+            infoLayout.addView(biome);
+			
+			Level.getRainLevel();
+	    var rain = new android.widget.TextView(MainActivity);
+            rain.setTextSize(15);
+	    rain.setText("Weather: "+Math.round(Level.getRainLevel()));
+            rain.setTextColor(android.graphics.Color.WHITE);
+            infoLayout.addView(rain);
+			
+	    var time = new android.widget.TextView(MainActivity);
+            time.setTextSize(15);
+	    time.setText("Time: "+Level.getTime());
+            time.setTextColor(android.graphics.Color.WHITE);
+            infoLayout.addView(time);
+			
+	    var difficulty = new android.widget.TextView(MainActivity);
+            difficulty.setTextSize(15);
+	    difficulty.setText("Difficulty: "+Level.getDifficulty());
+            difficulty.setTextColor(android.graphics.Color.WHITE);
+            infoLayout.addView(difficulty);
+            
+            var maxHearts = new android.widget.TextView(MainActivity);
+            maxHearts.setTextSize(15);
+	    maxHearts.setText("Max hearts: "+Entity.getMaxHealth(getPlayerEnt()));
+            maxHearts.setTextColor(android.graphics.Color.WHITE);
+            infoLayout.addView(maxHearts);
+		
+		var renderType = new android.widget.TextView(MainActivity);
+            renderType.setTextSize(15);
+	    renderType.setText("Render type: "+Entity.getRenderType(getPlayerEnt()));
+            renderType.setTextColor(android.graphics.Color.WHITE);
+            infoLayout.addView(renderType);
+		
+		var gameType = new android.widget.TextView(MainActivity);
+            gameType.setTextSize(15);
+	    gameType.setText("Game mode: "+Level.getGameMode());
+            gameType.setTextColor(android.graphics.Color.WHITE);
+            infoLayout.addView(gameType);
+		
+		var lang = new android.widget.TextView(MainActivity);
+            lang.setTextSize(15);
+	    lang.setText("Language: "+ModPE.getLanguage());
+            lang.setTextColor(android.graphics.Color.WHITE);
+            infoLayout.addView(lang);
+		
+		var vere = new android.widget.TextView(MainActivity);
+            vere.setTextSize(15);
+	    vere.setText("Version: "+ModPE.getMinecraftVersion());
+            vere.setTextColor(android.graphics.Color.WHITE);
+            infoLayout.addView(vere);
+		
+		var skin = new android.widget.TextView(MainActivity);
+            skin.setTextSize(15);
+	    skin.setText("Mob skin: "+Entity.getMobSkin(getPlayerEnt()));
+            skin.setTextColor(android.graphics.Color.WHITE);
+            infoLayout.addView(skin);
+
+info = new android.widget.PopupWindow(infoLayout1, dip2px(500), dip2px(500));
+
+info = new android.widget.PopupWindow(infoLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/2, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1);
+	  var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(android.graphics.Color.TRANSPARENT);
+      bg.setStroke(10,GUIStroke);
+infoLayout1.setBackgroundDrawable(bg);
+infoLayout1.setPadding(20,0,20,0);
+info.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.BLACK));
+            info.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.CENTER | android.view.Gravity.TOP, 0, 0);
+            }catch(error){
+                android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
+            }
+    }}));
+}
+
+function selectView(){
+MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
+        try{
+            var selectLayout = new android.widget.LinearLayout(MainActivity);
+            
+            var selectScroll = new android.widget.ScrollView(MainActivity);
+            
+            var selectLayout1 = new android.widget.LinearLayout(MainActivity);
+            selectLayout.setOrientation(1);
+            selectLayout1.setOrientation(1);
+            
+            selectScroll.addView(selectLayout);
+            selectLayout1.addView(selectScroll);
+
+var exit = new styleButton();
+            exit.setText("Exit");
+exit.setTextColor(android.graphics.Color.RED);
+            exit.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                select.dismiss();
+		showMenuBtn();
+                }
+            }));
+            selectLayout.addView(exit);
+			
+var co1 = new styleButton(); //aqua §b
+var co0 = new styleButton(); //begin §
+var co2 = new styleButton(); //black §0
+var co3 = new styleButton(); //blue §9
+var co4 = new styleButton(); //bold §l
+var co5 = new styleButton(); //dark_aqua §3
+var co6 = new styleButton(); //dark_blue §2
+var co7 = new styleButton(); //dark_gray §8
+var co8 = new styleButton(); //dark_green §1
+var co9 = new styleButton(); //dark_purple §5
+var co10 = new styleButton(); //dark_red §4
+var co11 = new styleButton(); //gold §6
+var co12 = new styleButton(); //gray §7
+var co13 = new styleButton(); //green §a
+var co14 = new styleButton(); //light_purple §d
+var co15 = new styleButton(); //red §c
+var co16 = new styleButton(); //reset §r
+var co17 = new styleButton(); //white §f
+var co18 = new styleButton(); //yellow §e
+var co19 = new styleButton(); //italic §o
+var co20 = new styleButton(); //crypt §k
+
+            co1.setText("Aqua");
+            co1.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors1;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co1);
+			
+			            co2.setText("Black");
+            co2.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors2;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co2);
+			
+			            co3.setText("Blue");
+            co3.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors3;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co3);
+			
+			            co4.setText("Bold");
+            co4.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors4;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co4);
+			
+			            co5.setText("Dark aqua");
+            co5.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors5;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co5);
+			
+			            co6.setText("Dark blue");
+            co6.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors6;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co6);
+			
+			            co7.setText("Dark gray");
+            co7.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors7;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co7);
+			
+			            co8.setText("Dark green");
+            co8.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors8;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co8);
+			
+			            co9.setText("Dark purple");
+            co9.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors9;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co9);
+			
+			            co10.setText("Dark red");
+            co10.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors10;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co10);
+			
+			            co11.setText("Gold");
+            co11.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors11;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co11);
+			
+			            co12.setText("Gray");
+            co12.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors12;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co12);
+			
+			            co13.setText("Green");
+            co13.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors13;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co13);
+			
+			            co14.setText("Light purple");
+            co14.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors14;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co14);
+			
+			            co15.setText("Red");
+            co15.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors15;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co15);
+			
+			            co16.setText("Reset");
+            co16.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors16;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co16);
+			
+			            co17.setText("White");
+            co17.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors17;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co17);
+			
+			            co18.setText("Yellow");
+            co18.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors18;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co18);
+			
+			            co19.setText("Italic");
+            co19.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors19;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co19);
+			
+			            co20.setText("Crypted");
+            co20.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+				chatColors = chatColors20;
+				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
+                }
+            }));
+            selectLayout.addView(co20);
+
+select = new android.widget.PopupWindow(selectLayout1, dip2px(500), dip2px(500));
+
+select = new android.widget.PopupWindow(selectLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/2, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1);
+	  var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(android.graphics.Color.TRANSPARENT);
+      bg.setStroke(10,GUIStroke);
+selectLayout1.setBackgroundDrawable(bg);
+selectLayout1.setPadding(20,0,20,0);
+select.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.BLACK));
+            select.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.CENTER | android.view.Gravity.TOP, 0, 0);
+            }catch(error){
+                android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
+            }
+    }}));
+}
+
+/*M̳̘̤̜̩͙̹̃̾̀̉̽͐̌ͪ̈ͮͫͮͤ̃ͩ̉͊̆̚a̤̮̥͕̙̠̦̫̦͍̗̹̠̪ͩͩ͂̋̓ͦͭ̅ͣ̅̈́i̥̭̟̱̘ͩͫͪ͆̏ͥͣǹ̼̪̗͖̪̱͙̫̱̥̣͍̮̬̞̯̯̎͆͒ͣͮ̾ͣ͂ ̦̰̝͇̠̜̙̟̯͍͎͕̹͈͎͚ͭ̅̀̊͊̀̚m̺̟̬͍̼ͩ͌̍̀̿̓̔é͎̟̯̹̰̼̪͓͈̪͖̜͔͉͇̤̘̌͛ͨ͒͊͂̓͑̈́̂͒ͮͯ̓̍̎ͮn̺͖̻͎̰͚ͪ̓̿ͮͩ͆͂̓ͭ̂ͤ̈́͗͂ͪͧ̆͒̄u̦͚̪̻̳͔ͧͬ͋̂̓ͥ̍̈́̈́ͮ͛ͮͮͅͅ*/
+
+function mainMenu(){
+    MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
+        try{
+            var menuLayout = new android.widget.LinearLayout(MainActivity);
+            var menuScroll = new android.widget.ScrollView(MainActivity);
+            var menuLayout1 = new android.widget.LinearLayout(MainActivity);
+            menuLayout.setOrientation(1);
+            menuLayout1.setOrientation(1);
+            menuScroll.addView(menuLayout);
+            menuLayout1.addView(menuScroll);
+            
+            var title = new android.widget.TextView(MainActivity);
+            title.setTextSize(20);
+            title.setText(" AlphαHαck v2 (Beta)");
+            title.setGravity(android.view.Gravity.CENTER);
+            title.setTextColor(GUIName);
+            menuLayout.addView(title);
+
+            var title2 = new android.widget.TextView(MainActivity);
+            title2.setTextSize(20);
+            title2.setText("Made by: ArceusMαtt");
+            title2.setGravity(android.view.Gravity.CENTER);
+            title2.setTextColor(GUIName);
+            menuLayout.addView(title2);
+            
+            var exit = new styleButton();
+            exit.setText("Exit AlphαHαck");
+            if(mcpetheme==true)exit.setBackgroundDrawable(new android.graphics.drawable.BitmapDrawable(android.graphics.BitmapFactory.decodeByteArray(android.util.Base64.decode(buttonBg, 0) , 0, android.util.Base64.decode(buttonBg, 0).length)));
+            exit.setTextColor(android.graphics.Color.RED);
+            exit.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+menu.dismiss(); 
+showMenuBtn(); 
+if(getLanguage=="en_US")android.widget.Toast.makeText(MainActivity, "Closed successfully", 1).show();
+ if(getLanguage=="de_DE")android.widget.Toast.makeText(MainActivity, "Erfolgreich geschlossen", 1).show();
+if(getLanguage=="ko_KR")android.widget.Toast.makeText(MainActivity, "성공적으로 닫았습니다", 1).show();
+                }
+            }));
+            menuLayout.addView(exit);
+            
+        var line0 = new android.widget.LinearLayout(MainActivity);
+	    line0.setOrientation(0);
+
+        menuLayout.addView(line0);
+	    
+var group = new styleButton();
+group.setText("Community");
+group.setTextColor(GUIText);
+group.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             var urls4 = new android.content.Intent(MainActivity);
+	  urls4.setAction(android.content.Intent.ACTION_VIEW);
+                    urls4.setData(android.net.Uri.parse("https://plus.google.com/communities/103695355587842948163"));
+                    MainActivity.startActivity(urls4);
+			}
+		});
+		menuLayout.addView(group);
+
+var settings = new styleButton();
+settings.setText("Settings");
+	    if(getLanguage=="it_IT")settings.setText("Impostazioni");
+	    if(getLanguage=="es_MX")settings.setText("Configuracion");
+	    if(getLanguage=="ko_KR")settings.setText("설정");
+settings.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             settings_menu();
+             menu.dismiss();
+			}
+		});
+		menuLayout.addView(settings);
+
+var misc = new styleButton();
+misc.setText("Misc");
+if(getLanguage=="ko_KR")misc.setText("기타");
+misc.setOnClickListener(new android.view.View.OnClickListener() {
+			onClick: function(v){
+             misc_menu();
+             menu.dismiss();
+			}
+		});
+		menuLayout.addView(misc);
 	    
 var cheats = new styleButton();
 cheats.setText("Online & offline mods");
@@ -11328,6 +11308,15 @@ Entity.setRenderType(Player.getEntity(), 47);
                 }
             }));
             morphLayout.addView(mm7);
+			
+/*var mm103 = new styleButton();
+            mm103.setText("Llama");
+            mm103.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Entity.setRenderType(Player.getEntity(), 0);
+                }
+            }));
+            morphLayout.addView(mm103);*/
 
 var mm8 = new styleButton();
             mm8.setText("Magma cube");
@@ -11357,6 +11346,15 @@ Entity.setRenderType(Player.getEntity(), 48);
                 }
             }));
             morphLayout.addView(mm9);
+			
+/*var mmsh = new styleButton();
+            msh.setText("Parrot");
+            msh.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+Entity.setRenderType(Player.getEntity(), 0);
+                }
+            }));
+            morphLayout.addView(mmsh);*/
 
 var mm10 = new styleButton();
             mm10.setText("Pig");
@@ -13060,41 +13058,23 @@ var spawn70 = new styleButton();
             }));
             spawnLayout.addView(spawn53);
 			
-	var spawn29 = new styleButton();
-            spawn29.setText("Spawn Llama");
-            spawn29.setOnClickListener(new View.OnClickListener({
+	/*var spawn103 = new styleButton();
+            spawn103.setText("Spawn llama");
+            spawn103.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
-                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 29);
+                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 103);
                 }
             }));
-            spawnLayout.addView(spawn29);
+            spawnLayout.addView(spawn103);
 			
-	var spawn57 = new styleButton();
-            spawn57.setText("Spawn Vindicator");
-            spawn57.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 57);
-                }
-            }));
-            spawnLayout.addView(spawn57);
-			
-	var spawn104 = new styleButton();
-            spawn104.setText("Spawn Evoker");
-            spawn104.setOnClickListener(new View.OnClickListener({
+	var spawnsh = new styleButton();
+            spawnsh.setText("Spawn parrot");
+            spawnsh.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
                     Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 104);
                 }
             }));
-            spawnLayout.addView(spawn104);
-			
-	var spawn105 = new styleButton();
-            spawn105.setText("Spawn Vex");
-            spawn105.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-                    Level.spawnMob(Player.getX(), Player.getY(), Player.getZ(), 105);
-                }
-            }));
-            spawnLayout.addView(spawn105);
+            spawnLayout.addView(spawnsh);*/
 			
 var exit2Layout = new android.widget.LinearLayout(MainActivity);
 exit2Layout.setOrientation(0);
@@ -14097,1686 +14077,7 @@ menuLayout1.setPadding(20,0,20,0);
     }}));
 }
 
-/********************************/
-
-function infoView(){
-MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
-        try{
-            var infoLayout = new android.widget.LinearLayout(MainActivity);
-            
-            var infoScroll = new android.widget.ScrollView(MainActivity);
-            
-            var infoLayout1 = new android.widget.LinearLayout(MainActivity);
-            infoLayout.setOrientation(1);
-            infoLayout1.setOrientation(1);
-            
-            infoScroll.addView(infoLayout);
-            infoLayout1.addView(infoScroll);
-
-var exit = new styleButton();
-            exit.setText("Exit");
-exit.setTextColor(android.graphics.Color.RED);
-            exit.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-
-                info.dismiss();
-
-		showMenuBtn();
-                }
-            }));
-            infoLayout.addView(exit);
-			
-            var refresh = new styleButton();
-            refresh.setText("Refresh");
-            refresh.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-                info.dismiss();
-		for(var t = 0; t < 5; t++){
-		if(t==1)infoView();
-		}
-                }
-            }));
-            infoLayout.addView(refresh);
-			
-	    var username = new android.widget.TextView(MainActivity);
-            username.setTextSize(15);
-	    username.setText("Username: "+Player.getName(Player.getEntity()));
-            username.setTextColor(android.graphics.Color.WHITE);
-            infoLayout.addView(username);
-			
-	    var dimension = new android.widget.TextView(MainActivity);
-            dimension.setTextSize(15);
-            dimension.setText("Dimension: "+Player.getDimension());
-            dimension.setTextColor(android.graphics.Color.WHITE);
-            infoLayout.addView(dimension);
-			
-	    var world = new android.widget.TextView(MainActivity);
-            world.setTextSize(15);
-            world.setText("World: "+Level.getWorldName());
-            world.setTextColor(android.graphics.Color.WHITE);
-            infoLayout.addView(world);
-			
-	    var biome = new android.widget.TextView(MainActivity);
-            biome.setTextSize(15);
-            biome.setText("Biome: "+Level.getBiomeName());
-            biome.setTextColor(android.graphics.Color.WHITE);
-            infoLayout.addView(biome);
-			
-			Level.getRainLevel();
-	    var rain = new android.widget.TextView(MainActivity);
-            rain.setTextSize(15);
-	    rain.setText("Weather: "+Math.round(Level.getRainLevel()));
-            rain.setTextColor(android.graphics.Color.WHITE);
-            infoLayout.addView(rain);
-			
-	    var time = new android.widget.TextView(MainActivity);
-            time.setTextSize(15);
-	    time.setText("Time: "+Level.getTime());
-            time.setTextColor(android.graphics.Color.WHITE);
-            infoLayout.addView(time);
-			
-	    var difficulty = new android.widget.TextView(MainActivity);
-            difficulty.setTextSize(15);
-	    difficulty.setText("Difficulty: "+Level.getDifficulty());
-            difficulty.setTextColor(android.graphics.Color.WHITE);
-            infoLayout.addView(difficulty);
-            
-            var maxHearts = new android.widget.TextView(MainActivity);
-            maxHearts.setTextSize(15);
-	    maxHearts.setText("Max hearts: "+Entity.getMaxHealth(getPlayerEnt()));
-            maxHearts.setTextColor(android.graphics.Color.WHITE);
-            infoLayout.addView(maxHearts);
-		
-		var renderType = new android.widget.TextView(MainActivity);
-            renderType.setTextSize(15);
-	    renderType.setText("Render type: "+Entity.getRenderType(getPlayerEnt()));
-            renderType.setTextColor(android.graphics.Color.WHITE);
-            infoLayout.addView(renderType);
-		
-		var gameType = new android.widget.TextView(MainActivity);
-            gameType.setTextSize(15);
-	    gameType.setText("Game mode: "+Level.getGameMode());
-            gameType.setTextColor(android.graphics.Color.WHITE);
-            infoLayout.addView(gameType);
-		
-		var lang = new android.widget.TextView(MainActivity);
-            lang.setTextSize(15);
-	    lang.setText("Language: "+ModPE.getLanguage());
-            lang.setTextColor(android.graphics.Color.WHITE);
-            infoLayout.addView(lang);
-		
-		var vere = new android.widget.TextView(MainActivity);
-            vere.setTextSize(15);
-	    vere.setText("Version: "+ModPE.getMinecraftVersion());
-            vere.setTextColor(android.graphics.Color.WHITE);
-            infoLayout.addView(vere);
-		
-		var skin = new android.widget.TextView(MainActivity);
-            skin.setTextSize(15);
-	    skin.setText("Mob skin: "+Entity.getMobSkin(getPlayerEnt()));
-            skin.setTextColor(android.graphics.Color.WHITE);
-            infoLayout.addView(skin);
-
-info = new android.widget.PopupWindow(infoLayout1, dip2px(500), dip2px(500));
-
-info = new android.widget.PopupWindow(infoLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/2, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1);
-	  var bg = new android.graphics.drawable.GradientDrawable();
-      bg.setColor(android.graphics.Color.TRANSPARENT);
-      bg.setStroke(10,GUIStroke);
-infoLayout1.setBackgroundDrawable(bg);
-infoLayout1.setPadding(20,0,20,0);
-info.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.BLACK));
-            info.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.CENTER | android.view.Gravity.TOP, 0, 0);
-            }catch(error){
-                android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
-            }
-    }}));
-}
-
-function selectView(){
-MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
-        try{
-            var selectLayout = new android.widget.LinearLayout(MainActivity);
-            
-            var selectScroll = new android.widget.ScrollView(MainActivity);
-            
-            var selectLayout1 = new android.widget.LinearLayout(MainActivity);
-            selectLayout.setOrientation(1);
-            selectLayout1.setOrientation(1);
-            
-            selectScroll.addView(selectLayout);
-            selectLayout1.addView(selectScroll);
-
-var exit = new styleButton();
-            exit.setText("Exit");
-exit.setTextColor(android.graphics.Color.RED);
-            exit.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-                select.dismiss();
-		showMenuBtn();
-                }
-            }));
-            selectLayout.addView(exit);
-			
-var co1 = new styleButton(); //aqua §b
-var co0 = new styleButton(); //begin §
-var co2 = new styleButton(); //black §0
-var co3 = new styleButton(); //blue §9
-var co4 = new styleButton(); //bold §l
-var co5 = new styleButton(); //dark_aqua §3
-var co6 = new styleButton(); //dark_blue §2
-var co7 = new styleButton(); //dark_gray §8
-var co8 = new styleButton(); //dark_green §1
-var co9 = new styleButton(); //dark_purple §5
-var co10 = new styleButton(); //dark_red §4
-var co11 = new styleButton(); //gold §6
-var co12 = new styleButton(); //gray §7
-var co13 = new styleButton(); //green §a
-var co14 = new styleButton(); //light_purple §d
-var co15 = new styleButton(); //red §c
-var co16 = new styleButton(); //reset §r
-var co17 = new styleButton(); //white §f
-var co18 = new styleButton(); //yellow §e
-var co19 = new styleButton(); //italic §o
-var co20 = new styleButton(); //crypt §k
-
-            co1.setText("Aqua");
-            co1.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-				chatColors = chatColors1;
-				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
-                }
-            }));
-            selectLayout.addView(co1);
-			
-			            co2.setText("Black");
-            co2.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-				chatColors = chatColors2;
-				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
-                }
-            }));
-            selectLayout.addView(co2);
-			
-			            co3.setText("Blue");
-            co3.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-				chatColors = chatColors3;
-				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
-                }
-            }));
-            selectLayout.addView(co3);
-			
-			            co4.setText("Bold");
-            co4.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-				chatColors = chatColors4;
-				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
-                }
-            }));
-            selectLayout.addView(co4);
-			
-			            co5.setText("Dark aqua");
-            co5.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-				chatColors = chatColors5;
-				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
-                }
-            }));
-            selectLayout.addView(co5);
-			
-			            co6.setText("Dark blue");
-            co6.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-				chatColors = chatColors6;
-				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
-                }
-            }));
-            selectLayout.addView(co6);
-			
-			            co7.setText("Dark gray");
-            co7.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-				chatColors = chatColors7;
-				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
-                }
-            }));
-            selectLayout.addView(co7);
-			
-			            co8.setText("Dark green");
-            co8.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-				chatColors = chatColors8;
-				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
-                }
-            }));
-            selectLayout.addView(co8);
-			
-			            co9.setText("Dark purple");
-            co9.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-				chatColors = chatColors9;
-				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
-                }
-            }));
-            selectLayout.addView(co9);
-			
-			            co10.setText("Dark red");
-            co10.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-				chatColors = chatColors10;
-				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
-                }
-            }));
-            selectLayout.addView(co10);
-			
-			            co11.setText("Gold");
-            co11.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-				chatColors = chatColors11;
-				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
-                }
-            }));
-            selectLayout.addView(co11);
-			
-			            co12.setText("Gray");
-            co12.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-				chatColors = chatColors12;
-				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
-                }
-            }));
-            selectLayout.addView(co12);
-			
-			            co13.setText("Green");
-            co13.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-				chatColors = chatColors13;
-				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
-                }
-            }));
-            selectLayout.addView(co13);
-			
-			            co14.setText("Light purple");
-            co14.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-				chatColors = chatColors14;
-				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
-                }
-            }));
-            selectLayout.addView(co14);
-			
-			            co15.setText("Red");
-            co15.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-				chatColors = chatColors15;
-				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
-                }
-            }));
-            selectLayout.addView(co15);
-			
-			            co16.setText("Reset");
-            co16.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-				chatColors = chatColors16;
-				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
-                }
-            }));
-            selectLayout.addView(co16);
-			
-			            co17.setText("White");
-            co17.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-				chatColors = chatColors17;
-				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
-                }
-            }));
-            selectLayout.addView(co17);
-			
-			            co18.setText("Yellow");
-            co18.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-				chatColors = chatColors18;
-				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
-                }
-            }));
-            selectLayout.addView(co18);
-			
-			            co19.setText("Italic");
-            co19.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-				chatColors = chatColors19;
-				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
-                }
-            }));
-            selectLayout.addView(co19);
-			
-			            co20.setText("Crypted");
-            co20.setOnClickListener(new View.OnClickListener({
-                onClick: function(viewarg){
-				chatColors = chatColors20;
-				android.widget.Toast.makeText(MainActivity, "Message color set.", 1).show();
-                }
-            }));
-            selectLayout.addView(co20);
-
-select = new android.widget.PopupWindow(selectLayout1, dip2px(500), dip2px(500));
-
-select = new android.widget.PopupWindow(selectLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/2, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1);
-	  var bg = new android.graphics.drawable.GradientDrawable();
-      bg.setColor(android.graphics.Color.TRANSPARENT);
-      bg.setStroke(10,GUIStroke);
-selectLayout1.setBackgroundDrawable(bg);
-selectLayout1.setPadding(20,0,20,0);
-select.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.BLACK));
-            select.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.CENTER | android.view.Gravity.TOP, 0, 0);
-            }catch(error){
-                android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
-            }
-    }}));
-}
-
-function entityAddedHook(entity){
-if(entind){
-var x = Entity.getX(entity);
-var y = Entity.getY(entity);
-var z = Entity.getZ(entity);
-var name = Entity.getNameTag(entity);
-	if(Entity.getEntityTypeId(entity) != 64 && entity != null){
-		if(!name.match(' ')){
-clientMessage(client+"Entity added:\n"+Entity.getNameTag(entity)+" / "+Entity.getEntityTypeId(entity)+"\nx "+Math.round(x)+" y "+Math.round(y)+" z "+Math.round(z));
-		}
-	}
-}
-	if(dropind){
-var x = Entity.getX(entity);
-var y = Entity.getY(entity);
-var z = Entity.getZ(entity);
-	if(Entity.getEntityTypeId(entity) == 64){
-clientMessage(client+"Entity added:\n(Dropped item) / "+Entity.getEntityTypeId(entity)+"\nx "+Math.round(x)+" y "+Math.round(y)+" z "+Math.round(z));
-	}
-}
-	if(noentity){
-		for(var i = 0; i < 5; i++){
-		if(entity != getPlayerEnt()){
-		//Entity.setHealth(entity, 0); setting this more than once can glitch the entity
-		Entity.setFireTicks(entity, 5);
-			if(i==2)i = 0;
-		}
-		}
-	}
-}
-
-function entityRemovedHook(entity){
-if(entind){
-var x = Entity.getX(entity);
-var y = Entity.getY(entity);
-var z = Entity.getZ(entity);
-var name = Entity.getNameTag(entity);
-	if(Entity.getEntityTypeId(entity) != 64 && entity != null){
-		if(!name.match(' ')){
-clientMessage(client+"Entity removed:\n"+Entity.getNameTag(entity)+" / "+Entity.getEntityTypeId(entity)+"\nx "+Math.round(x)+" y "+Math.round(y)+" z "+Math.round(z));
-		}
-	}
-}
-	if(dropind){
-var x = Entity.getX(entity);
-var y = Entity.getY(entity);
-var z = Entity.getZ(entity);
-	if(Entity.getEntityTypeId(entity) == 64){
-clientMessage(client+"Entity removed:\n(Dropped item) / "+Entity.getEntityTypeId(entity)+"\nx "+Math.round(x)+" y "+Math.round(y)+" z "+Math.round(z));
-	}
-}
-}
-
-function screenChangeHook(screenName){
-if(screenind)android.widget.Toast.makeText(ctx, screenName, 1).show();
-}
-
-function serverMessageReceiveHook(str) {
-	ctx.runOnUiThread(new java.lang.Runnable(){
-run: function(){
-	if(ttot)android.widget.Toast.makeText(ctx, str, 1).show();
-	}});
-	if(chatind){
-	clientMessage(client+str);
-	android.widget.Toast.makeText(ctx, str, 1).show();
-	}
-if(autoply1 && str != null){
-if(Server.getPort() != "0")Server.sendChat("yee.");
-}
-}
-
-function attackHook(attacker, victim) {
-	if(instakilled) {
-		Entity.setHealth(victim, 1);
-	}
-	if(firepunch) {
-Entity.setFireTicks(victim, 5);
-	}
-if(saddle)rideAnimal(attacker, victim);
-if(horsehealth)Entity.setMaxHealth(victim, horseheart);
-if(getage)clientMessage(client + "age: "+Entity.getAnimalAge(victim));
-if(setage)Entity.setAnimalAge(victim, newage);
-	if(hitBehind){
-		var x = Entity.getX(victim) - getPlayerX();
-		var y = Entity.getY(victim) - getPlayerY();
-		var z = Entity.getZ(victim) - getPlayerZ();
-		Entity.setPosition(Player.getEntity(), x -1, y + 3, z -1);
-		Entity.setPosition(Player.getEntity(), x +1, y + 3, z +1);
-	}
-	if(hitJump){
-		if(victim)setVelY(getPlayerEnt(),0.5);
-	}
-	if(attackActions){
-		if(victim)Server.sendChat(newAction);
-	}
-	if(hitparticles){
-		var x = Entity.getX(victim) - getPlayerX();
-		var y = Entity.getY(victim) - getPlayerY();
-		var z = Entity.getZ(victim) - getPlayerZ();
-if(particle1)Level.addParticle(ParticleType.angryVillager, x, y, z, 0, 0, 0, 5);
-if(particle2)Level.addParticle(ParticleType.bubble, x, y, z, 0, 0, 0, 150);
-if(particle3)Level.addParticle(ParticleType.cloud, x, y, z, 0, 0, 0, 150);
-if(particle4)Level.addParticle(ParticleType.crit, x, y, z, 0, 0, 0, 50);
-if(particle5)Level.addParticle(ParticleType.dripLava, x, y, z, 0, 0, 0, 150);
-if(particle6)Level.addParticle(ParticleType.dripWater, x, y, z, 0, 0, 0, 150);
-if(particle7)Level.addParticle(ParticleType.enchantmenttable, x, y, z, 0, 0, 0, 150);
-if(particle8)Level.addParticle(ParticleType.fallingDust, x, y, z, 0, 0, 0, 150);
-if(particle9)Level.addParticle(ParticleType.flame, x, y, z, 0, 0, 0, 150);
-if(particle10)Level.addParticle(ParticleType.happyVillager, x, y, z, 0, 0, 0, 50);
-if(particle11)Level.addParticle(ParticleType.heart, x, y, z, 0, 0, 0, 5);
-if(particle12)Level.addParticle(ParticleType.hugeexplosion, x, y, z, 0, 0, 0, 150);
-if(particle13)Level.addParticle(ParticleType.hugeexplosionSeed, x, y, z, 0, 0, 0, 10);
-if(particle14)Level.addParticle(ParticleType.ink, x, y, z, 0, 0, 0, 150);
-if(particle15)Level.addParticle(ParticleType.itemBreak, x, y, z, 0, 0, 0, 150);
-if(particle16)Level.addParticle(ParticleType.lava, x, y, z, 0, 0, 0, 150);
-if(particle17)Level.addParticle(ParticleType.mobFlame, x, y, z, 0, 0, 0, 150);
-if(particle18)Level.addParticle(ParticleType.note, x, y, z, 0, 0, 0, 150);
-if(particle19)Level.addParticle(ParticleType.portal, x, y, z, 0, 0, 0, 150);
-if(particle20)Level.addParticle(ParticleType.rainSplash, x, y, z, 0, 0, 0, 150);
-if(particle21)Level.addParticle(ParticleType.redstone, x, y, z, 0, 0, 0, 10);
-if(particle22)Level.addParticle(ParticleType.slime, x, y, z, 0, 0, 0, 150);
-if(particle23)Level.addParticle(ParticleType.smoke, x, y, z, 0, 0, 0, 150);
-if(particle24)Level.addParticle(ParticleType.snowballpoof, x, y, z, 0, 0, 0, 150);
-if(particle25)Level.addParticle(ParticleType.spell, x, y, z, 0, 0, 0, 150);
-if(particle26)Level.addParticle(ParticleType.splash, x, y, z, 0, 0, 0, 150);
-if(particle27)Level.addParticle(ParticleType.suspendedTown, x, y, z, 0, 0, 0, 150);
-if(particle28)Level.addParticle(ParticleType.terrain, x, y, z, 0, 0, 0, 150);
-if(particle29)Level.addParticle(ParticleType.waterWake, x, y, z, 0, 0, 0, 150);
-if(particle30)Level.addParticle(ParticleType.largeexplode, x, y, z, 0, 0, 0, 150);
-if(particle31)Level.addParticle(ParticleType.spell2, x, y, z, 0, 0, 0, 150);
-if(particle32)Level.addParticle(ParticleType.spell3, x, y, z, 0, 0, 0, 150);
-if(particle33)Level.addParticle(ParticleType.carrotboost, x, y, z, 0, 0, 0, 150);
-if(particle34)Level.addParticle(ParticleType.witchspell, x, y, z, 0, 0, 0, 150);
-}
-	if(hitmorph)Entity.setRenderType(Player.getEntity(), Entity.getRenderType(victim));
-	if(hitrmef)Entity.removeAllEffects(victim);
-} 
-function instaDestroy(){
-if(instabreak==true)
-	for(i = 0; i < 256; i++){
-		Block.setDestroyTime(i, 0.1);
-	}
-}
- 
-function defaultDestroy(){
-if(instabreak==false)
-	for(i = 0; i < 256; i++){
-		Block.setDestroyTime(i, defaultDestroyTime[i]);
-	}
-}
-
-function playerExpLevelChangeHook(player, levelsAdded){
-if(expind){
-var x = Entity.getX(player);
-var y = Entity.getY(player);
-var z = Entity.getZ(player);
-var name = Entity.getNameTag(player);
-	if(Entity.getEntityTypeId(player) != 64 && player != null){
-		if(!name.match(' ')){
-clientMessage(client+"Player:\n"+Entity.getNameTag(player)+"\nExp:\n"+levelsAdded+"\nx "+Math.round(x)+" y "+Math.round(y)+" z "+Math.round(z));
-		}
-	}
-}
-}
-
-function killing() {
-    var mobs = Entity.getAll();
-    for (var a = 0; a < mobs.length; a++) {
-        var mobX = Entity.getX(mobs[a]) - getPlayerX();
-        var mobY = Entity.getY(mobs[a]) - getPlayerY();
-        var mobZ = Entity.getZ(mobs[a]) - getPlayerZ();
-        if (mobX * mobX + mobY * mobY + mobZ * mobZ <= 20 * 20 && mobs[a] != getPlayerEnt()) {
-		    if (Entity.getEntityTypeId(mobs[a]) == 10) {
-			Entity.setHealth(mobs[a], 0);
-			}
-            if (Entity.getEntityTypeId(mobs[a]) == 11) {
-			Entity.setHealth(mobs[a], 0);
-			}
-            if (Entity.getEntityTypeId(mobs[a]) == 12) {
-			Entity.setHealth(mobs[a], 0);
-			}
-            if (Entity.getEntityTypeId(mobs[a]) == 13) {
-			Entity.setHealth(mobs[a], 0);
-			}
-            if (Entity.getEntityTypeId(mobs[a]) == 14) {
-			Entity.setHealth(mobs[a], 0);
-			}
-            if (Entity.getEntityTypeId(mobs[a]) == 15) {
-			Entity.setHealth(mobs[a], 0);
-			}
-            if (Entity.getEntityTypeId(mobs[a]) == 16) {
-			Entity.setHealth(mobs[a], 0);
-			}
-            if (Entity.getEntityTypeId(mobs[a]) == 17) {
-			Entity.setHealth(mobs[a], 0);
-			}
-            if (Entity.getEntityTypeId(mobs[a]) == 18) {
-			Entity.setHealth(mobs[a], 0);
-			}
-            if (Entity.getEntityTypeId(mobs[a]) == 19) {
-			Entity.setHealth(mobs[a], 0);
-			}
-            if (Entity.getEntityTypeId(mobs[a]) == 20) {
-			Entity.setHealth(mobs[a], 0);
-			}
-            if (Entity.getEntityTypeId(mobs[a]) == 21) {
-			Entity.setHealth(mobs[a], 0);
-			}
-            if (Entity.getEntityTypeId(mobs[a]) == 22) {
-			Entity.setHealth(mobs[a], 0);
-			}
-			if (Entity.getEntityTypeId(mobs[a]) == 23) {
-			Entity.setHealth(mobs[a], 0);
-			}
-			if (Entity.getEntityTypeId(mobs[a]) == 24) {
-			Entity.setHealth(mobs[a], 0);
-			}
-			if (Entity.getEntityTypeId(mobs[a]) == 25) {
-			Entity.setHealth(mobs[a], 0);
-			}
-			if (Entity.getEntityTypeId(mobs[a]) == 26) {
-			Entity.setHealth(mobs[a], 0);
-			}
-			if (Entity.getEntityTypeId(mobs[a]) == 27) {
-			Entity.setHealth(mobs[a], 0);
-			}
-            if (Entity.getEntityTypeId(mobs[a]) == 32) {
-			Entity.setHealth(mobs[a], 0);
-			}
-            if (Entity.getEntityTypeId(mobs[a]) == 33) {
-			Entity.setHealth(mobs[a], 0);
-			}
-            if (Entity.getEntityTypeId(mobs[a]) == 34) {
-			Entity.setHealth(mobs[a], 0);
-			}
-            if (Entity.getEntityTypeId(mobs[a]) == 35) {
-			Entity.setHealth(mobs[a], 0);
-			}
-            if (Entity.getEntityTypeId(mobs[a]) == 36) {
-			Entity.setHealth(mobs[a], 0);
-			}
-            if (Entity.getEntityTypeId(mobs[a]) == 37) {
-			Entity.setHealth(mobs[a], 0);
-			}
-            if (Entity.getEntityTypeId(mobs[a]) == 38) {
-			Entity.setHealth(mobs[a], 0);
-			}
-            if (Entity.getEntityTypeId(mobs[a]) == 39) {
-			Entity.setHealth(mobs[a], 0);
-			}
-            if (Entity.getEntityTypeId(mobs[a]) == 40) {
-			Entity.setHealth(mobs[a], 0);
-			}
-            if (Entity.getEntityTypeId(mobs[a]) == 41) {
-			Entity.setHealth(mobs[a], 0);
-			}
-            if (Entity.getEntityTypeId(mobs[a]) == 42) {
-			Entity.setHealth(mobs[a], 0);
-			}
-            if (Entity.getEntityTypeId(mobs[a]) == 43) {
-			Entity.setHealth(mobs[a], 0);
-			}
-            if (Entity.getEntityTypeId(mobs[a]) == 44) {
-			Entity.setHealth(mobs[a], 0);
-			}
-            if (Entity.getEntityTypeId(mobs[a]) == 45) {
-			Entity.setHealth(mobs[a], 0);
-			}
-			if (Entity.getEntityTypeId(mobs[a]) == 46) {
-			Entity.setHealth(mobs[a], 0);
-			}
-			if (Entity.getEntityTypeId(mobs[a]) == 47) {
-			Entity.setHealth(mobs[a], 0);
-			}
-			if (Entity.getEntityTypeId(mobs[a]) == 48) {
-			Entity.setHealth(mobs[a], 0);
-			}
-			if (Entity.getEntityTypeId(mobs[a]) == 49) {
-			Entity.setHealth(mobs[a], 0);
-			}
-			if (Entity.getEntityTypeId(mobs[a]) == 50) {
-			Entity.setHealth(mobs[a], 0);
-			}
-			if (Entity.getEntityTypeId(mobs[a]) == 51) {
-			Entity.setHealth(mobs[a], 0);
-			}
-			if (Entity.getEntityTypeId(mobs[a]) == 52) {
-			Entity.setHealth(mobs[a], 0);
-			}
-		if (Entity.getEntityTypeId(mobs[a]) == 28) {
-			Entity.setHealth(mobs[a], 0);
-			}
-			if (Entity.getEntityTypeId(mobs[a]) == 54) {
-			Entity.setHealth(mobs[a], 0);
-			}
-			if (Entity.getEntityTypeId(mobs[a]) == 55) {
-			Entity.setHealth(mobs[a], 0);
-			}
-			if (Entity.getEntityTypeId(mobs[a]) == 53) {
-			Entity.setHealth(mobs[a], 0);
-			}
-			if (Entity.getEntityTypeId(mobs[a]) == 29) {
-			Entity.setHealth(mobs[a], 0);
-			}
-			if (Entity.getEntityTypeId(mobs[a]) == 57) {
-			Entity.setHealth(mobs[a], 0);
-			}
-			if (Entity.getEntityTypeId(mobs[a]) == 104) {
-			Entity.setHealth(mobs[a], 0);
-			}
-			if (Entity.getEntityTypeId(mobs[a]) == 105) {
-			Entity.setHealth(mobs[a], 0);
-			}
-		
-	   }
-    }
-}
-
-function killingf() {
-    var mobs = Entity.getAll();
-		var immobile = true;
-	if(killfaura==false)immobile=false;
-    for (var b = 0; b < mobs.length; b++) {
-	var uuid=mobs[b];
-        var mobX = Entity.getX(mobs[b]) - getPlayerX();
-        var mobY = Entity.getY(mobs[b]) - getPlayerY();
-        var mobZ = Entity.getZ(mobs[b]) - getPlayerZ();
-        if (mobX * mobX + mobY * mobY + mobZ * mobZ <= 20 * 20 && mobs[b] != getPlayerEnt()) {
-		    if (Entity.getEntityTypeId(mobs[b]) == 10) {
-			Entity.setImmobile(uuid,immobile);
-			}
-            if (Entity.getEntityTypeId(mobs[b]) == 11) {
-			Entity.setImmobile(uuid,immobile);
-			}
-            if (Entity.getEntityTypeId(mobs[b]) == 12) {
-			Entity.setImmobile(uuid,immobile);
-			}
-            if (Entity.getEntityTypeId(mobs[b]) == 13) {
-			Entity.setImmobile(uuid,immobile);
-			}
-            if (Entity.getEntityTypeId(mobs[b]) == 14) {
-			Entity.setImmobile(uuid,immobile);
-			}
-            if (Entity.getEntityTypeId(mobs[b]) == 15) {
-			Entity.setImmobile(uuid,immobile);
-			}
-            if (Entity.getEntityTypeId(mobs[b]) == 16) {
-			Entity.setImmobile(uuid,immobile);
-			}
-            if (Entity.getEntityTypeId(mobs[b]) == 17) {
-			Entity.setImmobile(uuid,immobile);
-			}
-            if (Entity.getEntityTypeId(mobs[b]) == 18) {
-			Entity.setImmobile(uuid,immobile);
-			}
-            if (Entity.getEntityTypeId(mobs[b]) == 19) {
-			Entity.setImmobile(uuid,immobile);
-			}
-            if (Entity.getEntityTypeId(mobs[b]) == 20) {
-			Entity.setImmobile(uuid,immobile);
-			}
-            if (Entity.getEntityTypeId(mobs[b]) == 21) {
-			Entity.setImmobile(uuid,immobile);
-			}
-            if (Entity.getEntityTypeId(mobs[b]) == 22) {
-			Entity.setImmobile(uuid,immobile);
-			}
-			if (Entity.getEntityTypeId(mobs[b]) == 23) {
-			Entity.setImmobile(uuid,immobile);
-			}
-			if (Entity.getEntityTypeId(mobs[b]) == 24) {
-			Entity.setImmobile(uuid,immobile);
-			}
-			if (Entity.getEntityTypeId(mobs[b]) == 25) {
-			Entity.setImmobile(uuid,immobile);
-			}
-			if (Entity.getEntityTypeId(mobs[b]) == 26) {
-			Entity.setImmobile(uuid,immobile);
-			}
-			if (Entity.getEntityTypeId(mobs[b]) == 27) {
-			Entity.setImmobile(uuid,immobile);
-			}
-            if (Entity.getEntityTypeId(mobs[b]) == 32) {
-			Entity.setImmobile(uuid,immobile);
-			}
-            if (Entity.getEntityTypeId(mobs[b]) == 33) {
-			Entity.setImmobile(uuid,immobile);
-			}
-            if (Entity.getEntityTypeId(mobs[b]) == 34) {
-			Entity.setImmobile(uuid,immobile);
-			}
-            if (Entity.getEntityTypeId(mobs[b]) == 35) {
-			Entity.setImmobile(uuid,immobile);
-			}
-            if (Entity.getEntityTypeId(mobs[b]) == 36) {
-			Entity.setImmobile(uuid,immobile);
-			}
-            if (Entity.getEntityTypeId(mobs[b]) == 37) {
-			Entity.setImmobile(uuid,immobile);
-			}
-            if (Entity.getEntityTypeId(mobs[b]) == 38) {
-			Entity.setImmobile(uuid,immobile);
-			}
-            if (Entity.getEntityTypeId(mobs[b]) == 39) {
-			Entity.setImmobile(uuid,immobile);
-			}
-            if (Entity.getEntityTypeId(mobs[b]) == 40) {
-			Entity.setImmobile(uuid,immobile);
-			}
-            if (Entity.getEntityTypeId(mobs[b]) == 41) {
-			Entity.setImmobile(uuid,immobile);
-			}
-            if (Entity.getEntityTypeId(mobs[b]) == 42) {
-			Entity.setImmobile(uuid,immobile);
-			}
-            if (Entity.getEntityTypeId(mobs[b]) == 43) {
-			Entity.setImmobile(uuid,immobile);
-			}
-            if (Entity.getEntityTypeId(mobs[b]) == 44) {
-			Entity.setImmobile(uuid,immobile);
-			}
-            if (Entity.getEntityTypeId(mobs[b]) == 45) {
-			Entity.setImmobile(uuid,immobile);
-			}
-			if (Entity.getEntityTypeId(mobs[b]) == 46) {
-			Entity.setImmobile(uuid,immobile);
-			}
-			if (Entity.getEntityTypeId(mobs[b]) == 47) {
-			Entity.setImmobile(uuid,immobile);
-			}
-			if (Entity.getEntityTypeId(mobs[b]) == 48) {
-			Entity.setImmobile(uuid,immobile);
-			}
-			if (Entity.getEntityTypeId(mobs[b]) == 49) {
-			Entity.setImmobile(uuid,immobile);
-			}
-			if (Entity.getEntityTypeId(mobs[b]) == 50) {
-			Entity.setImmobile(uuid,immobile);
-			}
-			if (Entity.getEntityTypeId(mobs[b]) == 51) {
-			Entity.setImmobile(uuid,immobile);
-			}
-			if (Entity.getEntityTypeId(mobs[b]) == 52) {
-			Entity.setImmobile(uuid,immobile);
-			}
-		if (Entity.getEntityTypeId(mobs[b]) == 28) {
-			Entity.setImmobile(uuid,immobile);
-			}
-			if (Entity.getEntityTypeId(mobs[b]) == 54) {
-			Entity.setImmobile(uuid,immobile);
-			}
-			if (Entity.getEntityTypeId(mobs[b]) == 55) {
-			Entity.setImmobile(uuid,immobile);
-			}
-			if (Entity.getEntityTypeId(mobs[b]) == 53) {
-			Entity.setImmobile(uuid,immobile);
-			}
-			if (Entity.getEntityTypeId(mobs[b]) == 29) {
-			Entity.setImmobile(uuid,immobile);
-			}
-			if (Entity.getEntityTypeId(mobs[b]) == 57) {
-			Entity.setImmobile(uuid,immobile);
-			}
-			if (Entity.getEntityTypeId(mobs[b]) == 104) {
-			Entity.setImmobile(uuid,immobile);
-			}
-			if (Entity.getEntityTypeId(mobs[b]) == 105) {
-			Entity.setImmobile(uuid,immobile);
-			}
-	   }
-    }
-}
-
-function killingd() {
-    var mobs = Entity.getAll();
-    for (var c = 0; c < mobs.length; c++) {
-        var mobX = Entity.getX(mobs[c]) - getPlayerX();
-        var mobY = Entity.getY(mobs[c]) - getPlayerY();
-        var mobZ = Entity.getZ(mobs[c]) - getPlayerZ();
-        if (mobX * mobX + mobY * mobY + mobZ * mobZ <= 20 * 20 && mobs[c] != getPlayerEnt()) {
-		    if (Entity.getEntityTypeId(mobs[c]) == 10) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-            if (Entity.getEntityTypeId(mobs[c]) == 11) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-            if (Entity.getEntityTypeId(mobs[c]) == 12) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-            if (Entity.getEntityTypeId(mobs[c]) == 13) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-            if (Entity.getEntityTypeId(mobs[c]) == 14) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-            if (Entity.getEntityTypeId(mobs[c]) == 15) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-            if (Entity.getEntityTypeId(mobs[c]) == 16) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-            if (Entity.getEntityTypeId(mobs[c]) == 17) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-            if (Entity.getEntityTypeId(mobs[c]) == 18) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-            if (Entity.getEntityTypeId(mobs[c]) == 19) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-            if (Entity.getEntityTypeId(mobs[c]) == 20) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-            if (Entity.getEntityTypeId(mobs[c]) == 21) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-            if (Entity.getEntityTypeId(mobs[c]) == 22) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-			if (Entity.getEntityTypeId(mobs[c]) == 23) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-			if (Entity.getEntityTypeId(mobs[c]) == 24) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-			if (Entity.getEntityTypeId(mobs[c]) == 25) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-			if (Entity.getEntityTypeId(mobs[c]) == 26) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-			if (Entity.getEntityTypeId(mobs[c]) == 27) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-            if (Entity.getEntityTypeId(mobs[c]) == 32) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-            if (Entity.getEntityTypeId(mobs[c]) == 33) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-            if (Entity.getEntityTypeId(mobs[c]) == 34) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-            if (Entity.getEntityTypeId(mobs[c]) == 35) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-            if (Entity.getEntityTypeId(mobs[c]) == 36) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-            if (Entity.getEntityTypeId(mobs[c]) == 37) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-            if (Entity.getEntityTypeId(mobs[c]) == 38) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-            if (Entity.getEntityTypeId(mobs[c]) == 39) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-            if (Entity.getEntityTypeId(mobs[c]) == 40) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-            if (Entity.getEntityTypeId(mobs[c]) == 41) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-            if (Entity.getEntityTypeId(mobs[c]) == 42) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-            if (Entity.getEntityTypeId(mobs[c]) == 43) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-            if (Entity.getEntityTypeId(mobs[c]) == 44) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-            if (Entity.getEntityTypeId(mobs[c]) == 45) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-			if (Entity.getEntityTypeId(mobs[c]) == 46) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-			if (Entity.getEntityTypeId(mobs[c]) == 47) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-			if (Entity.getEntityTypeId(mobs[c]) == 48) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-			if (Entity.getEntityTypeId(mobs[c]) == 49) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-			if (Entity.getEntityTypeId(mobs[c]) == 50) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-			if (Entity.getEntityTypeId(mobs[c]) == 51) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-			if (Entity.getEntityTypeId(mobs[c]) == 52) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-		if (Entity.getEntityTypeId(mobs[c]) == 28) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-			if (Entity.getEntityTypeId(mobs[c]) == 54) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-			if (Entity.getEntityTypeId(mobs[c]) == 55) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-			if (Entity.getEntityTypeId(mobs[c]) == 53) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-			if (Entity.getEntityTypeId(mobs[c]) == 29) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-			if (Entity.getEntityTypeId(mobs[c]) == 57) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-			if (Entity.getEntityTypeId(mobs[c]) == 104) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-			if (Entity.getEntityTypeId(mobs[c]) == 105) {
-			Entity.setFireTicks(mobs[c],5);
-			}
-		
-	   }
-    }
-}
-
-function namedem() {
-    var mobs = Entity.getAll();
-	var players = Server.getAllPlayers();
-	var names = Server.getAllPlayerNames();
-    for (var n = 0; n < mobs.length; n++) {
-        var mobX = Entity.getX(mobs[n]) - getPlayerX();
-        var mobY = Entity.getY(mobs[n]) - getPlayerY();
-        var mobZ = Entity.getZ(mobs[n]) - getPlayerZ();
-        if (mobX * mobX + mobY * mobY + mobZ * mobZ <= 20 * 20 && mobs[n] != getPlayerEnt()) {
-		            if (Entity.getEntityTypeId(mobs[n]) == 10) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Chicken "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n])); 
-            }
-			}
-            if (Entity.getEntityTypeId(mobs[n]) == 11) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Cow "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-            if (Entity.getEntityTypeId(mobs[n]) == 12) {if(Entity.getNameTag(mobs[n]) != ""){Entity.setNameTag(mobs[n], " "+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+" / "+Entity.getMaxHealth(mobs[n]));
-			}
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Pig "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-            if (Entity.getEntityTypeId(mobs[n]) == 13) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Sheep "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-            if (Entity.getEntityTypeId(mobs[n]) == 14) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Wolf "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-            if (Entity.getEntityTypeId(mobs[n]) == 15) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Villager "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-            if (Entity.getEntityTypeId(mobs[n]) == 16) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Mushroom cow "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-            if (Entity.getEntityTypeId(mobs[n]) == 17) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Squid "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-            if (Entity.getEntityTypeId(mobs[n]) == 18) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Rabbit "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-            if (Entity.getEntityTypeId(mobs[n]) == 19) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Bat "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-            if (Entity.getEntityTypeId(mobs[n]) == 20) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Iron golem "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-            if (Entity.getEntityTypeId(mobs[n]) == 21) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Snow golem "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-            if (Entity.getEntityTypeId(mobs[n]) == 22) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Ocelot "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-			if (Entity.getEntityTypeId(mobs[n]) == 23) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Horse "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-			if (Entity.getEntityTypeId(mobs[n]) == 24) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Donkey "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-			if (Entity.getEntityTypeId(mobs[n]) == 25) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Mule "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-			if (Entity.getEntityTypeId(mobs[n]) == 26) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Skeleton horse "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-			if (Entity.getEntityTypeId(mobs[n]) == 27) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Zombie horse "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-            if (Entity.getEntityTypeId(mobs[n]) == 32) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Zombie "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-            if (Entity.getEntityTypeId(mobs[n]) == 33) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Creeper "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-            if (Entity.getEntityTypeId(mobs[n]) == 34) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Skeleton "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-            if (Entity.getEntityTypeId(mobs[n]) == 35) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Spider "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-            if (Entity.getEntityTypeId(mobs[n]) == 36) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Zombie pigman "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-            if (Entity.getEntityTypeId(mobs[n]) == 37) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Slime "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-            if (Entity.getEntityTypeId(mobs[n]) == 38) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Enderman "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-            if (Entity.getEntityTypeId(mobs[n]) == 39) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Silver fish "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-            if (Entity.getEntityTypeId(mobs[n]) == 40) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Cave spider "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-            if (Entity.getEntityTypeId(mobs[n]) == 41) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Ghast "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-            if (Entity.getEntityTypeId(mobs[n]) == 42) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Magma cube "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-            if (Entity.getEntityTypeId(mobs[n]) == 43) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Blaze "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-            if (Entity.getEntityTypeId(mobs[n]) == 44) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Zombie villager "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-            if (Entity.getEntityTypeId(mobs[n]) == 45) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Witch "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-			if (Entity.getEntityTypeId(mobs[n]) == 46) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Stray "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-			if (Entity.getEntityTypeId(mobs[n]) == 47) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Husk "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-			if (Entity.getEntityTypeId(mobs[n]) == 48) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Wither skeleton "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-			if (Entity.getEntityTypeId(mobs[n]) == 49) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Guardian "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-			if (Entity.getEntityTypeId(mobs[n]) == 50) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Elder guardian "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-			if (Entity.getEntityTypeId(mobs[n]) == 51) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " NPC "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-			if (Entity.getEntityTypeId(mobs[n]) == 52) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Wither "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-		if (Entity.getEntityTypeId(mobs[n]) == 28) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Polar bear "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-			if (Entity.getEntityTypeId(mobs[n]) == 54) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Shulker "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-			if (Entity.getEntityTypeId(mobs[n]) == 55) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Endermite "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-			if (Entity.getEntityTypeId(mobs[n]) == 53) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Ender dragon "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-			if (Entity.getEntityTypeId(mobs[n]) == 29) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Llama "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-			if (Entity.getEntityTypeId(mobs[n]) == 57) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Vindicator "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-			if (Entity.getEntityTypeId(mobs[n]) == 104) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Evoker "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-			if (Entity.getEntityTypeId(mobs[n]) == 105) {
-			if(Entity.getNameTag(mobs[n]) == ""){
-                Entity.setNameTag(mobs[n], " Vex "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
-            }
-			}
-		
-	   }
-    }
-	/*for (var p = 0; p < players.length; p++) {
-        var mobX2 = Entity.getX(players[p]) - getPlayerX();
-        var mobY2 = Entity.getY(players[p]) - getPlayerY();
-        var mobZ2 = Entity.getZ(players[p]) - getPlayerZ();
-        if (mobX2 * mobX2 + mobY2 * mobY2 + mobZ2 * mobZ2 <= 20 * 20 && players[p] != getPlayerEnt()) {
-if(Entity.getEntityTypeId(players[p]) == 63){
-	if(Entity.getNameTag(players[p])!="undefined"){
-                Entity.setNameTag(players[p], ""+Entity.getNameTag(players[p])+" "+Entity.getHealth(players[p])+"/"+Entity.getMaxHealth(players[p]));
-	}
-	}
-	  }
-	}*/
-}
-
-function destroyBlock(x, y, z, side)
-{
-if(block == true)preventDefault();
-	if(doubledrop == true){
-		Level.getGameMode();
-		if(Level.getGameMode() == 1 || Level.getGameMode() == 3){
-		var broke = Level.getTile(x, y, z);
-		Level.dropItem(x,y,z,0,broke,broke * 2);
-		}
-		if(Level.getGameMode() == 0 || Level.getGameMode() == 2){
-		var broke = Level.getTile(x, y, z);
-		Level.dropItem(x,y,z,0,broke,broke + 1);
-		}
-	}
-	if(destroyind){
-	var broke = Level.getTile(x, y, z);
-	clientMessage(client+"broke: "+broke+"\nx "+Math.round(x)+" y "+Math.round(y)+" z "+Math.round(z)+"\nSide: "+side);
-	}
-}
-
-function startDestroyBlock(x, y, z, side)
-{
-if(block == true)preventDefault()
-}
-
-function useItem(x, y, z, itemId, blockId, side, itemDamage, blockDamage){
-if(deadchat){
-	if(blockId == 63 || blockId == 68){
-	var notex = x;
-	var notey = y;
-	var notez = z;
-	
-	signEditor();
-}
-}
-
-	if(lightning) {
-Level.spawnMob(x, y, z, EntityType.LIGHTNING_BOLT);
-	}
-	if(primedtnt) {
-Level.spawnMob(x, y +2, z, EntityType.PRIMED_TNT);
-	}
-	if(arrow) {
-Level.spawnMob(x, y +1, z, EntityType.ARROW);
-	}
-	if(exporb) {
-Level.spawnMob(x, y +1, z, EntityType.EXPERIENCE_ORB);
-	}
-
-if(tapspam){
-	Server.sendChat(text);
-	Server.getPort();
-	if(Server.getPort()=="0")clientMessage(text);
-}
-
-if(block == true)preventDefault();
-
-if(tapdestroy){
-	Level.destroyBlock(x +1, y, z +1, vidd);
-	Level.destroyBlock(x +2, y, z +2, vidd);
-	Level.destroyBlock(x +3, y, z +3, vidd);
-	Level.destroyBlock(x +4, y, z +4, vidd);
-	
-    Level.destroyBlock(x, y, z, vidd);
-
-	Level.destroyBlock(x -1, y, z -1, vidd);
-	Level.destroyBlock(x -2, y, z -2, vidd);
-	Level.destroyBlock(x -3, y, z -3, vidd);
-	Level.destroyBlock(x -4, y, z -4, vidd);
-}
-
-if(taptp){
-Entity.setPosition(Player.getEntity(), x, y + 2.62, z);
-}
-if(tapnuke)explode(x,y,z,5);
-if(tapid)clientMessage(client + "Block ID: "+blockId+"\nTapped with: "+itemId+"\n"+" X: "+x+" Y: "+y+" Z: "+z+"\nFriction: "+Block.getFriction(blockId)+"\nSide: "+side+"\nBlock damage: "+blockDamage+"\nItem damage: "+itemDamage);
-if(tapjump)setVelY(getPlayerEnt(),0.5);
-	if(tapParti){
-if(tapParti){
-if(particle1)Level.addParticle(ParticleType.angryVillager, x, y+1, z, 0, 0, 0, 5);
-if(particle2)Level.addParticle(ParticleType.bubble, x, y+1, z, 0, 0, 0, 150);
-if(particle3)Level.addParticle(ParticleType.cloud, x, y+1, z, 0, 0, 0, 150);
-if(particle4)Level.addParticle(ParticleType.crit, x, y+1, z, 0, 0, 0, 50);
-if(particle5)Level.addParticle(ParticleType.dripLava, x, y+1, z, 0, 0, 0, 150);
-if(particle6)Level.addParticle(ParticleType.dripWater, x, y+1, z, 0, 0, 0, 150);
-if(particle7)Level.addParticle(ParticleType.enchantmenttable, x, y+1, z, 0, 0, 0, 150);
-if(particle8)Level.addParticle(ParticleType.fallingDust, x, y+1, z, 0, 0, 0, 150);
-if(particle9)Level.addParticle(ParticleType.flame, x, y+1, z, 0, 0, 0, 150);
-if(particle10)Level.addParticle(ParticleType.happyVillager, x, y+1, z, 0, 0, 0, 50);
-if(particle11)Level.addParticle(ParticleType.heart, x, y+1, z, 0, 0, 0, 5);
-if(particle12)Level.addParticle(ParticleType.hugeexplosion, x, y+1, z, 0, 0, 0, 150);
-if(particle13)Level.addParticle(ParticleType.hugeexplosionSeed, x, y+1, z, 0, 0, 0, 10);
-if(particle14)Level.addParticle(ParticleType.ink, x, y+1, z, 0, 0, 0, 150);
-if(particle15)Level.addParticle(ParticleType.itemBreak, x, y+1, z, 0, 0, 0, 150);
-if(particle16)Level.addParticle(ParticleType.lava, x, y+1, z, 0, 0, 0, 150);
-if(particle17)Level.addParticle(ParticleType.mobFlame, x, y+1, z, 0, 0, 0, 150);
-if(particle18)Level.addParticle(ParticleType.note, x, y+1, z, 0, 0, 0, 150);
-if(particle19)Level.addParticle(ParticleType.portal, x, y+1, z, 0, 0, 0, 150);
-if(particle20)Level.addParticle(ParticleType.rainSplash, x, y+1, z, 0, 0, 0, 150);
-if(particle21)Level.addParticle(ParticleType.redstone, x, y+1, z, 0, 0, 0, 10);
-if(particle22)Level.addParticle(ParticleType.slime, x, y+1, z, 0, 0, 0, 150);
-if(particle23)Level.addParticle(ParticleType.smoke, x, y+1, z, 0, 0, 0, 150);
-if(particle24)Level.addParticle(ParticleType.snowballpoof, x, y+1, z, 0, 0, 0, 150);
-if(particle25)Level.addParticle(ParticleType.spell, x, y+1, z, 0, 0, 0, 150);
-if(particle26)Level.addParticle(ParticleType.splash, x, y+1, z, 0, 0, 0, 150);
-if(particle27)Level.addParticle(ParticleType.suspendedTown, x, y+1, z, 0, 0, 0, 150);
-if(particle28)Level.addParticle(ParticleType.terrain, x, y+1, z, 0, 0, 0, 150);
-if(particle29)Level.addParticle(ParticleType.waterWake, x, y+1, z, 0, 0, 0, 150);
-if(particle30)Level.addParticle(ParticleType.largeexplode, x, y+1, z, 0, 0, 0, 150);
-if(particle31)Level.addParticle(ParticleType.spell2, x, y+1, z, 0, 0, 0, 150);
-if(particle32)Level.addParticle(ParticleType.spell3, x, y+1, z, 0, 0, 0, 150);
-if(particle33)Level.addParticle(ParticleType.carrotboost, x, y+1, z, 0, 0, 0, 150);
-if(particle34)Level.addParticle(ParticleType.witchspell, x, y+1, z, 0, 0, 0, 150);
-}
-}
-}
-
-function modTick(){
-	if(stackheart){
-Player.setHealth(20);
-}
-if(infhun){
-Player.setHunger(20);
-}
-if(killaura){
-
-killing(); 
-
-}
-
-if(killfaura){
-
-killingf(); 
-
-}
-if(killdaura) {
-	
-	killingd();
-}
-if(nametags) {
-	
-	namedem();
-}
-if(particle1)Level.addParticle(ParticleType.angryVillager, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 5);
-if(particle2)Level.addParticle(ParticleType.bubble, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
-if(particle3)Level.addParticle(ParticleType.cloud, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
-if(particle4)Level.addParticle(ParticleType.crit, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 50);
-if(particle5)Level.addParticle(ParticleType.dripLava, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
-if(particle6)Level.addParticle(ParticleType.dripWater, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
-if(particle7)Level.addParticle(ParticleType.enchantmenttable, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
-if(particle8)Level.addParticle(ParticleType.fallingDust, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
-if(particle9)Level.addParticle(ParticleType.flame, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
-if(particle10)Level.addParticle(ParticleType.happyVillager, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 50);
-if(particle11)Level.addParticle(ParticleType.heart, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 5);
-if(particle12)Level.addParticle(ParticleType.hugeexplosion, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
-if(particle13)Level.addParticle(ParticleType.hugeexplosionSeed, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 10);
-if(particle14)Level.addParticle(ParticleType.ink, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
-if(particle15)Level.addParticle(ParticleType.itemBreak, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
-if(particle16)Level.addParticle(ParticleType.lava, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
-if(particle17)Level.addParticle(ParticleType.mobFlame, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
-if(particle18)Level.addParticle(ParticleType.note, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
-if(particle19)Level.addParticle(ParticleType.portal, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
-if(particle20)Level.addParticle(ParticleType.rainSplash, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
-if(particle21)Level.addParticle(ParticleType.redstone, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 10);
-if(particle22)Level.addParticle(ParticleType.slime, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
-if(particle23)Level.addParticle(ParticleType.smoke, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
-if(particle24)Level.addParticle(ParticleType.snowballpoof, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
-if(particle25)Level.addParticle(ParticleType.spell, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
-if(particle26)Level.addParticle(ParticleType.splash, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
-if(particle27)Level.addParticle(ParticleType.suspendedTown, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
-if(particle28)Level.addParticle(ParticleType.terrain, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
-if(particle29)Level.addParticle(ParticleType.waterWake, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
-if(particle30)Level.addParticle(ParticleType.largeexplode, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
-if(particle31)Level.addParticle(ParticleType.spell2, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
-if(particle32)Level.addParticle(ParticleType.spell3, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
-if(particle33)Level.addParticle(ParticleType.carrotboost, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
-if(particle34)Level.addParticle(ParticleType.witchspell, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
-
-if(onlynight)Level.setTime(15000);
-
-if(onlyday)Level.setTime(0);
-	
-	if(antivoid){
-		Math.round(getPlayerY());
-		if(Math.round(getPlayerY())=="-3"){
-			clientMessage(client + "You were at void!");
-			Entity.setPosition(Player.getEntity(), getPlayerX(), 70, getPlayerZ()+5);
-		}
-	}
-	if(glide){
-if(Entity.getVelY(Player.getEntity()) <= 0){
-setVelY(Player.getEntity(), -0.05)
-}
-}
-if(coords)ModPE.showTipMessage(client + "\nX "+Math.round(getPlayerX())+", Y "+Math.round(getPlayerY())+", Z "+Math.round(getPlayerZ()));
-if(armor)ModPE.showTipMessage(client + "\nHead: " + Entity.getArmorDamage(getPlayerEnt(), 0) + " Chest: " + Entity.getArmorDamage(getPlayerEnt(), 1) + " Legs: " + Entity.getArmorDamage(getPlayerEnt(), 2) + " Feet: " + Entity.getArmorDamage(getPlayerEnt(), 3));
-if(autonuke)explode(getPlayerX(),getPlayerY(),getPlayerZ(),5);
-if(grief)Level.setTile(Player.getPointedBlockX(), Player.getPointedBlockY(), Player.getPointedBlockZ(), vid, 0);
-if(getvel)ModPE.showTipMessage("VelX: "+Math.round(Entity.getVelX(getPlayerEnt()))+" VelY "+Math.round(Entity.getVelY(getPlayerEnt()))+" VelZ "+Math.round(Entity.getVelZ(getPlayerEnt())));
-if(yawpitch)ModPE.showTipMessage("pitch: "+Math.round(getPitch(getPlayerEnt()))+" \nYaw: "+Math.round(getYaw(getPlayerEnt()))+" ");
-if(airwalk){
-if(Level.getTile(getPlayerX(), getPlayerY() -1, getPlayerZ())=="0" || Level.getTile(getPlayerX(), getPlayerY() -1, getPlayerZ())=="95"){
-	Level.setTile(getPlayerX() +1, getPlayerY() -2, getPlayerZ(), 95, 0);
-	 Level.setTile(getPlayerX() +2, getPlayerY() -2, getPlayerZ(), 95, 0);
-	 Level.setTile(getPlayerX() +3, getPlayerY() -2, getPlayerZ(), 95, 0);
-	 Level.setTile(getPlayerX() +4, getPlayerY() -2, getPlayerZ(), 95, 0);
-	 Level.setTile(getPlayerX() -1, getPlayerY() -2, getPlayerZ(), 95, 0);
-	 Level.setTile(getPlayerX() -2, getPlayerY() -2, getPlayerZ(), 95, 0);
-	 Level.setTile(getPlayerX() -3, getPlayerY() -2, getPlayerZ(), 95, 0);
-	 Level.setTile(getPlayerX() -4, getPlayerY() -2, getPlayerZ(), 95, 0);
-	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ(), 95, 0);
-	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() +1, 95, 0);
-	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() +2, 95, 0);
-	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() +3, 95, 0);
-	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() +4, 95, 0);
-	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() -1, 95, 0);
-	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() -2, 95, 0);
-	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() -3, 95, 0);
-	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() -4, 95, 0);
-	}
-}
-	if(icewalk){
-if(Level.getTile(getPlayerX(), getPlayerY() -1, getPlayerZ())=="0" || Level.getTile(getPlayerX(), getPlayerY() -1, getPlayerZ())!="79"){
-	Level.setTile(getPlayerX() +1, getPlayerY() -2, getPlayerZ(), 79, 0);
-	 Level.setTile(getPlayerX() +2, getPlayerY() -2, getPlayerZ(), 79, 0);
-	 Level.setTile(getPlayerX() +3, getPlayerY() -2, getPlayerZ(), 79, 0);
-	 Level.setTile(getPlayerX() +4, getPlayerY() -2, getPlayerZ(), 79, 0);
-	 Level.setTile(getPlayerX() -1, getPlayerY() -2, getPlayerZ(), 79, 0);
-	 Level.setTile(getPlayerX() -2, getPlayerY() -2, getPlayerZ(), 79, 0);
-	 Level.setTile(getPlayerX() -3, getPlayerY() -2, getPlayerZ(), 79, 0);
-	 Level.setTile(getPlayerX() -4, getPlayerY() -2, getPlayerZ(), 79, 0);
-	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ(), 79, 0);
-	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() +1, 79, 0);
-	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() +2, 79, 0);
-	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() +3, 79, 0);
-	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() +4, 79, 0);
-	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() -1, 79, 0);
-	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() -2, 79, 0);
-	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() -3, 79, 0);
-	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() -4, 79, 0);
-	}
-}
-if(changeSpeed==true)changeSpeedOnBlock();
-if(brightness==true)bright();
-if(lowhealth==true)spawnIfLowHealth();
-if(fasteat==true)fastEat();
-if(xray==true)xrayRepeat();
-if (spider && Utils.Player.isCollidedHorizontally()) {
-		if(getTile(Player.getX()+1, Player.getY(), Player.getZ())> 0 || getTile(Player.getX()-1, Player.getY(), Player.getZ())> 0 || getTile(Player.getX(), Player.getY(), Player.getZ()+1)> 0 || getTile(Player.getX(), Player.getY(), Player.getZ()-1)> 0 || getTile(Player.getX()+1, Player.getY(), Player.getZ()-1)> 0 || getTile(Player.getX()-1, Player.getY(), Player.getZ()+1)> 0) {
-        setVelY(Player.getEntity(), 0.6);
-              }
-	    }
-	    if(jump) {
-		if(Entity.getVelY(getPlayerEnt())< -0.1) {
-			setVelY(getPlayerEnt(),'-' + 0 + '.' + jumpheight);
-		}
-		if(Entity.getVelY(getPlayerEnt())< 0.35 && Entity.getVelY(getPlayerEnt())> 0.2 && can==1 && canGetHP==1) {
-			setVelY(getPlayerEnt(), 0 + '.' + jumpheight);
-			can = 2;
-			HP = Entity.getHealth(getPlayerEnt());
-			canGetHP = 0;
-		}
-		if(Entity.getVelY(getPlayerEnt())>gravity && can==2) {
-			Player.setHealth(HP);
-			canGetHP = 1;
-			can = 0;
-		}
-		if(Entity.getVelY(getPlayerEnt())==gravity && can==0) {
-			Player.setHealth(HP);
-			canGetHP = 1;
-			can = 1;
-		}
-	}
-	    if(autowalk) {
-    toDirectionalVector(playerDir, (getYaw() + 90) * DEG_TO_RAD, getPitch() * DEG_TO_RAD * -1);
-    setVelX(getPlayerEnt(), 0.22 * playerDir[0]);
-    setVelZ(getPlayerEnt(), 0.22 * playerDir[2]);
-}
-	if(tpAura){
-		var players = Server.getAllPlayers();
-		var names = Server.getAllPlayerNames();
-		for(var i = 0; i < 4; i++){
-			var x = Entity.getX(players[i]) - getPlayerX();
-			var y = Entity.getY(players[i]) - getPlayerY();
-			var z = Entity.getZ(players[i]) - getPlayerZ();
-			if(y!=0)Entity.setPosition(Player.getEntity(), x, y + 2.62, z);
-		}
-	}
-	if(keepHotbar){
-	Player.setSelectedSlotId(Player.getSelectedSlotId());
-	Player.getCarriedItem();
-	Player.setSelectedSlotId(Player.getCarriedItem());
-	}
-	if(itemIndi)ModPE.showTipMessage(client+"\nHeld: "+Player.getCarriedItem()+":"+Player.getCarriedItemData()+", Amount: "+Player.getCarriedItemCount());
-	if(bhop){
-		var x=getPlayerX();
-		    var y=getPlayerY();
-			    var z=getPlayerZ();
-		if(Entity.getVelX(Player.getEntity())>0.1 && getTile(x, y +2, z) == 0){
-			if(getTile(Player.getX(), Player.getY()-2, Player.getZ())>0){
-				Entity.setVelY(Player.getEntity(), 0.4);
-			}
-		}
-		if(Entity.getVelX(Player.getEntity())<-0.1 && getTile(x, y +2, z) == 0){
-			if(getTile(Player.getX(), Player.getY()-2, Player.getZ())>0){
-				Entity.setVelY(Player.getEntity(), 0.4);
-			}
-		}
-		if(Entity.getVelZ(Player.getEntity())>0.1 && getTile(x, y +2, z) == 0){
-			if(getTile(Player.getX(), Player.getY()-2, Player.getZ())>0){
-				Entity.setVelY(Player.getEntity(), 0.4);
-			}
-		}
-		if(Entity.getVelZ(Player.getEntity())<-0.1 && getTile(x, y +2, z) == 0){
-			if(getTile(Player.getX(), Player.getY()-2, Player.getZ())>0){
-				Entity.setVelY(Player.getEntity(), 0.4);
-			}
-		}
-	}
-	if(facedInfo){
-		if(Entity.getEntityTypeId(Player.getPointedEntity()) == 63 && Entity.getArmorDamage(Player.getPointedEntity(), 0) != 0 || Entity.getArmorDamage(Player.getPointedEntity(), 1) != 0 || Entity.getArmorDamage(Player.getPointedEntity(), 2) != 0 || Entity.getArmorDamage(Player.getPointedEntity(), 3) != 0){
-			ModPE.showTipMessage(client + "\nName: "+Player.getName(Player.getPointedEntity())+", RenderType: "+Entity.getRenderType(Player.getPointedEntity())+", Health: "+Entity.getHealth(Player.getPointedEntity())+"/"+Entity.getMaxHealth(Player.getPointedEntity())+"\nHead: "+Entity.getArmorDamage(Player.getPointedEntity(), 0)+", Chest: "+Entity.getArmorDamage(Player.getPointedEntity(), 1)+", Leggings: "+Entity.getArmorDamage(Player.getPointedEntity(), 2)+", Boots: "+Entity.getArmorDamage(Player.getPointedEntity(), 3));
-		} else {
-			ModPE.showTipMessage(client + "\nName: "+Player.getName(Player.getPointedEntity())+", RenderType: "+Entity.getRenderType(Player.getPointedEntity())+", Health: "+Entity.getHealth(Player.getPointedEntity())+"/"+Entity.getMaxHealth(Player.getPointedEntity())+"");
-		}
-	}
-	if(facedInfo2){
-	if(Entity.getEntityTypeId(Player.getPointedEntity()) <= 63){
-			ModPE.showTipMessage(client + "\nName: "+Player.getName(Player.getPointedEntity())+", RenderType: "+Entity.getRenderType(Player.getPointedEntity())+", Health: "+Entity.getHealth(Player.getPointedEntity())+"/"+Entity.getMaxHealth(Player.getPointedEntity())+"");
-		}
-	}
-	if(onfriction){
-	Block.setFriction(79, 0.6000000238418579);
-	Block.setFriction(174, 0.6000000238418579);
-	Block.setFriction(88, 0.6000000238418579);
-	for(var i = 0; i < 100; i++){
-		Block.setFriction(i, 2); /**2 is very fast, looking for a smoother speed later on.*/
-	}
-	}
-	if(rainitem==true){
-Level.dropItem(getPlayerX()+3,getPlayerY()+11,getPlayerZ(),0,rainId,1);
-Level.dropItem(getPlayerX()+7,getPlayerY()+11,getPlayerZ(),0,rainId,1);
-Level.dropItem(getPlayerX(),getPlayerY()+11,getPlayerZ()+3,0,rainId,1);
-Level.dropItem(getPlayerX(),getPlayerY()+11,getPlayerZ()+7,0,rainId,1);
-Level.dropItem(getPlayerX()+3,getPlayerY()+11,getPlayerZ()+3,0,rainId,1);
-Level.dropItem(getPlayerX()+7,getPlayerY()+11,getPlayerZ()+7,0,rainId,1);
-Level.dropItem(getPlayerX()-3,getPlayerY()+11,getPlayerZ()-3,0,rainId,1);
-Level.dropItem(getPlayerX()-7,getPlayerY()+11,getPlayerZ()-7,0,rainId,1);
-Level.dropItem(getPlayerX()-3,getPlayerY()+11,getPlayerZ()+3,0,rainId,1);
-Level.dropItem(getPlayerX()-7,getPlayerY()+11,getPlayerZ()+7,0,rainId,1);
-Level.dropItem(getPlayerX()+3,getPlayerY()+11,getPlayerZ()-3,0,rainId,1);
-Level.dropItem(getPlayerX()+7,getPlayerY()+11,getPlayerZ()-7,0,rainId,1);
-}
-if(autosword){
-if(getNearestEntity3(aimrange) != null) {
-	let bestsword = [-1, -1];
-	for(let i = 0; i < 10; i++) {
-		let dmg = Utils.Item.getDamage(Player.getInventorySlot(i));
-		if(dmg > bestsword[0]) {
-			bestsword[0] = dmg;
-			bestsword[1] = i;
-		}
-	}
-	if(bestsword[1] != -1)
-		Player.setSelectedSlotId(bestsword[1]);
-		}
-}
-	if(noknock){
-if(Entity.getVelY(Player.getEntity())>0.1 && getTile(x-1, y -1, z) == 0 || getTile(x, y -1, z -1) == 0 || getTile(x +1, y -1, z) == 0 || getTile(x, y -1, z +1) == 0){
-Entity.setVelY(Player.getEntity(), -0.5);
-		}
-	}
-	if(checkping){
-	var ping = AlphaHackPE.ping();
-	ModPE.showTipMessage(ping+" ms.");
-	}
-}
-
-function toDirectionalVector(dir, a, b) {
-    dir[0] = Math["cos"](a) * Math["cos"](b);
-    dir[1] = Math["sin"](b);
-    dir[2] = Math["sin"](a) * Math["cos"](b);
-}
-
-function devpardon() {
-var file = new java.io.File( android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/games/com.mojang/minecraftpe/clientId.txt/");
-        var path=android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/games/com.mojang/minecraftpe/clientId.txt/" ; 
-        java.io.File(path).mkdirs(); 
-        file.delete();
-	android.widget.Toast.makeText(ctx, "Restart Minecraft PE", 1).show();
-}
-
-function getClient(){
- var line, string = "";
-    var file = new java.io.File( android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/games/com.mojang/minecraftpe/clientId.txt/");
-    var path=android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/games/com.mojang/minecraftpe/clientId.txt/" ; 
-    if(!file.exists()){
-    clientMessage(client + "The file doesn't exist"); 
-  java.io.File(path).mkdirs(); 
-    }
-    else {
-    var readfile = new java.io.BufferedReader(new java.io.FileReader(file));
-    while((line = readfile.readLine()) != null) {
-        var t3 = line + java.lang.System.getProperty("line.seperator");
-        string += t3.substring(0, t3.length - 4);
-        var t4 = line;
-        if((line = readfile.readLine()) != null) string += "\n";
-        line = t4;
-    } 
-    cidm8=parseInt(string);
-    clientMessage(client + cidm8);       
-    }
-}
+/*Ď̳̭̻̼̙̻̬̫͎̜͂ͦͦ̓̀i̱̮̣̱̟̣̫̱̻̳̗̦̐̄́̊ͥ̋͑̇̍ͩ̋͂͗̄̅̄ͥ̊ͮͅa̘̪̯̰̬̠̹̟̙̥͚͔ͩ̿̇̂͛ͫ͐̓̊͂̇̏͒ͮͪͥ̈̔l͎̫̗̭̣͈̠̅͗ͩ̋͂̈́̏̋̍̑̊̈́̄ͥͯͭ̃o͇̞͙͈͎̬̝̝̣̭͉̮ͤͯͦͫ͌̍͒̉̿̐̅͌ͣg̣̣̬͇̘͕̻ͯ̊̑s̯̥̞͔̼̤̤͇̹̏ͮ̇ͧ̉̉́̊ͤ͌͛̅̒͒ͯ̎̏ͮ̈*/
 
 function scc() {
 MainActivity.runOnUiThread(new java.lang.Runnable(){
@@ -17547,6 +15848,1282 @@ print("name item dialog:"+e);
 
 function nameitem(){
 Player.setItemCustomName(Player.getSelectedSlotId(), newnamet);
+}
+
+/*T̞͚̘̩͔̮̼̥̗̮̱̥͎͔̪̱̹͐ͮͥ̈́͒̉̈́̂̒̉͒ͮ̈́̏̆́ͅͅȟ̩̱͇͎̻̬͈̥̌ͯͭͬ̅̆̽̔̉̂̈̽͆͊ͯ͌e̼͇̖̰͇̘̮̖͔͇͛̽ͤ̈́͐̂͊̊̽̂͊̃ c̯͕̙̰̤̪̭͚͍̱̤̹̺̻̩̦̻ͯ͊̓ͪ̓̌ͨͣͫ̈ͩ̇ͮ͑̔̈́̇o̥̬̩͚̳̺̦̰̠͈̣͍̫̺͚͕̘̞̯͋ͣͦͧ͆̋͌̌ͥd͇͔̥̤̳̞̥̉̎ͬͥ͛̍̓ͦ̐͊̚e̤͍̹͔͕̦͚̖̯̫̫̬̹̹͍͋ͬ̋̑̏̔ͪ̎̂*/
+
+function entityAddedHook(entity){
+if(entind){
+var x = Entity.getX(entity);
+var y = Entity.getY(entity);
+var z = Entity.getZ(entity);
+var name = Entity.getNameTag(entity);
+	if(Entity.getEntityTypeId(entity) != 64 && entity != null){
+		if(!name.match(' ')){
+clientMessage(client+"Entity added:\n"+Entity.getNameTag(entity)+" / "+Entity.getEntityTypeId(entity)+"\nx "+Math.round(x)+" y "+Math.round(y)+" z "+Math.round(z));
+		}
+	}
+}
+	if(dropind){
+var x = Entity.getX(entity);
+var y = Entity.getY(entity);
+var z = Entity.getZ(entity);
+	if(Entity.getEntityTypeId(entity) == 64){
+clientMessage(client+"Entity added:\n(Dropped item) / "+Entity.getEntityTypeId(entity)+"\nx "+Math.round(x)+" y "+Math.round(y)+" z "+Math.round(z));
+	}
+}
+	if(noentity){
+		for(var i = 0; i < 5; i++){
+		if(entity != getPlayerEnt()){
+		//Entity.setHealth(entity, 0); setting this more than once can glitch the entity
+		Entity.setFireTicks(entity, 5);
+			if(i==2)i = 0;
+		}
+		}
+	}
+}
+
+function entityRemovedHook(entity){
+if(entind){
+var x = Entity.getX(entity);
+var y = Entity.getY(entity);
+var z = Entity.getZ(entity);
+var name = Entity.getNameTag(entity);
+	if(Entity.getEntityTypeId(entity) != 64 && entity != null){
+		if(!name.match(' ')){
+clientMessage(client+"Entity removed:\n"+Entity.getNameTag(entity)+" / "+Entity.getEntityTypeId(entity)+"\nx "+Math.round(x)+" y "+Math.round(y)+" z "+Math.round(z));
+		}
+	}
+}
+	if(dropind){
+var x = Entity.getX(entity);
+var y = Entity.getY(entity);
+var z = Entity.getZ(entity);
+	if(Entity.getEntityTypeId(entity) == 64){
+clientMessage(client+"Entity removed:\n(Dropped item) / "+Entity.getEntityTypeId(entity)+"\nx "+Math.round(x)+" y "+Math.round(y)+" z "+Math.round(z));
+	}
+}
+}
+
+function screenChangeHook(screenName){
+if(screenind)android.widget.Toast.makeText(ctx, screenName, 1).show();
+}
+
+function serverMessageReceiveHook(str) {
+	ctx.runOnUiThread(new java.lang.Runnable(){
+run: function(){
+	if(ttot)android.widget.Toast.makeText(ctx, str, 1).show();
+	}});
+	if(chatind){
+	clientMessage(client+str);
+	android.widget.Toast.makeText(ctx, str, 1).show();
+	}
+if(autoply1 && str != null){
+if(Server.getPort() != "0")Server.sendChat("yee.");
+}
+}
+
+function attackHook(attacker, victim) {
+	if(instakilled) {
+		Entity.setHealth(victim, 1);
+	}
+	if(firepunch) {
+Entity.setFireTicks(victim, 5);
+	}
+if(saddle)rideAnimal(attacker, victim);
+if(horsehealth)Entity.setMaxHealth(victim, horseheart);
+if(getage)clientMessage(client + "age: "+Entity.getAnimalAge(victim));
+if(setage)Entity.setAnimalAge(victim, newage);
+	if(hitBehind){
+		var x = Entity.getX(victim) - getPlayerX();
+		var y = Entity.getY(victim) - getPlayerY();
+		var z = Entity.getZ(victim) - getPlayerZ();
+		Entity.setPosition(Player.getEntity(), x -1, y + 3, z -1);
+		Entity.setPosition(Player.getEntity(), x +1, y + 3, z +1);
+	}
+	if(hitJump){
+		if(victim)setVelY(getPlayerEnt(),0.5);
+	}
+	if(attackActions){
+		if(victim)Server.sendChat(newAction);
+	}
+	if(hitparticles){
+		var x = Entity.getX(victim) - getPlayerX();
+		var y = Entity.getY(victim) - getPlayerY();
+		var z = Entity.getZ(victim) - getPlayerZ();
+if(particle1)Level.addParticle(ParticleType.angryVillager, x, y, z, 0, 0, 0, 5);
+if(particle2)Level.addParticle(ParticleType.bubble, x, y, z, 0, 0, 0, 150);
+if(particle3)Level.addParticle(ParticleType.cloud, x, y, z, 0, 0, 0, 150);
+if(particle4)Level.addParticle(ParticleType.crit, x, y, z, 0, 0, 0, 50);
+if(particle5)Level.addParticle(ParticleType.dripLava, x, y, z, 0, 0, 0, 150);
+if(particle6)Level.addParticle(ParticleType.dripWater, x, y, z, 0, 0, 0, 150);
+if(particle7)Level.addParticle(ParticleType.enchantmenttable, x, y, z, 0, 0, 0, 150);
+if(particle8)Level.addParticle(ParticleType.fallingDust, x, y, z, 0, 0, 0, 150);
+if(particle9)Level.addParticle(ParticleType.flame, x, y, z, 0, 0, 0, 150);
+if(particle10)Level.addParticle(ParticleType.happyVillager, x, y, z, 0, 0, 0, 50);
+if(particle11)Level.addParticle(ParticleType.heart, x, y, z, 0, 0, 0, 5);
+if(particle12)Level.addParticle(ParticleType.hugeexplosion, x, y, z, 0, 0, 0, 150);
+if(particle13)Level.addParticle(ParticleType.hugeexplosionSeed, x, y, z, 0, 0, 0, 10);
+if(particle14)Level.addParticle(ParticleType.ink, x, y, z, 0, 0, 0, 150);
+if(particle15)Level.addParticle(ParticleType.itemBreak, x, y, z, 0, 0, 0, 150);
+if(particle16)Level.addParticle(ParticleType.lava, x, y, z, 0, 0, 0, 150);
+if(particle17)Level.addParticle(ParticleType.mobFlame, x, y, z, 0, 0, 0, 150);
+if(particle18)Level.addParticle(ParticleType.note, x, y, z, 0, 0, 0, 150);
+if(particle19)Level.addParticle(ParticleType.portal, x, y, z, 0, 0, 0, 150);
+if(particle20)Level.addParticle(ParticleType.rainSplash, x, y, z, 0, 0, 0, 150);
+if(particle21)Level.addParticle(ParticleType.redstone, x, y, z, 0, 0, 0, 10);
+if(particle22)Level.addParticle(ParticleType.slime, x, y, z, 0, 0, 0, 150);
+if(particle23)Level.addParticle(ParticleType.smoke, x, y, z, 0, 0, 0, 150);
+if(particle24)Level.addParticle(ParticleType.snowballpoof, x, y, z, 0, 0, 0, 150);
+if(particle25)Level.addParticle(ParticleType.spell, x, y, z, 0, 0, 0, 150);
+if(particle26)Level.addParticle(ParticleType.splash, x, y, z, 0, 0, 0, 150);
+if(particle27)Level.addParticle(ParticleType.suspendedTown, x, y, z, 0, 0, 0, 150);
+if(particle28)Level.addParticle(ParticleType.terrain, x, y, z, 0, 0, 0, 150);
+if(particle29)Level.addParticle(ParticleType.waterWake, x, y, z, 0, 0, 0, 150);
+if(particle30)Level.addParticle(ParticleType.largeexplode, x, y, z, 0, 0, 0, 150);
+if(particle31)Level.addParticle(ParticleType.spell2, x, y, z, 0, 0, 0, 150);
+if(particle32)Level.addParticle(ParticleType.spell3, x, y, z, 0, 0, 0, 150);
+if(particle33)Level.addParticle(ParticleType.carrotboost, x, y, z, 0, 0, 0, 150);
+if(particle34)Level.addParticle(ParticleType.witchspell, x, y, z, 0, 0, 0, 150);
+}
+	if(hitmorph)Entity.setRenderType(Player.getEntity(), Entity.getRenderType(victim));
+	if(hitrmef)Entity.removeAllEffects(victim);
+} 
+function instaDestroy(){
+if(instabreak==true)
+	for(i = 0; i < 256; i++){
+		Block.setDestroyTime(i, 0.1);
+	}
+}
+ 
+function defaultDestroy(){
+if(instabreak==false)
+	for(i = 0; i < 256; i++){
+		Block.setDestroyTime(i, defaultDestroyTime[i]);
+	}
+}
+
+function playerExpLevelChangeHook(player, levelsAdded){
+if(expind){
+var x = Entity.getX(player);
+var y = Entity.getY(player);
+var z = Entity.getZ(player);
+var name = Entity.getNameTag(player);
+	if(Entity.getEntityTypeId(player) != 64 && player != null){
+		if(!name.match(' ')){
+clientMessage(client+"Player:\n"+Entity.getNameTag(player)+"\nExp:\n"+levelsAdded+"\nx "+Math.round(x)+" y "+Math.round(y)+" z "+Math.round(z));
+		}
+	}
+}
+}
+
+function killing() {
+    var mobs = Entity.getAll();
+    for (var a = 0; a < mobs.length; a++) {
+        var mobX = Entity.getX(mobs[a]) - getPlayerX();
+        var mobY = Entity.getY(mobs[a]) - getPlayerY();
+        var mobZ = Entity.getZ(mobs[a]) - getPlayerZ();
+        if (mobX * mobX + mobY * mobY + mobZ * mobZ <= 20 * 20 && mobs[a] != getPlayerEnt()) {
+		    if (Entity.getEntityTypeId(mobs[a]) == 10) {
+			Entity.setHealth(mobs[a], 0);
+			}
+            if (Entity.getEntityTypeId(mobs[a]) == 11) {
+			Entity.setHealth(mobs[a], 0);
+			}
+            if (Entity.getEntityTypeId(mobs[a]) == 12) {
+			Entity.setHealth(mobs[a], 0);
+			}
+            if (Entity.getEntityTypeId(mobs[a]) == 13) {
+			Entity.setHealth(mobs[a], 0);
+			}
+            if (Entity.getEntityTypeId(mobs[a]) == 14) {
+			Entity.setHealth(mobs[a], 0);
+			}
+            if (Entity.getEntityTypeId(mobs[a]) == 15) {
+			Entity.setHealth(mobs[a], 0);
+			}
+            if (Entity.getEntityTypeId(mobs[a]) == 16) {
+			Entity.setHealth(mobs[a], 0);
+			}
+            if (Entity.getEntityTypeId(mobs[a]) == 17) {
+			Entity.setHealth(mobs[a], 0);
+			}
+            if (Entity.getEntityTypeId(mobs[a]) == 18) {
+			Entity.setHealth(mobs[a], 0);
+			}
+            if (Entity.getEntityTypeId(mobs[a]) == 19) {
+			Entity.setHealth(mobs[a], 0);
+			}
+            if (Entity.getEntityTypeId(mobs[a]) == 20) {
+			Entity.setHealth(mobs[a], 0);
+			}
+            if (Entity.getEntityTypeId(mobs[a]) == 21) {
+			Entity.setHealth(mobs[a], 0);
+			}
+            if (Entity.getEntityTypeId(mobs[a]) == 22) {
+			Entity.setHealth(mobs[a], 0);
+			}
+			if (Entity.getEntityTypeId(mobs[a]) == 23) {
+			Entity.setHealth(mobs[a], 0);
+			}
+			if (Entity.getEntityTypeId(mobs[a]) == 24) {
+			Entity.setHealth(mobs[a], 0);
+			}
+			if (Entity.getEntityTypeId(mobs[a]) == 25) {
+			Entity.setHealth(mobs[a], 0);
+			}
+			if (Entity.getEntityTypeId(mobs[a]) == 26) {
+			Entity.setHealth(mobs[a], 0);
+			}
+			if (Entity.getEntityTypeId(mobs[a]) == 27) {
+			Entity.setHealth(mobs[a], 0);
+			}
+            if (Entity.getEntityTypeId(mobs[a]) == 32) {
+			Entity.setHealth(mobs[a], 0);
+			}
+            if (Entity.getEntityTypeId(mobs[a]) == 33) {
+			Entity.setHealth(mobs[a], 0);
+			}
+            if (Entity.getEntityTypeId(mobs[a]) == 34) {
+			Entity.setHealth(mobs[a], 0);
+			}
+            if (Entity.getEntityTypeId(mobs[a]) == 35) {
+			Entity.setHealth(mobs[a], 0);
+			}
+            if (Entity.getEntityTypeId(mobs[a]) == 36) {
+			Entity.setHealth(mobs[a], 0);
+			}
+            if (Entity.getEntityTypeId(mobs[a]) == 37) {
+			Entity.setHealth(mobs[a], 0);
+			}
+            if (Entity.getEntityTypeId(mobs[a]) == 38) {
+			Entity.setHealth(mobs[a], 0);
+			}
+            if (Entity.getEntityTypeId(mobs[a]) == 39) {
+			Entity.setHealth(mobs[a], 0);
+			}
+            if (Entity.getEntityTypeId(mobs[a]) == 40) {
+			Entity.setHealth(mobs[a], 0);
+			}
+            if (Entity.getEntityTypeId(mobs[a]) == 41) {
+			Entity.setHealth(mobs[a], 0);
+			}
+            if (Entity.getEntityTypeId(mobs[a]) == 42) {
+			Entity.setHealth(mobs[a], 0);
+			}
+            if (Entity.getEntityTypeId(mobs[a]) == 43) {
+			Entity.setHealth(mobs[a], 0);
+			}
+            if (Entity.getEntityTypeId(mobs[a]) == 44) {
+			Entity.setHealth(mobs[a], 0);
+			}
+            if (Entity.getEntityTypeId(mobs[a]) == 45) {
+			Entity.setHealth(mobs[a], 0);
+			}
+			if (Entity.getEntityTypeId(mobs[a]) == 46) {
+			Entity.setHealth(mobs[a], 0);
+			}
+			if (Entity.getEntityTypeId(mobs[a]) == 47) {
+			Entity.setHealth(mobs[a], 0);
+			}
+			if (Entity.getEntityTypeId(mobs[a]) == 48) {
+			Entity.setHealth(mobs[a], 0);
+			}
+			if (Entity.getEntityTypeId(mobs[a]) == 49) {
+			Entity.setHealth(mobs[a], 0);
+			}
+			if (Entity.getEntityTypeId(mobs[a]) == 50) {
+			Entity.setHealth(mobs[a], 0);
+			}
+			if (Entity.getEntityTypeId(mobs[a]) == 51) {
+			Entity.setHealth(mobs[a], 0);
+			}
+			if (Entity.getEntityTypeId(mobs[a]) == 52) {
+			Entity.setHealth(mobs[a], 0);
+			}
+		if (Entity.getEntityTypeId(mobs[a]) == 28) {
+			Entity.setHealth(mobs[a], 0);
+			}
+			if (Entity.getEntityTypeId(mobs[a]) == 54) {
+			Entity.setHealth(mobs[a], 0);
+			}
+			if (Entity.getEntityTypeId(mobs[a]) == 55) {
+			Entity.setHealth(mobs[a], 0);
+			}
+			if (Entity.getEntityTypeId(mobs[a]) == 53) {
+			Entity.setHealth(mobs[a], 0);
+			}
+			/*if (Entity.getEntityTypeId(mobs[a]) == 103) {
+			Entity.setHealth(mobs[a], 0);
+			}
+			if (Entity.getEntityTypeId(mobs[a]) == 104) {
+			Entity.setHealth(mobs[a], 0);
+			}*/
+		
+	   }
+    }
+}
+
+function killingf() {
+    var mobs = Entity.getAll();
+		var immobile = true;
+	if(killfaura==false)immobile=false;
+    for (var b = 0; b < mobs.length; b++) {
+	var uuid=mobs[b];
+        var mobX = Entity.getX(mobs[b]) - getPlayerX();
+        var mobY = Entity.getY(mobs[b]) - getPlayerY();
+        var mobZ = Entity.getZ(mobs[b]) - getPlayerZ();
+        if (mobX * mobX + mobY * mobY + mobZ * mobZ <= 20 * 20 && mobs[b] != getPlayerEnt()) {
+		    if (Entity.getEntityTypeId(mobs[b]) == 10) {
+			Entity.setImmobile(uuid,immobile);
+			}
+            if (Entity.getEntityTypeId(mobs[b]) == 11) {
+			Entity.setImmobile(uuid,immobile);
+			}
+            if (Entity.getEntityTypeId(mobs[b]) == 12) {
+			Entity.setImmobile(uuid,immobile);
+			}
+            if (Entity.getEntityTypeId(mobs[b]) == 13) {
+			Entity.setImmobile(uuid,immobile);
+			}
+            if (Entity.getEntityTypeId(mobs[b]) == 14) {
+			Entity.setImmobile(uuid,immobile);
+			}
+            if (Entity.getEntityTypeId(mobs[b]) == 15) {
+			Entity.setImmobile(uuid,immobile);
+			}
+            if (Entity.getEntityTypeId(mobs[b]) == 16) {
+			Entity.setImmobile(uuid,immobile);
+			}
+            if (Entity.getEntityTypeId(mobs[b]) == 17) {
+			Entity.setImmobile(uuid,immobile);
+			}
+            if (Entity.getEntityTypeId(mobs[b]) == 18) {
+			Entity.setImmobile(uuid,immobile);
+			}
+            if (Entity.getEntityTypeId(mobs[b]) == 19) {
+			Entity.setImmobile(uuid,immobile);
+			}
+            if (Entity.getEntityTypeId(mobs[b]) == 20) {
+			Entity.setImmobile(uuid,immobile);
+			}
+            if (Entity.getEntityTypeId(mobs[b]) == 21) {
+			Entity.setImmobile(uuid,immobile);
+			}
+            if (Entity.getEntityTypeId(mobs[b]) == 22) {
+			Entity.setImmobile(uuid,immobile);
+			}
+			if (Entity.getEntityTypeId(mobs[b]) == 23) {
+			Entity.setImmobile(uuid,immobile);
+			}
+			if (Entity.getEntityTypeId(mobs[b]) == 24) {
+			Entity.setImmobile(uuid,immobile);
+			}
+			if (Entity.getEntityTypeId(mobs[b]) == 25) {
+			Entity.setImmobile(uuid,immobile);
+			}
+			if (Entity.getEntityTypeId(mobs[b]) == 26) {
+			Entity.setImmobile(uuid,immobile);
+			}
+			if (Entity.getEntityTypeId(mobs[b]) == 27) {
+			Entity.setImmobile(uuid,immobile);
+			}
+            if (Entity.getEntityTypeId(mobs[b]) == 32) {
+			Entity.setImmobile(uuid,immobile);
+			}
+            if (Entity.getEntityTypeId(mobs[b]) == 33) {
+			Entity.setImmobile(uuid,immobile);
+			}
+            if (Entity.getEntityTypeId(mobs[b]) == 34) {
+			Entity.setImmobile(uuid,immobile);
+			}
+            if (Entity.getEntityTypeId(mobs[b]) == 35) {
+			Entity.setImmobile(uuid,immobile);
+			}
+            if (Entity.getEntityTypeId(mobs[b]) == 36) {
+			Entity.setImmobile(uuid,immobile);
+			}
+            if (Entity.getEntityTypeId(mobs[b]) == 37) {
+			Entity.setImmobile(uuid,immobile);
+			}
+            if (Entity.getEntityTypeId(mobs[b]) == 38) {
+			Entity.setImmobile(uuid,immobile);
+			}
+            if (Entity.getEntityTypeId(mobs[b]) == 39) {
+			Entity.setImmobile(uuid,immobile);
+			}
+            if (Entity.getEntityTypeId(mobs[b]) == 40) {
+			Entity.setImmobile(uuid,immobile);
+			}
+            if (Entity.getEntityTypeId(mobs[b]) == 41) {
+			Entity.setImmobile(uuid,immobile);
+			}
+            if (Entity.getEntityTypeId(mobs[b]) == 42) {
+			Entity.setImmobile(uuid,immobile);
+			}
+            if (Entity.getEntityTypeId(mobs[b]) == 43) {
+			Entity.setImmobile(uuid,immobile);
+			}
+            if (Entity.getEntityTypeId(mobs[b]) == 44) {
+			Entity.setImmobile(uuid,immobile);
+			}
+            if (Entity.getEntityTypeId(mobs[b]) == 45) {
+			Entity.setImmobile(uuid,immobile);
+			}
+			if (Entity.getEntityTypeId(mobs[b]) == 46) {
+			Entity.setImmobile(uuid,immobile);
+			}
+			if (Entity.getEntityTypeId(mobs[b]) == 47) {
+			Entity.setImmobile(uuid,immobile);
+			}
+			if (Entity.getEntityTypeId(mobs[b]) == 48) {
+			Entity.setImmobile(uuid,immobile);
+			}
+			if (Entity.getEntityTypeId(mobs[b]) == 49) {
+			Entity.setImmobile(uuid,immobile);
+			}
+			if (Entity.getEntityTypeId(mobs[b]) == 50) {
+			Entity.setImmobile(uuid,immobile);
+			}
+			if (Entity.getEntityTypeId(mobs[b]) == 51) {
+			Entity.setImmobile(uuid,immobile);
+			}
+			if (Entity.getEntityTypeId(mobs[b]) == 52) {
+			Entity.setImmobile(uuid,immobile);
+			}
+		if (Entity.getEntityTypeId(mobs[b]) == 28) {
+			Entity.setImmobile(uuid,immobile);
+			}
+			if (Entity.getEntityTypeId(mobs[b]) == 54) {
+			Entity.setImmobile(uuid,immobile);
+			}
+			if (Entity.getEntityTypeId(mobs[b]) == 55) {
+			Entity.setImmobile(uuid,immobile);
+			}
+			if (Entity.getEntityTypeId(mobs[b]) == 53) {
+			Entity.setImmobile(uuid,immobile);
+			}
+			/*if (Entity.getEntityTypeId(mobs[b]) == 103) {
+			Entity.setImmobile(uuid,immobile);
+			}
+			if (Entity.getEntityTypeId(mobs[b]) == 104) {
+			Entity.setImmobile(uuid,immobile);
+			}*/
+	   }
+    }
+}
+
+function killingd() {
+    var mobs = Entity.getAll();
+    for (var c = 0; c < mobs.length; c++) {
+        var mobX = Entity.getX(mobs[c]) - getPlayerX();
+        var mobY = Entity.getY(mobs[c]) - getPlayerY();
+        var mobZ = Entity.getZ(mobs[c]) - getPlayerZ();
+        if (mobX * mobX + mobY * mobY + mobZ * mobZ <= 20 * 20 && mobs[c] != getPlayerEnt()) {
+		    if (Entity.getEntityTypeId(mobs[c]) == 10) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+            if (Entity.getEntityTypeId(mobs[c]) == 11) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+            if (Entity.getEntityTypeId(mobs[c]) == 12) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+            if (Entity.getEntityTypeId(mobs[c]) == 13) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+            if (Entity.getEntityTypeId(mobs[c]) == 14) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+            if (Entity.getEntityTypeId(mobs[c]) == 15) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+            if (Entity.getEntityTypeId(mobs[c]) == 16) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+            if (Entity.getEntityTypeId(mobs[c]) == 17) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+            if (Entity.getEntityTypeId(mobs[c]) == 18) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+            if (Entity.getEntityTypeId(mobs[c]) == 19) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+            if (Entity.getEntityTypeId(mobs[c]) == 20) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+            if (Entity.getEntityTypeId(mobs[c]) == 21) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+            if (Entity.getEntityTypeId(mobs[c]) == 22) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+			if (Entity.getEntityTypeId(mobs[c]) == 23) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+			if (Entity.getEntityTypeId(mobs[c]) == 24) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+			if (Entity.getEntityTypeId(mobs[c]) == 25) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+			if (Entity.getEntityTypeId(mobs[c]) == 26) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+			if (Entity.getEntityTypeId(mobs[c]) == 27) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+            if (Entity.getEntityTypeId(mobs[c]) == 32) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+            if (Entity.getEntityTypeId(mobs[c]) == 33) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+            if (Entity.getEntityTypeId(mobs[c]) == 34) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+            if (Entity.getEntityTypeId(mobs[c]) == 35) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+            if (Entity.getEntityTypeId(mobs[c]) == 36) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+            if (Entity.getEntityTypeId(mobs[c]) == 37) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+            if (Entity.getEntityTypeId(mobs[c]) == 38) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+            if (Entity.getEntityTypeId(mobs[c]) == 39) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+            if (Entity.getEntityTypeId(mobs[c]) == 40) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+            if (Entity.getEntityTypeId(mobs[c]) == 41) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+            if (Entity.getEntityTypeId(mobs[c]) == 42) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+            if (Entity.getEntityTypeId(mobs[c]) == 43) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+            if (Entity.getEntityTypeId(mobs[c]) == 44) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+            if (Entity.getEntityTypeId(mobs[c]) == 45) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+			if (Entity.getEntityTypeId(mobs[c]) == 46) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+			if (Entity.getEntityTypeId(mobs[c]) == 47) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+			if (Entity.getEntityTypeId(mobs[c]) == 48) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+			if (Entity.getEntityTypeId(mobs[c]) == 49) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+			if (Entity.getEntityTypeId(mobs[c]) == 50) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+			if (Entity.getEntityTypeId(mobs[c]) == 51) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+			if (Entity.getEntityTypeId(mobs[c]) == 52) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+		if (Entity.getEntityTypeId(mobs[c]) == 28) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+			if (Entity.getEntityTypeId(mobs[c]) == 54) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+			if (Entity.getEntityTypeId(mobs[c]) == 55) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+			if (Entity.getEntityTypeId(mobs[c]) == 53) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+			/*if (Entity.getEntityTypeId(mobs[c]) == 103) {
+			Entity.setFireTicks(mobs[c],5);
+			}
+			if (Entity.getEntityTypeId(mobs[c]) == 104) {
+			Entity.setFireTicks(mobs[c],5);
+			}*/
+		
+	   }
+    }
+}
+
+function namedem() {
+    var mobs = Entity.getAll();
+	var players = Server.getAllPlayers();
+	var names = Server.getAllPlayerNames();
+    for (var n = 0; n < mobs.length; n++) {
+        var mobX = Entity.getX(mobs[n]) - getPlayerX();
+        var mobY = Entity.getY(mobs[n]) - getPlayerY();
+        var mobZ = Entity.getZ(mobs[n]) - getPlayerZ();
+        if (mobX * mobX + mobY * mobY + mobZ * mobZ <= 20 * 20 && mobs[n] != getPlayerEnt()) {
+		            if (Entity.getEntityTypeId(mobs[n]) == 10) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Chicken "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n])); 
+            }
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 11) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Cow "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 12) {if(Entity.getNameTag(mobs[n]) != ""){Entity.setNameTag(mobs[n], " "+Entity.getNameTag(mobs[n])+" "+Entity.getHealth(mobs[n])+" / "+Entity.getMaxHealth(mobs[n]));
+			}
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Pig "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 13) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Sheep "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 14) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Wolf "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 15) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Villager "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 16) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Mushroom cow "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 17) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Squid "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 18) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Rabbit "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 19) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Bat "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 20) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Iron golem "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 21) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Snow golem "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 22) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Ocelot "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+			if (Entity.getEntityTypeId(mobs[n]) == 23) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Horse "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+			if (Entity.getEntityTypeId(mobs[n]) == 24) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Donkey "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+			if (Entity.getEntityTypeId(mobs[n]) == 25) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Mule "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+			if (Entity.getEntityTypeId(mobs[n]) == 26) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Skeleton horse "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+			if (Entity.getEntityTypeId(mobs[n]) == 27) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Zombie horse "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 32) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Zombie "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 33) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Creeper "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 34) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Skeleton "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 35) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Spider "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 36) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Zombie pigman "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 37) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Slime "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 38) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Enderman "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 39) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Silver fish "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 40) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Cave spider "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 41) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Ghast "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 42) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Magma cube "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 43) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Blaze "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 44) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Zombie villager "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+            if (Entity.getEntityTypeId(mobs[n]) == 45) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Witch "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+			if (Entity.getEntityTypeId(mobs[n]) == 46) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Stray "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+			if (Entity.getEntityTypeId(mobs[n]) == 47) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Husk "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+			if (Entity.getEntityTypeId(mobs[n]) == 48) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Wither skeleton "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+			if (Entity.getEntityTypeId(mobs[n]) == 49) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Guardian "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+			if (Entity.getEntityTypeId(mobs[n]) == 50) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Elder guardian "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+			if (Entity.getEntityTypeId(mobs[n]) == 51) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " NPC "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+			if (Entity.getEntityTypeId(mobs[n]) == 52) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Wither "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+		if (Entity.getEntityTypeId(mobs[n]) == 28) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Polar bear "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+			if (Entity.getEntityTypeId(mobs[n]) == 54) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Shulker "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+			if (Entity.getEntityTypeId(mobs[n]) == 55) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Endermite "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+			if (Entity.getEntityTypeId(mobs[n]) == 53) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Ender dragon "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+			/*if (Entity.getEntityTypeId(mobs[n]) == 103) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Llama "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}
+			if (Entity.getEntityTypeId(mobs[n]) == 104) {
+			if(Entity.getNameTag(mobs[n]) == ""){
+                Entity.setNameTag(mobs[n], " Parrot "+Entity.getHealth(mobs[n])+"/"+Entity.getMaxHealth(mobs[n]));
+            }
+			}*/
+		
+	   }
+    }
+	/*for (var p = 0; p < players.length; p++) {
+        var mobX2 = Entity.getX(players[p]) - getPlayerX();
+        var mobY2 = Entity.getY(players[p]) - getPlayerY();
+        var mobZ2 = Entity.getZ(players[p]) - getPlayerZ();
+        if (mobX2 * mobX2 + mobY2 * mobY2 + mobZ2 * mobZ2 <= 20 * 20 && players[p] != getPlayerEnt()) {
+if(Entity.getEntityTypeId(players[p]) == 63){
+	if(Entity.getNameTag(players[p])!="undefined"){
+                Entity.setNameTag(players[p], ""+Entity.getNameTag(players[p])+" "+Entity.getHealth(players[p])+"/"+Entity.getMaxHealth(players[p]));
+	}
+	}
+	  }
+	}*/
+}
+
+function destroyBlock(x, y, z, side)
+{
+if(block == true)preventDefault();
+	if(doubledrop == true){
+		Level.getGameMode();
+		if(Level.getGameMode() == 1 || Level.getGameMode() == 3){
+		var broke = Level.getTile(x, y, z);
+		Level.dropItem(x,y,z,0,broke,broke * 2);
+		}
+		if(Level.getGameMode() == 0 || Level.getGameMode() == 2){
+		var broke = Level.getTile(x, y, z);
+		Level.dropItem(x,y,z,0,broke,broke + 1);
+		}
+	}
+	if(destroyind){
+	var broke = Level.getTile(x, y, z);
+	clientMessage(client+"broke: "+broke+"\nx "+Math.round(x)+" y "+Math.round(y)+" z "+Math.round(z)+"\nSide: "+side);
+	}
+}
+
+function startDestroyBlock(x, y, z, side)
+{
+if(block == true)preventDefault()
+}
+
+function useItem(x, y, z, itemId, blockId, side, itemDamage, blockDamage){
+if(deadchat){
+	if(blockId == 63 || blockId == 68){
+	var notex = x;
+	var notey = y;
+	var notez = z;
+	
+	signEditor();
+}
+}
+
+	if(lightning) {
+Level.spawnMob(x, y, z, EntityType.LIGHTNING_BOLT);
+	}
+	if(primedtnt) {
+Level.spawnMob(x, y +2, z, EntityType.PRIMED_TNT);
+	}
+	if(arrow) {
+Level.spawnMob(x, y +1, z, EntityType.ARROW);
+	}
+	if(exporb) {
+Level.spawnMob(x, y +1, z, EntityType.EXPERIENCE_ORB);
+	}
+
+if(tapspam){
+	Server.sendChat(text);
+	Server.getPort();
+	if(Server.getPort()=="0")clientMessage(text);
+}
+
+if(block == true)preventDefault();
+
+if(tapdestroy){
+	Level.destroyBlock(x +1, y, z +1, vidd);
+	Level.destroyBlock(x +2, y, z +2, vidd);
+	Level.destroyBlock(x +3, y, z +3, vidd);
+	Level.destroyBlock(x +4, y, z +4, vidd);
+	
+    Level.destroyBlock(x, y, z, vidd);
+
+	Level.destroyBlock(x -1, y, z -1, vidd);
+	Level.destroyBlock(x -2, y, z -2, vidd);
+	Level.destroyBlock(x -3, y, z -3, vidd);
+	Level.destroyBlock(x -4, y, z -4, vidd);
+}
+
+if(taptp){
+Entity.setPosition(Player.getEntity(), x, y + 2.62, z);
+}
+if(tapnuke)explode(x,y,z,5);
+if(tapid)clientMessage(client + "Block ID: "+blockId+"\nTapped with: "+itemId+"\n"+" X: "+x+" Y: "+y+" Z: "+z+"\nFriction: "+Block.getFriction(blockId)+"\nSide: "+side+"\nBlock damage: "+blockDamage+"\nItem damage: "+itemDamage);
+if(tapjump)setVelY(getPlayerEnt(),0.5);
+	if(tapParti){
+if(tapParti){
+if(particle1)Level.addParticle(ParticleType.angryVillager, x, y+1, z, 0, 0, 0, 5);
+if(particle2)Level.addParticle(ParticleType.bubble, x, y+1, z, 0, 0, 0, 150);
+if(particle3)Level.addParticle(ParticleType.cloud, x, y+1, z, 0, 0, 0, 150);
+if(particle4)Level.addParticle(ParticleType.crit, x, y+1, z, 0, 0, 0, 50);
+if(particle5)Level.addParticle(ParticleType.dripLava, x, y+1, z, 0, 0, 0, 150);
+if(particle6)Level.addParticle(ParticleType.dripWater, x, y+1, z, 0, 0, 0, 150);
+if(particle7)Level.addParticle(ParticleType.enchantmenttable, x, y+1, z, 0, 0, 0, 150);
+if(particle8)Level.addParticle(ParticleType.fallingDust, x, y+1, z, 0, 0, 0, 150);
+if(particle9)Level.addParticle(ParticleType.flame, x, y+1, z, 0, 0, 0, 150);
+if(particle10)Level.addParticle(ParticleType.happyVillager, x, y+1, z, 0, 0, 0, 50);
+if(particle11)Level.addParticle(ParticleType.heart, x, y+1, z, 0, 0, 0, 5);
+if(particle12)Level.addParticle(ParticleType.hugeexplosion, x, y+1, z, 0, 0, 0, 150);
+if(particle13)Level.addParticle(ParticleType.hugeexplosionSeed, x, y+1, z, 0, 0, 0, 10);
+if(particle14)Level.addParticle(ParticleType.ink, x, y+1, z, 0, 0, 0, 150);
+if(particle15)Level.addParticle(ParticleType.itemBreak, x, y+1, z, 0, 0, 0, 150);
+if(particle16)Level.addParticle(ParticleType.lava, x, y+1, z, 0, 0, 0, 150);
+if(particle17)Level.addParticle(ParticleType.mobFlame, x, y+1, z, 0, 0, 0, 150);
+if(particle18)Level.addParticle(ParticleType.note, x, y+1, z, 0, 0, 0, 150);
+if(particle19)Level.addParticle(ParticleType.portal, x, y+1, z, 0, 0, 0, 150);
+if(particle20)Level.addParticle(ParticleType.rainSplash, x, y+1, z, 0, 0, 0, 150);
+if(particle21)Level.addParticle(ParticleType.redstone, x, y+1, z, 0, 0, 0, 10);
+if(particle22)Level.addParticle(ParticleType.slime, x, y+1, z, 0, 0, 0, 150);
+if(particle23)Level.addParticle(ParticleType.smoke, x, y+1, z, 0, 0, 0, 150);
+if(particle24)Level.addParticle(ParticleType.snowballpoof, x, y+1, z, 0, 0, 0, 150);
+if(particle25)Level.addParticle(ParticleType.spell, x, y+1, z, 0, 0, 0, 150);
+if(particle26)Level.addParticle(ParticleType.splash, x, y+1, z, 0, 0, 0, 150);
+if(particle27)Level.addParticle(ParticleType.suspendedTown, x, y+1, z, 0, 0, 0, 150);
+if(particle28)Level.addParticle(ParticleType.terrain, x, y+1, z, 0, 0, 0, 150);
+if(particle29)Level.addParticle(ParticleType.waterWake, x, y+1, z, 0, 0, 0, 150);
+if(particle30)Level.addParticle(ParticleType.largeexplode, x, y+1, z, 0, 0, 0, 150);
+if(particle31)Level.addParticle(ParticleType.spell2, x, y+1, z, 0, 0, 0, 150);
+if(particle32)Level.addParticle(ParticleType.spell3, x, y+1, z, 0, 0, 0, 150);
+if(particle33)Level.addParticle(ParticleType.carrotboost, x, y+1, z, 0, 0, 0, 150);
+if(particle34)Level.addParticle(ParticleType.witchspell, x, y+1, z, 0, 0, 0, 150);
+}
+}
+}
+
+function modTick(){
+	if(stackheart){
+Player.setHealth(20);
+}
+if(infhun){
+Player.setHunger(20);
+}
+if(killaura){
+
+killing(); 
+
+}
+
+if(killfaura){
+
+killingf(); 
+
+}
+if(killdaura) {
+	
+	killingd();
+}
+if(nametags) {
+	
+	namedem();
+}
+if(particle1)Level.addParticle(ParticleType.angryVillager, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 5);
+if(particle2)Level.addParticle(ParticleType.bubble, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle3)Level.addParticle(ParticleType.cloud, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle4)Level.addParticle(ParticleType.crit, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 50);
+if(particle5)Level.addParticle(ParticleType.dripLava, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle6)Level.addParticle(ParticleType.dripWater, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle7)Level.addParticle(ParticleType.enchantmenttable, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle8)Level.addParticle(ParticleType.fallingDust, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle9)Level.addParticle(ParticleType.flame, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle10)Level.addParticle(ParticleType.happyVillager, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 50);
+if(particle11)Level.addParticle(ParticleType.heart, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 5);
+if(particle12)Level.addParticle(ParticleType.hugeexplosion, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle13)Level.addParticle(ParticleType.hugeexplosionSeed, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 10);
+if(particle14)Level.addParticle(ParticleType.ink, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle15)Level.addParticle(ParticleType.itemBreak, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle16)Level.addParticle(ParticleType.lava, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle17)Level.addParticle(ParticleType.mobFlame, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle18)Level.addParticle(ParticleType.note, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle19)Level.addParticle(ParticleType.portal, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle20)Level.addParticle(ParticleType.rainSplash, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle21)Level.addParticle(ParticleType.redstone, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 10);
+if(particle22)Level.addParticle(ParticleType.slime, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle23)Level.addParticle(ParticleType.smoke, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle24)Level.addParticle(ParticleType.snowballpoof, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle25)Level.addParticle(ParticleType.spell, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle26)Level.addParticle(ParticleType.splash, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle27)Level.addParticle(ParticleType.suspendedTown, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle28)Level.addParticle(ParticleType.terrain, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle29)Level.addParticle(ParticleType.waterWake, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle30)Level.addParticle(ParticleType.largeexplode, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle31)Level.addParticle(ParticleType.spell2, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle32)Level.addParticle(ParticleType.spell3, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle33)Level.addParticle(ParticleType.carrotboost, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+if(particle34)Level.addParticle(ParticleType.witchspell, getPlayerX(), getPlayerY(), getPlayerZ(), 0, 0, 0, 150);
+
+if(onlynight)Level.setTime(15000);
+
+if(onlyday)Level.setTime(0);
+	
+	if(antivoid){
+		Math.round(getPlayerY());
+		if(Math.round(getPlayerY())=="-3"){
+			clientMessage(client + "You were at void!");
+			Entity.setPosition(Player.getEntity(), getPlayerX(), 70, getPlayerZ()+5);
+		}
+	}
+	if(glide){
+if(Entity.getVelY(Player.getEntity()) <= 0){
+setVelY(Player.getEntity(), -0.05)
+}
+}
+if(coords)ModPE.showTipMessage(client + "\nX "+Math.round(getPlayerX())+", Y "+Math.round(getPlayerY())+", Z "+Math.round(getPlayerZ()));
+if(armor)ModPE.showTipMessage(client + "\nHead: " + Entity.getArmorDamage(getPlayerEnt(), 0) + " Chest: " + Entity.getArmorDamage(getPlayerEnt(), 1) + " Legs: " + Entity.getArmorDamage(getPlayerEnt(), 2) + " Feet: " + Entity.getArmorDamage(getPlayerEnt(), 3));
+if(autonuke)explode(getPlayerX(),getPlayerY(),getPlayerZ(),5);
+if(grief)Level.setTile(Player.getPointedBlockX(), Player.getPointedBlockY(), Player.getPointedBlockZ(), vid, 0);
+if(getvel)ModPE.showTipMessage("VelX: "+Math.round(Entity.getVelX(getPlayerEnt()))+" VelY "+Math.round(Entity.getVelY(getPlayerEnt()))+" VelZ "+Math.round(Entity.getVelZ(getPlayerEnt())));
+if(yawpitch)ModPE.showTipMessage("pitch: "+Math.round(getPitch(getPlayerEnt()))+" \nYaw: "+Math.round(getYaw(getPlayerEnt()))+" ");
+if(airwalk){
+if(Level.getTile(getPlayerX(), getPlayerY() -1, getPlayerZ())=="0" || Level.getTile(getPlayerX(), getPlayerY() -1, getPlayerZ())=="95"){
+	Level.setTile(getPlayerX() +1, getPlayerY() -2, getPlayerZ(), 95, 0);
+	 Level.setTile(getPlayerX() +2, getPlayerY() -2, getPlayerZ(), 95, 0);
+	 Level.setTile(getPlayerX() +3, getPlayerY() -2, getPlayerZ(), 95, 0);
+	 Level.setTile(getPlayerX() +4, getPlayerY() -2, getPlayerZ(), 95, 0);
+	 Level.setTile(getPlayerX() -1, getPlayerY() -2, getPlayerZ(), 95, 0);
+	 Level.setTile(getPlayerX() -2, getPlayerY() -2, getPlayerZ(), 95, 0);
+	 Level.setTile(getPlayerX() -3, getPlayerY() -2, getPlayerZ(), 95, 0);
+	 Level.setTile(getPlayerX() -4, getPlayerY() -2, getPlayerZ(), 95, 0);
+	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ(), 95, 0);
+	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() +1, 95, 0);
+	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() +2, 95, 0);
+	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() +3, 95, 0);
+	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() +4, 95, 0);
+	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() -1, 95, 0);
+	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() -2, 95, 0);
+	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() -3, 95, 0);
+	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() -4, 95, 0);
+	}
+}
+	if(icewalk){
+if(Level.getTile(getPlayerX(), getPlayerY() -1, getPlayerZ())=="0" || Level.getTile(getPlayerX(), getPlayerY() -1, getPlayerZ())!="79"){
+	Level.setTile(getPlayerX() +1, getPlayerY() -2, getPlayerZ(), 79, 0);
+	 Level.setTile(getPlayerX() +2, getPlayerY() -2, getPlayerZ(), 79, 0);
+	 Level.setTile(getPlayerX() +3, getPlayerY() -2, getPlayerZ(), 79, 0);
+	 Level.setTile(getPlayerX() +4, getPlayerY() -2, getPlayerZ(), 79, 0);
+	 Level.setTile(getPlayerX() -1, getPlayerY() -2, getPlayerZ(), 79, 0);
+	 Level.setTile(getPlayerX() -2, getPlayerY() -2, getPlayerZ(), 79, 0);
+	 Level.setTile(getPlayerX() -3, getPlayerY() -2, getPlayerZ(), 79, 0);
+	 Level.setTile(getPlayerX() -4, getPlayerY() -2, getPlayerZ(), 79, 0);
+	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ(), 79, 0);
+	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() +1, 79, 0);
+	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() +2, 79, 0);
+	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() +3, 79, 0);
+	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() +4, 79, 0);
+	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() -1, 79, 0);
+	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() -2, 79, 0);
+	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() -3, 79, 0);
+	 Level.setTile(getPlayerX(), getPlayerY() -2, getPlayerZ() -4, 79, 0);
+	}
+}
+if(changeSpeed==true)changeSpeedOnBlock();
+if(brightness==true)bright();
+if(lowhealth==true)spawnIfLowHealth();
+if(fasteat==true)fastEat();
+if(xray==true)xrayRepeat();
+if (spider && Utils.Player.isCollidedHorizontally()) {
+		if(getTile(Player.getX()+1, Player.getY(), Player.getZ())> 0 || getTile(Player.getX()-1, Player.getY(), Player.getZ())> 0 || getTile(Player.getX(), Player.getY(), Player.getZ()+1)> 0 || getTile(Player.getX(), Player.getY(), Player.getZ()-1)> 0 || getTile(Player.getX()+1, Player.getY(), Player.getZ()-1)> 0 || getTile(Player.getX()-1, Player.getY(), Player.getZ()+1)> 0) {
+        setVelY(Player.getEntity(), 0.6);
+              }
+	    }
+	    if(jump) {
+		if(Entity.getVelY(getPlayerEnt())< -0.1) {
+			setVelY(getPlayerEnt(),'-' + 0 + '.' + jumpheight);
+		}
+		if(Entity.getVelY(getPlayerEnt())< 0.35 && Entity.getVelY(getPlayerEnt())> 0.2 && can==1 && canGetHP==1) {
+			setVelY(getPlayerEnt(), 0 + '.' + jumpheight);
+			can = 2;
+			HP = Entity.getHealth(getPlayerEnt());
+			canGetHP = 0;
+		}
+		if(Entity.getVelY(getPlayerEnt())>gravity && can==2) {
+			Player.setHealth(HP);
+			canGetHP = 1;
+			can = 0;
+		}
+		if(Entity.getVelY(getPlayerEnt())==gravity && can==0) {
+			Player.setHealth(HP);
+			canGetHP = 1;
+			can = 1;
+		}
+	}
+	    if(autowalk) {
+    toDirectionalVector(playerDir, (getYaw() + 90) * DEG_TO_RAD, getPitch() * DEG_TO_RAD * -1);
+    setVelX(getPlayerEnt(), 0.22 * playerDir[0]);
+    setVelZ(getPlayerEnt(), 0.22 * playerDir[2]);
+}
+	if(tpAura){
+		var players = Server.getAllPlayers();
+		var names = Server.getAllPlayerNames();
+		for(var i = 0; i < 4; i++){
+			var x = Entity.getX(players[i]) - getPlayerX();
+			var y = Entity.getY(players[i]) - getPlayerY();
+			var z = Entity.getZ(players[i]) - getPlayerZ();
+			if(y!=0)Entity.setPosition(Player.getEntity(), x, y + 2.62, z);
+		}
+	}
+	if(keepHotbar){
+	Player.setSelectedSlotId(Player.getSelectedSlotId());
+	Player.getCarriedItem();
+	Player.setSelectedSlotId(Player.getCarriedItem());
+	}
+	if(itemIndi)ModPE.showTipMessage(client+"\nHeld: "+Player.getCarriedItem()+":"+Player.getCarriedItemData()+", Amount: "+Player.getCarriedItemCount());
+	if(bhop){
+		var x=getPlayerX();
+		    var y=getPlayerY();
+			    var z=getPlayerZ();
+		if(Entity.getVelX(Player.getEntity())>0.1 && getTile(x, y +2, z) == 0){
+			if(getTile(Player.getX(), Player.getY()-2, Player.getZ())>0){
+				Entity.setVelY(Player.getEntity(), 0.4);
+			}
+		}
+		if(Entity.getVelX(Player.getEntity())<-0.1 && getTile(x, y +2, z) == 0){
+			if(getTile(Player.getX(), Player.getY()-2, Player.getZ())>0){
+				Entity.setVelY(Player.getEntity(), 0.4);
+			}
+		}
+		if(Entity.getVelZ(Player.getEntity())>0.1 && getTile(x, y +2, z) == 0){
+			if(getTile(Player.getX(), Player.getY()-2, Player.getZ())>0){
+				Entity.setVelY(Player.getEntity(), 0.4);
+			}
+		}
+		if(Entity.getVelZ(Player.getEntity())<-0.1 && getTile(x, y +2, z) == 0){
+			if(getTile(Player.getX(), Player.getY()-2, Player.getZ())>0){
+				Entity.setVelY(Player.getEntity(), 0.4);
+			}
+		}
+	}
+	if(facedInfo){
+		if(Entity.getEntityTypeId(Player.getPointedEntity()) == 63 && Entity.getArmorDamage(Player.getPointedEntity(), 0) != 0 || Entity.getArmorDamage(Player.getPointedEntity(), 1) != 0 || Entity.getArmorDamage(Player.getPointedEntity(), 2) != 0 || Entity.getArmorDamage(Player.getPointedEntity(), 3) != 0){
+			ModPE.showTipMessage(client + "\nName: "+Player.getName(Player.getPointedEntity())+", RenderType: "+Entity.getRenderType(Player.getPointedEntity())+", Health: "+Entity.getHealth(Player.getPointedEntity())+"/"+Entity.getMaxHealth(Player.getPointedEntity())+"\nHead: "+Entity.getArmorDamage(Player.getPointedEntity(), 0)+", Chest: "+Entity.getArmorDamage(Player.getPointedEntity(), 1)+", Leggings: "+Entity.getArmorDamage(Player.getPointedEntity(), 2)+", Boots: "+Entity.getArmorDamage(Player.getPointedEntity(), 3));
+		} else {
+			ModPE.showTipMessage(client + "\nName: "+Player.getName(Player.getPointedEntity())+", RenderType: "+Entity.getRenderType(Player.getPointedEntity())+", Health: "+Entity.getHealth(Player.getPointedEntity())+"/"+Entity.getMaxHealth(Player.getPointedEntity())+"");
+		}
+	}
+	if(facedInfo2){
+	if(Entity.getEntityTypeId(Player.getPointedEntity()) <= 63){
+			ModPE.showTipMessage(client + "\nName: "+Player.getName(Player.getPointedEntity())+", RenderType: "+Entity.getRenderType(Player.getPointedEntity())+", Health: "+Entity.getHealth(Player.getPointedEntity())+"/"+Entity.getMaxHealth(Player.getPointedEntity())+"");
+		}
+	}
+	if(onfriction){
+	Block.setFriction(79, 0.6000000238418579);
+	Block.setFriction(174, 0.6000000238418579);
+	Block.setFriction(88, 0.6000000238418579);
+	for(var i = 0; i < 100; i++){
+		Block.setFriction(i, 2); /**2 is very fast, looking for a smoother speed later on.*/
+	}
+	}
+	if(rainitem==true){
+Level.dropItem(getPlayerX()+3,getPlayerY()+11,getPlayerZ(),0,rainId,1);
+Level.dropItem(getPlayerX()+7,getPlayerY()+11,getPlayerZ(),0,rainId,1);
+Level.dropItem(getPlayerX(),getPlayerY()+11,getPlayerZ()+3,0,rainId,1);
+Level.dropItem(getPlayerX(),getPlayerY()+11,getPlayerZ()+7,0,rainId,1);
+Level.dropItem(getPlayerX()+3,getPlayerY()+11,getPlayerZ()+3,0,rainId,1);
+Level.dropItem(getPlayerX()+7,getPlayerY()+11,getPlayerZ()+7,0,rainId,1);
+Level.dropItem(getPlayerX()-3,getPlayerY()+11,getPlayerZ()-3,0,rainId,1);
+Level.dropItem(getPlayerX()-7,getPlayerY()+11,getPlayerZ()-7,0,rainId,1);
+Level.dropItem(getPlayerX()-3,getPlayerY()+11,getPlayerZ()+3,0,rainId,1);
+Level.dropItem(getPlayerX()-7,getPlayerY()+11,getPlayerZ()+7,0,rainId,1);
+Level.dropItem(getPlayerX()+3,getPlayerY()+11,getPlayerZ()-3,0,rainId,1);
+Level.dropItem(getPlayerX()+7,getPlayerY()+11,getPlayerZ()-7,0,rainId,1);
+}
+if(autosword){
+if(getNearestEntity3(aimrange) != null) {
+	let bestsword = [-1, -1];
+	for(let i = 0; i < 10; i++) {
+		let dmg = Utils.Item.getDamage(Player.getInventorySlot(i));
+		if(dmg > bestsword[0]) {
+			bestsword[0] = dmg;
+			bestsword[1] = i;
+		}
+	}
+	if(bestsword[1] != -1)
+		Player.setSelectedSlotId(bestsword[1]);
+		}
+}
+	if(noknock){
+if(Entity.getVelY(Player.getEntity())>0.1 && getTile(x-1, y -1, z) == 0 || getTile(x, y -1, z -1) == 0 || getTile(x +1, y -1, z) == 0 || getTile(x, y -1, z +1) == 0){
+Entity.setVelY(Player.getEntity(), -0.5);
+		}
+	}
+	if(checkping){
+	var ping = AlphaHackPE.ping();
+	ModPE.showTipMessage(ping+" ms.");
+	}
+}
+
+function toDirectionalVector(dir, a, b) {
+    dir[0] = Math["cos"](a) * Math["cos"](b);
+    dir[1] = Math["sin"](b);
+    dir[2] = Math["sin"](a) * Math["cos"](b);
+}
+
+function devpardon() {
+var file = new java.io.File( android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/games/com.mojang/minecraftpe/clientId.txt/");
+        var path=android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/games/com.mojang/minecraftpe/clientId.txt/" ; 
+        java.io.File(path).mkdirs(); 
+        file.delete();
+	android.widget.Toast.makeText(ctx, "Restart Minecraft PE", 1).show();
+}
+
+function getClient(){
+ var line, string = "";
+    var file = new java.io.File( android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/games/com.mojang/minecraftpe/clientId.txt/");
+    var path=android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/games/com.mojang/minecraftpe/clientId.txt/" ; 
+    if(!file.exists()){
+    clientMessage(client + "The file doesn't exist"); 
+  java.io.File(path).mkdirs(); 
+    }
+    else {
+    var readfile = new java.io.BufferedReader(new java.io.FileReader(file));
+    while((line = readfile.readLine()) != null) {
+        var t3 = line + java.lang.System.getProperty("line.seperator");
+        string += t3.substring(0, t3.length - 4);
+        var t4 = line;
+        if((line = readfile.readLine()) != null) string += "\n";
+        line = t4;
+    } 
+    cidm8=parseInt(string);
+    clientMessage(client + cidm8);       
+    }
 }
 
 function save() {
