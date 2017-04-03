@@ -1,0 +1,16 @@
+settings - 设置
+misc - 杂物
+online menu - 在线菜单
+offline menu - 离线菜单
+effect menu - 效果菜单
+enchant menu - 附魔菜单
+give menu - 给予菜单
+morph menu - 变形菜单
+nuke menu - 爆炸菜单
+particle menu - 粒子菜单
+spawn menu - 生成菜单
+speed menu - 速度菜单
+teleport menu - 传送菜单
+time menu - 时间菜单
+weather menu - 天气菜单
+scroll down - 往下走
