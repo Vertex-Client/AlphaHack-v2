@@ -13,4 +13,3 @@
 टेलीपोर्ट मेनू - teleport menu
 समय मेनू - time menu
 मौसम मेनू - weather menu
-नीचे स्क्रॉल करें - scroll down
