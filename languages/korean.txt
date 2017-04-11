@@ -13,4 +13,3 @@
 순간이동 메뉴 - teleport menu
 시간 메뉴 - time menu
 날씨 메뉴 - weather menu
-아래로 스크롤 - scroll down
