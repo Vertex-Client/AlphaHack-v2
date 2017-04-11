@@ -13,4 +13,3 @@
 テレポートメニュー - teleport menu
 時間設定 - time menu
 天候 - weather menu
-- scroll down
