@@ -13,4 +13,3 @@ Snelheid menu - Speed menu
 Teleporteer menu - Teleport menu
 Tijd menu - Time menu
 Weer menu - Weather menu
-Scroll naar beneden - Scroll down
