@@ -13,4 +13,3 @@ Hastighet - speed menu
 Teleportera - teleport menu
 Tidsmeny - time menu
 Vädermeny - weather menu
-Skrolla ner - scroll down
