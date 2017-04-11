@@ -1161,11 +1161,6 @@ if(haxMode==false)mainMenu();
 if(haxMode==true)haxMenu();
 GUI.dismiss();
 menuBtn.setVisibility(android.view.View.GONE);
-if(getLanguage=="en_US")android.widget.Toast.makeText(MainActivity, "Scroll down", 1).show();
- if(getLanguage=="de_DE")android.widget.Toast.makeText(MainActivity, "Scrolle herunter", 1).show();
-if(getLanguage=="es_MX" || getLanguage=="es_ES")android.widget.Toast.makeText(MainActivity, "Baja abajo", 1).show();
-if(getLanguage=="ko_KR")android.widget.Toast.makeText(MainActivity, "아래로 스크롤", 1).show();
-if(getLanguage=="nl_NL")android.widget.Toast.makeText(MainActivity, "Scroll naar beneden", 1).show();
             }
         }));
         layout.addView(menuBtn);
@@ -4496,6 +4491,7 @@ settings.setText("Settings");
 		if(getLanguage=="de_DE")settings.setText("Einstellungen");
 		if(getLanguage=="ja_JP")settings.setText("設定");
 		if(getLanguage=="nl_NL")settings.setText("Instellingen");
+		if(getLanguage=="zh_CN")settings.setText("设置");
 settings.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              settings_menu();
@@ -4509,6 +4505,7 @@ misc.setText("Misc");
 if(getLanguage=="ko_KR")misc.setText("기타");
 if(getLanguage=="de_DE")misc.setText("Verschiedenes");
 if(getLanguage=="nl_NL")misc.setText("Diversen");
+if(getLanguage=="zh_CN")misc.setText("杂物");
 misc.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              misc_menu();
@@ -4520,6 +4517,7 @@ misc.setOnClickListener(new android.view.View.OnClickListener() {
 var cheats = new styleButton();
 cheats.setText("Online & offline mods");
 if(getLanguage=="ko_KR")cheats.setText("온라인 모드");
+if(getLanguage=="zh_CN")cheats.setText("在线菜单");
 cheats.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              cheat_menu();
@@ -6942,6 +6940,7 @@ cheatLayout1.setPadding(20,0,20,0);
 var mods = new styleButton();
 mods.setText("Single player mods");
 if(getLanguage=="ko_KR")mods.setText("오프라인 모드");
+if(getLanguage=="zh_CN")mods.setText("离线菜单");
 mods.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              mod_menu();
@@ -7615,6 +7614,7 @@ if(getLanguage=="es_MX" || getLanguage=="es_ES")effect.setText("Menu de efectos"
 if(getLanguage=="ko_KR")effect.setText("효과 메뉴");
 if(getLanguage=="de_DE")effect.setText("Effekte menu");
 if(getLanguage=="ja_JP")effect.setText("エフェクトメニュー");
+if(getLanguage=="zh_CN")effect.setText("效果菜单");
 effect.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              effect_menu();
@@ -9106,6 +9106,7 @@ if(getLanguage=="ko_KR")enchant.setText("마법 부여 메뉴");
 if(getLanguage=="de_DE")enchant.setText("Verzauberungs menu");
 if(getLanguage=="ja_JP")enchant.setText("エンチャントメニュー");
 if(getLanguage=="nl_NL")enchant.setText("Betoveringen menu");
+if(getLanguage=="zh_CN")enchant.setText("附魔菜单");
 enchant.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              enchant_menu();
@@ -11083,6 +11084,7 @@ if(getLanguage=="ko_KR")give.setText("아이템 주기 메뉴");
 if(getLanguage=="de_DE")give.setText("Item-manager");
 if(getLanguage=="ja_JP")give.setText("アイテムの付与");
 if(getLanguage=="nl_NL")give.setText("Geef items menu");
+if(getLanguage=="zh_CN")give.setText("给予菜单");
 give.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              give_menu();
@@ -11361,6 +11363,7 @@ if(getLanguage=="es_MX" || getLanguage=="es_ES")morph.setText("Menu de morph");
 if(getLanguage=="ko_KR")morph.setText("변신 메뉴");
 if(getLanguage=="de_DE")morph.setText("Morph-manager");
 if(getLanguage=="ja_JP")morph.setText("変身");
+if(getLanguage=="zh_CN")morph.setText("变形菜单");
 morph.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              morph_menu();
@@ -11959,6 +11962,7 @@ if(getLanguage=="es_MX" || getLanguage=="es_ES")nuke.setText("Menu de bomba nucl
 if(getLanguage=="ko_KR")nuke.setText("핵폭탄 메뉴");
 if(getLanguage=="de_DE")nuke.setText("Vernichtungs menu");
 if(getLanguage=="ja_JP")nuke.setText("爆発メニュー");
+if(getLanguage=="zh_CN")nuke.setText("爆炸菜单");
 nuke.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              nuke_menu();
@@ -12212,6 +12216,7 @@ if(getLanguage=="ko_KR")particle.setText("파티클 메뉴");
 if(getLanguage=="de_DE")particle.setText("Partikel menu");
 if(getLanguage=="ja_JP")particle.setText("パーティクルメニュー");
 if(getLanguage=="nl_NL")particle.setText("Partikel menu");
+if(getLanguage=="zh_CN")particle.setText("粒子菜单");
 particle.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              particle_menu();
@@ -12903,6 +12908,7 @@ if(getLanguage=="es_MX" || getLanguage=="es_ES")spawn.setText("Menu de spawn");
 if(getLanguage=="ko_KR")spawn.setText("소환 메뉴");
 if(getLanguage=="de_DE")spawn.setText("Spawn-manager");
 if(getLanguage=="ja_JP")spawn.setText("スポーンメニュー");
+if(getLanguage=="zh_CN")spawn.setText("生成菜单");
 spawn.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              spawn_menu();
@@ -13444,6 +13450,7 @@ if(getLanguage=="ko_KR")speed.setText("속도 메뉴");
 if(getLanguage=="de_DE")speed.setText("Schnelligkeits menu");
 if(getLanguage=="ja_JP")speed.setText("ゲームスピードメニュー");
 if(getLanguage=="nl_NL")speed.setText("Snelheid menu");
+if(getLanguage=="zh_CN")speed.setText("速度菜单");
 speed.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              speed_menu();
@@ -13733,6 +13740,7 @@ if(getLanguage=="ko_KR")teleport.setText("순간이동 메뉴");
 if(getLanguage=="de_DE")teleport.setText("Teleporter menu");
 if(getLanguage=="ja_JP")teleport.setText("テレポートメニュー");
 if(getLanguage=="nl_NL")teleport.setText("Teleporter menu");
+if(getLanguage=="zh_CN")teleport.setText("传送菜单");
 teleport.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              teleport_menu();
@@ -13889,6 +13897,7 @@ if(getLanguage=="ko_KR")time.setText("시간 메뉴");
 if(getLanguage=="de_DE")time.setText("Zeit-Einstellungen");
 if(getLanguage=="ja_JP")time.setText("時間設定");
 if(getLanguage=="nl_NL")time.setText("Tijd menu");
+if(getLanguage=="zh_CN")time.setText("时间菜单");
 time.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              time_menu();
@@ -14260,6 +14269,7 @@ if(getLanguage=="ko_KR")weather.setText("날씨 메뉴");
 if(getLanguage=="de_DE")weather.setText("Wetter menu");
 if(getLanguage=="ja_JP")weather.setText("天候");
 if(getLanguage=="nl_NL")weather.setText("Weer menu");
+if(getLanguage=="zh_CN")weather.setText("天气菜单");
 weather.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
              weather_menu();
