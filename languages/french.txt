@@ -13,4 +13,3 @@ Vitesse Menu - speed menu
 - teleport menu
 Menu du temps - time menu
 Menu du météo - weather menu
-- scroll down
