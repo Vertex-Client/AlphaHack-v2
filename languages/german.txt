@@ -13,4 +13,3 @@ Schnelligkeits menu - speed menu
 Teleporter - teleport menu
 Zeit-Einstellungen - time menu
 Wetter menu - weather menu
-Scrolle herunter - scroll down
