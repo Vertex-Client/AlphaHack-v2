@@ -13,4 +13,3 @@ Speed menu
 Teleport menu
 Time menu
 Weather menu
-Scroll down
