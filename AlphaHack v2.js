@@ -9393,6 +9393,7 @@ legalenchant = false;
                 }
             }));
             enchantLayout.addView(checker);
+/*mcpe adverage enchantment level is below 5 but in the coding it allows a level 10 and under.*/
 
 var god1 = new styleButton();
             god1.setText("God sword");
@@ -9573,13 +9574,13 @@ Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
 if(legalenchant==true){
 ench =lvl.getText();
-if(ench >= 5){
+if(ench >= 10){
 ench = 5;
 Dialog.dismiss();
 add1();
 clientMessage(client+"That enchantment is illegal in vanilla.");
 }
-if(ench <= 5){
+if(ench <= 10){
 Dialog.dismiss();
 add1();
 }
@@ -9640,13 +9641,13 @@ Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
 if(legalenchant==true){
 ench =lvl.getText();
-if(ench >= 5){
+if(ench >= 10){
 ench = 5;
 Dialog.dismiss();
 add2();
 clientMessage(client+"That enchantment is illegal in vanilla.");
 }
-if(ench <= 5){
+if(ench <= 10){
 Dialog.dismiss();
 add2();
 }
@@ -9707,13 +9708,13 @@ Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
 if(legalenchant==true){
 ench =lvl.getText();
-if(ench >= 5){
+if(ench >= 10){
 ench = 5;
 Dialog.dismiss();
 add3();
 clientMessage(client+"That enchantment is illegal in vanilla.");
 }
-if(ench <= 5){
+if(ench <= 10){
 Dialog.dismiss();
 add3();
 }
@@ -9774,13 +9775,13 @@ Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
 if(legalenchant==true){
 ench =lvl.getText();
-if(ench >= 5){
+if(ench >= 10){
 ench = 5;
 Dialog.dismiss();
 add5();
 clientMessage(client+"That enchantment is illegal in vanilla.");
 }
-if(ench <= 5){
+if(ench <= 10){
 Dialog.dismiss();
 add5();
 }
@@ -9841,13 +9842,13 @@ Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
 if(legalenchant==true){
 ench =lvl.getText();
-if(ench >= 5){
+if(ench >= 10){
 ench = 5;
 Dialog.dismiss();
 add6();
 clientMessage(client+"That enchantment is illegal in vanilla.");
 }
-if(ench <= 5){
+if(ench <= 10){
 Dialog.dismiss();
 add6();
 }
@@ -9908,13 +9909,13 @@ Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
 if(legalenchant==true){
 ench =lvl.getText();
-if(ench >= 5){
+if(ench >= 10){
 ench = 5;
 Dialog.dismiss();
 add7();
 clientMessage(client+"That enchantment is illegal in vanilla.");
 }
-if(ench <= 5){
+if(ench <= 10){
 Dialog.dismiss();
 add7();
 }
@@ -9975,13 +9976,13 @@ Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
 if(legalenchant==true){
 ench =lvl.getText();
-if(ench >= 5){
+if(ench >= 10){
 ench = 5;
 Dialog.dismiss();
 add8();
 clientMessage(client+"That enchantment is illegal in vanilla.");
 }
-if(ench <= 5){
+if(ench <= 10){
 Dialog.dismiss();
 add8();
 }
@@ -10042,13 +10043,13 @@ Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
 if(legalenchant==true){
 ench =lvl.getText();
-if(ench >= 5){
+if(ench >= 10){
 ench = 5;
 Dialog.dismiss();
 add9();
 clientMessage(client+"That enchantment is illegal in vanilla.");
 }
-if(ench <= 5){
+if(ench <= 10){
 Dialog.dismiss();
 add9();
 }
@@ -10109,13 +10110,13 @@ Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
 if(legalenchant==true){
 ench =lvl.getText();
-if(ench >= 5){
+if(ench >= 10){
 ench = 5;
 Dialog.dismiss();
 add10();
 clientMessage(client+"That enchantment is illegal in vanilla.");
 }
-if(ench <= 5){
+if(ench <= 10){
 Dialog.dismiss();
 add10();
 }
@@ -10176,13 +10177,13 @@ Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
 if(legalenchant==true){
 ench =lvl.getText();
-if(ench >= 5){
+if(ench >= 10){
 ench = 5;
 Dialog.dismiss();
 add11();
 clientMessage(client+"That enchantment is illegal in vanilla.");
 }
-if(ench <= 5){
+if(ench <= 10){
 Dialog.dismiss();
 add11();
 }
@@ -10243,13 +10244,13 @@ Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
 if(legalenchant==true){
 ench =lvl.getText();
-if(ench >= 5){
+if(ench >= 10){
 ench = 5;
 Dialog.dismiss();
 add12();
 clientMessage(client+"That enchantment is illegal in vanilla.");
 }
-if(ench <= 5){
+if(ench <= 10){
 Dialog.dismiss();
 add12();
 }
@@ -10310,13 +10311,13 @@ Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
 if(legalenchant==true){
 ench =lvl.getText();
-if(ench >= 5){
+if(ench >= 10){
 ench = 5;
 Dialog.dismiss();
 add13();
 clientMessage(client+"That enchantment is illegal in vanilla.");
 }
-if(ench <= 5){
+if(ench <= 10){
 Dialog.dismiss();
 add13();
 }
@@ -10377,13 +10378,13 @@ Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
 if(legalenchant==true){
 ench =lvl.getText();
-if(ench >= 5){
+if(ench >= 10){
 ench = 5;
 Dialog.dismiss();
 add14();
 clientMessage(client+"That enchantment is illegal in vanilla.");
 }
-if(ench <= 5){
+if(ench <= 10){
 Dialog.dismiss();
 add14();
 }
@@ -10444,13 +10445,13 @@ Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
 if(legalenchant==true){
 ench =lvl.getText();
-if(ench >= 5){
+if(ench >= 10){
 ench = 5;
 Dialog.dismiss();
 add15();
 clientMessage(client+"That enchantment is illegal in vanilla.");
 }
-if(ench <= 5){
+if(ench <= 10){
 Dialog.dismiss();
 add15();
 }
@@ -10511,13 +10512,13 @@ Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
 if(legalenchant==true){
 ench =lvl.getText();
-if(ench >= 5){
+if(ench >= 10){
 ench = 5;
 Dialog.dismiss();
 add16();
 clientMessage(client+"That enchantment is illegal in vanilla.");
 }
-if(ench <= 5){
+if(ench <= 10){
 Dialog.dismiss();
 add16();
 }
@@ -10578,13 +10579,13 @@ Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
 if(legalenchant==true){
 ench =lvl.getText();
-if(ench >= 5){
+if(ench >= 10){
 ench = 5;
 Dialog.dismiss();
 add17();
 clientMessage(client+"That enchantment is illegal in vanilla.");
 }
-if(ench <= 5){
+if(ench <= 10){
 Dialog.dismiss();
 add17();
 }
@@ -10645,13 +10646,13 @@ Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
 if(legalenchant==true){
 ench =lvl.getText();
-if(ench >= 5){
+if(ench >= 10){
 ench = 5;
 Dialog.dismiss();
 add18();
 clientMessage(client+"That enchantment is illegal in vanilla.");
 }
-if(ench <= 5){
+if(ench <= 10){
 Dialog.dismiss();
 add18();
 }
@@ -10712,13 +10713,13 @@ Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
 if(legalenchant==true){
 ench =lvl.getText();
-if(ench >= 5){
+if(ench >= 10){
 ench = 5;
 Dialog.dismiss();
 add19();
 clientMessage(client+"That enchantment is illegal in vanilla.");
 }
-if(ench <= 5){
+if(ench <= 10){
 Dialog.dismiss();
 add19();
 }
@@ -10779,13 +10780,13 @@ Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
 if(legalenchant==true){
 ench =lvl.getText();
-if(ench >= 5){
+if(ench >= 10){
 ench = 5;
 Dialog.dismiss();
 add20();
 clientMessage(client+"That enchantment is illegal in vanilla.");
 }
-if(ench <= 5){
+if(ench <= 10){
 Dialog.dismiss();
 add20();
 }
@@ -10846,13 +10847,13 @@ Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
 if(legalenchant==true){
 ench =lvl.getText();
-if(ench >= 5){
+if(ench >= 10){
 ench = 5;
 Dialog.dismiss();
 add21();
 clientMessage(client+"That enchantment is illegal in vanilla.");
 }
-if(ench <= 5){
+if(ench <= 10){
 Dialog.dismiss();
 add21();
 }
@@ -10913,13 +10914,13 @@ Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
 if(legalenchant==true){
 ench =lvl.getText();
-if(ench >= 5){
+if(ench >= 10){
 ench = 5;
 Dialog.dismiss();
 add22();
 clientMessage(client+"That enchantment is illegal in vanilla.");
 }
-if(ench <= 5){
+if(ench <= 10){
 Dialog.dismiss();
 add22();
 }
@@ -10980,13 +10981,13 @@ Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
 if(legalenchant==true){
 ench =lvl.getText();
-if(ench >= 5){
+if(ench >= 10){
 ench = 5;
 Dialog.dismiss();
 add23();
 clientMessage(client+"That enchantment is illegal in vanilla.");
 }
-if(ench <= 5){
+if(ench <= 10){
 Dialog.dismiss();
 add23();
 }
@@ -11047,13 +11048,13 @@ Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
 if(legalenchant==true){
 ench =lvl.getText();
-if(ench >= 5){
+if(ench >= 10){
 ench = 5;
 Dialog.dismiss();
 add24();
 clientMessage(client+"That enchantment is illegal in vanilla.");
 }
-if(ench <= 5){
+if(ench <= 10){
 Dialog.dismiss();
 add24();
 }
@@ -11114,13 +11115,13 @@ Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
 if(legalenchant==true){
 ench =lvl.getText();
-if(ench >= 5){
+if(ench >= 10){
 ench = 5;
 Dialog.dismiss();
 add25();
 clientMessage(client+"That enchantment is illegal in vanilla.");
 }
-if(ench <= 5){
+if(ench <= 10){
 Dialog.dismiss();
 add25();
 }
@@ -11181,13 +11182,13 @@ Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
 if(legalenchant==true){
 ench =lvl.getText();
-if(ench >= 5){
+if(ench >= 10){
 ench = 5;
 Dialog.dismiss();
 add26();
 clientMessage(client+"That enchantment is illegal in vanilla.");
 }
-if(ench <= 5){
+if(ench <= 10){
 Dialog.dismiss();
 add26();
 }
@@ -11211,6 +11212,140 @@ print("The Enchant Dialog :"+e);
 
 function add26() {
 Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,ench);
+}
+
+var enz1 = new styleButton();
+            enz1.setText("Mending");
+            enz1.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+en27();
+                }
+            }));
+            enchantLayout.addView(enz1);
+
+function en27() {
+MainActivity.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(MainActivity);
+var lvl = new styleInput(); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new styleButton();
+
+Dialog.setTitle("Enter Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+lvl.setText("");
+lvl.setHint("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+if(legalenchant==true){
+ench =lvl.getText();
+if(ench >= 10){
+ench = 5;
+Dialog.dismiss();
+add27();
+clientMessage(client+"That enchantment is illegal in vanilla.");
+}
+if(ench <= 10){
+Dialog.dismiss();
+add27();
+}
+}
+if(legalenchant==false){
+ench =lvl.getText();
+Dialog.dismiss();
+add27();
+}
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Enchant Dialog :"+e);
+}
+}});
+}
+
+function add27() {
+Player.enchant(Player.getSelectedSlotId(), Enchantment.MENDING,ench);
+}
+
+var enz2 = new styleButton();
+            enz2.setText("Frost walker");
+            enz2.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+en28();
+                }
+            }));
+            enchantLayout.addView(enz2);
+
+function en28() {
+MainActivity.runOnUiThread(new java.lang.Runnable(){
+run: function(){ 
+try{
+GetText = new android.widget.PopupWindow();
+var Layer = new android.widget.LinearLayout(MainActivity);
+var lvl = new styleInput(); lvl.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
+var Dialog = new android.app.Dialog(MainActivity);
+var Exit = new styleButton();
+
+Dialog.setTitle("Enter Level");
+Dialog.setContentView(Layer);
+
+Layer.setOrientation(android.widget.LinearLayout.VERTICAL);
+Dialog.show();
+Layer.addView(lvl);
+Layer.addView(Exit);
+
+lvl.setText("");
+lvl.setHint("Level");
+Exit.setText("Done");
+
+Exit.setOnClickListener(new android.view.View.OnClickListener(){
+onClick: function(view){
+if(legalenchant==true){
+ench =lvl.getText();
+if(ench >= 10){
+ench = 10;
+Dialog.dismiss();
+add28();
+clientMessage(client+"That enchantment is illegal in vanilla.");
+}
+if(ench <= 10){
+Dialog.dismiss();
+add28();
+}
+}
+if(legalenchant==false){
+ench =lvl.getText();
+Dialog.dismiss();
+add28();
+}
+}
+});
+
+GetText.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
+GetText.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
+} catch (e){
+print("The Enchant Dialog :"+e);
+}
+}});
+}
+
+function add28() {
+Player.enchant(Player.getSelectedSlotId(), Enchantment.FROST_WALKER,ench);
 }
 
 //Enchantment.AQUA_AFFINITY;
@@ -11238,6 +11373,8 @@ Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,ench);
 //Enchantment.SMITE;
 //Enchantment.THORNS;
 //Enchantment.UNBREAKING;
+//Enchantment.MENDING;
+//Enchantment.FROST_WALKER;
 
 var exit2Layout = new android.widget.LinearLayout(MainActivity);
 exit2Layout.setOrientation(0);
