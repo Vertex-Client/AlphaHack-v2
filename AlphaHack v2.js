@@ -222,6 +222,8 @@ var killdaura = false;
 var ban = false;
 var useFire = false;
 var useNether = false;
+var isIpJson = false;
+var isServerJson = false;
 
 //ParticleType.angryVillager;
 var particle1 = false;
@@ -3599,7 +3601,7 @@ iplu();
             miscLayout.addView(ip0);
       
       var ip1 = new styleButton();
-            ip1.setText("Players list");
+            ip1.setText("Server query");
             ip1.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 misc.dismiss();
@@ -4180,6 +4182,78 @@ updiaLayout1.setPadding(20,1,20,1);
             updia.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.CENTER | android.view.Gravity.CENTER, 0, 0);
             }catch(error){
                 android.widget.Toast.makeText(MainActivity, "Update updia, Error: " + error, 1).show();
+            }
+    }}));
+}
+
+function jresultView(text){
+MainActivity.runOnUiThread(new java.lang.Runnable({ run: function(){
+        try{
+            var jresultLayout = new android.widget.LinearLayout(MainActivity);
+            var jresultScroll = new android.widget.ScrollView(MainActivity);
+            var jresultLayout1 = new android.widget.LinearLayout(MainActivity);
+            jresultLayout.setOrientation(1);
+            jresultLayout1.setOrientation(1);
+            
+            jresultScroll.addView(jresultLayout);
+            jresultLayout1.addView(jresultScroll);
+
+var exit = new styleButton();
+            exit.setText("Exit");
+exit.setTextColor(android.graphics.Color.RED);
+            exit.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+                jresult.dismiss();
+				showMenuBtn();
+				isIpJson = false;
+				isServerJson = false;
+                }
+            }));
+            jresultLayout.addView(exit);
+			
+            var refresh = new styleButton();
+            refresh.setText("Refresh");
+            refresh.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+                jresult.dismiss();
+		for(var t = 0; t < 5; t++){
+		if(isIpJson){
+		var daurl1 = "http://ip-api.com/json/" + text.query;
+var dajson1 = ModPE.getFromUrl(daurl1);
+var iperesult = ModPE.JSON.parse(dajson1);
+isIpJson = true;
+jresultView(iperesult);
+		}
+		if(isServerJson){
+		var daurl2 = "http://mcapi.ca/query/'+text.hostname+':'+text.port+'/list";
+var dajson2 = ModPE.getFromUrl(daurl2);
+var servresult = ModPE.JSON.parse(dajson2);
+isServerJson = true;
+jresultView(servresult);
+		}
+		}
+                }
+            }));
+            jresultLayout.addView(refresh);
+			
+var jsontext = new android.widget.TextView(MainActivity);
+            if(isServerJson)jsontext.setText("IP: "+text.hostname+" "+text.port+"\nMotd: "+text.motd+"\nSoftware: "+text.software+"\nVersion: "+text.version+"\nStatus: "+text.status+"\nMap: "+text.map+"\nGame type: "+text.game_type+"\nList: "+text.players.online+"/"+text.players.max+"\n"+text.list+"\nPlugins: "+text.plugins);
+			if(isIpJson)jsontext.setText("IP: "+text.query+"\nISP: "+text.isp+"\nISP location: "+text.country+"\n"+text.regionName+"\n"+text.city);
+			jsontext.setTextColor(android.graphics.Color.WHITE);
+            jresultLayout.addView(jsontext);
+
+jresult = new android.widget.PopupWindow(jresultLayout1, dip2px(500), dip2px(500));
+
+jresult = new android.widget.PopupWindow(jresultLayout1, MainActivity.getWindowManager().getDefaultDisplay().getWidth()/2, MainActivity.getWindowManager().getDefaultDisplay().getHeight()/1);
+	  var bg = new android.graphics.drawable.GradientDrawable();
+      bg.setColor(android.graphics.Color.TRANSPARENT);
+      bg.setStroke(10,GUIStroke);
+jresultLayout1.setBackgroundDrawable(bg);
+jresultLayout1.setPadding(20,0,20,0);
+jresult.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.BLACK));
+            jresult.showAtLocation(MainActivity.getWindow().getDecorView(), android.view.Gravity.CENTER | android.view.Gravity.TOP, 0, 0);
+            }catch(error){
+                android.widget.Toast.makeText(MainActivity, "Error! : " + error, 1).show();
             }
     }}));
 }
@@ -13739,7 +13813,7 @@ if(getLanguage=="es_MX" || getLanguage=="es_ES")teleport.setText("Menu de teletr
 if(getLanguage=="ko_KR")teleport.setText("순간이동 메뉴");
 if(getLanguage=="de_DE")teleport.setText("Teleporter menu");
 if(getLanguage=="ja_JP")teleport.setText("テレポートメニュー");
-if(getLanguage=="nl_NL")teleport.setText("Teleporter menu");
+if(getLanguage=="nl_NL")teleport.setText("Teleporteer menu");
 if(getLanguage=="zh_CN")teleport.setText("传送菜单");
 teleport.setOnClickListener(new android.view.View.OnClickListener() {
 			onClick: function(v){
@@ -14493,8 +14567,11 @@ Exit.setOnClickListener(new android.view.View.OnClickListener(){
 onClick: function(view){
 ip =ip1.getText();
 Dialog.dismiss();
-betterWebview('http://ip-api.com/json/' + ip);
-print("Loading web page");
+var daurl1 = "http://ip-api.com/json/" + ip;
+var dajson1 = ModPE.getFromUrl(daurl1);
+var iperesult = ModPE.JSON.parse(dajson1);
+isIpJson = true;
+jresultView(iperesult);
 }
 });
 
@@ -14552,8 +14629,11 @@ onClick: function(view){
 ply =ddip.getText();
 poy =ddip2.getText();
 Dialog.dismiss();
-betterWebview('http://mcapi.ca/query/'+ply+':'+poy+'/list');
-android.widget.Toast.makeText(ctx, "AlphaHack: Loading web page", 1).show();
+var daurl2 = "http://mcapi.ca/query/'+ply+':'+poy+'/list";
+var dajson2 = ModPE.getFromUrl(daurl2);
+var servresult = ModPE.JSON.parse(dajson2);
+isServerJson = true;
+jresultView(servresult);
 }
 });
 
@@ -14561,7 +14641,7 @@ pipD.setHeight(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 pipD.setWidth(android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 pipD.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.TOP, 0, 0);
 } catch (e){
-print("IP Dialog:"+e);
+print("query Dialog:"+e);
 }
 }});
 }
