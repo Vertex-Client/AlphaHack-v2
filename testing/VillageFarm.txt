@@ -1,0 +1,45 @@
+//front
+Level.setTile(getPlayerX(), getPlayerY() -1, getPlayerZ() -3, 15, 1);
+Level.setTile(getPlayerX() +1, getPlayerY() -1, getPlayerZ() -3, 15, 1);
+Level.setTile(getPlayerX() -1, getPlayerY() -1, getPlayerZ() -3, 15, 1);
+Level.setTile(getPlayerX() +2, getPlayerY() -1, getPlayerZ() -3, 15, 1);
+Level.setTile(getPlayerX() -2, getPlayerY() -1, getPlayerZ() -3, 15, 1);
+Level.setTile(getPlayerX() +3, getPlayerY() -1, getPlayerZ() -3, 15, 1);
+Level.setTile(getPlayerX() -3, getPlayerY() -1, getPlayerZ() -3, 15, 1);
+Level.setTile(getPlayerX() +4, getPlayerY() -1, getPlayerZ() -3, 15, 1);
+Level.setTile(getPlayerX() -4, getPlayerY() -1, getPlayerZ() -3, 15, 1);
+//side
+Level.setTile(getPlayerX() +4, getPlayerY() -1, getPlayerZ() -4, 15, 1);
+Level.setTile(getPlayerX() -4, getPlayerY() -1, getPlayerZ() -4, 15, 1);
+Level.setTile(getPlayerX() +5, getPlayerY() -1, getPlayerZ() -4, 15, 1);
+Level.setTile(getPlayerX() -5, getPlayerY() -1, getPlayerZ() -4, 15, 1);
+Level.setTile(getPlayerX() +6, getPlayerY() -1, getPlayerZ() -4, 15, 1);
+Level.setTile(getPlayerX() -6, getPlayerY() -1, getPlayerZ() -4, 15, 1);
+Level.setTile(getPlayerX() +7, getPlayerY() -1, getPlayerZ() -4, 15, 1);
+Level.setTile(getPlayerX() -7, getPlayerY() -1, getPlayerZ() -4, 15, 1);
+Level.setTile(getPlayerX() +8, getPlayerY() -1, getPlayerZ() -4, 15, 1);
+Level.setTile(getPlayerX() -8, getPlayerY() -1, getPlayerZ() -4, 15, 1);
+Level.setTile(getPlayerX() +9, getPlayerY() -1, getPlayerZ() -4, 15, 1);
+Level.setTile(getPlayerX() -9, getPlayerY() -1, getPlayerZ() -4, 15, 1);
+
+Level.setTile(getPlayerX() +4, getPlayerY() -1, getPlayerZ() -2, 15, 1);
+Level.setTile(getPlayerX() -4, getPlayerY() -1, getPlayerZ() -2, 15, 1);
+Level.setTile(getPlayerX() +5, getPlayerY() -1, getPlayerZ() -2, 15, 1);
+Level.setTile(getPlayerX() -5, getPlayerY() -1, getPlayerZ() -2, 15, 1);
+Level.setTile(getPlayerX() +6, getPlayerY() -1, getPlayerZ() -2, 15, 1);
+Level.setTile(getPlayerX() -6, getPlayerY() -1, getPlayerZ() -2, 15, 1);
+Level.setTile(getPlayerX() +7, getPlayerY() -1, getPlayerZ() -2, 15, 1);
+Level.setTile(getPlayerX() -7, getPlayerY() -1, getPlayerZ() -2, 15, 1);
+Level.setTile(getPlayerX() +8, getPlayerY() -1, getPlayerZ() -2, 15, 1);
+Level.setTile(getPlayerX() -8, getPlayerY() -1, getPlayerZ() -2, 15, 1);
+Level.setTile(getPlayerX() +9, getPlayerY() -1, getPlayerZ() -2, 15, 1);
+Level.setTile(getPlayerX() -9, getPlayerY() -1, getPlayerZ() -2, 15, 1);
+//back
+Level.setTile(getPlayerX() +5, getPlayerY() -1, getPlayerZ() -9, 15, 1);
+Level.setTile(getPlayerX() -5, getPlayerY() -1, getPlayerZ() -9, 15, 1);
+Level.setTile(getPlayerX() +6, getPlayerY() -1, getPlayerZ() -9, 15, 1);
+Level.setTile(getPlayerX() -6, getPlayerY() -1, getPlayerZ() -9, 15, 1);
+Level.setTile(getPlayerX() +7, getPlayerY() -1, getPlayerZ() -9, 15, 1);
+Level.setTile(getPlayerX() -7, getPlayerY() -1, getPlayerZ() -9, 15, 1);
+Level.setTile(getPlayerX() +8, getPlayerY() -1, getPlayerZ() -9, 15, 1);
+Level.setTile(getPlayerX() -8, getPlayerY() -1, getPlayerZ() -9, 15, 1);
